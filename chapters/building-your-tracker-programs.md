@@ -50,7 +50,7 @@ Scaling up can often not be done with the exact same tool and approach as is don
 - Readiness Assessment
 
 
-## Design and configuration process OK
+## Design and configuration process
 
 **Involve users closely in design and configuration of your Tracker program** to ensure that it improves and supports their work. In order to develop a Tracker program one needs to define what data to enter, define a workflow and define program rules. All of these definition decisions should be made in close collaboration with users, since they directly relate to -- and can affect -- how they do their work.
 
@@ -118,7 +118,7 @@ Maintain and evaluate user support
 Maintain and evaluate training
 
 
-## Real-time vs secondary data entry - OK
+## Real-time vs secondary data entry
 
 **Carefully evaluate whether the data should be entered real time** as this has several implications for how you structure your project. Trackers are used to track individuals through defined programs with associated data elements and rules. The data can be captured by health personnel during the consultation (real time point of care), or at the end of the day (or when they have time to enter it). The two different approaches naturally have consequences for what the Tracker is used for: If the data is entered at point of care - during the consultation - it is possible to provide decision support and validate data and avoid double data entry. However, it also introduces challenges with regards to connectivity, usability, increased number of devices, etc.
 
@@ -126,7 +126,7 @@ Entering data in real time also requires that the the setup of the Tracker match
 
 Link to WHO package design documentation
 
-## Mobile vs Web - OK
+## Mobile vs Web
 
 **Consider how and when the people doing data entry can access the Internet** There are contexts or locations where accessing the online central DHIS2 server through a computer is challenging or even impossible. The DHIS2 Android Capture App has been designed and developed to respond to those situations. However, introducing mobile devices into a DHIS2 implementation will impact your project on many levels, so it is a decision that needs to be made in an informed and conscious manner.  
   
@@ -165,7 +165,7 @@ When you have performed all testing and completed your pilot, you are ready to s
   
 - **Management and Maintenance of devices:** Mobile Device Management (MDM) refers to software used for the administration of mobile devices. MDM software is necessary to support hundreds of devices, control the APK file distribution across all of these devices, provide tech support and enforce institutional policies. More information on the desirable features of an MDM, available options and guidance on the selection of the right MDM for your project can be found in the _Mobile Device Management_ section of the [DHIS2 Mobile Implementation Guidelines](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/Publications/DHIS+2+Mobile+Implementation+Guidelines.pdf).
 
-##  Human Resources and IT Support - OK
+##  Human Resources and IT Support
 
 No Tracker implementation will be successful over time without the right people on board. Before starting a tracker project it is important to make sure the right personnel with the right competence are available.  
 
@@ -219,7 +219,7 @@ Once the team is in place, an internal working hierarchy can be established, fro
 
 *References*:  
 
-- Principles of Digital Development 
+- [Principles of Digital Development](https://digitalprinciples.org/) 
 
 
 
@@ -229,7 +229,7 @@ The tracker program itself and the collected data needs to be hosted on a server
 
 Additionally you have to decide if you want to configure the tracker in a separate or same instance as your aggregate system. A big advantage to having one instance is the possibility to directly generate your reports from tracker data. However, having the two in the same instance requires stricter SOPs for maintaining user accounts to ensure access to patient data is restricted properly.
 
-Bob’s “10 principles for hosting and security”. 
+10 principles for hosting and security 
 
 1. Operating system is a LTS (long term service edition)
 2. There is an automatic process for applying OS security patches    
@@ -269,7 +269,7 @@ Devices needs to rotate
     - Shared resources with other projects or ministries (e.g. government contract with SMS gateway provider)
 
 
- - Cloud-based vs Locally hosted: Depends on the regulatory environment of PII (NOTE: NIPH / UiO may want to make a “bold claim” about which route is “preferred”????)
+ - Cloud-based vs Locally hosted: Depends on the regulatory environment of PII 
  - Management and sustainability of the IT systems.
  - Documentation exists on security plans and protocols. Both at high-level (non-jargon, but stating the principles) as well as technical procedures. Especially critical for locally-hosted systems without a “security first” culture.
  - One individual needs to be responsible of developing, maintaining and implementing the security plan. Another security manager committed to identifying and mitigating risks. Both roles require experience, capacity, and incentive.
@@ -288,10 +288,10 @@ Devices needs to rotate
     
 *References*:
 
-  -   Bob Jolliffe’s “Security Guidelines for Country Implementers’
+  -   Security Guidelines for Country Implementers
 
 
-## Training and Rollout - OK
+## Training and Rollout
 
 **Plan for high-quality, continual training.** Capacity building is crucial for a Tracker program to succeed, and it must be both high quality and continue periodically throughout the lifetime of the program. It is not sufficient to provide user training only once -- your training plan should provide for initial and refresher training over time. Frontline Tracker users are typically ground level health workers who may be less comfortable with technology than district staff who work more often with aggregated data. A strong emphasis on training will include time for familiarizing trainees with the tools as well as how to integrate Tracker into their workflow.
 
@@ -332,17 +332,10 @@ When you design the integration with the HMIS, make sure that the aggregation pr
 
 It is important to make sure that care providers understand the indicators and are able to input into how they are calculated. Involve Ministry/policy-makers in the process so that they understand the fundamental differences between how reporting happened before vs. now in a tracker or eRegistry.
 
-*(DELETE OR INCORPORATE? Difference between aggregate data collection system, where the final numbers are input into online reporting forms vs. a tracker/an eRegistry that does automated reporting. 
-Significantly more effort in software design to cover all reporting and indicator needs 
-Important to define indicators and understand what is to be measured: what is the numerator, what is the denominator 
-Default denominator in an eRegistry: patients/clients 
-Removing traditional paper reporting can be time-consuming, behavior-change takes time)*
-
 
 Feeding into the HMIS  
 The data that is entered into tracker forms a basis for generating aggregate numbers. E.g. 4 patient entries = 2 with condition X and 2 with condition Y. Tracker should support the aggregate system, rather than be an extra burden on data collectors. System design should take into consideration how to meet aggregate data requirements using the data entered through tracker. In other words the workflow should avoid additional work for your health workers. They should not have to aggregate data manually and enter manually into the HMIS. 
-
-NIPH  
+ 
 Difference between aggregate data collection system, where the final numbers are input into online reporting forms vs. a tracker/an eRegistry that does automated reporting  
 
 Significantly more effort in software design to cover all reporting and indicator needs 
@@ -362,8 +355,6 @@ Involve Ministry/policy-makers in the process so that they understand the fundam
 > Venkateswaran M: Attributes and consequences of health information systems data for antenatal care – health status, health system performance and policy, PhD dissertation, University of Bergen 
 >
 > Venkateswaran M, Mørkrid K, Khader KA, Awwad T, Friberg IK, Ghanem B, Hijaz T, Frøen JF: Comparing individual-level clinical data from antenatal records with routine health information systems indicators for antenatal care in the West Bank: A cross-sectional study. PloS one 2018, 13(11): e0207813 
-
-
 
 
 
