@@ -154,3 +154,28 @@ It is important to ensure appropriate and sufficient infrastructure, which may b
 
 **Hardware for end users** Given the wide scale adoption of digital health projects, it is possible that the existing hardware available to targeted users is sufficient for a new tracker implementation. An assessment should be conducted to review the availability of computers and Android devices, and determine where additional hardware may be necessary. Long-term agreements for maintenance and replacement of hardware should be established in order to ensure the sustainability of the Tracker system past the life of the originally purchased hardware. 
 
+### Security Considerations
+
+Security is primarily about people.  The people who are the subjects of data collected, the people who use the data, the people who are responsible for implementing technical measures and the people whose responsibility it is to manage the security of the particular tracker project.
+
+It is not sufficient to assume that technical implementers will have made a best effort to make the system as secure as possible (though in general we hope that they will).  In order to meet any level of regulatory compliance and avoid legal hazard it is usually necessary to be able to demonstrate that reasonable steps have been taken to secure the system.  At a minimum this usually implies that:
+
+1.  There is a role defined in the organisation whose responsibility it is to be concerned with security related issues.  This might be a chief security officer, a data protection officer or some other designation.  The important thing is that there is an individual whose job it is to be concerned about, and to be accountable for addressing, security considerations.  Ideally this is not a technical role, but one closer to senior management.
+2.  There should be some documented security plan around the tracker program.  This is sometimes referred to as security posture. It should indicate the principles that are important to the organisation, the processes which are in place to identify, monitor and mitigate risk on an ongoing basis and various other artefacts and processes such as acceptable use policy (for employees), Non-Disclosure Agreements (for contracters), access policy, backup and disaster recovery plans, minimum standards for software deployment and configuration etc.
+
+In some organisations the role of security officer is already established and well defined.  In many others it is an evolving need which manifests itself in an environment characterised by the absence of strong regulation, weak IT institutional and management structures and lack of appropriate training.  There are existing standards and methodologies which can be useful in shaping such a role, such as the ISO27000 series (including useful free [online material](https://www.iso27001security.com/html/toolkit.html) and templates).  It is not an item frequently seen on funding and budget proposals, but security management training might well be one of the more important items to consider and budget for.
+
+A non-exhaustive list of high priority tasks to consider: 
+1.  Make sure the software setup is technically strong, documented and preferably automated.  How to do that is a bit opinionated and their are different ideas of best practice.  For system administrators, attending server academy is a good way of meeting peers and exchanging ideas.  Also interact with the server admin community via the community of practice.  There is also telegram group of system administrators (to join, email Lamin - laminbjawara@gmail.com ).
+2. make sure you have a team (at least 2) of sysadmins that are responsible for the daily maintenance of the system.  Depending on a single "technical" person is one of the biggest identified risks in many implementations.
+3.  As outlined above, somebody MUST be responsible for security.  That role should:
+- report directly to management (not just a geeky thing)
+- manage overall risk (the risk register is your friend)
+- make sure that sysadmins are doing their job
+- be aware of local law, constraints and SOPs regarding data handling and privacy.   In their absence, or where they are
+inadequate, develop and maintain good practice guidelines locally.
+4. make sure there is a backup plan, including off site, which is regularly tested.  Straightforward unrecoverable data loss has been
+the single most common security problem countries have faced,
+5.  make sure that systems get audited regularly (this can be "official" from auditor general, or peer-to-peer within our community).  This is the best way for management to ensure that sysadmins are doing their job (above)
+
+
