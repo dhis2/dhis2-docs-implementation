@@ -15,13 +15,13 @@ This section will cover:
 
 ## Determining Scale
 
-Because Tracker is aimed at the lowest levels of a system, Tracker systems can mean dramatically increasing the number of  users, devices technical and organisational support requirements. Countries often have limited personnel that are qualified to do deployments and there are costs associated with the work. 
+Because individual-level data systems (i.e. Tracker) are aimed at the lowest levels of a system, Tracker programs can dramatically increase the number of users, hardware/devices, technical resources and organisational support required to implement and maintain the system. Countries often have limited personnel that are qualified to manage deployments and there are significant costs associated with the work. 
 
-Scale can refer to several dimensions; programmatic scale, functional scale or geographic scale to mention a few. 
+Scale can refer to several dimensions: programmatic scale, functional scale or geographic scale, to mention a few. 
 
-Scaling geographically can thus take time and resources. There are different strategies to geographical scale i.e. cover one region completely or start “small” in several regions at the same time and scale at a slightly slower pace in parallel.
+Scaling geographically can thus take time and resources. There are different strategies to achieving geographical scale i.e. cover one region completely or start “small” in several regions at the same time and scale at a slightly slower pace in parallel.
 
-When you start scaling things will happen faster; more people will work on it and need support. Hence, make sure that the team is rigged to handle an increased volume and speed by taking into consideration the following:
+As implementations scale, a snowball effect tends to take place. When you start scaling things will happen faster; the number of users can increase exponentially, which requires more people and stronger support mechanisms. Hence, planners can ensure that support teams are equipped to handle an increased volume and speed by taking into consideration the following:
 
 **Finalize and pilot the tracker before scaling it**  
 Gather evidence and demonstrate impact before attempting to scale. Consider reduced investment in features that do not demonstrate impact, or resource-intensive features that have limited impact.  You should have a final design/configuration which is user tested and piloted and produces the targeted results in terms of information management and the wanted reports BEFORE you scale. When you start scaling, it is not the time for experimenting. In other words, test your design and set up with 100 rather than 5000 users.
@@ -54,17 +54,17 @@ Scaling up can often not be done with the exact same tool and approach as is don
 
 **Involve users closely in design and configuration of your Tracker program** to ensure that it improves and supports their work. In order to develop a Tracker program one needs to define what data to enter, define a workflow and define program rules. All of these definition decisions should be made in close collaboration with users, since they directly relate to -- and can affect -- how they do their work.
 
-We recommend that you start the design process by asking the following questions to start discussions:
+We recommend to start the design process by asking the following questions to initiate discussions:
 
 1. What is the purpose of the data you collect? How do you intend to use the data?
 2. Who will benefit from the Tracker implementation?
 3. How will the users entering data benefit from the Tracker implementation?
-4. Do you currently collect this data today? How?
-5.  Are there data elements you currently collect that you do not need?
+4. Do you currently collect this data today? How? What is the current data flow?
+5. Are there data elements you currently collect that you do not need?
 
 DEFINE PURPOSE, AIM AND SCOPE
 
-A clear purpose and well-defined aims are the key to establishing a common understanding of the project's scope and limitations, and to being able to communicate the process of developing and running a Tracker program internally and externally.
+A clear purpose and well-defined aims are the keys to establishing a common understanding of the project's scope and limitations, and to being able to communicate the process of developing and running a Tracker program internally and externally.
 
 - Define the primary and secondary purposes of the Tracker program.
 - Identify the tracked entities, the scope of data collection, and the health cadres involved in data collection.
