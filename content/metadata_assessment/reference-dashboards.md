@@ -1,5 +1,25 @@
 # Dashboards
 
+- [Dashboards](#dashboards)
+  - [Dashboards should have content](#dashboards-should-have-content)
+    - [Recommendation](#recommendation)
+    - [Diagnosing if the problem exists](#diagnosing-if-the-problem-exists)
+      - [SQL - Identification](#sql---identification)
+      - [SQL - Listing](#sql---listing)
+  - [Dashboards should be viewed routinely](#dashboards-should-be-viewed-routinely)
+    - [Recommendation](#recommendation-1)
+    - [Diagnosing if the problem exists](#diagnosing-if-the-problem-exists-1)
+      - [SQL - Identification](#sql---identification-1)
+      - [SQL - Listing](#sql---listing-1)
+  - [Dashboards should be shared (when appropriate)](#dashboards-should-be-shared-when-appropriate)
+    - [Recommendation](#recommendation-2)
+    - [Diagnosing in the problem exists](#diagnosing-in-the-problem-exists)
+      - [Identification](#identification)
+      - [Listing](#listing)
+    - [Updating a private dashboards sharing settings](#updating-a-private-dashboards-sharing-settings)
+  - [Fixing these problems via deletion](#fixing-these-problems-via-deletion)
+  - [Summary](#summary)
+
 ## Dashboards should have content
 
 All dashboards should have content on them. Dashboards without any content do not serve any purpose, and may have been created by accident or as part of a training exercise.
@@ -58,13 +78,13 @@ union all
 select 'dashboard_used1y_public' as indicator, count(*)::varchar as value, (100*count(*)/(select count(*) from dashboard where publicaccess like 'r%'))||'%', 'Public dashboards that have not been opened in the last 12 months' as description from dashboard where publicaccess like 'r%' and uid not in (select favoriteuid from datastatisticsevent where eventtype = 'DASHBOARD_VIEW' and favoriteuid is not null and timestamp > (now() - INTERVAL '12 months') group by favoriteuid);
 ```
 
-To succesfully use this query, you should modify the year referenced in the query. This example is showing dashboards that have been viewed 1 time or less after 2017, and the year referenced is >= 2018. If you want to use other years as reference you should update this accordingly.
+To successfully use this query, you should modify the year referenced in the query. This example is showing dashboards that have been viewed 1 time or less after 2017, and the year referenced is >= 2018. If you want to use other years as reference you should update this accordingly.
 
 This query will output the following information for you to review:
 
 - Dashboards that have been viewed 1 time or less since the year you select
 - Dashboards that have not been opened in the last 12 months
-- Dashboards that are publically viewable
+- Dashboards that are publicly viewable
 - Public dashboards that have been viewed 1 time or less since the year you select
 - Public dashboards that have not been opened in the last 12 months
 
@@ -112,7 +132,7 @@ You can list the dashboards that are private using the following query
 
 ### Updating a private dashboards sharing settings
 
-In order to modify the sharings settings of a private dashboard
+In order to modify the sharing settings of a private dashboard
 
 ##  Fixing these problems via deletion
 
