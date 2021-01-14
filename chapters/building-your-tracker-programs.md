@@ -321,7 +321,7 @@ If Internet connectivity is too slow, unreliable, or non-existent at your traini
 
 **Make sure to cover the basic reporting requirements from the HMIS when designing the tracker** to avoid double reporting. The data entered into tracker forms a basis for generating aggregate numbers. E.g. 4 patient entries = 2 with condition X and 2 with condition Y. Tracker should support the aggregate system, rather than be an extra burden on data collectors. System design should take into consideration how to meet aggregate data requirements using the data entered through tracker. 
 
-There are different options to consider, either through automation or manually with the help of tools. You need a clear work flow, tools and governance model for data quality and completeness assurance and the data authorization process. In other works who can approve and process data from individual to aggregate data and how does this happen.
+There are different options to consider, either through automation or manually with the help of tools. You need a clear work flow, tools and governance model for data quality and completeness assurance and the data authorization process. In other words who can approve and process data from individual to aggregate data and how does this happen.
 
 When you design the integration with the HMIS, make sure that the aggregation process is well thought through. 
 
