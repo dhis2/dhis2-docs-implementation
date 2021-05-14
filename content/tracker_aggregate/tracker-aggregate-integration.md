@@ -27,13 +27,13 @@ Aggregate and tracker data can be shown and analysed together by including it wi
 
 > **Pros and cons**
 > 
-> \+ easy to set up
-> \+ works well for presenting and analysing complimentary data
-> \+ detailed data can be included (e.g. anonymous line lists)
+> + easy to set up
+> + works well for presenting and analysing complimentary data
+> + detailed data can be included (e.g. anonymous line lists)
 >
-> \- limited dimensionality in analysis of tracker data, i.e. for showing age/sex disaggregations
-> \- not truly integrated/comparable with aggregated data, for example displayed
-> \- requires the tracker and aggregate data to be in the same DHIS2 instance
+> - limited dimensionality in analysis of tracker data, i.e. for showing age/sex disaggregations
+> - not truly integrated/comparable with aggregated data, for example displayed
+> - requires the tracker and aggregate data to be in the same DHIS2 instance
 
 
 ### Combining data through aggregate indicators
