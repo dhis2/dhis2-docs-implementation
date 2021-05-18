@@ -1,35 +1,34 @@
 # Integrating tracker and aggregate data
-This guide present different approaches for combining data collected through tracker programmes with aggregate data collected through routine (such as Monthly, Quarterly) data sets, so that this data can be used together. Tracker and aggregate data are collected and stored separately in DHIS2, but there are many cases where combining the two types of data is useful: 
+This guide presents different approaches for combining data collected through tracker programmes with aggregate data, so that it can be analysed and used together. Tracker and aggregate data are collected and stored separately in DHIS2, but there are many cases where combining the two types of data is useful: 
 
 * Data collected through tracker programmes and aggregate data sets may be complimentary. For example, if tracker is used as an electronic immunisation registry, calculating immunisation coverages requires the service data collected through tracker to be combined with population estimates typically available as aggregate (yearly) data.
 * In many cases, tracker implementations are done in a phased approach, where it is first implemented in certain types of health facilities or by geographical region. Consequently, the same data may be collected through tracker in some locations and as aggregate data in other locations, and getting a complete overview of the data requires the tracker and aggregate data to be combined.
 * Data collected through tracker may partially overlap with established aggregate reports. For example, a monthly report on malaria-related activities [(example)]() may include information both on malaria cases, as well as preventive activities such as bed-net distribution. If tracker is introduced for malaria case registration, the monthly malaria report can be partially completed based on tracker data.
-* When tracker is introduced, ensuring that data is comparable over time (moving from aggregate to tracker)
+* When tracker is introduced for in an area (immunization, HIV etc) where aggregate data has previously been collected, ensuring that data is comparable over time necessitates combining aggregate and tracker data.
+* Certain data quality checks in DHIS2 is only available for aggregate data. Applying these checks on tracker data thus requires that it is first aggregated and stored as aggregate data elements.
  
-There are several ways in which this can be achieved, with different advantages and disadvantages, and which are suitable for different purposes. This chapter outlines three overall approaches to combining tracker and aggregate data, their advantages and disadvantages, and gives some examples of when each of the approaches may be 
-
-## Considerations
-* Governance - when to decide at what point data is complete (enough), who and how to verify data quality.
-* Ensuring users' understanding of data, and data quality
-* Access to data - different for tracker and aggregate
+There are several ways in which this can be achieved, with different advantages and disadvantages, and which are suitable for different purposes. In the [next section](alternative-approaches) three overall approaches to combining tracker and aggregate data, followed by a section on [choosing an approach](#choosing-an-approach) that outlines considerations and examples of when each of the approaches may be appropriate. Finally, for each approach, a how-to guide is outlining how to use the approach.
 
 ## Alternative approaches
-- Showing data side by side in the same chart/
-- Combining data through aggregate indicators
-- Saving aggregates of tracker data as aggregate data
+There are three main ways in which tracker and aggregate data can be combined in DHIS2 by:
 
-This section gives a summary of three approaches. Details on each are given in subsequent chapters.
+- showing data side by side in the same chart, table or dashboard
+- combining data through aggregate indicators
+- saving aggregates calculated from tracker data as aggregate data values
+
+This section gives a summary of the three approaches, with the advantages and disadvantages of each.
 
 ### Showing tracker and aggregate data side by side
 Aggregate and tracker data can be shown and analysed together by including it within the same Data Visualizer charts or tables. Furthermore, visualisations of tracker-based data can be created in the Event Report and Event Visualizer apps, and combined with visualisations of aggregate data on Dashboards.
 
 {Example screenshot}
 
-> **Pros and cons**
+> **Advantages:**
 > \+ easy to set up
 > + works well for presenting and analysing complimentary data
 > + detailed data can be included (e.g. anonymous line lists)
-
+>
+> **Disadvantages:**
 > \- limited dimensionality in analysis of tracker data, i.e. for showing age/sex disaggregations
 > - not truly integrated/comparable with aggregated data, for example displayed
 > - requires the tracker and aggregate data to be in the same DHIS2 instance
@@ -41,15 +40,16 @@ Aggregate indicators can be based on both aggregate and tracker data, separately
 This approach can be useful in several scenarios: 
 
 * The same data is collected through aggregate data set and tracker programmes in different health facilities, i.e. some collect aggregate data and others collect individual-level data through tracker.
-* The same data is available as aggregate data values and tracker data values for different periods, for example if data curently collected through tracker was in previous years collected as aggregate data.
+* The same data is available as aggregate data values and tracker data values for different periods, for example if data currently collected through tracker was in previous years collected as aggregate data.
 * When indicators are needed based on a combination of data, i.e. service data collected through tracker combined with denominators available as aggregate data. 
 
 {Example screenshot}
 
-> **Pros and cons**
+> **Advantages:**
 > \+ relatively easy to set up
 > + can potentially hide some of the complexity of integrated aggregate and tracker data to end users
-
+> 
+> **Disadvantages:**
 > \- tracker data cannot be analysed with disaggregations such as age/sex as separate data dimensions
 > - difficult to manage in cases where there may be overlapping data
 > - requires the tracker and aggregate data to be in the same DHIS2 instance
@@ -66,26 +66,45 @@ There are multiple ways in which actual transfer of data from program indicators
 
 This approach is described in further details below, with examples and pointers to different tools which can be used to facilitate the process.
 
-> **Pros and cons**
+> **Advantages:**
 > \+ data can be analysed with all the dimensionality as aggregate data
 > + can still be combined with detailed tracker data (i.e. the first approach)
 > + ensures that there is no overlap
 > + works when tracker and aggregate data are collected in separate DHIS2 instances
-
+>
+> **Disadvantages:**
 > \- more complicated to set up
 > - requires external tools/scripts to move data via api, or predictors
 > - if data is moved between two DHIS2 instances, organisation units must also be harmonised and kept in sync across the instances
 > - may require more ongoing maintenance
 
 
-### Choosing an approach
+## Choosing an approach
 Each of the three approaches outlined above have advantages and disadvantages, and for a single implementation several of them are likely needed. For example, it may be useful to present certain tracker data with frequent updates (i.e. daily numbers children immunized), while at the same time transferring aggregate program indicator values into aggregate data element values every month so that the data can be compared with facilities not yet using tracker, or with additional dimensionality (such as age/sex disaggregations) that cannot easily be done directly with aggregate data.
 
-## Saving aggregate tracker values as aggregate data values
+### Considerations
+* Governance - when to decide at what point data is complete (enough), who and how to verify data quality.
+* Ensuring users' understanding of data, and data quality
+* Access to data - different for tracker and aggregate
+
+## How-to: showing tracker and aggregate data side by side
+
+* Brief guide with example of how to do this
+
+## How-to: combining 
+
+
+## How-to: saving aggregated tracker data as aggregate data values
 This section describes the recommended approach as a long-term solution. Alternatives exist, which may be relevant in some cases - one-off; early stages; testing etc. Listed towards the end of the section.
 
 Scenarios
 - same instance or different instance - orgunits matching or not
+
+### Prerequisites
+* orgunit synchronization
+
+* Step-wise approach?
+
 
 ### Use Case (belongs in intro?)
 For countries implementing DHIS2 tracker for individual-level data collection, a separate dedicated DHIS2 instance is recommended for tracker deployment. Many countries have a mature, stable HMIS used primarily for capturing aggregate data across health programs in an integrated environment. By maintaining separate tracker and aggregate DHIS2 instances, performance can be better managed by system admins and data governance principles can be applied to ensure personally identifiable data captured by Tracker can be protected according to national policies and governance frameworks.
@@ -142,7 +161,7 @@ aggregate reporting & analysis, as well as tracker data capture and facility-lev
 Aggregate digital data packages (inclusive of standard aggregate dashboards) are available for health programmes such as TB, HIV, malaria, RMNCAH and disease surveillance. Aggregate packages include:
 
 1. Data set, data elements and category option sets ('target' for sending tracker data)
-2. Metadata codes that are AWX compliant and enable the mapping of data values from tracker to the aggregate 'target'
+2. Metadata codes that are ADX compliant and enable the mapping of data values from tracker to the aggregate 'target'
 
 In addition, tracker packages are being developed for a growing number of use cases such as immunisation eRegistries and case-based surveillance for TB, HIV and integrated disease reporting. Where tracker data packages are designed to capture data that can be aggregated and submitted to the corresponding aggregate dataset, we have included the following in the tracker digital data packages:
 
