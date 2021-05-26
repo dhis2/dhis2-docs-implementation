@@ -2,19 +2,19 @@
 This guide presents different approaches for combining data collected through tracker programmes with aggregate data, so that it can be analysed and used together. Tracker and aggregate data are collected and stored separately in DHIS2, but there are many cases where combining the two types of data is useful: 
 
 * Data collected through tracker programmes and aggregate data sets may be complimentary. For example, if tracker is used as an electronic immunisation registry, calculating immunisation coverages requires the service data collected through tracker to be combined with population estimates typically available as aggregate (yearly) data.
-* In many cases, tracker implementations are done in a phased approach, where it is first implemented in certain types of health facilities or by geographical region. Consequently, the same data may be collected through tracker in some locations and as aggregate data in other locations, and getting a complete overview of the data requires the tracker and aggregate data to be combined.
+* In many cases, tracker implementations are done in a phased approach, where it is first implemented in certain types of health facilities or by geographical region. Consequently, the same data may be collected through tracker in some locations and as aggregate data in other locations, and getting a complete overview of the data requires the tracker and aggregate data to be combined. Such differentiated or hybrid approaches may also permanent.
 * Data collected through tracker may partially overlap with established aggregate reports. For example, a monthly report on malaria-related activities [(example)]() may include information both on malaria cases, as well as preventive activities such as bed-net distribution. If tracker is introduced for malaria case registration, the monthly malaria report can be partially completed based on tracker data.
 * When tracker is introduced for in an area (immunisation, HIV etc) where aggregate data has previously been collected, ensuring that data is comparable over time necessitates combining aggregate and tracker data.
-* Certain data quality checks in DHIS2 is only available for aggregate data. Applying these checks on tracker data thus requires that it is first aggregated and stored as aggregate data elements.
+* Certain data quality checks in DHIS2 are only available for aggregate data. Applying these checks on tracker data thus requires that it is first aggregated and stored as aggregate data elements.
  
-There are several ways in which this can be achieved, with different advantages and disadvantages, and which are suitable for different purposes. In the [next section](alternative-approaches) three overall approaches to combining tracker and aggregate data, followed by a section on [choosing an approach](#choosing-an-approach) that outlines considerations and examples of when each of the approaches may be appropriate. Finally, for each approach, a how-to guide is outlining how to use the approach.
+There are several ways in which this can be achieved, with different advantages and disadvantages, suitable for different purposes. In the [next section](alternative-approaches) three overall approaches to combining tracker and aggregate data are presented, followed by a section on [choosing an approach](#choosing-an-approach) that outlines considerations and examples of when each of the approaches may be appropriate. Then, a [how-to guide](#How-to-saving-aggregated-tracker-data-as-aggregate-data-values] is provided for the approach based on saving data from tracker as aggregate data values, which is more complicated to set up than the other approaches.
 
 ## Alternative approaches
-There are three main ways in which tracker and aggregate data can be combined in DHIS2 by:
+Tracker and aggregate data can be combined in DHIS2 by:
 
-- showing data side by side in the same chart, table or dashboard
-- combining data through aggregate indicators
-- saving aggregates calculated from tracker data as aggregate data values
+- showing data side by side in the same chart, table or dashboard;
+- combining data through aggregate indicators;
+- saving numbers calculated from tracker data as aggregate data values.
 
 This section gives a summary of the three approaches, with the advantages and disadvantages of each.
 
@@ -54,7 +54,7 @@ This approach can be useful in several scenarios:
 > **Advantages:**
 >
 > * relatively easy to set up
-> * can potentially hide some of the complexity of integrated aggregate and tracker data to end users
+> * can potentially hide some of the complexity of integrating aggregate and tracker data to end users
 > 
 > **Disadvantages:**
 >
@@ -63,20 +63,20 @@ This approach can be useful in several scenarios:
 > * requires the tracker and aggregate data to be in the same DHIS2 instance
 
 ### Saving aggregates of tracker data as aggregate data
-Tracker data can be aggregated to, for example, weekly or monthly values, and these values can be saved as aggregate data element values in DHIS2. This corresponds to what is often done manually in health facilities when registers are tallied every month to produce monthly reports. Program indicators can be defined that produce aggregate numbers based on tracker data, corresponding to aggregate data elements. The program indicator value should represent the same value as the aggregate (e.g. *number of new and relapsed TB cases notified* or *number of BCG doses given to children under 1*. The data transfer can be done on an ad-hoc basis as needed, or as part of a routine process where data is (automatically) transferred at fixed intervals (show in the figure below).
+Tracker data can be aggregated to, for example, weekly or monthly values, and these values can be saved as aggregate data element values in DHIS2. This corresponds to what is often done manually in health facilities when registers are tallied every month to produce monthly reports. Program indicators can be defined that produce aggregate numbers based on tracker data, corresponding to aggregate data elements. The program indicator value should represent the same value as the aggregate (e.g. *number of new and relapsed TB cases notified* or *number of BCG doses given to children under 1*. The data transfer can be done on an ad-hoc basis as needed, or as part of a routine process where data is (automatically) transferred at fixed intervals (shown in the figure below).
 
 ![Example: Information flow between a DHIS2 instance with tracker programmes, and a DHIS2 HMIS instance with aggregate data.](resources/images/image8.jpg)
 
 ![Example: Aggregate data set (in the data entry app) which has been automatically filled by the data pushed from tracker program indicators.](resources/images/image5.png)
 
-There are multiple ways in which actual transfer of data from program indicators to aggregate data elements can be done. This includes: 
+There are multiple ways in which the actual transfer of data from program indicators to aggregate data elements can be done. This includes: 
 
-* manually or via a script querying the [DHIS2 API]() to export the program indicator values, and subsequently importing them into DHIS2 using either the [Import/export app]() or the API
-* automating the export and import of data from the API using a script
-* using one of several applications developed by the DHIS2 community and available on the [DHIS2 App Hub](apps.dhis2.org) to export and import the data
-* setting up [Predictors](), which can be scheduled to transfer the program indicator values into aggregate data elements routinely
+* manually or via a script querying the [DHIS2 API]() to export the program indicator values, and subsequently importing them into DHIS2 using either the [Import/export app]() or the API;
+* automating the export and import of data from the API using a script;
+* using one of several applications developed by the DHIS2 community and available on the [DHIS2 App Hub](apps.dhis2.org) to export and import the data;
+* setting up [Predictors](), which can be scheduled to transfer the program indicator values into aggregate data elements routinely.
 
-This approach is described in further details below, with examples and pointers to different tools which can be used to facilitate the process.
+This approach is described in further details below, focusing on how to automate the process using scripts.
 
 > **Advantages:**
 >
@@ -84,6 +84,7 @@ This approach is described in further details below, with examples and pointers 
 > * can still be combined with detailed tracker data (i.e. the first approach)
 > * ensures that there is no overlap
 > * works when tracker and aggregate data are collected in separate DHIS2 instances
+> * TODO - improve efficiencies
 >
 > **Disadvantages:**
 >
@@ -100,45 +101,63 @@ This approach is described in further details below, with examples and pointers 
 ## Choosing an approach
 Each of the three approaches have advantages and disadvantages, as outlined above. For a single implementation, several of them are likely needed. For example, it may be useful to present certain tracker data with frequent updates (i.e. daily numbers children immunised), while at the same time transferring aggregate program indicator values into aggregate data element values every month so that the data can be compared with facilities not yet using tracker, or with additional dimensionality (such as age/sex disaggregations) that cannot easily be done directly with aggregate data.
 
-The first two approaches are both relatively straightforward to implement, using the standard applications built into DHIS2. While configuring aggregate indicators (the second approach) must be done by a systems administrator with access to configure such indicators, any user with access to the DHIS2 analysis apps can make use of these approaches. However, a major limitation is that they require the tracker and the aggregate data to be in the same instance of DHIS2. 
+The first two approaches are both relatively straightforward to implement, using the standard applications built into DHIS2. While configuring aggregate indicators (the second approach) must be done by a systems administrator with access to configure such indicators, any user with access to the DHIS2 analysis apps (as well as the data itself) can make use of these approaches. However, a major limitation is that they require the tracker and the aggregate data to be in the same instance of DHIS2. 
 
-For countries implementing DHIS2 tracker for individual-level data collection, a separate dedicated DHIS2 instance is recommended for tracker deployment. Many countries have a mature, stable HMIS used primarily for capturing aggregate data across health programs in an integrated environment. By maintaining separate tracker and aggregate DHIS2 instances, performance can be better managed by system admins and data governance principles can be applied to ensure personally identifiable data captured by Tracker can be protected according to national policies and governance frameworks.
+The third approach, saving data from tracker as aggregate data values, has some advantages in terms of analytics. However, it is also the only approach suitable for integrating tracker data with aggregate data in separate DHIS2 instances. For countries implementing DHIS2 tracker for individual-level data collection, having a separate DHIS2 instance dedicated for the tracker deployment is recommended. Many countries have a mature, stable DHIS2 instance used primarily for capturing aggregate data across health programs in an integrated environment (e.g. a Health Management Information Systems, HMIS). By maintaining separate tracker and aggregate DHIS2 instances, performance can be better managed by system admins and data governance principles can be applied to ensure personally identifiable data captured by Tracker can be protected according to national policies and governance frameworks.
 
-TODO - rewrite/merge paragraph(s) above/below
+When a system for routine aggregate reporting through DHIS2 data exists, there is a clear benefit in being able to leverage individual data collection through DHIS2 tracker to automatically 'report' aggregated data to the routine HMIS. The alternative is often that this is done manually by the health facilities, first, because having such aggregate summaries is important for the management of the individual health facilities, and second, because such routine reporting is often mandatory. Capturing individual level data through DHIS2 tracker has potential to improve the quality of the data reported into the routine aggregate HMIS, while also enabling ad hoc analysis of the individual-level tracker data as required.
 
-There is a clear benefit in being able to leverage individual data
-collection through DHIS2 tracker to automatically 'report' aggregated data to the routine HMIS (e.g. to aggregate datasets, often monthly/weekly/quarterly reports from facility level). Capturing individual level data through DHIS2 tracker can improve the quality of the data reported into the routine aggregate HMIS, while also enabling ad hoc analysis of the tracker data in the Tracker Instance as required.
-
-3. Parallel and hybrid reporting flows
-	a. Phased scale up of tracker: some facilities/districts adopting tracker sooner while others may retain the paper based aggregate reporting
-	b. Parallel reporting: some countries necessitate a period of parallel reporting of paper-based and tracker data collection for a pilot period
-
-It may in some cases be desirable or necessary to import aggregate data values into a DHIS2 tracker instance, such as data used as denominators in indicators (e.g. population estimates). However, a more common approach is to produce aggregate data values based on tracker data, and move this to the DHIS2 instance used for aggregate data (e.g. the HMIS), which is the third approach outlined here. There are several ways, technically, to do this. In the how-to section below, the focus is on the steps needed to set up an automated migration of tracker data into an aggregate system. Compared to the other approaches, this approach is more complicated and requires scripts or tools outside of DHIS2. 
-
-The rest of this guide is focused on this topic. The next section outlines some key management and implementation considerations related to the migration of tracker and aggregate date. 
-
-## Implementation considerations
-
-* Governance of the data
-	* Frequency of data transfer
-		* How often to do the aggregation, for example daily, or on day of HMIS reporting deadline etc. How often the aggregate data is used for analysis and decision making should also be considered.
-		* How many months back in time to update aggregate data for, for example last month, last 3 months, current and last month etc.
-	* Data quality 
-		* validation
-		* Discrepancies
-		* ; How can values for 'late reporting' be updated in the aggregate dataset; managing discrepancies between tracker and aggregate data set based on the timing of data submission
-	* Completeness and timeliness
-	* Governance principles and national HMIS policies for locking datasets, timely reporting
-	* If not well communicated, the 'source of truth' can be obscured
-* Access to data - different for tracker and aggregate
-* Ensuring users understanding of data when being combined/merged
-
-* If metadata in the tracker instance or in the aggregate HMIS instance are altered, the mapping of program indicators to aggregate data elements may need to be updated
+There are several ways, technically, to do this. In the how-to section below, the focus is on the steps needed to set up an automated migration of tracker data into an aggregate system. Compared to the other approaches, this approach is more complicated and requires scripts or tools outside of DHIS2. 
 
 ## How-to: saving aggregated tracker data as aggregate data values
 This section describes the recommended approach for saving tracker data as aggregate data element values. While requiring an external tool or script as part of transferring the data, it leverages the existing functionality of DHIS2 as far as possible so that the script can be as simple as possible. What is outlined here is also the approach taken in the [WHO configuration packages](dhis2.org/who) for DHIS2, which includes mapping of variables between tracker programmes and aggregate data sets where relevant. This is described [below](#dhis2-digital-data-packages-and-linking-tracker-and-aggregate-data).
 
 The approach described here is recommended as a long-term, automated solution for saving tracker data as aggregate data values. Technically, there are several other ways in which this can be done, including using predictors, exporting the data and transforming it using other software (for example excel), or through custom DHIS2 apps (including some that are available in the [DHIS2 App Hub](apps.dhis2.org). These tools and methods can also be relevant in certain cases. For example if there is only a need to do ad-hoc transfers of data from time to time, or during early stages of tracker implementations when data is transferred primarily for testing and the configuration is still undergoing changes.  The final part of this how-to guide provides some pointers to [alternative methods and tools](#alternative-methods-and-tools). 
+
+### Implementation considerations
+Integrating data collected through tracker with existing aggregate reporting flows (i.e. the HMIS) requires decisions to be made related to data governance, and it affects data access, systems maintenance and more. Some key considerations are presented here.
+
+#### Data transfer
+There are two key considerations related to the transfer of data:
+
+**How often should aggregated data be transferred from tracker to aggregate data values?** When the transfer is automated, the frequency of the transfer can be anything from daily to only once per reporting/aggregation period (e.g. weekly, monthly, quarterly). More frequent updates means that data becomes available as aggregate data values and can be used and analysed more quickly, and are kept up to date as new and updated information comes in. Whether or not this is useful depends on the tracker programme in question. For example, having daily updated data may be useful information if made available to facility-level staff, but is less useful if the purpose of the aggregation is primarily to facilitate and automate routine HMIS reporting to higher levels.
+
+**How far back in time should data be added and updated?** Together with a decision on how frequently to transfer data, it must be decided for how far back (how many periods) data should be updated, and whether or not to transfer data for the current period (for which data will not be complete). This decision may have to be aligned with potentially existing practices around aggregate data, such as when or how it is validated and whether or not it is at some point "locked" for editing, discussed further below. Related to this is the question of whether to differentiate between migrating new data values and making updates to previously reported values.
+
+Discussions on these issues need to take into account that tracker data is in many cases entered retroactively based on paper registers, rather than directly during service provision or patient encounters. Furthermore, corrections and edits may happen to the data for quite some time after the actual event took place, for example, if during a follow-up visit an error is detected in the data for the previous visit.
+
+Unless there are strong reasons to do otherwise, it is suggested that updates and edits are done as far back in time as there is reasonable chance of additions and updates being made to the underlying tracker data. This ensures that the most correct and updated information is what is used, even thought it may necessitate changes to HMIS data management standards.
+
+#### Data quality and validation
+Ensuring data quality is key concern both for tracker and aggregate data, and linking the two introduces new potential dilemmas. As describes in the [tracker implementation guide](), there are approaches for reducing the chance of errors being introduced in data being collected through tracker. Nonetheless, there is always a chance that errors are introduced. Within the period in which the tracker-based aggregate data is still being updated on a regular basis (as described in the previous section), corrections in the tracker data flow automatically to the aggregate data as well. However, there are two scenarios in which a decision must be made on how to address corrections to the data: 
+
+**If errors are detected and corrected in tracker**, after the time period in which data is routinely migrated and/or after which the aggregate data has been validated and/or locked. Possible ways to address this includes:
+
+* living with the discrepancy in the aggregate data (if the error is minor)
+* doing an ad-hoc transfer of the data for affected periods 
+* manually correcting the aggregate data.
+
+**If data quality issues are detected in the aggregate data**. This is a less likely scenario, since only relatively large or systematic errors in the tracker data will be visible when the information is aggregated, or if the data is obviously incomplete. Possible ways to address this includes: 
+
+* correcting the source data in tracker and the re-transferring the data (if possible)
+* correcting/editing the aggregate data (if possible), and accepting the discrepancy
+
+Another data quality topic of relevance when aggregating tracker data relates to the timeliness and completeness of data, which are key data quality metrics of aggregate reporting (e.g. in the HMIS). When aggregate data is reported directly through DHIS2, users click a button to indicate that a particular data set (reporting form) has been reported in full. This is used as the basis for calculating both the timeliness (reports by a specified deadline) and completeness of data. When aggregate data is generated based on tracker data, no completeness and timeliness information is available. Several approaches can be considered concerning this issues:
+
+* In some cases, it is unproblematic that there is no completeness and timeliness data. There is generally not completeness and timeliness information for tracker data, and the aggregate data values generated from tracker can be seen in the same way. This is the case, for example, if data is transferred primarily to facilitate data analysis with additional dimensionality, or in order to use analysis tools for aggregate data. 
+* If the data makes up a subset of a particular data set, where other parts are entered directly as aggregate data, completeness information for the tracker data could be verified and reported as part of the completeness of the overall dataset.
+* Completeness and timeliness information can be managed manually, by the user responsible for submitting the aggregate data. This can be done as part of a validation process, where the user verifies the data (in the aggregate data entry app) and then confirms that the data is complete. While this allows for an extra validation step, it is also more resources intensive, and true validation of the data would to some extent require a degree of manual tallying that partly defeats the purpose of automating the aggregation of tracker data.
+* A script or tool can relatively easily be developed to automatically marks data sets as complete if a certain amount (i.e. a specified number of data element values) has been reported. This works well for identifying health facilities for which *some* data has been reported, but this automated process cannot determine whether the reports are in fact complete.
+
+Generally, when tracker data is used to produce aggregate data values, this is often a form of secondary use of data beyond what it was primarily collected in order to do. It is important that it is clearly communicated to the users how issues of data validation and corrections are managed, how issues such as "completeness" are dealt with, and that the 'source of truth' for the data is clearly defined.
+
+#### Data access and ownership
+Access to both tracker and aggregate data in DHIS2 is controlled through sharing, based on user groups. Sharing of the tracker data and of the aggregate data values generated from the tracker data can thus be different, and in the common scenario that they two types of data are hosted in different DHIS2 instances the same users may not have access. This has certain advantages, for example, the aggregate data values may be shared more widely than the tracker data without privacy/security implications. At the same time, it requires that appropriate data sharing is set up in two different instances, and it may also necessitate that 
+
+Related to data *access* is the issue of ownership of data, and issue also linked to data quality and validation. There needs to be clear procedures in place that indicate who are responsible and "own" both the tracker and the aggregate data values generated from tracker. This is particularly important in scenarios where multiple health programmes are involved. For example, if an immunisation tracker programmes feeds data into an integrated, aggregate HMIS data set.
+
+#### Maintenance
+The approach described here requires that there technical capacity is available, both to develop and configure a solution for data transfer, as well as ongoing maintenance that may be required for example if there are changes to the DHIS2 server infrastructure. Furthermore, if metadata in the tracker instance or in the aggregate HMIS instance are altered, the mapping of program indicators to aggregate data elements may need to be updated accordingly.
 
 ### Assumptions and key steps
 When tracker data and aggregate data are managed in separate DHIS2 instances, which is generally recommended, migrating data between the two instances requires the organisation units to be the same, or at least have a shared set of identifiers. Because organisation units are often re-used when new DHIS2 instances are set up, this may not be a problem initially. However, keeping organisation units synchronised across two or more DHIS2 instances over time requires careful management, whether changes are handled manually or through an automated process. Forthcoming implementation guidance will discuss this issue in further detail. For the purpose of this guide, a prerequisite is that organisations are harmonised and have a shared set of identifiers across the two instances. In cases where tracker data is migrated to aggregate data values within the same DHIS2 instances, synchronising organisation units is not an issue.
@@ -169,7 +188,6 @@ Because the data element and category option combination codes will be added as 
 While not strictly necessary, it may be advisable to add the data elements to a data set if they are not already. This data set (or sets) define the period type of the data to be transferred (e.g. weekly, monthly), and when imported the aggregated tracker data will be validated against this period type. Similarly, if the data set is assigned to the organisation units expected to receive data, a validation warning can be displayed if importing data for other organisation units. Furthermore, such assigned may be the basis of subsequent calculation of data completeness.
 
 **TODO**: verify that the above on validation is correct and/or if any API parameters are needed to enable them.
-
 
 #### Coding program indicators
 Program indicators have a fixed attribute used specifically for specifying the category option combination (and attribute option combination) identifier that is used when the program indicator value is exported as a data values set.
@@ -222,6 +240,8 @@ As specified in documentation on the `/analytics/dataValueSet` API endpoint, whe
  &dimension=pe:LAST_MONTH&dimension=ou:lc3eMKXaEfw&duplicatesOnly=true
 ```
 
+Because the export relies on the analytics API, only data included in the [analytics tables](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html#scheduling_analytics_table) are included. So for example, if the analytics tables are scheduled to update at midnight every day, and the transfer is scheduled for 23:00 every day, data from the current day will not be included.
+
 #### Import
 When a file with aggregated data values has been exported from the '/api/analytics/dataValueSet' endpoint with the appropriate parameters as described above, it can be imported directly into the DHIS2 instance to which data is to be migrated. For testing purposes, the data file can be imported using the [Import/Export app](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html), or via the DHIS2 Web API. Here, we show how to use the API.
 
@@ -250,16 +270,12 @@ A template script for automating routine migration of data from tracker to aggre
 
 - There is a bug ([Jira 8868](https://jira.dhis2.org/browse/DHIS2-8868)) that causes metadata-dependency-export tool to fail when custom attribute assigned to program indicator
 
-- Decide on use of codes or UIDs for linking PIs to data elements and categoryoptioncombos. The example script uses codes for data elements, uids for categoryoptioncombos.
-
-- Improving the script so that it will at a minimum notify administrators if there is an error and/or sending a DHIS2 message with the import summary.
-
 *There could also be other and more advanced scripts out in the community that can be considered.*
 
 ### Alternative methods and tools
 
 
-## DHIS2 Digital Data Packages and linking tracker and aggregate data
+### DHIS2 Digital Data Packages and linking tracker and aggregate data
 DHIS2 digital data packages have been developed to support both
 aggregate reporting & analysis, as well as tracker data capture and facility-level analysis.
 
