@@ -1,25 +1,5 @@
 # Data Elements
 
-- [Data Elements](#data-elements)
-  - [Data elements should be in a data element group](#data-elements-should-be-in-a-data-element-group)
-    - [Recommendation](#recommendation)
-    - [Diagnosing if the problem exists](#diagnosing-if-the-problem-exists)
-      - [SQL - Identification](#sql---identification)
-      - [SQL - Listing](#sql---listing)
-  - [Data elements should have data values](#data-elements-should-have-data-values)
-    - [Recommendation](#recommendation-1)
-    - [Diagnosing if the problem exists](#diagnosing-if-the-problem-exists-1)
-      - [SQL - Identification](#sql---identification-1)
-      - [SQL - Listing](#sql---listing-1)
-  - [Data elements should be used for analysis](#data-elements-should-be-used-for-analysis)
-    - [Recommendation](#recommendation-2)
-    - [Diagnosing if the problem exists](#diagnosing-if-the-problem-exists-2)
-      - [SQL - Identification](#sql---identification-2)
-      - [SQL - Listing](#sql---listing-2)
-  - [Fixing the problem via deletion](#fixing-the-problem-via-deletion)
-    - [Data elements with no associated values](#data-elements-with-no-associated-values)
-  - [Summary](#summary)
-
 ## Data elements should be in a data element group
 
 All data elements should be in a data element group. This allows users to find the data elements more easily in analysis apps and also contributes to having more complete data element group sets. Maintenance operations can also be made more efficient by applying bulk settings (ex. sharing) to all data elements within a data element group.

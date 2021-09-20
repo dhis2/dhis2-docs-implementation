@@ -1,3 +1,5 @@
+# Users
+
 ## Users should log in routinely
 
 All users should log in routinely. The definition of "routine" may vary between implementations and therefore you can assess this over both the last 12 months as well as a pre-defined period of your choosing.
@@ -36,7 +38,7 @@ select 'user_active1yenabled', count(*)::varchar , (100*count(*)/(select count(*
 
 #### SQL - Listing
 
-###  Fixing these problems via deletion
+### Fixing these problems via deletion
 
 ## Users should be part of a user group
 
@@ -52,7 +54,7 @@ If a user is not part of any user group(s) (or a user group(s) that gives them a
 
 #### SQL - Listing
 
-##  Fixing this problem by adding users to user groups
+###  Fixing this problem by adding users to user groups
 
 
 

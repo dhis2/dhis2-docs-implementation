@@ -30,7 +30,7 @@ select 'indicator_nongrouped',count(*)::varchar, (100*count(*)/(select count(*) 
 
 ## Indicators should be used in analysis outputs
 
-All indicators that are calculated should be used to produce some type of analysis output (charts, maps, tables). This can be by using them directly in an output or providing direct feedback in a dataset
+All indicators that are calculated should be used to produce some type of analysis output (charts, maps, tables). This can be by using them directly in an output or providing direct feedback in a dataset.
 
 ### Recommendation
 
@@ -60,7 +60,7 @@ select 'indicator_noanalysis',count(*)::varchar, (100*count(*)/(select count(*) 
 
 ## Indicators should be shared with a user group(s)
 
-Depending on the system configuration, indicators may need correct sharing settings applied to them such that each indicator has the correct sharing settings applied to the indicator. 
+Depending on the system configuration, indicators may need correct sharing settings applied to them such that each indicator has the correct sharing settings applied to the indicator.
 
 ### Recommendation
 

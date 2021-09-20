@@ -2,7 +2,7 @@
 
 ## Organisation units at the lowest level of the hierarchy should have data sets assigned to them
 
-Organisation
+Organisation units at the lowest level are often considered reporting units and should have data sets assigned to them.
 
 ### Recommendation
 

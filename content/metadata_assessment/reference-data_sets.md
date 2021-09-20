@@ -1,20 +1,5 @@
 # Data sets
 
-- [Data sets](#data-sets)
-  - [Data sets should have data](#data-sets-should-have-data)
-    - [Recommendation](#recommendation)
-    - [Diagnosing if the problem exists](#diagnosing-if-the-problem-exists)
-      - [SQL - Identification](#sql---identification)
-      - [SQL - Listing](#sql---listing)
-  - [Data sets should be assigned to organisation units](#data-sets-should-be-assigned-to-organisation-units)
-    - [Recommendation](#recommendation-1)
-    - [Diagnosing if the problem exists](#diagnosing-if-the-problem-exists-1)
-      - [SQL - Identification](#sql---identification-1)
-      - [SQL - Listing](#sql---listing-1)
-  - [Fixing these problems via deletion](#fixing-these-problems-via-deletion)
-  - [Summary](#summary)
-
-
 ## Data sets should have data
 
 All **active** datasets should have data values associated with them. Active data sets are data sets which should be currently used (within the last 3 reporting periods) to collect data. 

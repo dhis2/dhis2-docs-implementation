@@ -1,25 +1,5 @@
 # Dashboards
 
-- [Dashboards](#dashboards)
-  - [Dashboards should have content](#dashboards-should-have-content)
-    - [Recommendation](#recommendation)
-    - [Diagnosing if the problem exists](#diagnosing-if-the-problem-exists)
-      - [SQL - Identification](#sql---identification)
-      - [SQL - Listing](#sql---listing)
-  - [Dashboards should be viewed routinely](#dashboards-should-be-viewed-routinely)
-    - [Recommendation](#recommendation-1)
-    - [Diagnosing if the problem exists](#diagnosing-if-the-problem-exists-1)
-      - [SQL - Identification](#sql---identification-1)
-      - [SQL - Listing](#sql---listing-1)
-  - [Dashboards should be shared (when appropriate)](#dashboards-should-be-shared-when-appropriate)
-    - [Recommendation](#recommendation-2)
-    - [Diagnosing in the problem exists](#diagnosing-in-the-problem-exists)
-      - [Identification](#identification)
-      - [Listing](#listing)
-    - [Updating a private dashboards sharing settings](#updating-a-private-dashboards-sharing-settings)
-  - [Fixing these problems via deletion](#fixing-these-problems-via-deletion)
-  - [Summary](#summary)
-
 ## Dashboards should have content
 
 All dashboards should have content on them. Dashboards without any content do not serve any purpose, and may have been created by accident or as part of a training exercise.
