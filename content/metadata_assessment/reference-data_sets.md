@@ -69,7 +69,7 @@ select name,uid from dataset where datasetid not in (select distinct datasetid f
 
 ## Data sets should be assigned to organisation units
 
-All **active** datasets should be assigned to an organisation unit. Active data sets are data sets which should be currently used (within the last 3 reporting periods) to collect data. 
+All **active** datasets should be assigned to an organisation unit. Active data sets are data sets which should be currently used (within the last 3 reporting periods) to collect data.
 
 ### Recommendation
 
@@ -113,6 +113,7 @@ In order to remove datasets if needed there are 3 processes we can recommend:
 To delete the items via the API you have two options
 
 **Individual deletion**
+
 ```
 ```
 

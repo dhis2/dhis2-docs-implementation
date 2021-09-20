@@ -91,10 +91,12 @@ This query will output the following information for you to review:
 #### SQL - Listing
 
 You can list the dashboards that have been viewed 1 time or less since a certain year using the following query
+
 ```
 ```
 
 You can list the dashboards that have been not been viewed in the last 12 months using the following query
+
 ```
 ```
 

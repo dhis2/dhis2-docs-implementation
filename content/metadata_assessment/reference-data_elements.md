@@ -63,10 +63,8 @@ select name,uid from dataelement where domaintype = 'AGGREGATE' and dataelementi
 You can list the **TRACKER** data elements not in a data element group using the following query
 ```
 select 'Data elements (tracker) not in any data element groups.';
-select name,uid from dataelement where domaintype != 'AGGREGATE' and dataelementid not in (select dataelementid from dataelementgroupmembers);
+select name,uid from dataelement where domaintype = 'TRACKER' and dataelementid not in (select dataelementid from dataelementgroupmembers);
 ```
-
-
 
 ## Data elements should have data values
 
