@@ -1,17 +1,29 @@
-# Building your Tracker Program(s)
+# Planning your Tracker Implementation
 
 The purpose of this section is to give a high level overview of the considerations that will lead to success in your Tracker implementation, grouped by topic and with links to specific tools.
 
 This section will cover:
 
-1. Scale
-2. Design and Configuration
-3. Real-time vs. Secondary Data Entry
-4. Mobile vs. Web
-5. Establishing a Core Team
-6. Hosting
-7. Training
-8. Roll-out
+1. Defining purpose, aim and scope
+2. Scale
+3. Design and Configuration process
+4. Real-time vs. Secondary Data Entry
+5. Mobile vs. Web
+6. Establishing a Core Team
+7. Hosting
+8. Training
+9. Roll-out
+
+## DEFINE PURPOSE, AIM AND SCOPE
+
+A clear purpose and well-defined aims are the key to establishing a common understanding of the project's scope and limitations, and to being able to communicate the process of developing and running a Tracker program internally and externally.
+
+- Define the primary and secondary purposes of the Tracker program.
+- Identify the tracked entities, the scope of data collection, and the health cadres involved in data collection.
+- Determine how to uniquely identify members of the target population, (e.g., use of unique identification numbers or a combination of attributes).
+- Clarify initial expectations among the core team, as well as other stakeholders and system users.
+- Brainstorm and discuss key issues and areas of concern to be addressed during the development phase.
+- Prepare to conduct a development phase: Develop a timeline and incorporate contingency plans for unexpected events that incur delays. Articulate anticipated problems and discuss how to mitigate.
 
 ## Determining Scale
 
@@ -62,16 +74,7 @@ We recommend to start the design process by asking the following questions to in
 4. Do you currently collect this data today? How? What is the current data flow?
 5. Are there data elements you currently collect that you do not need?
 
-DEFINE PURPOSE, AIM AND SCOPE
 
-A clear purpose and well-defined aims are the keys to establishing a common understanding of the project's scope and limitations, and to being able to communicate the process of developing and running a Tracker program internally and externally.
-
-- Define the primary and secondary purposes of the Tracker program.
-- Identify the tracked entities, the scope of data collection, and the health cadres involved in data collection.
-- Determine how to uniquely identify members of the target population, (e.g., use of unique identification numbers or a combination of attributes).
-- Clarify initial expectations among the core team, as well as other stakeholders and system users.
-- Brainstorm and discuss key issues and areas of concern to be addressed during the development phase.
-- Prepare to conduct a development phase: Develop a timeline and incorporate contingency plans for unexpected events that incur delays. Articulate anticipated problems and discuss how to mitigate.
 
 FORMATIVE PHASE
 
