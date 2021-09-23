@@ -20,7 +20,7 @@ select 'aggregate_dataelement_nongrouped', count(*)::varchar, (100*count(*)/(sel
 
 union all
 
-select 'tracker_dataelement_nongrouped', count(*)::varchar, (100*count(*)/(select count(*) from dataelement))::varchar || '%', 'Tracker data elements not in any data element groups.' from dataelement where domaintype != 'AGGREGATE' and dataelementid not in (select dataelementid from dataelementgroupmembers);
+select 'tracker_dataelement_nongrouped', count(*)::varchar, (100*count(*)/(select count(*) from dataelement))::varchar || '%', 'Tracker data elements not in any data element groups.' from dataelement where domaintype != 'TRACKER' and dataelementid not in (select dataelementid from dataelementgroupmembers);
 ```
 
 If you wish to focus your assessment on data elements that have been recently updated, rather then all data elements in the system, you can use the following
@@ -109,11 +109,11 @@ All data elements that are captured in DHIS2 should be used to produce some type
 
 ### Recommendation
 
-Data elements that are not routinely being reviewed in analysis, either directly or indirectly through indicators, should be reviewed to determine if they still need to be collected. If these are meant to be used in routine review, then associated outputs should be created using them. If these data elements are not going to be used for any type of information review, consideration should be made to either archive them or delete them. 
+Data elements that are not routinely being reviewed in analysis, either directly or indirectly through indicators, should be reviewed to determine if they still need to be collected. If these are meant to be used in routine review, then associated outputs should be created using them. If these data elements are not going to be used for any type of information review, consideration should be made to either archive them or delete them.
 
 ### Diagnosing if the problem exists
 
-To review if data elements are being used in analysis outputs, we can review saved charts, maps and tables to determine if the data element is either directly or indirectly being used in these saved items. 
+To review if data elements are being used in analysis outputs, we can review saved charts, maps and tables to determine if the data element is either directly or indirectly being used in these saved items.
 
 #### SQL - Identification
 

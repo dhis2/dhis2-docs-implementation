@@ -70,7 +70,13 @@ If it is the case where a dashboard item needs to show data for a fixed period o
 
 ## Program and data set organisation unit assignment
 
-Check if the programs and data sets are assigned only to organisation units that are expected to report on them. For datasets this can cause problems with reporting rate completeness (the number of expected reports may be higher then it should be); while in the case of programs you could have tracked entities and/or events registered in organisation units they should not be.
+Check if the programs and data sets are assigned only to organisation units that are expected to report on them. For datasets this can cause problems with reporting rate completeness (the number of expected reports may be higher then it should be) and potentially data being entered where it should not be; while in the case of programs you could have tracked entities and/or events registered in organisation units they should not be.
+
+### Moving Aggregate Data
+
+
+### Moving Tracker Data
+
 
 ## Program and data set sharing
 

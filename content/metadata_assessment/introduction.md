@@ -1,4 +1,4 @@
-# Metadata Assessment
+# Metadata Management
 
 ## Introduction
 
@@ -12,24 +12,36 @@ While metadata quality can be somewhat subjective, there are a number of key pri
 - Errors when upgrading DHIS2 versions
 - Having an overwhelming amount of invalid metadata to manage
 
-The purpose of this guide is to help identify the various root causes that can result in poor configuration practices as well as providing tools and procedures which can support both immediate fixes as well as long-term strategies to modify these practices over time. As DHIS2 implementations develop over time and grow into increasingly larger data warehouses, implementation of such interventions will prove beneficial to the ongoing long-term sustainability and usability of the platform. 
+The purpose of this guide is to help identify the various root causes that can result in poor configuration practices as well as providing tools and procedures which can support both immediate fixes as well as long-term strategies to modify these practices over time. As DHIS2 implementations develop over time and grow into increasingly larger data warehouses, implementation of such interventions will prove beneficial to the ongoing long-term sustainability and usability of the platform.
+
+This guide is broken down into a discussion of two separate processes that often feed into one another.
+
+1. Reactive Processes : As a result of configuration challenges, a DHIS2 will need to be reviewed and cleaned accordingly
+2. Proactive Processes : To prevent configuration challenges, processes can be put in place such that the DHIS2 configuration remains robust over time
+
+Proactive processes can often be defined while performing a review of the DHIS2 system, as common challenges can be identified and measures to mitigate them based on user practices discussed. These processes therefore often feed into the reactive review process.
+
+![models_of_management](resources/images/models_of_management.png)
+
+## Reactive Processes
 
 There are 3 discrete processes we can associate with performing the metadata assessment:
 
 1. Running the built-in (meta) data integrity check
-2. Running a series of SQL queries - referred to as the extended metadata assessment
+2. Running a series of SQL queries/scripts - referred to as the extended metadata assessment
 3. Running various manual checks to review the configuration of items that can not be checked via a script
 
-This guide is broken down into the following sections:
+![processes](resources/images/processes.png)
 
-- **Metadata Assessment Checklist:** provides you with a detailed checklist of items that should be checked when performing a review of the meta-data in the system. These checklist is seperated into the 3 types of processes outlined for the metadata assessment.
+The following detailed sections of this guide support performing these components of the assessment: 
+
+- **Metadata Assessment Checklist:** provides you with a detailed checklist of items that should be checked when performing a review of the meta-data in the system for both the data integrity check as well as the extended assessment.
 
 -  **Extended Metadata Assessment Reference Guide:** describes in detail each item that is included within the checklist for the extended metadata assessment. Each item on the checklist will have the following accompanying text available within the metadata assessment reference guide:
    -  A description of the item and why it should be checked
    -  Recommendations on what to do with the item based on your findings
    -  Instructions on tools or processes you can use to assess whether or not the item is problematic
    -  Instructions on tools or processes that can be used to fix the item if it is identified as problematic
-   -  Best practice recommendations to implement pro-active measures to handle the item in the future
 
 - **Manual Review:** describes processes that need to be assessed manually as there may be no easy way to rationalize this concepts through automated processes. This includes the following:
   - Naming Conventions
@@ -38,6 +50,8 @@ This guide is broken down into the following sections:
   - Dashboard item configuration
   - Program and dataset organisation unit assignment
   - Program and dataset sharing
+
+## Proactive Processes
 
 -  **Procedures for Long-Term Maintenance:** describes procedural challenges associated with co-ordinating long-term configuration processes and provides example standard operating procedures that can be reviewed and used to better co-ordinate these processes.
 
