@@ -16,7 +16,7 @@ The purpose of this guide is to help identify the various root causes that can r
 
 This guide is broken down into a discussion of two separate processes that often feed into one another.
 
-1. Reactive Processes : As a result of configuration challenges, a DHIS2 will need to be reviewed and cleaned accordingly
+1. Reactive Processes : As a result of configuration challenges, a DHIS 2 system will need to be reviewed and cleaned accordingly
 2. Proactive Processes : To prevent configuration challenges, processes can be put in place such that the DHIS2 configuration remains robust over time
 
 Proactive processes can often be defined while performing a review of the DHIS2 system, as common challenges can be identified and measures to mitigate them based on user practices discussed. These processes therefore often feed into the reactive review process.

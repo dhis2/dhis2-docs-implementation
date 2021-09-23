@@ -31,7 +31,7 @@ Beyond having specific procedures for adding metadata or modifying the configura
 
 Lack of coordination can often lead to duplicate versions of metadata being created. As an example, if there are two admins adding the same new aggregate form within a system without informing each other, then a number of duplicate pieces of metadata will likely end up within the system.
 
-In these scenarios, having a coordination mechanism outlined that informs those involved in configuring the DHIS2 system what is happening can save significant time and effort later on as cleaning these duplicates can be a time consuming process.
+In these scenarios, having a coordination mechanism outlined that informs those involved in configuring the DHIS 2 system what is happening can save significant time and effort later on as cleaning these duplicates can be a time consuming process.
 
 ## Incorrect assumptions when adding digital data packages
 
