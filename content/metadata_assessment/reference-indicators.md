@@ -1,6 +1,5 @@
 # Indicators
 
-
 ## Indicators should be in an indicator group
 
 All indicators should be in a data element group. This allows users to find the indicators more easily in analysis apps and also contributes to having more complete indicators group sets. Maintenance operations can also be made more efficient by applying bulk settings (ex. sharing, filtering) to all indicators within an indicator group.

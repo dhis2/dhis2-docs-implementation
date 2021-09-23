@@ -36,6 +36,8 @@ This guide is broken down into the following sections:
   - Indicator Formula
   - Duplicated data sources
   - Dashboard item configuration
+  - Program and dataset organisation unit assignment
+  - Program and dataset sharing
 
 -  **Procedures for Long-Term Maintenance:** describes procedural challenges associated with co-ordinating long-term configuration processes and provides example standard operating procedures that can be reviewed and used to better co-ordinate these processes.
 
@@ -49,3 +51,5 @@ In order to perform the assessment, you may want to start by getting buy-in from
 4. Identifying the individual items that are problematic and coming up with strategies to mitigate or fix them as appropriate
 5. Detailing and prioritizing the fixes
 6. Implementing these fixes on development followed by production systems
+
+***NB : You will need direct database access to perform the extended metadata assessment as this involves a number of SQL queries.***

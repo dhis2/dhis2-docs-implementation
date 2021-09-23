@@ -21,7 +21,7 @@ If an organisation unit exists at the lowest level of the hierarchy and does not
 - Assign any appropriate data sets to that organisation unit
 - If it is not expected to report on any data sets, ensure that that organisation unit in questions is still open
 
-## Organisation units should belong to all compulsory organisation unit group set
+## Organisation units should belong to all compulsory organisation unit group sets
 
 ### Recommendation
 

@@ -96,15 +96,17 @@ Dashboards should be shared so they can be used appropriately throughout the sys
 
 #### Identification
 
-You can identify the number of private dashboards as well as dashboards shared with at least 10 users (users are placed within a user group that the dashboard is shared with) using the following query:
+You can identify the number of private dashboards as well as dashboards shared with at least 5 users (users are placed within a user group that the dashboard is shared with) using the following query:
 
 ```
 select 'dashboard_private', count(*)::varchar, (100*count(*)/(select count(*) from dashboard))||'%', 'Dashboards that are private' from dashboard where publicaccess = '--------' and dashboardid not in (select dashboardid from dashboardusergroupaccesses union select dashboardid from dashboarduseraccesses)
 
 union all
 
-select 'dashboard_shared10+', count(*)::varchar, (100*count(*)/(select count(*) from dashboard))||'%', 'Dashboards shared with 10 or more people' from dashboard where dashboardid in (select dash.dashboardid from dashboardusergroupaccesses left join dashboard dash using(dashboardid) left join usergroupaccess uga using (usergroupaccessid) left join usergroupmembers ugm using (usergroupid) group by dash.dashboardid having count(*) >= 5) OR publicaccess like 'r%'
+select 'dashboard_shared5+', count(*)::varchar, (100*count(*)/(select count(*) from dashboard))||'%', 'Dashboards shared with 5 or more people' from dashboard where dashboardid in (select dash.dashboardid from dashboardusergroupaccesses left join dashboard dash using(dashboardid) left join usergroupaccess uga using (usergroupaccessid) left join usergroupmembers ugm using (usergroupid) group by dash.dashboardid having count(*) >= 5) OR publicaccess like 'r%';
 ```
+
+*Note : you can change the amount of users it is checking the sharing with by modifying the second query
 
 #### Listing
 
