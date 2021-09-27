@@ -2,7 +2,7 @@
 
 ## Indicators should be in an indicator group
 
-All indicators should be in a data element group. This allows users to find the indicators more easily in analysis apps and also contributes to having more complete indicators group sets. Maintenance operations can also be made more efficient by applying bulk settings (ex. sharing, filtering) to all indicators within an indicator group.
+All indicators should be in an indicator group. This allows users to find the indicators more easily in analysis apps and also contributes to having more complete indicators group sets. Maintenance operations can also be made more efficient by applying bulk settings (ex. sharing, filtering) to all indicators within an indicator group.
 
 ### Recommendation
 
@@ -10,7 +10,7 @@ Indicators that are not in a indicator group should be added to a relevant indic
 
 ### Diagnosing if the problem exists
 
-Indicators that are not in a data element group can be found by running the data integrity check. You can also use the following queries to obtain summaries of these indicators.
+Indicators that are not in an indicator group can be found by running the data integrity check. You can also use the following queries to obtain summaries of these indicators.
 
 #### SQL - Identification
 

@@ -136,7 +136,7 @@ In order to remove data elements, some extra steps may need to be taken. This is
 
 In order to remove data elements with no values at all, there are 3 processes we can recommend:
 
-1. Deleting them manually through the dashboard app if you have access to them
+1. Deleting them manually through the maintenace app if you have access to them
 2. Deleting them by exporting them out and importing them back in using **DELETE** as the import mode
 3. Deleting them through the API
 

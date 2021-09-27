@@ -68,6 +68,7 @@ To override the category combination, open up your data set from maintenance. Wh
 From here you will open a menu which lists your data elements on the left side and allows you to over ride the category combinations on the right side (Figure 4)
 
 ![catcombo_override_selection](resources/images/catcombo_override_selection.png)
+
 **Figure 4**
 
 Just select the category combination for the data element you want to over ride using this menu.
