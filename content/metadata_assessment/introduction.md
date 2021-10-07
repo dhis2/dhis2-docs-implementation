@@ -19,7 +19,7 @@ This guide is broken down into a discussion of two separate processes that often
 1. Reactive Processes : As a result of configuration challenges, a DHIS 2 system will need to be reviewed and cleaned accordingly
 2. Proactive Processes : To prevent configuration challenges, processes can be put in place such that the DHIS2 configuration remains robust over time
 
-Proactive processes can often be defined while performing a review of the DHIS2 system, as common challenges can be identified and measures to mitigate them based on user practices discussed. These processes therefore often feed into the reactive review process.
+Proactive processes can often be defined while performing a review of the DHIS 2 system, as common challenges can be identified and measures to mitigate them based on user practices discussed. These processes therefore often feed into the reactive review process.
 
 ![models_of_management](resources/images/models_of_management.png)
 
