@@ -4,8 +4,6 @@
 
 ### Dashboards should have content
 
----
-
 All dashboards should have content on them. Dashboards without any content do not serve any purpose, and may have been created by accident or as part of a training exercise.
 
 #### Recommendation
@@ -70,15 +68,15 @@ Data elements that are not in a data element group can be found by running the d
 
 ---
 
-## Data elements should have data values
+### Data elements should have data values
 
 All data elements in a production database should have data values associated with them. If there are data elements that have been in the system for some time and do not have any data values associated with them, they are serving no purpose in the system. They may have been created during training or a development period.
 
-### Recommendation
+#### Recommendation
 
 Data elements that do not have any data values should be deleted. Data elements that should have recent data values but do not should be reviewed to determine if the program intends to keep reporting on them; if not these should be removed from the dataset or program they are associated with.
 
-### Diagnosing if the problem exists
+#### Diagnosing if the problem exists
 
 We can review if data elements have any data values using different sets of criteria. This will allow you to determine in more detail if data elements need to be deleted or can be kept. The criteria we are currently summarizing for **AGGREGATE** data elements includes:
 
