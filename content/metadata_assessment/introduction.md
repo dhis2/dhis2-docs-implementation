@@ -67,3 +67,6 @@ In order to perform the assessment, you may want to start by getting buy-in from
 6. Implementing these fixes on development followed by production systems
 
 ***NB : You will need direct database access to perform the extended metadata assessment as this involves a number of SQL queries.***
+
+## Tools for the Assessment
+
