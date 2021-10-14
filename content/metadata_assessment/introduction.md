@@ -28,20 +28,20 @@ Proactive processes can often be defined while performing a review of the DHIS 2
 There are 3 discrete processes we can associate with performing the metadata assessment:
 
 1. Running the built-in (meta) data integrity check
-2. Running a series of SQL queries/scripts - referred to as the extended metadata assessment
+2. Running a series of SQL queries/scripts through the use of an R-markdown report - referred to as the extended metadata assessment
 3. Running various manual checks to review the configuration of items that can not be checked via a script
 
 ![processes](resources/images/processes.png)
 
 The following detailed sections of this guide support performing these components of the assessment: 
 
-- **Metadata Assessment Checklist:** provides you with a detailed checklist of items that should be checked when performing a review of the meta-data in the system for both the data integrity check as well as the extended assessment.
+- **Metadata Assessment Checklist:** provides you with a detailed checklist of items that should be checked when performing a review of the meta-data in the system for both the data integrity check, the extended assessment and the manual review.
 
 -  **Extended Metadata Assessment Reference Guide:** describes in detail each item that is included within the checklist for the extended metadata assessment. Each item on the checklist will have the following accompanying text available within the metadata assessment reference guide:
    -  A description of the item and why it should be checked
    -  Recommendations on what to do with the item based on your findings
-   -  Instructions on tools or processes you can use to assess whether or not the item is problematic
-   -  Instructions on tools or processes that can be used to fix the item if it is identified as problematic
+
+> NB: The extended metadata assessment is most easily conducted via the use of the R-markdown report.
 
 - **Manual Review:** describes processes that need to be assessed manually as there may be no easy way to rationalize this concepts through automated processes. This includes the following:
   - Naming Conventions
@@ -50,6 +50,8 @@ The following detailed sections of this guide support performing these component
   - Dashboard item configuration
   - Program and dataset organisation unit assignment
   - Program and dataset sharing
+
+- **Processes for fixing the issues that have been identified:** described in detail potential strategies to use in order to fix the items identified via the data integrity check, extended assessment and manual review. This includes modifications to the configuration via the user interface as well as SQL queries and API calls that can be used to fix a potential issue.
 
 ## Proactive Processes
 
@@ -66,7 +68,6 @@ In order to perform the assessment, you may want to start by getting buy-in from
 5. Detailing and prioritizing the fixes
 6. Implementing these fixes on development followed by production systems
 
-***NB : You will need direct database access to perform the extended metadata assessment as this involves a number of SQL queries.***
+### Tools for the Extended Assessment
 
-## Tools for the Assessment
-
+The extended assessment can be performed by using an R-markdown report. Please refer to the [instructions here](r-markdown_install_instructions.md) for a detailed explanation on how to install and run the R-markdown report.
