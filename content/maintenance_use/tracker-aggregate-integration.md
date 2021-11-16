@@ -60,9 +60,9 @@ This approach can be useful in several scenarios:
 ### Saving aggregates of tracker data as aggregate data
 Tracker data can be aggregated to, for example, weekly or monthly values, and these values can be saved as aggregate data element values in DHIS2. This corresponds to what is often done manually in health facilities when registers are tallied every month to produce monthly reports. Program indicators can be defined that produce aggregate numbers based on tracker data, corresponding to aggregate data elements. The program indicator value should represent the same value as the aggregate (e.g. *number of new and relapsed TB cases notified* or *number of BCG doses given to children under 1*). The data transfer can be done on an ad-hoc basis as needed, or as part of a routine process where data is (automatically) transferred at fixed intervals (shown in the figure below).
 
-![Example: Information flow between a DHIS2 instance with tracker programmes, and a DHIS2 HMIS instance with aggregate data.](resources/images/image8.jpg)
+![Example: Information flow between a DHIS2 instance with tracker programmes, and a DHIS2 HMIS instance with aggregate data.](resources/images/tracker_agg_information_flow.jpg)
 
-![Example: Aggregate data set (in the data entry app) which has been automatically filled by the data pushed from tracker program indicators.](resources/images/image5.png)
+![Example: Aggregate data set (in the data entry app) which has been automatically filled by the data pushed from tracker program indicators.](resources/images/tracker_agg_dataset_example.png)
 
 There are multiple ways in which the actual transfer of data from program indicators to aggregate data elements can be done. This includes: 
 
@@ -90,9 +90,9 @@ This approach is described in further detail below, focusing on how to automate 
 
 <!-- TODO - the two screenshots below should perhaps be merged into one, highlighting the "dimensionality" -->
 
-![Example: TB Case Surveillance to aggregate quarterly TB report for TB notifications. Program indicator data values from tracker data (data elements/disaggregation can be produced, but not pivoted by dimensions as gender, age group)](resources/images/image4.png)
+![Example: TB Case Surveillance to aggregate quarterly TB report for TB notifications. Program indicator data values from tracker data (data elements/disaggregation can be produced, but not pivoted by dimensions as gender, age group)](resources/images/tracker_agg_pt.png)
 
-![Example: Aggregate dashboard output (with ability to pivot male/female as a data dimension)](resources/images/image1.png)
+![Example: Aggregate dashboard output (with ability to pivot male/female as a data dimension)](resources/images/tracker_agg_dashboard.png)
 
 ## Choosing an approach
 Each of the three approaches for has advantages and disadvantages, as outlined above. For a single implementation, several of them may be needed. For example, it may be useful to present certain tracker data with frequent updates (i.e. daily numbers children immunised), while at the same time transferring aggregate program indicator values into aggregate data element values every month so that the data can be compared with facilities not yet using tracker, or with additional dimensionality (such as age/sex disaggregations) that cannot easily be done directly with aggregate data.
@@ -177,7 +177,7 @@ The following sections explains (1) how to establish a mapping between program i
 ### Mapping program indicators with aggregate data elements
 To produce aggregate data values from tracker data, program indicators must be defined for each data point. Each of these data values corresponds to a data element and if applicable a category option combination. A mapping using an identifier is thus needed to specify which program indicator relates to which specific data element (with category option combination). While not discussed in detail here, the mapping can also include attribute option combinations.
 
-![Illustration of how tracker data is mapped to aggregate data using program indicators.](resources/images/tracker_aggregate_mapping.png)
+![Illustration of how tracker data is mapped to aggregate data using program indicators.](resources/images/tracker_agg_mapping.png)
 
 It is recommended to use *codes* as identifier for this mapping, and this is what is presented here.
 
@@ -193,13 +193,13 @@ While not strictly necessary, it may be advisable to add the data elements to a 
 Program indicators have a fixed attribute used specifically for the category option combination (and attribute option combination) identifier that is used when the program indicator value is exported as a data values set.
 
 <!-- TODO: Update to screenshot with "blank" fields-->
-![Program indicator fields for category option combination and attribute option combination](resources/images/image6.png)
+![Program indicator fields for category option combination and attribute option combination](resources/images/tracker_agg_coc_aoc_export.png)
 
 However, there is by default no corresponding field for which to specify the identifier (i.e. code) of the data element. In principle, the code of the program indicator itself *could* be used, but this will fail in the common scenario that multiple program indicators are linked to the same data element (with different category option combinations). Instead, it is recommended to create an [attribute](#about_attribute) that is assigned to program indicators.
 
 The custom attribute should be of the type `Text`. It should *not* be mandatory, since not all program indicators will be linked to aggregate data elements. It should *not* be unique, since multiple program indicators may point to the same data element code. And it should be applied to "Program indicator" only, since it is not relevant elsewhere. Other properties like name, description and code can be defined according to the metadata naming convention of the particular implementation. The screenshot below shows how the custom attribute included in the WHO metadata packages is configured. If this custom attribute has already been imported into the DHIS2 instance in question, it can be re-used.
 
-![Example showing how a custom attribute for linking program indicators and aggregate data elements can be defined.](resources/images/custom_attribute_definition.png)
+![Example showing how a custom attribute for linking program indicators and aggregate data elements can be defined.](resources/images/tracker_agg_custom_attribute_definition.png)
 
 Once the custom attribute is assigned to program indicators, it will appear as a new field/attribute when adding or editing program indicators in the Maintenance app. Every program indicator for which data is to be transferred to aggregate data elements needs to be created and/or modified to include the code of the corresponding data element and category option combination code.
 
