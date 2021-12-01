@@ -24,7 +24,6 @@ chapter. The following list shows the various tools:
 
 9.  GIS
 
-10. My Datamart and Excel pivot tables
 
 ## Data analysis tools
 
@@ -138,19 +137,4 @@ for any indicator or data element and for any level in the organisation
 unit hierarchy. There is also a special layer for displaying facilities
 on the map where each one is represented with a symbol based on its
 type.
-
-### My Datamart and Excel Pivot tables
-
-The purpose of the My Datamart tool is to provide users with full access
-to aggregate data even on unreliable Internet connections. This tool
-consists of a light-weight client application which is installed on the
-computer of the users. It connects to an online central server running a
-DHIS2 instance, downloads aggregate data and stores it in a database on
-the local computer. This database can be used to connect third-party
-tools such as MS Excel Pivot tables, which is a powerful tool for data
-analysis and visualization. This solution implies that just short
-periods of Internet connectivity are required to synchronize the client
-database with the central online one, and that after this process is
-done the data will be available independent of connectivity. Please read
-the chapter dedicated to this tool for in-depth information.
 
