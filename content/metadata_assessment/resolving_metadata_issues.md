@@ -55,7 +55,7 @@ API object filter for leading, trailing and double spaces:
 
 Default approach: fetch json from API based on assessment UIDs, import with import/export app in delete mode
 
-### Data elements with data vallues [if deleting ]
+### Data elements with data values [if deleting ]
 - export and import? will not handle values in audit table(?)
 - SQL
 
@@ -88,7 +88,7 @@ Default approach: fetch json from API based on assessment UIDs, import with impo
 
 
 ## Appendix: Useful tools
-
+- SQL queries for identifying dependencies
 - browser extension for json formatting (for working with API)
 - text editor with: 
 	- support for json formatting and syntax highlighting
