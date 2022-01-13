@@ -83,3 +83,8 @@ Check if the programs and data sets are assigned only to organisation units that
 Check if the metadata and data sharing settings have been applied correctly to both programs and data sets. In particular, if there are users or groups of users that can not perform operations on the programs or data sets that they should be able to, then these sharing settings may need to be modified.
 
 A more detailed breakdown on the application of sharing settings to programs and data sets can be found in both the [documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/about-sharing-of-objects.html) as well as through a number of videos on [YouTube](https://www.youtube.com/playlist?list=PLo6Seh-066RwslDmyZkiKjejgMCKNaJTC).
+
+## Todo - other
+| **Additional checks**     													|   	|
+|------------------------------------------------------------------------------	|---	|                                                                      	
+| Category options should be unique (conceptually)                              |   	|
