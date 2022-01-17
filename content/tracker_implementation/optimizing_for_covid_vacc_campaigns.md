@@ -187,11 +187,11 @@ using gin (lower(eventdatavalues #>> '{LavUrktwH5D, value}') gin_trgm_ops);
 
 ## Guidance for Android Deployments
 
-#### DHIS2 Configuration recommendations
+### DHIS2 Configuration recommendations
 
 This subsection covers the specific recommendations that can be achieved by tweaking the DHIS2 server configuration directly.
 
-##### User access
+#### User access
 
 Due to the nature of Android being able to work offline, the application will try to download as much information as possible in case the device goes offline. To reduce the amount of data transferred:
 
@@ -199,7 +199,7 @@ Due to the nature of Android being able to work offline, the application will tr
 
 - Please see the recommendations on how to [create a user](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_creating_user)
 
-##### Auto-generated Values
+#### Auto-generated Values
 
 Because of the offline nature Android will also download reserved values. The application will try to evaluate the amount of remaining values and retrieve more from the server whenever a synchronization happens.
 
@@ -207,11 +207,11 @@ In implementations where users will be offline for long periods of time this val
 
 Please see more information about this topic in the [official documentation](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id) and in [this post in the CoP.](https://community.dhis2.org/t/question-regarding-expiry-of-reserved-ids-of-an-auto-generated-unique-values-configured-with-a-text-pattern-containing-current-date-mm-yyyy/40761/2)
 
-#### Android Settings WebApp
+### Android Settings WebApp
 
 The [Android Settings WebApp](https://apps.dhis2.org/app/a1bd6b5b-de8c-4998-8d34-56c18a139683) is an application that can be installed on any of the latest DHIS2 servers and allows the system administrator to define some settings that will be read by each mobile.
 
-##### Reserved Values
+#### Reserved Values
 
 In the section above the usage of auto-generated values was briefly explained. With the Android Settings App the system administrator can define how many of those values will be retrieved by each mobile user. If your mobile users will be going offline for very long periods of time it might be a good idea to increment this value, however, setting a huge large number here can incur in the exhausting of values and an increase of the data transferred in the initial sync.
 
@@ -219,7 +219,7 @@ In the section above the usage of auto-generated values was briefly explained. W
 
 As an example, imagine we have an implementation with mobile devices which will be going offline for a full week and then come back to a central location for the synchronization of data. Each user might see up to 50 patients per day and therefore during a week up to 350 patients. Setting the *Reserved values downloaded per TEI attribute* to at least 350 would ensure the users can work properly offline without risking exhausting the values.
 
-##### Metadata Sync
+#### Metadata Sync
 
 ![](resources/images/covax_perf_image1.png)
 
@@ -229,7 +229,7 @@ As an example, imagine we have an implementation with 10.000 devices and they ar
 
 You can even disable automatic metadata synchronization and rely on manual synchronizations triggered by your users if that is an option for your implementation.
 
-##### Data Sync
+#### Data Sync
 
 Data sync follows the same principle as the one for metadata and it should be adjusted according to the implementation. For example, we can find implementations where users are going on the field where they will be working offline therefore it should be important to provide those users with all the data needed for their work. Or there can be implementations where users will be most likely registering patients on the field and transferring data from the devices to the server.
 
@@ -243,7 +243,7 @@ See the following examples:
 
 You can also disable automatic data synchronization and rely on manual synchronizations triggered by your users, however this puts more risk on data being recorded and not synced if users are not systematic.
 
-##### Download Settings
+#### Download Settings
 
 These settings allow the users to define the amount of TEIs that will be downloaded when performing the data sync. It should probably be combined with the *Data Sync* setting explained above. It is important to understand how these settings work to define a targeted and valid approach. The official documentation, [synchronization settings](https://docs.dhis2.org/en/full/use/dhis2-android-app.html#capture_app_andoid_settings_webapp_synchronization), explains in detail what to expect when setting this up. The connectivity capabilities of the implementations should also play a big role while defining these, as in implementations with very good connectivity reducing this value to the maximum would decrease the load of the server during the *data sync* without having a big impact in the users (they will always be able to find the patients online). However, this could lead to a server overload while performing very broad searches. The way mobile users will connect to the server (i.e. using mobile data packages instead of wifi) also plays a role as downloading many patients that might not be used will incur in expending mobile data for no reason.
 
@@ -255,7 +255,7 @@ See the following examples:
 
 *  In an implementation with very good connectivity the user administration could decide to decrease the download settings so the devices have as few TEI as possible relying completely on the online search. As the users will be searching by a unique id (i.e. National ID number) which is a low demanding task for the server the setup seems to be adequate. However, if users will not be able to search for patients by a unique id and will use a family name the server could suffer for an overload on the searches and therefore might be more interesting to allow the users downloading more patients and relying on the offline mode.
 
-#### Application Updates
+### Application Updates
 
 ![](resources/images/covax_perf_image8.gif)
 
@@ -271,11 +271,11 @@ System administrators could now benefit from checking the new versions and then 
 
 More information about roll-out plans and testing can be found in the [official guides](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_testing).
 
-#### Device and management recommendations
+### Device and management recommendations
 
 In this section we cover briefly some recommendations related to the devices themselves and their management.
 
-##### Android device specifications
+#### Android device specifications
 
 It is very hard to give general recommendations on which device to use. Implementations should test their final configuration on a set of devices to understand the user experience.
 
@@ -283,7 +283,7 @@ For example if an implementation will have users going to the field and working 
 
 More information on this process can be found in the [official guide](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_mobile_specs).
 
-##### Mobile Device Management
+#### Mobile Device Management
 
 We strongly recommend using a Mobile Device Management (MDM) in mobile implementations. Having an MDM will provide several advantages that can ease the implementation and support. However they usually incur higher costs.
 
@@ -291,7 +291,7 @@ Implementations could opt for ready to use MDMs or deploy a solution in their ow
 
 This [[official guide]{.ul}](https://docs.dhis2.org/en/full/implement/managing-mobile-devices.html) covers several MDM that have been tested listing their main advantages and disadvantages.
 
-#### Mobile recommendations checklist
+### Mobile recommendations checklist
 
 
 | **DHIS2 Mobile Implementation at scale checklist** |  |
