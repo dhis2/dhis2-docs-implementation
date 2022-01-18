@@ -243,7 +243,7 @@ See the following examples:
 
 ### Application Updates
 
-![](resources/images/covax_perf_image8.gif)
+![](resources/images/covax_perf_image8.jpg)
 
 The DHIS2 Android App is published via two channels: [Google Play Store](https://play.google.com/store/apps/details?id=com.dhis2) and [Github](https://github.com/dhis2/dhis2-android-capture-app/releases). We publish releases every 6 months and patch releases as often as it is needed. If implementations are using the Google Play Store as their provisioning source they could benefit from automatic updates, however, this might not be desirable in some scenarios where implementations want to test a newer version before making it available for their users. We recommend disabling automatic updates so the App can be heavily tested by administrators/testers before asking their users to do so.
 
