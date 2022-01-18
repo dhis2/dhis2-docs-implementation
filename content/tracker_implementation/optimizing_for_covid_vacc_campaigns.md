@@ -336,7 +336,7 @@ It is also critically important to configure postgresql correctly for good perfo
 
 ### Server monitoring
 
-We strongly recommend setting up a server monitoring tool to identify when and why your server is struggling. Key performance metrics should be monitored eg. RAM, CPU, disk performance on all nodes and application specific measures on proxy, database and tomcat. Some recommendations include [https://glowroot.org](https://glowroot.org/) and [https://munin-monitoring.org](https://munin-monitoring.org/). A [tutorial for installing glowroot on DHIS2](https://github.com/dhis2/dhis2-docs/blob/glowroot-tutorial/src/tutorials/glowroot.md) has been written to support this.
+We strongly recommend setting up a server monitoring tool to identify when and why your server is struggling. Key performance metrics should be monitored eg. RAM, CPU, disk performance on all nodes and application specific measures on proxy, database and tomcat. Some recommendations include [https://glowroot.org](https://glowroot.org/) and [https://munin-monitoring.org](https://munin-monitoring.org/). A [tutorial for installing glowroot on DHIS2](#glowroot_tutorial) has been written to support this.
 
 Other options which might require more configuration but allow significant customisation include prometheus/grafana and the ELK stack.
 
