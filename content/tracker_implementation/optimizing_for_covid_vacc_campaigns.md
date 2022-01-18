@@ -57,23 +57,9 @@ The primary audience for section are system administrators supporting MOH with t
 
 ### Purpose
 
-- To share the 'best information available', real-time/emerging guidance, tips & tools to optimize DHIS2 implementations for anticipated scale of COVID-19 vaccines. This information is often sourced from the HISPs groups themselves. 
-- This is not intended to prescriptive guidance, but a series of recommendations that may evolve in real-time as we learn from HISP groups and real-world implementations; and update/improve the global products 
-- We aim to communicate openly across the HISP network and to facilitate information sharing between country implementations that may face similar challenges
-
-### Background
-
-The HISP network has rapidly responded to country demand for DHIS2 solutions to support COVID-19 vaccine delivery campaigns. As of November 2021, 32 countries use [DHIS2 tracker for COVID-19 Electronic Immunization Registry (EIR)](https://docs.google.com/spreadsheets/d/12I92wNwy9IcVYE5kisBj0KxZZAFEOPsGvnrNh7vCyX8/edit#gid=1261812557)
-
-To our knowledge:
-
-- COVID-19 EIR is the first tracker implementation for some countries, and these countries may not have the same capacity for Tracker management at scale (e.g. Suriname, Timor Leste, Tchad, etc) 
-- Only 18 (of the 32 countries with Tracker EIR) have an aggregate configuration for vaccine delivery/coverage monitoring 
-- Many countries have custom interoperability solutions in place, including integration with public/citizen portals and vaccine certificates 
-- Availability of vaccine supplies to date has been limited; in many contexts, COVID tracker registry has not been stress-tested at scale. Since January 2020, COVAX distributed 330M doses , but was anticipated to distribute >1 billion doses between October - December 2021.
-- Real-time learning from countries like Rwanda and Sri Lanka taking the COVID-19 EIR Tracker to scale have revealed: 	
-	* opportunities to optimize the DHIS2 software & metadata packages; and 	
-	* the need to provide implementation guidance to ensure HISP groups are prepared for 	 tracker implementations at scale
+- To share the 'best information available', real-time/emerging guidance, tips & tools to optimize DHIS2 implementations for anticipated scale of COVID-19 vaccines. This information is often sourced through the community of practice.
+- This is not intended to prescriptive guidance, but rather a series of recommendations that may evolve in real-time as we learn from real-world implementations; and update/improve the global products 
+- We aim to facilitate information sharing between country implementations that may face similar challenges and can benefit from common solutions
 
 ## Guidance for implementers
 
