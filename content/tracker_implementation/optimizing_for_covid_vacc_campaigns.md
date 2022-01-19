@@ -357,7 +357,7 @@ Based on feedback, we understand that most implementations require at least dail
 
 We recommend incorporating aggregate data models into COVID-19 vaccine implementations for two separate functions.
 
-##### Parallel aggregate reporting: daily stock & tally sheets of vaccine doses administered at vaccination site level
+#### Parallel aggregate reporting: daily stock & tally sheets of vaccine doses administered at vaccination site level
 
 The recommendation to ensure countries have an aggregate COVAC package in parallel to the Tracker Registry is an old one. Here we provide some reasons why think a country should be prepared with an aggregate configuration for reporting alongside their Tracker deployment:
 
@@ -377,9 +377,9 @@ The [COVAC 'Core' Aggregate Package](https://docs.dhis2.org/en/topics/metadata/c
 
 - COVAC Monitoring dashboard that contains coverage rates, doses administered, key stock data, drop-out rates etc. This monitoring dashboard is generally tailored for higher level monitoring of the overall national COVID vaccine delivery plan; not all components of this dashboard are intended for 'real-time'/daily monitoring.
 
-##### **Converting tracker data to aggregate data model → for the purpose of analysis (e.g. serving performant dashboards)**
+#### Converting tracker data to aggregate data model → for the purpose of analysis (e.g. serving performant dashboards)
 
-This is a NEW recommendation. Due to the potential for performance issues with dashboards serving tracker-based data (e.g. heavy program indicators calculating on the fly every time the dashboard is loaded), we recommend that a daily/near real-time dashboard can be served using the aggregate data model. In our tests, this has shown to be far more performant and still capable of serving key metrics to analytics users. An additional benefit for analysis is the structuring of data into dimensions (category combos) for pivoting and slicing.
+Due to the potential for performance issues with dashboards serving tracker-based data (e.g. heavy program indicators calculating on the fly every time the dashboard is loaded), we recommend that a daily/near real-time dashboard can be served using the aggregate data model. In our tests, this has shown to be far more performant and still capable of serving key metrics to analytics users. An additional benefit for analysis is the structuring of data into dimensions (category combos) for pivoting and slicing.
 
 In order to serve COVID-19 analytics from tracker source data (e.g. COVID vaccine registry), you will need:
 
