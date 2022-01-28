@@ -48,9 +48,11 @@ In an ideal world there might be a chief security officer (CSO) with professiona
 
 We recommend that organisations adopt some of the methodology of the likes of ISO27002 (Information Security Management) without necessarily embarking on a route towards ISO27000 compliance. At a very minimum this would imply that:
 
-1\.  You have a high level statement summarising your organisation\'s security posture. A one pager which should highlight principles and intentions and signal the commitment of senior management to the process.
-2\.  You have clearly identified someone (reasonably senior) in the team who will take on the role of developing, maintaining and implementing the security plan. We can call it the security manager.
-3\.  The security manager is committed to a process of identifying, documenting and mitigating risks. This is an ongoing process which generally revolves around the maintenance of a risk register which is subject to regular review.
+> 1\.  You have a high level statement summarising your organisation\'s security posture. A one pager which should highlight principles and intentions and signal the commitment of senior management to the process.
+> 
+> 2\.  You have clearly identified someone (reasonably senior) in the team who will take on the role of developing, maintaining and implementing the security plan. We can call it the security manager.
+> 
+> 3\.  The security manager is committed to a process of identifying, documenting and mitigating risks. This is an ongoing process which generally revolves around the maintenance of a risk register which is subject to regular review.
 
 Many of the other artefacts and processes envisaged in a framework like ISO 27000 could emerge naturally from this cycle. For example, if there is no disaster recovery plan or backup strategy that would be highlighted as a major risk in the register. Assembling and maintaining a register like this allows the team to identify and prioritise tasks which need to be done and assess progress towards achieving a better posture.
 
@@ -59,38 +61,38 @@ There are also a number of measures which can be taken to improve security at th
 
 **System administration**
 
-1\. There is a limited number (< 5) of people with superuser (full) access to the system. 
-*Can easily be assessed through the API: `/api/users.json?filter=userCredentials.userRoles.authorities:!in:[_ALL_]&filter=userCredentials.userRoles.authorities:in:\[ALL]`*
-
-2\. System administrators are only given authority to perform functions that are relevant for their system administration roles.
-*For example, an administrator responsible for managing charts and dashboards does not need rights to edit organisation units.*
-
-3\. The default DHIS2 user account (username "admin") is deleted or disabled.
-*The admin account should only be used when DHIS2 is started for the first time, to set up a personal superuser. It should then be disabled and/or deleted. The status of the admin account can be verified using the API: `/api/users.json?filter=userCredentials.username:eq:admin&fields=name,userCredentials\[name,disabled\]`*
+> 1\. There is a limited number (< 5) of people with superuser (full) access to the system. 
+> *Can easily be assessed through the API: `/api/users.json?filter=userCredentials.userRoles.authorities:!in:[_ALL_]&filter=userCredentials.userRoles.authorities:in:\[ALL]`*
+> 
+> 2\. System administrators are only given authority to perform functions that are relevant for their system administration roles.
+> *For example, an administrator responsible for managing charts and dashboards does not need rights to edit organisation units.*
+> 
+> 3\. The default DHIS2 user account (username "admin") is deleted or disabled.
+> *The admin account should only be used when DHIS2 is started for the first time, to set up a personal superuser. It should then be disabled and/or deleted. The status of the admin account can be verified using the API: `/api/users.json?filter=userCredentials.username:eq:admin&fields=name,userCredentials\[name,disabled\]`*
 
 **User management**
 
-4\. There are procedures in place to disable or remove user accounts of people who leave the service.
-*There should be clear procedures in place to disable/delete user accounts of people who leave the (health) service. Some indication of this can be derived from the API, by looking at user accounts that are not disabled and have not logged in to the system e.g. in the current year: `/api/users.json?filter=userCredentials.disabled:eq:false&filter=userCredentials.lastLogin:lt:2021`*
-
-5\. All user accounts in the system are personal, i.e. not shared by several individuals.
-*User accounts should not be shared by several individuals, as this makes auditing impossible. This is especially critical if Tracker is used for individual-level data.*
-
-6\. There are clearly defined user roles and user groups, with guidance on what roles and groups should be used according to the positions within the (health) service of the user.
-
-7\. If self-registration of users is enabled, the user role given to these users should be very limited, e.g. to only viewing public dashboards.
+> 4\. There are procedures in place to disable or remove user accounts of people who leave the service.
+> *There should be clear procedures in place to disable/delete user accounts of people who leave the (health) service. Some indication of this can be derived from the API, by looking at user accounts that are not disabled and have not logged in to the system e.g. in the current year: `/api/users.json?filter=userCredentials.disabled:eq:false&filter=userCredentials.lastLogin:lt:2021`*
+> 
+> 5\. All user accounts in the system are personal, i.e. not shared by several individuals.
+> *User accounts should not be shared by several individuals, as this makes auditing impossible. This is especially critical if Tracker is used for individual-level data.*
+> 
+> 6\. There are clearly defined user roles and user groups, with guidance on what roles and groups should be used according to the positions within the (health) service of the user.
+> 
+> 7\. If self-registration of users is enabled, the user role given to these users should be very limited, e.g. to only viewing public dashboards.
 
 **Tracker**
 
-8\. Access to Tracker data is limited to users with a legitimate need for the edit/view the data through appropriate use of sharing and user groups. No tracker programmes intended for use to record information on individual persons are configured with public access.
-*Tracker data is typically linked to individuals, and should therefore be restricted to users with a legitimate use of this data. While it might be a good idea that aggregate data is accessible to all users, this is not the case with Tracker data.*
-
-9\. Tracker programmes are configured so that users can only search for and access data for people they have a legitimate reason for viewing.
-*For example, a user working within one health facility should not be assigned to a district. The "tracked entity search organisation unit" should not be set broader than what is practically necessary, if used.*
+> 8\. Access to Tracker data is limited to users with a legitimate need for the edit/view the data through appropriate use of sharing and user groups. No tracker programmes intended for use to record information on individual persons are configured with public access.
+> *Tracker data is typically linked to individuals, and should therefore be restricted to users with a legitimate use of this data. While it might be a good idea that aggregate data is accessible to all users, this is not the case with Tracker data.*
+> 
+> 9\. Tracker programmes are configured so that users can only search for and access data for people they have a legitimate reason for viewing.
+> *For example, a user working within one health facility should not be assigned to a district. The "tracked entity search organisation unit" should not be set broader than what is practically necessary, if used.*
 
 **Configuration audit**
 
-10\. Regular audit. There is a system in place (time and budget) to do periodic review of DHIS2 configuration and metadata.
+> 10\. Regular audit. There is a system in place (time and budget) to do periodic review of DHIS2 configuration and metadata.
 
 ### Technical measures
 
@@ -104,15 +106,25 @@ In the most general sense we can that there should be:
 Organisations such as the Centre for Internet Security ([https://cisecurity.org](https://cisecurity.org)) maintain detailed benchmarks for software products which can be used to compile a set of controls for your implementation. In most cases you won\'t apply all of them but will select the ones which are most relevant. From the list available at [https://www.cisecurity.org/cis-benchmarks/](https://www.cisecurity.org/cis-benchmarks/)you should download and study the benchmarks for apache tomcat, postgresql, nginx (or apache2). In addition, depending on your technology choices you might find benchmarks for ubuntu linux, lxd, Docker or Microsoft windows relevant to your implementation.
 
 A proposed high priority (top 10) list of technical measures that should be in place:
-1\. Operating system is a LTS (long term service edition)
-2\. There is an automatic process for applying OS security patches
-3\. Host based firewall configured allowing minimal access
-4\. Access is via ssh according to agreed policy - keys, no root access etc
-5\. DHIS2 version is not more than 3 versions behind the latest release. Process exists to apply patch releases regularly.
-6\. Automated backup system is in place and regularly tested, including offsite.
-7\. Postgresql database access controls allow minimal access
-8\. Web-proxy server is properly (ssllabs test A+) configured with SSL
-9\. Database data is on separate data partition (allowing encryption at rest, performance settings)
-10\. Monitoring and alerting system is in place (wide range of options depending on environment. eg. boombox might be fine with email + logwatch + munin )
+
+> 1\. Operating system is a LTS (long term service edition)
+> 
+> 2\. There is an automatic process for applying OS security patches
+> 
+> 3\. Host based firewall configured allowing minimal access
+> 
+> 4\. Access is via ssh according to agreed policy - keys, no root access etc
+> 
+> 5\. DHIS2 version is not more than 3 versions behind the latest release. Process exists to apply patch releases regularly.
+> 
+> 6\. Automated backup system is in place and regularly tested, including offsite
+> 
+> 7\. Postgresql database access controls allow minimal access
+> 
+> 8\. Web-proxy server is properly (ssllabs test A+) configured with SSL
+> 
+> 9\. Database data is on separate data partition (allowing encryption at rest, performance settings)
+> 
+> 10\. Monitoring and alerting system is in place (wide range of options depending on environment. eg. boombox might be fine with email + logwatch + munin)
 
 Every system must have a documented data owner and responsible administrator!!
