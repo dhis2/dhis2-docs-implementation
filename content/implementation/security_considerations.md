@@ -1,4 +1,4 @@
-# Introduction
+# Security Considerations
 
 The purpose of these guidelines is to assist DHIS2 implementers and system owners to take reasonable and appropriate measures to identify and manage the risks associated with running the DHIS2 system. The hope is that it will be particularly useful for system owners who might otherwise struggle to define and impose technical constraints on implementers.
 
@@ -28,7 +28,7 @@ Operating outside the context of any relevant legislation and policy is difficul
 
 ### Human and organisational context
 
-It is a characteristic of \"advanced\" capitalist economies that there is a highly developed division of labour. We see this clearly in the IT sector in Europe and the US where there are very clear distinctions between system administrators, programmers, network engineers, information end users as well as highly developed IT management structures, roles and practises, particularly in large organisations.
+It is a characteristic of "advanced" capitalist economies that there is a highly developed division of labour. We see this clearly in the IT sector in Europe and the US where there are very clear distinctions between system administrators, programmers, network engineers, information end users as well as highly developed IT management structures, roles and practises, particularly in large organisations.
 
 It is foolish to expect to find the same sort of structures and roles in all countries, particularly where the DHIS2 might be the first, or at least the most important, national system in a national health ministry. Implementing a complex web-based system like DHIS2 without a relatively modern base of management and skilled labour brings with it unique risks and challenges. Developing the appropriate organisational forms to manage the risk and allow the system to flourish and sustain is at least as important as any technical considerations.
 
@@ -59,8 +59,9 @@ Many of the other artefacts and processes envisaged in a framework like ISO 2700
 ### System Configuration measures
 There are also a number of measures which can be taken to improve security at the level of DHIS2 configuration, for example related to ensuring appropriate system and data access. A proposed high priority (top 10) list of system configuration measures are included here:
 
-**System administration**
 
+> **System administration**
+> 
 > 1\. There is a limited number (< 5) of people with superuser (full) access to the system. 
 > *Can easily be assessed through the API: `/api/users.json?filter=userCredentials.userRoles.authorities:!in:[_ALL_]&filter=userCredentials.userRoles.authorities:in:\[ALL]`*
 > 
@@ -70,8 +71,8 @@ There are also a number of measures which can be taken to improve security at th
 > 3\. The default DHIS2 user account (username "admin") is deleted or disabled.
 > *The admin account should only be used when DHIS2 is started for the first time, to set up a personal superuser. It should then be disabled and/or deleted. The status of the admin account can be verified using the API: `/api/users.json?filter=userCredentials.username:eq:admin&fields=name,userCredentials\[name,disabled\]`*
 
-**User management**
-
+> **User management**
+>
 > 4\. There are procedures in place to disable or remove user accounts of people who leave the service.
 > *There should be clear procedures in place to disable/delete user accounts of people who leave the (health) service. Some indication of this can be derived from the API, by looking at user accounts that are not disabled and have not logged in to the system e.g. in the current year: `/api/users.json?filter=userCredentials.disabled:eq:false&filter=userCredentials.lastLogin:lt:2021`*
 > 
@@ -82,16 +83,16 @@ There are also a number of measures which can be taken to improve security at th
 > 
 > 7\. If self-registration of users is enabled, the user role given to these users should be very limited, e.g. to only viewing public dashboards.
 
-**Tracker**
-
+> **Tracker**
+> 
 > 8\. Access to Tracker data is limited to users with a legitimate need for the edit/view the data through appropriate use of sharing and user groups. No tracker programmes intended for use to record information on individual persons are configured with public access.
 > *Tracker data is typically linked to individuals, and should therefore be restricted to users with a legitimate use of this data. While it might be a good idea that aggregate data is accessible to all users, this is not the case with Tracker data.*
 > 
 > 9\. Tracker programmes are configured so that users can only search for and access data for people they have a legitimate reason for viewing.
 > *For example, a user working within one health facility should not be assigned to a district. The "tracked entity search organisation unit" should not be set broader than what is practically necessary, if used.*
 
-**Configuration audit**
-
+> **Configuration audit**
+> 
 > 10\. Regular audit. There is a system in place (time and budget) to do periodic review of DHIS2 configuration and metadata.
 
 ### Technical measures
