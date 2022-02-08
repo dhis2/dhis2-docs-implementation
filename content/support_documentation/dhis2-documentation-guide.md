@@ -3,7 +3,7 @@
 ## DHIS 2 Documentation System Overview { #docs_1 } 
 
 DHIS 2 is a web-based information management system under very active
-development with typically three releases per year. Each release
+development with typically two major releases per year. Each release
 typically includes a number of new features and additional
 functionality. Given the fast pace of development, the system's wide
 user base and distributed, global nature of development, a comprehensive
@@ -28,10 +28,6 @@ creation of markdown files. For Linux and Windows,
 [ghostwriter](https://wereturtle.github.io/ghostwriter/) is a nice option;
 it is free and supports side-by-side preview and custom style sheets.
 
-> **TIP**
->
-> If you have the option to apply custom css to your markdown editor, set it to `./src/commonmark/en/resources/css/dhis2.css` to reflect the html output style for DHIS2!
-
 One of the key concepts to keep in mind when authoring documentation in
 markdown, or other presentation neutral formats, is that the **content**
 of the document should be considered first. The **presentation** of the
@@ -51,10 +47,10 @@ the sections for you when the document is produced.
 ## Getting started with GitHub { #docs_3 } 
 
 The DHIS 2 documentation system is managed at
-[GitHub](https://github.com/dhis2/dhis2-docs) in its own source
-code repository. GitHub is a collaborative platform that enables
+[GitHub](https://github.com/dhis2) across a variety of source
+code repositories. GitHub is a platform that enables
 multiple people to work on software projects collaboratively. In order
-for this to be possible, a version control system is necessary in order
+for this to be possible, a version control system is necessary
 to manage all the changes that multiple users may make. GitHub uses the
 *git* source control system. While it is beyond the scope of this
 document to describe the functionality of *git*, users who wish to
@@ -68,17 +64,17 @@ perform a checkout of the source code. If you do not already have a
 GitHub account, you will need to get one. This can be done
 [here](https://github.com/). Once you register with GitHub, you will
 need to request access to the *dhis2-documenters* group if you wish to
-modify the source code of the documentation directly.
+modify the source code of the documentation directly. However, anyone 
+can clone the documentation into their own repository, commit the
+changes to that fork, and request that the changes be merged with
+the source of the documentation with a pull request to the parent repository.
 
-Login to GitHub, and then file an issue
-[here](https://github.com/dhis2/dhis2-docs/issues/new). Your request will
-need to be approved by the group administrators. Once you have been
-granted access to the group, you can commit changes to the documentation
-branch and send and receive notifications if you wish. Alternatively,
-you can clone the documentation into your own repository, commit your
-changes to your own fork, and request that your changes be merged with
-the source of the documentation with a pull request
-[here](https://github.com/dhis2/dhis2-docs/pulls).
+The structure of the documentation site is defined in the build repository [dhis2-docs-builder](https://github.com/dhis2/dhis2-docs-builder).
+If you wish to add new parts to the structure, changes will have to be made there; this is usually only relevant to the internal DHIS2 team.
+
+> **Tip**
+>
+> The best way to find the source of the document you wish to edit is to find the document on the docs.dhis2.org website and click the "Edit" icon at the top of the page.
 
 ## Getting the document source { #docs_4 } 
 
@@ -101,9 +97,10 @@ the document source. Just follow this procedure:
 
 1.  Make sure you have git installed.
 
-2.  On Windows systems, visit <https://github.com/dhis2/dhis2-docs> and
+2.  On Windows systems, visit the relevant repository URL and
     press "Clone in Desktop". If you are using the command line, just
-    type `git clone git@github.com:dhis2/dhis2-docs.git`
+    type `git clone git@github.com:dhis2/dhis2-docs.git` (note that in this example
+    `dhis2` is owner of the repository and `dhis2-docs` is the name of the repository)
 
 3.  The download process should start and all the documentation source
     files will be downloaded to the folder that you specified.
@@ -114,109 +111,78 @@ the document source. Just follow this procedure:
 
 ## Editing the documentation { #docs_5 } 
 
-Once you have downloaded the source, you should have a series of folders
-inside of the repository directory. The documents are structured as follows:
-
-```
-<root>
-└── src
-    └── commonmark
-        └── en
-            ├── dhis2_android_user_man_INDEX.md
-            ├── dhis2_developer_manual_INDEX.md
-            ├── dhis2_end_user_manual_INDEX.md
-            ├── dhis2_implementation_guide_INDEX.md
-            ├── dhis2_user_manual_en_INDEX.md
-            ├── user_stories_book_INDEX.md
-            ├── resources
-            │   ├── css
-            │   │   ├── dhis2.css
-            │   │   └── dhis2_pdf.css
-            │   └── images
-            │       └── dhis2-logo-rgb-negative.png
-            └── content
-                ├── android
-                │   └── resources
-                │       └── images
-                ├── common
-                │   └── bookinfo.yaml
-                ├── developer
-                │   ├── resources
-                │   │   └── images
-                ├── implementation
-                │   ├── resources
-                │   │   └── images
-                │   ├── `resources
-                │   │   └── images
-                ├── stories
-                │   ├── resources
-                │   │   └── images
-                └── user
-                    └── resources
-                        └── images
-
-
-```
-
-
-The `*_INDEX.md` files are the starting points for the master documents. They contain only `!INCLUDE` directives.
-
-e.g. dhis2_android_user_man_INDEX.md:
-```
- !INCLUDE "content/common/about-this-guide.md"
- !INCLUDE "content/android/configure-dhis2-programs-to-work-on-android-apps.md"
- !INCLUDE "content/android/android-event-capture-app.md"
- !INCLUDE "content/android/android-aggregate-data-capture-app.md"
- !INCLUDE "content/android/android-tracker-capture-app.md"
-```
-
-
-The `!INCLUDE` directives point to the "chapters" that are used to make up the manual.
-
-> **NOTE**
->
-> the `!INCLUDE` directives are not part of pure commonmark format, but are used in pre-processing to build the master documents. The particular format here is the one supported by markdown-pp out of the box, but we could change it to another "include" format if desired.
-
-It is perfectly valid to use `!INCLUDE` directives in the sub-documents too, but currently the documents are split up at chapter level only.
-
-
-  - For the sake of convention, place all chapters in a folder in the following format:
-
-    `./src/commonmark/en/content/XXXX/<chapter>.md`
-
-    where `XXXX` represents one of the thematic folders which are used to organize the documentation, and
-    `<chapter>` is the filename referenced from the `*_INDEX.md` file.
+When writing or editing documentation, there are a few **key project-specific conventions that you should be aware of**, which are outlined in this section.
+In addition, several markdown extensions are implemented and are demonstrated for convenience in the  [Markdown support and extensions](#markdown_support_and_extensions) later in this document.
 
 
 ### Using images
 
-Image resources should be included inside a folder structure beginning with `resources`<!-- prevent processing -->`/images/` relative to the current document. e.g. for the chapter `content/android/android-event-capture-app.md`, the images are somewhere under `content/android/resources`<!-- prevent processing -->`/images/<rest-of-path>`.
+Image resources should be included as relative paths inside a sub-folder relative to the current document. e.g. for the chapter `content/android/android-event-capture-app.md`, the images are somewhere under `content/android/resources/images/<rest-of-path>` and are referenced like `![](resources/images/<rest-of-path>)`
 
-This is important because the `resources`<!-- prevent processing -->`/images` string is used to identify images in the files. Images will be collected under `resources`<!-- prevent processing -->`/images/content/android/<rest-of-path>` relative to the master document, when the the files are pre-processed for generation. *The paths are partially reversed to ensure they remain unique when collecting images from multiple thematic folders.*
+#### Styling images
+
+If you want to control the alignment and size of images, you can take advantage of a markdown extensionthat we use. It allows you to set attributes such as width, height and class in curly brackets at the end of the image definition. For example:
+```
+![](resources/images/maintainence/predictor_sequential.png){ width=50% }
+```
+will make your image 50% of the page width (it is best to use percentages to support a variety of output forms), while
+```
+![](resources/images/maintainence/predictor_sequential.png){ .center width=50% }
+```
+will also centre the image on the page (due to the definition of the `.center` class in css).
+
+When images are written like
+```
+![Approving and accepting](resources/images/data_approval/approval_level_steps.png)
+```
+i.e. with caption text in the square brackets, they are rendered as figures with captions. These are centred by default, with a centred, italicised caption.
+
+#### Taking screenshots
+
+For screenshots of the DHIS 2 web interface, we recommend using Chrome browser, with the following two extensions:
+1. [Window Resizer](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en). Use this to set the resolution to **1440x900**
+2. [Fireshot](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg?hl=en). Use this to quickly create a snapshot of the **visible part**
+
+> *Fireshot can even capture the full page, i.e. scrolled, if desired. It can also capture just a selected area (but the maximum width should always be 1440px)*
+
+When taking screenshots of the Android app, size should be set to **360x640**.
+
+#### Localising images
+
+Localisation of images is supported by storing language-specific versions of an image alongside the original image. The filename should be the same as the original English version, but should include `_` plus the language code at the end of the name, before the extension.
+
+For example, if you want to have a French version of  
+`resources/images/my_screenshot.png`  
+You can simply create the French version and save it as  
+`resources/images/my_screenshot_fr.png`
+
+The link in the documention should still point at the original image. When the documentation site is built for each language, localised images will be identified and used instead of the English originals.
+
+> *The language code is the first part of the URL that you see after the "docs.dhis2.org/" when viewing the localised version of the documentation. At the time of writing, for example, we have `fr`, `es_419`, `pt`, `cs` and `zh`.*
 
 
 ### Section references { #name_of_section } 
 
-In order to provide fixed references within the document, we can set a fixed text string to be applied to any section. For our markdown docs this is done by adding a comment after the section heading in the form:
+In order to provide fixed references (anchors) within the documentation, we can set a fixed text string to be applied to any section. For our markdown processor this is done by adding a hash id in curly brackets at the end of the line with the section title, e.g.
 ```
-<!-- DHIS2-SECTION-ID:name_of_section -->
-```
-
-where ```name_of_section``` is replace with the id you wish to use.
-
-For example:
-```
-
-## Validation { #webapi_validation } 
+## Validation { #webapi_validation }
 
 To generate a data validation summary you can interact ...
 ```
 
-Will set the section id of the level 2 heading **Validation** to "webapi_validation", which may then be referenced as "#webapi_validation" within the html file.
+Will set the section id of the level 2 heading **Validation** to "webapi_validation", which may then be referenced as "#webapi_validation" from *any* html file.
 
-After the full html file is generated, it is post-processed and the first ```DHIS2-SECTION-ID``` after the start of the section is used as the section id.
+> **Note**
+>
+> In order to support linking by anchor reference from other documents, please try to keep the section ids unique. For example, if "#webapi_validation" is unique across the documentation, then you can refer to it from any other part of the documentation simply with `[link name](#webapi_validation)`.  
+> If the section id being referenced is not unique, the document processor will attempt to resolve to the "closest" anchor with that name. *When the linking file belongs to a specific version, the processor will ignore anchors belonging to different versions*.
 
-Please follow the convention of lowercase letters and underscores, in order to create id's that are also valid as filenames when the html files are split.
+> **Caution**
+>
+> Our documentation is compiled into both pages and full documents. For this reason it is not advised to include paths in inter-document references. Please use unique section ids as described above in order for the links to resolve correctly in both document types.
+
+Please follow the convention of lowercase letters and underscores, in order to create id's that are also valid as filenames in cases where we split files as part of the document generation.
+
 
 ### Tables
 
@@ -288,7 +254,7 @@ If you have any questions, or cannot find that you can get started, just
 raise a question on our [development community of practice](https://community.dhis2.org/c/development).
 
 
-## Markdown support and extensions
+## Markdown support and extensions { #markdown_support_and_extensions }
 
 This section attempts to capture the markdown and extensions that are supported for DHIS 2 documentation, and to provide a preview of the applied styles.
 
@@ -483,25 +449,12 @@ Adding a title automatically causes rendering as a figure.
 Inline classes and styles can be added in curly brackets.
 
 ```
-![DHIS2 Screenshots](resources/images/dhis2_screenshots.jpg "The Title"){ .center width=50% }
+![The Title](resources/images/dhis2_screenshots.jpg){ .center width=50% }
 
 ```
 
-![DHIS2 Screenshots](resources/images/dhis2_screenshots.jpg "The Title"){ .center width=50% }
+![The Title](resources/images/dhis2_screenshots.jpg){ .center width=50% }
 
-
-<!-- Like links, Images also have a footnote style syntax with a reference later
-in the document defining the URL location:
-
-```
-![Alt text][id]{ width=30% }
-
-[id]: resources/images/dhis2_screenshots.jpg  "The Title"
-```
-
-![Alt text][id]{ width=30% }
-
-[id]: resources/images/dhis2_screenshots.jpg "The Title" -->
 
 
 ### Admonitions
