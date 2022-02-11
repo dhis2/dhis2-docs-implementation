@@ -1,3 +1,9 @@
+
+### Addressing metadata issues
+
+- **Processes for fixing the issues that have been identified:** described in detail potential strategies to use in order to fix the items identified via the data integrity check, extended assessment and manual review. This includes modifications to the configuration via the user interface as well as SQL queries and API calls that can be used to fix a potential issue.
+
+
 # Addressing common metadata issues
 This section provides guidance and examples of addressing common metadata-related issues.
 The guidance is useful in particular for addressing metadata issues identified using the 
