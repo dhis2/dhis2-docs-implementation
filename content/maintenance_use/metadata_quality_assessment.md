@@ -198,7 +198,7 @@ While the different data quality metrics each include a recommendation on how th
 
 A separate section in the implementation guide is in development that will provide more examples and guidance on addressing common metadata issues, such as batch edits, deleting data elements with data etc.
 
-### ANNEX A - metadata assessment metrics { #metadata_assessment_tool_annex_a }
+## ANNEX A - metadata assessment tool metrics { #metadata_assessment_tool_annex_a }
 
 Updated 14.02.2022.
 <!-- TODO: add "fixed" section on users? -->
