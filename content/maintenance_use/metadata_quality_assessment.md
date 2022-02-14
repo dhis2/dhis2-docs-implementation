@@ -10,7 +10,7 @@ While metadata quality can be somewhat subjective, there are a number of key pri
 - Errors when upgrading DHIS2 versions
 - Having an overwhelming amount of invalid metadata to manage
 
-The purpose of this guide is to provide tools and procedures to identify problems with metadata. A separate guide on [metadata maintenance]() is being developed that discusses  configuration practices that can lead to metadata quality problems, and discusses how these can be avoided e.g. by avoiding to do configuration work in production systems and establishing SoPs for metadata modifications. Finally, a section on [Working with metadata]() gives some guidance on how address metadata issues, such as removing objects that are no longer used.
+The purpose of this guide is to provide tools and procedures to identify problems with metadata. A separate guide on metadata maintenance is being developed that discusses configuration practices that can lead to metadata quality problems, and discusses how these can be avoided e.g. by avoiding to do configuration work in production systems and establishing SoPs for metadata modifications. Finally, a future section on Working with metadata will give guidance on how address metadata issues, such as removing objects that are no longer used.
 
 Metadata maintenance and metadata assessment should be seen as related processes that feed into one another.
 
@@ -20,18 +20,18 @@ Metadata maintenance and metadata assessment should be seen as related processes
 ![models_of_management](resources/images/models_of_management.png)
 
 
-## Assessing metadata integrity and quality
+## Assessing metadata integrity and quality { #metadata_assessment_overview }
 
-Reactive processes are about assessing metadata to identify potential challenges, and addressing these challenges. This can be a demanding process that needs to be properly planned, with time and resources dedicated to identify and resolve issues. While the planning and execution of a metadata assessment is discussed briefly [below](), the focus in this guide is on the more practical and technical aspects of assessing metadata and addressing common issues.
+Reactive processes are about assessing metadata to identify potential challenges, and addressing these challenges. This can be a demanding process that needs to be properly planned, with time and resources dedicated to identify and resolve issues. While the planning and execution of a metadata assessment is discussed briefly [below](#metadata_assessment_planning), the focus in this guide is on the more practical and technical aspects of assessing metadata and addressing common issues.
 
 This guide focuses primarily on two approaches to assessing metadata: 
 
-1. through [manual review of metadata]()
-2. through a [metadata assessment tool]() that can be connected directly to DHIS2 perform metadata checks
+1. through [manual review of metadata](#metadata_assessment_manual)
+2. through a [metadata assessment tool](#metadata_assessment_tool) that can be connected directly to DHIS2 perform metadata checks
 
 Both of these approaches are described below.
 
-### Planning and performing a metadata assessment
+### Planning and performing a metadata assessment { #metadata_assessment_planning }
 
 In order to perform the assessment, you may want to start by getting buy-in from a wide variety of stakeholders. In doing so, it may be useful to document the extent of the issues discussed within this guide by generating summary statistics on the problems that have been identified. This can be very useful to present to a large audience and can be used to support buy-in by providing brief explanations of the issues that have been identified. Within the **Metadata Assessment Reference Guide** you will find tools that will support you to both create quick summary counts of problems that you find in your own implementation as well as tools that generate more detailed reports on each specific item that requires attention. We recommend that the assessment includes the following components:
 
@@ -44,9 +44,9 @@ In order to perform the assessment, you may want to start by getting buy-in from
 
 
 
-## Manual review of metadata
+## Manual review of metadata { #metadata_assessment_manual }
 
-Use of the [metadata assessment tool]() and the built-in [data integrity checks]() is an efficient way of identifying many metadata problems in DHIS2, some review processes can not be automated. This includes the review of:
+Use of the [metadata assessment tool](#metadata_assessment_tool) and the built-in [data integrity checks](#data_admin_data_integrity) is an efficient way of identifying many metadata problems in DHIS2, some review processes can not be automated. This includes the review of:
 
   - Naming Conventions
   - Indicator Formula
@@ -138,25 +138,29 @@ Check if the metadata and data sharing settings have been applied correctly to b
 
 A more detailed breakdown on the application of sharing settings to programs and data sets can be found in both the [documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/about-sharing-of-objects.html) as well as through a number of videos on [YouTube](https://www.youtube.com/playlist?list=PLo6Seh-066RwslDmyZkiKjejgMCKNaJTC).
 
-### Todo - other
+### Category-related checks
 
-| **Additional checks**     													|   	|
-|------------------------------------------------------------------------------	|---	|                                                                      	
-| Category options should be unique (conceptually)                              |   	|
-| Category combos should (generally) add up to a meaningful total               |   	|
+#### Duplicate category options
+
+Category options can and should be re-used across multiple categories to represent the same concept (e.g. an age group). In addition to reducing the clutter and potential confusing of having multiple options for the same concept, this facilities data analysis since data elements using the same category option can be presented together with the same disaggregation in visualisation tools.
+
+If duplicate category options are identified and these are included in categories that are part of category combinations already associated with data, you should *not* attempt to de-duplicate these. However, if one of the category options have not yet been used, this could be removed and the other options used.
+
+#### Category disaggregations
+
+The category options in a data element category should in general add up to a meaningful total, as discussed in the [aggregate system design section](#categories-and-custom-dimensions). It is the total of the category that is displayed by default if looking at the value for a data element disaggregated by that data element. An example of this bad practice is to create a category for "Outpatients" with options "Cases" and "Deaths", which is applied to data elements for different diagnosis such as "Malaria". By default, a user looking at the "Malaria" data element will get the sum of "Malaria cases" and "Malaria deaths", which is a number that does not make sense.
+
+There are certain cases where it may make sense to diverge from this general rule, in particular when the use of such a category can *substantially* reduce the number of data elements required. In these cases, the option to "Skip category total in reports" should be enabled for the category combination that category is part of.
 
 
+## Using the metadata assessment tool { #metadata_assessment_tool }
 
-## Using the metadata assessment tool
+While manual checks are necessary for a number of issues, a [metadata assessment tool](https://github.com/dhis2/metadata-assessment) has also been developed to automate a number of data quality checks. This includes the possibility of getting the summary results (number of violations) of the built-in [Data integrity checks](#data_admin_data_integrity). The metadata assessment tool is currently not integrated in DHIS2 itself, but is a standalone tool based on [R](https://www.r-project.org). This section will discuss how to interpret and use the output of the assessment tool, whilst how to download, install and run the tool is described on the [GitHub repository](https://github.com/dhis2/metadata-assessment) of the tool. A list with descriptions of the metadata checks included in the tool are described in the [Annex A](#metadata_assessment_tool_annex_a).
 
-While manual checks are necessary for a number of issues, a [metadata assessment tool]() has also been developed to automate a number of data quality checks. This includes the possibility of getting the summary results (number of violations) of the built-in [Data integrity checks](#data_admin_data_integrity). The metadata assessment tool is currently not integrated in DHIS2 itself, but is a standalone tool based on [R](). This section will discuss how to interpret and use the output of the assessment tool, whilst how to download, install and run the tool is described on the [GitHub repository](https://github.com/dhis2/metadata-assessment) of the tool. A list with descriptions of the metadata checks included in the tool are described in the [Annex A]().
-
-The metadata assessment tool is based primarily on DHIS2 SQL views: the tool imports a set of SQL views into the DHIS2 database being assessed (two for each data quality metric), and the accesses the outputs of those SQL views via the Web API and presents to the users. In addition, the tool presents certain outputs based directly on Web API queries (related to users), and can also show results of the built-in [Data integrity]() checks.
+The metadata assessment tool is based primarily on DHIS2 SQL views: the tool imports a set of SQL views into the DHIS2 database being assessed (two for each data quality metric), and the accesses the outputs of those SQL views via the Web API and presents to the users. In addition, the tool presents certain outputs based directly on Web API queries (related to users), and can also show results of the built-in [Data integrity](#data_admin_data_integrity) checks.
 
 > **Warning**
 > The tool should not be used directly in production databases. While the only change the tool does to a database is to import SQL views, certain checks can be long-running and resource-intensive and may affect users interacting with the system. A parameter is available to diable slow queries.
-
-The different data quality metrics are linked to certain information
 
 ### The report
 The report itself is organised into four sections.
@@ -178,7 +182,7 @@ In addition, two graphs showing the distribution over time of when users last lo
 ![Users](./resources/images/metadata_assessment_tool_users.png)
 
 #### Guidance
-The guidance section presents the same metrics as the summary table (and repeated in [Annex A]()), but together with an explanation and recommended action. It is organised into sections by topic.
+The guidance section presents the same metrics as the summary table (and repeated in [Annex A](#metadata_assessment_tool_annex_a)), but together with an explanation and recommended action. It is organised into sections by topic.
 
 ![Guidance](./resources/images/metadata_assessment_tool_guidance.png)
 
@@ -194,7 +198,7 @@ While the different data quality metrics each include a recommendation on how th
 
 A separate section in the implementation guide is in development that will provide more examples and guidance on addressing common metadata issues, such as batch edits, deleting data elements with data etc.
 
-### ANNEX A - metadata assessment metrics
+### ANNEX A - metadata assessment metrics { #metadata_assessment_tool_annex_a }
 
 Updated 14.02.2022.
 <!-- TODO: add "fixed" section on users? -->
