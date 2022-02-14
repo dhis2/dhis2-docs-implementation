@@ -94,7 +94,7 @@ This occurs when one or more data elements is providing a total that is duplicat
 
 When this occurs, it is difficult to determine what is the correct value.
 
-#### Duplicate Variables between different programs
+#### Duplicate variables between different programs
 
 This occurs when you have two or more programs within an integrated system that are collecting the same information (Figure 2). In some cases programs can not agree on the value and this may need to be maintained as is. This will become problematic when trying to determine an agreed national value however as the values may be different between the different programs and this is not recommended to be maintained as is.
 
@@ -125,11 +125,12 @@ If it is the case where a dashboard item needs to show data for a fixed period o
 
 Check if the programs and data sets are assigned only to organisation units that are expected to report on them. For datasets this can cause problems with reporting rate completeness (the number of expected reports may be higher then it should be) and potentially data being entered where it should not be; while in the case of programs you could have tracked entities and/or events registered in organisation units they should not be.
 
+<!--
 #### Moving Aggregate Data
 
 
 #### Moving Tracker Data
-
+-->
 
 ### Program and data set sharing
 
@@ -148,11 +149,55 @@ A more detailed breakdown on the application of sharing settings to programs and
 
 ## Using the metadata assessment tool
 
-While manual checks are necessary for a number of issues, a [metadata assessment tool]() has also been developed to automate a number of data quality checks. This includes the possibility of getting the summary results (number of violations) of the built-in [Data integrity checks](#data_admin_data_integrity). The metadata assessment tool is currently not integrated in DHIS2 itself, but is a standalong tool based on [R](). This section will discuss how to interpret and use the output of the assessment tool, whilst how to download, install and run the tool is described on the [GitHub repository](https://github.com/dhis2/metadata-assessment) of the tool.
+While manual checks are necessary for a number of issues, a [metadata assessment tool]() has also been developed to automate a number of data quality checks. This includes the possibility of getting the summary results (number of violations) of the built-in [Data integrity checks](#data_admin_data_integrity). The metadata assessment tool is currently not integrated in DHIS2 itself, but is a standalone tool based on [R](). This section will discuss how to interpret and use the output of the assessment tool, whilst how to download, install and run the tool is described on the [GitHub repository](https://github.com/dhis2/metadata-assessment) of the tool. A list with descriptions of the metadata checks included in the tool are described in the [Annex A]().
 
+The metadata assessment tool is based primarily on DHIS2 SQL views: the tool imports a set of SQL views into the DHIS2 database being assessed (two for each data quality metric), and the accesses the outputs of those SQL views via the Web API and presents to the users. In addition, the tool presents certain outputs based directly on Web API queries (related to users), and can also show results of the built-in [Data integrity]() checks.
+
+> **Warning**
+> The tool should not be used directly in production databases. While the only change the tool does to a database is to import SQL views, certain checks can be long-running and resource-intensive and may affect users interacting with the system. A parameter is available to diable slow queries.
+
+The different data quality metrics are linked to certain information
+
+### The report
+The report itself is organised into four sections.
+
+#### Summary table
+The "Metadata Issues" summary table gives an overview of all the different metadata quality metrics, and allows sorting and filtering. This is useful to get a quick overview of the results (for example if there are any "critical" or "severe" issues), or if looking for specific issues (for example if there are any issues related to organisation units).
+
+![Summary table](./resources/images/metadata_assessment_tool_summary_table.png)
+
+#### Users
+The "Users" section provides key metrics related to users in the system. In addition to basic information about the total number of users and the number of users logging within a certain period, it also includes information that may be the basis to changes in user management practices:
+
+* *Users who have never logged in*: large numbers of users account which have never been used indicate problems with the account invitation/creation process. If these accounts have been created with a default password, they may also pose a security issue.
+* *Percentage of users that are disabled*: Taken together with the total number of users and the users who have logged in recently, this may give an indication of whether user accounts are disabled when users for different reasons no longer need or should have access to the system (e.g. because they leave their position).
+* *Number/percentage of users that are superusers*: Only a handful of users should at most have superuser rights (the "ALL" authority).
+
+In addition, two graphs showing the distribution over time of when users last logged in, and the distribution of users in the organisation unit hierarchy may be useful to understand if user assignment and management is handled correctly.
+
+![Users](./resources/images/metadata_assessment_tool_users.png)
+
+#### Guidance
+The guidance section presents the same metrics as the summary table (and repeated in [Annex A]()), but together with an explanation and recommended action. It is organised into sections by topic.
+
+![Guidance](./resources/images/metadata_assessment_tool_guidance.png)
+
+### Interpreting the results
+When interpreting the results of the report, it's important to keep in mind that not all the issues listed in the report are necessarily actual issues. The *Severity* of the different checks are important to keep in mind in this regards:
+
+* *Info* indicates that the check is included primarily to provide useful contextual information, e.g. indicating the total number of a certain type of object.
+* *Warning* apply to checks that either point to issues that may be problematic or indicate that the metadata is not well managed, but will generally not lead to problems with the functioning of the system.
+* *Severe* issues can lead to serious problems, for example analytical outputs showing wrong numbers or no data at all.
+* *Critical* issues are those that will almost certainly create various problems, for example potentially causing the analytic table generation process to fail.
+
+While the different data quality metrics each include a recommendation on how the particular issue should be address, it generally does not go into the detail, technical steps that should be taken to fix the issue. It is not possible to give clear guidance for all issues, and the issues vary from the very basic (such as grouping data elements) to the very complex (for example duplicate category option combinations within a category combination). In general, it is recommended to solve the issues through the DHIS2 UI or the Web API as far as possible, as this provides some validation of the changes being made. Only as a last resort should issues be corrected in the database correctly. All but the most basic changes (such as grouping data elements) should be tested thoroughly in a non-production system.
+
+A separate section in the implementation guide is in development that will provide more examples and guidance on addressing common metadata issues, such as batch edits, deleting data elements with data etc.
 
 ### ANNEX A - metadata assessment metrics
 
+Updated 14.02.2022.
+<!-- TODO: add "fixed" section on users? -->
 <!-- Extracted from https://github.com/dhis2/metadata-assessment/tree/main/yaml -->
 
 ### Categories
