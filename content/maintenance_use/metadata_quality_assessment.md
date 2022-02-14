@@ -1,4 +1,4 @@
-# Metadata integrity and quality assessment
+# Metadata integrity and quality
 
 While metadata quality can be somewhat subjective, there are a number of key principles that can be objectively assessed and should be universally followed throughout DHIS2 implementations. In order to assess metadata quality, a metadata assessment can be performed. In this context, we can define metadata assessment as the review of the quality of a specific implementations configuration. While this is wide-ranging in scope, our goal is to break down the assessment process into manageable pieces that can be reviewed, prioritized and fixed over time. Regular metadata assessment and ongoing upkeep is an important part of long-term DHIS2 configuration and maintenance. While configuration tasks can often be performed quickly through a number of different mechanisms, without proper co-ordination there can be a number of challenges that a DHIS2 systems configuration can face over time. Some examples of the effects of these configuration challenges include:
 
@@ -26,11 +26,10 @@ Reactive processes are about assessing metadata to identify potential challenges
 
 This guide focuses primarily on two approaches to assessing metadata: 
 
-1. through a [metadata assessment tool]() that can be connected directly to DHIS2 perform metadata checks, and 
-2. through [manual review of metadata]().
+1. through [manual review of metadata]()
+2. through a [metadata assessment tool]() that can be connected directly to DHIS2 perform metadata checks
 
 Both of these approaches are described below.
-
 
 ### Planning and performing a metadata assessment
 
@@ -47,13 +46,20 @@ In order to perform the assessment, you may want to start by getting buy-in from
 
 ## Manual review of metadata
 
-While time saving measures through the use of the data integrity check or SQL scripts have been made available, some review processes can not be automated. This includes the review of:
+Use of the [metadata assessment tool]() and the built-in [data integrity checks]() is an efficient way of identifying many metadata problems in DHIS2, some review processes can not be automated. This includes the review of:
+
   - Naming Conventions
   - Indicator Formula
+  - Duplicated metadata objects
   - Duplicated data sources
   - Dashboard item configuration
   - Program and dataset organisation unit assignment
   - Program and dataset sharing
+
+
+### Documenting issues
+Reviewing metadata to identify potential issues should always be done with a goal of addressing these issues. Fixes can sometimes be done immediately, but in many cases this is not possible. For example, it may be necessary to consult with different stakeholders to identify the appropriate data source or metadata definitions, or resolving the issues are technically complicated and require proper testing and review. It is therefore important to establish a mechanism for capturing the issues that are identified, so that they can be kept track of and a plan made to address them.
+
 
 ### Naming Conventions
 
@@ -132,6 +138,19 @@ Check if the metadata and data sharing settings have been applied correctly to b
 A more detailed breakdown on the application of sharing settings to programs and data sets can be found in both the [documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/about-sharing-of-objects.html) as well as through a number of videos on [YouTube](https://www.youtube.com/playlist?list=PLo6Seh-066RwslDmyZkiKjejgMCKNaJTC).
 
 ### Todo - other
+
 | **Additional checks**     													|   	|
 |------------------------------------------------------------------------------	|---	|                                                                      	
 | Category options should be unique (conceptually)                              |   	|
+| Category combos should (generally) add up to a meaningful total               |   	|
+
+
+
+## Using the metadata assessment tool
+
+While manual checks are necessary for a number of issues, a [metadata assessment tool]() has also been developed to automate a number of data quality checks. This includes the possibility of getting the summary results (number of violations) of the built-in [Data integrity checks](#data_admin_data_integrity). The metadata assessment tool is currently not integrated in DHIS2 itself, but is a standalong tool based on [R](). This section will discuss how to interpret and use the output of the assessment tool, whilst how to download, install and run the tool is described on the [GitHub repository](https://github.com/dhis2/metadata-assessment) of the tool.
+
+
+### ANNEX A - metadata assessment metrics
+
+<!-- Extracted from YAML -->
