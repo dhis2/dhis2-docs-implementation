@@ -160,7 +160,7 @@ While manual checks are necessary for a number of issues, a [metadata assessment
 The metadata assessment tool is based primarily on DHIS2 SQL views: the tool imports a set of SQL views into the DHIS2 database being assessed (two for each data quality metric), and the accesses the outputs of those SQL views via the Web API and presents to the users. In addition, the tool presents certain outputs based directly on Web API queries (related to users), and can also show results of the built-in [Data integrity](#data_admin_data_integrity) checks.
 
 > **Warning**
-> The tool should not be used directly in production databases. While the only change the tool does to a database is to import SQL views, certain checks can be long-running and resource-intensive and may affect users interacting with the system. A parameter is available to diable slow queries.
+> The tool should not be used directly in production databases. While the only change the tool does to a database is to import SQL views, certain checks can be long-running and resource-intensive and may affect users interacting with the system. A parameter is available to disable slow queries.
 
 ### The report
 The report itself is organised into four sections.
