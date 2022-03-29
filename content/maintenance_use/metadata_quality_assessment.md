@@ -718,7 +718,7 @@ All users should log in routinely, either to enter data, or to view analyses. Th
 
 **Severity**: Warning
 
-**Recommendation:** Lorem ipsum dolor sit amet, habitasse purus, praesent pretium orci mauris a velit feugiat. Malesuada et rutrum, ullamcorper in ut in potenti.
+**Recommendation:**  Review if these users should be active, otherwise consider disabling the accounts.
 
 #### Users who have not logged in over the past year
 Only users who routinely access the system should have active user accounts. Users who have not logged in the last year may not use or need access to the system, they may have left their position and should, or the account may be the result of an invitation to register an account that has not been used.
