@@ -1,19 +1,7 @@
+# Assessing CHIS
 
-# Chapter 2: Conducting a CHIS Assessment
+This section covers important aspects of assessing CHIS. Acknowledging the diversity of CHIS, their multiple technical, social, organizational, and cultural determinants, no assessment method or tool will fit all situations perfectly. Therefore, this chapter focuses on the rationale for doing an assessment, various potential methods which can improve understanding of the CHIS, and an in-depth list of key questions, informed by the five design principles of this document, which should be considered in the further design, development, and use of CHIS. Assessment is discussed at two levels: one, the macro policy level, and, two, the operational system development level.
 
-## Introduction
-
-This chapter covers important aspects of assessing CHIS. Acknowledging the diversity of CHIS, their multiple technical, social, organizational, and cultural determinants, no assessment method or tool will fit all situations perfectly. Therefore, this chapter focuses on the rationale for doing an assessment, various potential methods which can improve understanding of the CHIS, and an in-depth list of key questions, informed by the five design principles of this document, which should be considered in the further design, development, and use of CHIS. Assessment is discussed at two levels: one, the macro policy level, and, two, the operational system development level.
-
-*Learning Objectives:*
-
--   Build an understanding of the various benefits of conducting an assessment and its inherent limitations.
-
--   What are the two levels at which assessment is done, and what complementary insights that can be gained from each.
-
--   Understand the methodological approaches to these two levels of assessment and their respective strengths and weaknesses.
-
--   Build an understanding of various methods for assessing CHIS as well as their strengths and weaknesses.
 
 ## Why Do an Assessment?
 
@@ -23,11 +11,9 @@ Assessment can be done at multiple levels, and over time. In this chapter, we di
 
 A key aim of the assessment described is not only on the end result of the assessment, but more so in the process itself, which should be collaborative, participative and informative. This helps to:
 
--   **Inform stakeholders** of potentially unfamiliar aspects of the CHIS. Conducting a broad assessment with participation from multiple stakeholders contributes to a better understanding of the CHIS at large, its challenges and strengths, its routines and processes, tools, data flows and information needs.
-
--   **Build consensus** around the priorities for strengthening CHIS and the actions that need to be taken to achieve that goal. A key outcome of the assessment process is consensus building among stakeholders concerning the challenges that need to be prioritized and how to approach them.
-
--   **Mobilize joint technical and financial support** for a CHIS strengthening plan. This should include details on prioritization of investments in the short term (1--2 years), intermediate term (3--9 years), and long term (10 years and beyond).
+- **Inform stakeholders** of potentially unfamiliar aspects of the CHIS. Conducting a broad assessment with participation from multiple stakeholders contributes to a better understanding of the CHIS at large, its challenges and strengths, its routines and processes, tools, data flows and information needs.
+- **Build consensus** around the priorities for strengthening CHIS and the actions that need to be taken to achieve that goal. A key outcome of the assessment process is consensus building among stakeholders concerning the challenges that need to be prioritized and how to approach them.
+- **Mobilize joint technical and financial support** for a CHIS strengthening plan. This should include details on prioritization of investments in the short term (1--2 years), intermediate term (3--9 years), and long term (10 years and beyond).
 
 We now discuss the assessment methodologies at the micro and macro levels.
 
@@ -45,33 +31,23 @@ These could be change agents in the community such as traditional chiefs, teache
 
 The table below shows potential stakeholders from the various levels of the health system, and can function as an example of a stakeholder identification exercise.
 
-  -------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Hierarchy/Role**   **Stakeholders**
-
-  **Community**        CHWs, Chiefs, Mayors, Religious Leaders, Parent Teachers Associations (PTA), Village Health Committees
-
-  **Facility**         Information Officer, Clinic In-Charge, Supply Chain Manager, Clinician
-
-  **District**         District Health Team members
-
-  **Provincial**       Provincial Health Team
-
-  **National**         Health Program Units, such as the IDSR Unit, Ministry of Health-HMIS Manager, Disease Program Advisors, Human Resource, Finance Advisors, M&E Advisors, other ministries and governmental agencies
-
-  **International:**   Donor Agencies, Implementing Partners
-  -------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Hierarchy/Role | Stakeholders |
+| :- | :- |
+| **Community** | CHWs, Chiefs, Mayors, Religious Leaders, Parent Teachers Associations (PTA), Village Health Committees |
+| **Facility** | Information Officer, Clinic In-Charge, Supply Chain Manager, Clinician |
+| **District** | District Health Team members |
+| **Provincial** | Provincial Health Team |
+| **National** | Health Program Units, such as the IDSR Unit, Ministry of Health-HMIS Manager, Disease Program Advisors, Human Resource, Finance Advisors, M&E Advisors, other ministries and governmental agencies |
+| **International** | Donor Agencies, Implementing Partners |
 
 *Figure 2.1:* Potential Stakeholders at Various Levels of the Health System
 
--   For each stakeholder, consider the following and add to the table as appropriate:
 
-    -   The critical decisions and actions they make.
-
-    -   What information they (could) use from the community to make decisions or perform action.
-
-    -   How they would use this information to inform decision.
-
-    -   Where they get this information and in what format and frequency.
+- For each stakeholder, consider the following and add to the table as appropriate:
+ - The critical decisions and actions they make.
+ - What information they (could) use from the community to make decisions or perform action.
+ - How they would use this information to inform decision.
+ - Where they get this information and in what format and frequency.
 
 The primary roles and responsibilities of the various stakeholders should also be mapped against the information cycle presented in Chapter 1. While the stakeholder identification is a part of the assessment itself, consider also reflecting the breadth of stakeholders in conducting the further assessment. For example, the provided assessment tool would benefit from input from a wide range of stakeholders, and ideally representing the various roles, levels of the health system, and both health and non-health stakeholders should partake.
 
@@ -83,23 +59,18 @@ The scoring exercise should be done by key stakeholders, which should reflect th
 
 An example is shown in Figure 2.2 (with a more detailed explanation in the appendices), from the topic heading "Government Ownership." While the various answers may not correspond exactly to the situation, the answer that most accurately reflects the situation should be selected.
 
-  ---------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------------------------------------------
-                                                                                                                                                       **Highly Adequate**                                                                                                                                                               **Adequate**                                                                                                       **Present but Not Adequate**                                                                                                                                               **Not Adequate At All**
-
-  **Items**                                                                                                                                            **3**                                                                                                                                                                             **2**                                                                                                              **1**                                                                                                                                                                      **0**
-
-  Is there an established CHIS Technical Working Group (TWG) lead by ministry senior staff and including representation from key stakeholder groups?   Yes, there is a CHIS TWG with clear leadership and active participation from all key stakeholders that manages the development, implementation, and sustainability of the CHIS.   Yes, there is a CHIS TWG with clear leadership and active participation from most key stakeholder organizations.   Yes, there is a CHIS technical working group but it does not have clear leadership or it is not able to manage all CHIS development, implementation, and sustainability.   There is not a CHIS technical working group or it is inactive.
-  ---------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------------------------------------------
-
+| | Highly Adequate |  Adequate | Present but not Adequate | Not Adequate At All |
+| :- | :- | :- | :- | :- |
+| **Items** |  **3** |  **2** | **1** |  **0** |
+| Is there an established CHIS Technical Working Group (TWG) lead by ministry senior staff and including representation from key stakeholder groups? | Yes, there is a CHIS TWG with clear leadership and active participation from all key stakeholders that manages the development, implementation, and sustainability of the CHIS. | Yes, there is a CHIS TWG with clear leadership and active participation from most key stakeholder organizations. | Yes, there is a CHIS technical working group but it does not have clear leadership or it is not able to manage all CHIS development, implementation, and sustainability. | There is not a CHIS technical working group or it is inactive.
+ 
 *Figure 2.2:* Example of Assessment Tool from the topic heading "Government Ownership
 
 The scores derived from the assessment tool can then be used for planning CHIS strengthening activities:
 
--   A low score indicates that this particular area of the CHIS is weak. A higher score indicate that this area is functioning adequately. This does not necessarily mean that all questions with low scores should be prioritized, this will depend on the intended system, scaling strategy, and resources.
-
--   The scores can be used as a benchmark for later evaluation. Re-assessment can, for example, be done yearly to track progress
-
--   The items in the assessment tool can also be linked to targets. For example, a target can be to improve from score 1 to a score 2 in a certain area.
+- A low score indicates that this particular area of the CHIS is weak. A higher score indicate that this area is functioning adequately. This does not necessarily mean that all questions with low scores should be prioritized, this will depend on the intended system, scaling strategy, and resources.
+- The scores can be used as a benchmark for later evaluation. Re-assessment can, for example, be done yearly to track progress
+- The items in the assessment tool can also be linked to targets. For example, a target can be to improve from score 1 to a score 2 in a certain area.
 
 These guidelines, and the tool itself, do not provide a list of direct actions, a recipe, to improve the scores. The tool is rather meant as an input to the design, planning, and implementation of CHIS strengthening activities, where the result will have to be interpreted to the context.
 
@@ -123,19 +94,12 @@ The steering committee, consisting of staff at the community health program, the
 
 The group goes through the tool question by question in plenary, since they are not so many. This is also a chance for those who are familiar with the issue in question to inform the others on the team.
 
-An example of how they answered one of the questions now follows:
+An example of how they answered one of the questions now follows. The group is discussing the question: Do traditional health providers report through the CHIS? The scoring scheme for this question is:
 
-The group is discussing the question: Do traditional health providers report through the CHIS?
-
-The scoring scheme for this question is:
-
-  ---------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------- --------------------------------------------------------
-                                                             **Highly adequate**                                                                                                  **Adequate**                                                                                                     **Present but not adequate**                                                                                     **Not adequate at all**
-
-  **Items**                                                  **3**                                                                                                                **2**                                                                                                            **1**                                                                                                            **0**
-
-  Do traditional health providers report through the CHIS?   Yes, all traditional health providers working at the community level report their activities to the national CHIS.   Most traditional health providers working at the community level report their activities to the national CHIS.   Some traditional health providers working at the community level report their activities to the national CHIS.   Traditional health providers are not part of the CHIS.
-  ---------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------- --------------------------------------------------------
+| | Highly Adequate |  Adequate | Present but not Adequate | Not Adequate At All |
+| :- | :- | :- | :- | :- |
+| **Items** |  **3** |  **2** | **1** |  **0** |
+| Do traditional health providers report through the CHIS? | Yes, all traditional health providers working at the community level report their activities to the national CHIS. | Most traditional health providers working at the community level report their activities to the national CHIS. | Some traditional health providers working at the community level report their activities to the national CHIS. | Traditional health providers are not part of the CHIS. |
 
 *Figure 2.3:* Example of scoring scheme for traditional health providers.
 
@@ -161,17 +125,12 @@ All health programs in Indonesia, such as malaria, TB, HIV, nutrition, mother an
 
 The first phase of the implementation of district dashboards consisted of a 10-week action oriented assessment in 5 provinces and 10 districts. This initial phase consisted of on-site 'contextual' assessments of the existing HIS as well as a participatory approach to training, dashboard design, and evaluation of data quality using the dashboard system populated with local data. The assessment and training included a situational analysis to establish the existing infrastructures and create awareness amongst the local program managers about the value of district dashboards that can drill down to the facility and community level. Furthermore, there was a need to establish a mechanism to help enable effective data sharing between the implemented DHIS2 dashboard and the existing district and provincial information systems. The training, demonstration, and feedback sessions used the TB, HIV, and population data already included in DHIS2 to design dashboards and to assess data quality. The assessment was tasked with identifying the following areas:
 
-1.  *Data Sources and Management:* The identification of standard data collection tools and data sources for routinely reported data, as well as population surveys and other data sources. This also includes the handling and processing of data at the source point.
-
-2.  *Data Import Procedures to Create Comprehensive Dashboards:* Electronic data for 2016 was collected from all identified systems with the purpose of importing it into the DHIS2 in order to develop a comprehensive dashboard system and design procedures for importing data on a regular basis.
-
-3.  *Data Flows:* Data flow mechanisms from the community level to the national level. The intermediated processing or conversion of data from one administrative level to another.
-
-4.  *Information Systems:* Available information systems and their linkages both horizontally (across programs) and vertically (up the ministry hierarchy).
-
-5.  *Indicators and Information Products:* Identification of core set of indicators at different administrative levels and their linkages to the national strategic plans.
-
-6.  *Data Dissemination Mechanisms:* Identification of available information dissemination and use approaches to inform internal and external stakeholders.
+1. *Data Sources and Management:* The identification of standard data collection tools and data sources for routinely reported data, as well as population surveys and other data sources. This also includes the handling and processing of data at the source point.
+2. *Data Import Procedures to Create Comprehensive Dashboards:* Electronic data for 2016 was collected from all identified systems with the purpose of importing it into the DHIS2 in order to develop a comprehensive dashboard system and design procedures for importing data on a regular basis.
+3. *Data Flows:* Data flow mechanisms from the community level to the national level. The intermediated processing or conversion of data from one administrative level to another.
+4. *Information Systems:* Available information systems and their linkages both horizontally (across programs) and vertically (up the ministry hierarchy).
+5. *Indicators and Information Products:* Identification of core set of indicators at different administrative levels and their linkages to the national strategic plans.
+6. *Data Dissemination Mechanisms:* Identification of available information dissemination and use approaches to inform internal and external stakeholders.
 
 ### Assessment Framework
 
@@ -192,20 +151,16 @@ The learning from each cycle of repetitive assessment activities was used to inf
 
 To gather enriched findings from the participants, in-depth discussions were organized in the form of FGDs with key informants coming from various health departments within the province and district (including hospital services, surveillance, and disaster management, among other specific program departments HIV, TB, Malaria, etc.). A structured process was employed to identify the existing health program data sources, data collection tools and data flows from the lower level to the national level. The team also looked at the existing bottlenecks, disparities in infrastructure information (i.e. information on reporting health facilities across the health program), and duplication in the collection of data among the health programs. The initial data mapping process employed was a manual mechanism where the information from the program managers was outlined on paper sheets (See figure 2.5) for easy understanding and validation by participants. With each cycle, the process was altered and improved by employing an electronic mechanism where all data points were mapped using a software (Freemind). This software provided a direct and effective mechanism for mapping data points within multiple administration levels (e.g. province, district, and health facilities). The maps created using the software were projected on the screen which invited immediate feedback and revisions from the participants which were then reflected on the map.
 
-  --------------------------------------------------------------------------------------------------------- -----------------------------------------------------------------------------------------------------------
-  ![](resources/images/chis_figure7.jpg)
-   ![](resources/images/chis_figure8.png)
+ ![](resources/images/chis_figure7.jpg)
+ ![](resources/images/chis_figure8.png)
 
-
-  *Figure 2.5:* Manual to Electronic data mapping                                                           
-  --------------------------------------------------------------------------------------------------------- -----------------------------------------------------------------------------------------------------------
+ *Figure 2.5:* Manual to Electronic data mapping 
 
 #### Field Visit
 
 Another mechanism of the assessment was to gather additional information and validate the collected data from the FGDs by conducting field visits. The team used a full second day in the field, visiting the provincial or district offices, health facilities (hospitals and/or health centers) and community centers. At the provincial and district offices, data collection tools were collected with their reporting formats. Existing information systems and infrastructures were identified and assessed based on the data collected, reporting modules, and linkages with other systems. At the health facilities, data collection, processing mechanisms, and the flow of information to the district level were assessed. At the community level, data collection and local information use, and any existing feedback mechanism to and from higher levels were assessed.
 
 ![](resources/images/chis_figure9.jpg)
-
 
 *Figure 2.6:* Health facility assessment
 
@@ -235,7 +190,6 @@ The assessment observed the health data in Indonesia was managed according to di
 
 ![](resources/images/chis_figure10.png)
 
-
 *Figure 2.7:* Information System mapping.
 
 ### Information Use and Demand
@@ -244,52 +198,30 @@ Local information use was observed at the community and health facility level. S
 
 ![](resources/images/chis_figure11.jpg)
 
-
 *Figure 2.8:* Information use by local community
+
 
 ### Recommendations from the Assessment Exercise
 
--   Build on the recent DHIS2 implementation to bring more stakeholders onboard and have a comprehensive approach look of cross-sector data (e.g. statistical data, civil registration data, hospital data, health insurance data).
-
--   A provincial approach instead of, or rather in addition to, a district approach to enable swift scaling up the implementation of district dashboards. However, not all data is available by facility and community at the province level and will need to be collected in the districts.
-
--   Invest in capacity building through internal and external training.
-
--   Encourage more integration with other stakeholders by using district dashboards.
-
--   Ensure more functional coordination between health information department and other health programs at the district level and upper administrative levels.
-
--   Creation of standard data collection tools which will be used across the country.
-
--   Build more robust approaches for accommodating other data source with disparate data formats.
+- Build on the recent DHIS2 implementation to bring more stakeholders onboard and have a comprehensive approach look of cross-sector data (e.g. statistical data, civil registration data, hospital data, health insurance data).
+- A provincial approach instead of, or rather in addition to, a district approach to enable swift scaling up the implementation of district dashboards. However, not all data is available by facility and community at the province level and will need to be collected in the districts.
+- Invest in capacity building through internal and external training.
+- Encourage more integration with other stakeholders by using district dashboards.
+- Ensure more functional coordination between health information department and other health programs at the district level and upper administrative levels.
+- Creation of standard data collection tools which will be used across the country.
+- Build more robust approaches for accommodating other data source with disparate data formats.
 
 ## Building Synergies from Macro and Micro Level Assessments
 
 The two methods presented earlier in this chapter should be seen as complementary to each other. In the table below, some strengths and weaknesses are outlined to aid in assessing which tool may be more useful in a given context.
 
-+----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-|                | **Macro Level Assessment Tool**                                                                        | **Micro Level Case Study**                                                                                  |
-+----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| **Strengths**  | -   Can be performed with relatively few resources, although broad participation is encouraged         | -   Gives a rich understanding of CHIS, such as data flows, work routines                                   |
-|                |                                                                                                        |                                                                                                             |
-|                | -   Incorporates a scoring mechanism which can be used for periodic evaluation                         | -   Helps to understand individuals and their reasoning and actions                                         |
-|                |                                                                                                        |                                                                                                             |
-|                | -   Gives a holistic view of important aspects of CHIS                                                 | -   Appropriate for identifying contextual aspects                                                          |
-|                |                                                                                                        |                                                                                                             |
-|                |                                                                                                        | -   Good for identifying challenges and opportunities which are hard to quantify                            |
-+----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| **Weaknesses** | -   Process of scoring is subjective                                                                   | -   Resource-intensive                                                                                      |
-|                |                                                                                                        |                                                                                                             |
-|                | -   Does not go into depth in any of the aspects                                                       | -   Hard to scale, some sample areas must be taken as representative of the whole district/province/country |
-|                |                                                                                                        |                                                                                                             |
-|                | -   Relatively more static and does not account for process dynamics                                   | -   Does not provide rich insights into macro-level conditions that shape CHIS                              |
-|                |                                                                                                        |                                                                                                             |
-|                | -   Predefined set of questions may not fit all contexts                                               |                                                                                                             |
-|                |                                                                                                        |                                                                                                             |
-|                | -   May not be representative of a multiplicity of views, and limited to those answering the questions |                                                                                                             |
-+----------------+--------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+|  | **Macro Level Assessment Tool**  | **Micro Level Case Study**  |
+| :- | :- | :- |
+| **Strengths** | Can be performed with relatively few resources, although broad participation is encouraged;<br>Incorporates a scoring mechanism which can be used for periodic evaluation;<br>Gives a holistic view of important aspects of CHIS. | Gives a rich understanding of CHIS, such as data flows, work routines;<br>Helps to understand individuals and their reasoning and actions;<br>Appropriate for identifying contextual aspects;<br>Good for identifying challenges and opportunities which are hard to quantify. |
+| **Weaknesses** | Process of scoring is subjective;<br>Does not go into depth in any of the aspects;<br>Relatively more static and does not account for process dynamics;<br>Predefined set of questions may not fit all contexts;<br>May not be representative of a multiplicity of views, and limited to those answering the questions. | Resource-intensive;<br>Hard to scale, some sample areas must be taken as representative of the whole district/province/country;<br>Does not provide rich insights into macro-level conditions that shape CHIS. |
 
 *Figure 2.8:* Macro and Micro-Level assessment pros and cons
+
 
 ### Synergies between the Macro and Micro-Levels of Assessment
 
