@@ -121,24 +121,21 @@ In addition, **APP: Server-Side Resources** contains some strings that are used 
 - "Pivot Tables"
 - "Reports"
 
-> **Tip**
->
-> To ensure that there are full translations for a particular app, e.g. "Tracker Capture", you need to make sure translations are complete in:
-> - The app project: **APP: Tracker Capture**
-> - Any projects starting with **APP-COMPONENTS**
-> - **APP: Server-Side Resources**, if required. For Tracker Capture this is **not required**.
-
-
 Within the projects we have resources, which represent localization files in the source code. In order to support multiple DHIS2 versions, with the same localization files, the _version_ is associated with each instance of the file. So, for **APP: Data Visualizer** the list of resources looks like this in the Web Editor:
 
-![](resources/images/implementation_guide/transifex_data_vis.jpg)
+![](resources/images/transifex_data_vis.jpg)
 
 i.e. there is only one source resource for the app (`en.pot`), but we have added the versions from 2.31 (v31) up to the latest development (master). The version is shown in the "Category" field, and is also visible as a prefix to the resource name, e.g. `v31--en-pot`.
 
 > **Note**
 >
-> In general, we request translators focus on the "**master**" resource; it usually contains all strings from previous versions, and when translations are added the platform will fill in matching translations on the previous versions too.
-
+> In general, we request translators focus on the "**master**" resource; it usually contains all strings from previous versions, and when translations are added the platform will fill in matching translations on the previous versions toolocalization.
+https://dhis2.org/localization/#section-2
+ section of our website.
+ 
+> **Tip** { .tip }
+>
+> For a specific language and DHIS2 version, you can get an overview of the tranlation coverage, as well as direct links to all relevant resources on transifex, from the [localization](https://dhis2.org/localization/#section-2) section of our website.
 
 ### When will new translations be available in the system?
 
