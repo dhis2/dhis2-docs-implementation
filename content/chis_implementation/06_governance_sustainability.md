@@ -1,5 +1,4 @@
-
-# Chapter 6 Sustainability and Governance
+# Sustainability and Governance
 
 ## Introduction 
 
@@ -7,68 +6,42 @@ Ensuring sustainability, broadly concerning how the CHIS endures over time and s
 
 The key to long term sustainability rests with governance of data management, which is a cross-cutting issue that involves formal management structures, policies and procedures, staffing, and workforce development, monitoring and evaluation of the CHIS program. By the end of this chapter, readers should be able to:
 
-*Learning Objectives*
-
--   Describe sustainability of CHIS, and its important facets.
-
--   Explain what "designing for sustainability" means and the important considerations in this process.
-
--   Explain the important role of governance in enhancing sustainability of the CHIS.
-
--   Describe the four components of governance for CHIS data management.
-
 ## What Do We Mean by Sustainability?
 
 Sustainability of HIS in general, and CHIS in particular, is one of the most significant challenges facing designers, implementers, and policy makers of CHIS. Sustainability is a "wicked" problem, implying that if you try to address one of its facets, other problems will arise elsewhere. For example, to address the problem of CHIS continuity, a donor may be approached for funding. However, this may lead to other dependencies that can further put pressure on sustainability.
 
 Some relevant characteristics of a sustainable CHIS include:
 
-1.  The CHIS must be well integrated into existing organizational routines of work practices, budgeting, training, reporting, and infrastructure provision.
-
-2.  On one hand the CHIS has to be well institutionalized, on the other hand, it must remain flexible, so that it can continue to evolve with the changing informational needs of the health system. This often leads to a dilemma of ensuring both stability and change, which designers and implementers have to constantly engage with.
-
-3.  The CHIS must be integrated with other systems like the routine facility HIS to ensure it does not remain standalone and lead to double work for the CHWs. A standalone CHIS is a sure recipe for unsustainability.
-
-4.  The outputs of the CHIS must provide real value to the key stakeholders, particularly the CHWs and their supervisors, but also mid-level and senior system managers.
+1. The CHIS must be well integrated into existing organizational routines of work practices, budgeting, training, reporting, and infrastructure provision.
+2. On one hand the CHIS has to be well institutionalized, on the other hand, it must remain flexible, so that it can continue to evolve with the changing informational needs of the health system. This often leads to a dilemma of ensuring both stability and change, which designers and implementers have to constantly engage with.
+3. The CHIS must be integrated with other systems like the routine facility HIS to ensure it does not remain standalone and lead to double work for the CHWs. A standalone CHIS is a sure recipe for unsustainability.
+4. The outputs of the CHIS must provide real value to the key stakeholders, particularly the CHWs and their supervisors, but also mid-level and senior system managers.
 
 ## Ensuring CHIS Sustainability
 
 To address sustainability the primary focus of CHIS design should be on strengthening the "demand side" conditions such as how the CHIS adds value to the CHW, how it is integrated with their everyday work practices, and their needs for ongoing technical and public health support, rather than the dominant "supply side" approach of merely providing computers, internet and training.
 
-To make a CHIS sustainable, planners need to address key technical, organizational and behavioral factors. These are explained in detail in the Performance of Routine Information Systems (PRISM) framework[^8] and shown schematically in Figure 6.1 below.
+To make a CHIS sustainable, planners need to address key technical, organizational and behavioral factors. These are explained in detail in the Performance of Routine Information Systems (PRISM) framework^[MEASURE Evaluation, “PRISM: Performance of Routine Information System Management Framework,” [http://www.cpc.unc.edu/measure/tools/monitoring-evaluation-systems/prism](http://www.cpc.unc.edu/measure/tools/monitoring-evaluation-systems/prism)] and shown schematically in Figure 6.1 below.
 
 ![](resources/images/chis_figure39.png)
-
 
 *Figure 6.1:* The PRISM framework
 
 In this approach, CHIS inputs such as assessments, interventions and strategies need to be addressed by technical, organizational, and behavioral determinants in order to achieve the desired outputs of a sustainable system that produces good quality information used to improve overall health system performance. A few aspects focused specifically on CHIS sustainability are detailed below.
 
-1\. Technical Design
-
-a.  ***Integrated CHIS***: There are a number of examples of CHIS developed as an integrated part of the overall HMIS, linked directly to other systems in the community, particularly the routine facility information systems. Using an architectural approach, the CHIS becomes part of the system, reducing CHW workload and adding value,
-
-b.  **Increasing ICT infrastructure**: MHealth projects are increasingly based on internet connectivity, which is increasing exponentially allowing the use of android devices and mobile phones. However, This infrastructure must be carefully assessed, ensuring that the CHIS projects use available connectivity to its maximum while becoming fully operational.
-
-c.  **Free open Source software (FOSS) systems*: ***Successful CHIS projects are developed based on free open source software such as DHIS2, ensuring interoperability with other systems. FOSS flexibility and iterative design processes allow ongoing changes required for the application. As a result, the CHIS can evolve with changing needs, constantly adapted to the needs of the end users.
-
-2\. Human Behavior
-
-Human behavior is the most difficult aspect of implementing a sustainable CHIS, and this aspect needs consistent attention. This phenomenon is increasingly being addressed by dealing with common issues with CHIS such as:
-
-a.  ***Changing Facility Staff attitude to CHWs.*** Many health workers do not understand the role of CHWs and look down on their work as being second class. Major effort needs to be put into encouraging facility level workers to support the community health services, the CHIS and providing CHWs with necessary feedback, support and supervision. Facility staff also need to be involved in addressing sustainable remuneration of CHWs, building this into the budgets, to increase motivation, reduce dropout, and minimize attrition.
-
-b.  ***Providing targeted feedback*** CHIS stakeholders need to see the practical value of data and increase data use through regular, targeted feedback that demonstrates data driven actions based on data. This further increases local demand for and use of data, stimulates ownership and promotes a culture of information use, creating the virtuous data cycle. (see figure 3.1)
-
-c.  ***CHIS provides added value to end users***. For the CHIS to add value to the CHWs, the system design must be integrated with their work practices, reduce their work burden and add value for them to perform their work. A CHIS that is designed for local use and program monitoring rather the surveillance needs of administrators, means that CHWs and stakeholders are motivated to use the system.
-
-d.  ***Ongoing CHIS support and capacity strengthening***. CHIS should focus on ongoing training, and provide support to CHWs in the many challenges they face when they use the system, providing feedback and support rather than criticism. CHIS supervision needs to encourage CHWs to use the system and make it sustainable.
-
-3\. Organization
-
-a.  ***Strong Data governance:*** Governance is key to sustainability of any CHIS. All community level stakeholders must agree to common data standards and high-level coordination based on accountability, transparency and local participation. Key to these standards, are common data collection formats that reduce the data burden of the CHW and minimise the fragmentation of the CHIS. These in the long run contribute to systems becoming sustainable and enduring.
-
-b.  ***Plan for scaling up:*** Many CHIS projects are initiated as pilots with a limited timeframe and funding, known as "pilotitis". This needs to be avoided and scaling up planned for from the beginning with adequate resources and support. CHIS is about bringing about long term institutional and human behavior change, and systems take a long time to mature, usually beyond the short term "project" timeframe.
+1. **Technical Design**
+	a. **Integrated CHIS**: There are a number of examples of CHIS developed as an integrated part of the overall HMIS, linked directly to other systems in the community, particularly the routine facility information systems. Using an architectural approach, the CHIS becomes part of the system, reducing CHW workload and adding value.
+	b. **Increasing ICT infrastructure**: MHealth projects are increasingly based on internet connectivity, which is increasing exponentially allowing the use of android devices and mobile phones. However, This infrastructure must be carefully assessed, ensuring that the CHIS projects use available connectivity to its maximum while becoming fully operational.
+	c. **Free open Source software (FOSS) systems**: Successful CHIS projects are developed based on free open source software such as DHIS2, ensuring interoperability with other systems. FOSS flexibility and iterative design processes allow ongoing changes required for the application. As a result, the CHIS can evolve with changing needs, constantly adapted to the needs of the end users.
+2. **Human Behavior**
+    Human behavior is the most difficult aspect of implementing a sustainable CHIS, and this aspect needs consistent attention. This phenomenon is increasingly being addressed by dealing with common issues with CHIS such as:
+	a. **Changing Facility Staff attitude to CHWs. ** Many health workers do not understand the role of CHWs and look down on their work as being second class. Major effort needs to be put into encouraging facility level workers to support the community health services, the CHIS and providing CHWs with necessary feedback, support and supervision. Facility staff also need to be involved in addressing sustainable remuneration of CHWs, building this into the budgets, to increase motivation, reduce dropout, and minimize attrition.
+	b. **Providing targeted feedback** CHIS stakeholders need to see the practical value of data and increase data use through regular, targeted feedback that demonstrates data driven actions based on data. This further increases local demand for and use of data, stimulates ownership and promotes a culture of information use, creating the virtuous data cycle. (see figure 3.1)
+	c. **CHIS provides added value to end users**. For the CHIS to add value to the CHWs, the system design must be integrated with their work practices, reduce their work burden and add value for them to perform their work. A CHIS that is designed for local use and program monitoring rather the surveillance needs of administrators, means that CHWs and stakeholders are motivated to use the system.
+	d. **Ongoing CHIS support and capacity strengthening**. CHIS should focus on ongoing training, and provide support to CHWs in the many challenges they face when they use the system, providing feedback and support rather than criticism. CHIS supervision needs to encourage CHWs to use the system and make it sustainable.
+3. **Organization**
+	a. **Strong Data governance:** Governance is key to sustainability of any CHIS. All community level stakeholders must agree to common data standards and high-level coordination based on accountability, transparency and local participation. Key to these standards, are common data collection formats that reduce the data burden of the CHW and minimise the fragmentation of the CHIS. These in the long run contribute to systems becoming sustainable and enduring.
+	b. **Plan for scaling up:** Many CHIS projects are initiated as pilots with a limited timeframe and funding, known as "pilotitis". This needs to be avoided and scaling up planned for from the beginning with adequate resources and support. CHIS is about bringing about long term institutional and human behavior change, and systems take a long time to mature, usually beyond the short term "project" timeframe.
 
 In summary, various reasons, technical, institutional, and human related, contribute to the CHIS becoming sustainable. Many of the reasons are inter-connected, requiring a holistic design and a health systems based approach to address sustainability.
 
@@ -98,7 +71,7 @@ The donor community (development partners) has a distinct role in supporting gov
 
 Effective data governance is the key to sustainability and is essential to all forms of routine HIS, including CHIS.
 
-Data management governance is at the core of all information systems and is crucial for the sustainable functioning of a CHIS. This section is adapted from "Guidelines for Data Management Standards in Routine Health Information Systems[^9]" and readers are encouraged to refer to that for further details.
+Data management governance is at the core of all information systems and is crucial for the sustainable functioning of a CHIS. This section is adapted from "Guidelines for Data Management Standards in Routine Health Information Systems"^[Heywood & Boone  Guidelines for Data Management Standards in Routine Health Information Systems Measure evaluation 2013] and readers are encouraged to refer to that for further details.
 
 This section defines CHIS governance, provides an overview of governance of CHIS, and proposes standards for data management governance which, when applied, can strengthen CHIS performance.
 
@@ -114,20 +87,15 @@ Good governance requires commitment at all levels. It is not enough to have good
 
 ![](resources/images/chis_figure40.png)
 
-
 *Figure 6.2* Governance of Data management
 
 This model brings together in one place a number of concepts dealt with in other places in this guideline including:
 
--   Formal governance structures such as SOPs and strategic planning and financial systems, as well as oversight mechanisms such as technical working groups (TWG).
-
--   Workforce development, training, and supervision to identify best practices pertaining to CHIS staffing. (Chapter 5)
-
--   Policies and procedures for data management, with particular regard to standard operating procedures, data and metadata stewardship. (Chapter 4)
-
--   CHIS assessment, starting with general assessment questions and then exploring the Performance of Routine Information Systems (PRISM) model to see how CHIS converts inputs into appropriate outputs by influencing determinants of health outputs (organizational, behavioral, and technical) and their influence on overall health system performance.(Chapter 2)
-
--   Ways to promote a culture of information use is the core theme of this manual.
+- Formal governance structures such as SOPs and strategic planning and financial systems, as well as oversight mechanisms such as technical working groups (TWG).
+- Workforce development, training, and supervision to identify best practices pertaining to CHIS staffing. (Chapter 5)
+- Policies and procedures for data management, with particular regard to standard operating procedures, data and metadata stewardship. (Chapter 4)
+- CHIS assessment, starting with general assessment questions and then exploring the Performance of Routine Information Systems (PRISM) model to see how CHIS converts inputs into appropriate outputs by influencing determinants of health outputs (organizational, behavioral, and technical) and their influence on overall health system performance.(Chapter 2)
+- Ways to promote a culture of information use is the core theme of this manual.
 
 ## Formal Governance Structures
 
@@ -161,21 +129,14 @@ Reporting structures include directives (SOPs) from CHIS management, which state
 
 In the context of CHIS, reporting structures clearly define:
 
--   The source document for reporting---that is, the individual client record
-
--   The standardized, aggregate, periodic report for reporting to the next level
-
--   Reporting deadlines---the date reports of various types are due to the next level.
-
--   Indicator calculation guidelines and compilation, and completing the forms
-
--   Reporting Procedures for sending the data to the next level.
-
--   Data quality review procedures
-
--   Sanctions (if any) for failure to meet reporting obligations.
-
--   Responsibilities of staff members to monitor reporting of performance and compliance, and enforcement of these standards?
+- The source document for reporting---that is, the individual client record
+- The standardized, aggregate, periodic report for reporting to the next level
+- Reporting deadlines---the date reports of various types are due to the next level.
+- Indicator calculation guidelines and compilation, and completing the forms
+- Reporting Procedures for sending the data to the next level.
+- Data quality review procedures
+- Sanctions (if any) for failure to meet reporting obligations.
+- Responsibilities of staff members to monitor reporting of performance and compliance, and enforcement of these standards?
 
 ### Master Facilities List
 
@@ -209,7 +170,7 @@ Because CHIS personnel should not be expected to have knowledge of maintenance a
 
 ### CHIS Data Governance Plan Based on Best International Practices
 
-A CHIS governance plan refers to roles and processes that serve as a guideline for fulfilling, sustaining, and extending CHIS planning. A governance plan crosses all organizational layers, including stakeholders, administration, maintenance, strategy, policy, and support. ^\[1\]^
+A CHIS governance plan refers to roles and processes that serve as a guideline for fulfilling, sustaining, and extending CHIS planning. A governance plan crosses all organizational layers, including stakeholders, administration, maintenance, strategy, policy, and support.^[*Technopedia:* [Governance Plan](http://www.techopedia.com/definition/2910/governance-plan)]
 
 A CHIS governance plan should clearly state who does what, when, and how with regard to CHIS management, to management of data and information, and to decision making. A governance plan is useful in times of transition or change in the CHIS, since it provides a reference tool to clarify roles and settle disputes.
 
@@ -217,17 +178,15 @@ A CHIS governance plan should clearly state who does what, when, and how with re
 
 Most countries still lack policies that bring together the various components of CHIS under a single unifying framework and provide clear lines of responsibility and functionality. CHIS management structures should be strengthened centrally and resources and authority decentralized to serve the specific needs of the people involved in implementing CHIS, particularly at the periphery.
 
-The CHIS framework in both national health policies and strategic plans should encapsulate an integrated CHIS as part of overall health systems strengthening and governance reform, with buy-in to the plan from local government, political authorities, the MOH, and donors. The framework should recommend the pooling of CHIS expertise and resources into "one plan, one framework and one funding mechanism."[^10]
+The CHIS framework in both national health policies and strategic plans should encapsulate an integrated CHIS as part of overall health systems strengthening and governance reform, with buy-in to the plan from local government, political authorities, the MOH, and donors. The framework should recommend the pooling of CHIS expertise and resources into "one plan, one framework and one funding mechanism."^[Paris Declaration on Aid effectiveness 2005]
 
 Countries also need a practical CHIS operational plan wherein all CHIS activities within the MOH are centrally guided, with clear lines of decentralized responsibilities in the spirit of administrative, financial, and operational decentralization toward districts.
 
 As defined in the CHIS framework, institutionalized mechanisms should be developed for integrated CHIS data quality assurance (as measured by its completeness, accuracy, timeliness, and consistency), with validation rules for electronic systems and a team approach to data quality. In addition, these policies should:
 
-1.  Specify interoperability of CHIS subsystems.
-
-2.  Define human resource needs and capacity strengthening requirements.
-
-3.  Define responsibilities for data collection, information flow, and use.
+1. Specify interoperability of CHIS subsystems.
+2. Define human resource needs and capacity strengthening requirements.
+3. Define responsibilities for data collection, information flow, and use.
 
 National policies should provide for a balanced, limited set of national CHIS indicators, which are regularly reviewed in a participative manner, with clearly defined numerators and denominators, data sources, baselines, and national targets. There should be a regular indicator review process in which program and subnational managers participate to ensure that the existing indicator set fulfills their needs.
 
@@ -239,15 +198,11 @@ In CHIS, stewardship of metadata, or responsible planning and management of data
 
 A data steward ensures that each assigned data element:
 
-1.  Has a clear and unambiguous definition.
-
-2.  Does not conflict with other data elements in the metadata registry.
-
-3.  Is being used and is being used consistently in all interlinked computer systems; unused data elements are removed.
-
-4.  Has adequate documentation on appropriate usage and notes.
-
-5.  Is documented with regard to its origin and sources of authority.
+1. Has a clear and unambiguous definition.
+2. Does not conflict with other data elements in the metadata registry.
+3. Is being used and is being used consistently in all interlinked computer systems; unused data elements are removed.
+4. Has adequate documentation on appropriate usage and notes.
+5. Is documented with regard to its origin and sources of authority.
 
 Assignment of data elements to an individual promotes trust in systems where users can contact a specific staff member with questions on specific data elements.
 
@@ -261,13 +216,10 @@ Governance refers to a process which outlines the process and mechanisms of how 
 
 Data standards are multifaceted in nature, involving both technical and semantic standards:
 
-1.  Technical (syntactic) standards such as data transfer protocols.
-
-2.  Semantic (nomenclature) aspects. Important semantic standards in the context of CHIS include metadata stewardship issues such as :
-
-    a.  Meta data naming conventions for data elements, indicators, organizational units, shape files and others.
-
-    b.  Reporting periods for different elements and the formats in which they are reported, that enable ease of compilation of data for the CHW.
+1. Technical (syntactic) standards such as data transfer protocols.
+2. Semantic (nomenclature) aspects. Important semantic standards in the context of CHIS include metadata stewardship issues such as :
+	a. Meta data naming conventions for data elements, indicators, organizational units, shape files and others.
+	b. Reporting periods for different elements and the formats in which they are reported, that enable ease of compilation of data for the CHW.
 
 A universal governance problem is that donors and NGOs want to introduce their own parallel community systems and data collection formats without being accountable to other standards and systems in the community setting. This lack of governance adds to the workload of the CHWs since all data collection work converges on them, and magnifies the fragmentation.
 
@@ -285,11 +237,9 @@ There are many ways to define SOPs, and the actual SOPs vary tremendously from c
 
 There are three, basic SOPs outlined in this manual:
 
-1.  Reporting Guidelines in Chapter 4
-
-2.  Training protocol in the Chapter 5
-
-3.  Supervision protocol in Chapter 5
+1. Reporting Guidelines in Chapter 4
+2. Training protocol in the Chapter 5
+3. Supervision protocol in Chapter 5
 
 ![](resources/images/chis_figure41.png)
 
@@ -298,69 +248,46 @@ There are three, basic SOPs outlined in this manual:
 
 #### SOP Best Practices
 
-1.  **Harmonize multiple programs into a single protocol.** This is especially true for the data capture protocol described in this chapter and the training and supervision protocols in the training chapter.
-
-2.  **Develop SOPs for each individual community project** especially if multiple data flows exist from.
-
-3.  **Turn the SOP into illustrated posters** and have the facility staff post them on their walls for public viewing.
-
-4.  **Print SOPs and make sure all CHWs, facility staff, and district staff have copies**
-
-5.  **Stakeholders to sign the SOPs** at the completion of training.
-
-6.  **Stakeholder participation in the creation and approval of SOPs.** The SOPs must institutionalize the best practices and workflow of the actors in the CHIS. Include representation from all relevant stakeholders in the process of developing SOPs.
-
-7.  **Ensure all data elements and indicators are captured.** The project should have an M&E framework (see Chapter 3) that should clearly define all data elements and indicators. The CHWs should clearly understand the meaning, and measurement of each data element and indicator to remove ambiguity
-
-8.  **Use data capture guidelines at trainings.** To build accountability, CHWs and facility staff need to know they are part of a larger system. They need to know how their data is used for planning at higher levels and specific actions at lower levels.
-
-9.  **Have the CHWs explain the data capture guidelines.** This teach-back method is an effective adult learning practice. By explaining the data capture guidelines, this elevates the CHW's credibility with the health committee.
-
+1. **Harmonize multiple programs into a single protocol.** This is especially true for the data capture protocol described in this chapter and the training and supervision protocols in the training chapter.
+2. **Develop SOPs for each individual community project** especially if multiple data flows exist from.
+3. **Turn the SOP into illustrated posters** and have the facility staff post them on their walls for public viewing.
+4. **Print SOPs and make sure all CHWs, facility staff, and district staff have copies**
+5. **Stakeholders to sign the SOPs** at the completion of training.
+6. **Stakeholder participation in the creation and approval of SOPs. ** The SOPs must institutionalize the best practices and workflow of the actors in the CHIS. Include representation from all relevant stakeholders in the process of developing SOPs.
+7. **Ensure all data elements and indicators are captured.** The project should have an M&E framework (see Chapter 3) that should clearly define all data elements and indicators. The CHWs should clearly understand the meaning, and measurement of each data element and indicator to remove ambiguity
+8. **Use data capture guidelines at trainings.** To build accountability, CHWs and facility staff need to know they are part of a larger system. They need to know how their data is used for planning at higher levels and specific actions at lower levels.
+9. **Have the CHWs explain the data capture guidelines.** This teach-back method is an effective adult learning practice. By explaining the data capture guidelines, this elevates the CHW's credibility with the health committee.
 10. **Produce, simple-to-use, local language guidelines.** CHWs and facility staff need guides and instructions on what to do. Consider making posters or small laminated portable data capture guidelines for CHWs and facilities to put on the wall or carry with them that outline their role and responsibilities based upon the data capture guidelines.
-
 11. **Have CHWs, facility, district staff and national staff sign guidelines.** This is a symbolic "commitment" measure. The aim is that they have read it, understand their reporting responsibilities as defined in the data capture guidelines, and will carry out these responsibilities.
-
 12. **Produce simple videos or audio and upload them to phones.** Responsibilities and actions for every event are made easier with a simple, local-language videos or audio guides that facility staff and CHWs can refer to.
 
 ## CHIS Staffing and Workforce Planning and Development
 
 People are the lifeblood of CHIS, and even the best system would generate no information products without the combined efforts of all CHIS staff. An entire chapter of these guidelines are dedicated to capacity development, but the topic outline is repeated here to reinforce its importance in CHIS governance.
 
--   Training needs to be carefully planned and costed, with the appropriate infrastructure, equipment and curriculum, trained teachers
-
--   CHIS staff must have the training they need to perform the tasks expected and to produce the data and information necessary to monitor the community health system.
-
--   Adequate numbers of staff is also necessary. A staff that is too small risks underperformance, while a staff that is too large wastes precious CHIS resources.
-
--   The staff and its training should be organized, efficient and of high quality.
-
--   Certain standard elements of CHIS staffing and training help ensure high quality output from the workforce while avoiding redundancy or wastage.
+- Training needs to be carefully planned and costed, with the appropriate infrastructure, equipment and curriculum, trained teachers
+- CHIS staff must have the training they need to perform the tasks expected and to produce the data and information necessary to monitor the community health system.
+- Adequate numbers of staff is also necessary. A staff that is too small risks underperformance, while a staff that is too large wastes precious CHIS resources.
+- The staff and its training should be organized, efficient and of high quality.
+- Certain standard elements of CHIS staffing and training help ensure high quality output from the workforce while avoiding redundancy or wastage.
 
 Components of CHIS planning and development that should be covered by this planning and development process include
 
-+-------------------------------------------+-------------------------------------------------------------------------------+
-| **Training Infrastructure and staff**     | -   Costed training plan                                                      |
-|                                           |                                                                               |
-|                                           | -   Standardized training curriculum/materials                                |
-|                                           |                                                                               |
-|                                           | -   Equipped training institutions                                            |
-|                                           |                                                                               |
-|                                           | -   Adequate numbers of competent, trained trainers                           |
-+-------------------------------------------+-------------------------------------------------------------------------------+
-| **Supportive Supervision and Mentoring:** | -   Guidelines for standardized, effective supervision                        |
-|                                           |                                                                               |
-|                                           | -   Standardized supervisory checklists                                       |
-|                                           |                                                                               |
-|                                           | -   Targeted feedback mechanisms                                              |
-|                                           |                                                                               |
-|                                           | -   Standardized supervision reports---tracking results and monitoring trends |
-|                                           |                                                                               |
-|                                           | -   Schedule of supervisory visits                                            |
-|                                           |                                                                               |
-|                                           | -   Data quality checks                                                       |
-+-------------------------------------------+-------------------------------------------------------------------------------+
+**Training Infrastructure and staff:**
 
-*Table 6. 5* Requirements for CHIS capacity development
+- Costed training plan|
+- Standardized training curriculum/materials|
+- Equipped training institutions|
+- Adequate numbers of competent, trained trainers |
+
+**Supportive Supervision and Mentoring:**
+
+- Guidelines for standardized, effective supervision
+- Standardized supervisory checklists
+- Targeted feedback mechanisms|
+- Standardized supervision reports---tracking results and monitoring trends |
+ - Schedule of supervisory visits|
+- Data quality checks
 
 ## Monitoring and Evaluation
 
@@ -368,7 +295,7 @@ Monitoring and evaluation (M&E) is the final, but crucial component of Data Gove
 
 ### Maintaining CHIS Quality
 
-CHIS quality is essential and the determinants are similar to those already described for sustainability -technical, organizational, and behavioral factors that convert CHIS functions into the key outputs in the form of quality data that is regularly used so as to improve health system performance. (PRISM framework[^11])
+CHIS quality is essential and the determinants are similar to those already described for sustainability -technical, organizational, and behavioral factors that convert CHIS functions into the key outputs in the form of quality data that is regularly used so as to improve health system performance. (PRISM framework^[MEASURE Evaluation, “PRISM: Performance of Routine Information System Management Framework,” [http://www.cpc.unc.edu/measure/tools/monitoring-evaluation-systems/prism](http://www.cpc.unc.edu/measure/tools/monitoring-evaluation-systems/prism)])
 
 #### Technical Determinants
 
@@ -390,21 +317,14 @@ A major test of the effectiveness of CHIS governance is regular participatory as
 
 CHIS impacts on health programs can be measured by four simple questions:
 
--   Is the information relevant?
-
--   Is the information of good quality? (Is it timely, consistent, complete, and accurate?)
-
--   Is the information presented in a user-friendly way? (Is it easy to access and easy to interpret?)
-
--   Is there capacity to act on the information provided?
-
+- Is the information relevant?
+- Is the information of good quality? (Is it timely, consistent, complete, and accurate?)
+- Is the information presented in a user-friendly way? (Is it easy to access and easy to interpret?)
+- Is there capacity to act on the information provided?
 The answers to these questions need to be approached in a way that addresses the health systems framework and should be further elaborated by asking:
-
--   Has the CHIS been decentralized, and have lower-level program managers contributed to decision making?
-
--   Have the systems been integrated and contributed to broader program integration?
-
--   Has CHIS contributed to evidence-based decision making and more effective health outcomes?
+- Has the CHIS been decentralized, and have lower-level program managers contributed to decision making?
+- Have the systems been integrated and contributed to broader program integration?
+- Has CHIS contributed to evidence-based decision making and more effective health outcomes?
 
 ### Assessment methods
 
@@ -448,11 +368,9 @@ Focal Point Persons (FPP) are the local or national government employees who coo
 
 Trainings were conducted by partner staff to district staff, who then trained community champions (CCs) and Sanitation action groups (SAGs) in a training of trainers approach. There were different trainings at every level of data collection and regular feedback to ensure that data collection tools were properly used and understood.
 
--   The Sanitation Action Groups required an understanding of the paper-based data collection tools, what was being monitored and why;
-
--   Community Champions needed to operate feature phones for data reporting, understand the data being collected and the feedback loops they were receiving;
-
--   Environmental Health Technicians (EHTs) required training to understand the mobile platform and how to troubleshoot minor problems. EHTs and other government officials also benefited from data use trainings.
+- The Sanitation Action Groups required an understanding of the paper-based data collection tools, what was being monitored and why;
+- Community Champions needed to operate feature phones for data reporting, understand the data being collected and the feedback loops they were receiving;
+- Environmental Health Technicians (EHTs) required training to understand the mobile platform and how to troubleshoot minor problems. EHTs and other government officials also benefited from data use trainings.
 
 District Water Sanitation and Hygiene Education (DWASHE) committees were created in districts with staff from all government ministries to review sanitation progress at quarterly meetings. They are trained in the use of DHIS2, using specially developed dashboards and other visualization tools to enable them to inspect the sanitation state of the districts and make district WASH plans based on these data.
 
@@ -460,9 +378,8 @@ District Water Sanitation and Hygiene Education (DWASHE) committees were created
 
 Custom-developed reports with DHIS2 data are sent to partners monthly, giving an overview of "open defecation free" (ODF) status, and reporting rates. There are several iterations of these html based reports, designed to communicate the necessary information to the receivers.
 
--   EHTs receive information on total reports received out of the total expected within their assigned catchment area.
-
--   UNICEF and MLGH receive reports on sanitation progress of each data element per district.
+- EHTs receive information on total reports received out of the total expected within their assigned catchment area.
+- UNICEF and MLGH receive reports on sanitation progress of each data element per district.
 
 These reports were designed to help EHTs target their activities based on which CCs need help reporting, and respectively can help UNICEF and MLGH in resource allocation.
 
@@ -471,24 +388,22 @@ These reports were designed to help EHTs target their activities based on which 
 After a few months of monitoring data and not seeing a dramatic effect on latrine construction, a program manager proposed incorporating the power of traditional leadership into the protocol design of CLTS. A tablet-based chiefdom widget was designed to enable chiefs to view relevant information without logging in to DHIS2 and requiring minimal mobile data to support. This information is presented in charts, tables, and graphics, that exist on the home screen of the tablets.
 
 ![](resources/images/chis_figure42.png)
-and![](resources/images/chis_figure43.png)
 
+*Figure 6.5:* Snapshot of the Chief's Visualization App active on a tablet home screen.
 
-*Figure 6.5 (left):* Snapshot of the Chief's Visualization App active on a tablet home screen.
+![](resources/images/chis_figure43.png)
 
-*Figure 6.6 (right):* Enlarged list of sanitation performance of individual villages of the chiefdom.
+*Figure 6.6:* Enlarged list of sanitation performance of individual villages of the chiefdom.
 
 Armed with this information, chiefs could compare the performance of their villages to their neighboring chiefdoms villages' performance, combining the power of community behavior changes, with the traditional authority chiefs must instigate that change. Following tablet distribution came positive change in open defecation free status, as chiefs used their influence to encourage their headman and villages to build more latrines (see figures 6.7 & 6.8).
 
 ![](resources/images/chis_figure44.png)
 
-
 *Figure 6.7:* Figure illustrating the influence and process of chiefdom orientation
 
 ![](resources/images/chis_figure45.png)
 
-
-*Figure 6.8:* Sanitation Uptake over Time. Ministry of Local Government Republic of Zambia *Figure 6.8:* Sanitation Uptake over Time. Ministry of Local Government Republic of Zambia
+*Figure 6.8:* Sanitation Uptake over Time. Ministry of Local Government Republic of Zambia
 
 #### CHIS Development
 
@@ -504,7 +419,6 @@ Historically, a paper to Excel system was used for CLTS, requiring community fac
 
 ![](resources/images/chis_figure46.png)
 
-
 *Figure 6.9:* Data flow of CLTS reports. Sanitation action groups (SAGs) in each village report data to community champions (CCs). CCs submit data to the DHIS2 via mobile phones. EHTs oversee CC cadres.
 
 The new system depicted above in Figure 3 was designed to maintain the paper-based village SAG forms containing 14 data elements on latrine construction. Data burden was reduced by reporting only data for a set of indicators developed with MLGH for performance of village-level sanitation. CC's were given mobile feature phones with a java app to report SAG data directly onto the DHIS2 database, minimizing reporting duplication.
@@ -517,41 +431,29 @@ A key protocol that ensured government engagement throughout all parts of the re
 
 Two examples are given in Figures 6.10 and 6.11:
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| > **Community Mobilization**                                                                                                                                                     |                                                                                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| Responsible Person                                                                                                                                                               | Chief and/or Senior Headmen                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| Periodicity                                                                                                                                                                      | Ongoing                                                                                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| Purpose                                                                                                                                                                          | To continue building village-level awareness of and support for community-led total sanitation |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| Outcome                                                                                                                                                                          | Continued propagation of improved latrines                                                     |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| CLTS community mobilization includes any event that involves a SAG, CC, EHT, Headman and/or Chief pushing the CLTS agenda at the village-level.                                  |                                                                                                |
-|                                                                                                                                                                                  |                                                                                                |
-| On a monthly basis, the SAG mobilizes each household in the village, fills out the CLTS Data Collection Sheet while monitoring latrine propagation and conducting sensitization. |                                                                                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+> | Community Mobilization |  |
+> |:-|:-|
+> | Responsible Person | Chief and/or Senior Headmen |
+> | Periodicity | Ongoing|
+> | Purpose | To continue building village-level awareness of and support for community-led total sanitation |
+> | Outcome | Continued propagation of improved latrines |
+> 
+> CLTS community mobilization includes any event that involves a SAG, CC, EHT, Headman and/or Chief pushing the CLTS agenda at the village-level. On a monthly basis, the SAG mobilizes each household in the village, fills out the CLTS Data Collection Sheet while monitoring latrine propagation and conducting sensitization.
 
 *Figure 6.10:* Table illustrating community mobilization.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
-| > **ODF Verification**                                                                                                                                                                                                                                                                                                                          |                                                       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
-| Responsible Person                                                                                                                                                                                                                                                                                                                              | District CLTS Focal Point Person                      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
-| Periodicity                                                                                                                                                                                                                                                                                                                                     | When a village claims ODF status                      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
-| Purpose                                                                                                                                                                                                                                                                                                                                         | To verify if villages are open defecation free        |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
-| Outcome                                                                                                                                                                                                                                                                                                                                         | Villages that claim ODF are verified to be ODF or not |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
-| This process helps maintain data quality. When the District CLTS FPP logs into DHIS, he/she will see a notification on the Dashboard for any villages that claim ODF status. The notification will indicate the name of the village and prompt the District CLTS FPP to mobilize the verification team to conduct a field visit to the village. |                                                       |
-|                                                                                                                                                                                                                                                                                                                                                 |                                                       |
-| It is the EHT's responsibility to coordinate a verification team, acquire funds from the District Office and verify the village. After the verification visit, the EHT reports their findings through the DHIS2 mobile application's ODF Verification Form.                                                                                     |                                                       |
-|                                                                                                                                                                                                                                                                                                                                                 |                                                       |
-| Once a village has been verified for 3 months, a team of District Officers then visits the village to conduct a spot-check certification. Districts are able to monitor ODF progression through DHIS2 visualization tools.                                                                                                                      |                                                       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
+> | **ODF Verification**| |
+> | :- | :- |
+> | Responsible Person| District CLTS Focal Point Person|
+> | Periodicity | When a village claims ODF status|
+> | Purpose | To verify if villages are open defecation free|
+> | Outcome | Villages that claim ODF are verified to be ODF or not |
+> 
+> This process helps maintain data quality. When the District CLTS FPP logs into DHIS, he/she will see a notification on the Dashboard for any villages that claim ODF status. The notification will indicate the name of the village and prompt the District CLTS FPP to mobilize the verification team to conduct a field visit to the village.
+> 
+> It is the EHT's responsibility to coordinate a verification team, acquire funds from the District Office and verify the village. After the verification visit, the EHT reports their findings through the DHIS2 mobile application's ODF Verification Form.
+> 
+> Once a village has been verified for 3 months, a team of District Officers then visits the village to conduct a spot-check certification. Districts are able to monitor ODF progression through DHIS2 visualization tools.
 
 *Figure 6.11:* Table illustrating ODF verification.
 
@@ -559,13 +461,10 @@ These protocols strengthen operations, and streamline reporting by standardizing
 
 #### Lessons learned
 
-1.  Government sustainability was fostered from the very inception of the program as program implementers worked hand-in-hand with MLGH at all levels of the hierarchy. Surveillance visits always incorporated local government staff.
-
-2.  Visualization of data by key 'change agents', in this case local chiefs and traditional leaders creates ownership and motivation. These change agents were provided a means to understand the performance of their villages in relation to sanitation practices and not only had the data, but the leadership authority to encourage village level improvement.
-
-3.  Clear documentation through SOPs is essential for clear system functioning and management of all parties.
-
-4.  Multi-ministerial collaboration is important. In this case, Ministry of Chiefs and Traditional Affairs (MOCTA) and MLGH collaborated to ensure chiefs and traditional leaders were engaged in sanitation at local level. This was a success.
+1. Government sustainability was fostered from the very inception of the program as program implementers worked hand-in-hand with MLGH at all levels of the hierarchy. Surveillance visits always incorporated local government staff.
+2. Visualization of data by key 'change agents', in this case local chiefs and traditional leaders creates ownership and motivation. These change agents were provided a means to understand the performance of their villages in relation to sanitation practices and not only had the data, but the leadership authority to encourage village level improvement.
+3. Clear documentation through SOPs is essential for clear system functioning and management of all parties.
+4. Multi-ministerial collaboration is important. In this case, Ministry of Chiefs and Traditional Affairs (MOCTA) and MLGH collaborated to ensure chiefs and traditional leaders were engaged in sanitation at local level. This was a success.
 
 A future goal is to better link data from MLGH with data from the Ministry of Health. Specifically, MLGH data (CLTS intervention data) is currently captured within an instance of DHIS2, with health-outcome data (e.g. diarrheal disease incidence) captured in a separate instance of DHIS2 (Ministry of Health). By linking the two systems, it will be easier to understand the impact of the CLTS program on health outcomes.
 
@@ -581,10 +480,9 @@ A key feature of this revised policy is the institution of a new cadre of Commun
 
 #### Community Health Services Vision
 
-*A coordinated national community health care system in which households have access to life-saving services and are empowered to mitigate potential health risks.*
+*A coordinated national community health care system in which households have access to life-saving services and are empowered to mitigate potential health risks. *
 
 ![](resources/images/chis_figure47.png)
-
 
 ### Key figures in Liberia's CHA program structure 
 
@@ -598,15 +496,12 @@ The Health Facility Development Committee's (HFDC) primary responsibility is to 
 
 CHAs is recruited by the community, trained and supervised the formal health system (Facility) to deliver an integrated and standardized service delivery package, which includes preventive, curative, promotive, rehabilitative and palliative services and epidemic surveillance to households located more than a one-hour walk (>5km) from the nearest health facility. CHAs will be responsible for recording information on individuals in each household during visits when conducted and services are provided. These data are reported into an aggregated monthly service report and sent to the facility at the end of each month.
 
-[Profile of CHAs]{.ul}
+**Profile of CHAs**
 
--   Permanent resident in the community which s/he serves, between 18 and 50 years of age
-
--   Involved in community project/s in the past, trustworthy and respected
-
--   Able to read and write and to add, subtract and multiply
-
--   A good mobilizer and communicator fluent in the village dialect
+- Permanent resident in the community which s/he serves, between 18 and 50 years of age
+- Involved in community project/s in the past, trustworthy and respected
+- Able to read and write and to add, subtract and multiply
+- A good mobilizer and communicator fluent in the village dialect
 
 #### Community Health Services Supervisor (CHSS)
 
@@ -642,7 +537,6 @@ Data collection tools from each of these module-based service delivery area were
 
 ![](resources/images/chis_figure48.png)
 
-
 ### Data Use 
 
 CBIS was designed as a streamlined flexible system to allow for decentralized data entry and local use.
@@ -665,6 +559,5 @@ The M&E Officer is responsible for providing information to various line manager
 
 The Central Level CBIS builds the capacity of the County Teams, training county level M&E staff how to create and run reports. He / She analyzes the data to troubleshoot and strategize for the programs. The data and reports should be accessible to the Ministry of Health and partners to use for decision making at all levels of the health system.
 
-\[1\] *Technopedia,* "Governance Plan," [[http://www.techopedia.com/definition/2910/governance-plan]{.ul}](http://www.techopedia.com/definition/2910/governance-plan).
 
 \[2\] "Paris Declaration on Aid Effectiveness: Ownership Harmonization, Alignment, Results and Mutual Accountability," in *The Paris Declaration on Aid Effectiveness and the Accra Agenda for Action* (Paris: Organization for Economic Co-operation and Development, n.d.), 4--13, [[http://www.oecd.org/dac/effectiveness/34428351.pdf]{.ul}](http://www.oecd.org/dac/effectiveness/34428351.pdf).
