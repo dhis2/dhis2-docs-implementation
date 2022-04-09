@@ -257,11 +257,11 @@ To gain full value of the CHIS, it needs to provide sustainable use, implying th
 
 Broadly agreed goals and targets and a set of indicators linked to them is the basic tool to promote the shift to an information-led CHIS. To ensure maximum use, all data collected by the CHIS should directly relate to indicators selected to monitor efforts to improve health system performance.
 
-Indicators which are defined as a *"variable that help to measure changes, directly or indirectly*" [^6] is at the core of promoting a culture of information use. Crafting indicators that are useful for communities is the center of the process of monitoring community health services and systems and is one of the most important skills required for CHIS design.
+Indicators which are defined as a *"variable that help to measure changes, directly or indirectly*" ^[WHO, 1981] is at the core of promoting a culture of information use. Crafting indicators that are useful for communities is the center of the process of monitoring community health services and systems and is one of the most important skills required for CHIS design.
 
 A good indicator provides information about a broad range of conditions through a single measure and enables CHWs and their supervisors to compare themselves to others doing similar work. Indicators for community actors (CHW, community leaders, community health groups) must be:
 
-A compendium of standards and measurement issues for 40 indicators has been produced by WHO[^7] and at regional level by the West African Health Organization. These need to be adapted to country contexts and again to the community level.
+A compendium of standards and measurement issues for 40 indicators has been produced by WHO^[WHO, 2017] and at regional level by the West African Health Organization. These need to be adapted to country contexts and again to the community level.
 
 ### 5. Develop Community Action Plans
 
