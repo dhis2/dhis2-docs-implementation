@@ -20,8 +20,8 @@ The group goes through the tool question by question in plenary, since they are 
 
 An example of how they answered one of the questions now follows. The group is discussing the question: Do traditional health providers report through the CHIS? The scoring scheme for this question is:
 
-| |   Highly adequate   |   Adequate   |   Present but not adequate   |   Not adequate at all   |
-|  Items   |   3   |   2   |   1   |   0   |
+| |  Highly adequate |  Adequate |  Present but not adequate |  Not adequate at all |
+| Items |  3 |  2 |  1 |  0 |
 |:-|:-|:-|:-|:-|
 | Do traditional health providers report through the CHIS? | Yes, all traditional health providers working at the community level report their activities to the national CHIS. | Most traditional health providers working at the community level report their activities to the national CHIS. | Some traditional health providers working at the community level report their activities to the national CHIS. | Traditional health providers are not part of the CHIS. |
 
