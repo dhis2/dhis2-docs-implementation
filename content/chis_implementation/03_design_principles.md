@@ -66,7 +66,7 @@ CHIS should be both an object of capacity strengthening and a means to support t
 - Providing remote and supportive supervision
 
 
-**Action points to operationalize the design principle*** 
+**Action points to operationalize the design principle** 
 
 1. Capacity strengthening must target teams of CHWs, supervisors and other relevant stakeholders.
 2. Use locally appropriate user-focused training methods in the local language.

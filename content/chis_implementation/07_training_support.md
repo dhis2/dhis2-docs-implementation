@@ -94,12 +94,12 @@ Involving leaders in data use can have dramatic impact on a community program, a
 We divide the skills required into two broad categories of technical and public health related. These are briefly discussed.
 
 1. Technical skills
-	a. Use of DHIS2
-	b. Use of mobile devices
-	c. Hardware and software support skills
+	- Use of DHIS2
+	- Use of mobile devices
+	- Hardware and software support skills
 2. Public health skills
-	a. Understanding data, indicators and supporting concepts
-	b. Understanding how data is used to inform local action.
+	- Understanding data, indicators and supporting concepts
+	- Understanding how data is used to inform local action.
 
 #### Technical skills
 
@@ -184,28 +184,28 @@ While there is no one way to train CHWs in CHIS, the following principles should
 5. Training should include both the paper based forms and ICT device, interpreting the reports on health status, and service performance.
 6. Looking up help in the SOPs or in the device, and contacting the CHW coordinator for support are problem solving methods best taught in separate sessions.
 7. Length of training should be tailored to CHW knowledge
-	a. CHWs who are already familiar with paper reporting and feature phones can be easily trained on routine reporting in a short amount of time. Possibly even in one day.
-	b. CHWs who have not used smartphones before will require more time, one to several additional days
-	c. If the training includes many health programs, a week or more of CHIS training is appropriate.
+	- CHWs who are already familiar with paper reporting and feature phones can be easily trained on routine reporting in a short amount of time. Possibly even in one day.
+	- CHWs who have not used smartphones before will require more time, one to several additional days
+	- If the training includes many health programs, a week or more of CHIS training is appropriate.
 
 > **Note**
 >
-> Sample outlines of a training program and examples of training materials are available at dhis2.org*
+> Sample outlines of a training program and examples of training materials are available at dhis2.org
 
 > **Best Practice: Training Session** {.note}
 > 
 > Each training session should include one topic, e.g. Comparing health in my village with the neighbor villages, and it should last for 30±10 minutes. A session should be structured like this:
 > 
 > 1. Introduction. Plenary presentation
-> 	a. Introduction of the topic, including a demo where learners watch, not do.
-> 	b. Explain new functionality and data structure, include demo.
+> 		- Introduction of the topic, including a demo where learners watch, not do.
+> 		- Explain new functionality and data structure, include demo.
 > 2. Practical hands-on exercises, individuals, or pairs. More than half the time of the session. Trainers walking around helping the learners when necessary.
-> 	a. Hand out Minimal Manual and SOPs
-> 	b. Make the learners follow the instructions in the Minimal Manual.
-> 	c. Give the learners two exercises which differ slightly from the Minimal Manual.
+> 		- Hand out Minimal Manual and SOPs
+> 		- Make the learners follow the instructions in the Minimal Manual.
+> 		- Give the learners two exercises which differ slightly from the Minimal Manual.
 > 3. Summary. Plenary discussion with the participants.
-> 	a. Discuss functionality/data structure and confront misconceptions
-> 	b. Discuss usefulness
+> 		- Discuss functionality/data structure and confront misconceptions
+> 		- Discuss usefulness
 
 Making the users follow the Minimal Manuals and SOPs during training has the advantage that they become familiar with written materials and are more likely to look up in the manuals and successfully solve problems on their own after training.
 
@@ -400,9 +400,9 @@ Supervision should aim to maintain and support the 4Cs of data quality:
 2. Currentness: (Timeliness) The reported data is current and was collected during the correct time frame; the figures are not identical to last month's data, which may indicate falsification of data or submitting an old data set.
 3. Completeness: All forms are completed, and within each form, all required data elements are filled out.
 4. Consistency:
-	a. High quality data does not usually vary over time for most PHC activities, apart from seasonal variations.
-	b. Always check data for "outliers" that may reflect data entry errors.
-	c. Data is submitted regularly and on time. Data reporters are consistent in their adherence to data submission practices.
+	- High quality data does not usually vary over time for most PHC activities, apart from seasonal variations.
+	- Always check data for "outliers" that may reflect data entry errors.
+	- Data is submitted regularly and on time. Data reporters are consistent in their adherence to data submission practices.
 
 These are the items field officers should train their eyes for once data collection begins. Issues in data quality could reflect poor or inadequate training.
 
@@ -411,8 +411,8 @@ These are the items field officers should train their eyes for once data collect
 Supervision visits should cover issues identified prior to the visit, but supervision visits are also ideal times to conduct on-the-job support to address program performance, resolve issues in real time, and enforce SOPs. On-the-job support should include:
 
 1. A general overview of performance at all levels to give the CHW or the Supervisor a better sense of perspective and motivate them to better performance:
-	a. How CHWs performance (key indicators, reporting rates, reporting completeness) compares to other CHWs, district performance, national performance, etc.
-	b. How CHW supervisors perform in relation to national performance:
+	- How CHWs performance (key indicators, reporting rates, reporting completeness) compares to other CHWs, district performance, national performance, etc.
+	- How CHW supervisors perform in relation to national performance:
 		- Average reporting rate for the CHWs under the supervisor compared to national.
 		- Average program performance for the CHW supervisor compared to national levels.
 
@@ -590,14 +590,14 @@ The agenda for training sessions should be defined well-ahead of the training an
 Evaluation of training is essential, both during training and afterwards. Evaluation may be either qualitative (feelings of trainees about quality of training) or quantitative (data quality). Some options for evaluation are included below:
 
 1. **Feedback during Training:** It is important to know whether your participants feel they are or are not benefitting from your trainings. This can inform future trainings and lead to improvements.
-	a. Get participants to write their feelings anonymously on paper or "post its" at the end of each day - Green for Good and red for bad.
-	b. Facilitators then review the responses from the "post its" at the end of the day and modify the training accordingly based upon responses.
+	- Get participants to write their feelings anonymously on paper or "post its" at the end of each day - Green for Good and red for bad.
+	- Facilitators then review the responses from the "post its" at the end of the day and modify the training accordingly based upon responses.
 2. **Competence Assessment:** Performing an assessment at the end of the training is another source of knowledge. This can be used to:
-	a. Tie work performance to learning outcomes after training.
-	b. Evaluate the training as a whole.
+	- Tie work performance to learning outcomes after training.
+	- Evaluate the training as a whole.
     These assessments should be similar to, but not identical to, the exercises done during the training, and should require trainees to apply rather than recite what they learned. Make sure the test is accompanied by a rubric to ensure fairness if responses are graded.
 3. **Data Quality:** A cost effective evaluation of transfer of competence from training to practice is to assess the quality of the data entered by the CHWs and to link this data quality with the training.
-	a. Data quality can be assessed automatically in the database.
-	b. Interviews with the CHWs can tie their performance to the training, software, hardware, support, social pressure and other factors.
+	- Data quality can be assessed automatically in the database.
+	- Interviews with the CHWs can tie their performance to the training, software, hardware, support, social pressure and other factors.
 4. **Impact Assessment:** These are complicated and expensive assessments and need specialized training, technologies and skills so are not covered here.
 

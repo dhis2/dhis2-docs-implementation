@@ -21,21 +21,21 @@ The worst configuration of a CHIS in DHIS2 is typically where the current commun
 There are essentially two steps to mapping the current business process.
 
 1. Compile all current data collection forms. For each form identify:
-	a. What are the data elements and indicators on this data collection form? Are these in the CHIS M&E framework? If not, should we still capture them?
-	b. Who is responsible for capturing the data and how long does it take complete?
-	c. What is the frequency of the completing the reporting form?
-	d. What are the common mistakes or difficulties with completing the data collection form?
-	e. What job aids or workflow support tools are built into the data collection form? Do they work? Are more needed?
-	f. Map the electronic or paper data flow from point of collection to central level
-		* What organizational unit is the data captured against?
-		* What are the points of aggregation? Who performs the aggregations?
+	- What are the data elements and indicators on this data collection form? Are these in the CHIS M&E framework? If not, should we still capture them?
+	- Who is responsible for capturing the data and how long does it take complete?
+	- What is the frequency of the completing the reporting form?
+	- What are the common mistakes or difficulties with completing the data collection form?
+	- What job aids or workflow support tools are built into the data collection form? Do they work? Are more needed?
+	- Map the electronic or paper data flow from point of collection to central level
+		- What organizational unit is the data captured against?
+		- What are the points of aggregation? Who performs the aggregations?
 2. Compile all current data analysis/data use tool. For each tool identify:
-	a. What is the level of granularity of the data presented?
+	- What is the level of granularity of the data presented?
 		* Organizational level of aggregation (i.e. community, facility, district, or national)
 		* Periodicity level of aggregation (i.e. daily, weekly, monthly, ex.)
-	b. What decisions are made or actions performed based on that tool?
-	c. What are the problems or issues with the tool?
-	d. What could be done to address these problems or issues?
+	- What decisions are made or actions performed based on that tool?
+	- What are the problems or issues with the tool?
+	- What could be done to address these problems or issues?
 
 ### 2. Considerations in Translating Business Process to DHIS2
 
@@ -468,7 +468,7 @@ For each step in the data flow define each event in the format in Figure 4.4.
 | Responsible person |  This is the person/role that is ultimately responsible for the completion of this event. |
 | Periodicity |  The frequency with which this event takes place. For example, "monthly," "weekly," or "quarterly |
 | Event deadline |  When the event should be completed. For example, "The 10^th^ of the current month," "By 17:00 on Tuesday of the Current Week", or "By the 5^th^ of the first month in the new quarter." |
-| Data transmission or entry incentive |  What is the reporting incentive and how is the incentive delivered?* (if applicable) |
+| Data transmission or entry incentive |  What is the reporting incentive and how is the incentive delivered? (if applicable) |
 | Data quality checks performed |  Outline what are the checks that are performed during this event. This does not include the quality checks performed after the data has been submitted. |
 | Access to reporting tools | How are necessary reporting tools (e.g. registries, reporting forms, applications, phones, etc.) stored, accessed, and replenished? |
 | Narrative |  The narrative describes the event in long text. It is very specific. This could include best practices, instructions on completing the paper registries, instructions for ordering or making new registries, instructions for using mobile phones, etc. Think practically on what could form bottlenecks for data submission. |

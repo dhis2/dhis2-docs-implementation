@@ -18,7 +18,7 @@ In addition to the residents of the community, who are beneficiaries of health s
 
 A widely accepted definition of a CHW was proposed by a WHO Study Group (WHO 1989):
 
-> *Community health workers should be members of the communities where they work, should be selected by the communities, should be answerable to the communities for their activities, should be supported by the health system but not necessarily a part of its organization, and have shorter training than professional workers.  *
+> *Community health workers should be members of the communities where they work, should be selected by the communities, should be answerable to the communities for their activities, should be supported by the health system but not necessarily a part of its organization, and have shorter training than professional workers.*
 
 This 20^th^ century definition is based on global principles and does not directly address the numerous variations that exist around CHWs across countries. We discuss some conditions of variations which arguably have implications on the design and use of CHIS. These include:
 

@@ -256,7 +256,7 @@ There are three, basic SOPs outlined in this manual:
 3. **Turn the SOP into illustrated posters** and have the facility staff post them on their walls for public viewing.
 4. **Print SOPs and make sure all CHWs, facility staff, and district staff have copies**
 5. **Stakeholders to sign the SOPs** at the completion of training.
-6. **Stakeholder participation in the creation and approval of SOPs. ** The SOPs must institutionalize the best practices and workflow of the actors in the CHIS. Include representation from all relevant stakeholders in the process of developing SOPs.
+6. **Stakeholder participation in the creation and approval of SOPs.** The SOPs must institutionalize the best practices and workflow of the actors in the CHIS. Include representation from all relevant stakeholders in the process of developing SOPs.
 7. **Ensure all data elements and indicators are captured.** The project should have an M&E framework (see Chapter 3) that should clearly define all data elements and indicators. The CHWs should clearly understand the meaning, and measurement of each data element and indicator to remove ambiguity
 8. **Use data capture guidelines at trainings.** To build accountability, CHWs and facility staff need to know they are part of a larger system. They need to know how their data is used for planning at higher levels and specific actions at lower levels.
 9. **Have the CHWs explain the data capture guidelines.** This teach-back method is an effective adult learning practice. By explaining the data capture guidelines, this elevates the CHW's credibility with the health committee.
@@ -483,7 +483,7 @@ A key feature of this revised policy is the institution of a new cadre of Commun
 
 #### Community Health Services Vision
 
-*A coordinated national community health care system in which households have access to life-saving services and are empowered to mitigate potential health risks. *
+*A coordinated national community health care system in which households have access to life-saving services and are empowered to mitigate potential health risks.*
 
 ![](resources/images/chis_figure47.png)
 
