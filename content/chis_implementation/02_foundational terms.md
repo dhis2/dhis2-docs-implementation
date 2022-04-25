@@ -59,10 +59,8 @@ A CHIS is visualized by the information cycle (see Figure 1.1) for community hea
 
 While the details of this cycle will vary from program to program, and at different levels, the principle applies to all information systems.
 
-![https://docs.google.com/drawings/d/sQM_W0NGwPq1CA09qVjGkcg/image?w=396&h=322&rev=4&ac=1](resources/images/chis_figure4.png)
+![Figure 1 The Health Information cycle](resources/images/chis_figure4.png)
 
-
-Figure 1 The health Information cycle
 
 **CHIS service data** are captured primarily by CHWs and relate to the functions of recording, tracking, and reporting in relation to the activities that CHWs perform. The nature of CHIS varies with contexts.
 
@@ -88,6 +86,7 @@ A typical CHIS needs to focus on the following areas:
 3. **Reporting rates**: Retention/ attrition is measured by numbers of CHWs reporting each month. High attrition rates (3 to 77 percent a year) have been reported in many CHW programs and causes major problems that need to be dealt with through refresher training and the broader package of management interventions.
 
 ![](resources/images/chis_figure5.jpeg)
+
 A well-functioning CHIS, just as HMIS, is a balancing act between getting the data you need (complexity), expanding the system to cover all services across the whole country (scale), and minimizing costs. Typically, the goal of a HMIS would be to find a balance between these three factors: scale, complexity, and cost. However, from experience, it is exceptionally difficult or nearly impossible to find this balance between all three factors for a CHIS primarily due to the massive scale and scope of a CHIS. Therefore, for the purposes of these guidelines, a CHIS implementer should initially focus on picking two of the tree factors. Most countries will be likely to prioritize a CHIS that is large in scale and low-cost, but this requires that the complexity must be minimized and tightly controlled. Practically, minimizing complexity results in a very simple reporting platform capturing a small number of key indicators, extensive use of job aids and automated feedback mechanisms to help CHWs and CHW supervisors understand their data and perform tasks. From a governance perspective, adding additional reporting burden to CHWs must be minimized and tightly controlled centrally.
 
 Strengthening CHW work through improved CHIS runs contrary to the typical perception that health professionals have of CHWs as mere aides who should be assistants within health facilities and serve as passive data providers. Such a perception completely misunderstands the CHWs health promoting and enabling roles within communities, and the need for the CHWs to be empowered with relevant information. In many programs, even those personnel who are supposed to supervise CHWs (usually nurses) are not taught about CHW work in their basic training and are not involved in the planning, implementation, monitoring and evaluation of such programs. This attitude is carried over to the CHIS which typically is the subject of abject neglect. Good quality community data provides an entry point to promote change of entrenched attitudes as well as promote the PHC Care principles of integrated service delivery - preventive, promotive, curative, and rehabilitative, and provision of care to the population in an equitable manner. Extending data collection to the community to "find the missing data" is a logical and necessary extension of facility HIS to enable a full view of the health of the catchment population, including morbidity and mortality profiles and unmet needs of health services.
