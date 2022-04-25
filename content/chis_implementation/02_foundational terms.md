@@ -4,7 +4,7 @@ To understand where CHIS is used, by whom, and what it is, we briefly outline so
 
 ## Community 
 
-A community can be considered a social unit, such as a group of people, who have something in common, such as [norms](https://en.wikipedia.org/wiki/Norm_(social\)), [values](https://en.wikipedia.org/wiki/Values), or [identity](https://en.wikipedia.org/wiki/Identity_(social_science\) ). Communities usually share a sense of place that is situated in a given geographical area, such as village or neighborhood. For purposes of provision of community health services, a community includes a set of stakeholders who meet one or more of the following conditions:
+A community can be considered a social unit, such as a group of people, who have something in common, such as [norms](https://en.wikipedia.org/wiki/Social_norm), [values](https://en.wikipedia.org/wiki/Values), or [identity](https://en.wikipedia.org/wiki/Identity_(social_science\) ). Communities usually share a sense of place that is situated in a given geographical area, such as village or neighborhood. For purposes of provision of community health services, a community includes a set of stakeholders who meet one or more of the following conditions:
 
 - Reside in a defined geographic area.
 - Share demographic traits (e.g. children under five, pregnant women).
