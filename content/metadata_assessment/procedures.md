@@ -77,7 +77,7 @@ Just select the category combination for the data element you want to over ride 
 
 **Note : You may need to create new category options, categories and category combinations where they do not exist. If you do, please review the example [aggregate metadata procedure.](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing)**
 
-#### Aggregate Reporting Rates
+#### Aggregate reporting rates
 
 If, during this process, you also create a new data set, note that you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. ***You should test this process in a development instance prior to performing it on your production system. Always take a backup before performing any import operations***.
 
@@ -102,8 +102,8 @@ api/completeDataSetRegistrations
 
 **NB:** note that you should replace the dataset IDs returned in the initial query with the ***dataset ID of the new dataset you are importing these reporting rates to***.
 
-### Linking Historical Data Using Indicators
+### Linking historical data using indicators
 
-In the event you have made new data elements to represent a concept that was partially represented previously, it may be worthwhile to create indicators that link these data elements together so this data can be viewed longitudinally over time (ie. you can view data from both new and old forms in one variable when you create an output). This principal operates under the assumption that there is no overlap in the data of the previous and new data elements. 
+In the event you have made new data elements to represent a concept that was partially represented previously, it may be worthwhile to create indicators that link these data elements together so this data can be viewed longitudinally over time (ie. you can view data from both new and old forms in one variable when you create an output). This principal operates under the assumption that there is no overlap in the data of the previous and new data elements (ie. they are not being collected during the same period, as this would result in the indicator having an incorrect/duplicated value).
 
-In order to do this, create a new indicator and sum the previous data element with the new data element. This will allow you to create various outputs that show both the historic and current data represented by the same variable within a single output. If you do not do this, you would have to select the 2 (or more) separate data elements that now represent this concept when performing analysis. This would also seem disjointed as they would be represented by different lines in a chart, different rows or columns in a table etc. 
+In order to do this, create a new indicator and sum the previous data element(s) with the new data element(s). This will allow you to create various outputs that show both the historic and current data represented by the same variable within a single output. If you do not do this, you would have to select the 2 (or more) separate data elements that now represent this concept when performing analysis. This would also seem disjointed as they would be represented by different lines in a chart, different rows or columns in a table etc., with data only showing for the variables during the period in which collection was being performed.
