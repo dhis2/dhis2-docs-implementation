@@ -87,13 +87,14 @@ In order to retrieve the existing reporting rates, you can interact with the /co
 api/completeDataSetRegistrations?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&endDate=2017-07-01&orgUnit=mPlB2jqKNP0&children=true
 ```
 
-**NB:** note that you should replacing the dataset ID in this example with your the dataset ID in your own system, the dates with your dates that you require and the organisation unit ID's with your own IDs. In this example we are selecting all child orgunits, so you replace the organisation unit ID with the parent ID. 
+**NB:** note that you should replace the dataset ID in this example with the dataset ID in your own system, the dates with your dates that you require and the organisation unit ID's with your own IDs. In this example we are selecting the reporting rate from all child orgunits, so you replace the organisation unit ID with the parent ID.
 
 This will return a result consisting of the following parameters for each period that is covered in your query.
 
 ```
 {completeDataSetRegistrations: [{"period":"201408","dataSet":"XvcWsuHBsGA","organisationUnit":"ZUwksatWvE8","attributeOptionCombo":"HllvX50cXC0","date":"2014-09-15","storedBy":"automatic"}]}
 ```
+
 Once you have retrieved the reporting rates, you can push them to the new data set using a POST request to the following endpoint
 
 ```
