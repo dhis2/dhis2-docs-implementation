@@ -5,7 +5,7 @@ While this guide discusses several key technical considerations and tools that c
 - Development instances not available or not used properly
 - Lack of procedures for adding metadata or modifying the configuration
 - Lack of coordination when adding new metadata
-- Incorrect assumptions when adding WHO digital data packages
+- Incorrect assumptions when adding a standards-based digital data packages
 - Revisions of data collection tools over time
 
 ## Development instances not available or not used properly
@@ -27,19 +27,19 @@ When implementing a standard operating procedure, training on each specific proc
 
 ## Lack of coordination when adding new metadata
 
-Beyond having specific procedures for adding metadata or modifying the configuration, these actions should be conducted in a co-ordinated manner. This co-ordination can be simple, such as internal discussions between team members, or complex, such as a committee who has an overview of all planned projects and can schedule modifications accordingly and will depend on the context of the implementation.
+Beyond having specific procedures for adding metadata or modifying the configuration, these actions should be conducted in a co-ordinated manner. This co-ordination can be simple, such as internal discussions between team members, or complex, such as a committee who has an overview of all planned projects and can schedule modifications accordingly. This mechanism will depend on the context of the implementation.
 
-Lack of coordination can often lead to duplicate versions of metadata being created. As an example, if there are two admins adding the same new aggregate form within a system without informing each other, then a number of duplicate pieces of metadata will likely end up within the system.
+Lack of coordination can often lead to duplicate versions of metadata being created. As an example, if there are two admins adding the same new aggregate form without consulting each other regularly, then a number of duplicate pieces of metadata will likely end up within the system.
 
-In these scenarios, having a coordination mechanism outlined that informs those involved in configuring the DHIS 2 system what is happening can save significant time and effort later on as cleaning these duplicates can be a time consuming process.
+In these scenarios, having a coordination mechanism outlined that informs those involved in configuring the DHIS2 system what is happening can save significant time and effort later on as cleaning these duplicates can be a time consuming process.
 
 ## Incorrect assumptions when adding digital data packages
 
 [Standards-based packages](https://dhis2.org/who/) may add a significant amount of duplicate metadata to a system. As an example, packages solely use indicators on their dashboard. These indicators may be duplicates of existing data elements. In addition, if items in an existing system populated with existing metadata are not matched before a WHO package is imported, then this may result in duplicate items (such as category options, option sets, etc.) being created during the import.
 
-As a general rule, when importing a standards-based package, try to re-use as much existing metadata as possible. This will likely involve editing the json file for the package prior to importing it so that IDs in the import file match existing IDs in the system you are importing to.
+As a general rule, when importing a standards-based package, try to re-use as much existing metadata as possible. This will likely involve editing the .json file for the package prior to importing it so that IDs in the import file match existing IDs in the system you are importing to.
 
-For the dashboards, the duplicate indicators may not be problematic, particularly if they are grouped together correctly. This should be judged on a case-by-case basis to determine their impact on the system prior to importing the package.
+For the dashboards, duplicates of data elements via indicators used on the dashboard may not be as problematic, particularly if they are grouped together correctly. This should be judged on a case-by-case basis to determine their impact on the system prior to importing the package.
 
 **Note : Importing packages should always be attempted in a development system first. Only when all issues have been sorted out should they be imported to a production system**
 
@@ -79,7 +79,7 @@ Just select the category combination for the data element you want to over ride 
 
 #### Aggregate reporting rates
 
-If, during this process, you also create a new data set, note that you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. ***You should test this process in a development instance prior to performing it on your production system. Always take a backup before performing any import operations***.
+When creating a new data set that will replace a previous data set, you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates associated with it by default. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. ***You should test this process in a development instance prior to performing it on your production system. Always take a backup before performing any import operations***.
 
 In order to retrieve the existing reporting rates, you can interact with the /completeDataSetRegistrations resource and use the following query
 
@@ -89,7 +89,7 @@ api/completeDataSetRegistrations?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&endDat
 
 **NB:** note that you should replacing the dataset ID in this example with your the dataset ID in your own system, the dates with your dates that you require and the organisation unit ID's with your own IDs. In this example we are selecting all child orgunits, so you replace the organisation unit ID with the parent ID. 
 
-This will return a result consisting of the following parameters.
+This will return a result consisting of the following parameters for each period that is covered in your query.
 
 ```
 {"period":"201408","dataSet":"XvcWsuHBsGA","organisationUnit":"ZUwksatWvE8","attributeOptionCombo":"HllvX50cXC0","date":"2014-09-15","storedBy":"automatic"}]
