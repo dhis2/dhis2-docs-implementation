@@ -92,7 +92,7 @@ api/completeDataSetRegistrations?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&endDat
 This will return a result consisting of the following parameters for each period that is covered in your query.
 
 ```
-{"period":"201408","dataSet":"XvcWsuHBsGA","organisationUnit":"ZUwksatWvE8","attributeOptionCombo":"HllvX50cXC0","date":"2014-09-15","storedBy":"automatic"}]
+{completeDataSetRegistrations: [{"period":"201408","dataSet":"XvcWsuHBsGA","organisationUnit":"ZUwksatWvE8","attributeOptionCombo":"HllvX50cXC0","date":"2014-09-15","storedBy":"automatic"}]}
 ```
 Once you have retrieved the reporting rates, you can push them to the new data set using a POST request to the following endpoint
 
