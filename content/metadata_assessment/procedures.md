@@ -85,7 +85,15 @@ api/completeDataSetRegistrations.json?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&e
 
 Note that you should replacing the dataset ID with your own ID, the dates with your dates that you require and the organisation unit ID's with your own IDs.
 
-Once you have the reporting rates, you can push them to the new data set using the following query
+This will return a result consisting of the following
 
 ```
+{"period":"201408","dataSet":"XvcWsuHBsGA","organisationUnit":"ZUwksatWvE8","attributeOptionCombo":"HllvX50cXC0","date":"2014-09-15","storedBy":"automatic"}]
+```
+
+
+Once you have the reporting rates, you can push them to the new data set using a POST request to the following endpoint
+
+```
+api/completeDataSetRegistrations
 ```
