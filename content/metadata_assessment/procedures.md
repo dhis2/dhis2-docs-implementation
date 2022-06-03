@@ -5,7 +5,7 @@ While this guide discusses several key technical considerations and tools that c
 - Development instances not available or not used properly
 - Lack of procedures for adding metadata or modifying the configuration
 - Lack of coordination when adding new metadata
-- Incorrect assumptions when adding a standards-based digital data packages
+- Incorrect assumptions when adding standards-based digital data packages
 - Revisions of data collection tools over time
 
 ## Development instances not available or not used properly
