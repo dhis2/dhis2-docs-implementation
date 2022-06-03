@@ -1,6 +1,6 @@
 # Procedures
 
-While this guide discusses several key technical considerations and tools that can be used to review and clean existing metadata configurations, there can often be a number of procedural issues that result in these metadata challenges occurring in the first place. By reviewing them and outlining measures to mitigate these challenges going forward; they can hopefully be avoided after a system has been reviewed and cleaned. Procedural issues that can result in complications when managing metadata include
+While this guide discusses several key technical considerations and tools that can be used to review existing metadata configurations, there can often be a number of procedural issues that result in these metadata challenges occurring in the first place. By reviewing them and outlining measures to mitigate these challenges going forward; they can hopefully be avoided after a system has been reviewed and cleaned. Procedural issues that can result in complications when managing metadata include
 
 - Development instances not available or not used properly
 - Lack of procedures for adding metadata or modifying the configuration
@@ -10,7 +10,7 @@ While this guide discusses several key technical considerations and tools that c
 
 ## Development instances not available or not used properly
 
-When working on your DHIS 2 configuration, it is recommended that you have at least 1 development instance available for you to use. If you have more then 1 production instance, then you should consider having a copy of each of these instances for the purposes of creating new metadata or otherwise modifying your configuration (Figure 1).
+When working on your DHIS2 configuration, it is recommended that you have at least 1 development instance available for you to use. If you have more then 1 production instance, then you should consider having a copy of each of these instances for the purposes of creating new metadata or otherwise modifying your configuration (Figure 1).
 
 ![dev_vs_production](resources/images/dev_vs_production.png)
 **Figure 1**
@@ -35,9 +35,9 @@ In these scenarios, having a coordination mechanism outlined that informs those 
 
 ## Incorrect assumptions when adding digital data packages
 
-[WHO packages](https://dhis2.org/who/) may add a significant amount of duplicate metadata to a system. As an example, packages solely use indicators on their dashboard. These indicators may be duplicates of existing data elements. In addition, if items in an existing system populated with existing metadata are not matched before a WHO package is imported, then this may result in duplicate items (such as category options, option sets, etc.) being created during the import.
+[Standards-based packages](https://dhis2.org/who/) may add a significant amount of duplicate metadata to a system. As an example, packages solely use indicators on their dashboard. These indicators may be duplicates of existing data elements. In addition, if items in an existing system populated with existing metadata are not matched before a WHO package is imported, then this may result in duplicate items (such as category options, option sets, etc.) being created during the import.
 
-As a general rule, when importing a WHO package, try to re-use as much existing metadata as possible. This will likely involve editing the json file for the package prior to importing it so that IDs in the import file match existing IDs in the system you are importing to.
+As a general rule, when importing a standards-based package, try to re-use as much existing metadata as possible. This will likely involve editing the json file for the package prior to importing it so that IDs in the import file match existing IDs in the system you are importing to.
 
 For the dashboards, the duplicate indicators may not be problematic, particularly if they are grouped together correctly. This should be judged on a case-by-case basis to determine their impact on the system prior to importing the package.
 
@@ -49,9 +49,11 @@ When data collection tools are updated over time, measures can be taken to re-us
 
 ### Programs
 
-There should be no hesitation in reusing metadata between different event and tracker programs where possible. This metadata is always tied to the specific program that is being created and will maintain the required separation within the system.
+There should be no hesitation in reusing metadata between different event and tracker programs where possible (TEI types, Tracked entity attributes, option sets, data elements, etc.). This metadata is always associated with the specific program that is being created and will maintain the required separation within the system.
 
 ### Data Sets
+
+#### Modification of disaggregations to existing data elements
 
 For aggregate data sets, re-use of metadata may be less clear. A common problem is when disaggregations are modified from one form to the next. Let us take the example outlined in Figure 2.
 
@@ -73,27 +75,35 @@ From here you will open a menu which lists your data elements on the left side a
 
 Just select the category combination for the data element you want to over ride using this menu.
 
-**Note : You may need to create new category options, categories and category combinations. If you do, please review the example [aggregate metadata procedure.](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing)**
+**Note : You may need to create new category options, categories and category combinations where they do not exist. If you do, please review the example [aggregate metadata procedure.](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing)**
 
-If, during this process, you also create a new data set, note that you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. ***You should test this process in a development instance***.
+#### Aggregate Reporting Rates
 
-In order to retrieve the reporting rates, you can use the following query
+If, during this process, you also create a new data set, note that you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. ***You should test this process in a development instance prior to performing it on your production system. Always take a backup before performing any import operations***.
+
+In order to retrieve the existing reporting rates, you can interact with the /completeDataSetRegistrations resource and use the following query
 
 ```
-api/completeDataSetRegistrations.json?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&endDate=2017-07-01&orgUnit=mPlB2jqKNP0&children=true
+api/completeDataSetRegistrations?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&endDate=2017-07-01&orgUnit=mPlB2jqKNP0&children=true
 ```
 
-Note that you should replacing the dataset ID with your own ID, the dates with your dates that you require and the organisation unit ID's with your own IDs.
+**NB:** note that you should replacing the dataset ID in this example with your the dataset ID in your own system, the dates with your dates that you require and the organisation unit ID's with your own IDs. In this example we are selecting all child orgunits, so you replace the organisation unit ID with the parent ID. 
 
-This will return a result consisting of the following
+This will return a result consisting of the following parameters.
 
 ```
 {"period":"201408","dataSet":"XvcWsuHBsGA","organisationUnit":"ZUwksatWvE8","attributeOptionCombo":"HllvX50cXC0","date":"2014-09-15","storedBy":"automatic"}]
 ```
-
-
-Once you have the reporting rates, you can push them to the new data set using a POST request to the following endpoint
+Once you have retrieved the reporting rates, you can push them to the new data set using a POST request to the following endpoint
 
 ```
 api/completeDataSetRegistrations
 ```
+
+**NB:** note that you should replace the dataset IDs returned in the initial query with the ***dataset ID of the new dataset you are importing these reporting rates to***.
+
+### Linking Historical Data Using Indicators
+
+In the event you have made new data elements to represent a concept that was partially represented previously, it may be worthwhile to create indicators that link these data elements together so this data can be viewed longitudinally over time (ie. you can view data from both new and old forms in one variable when you create an output). This principal operates under the assumption that there is no overlap in the data of the previous and new data elements. 
+
+In order to do this, create a new indicator and sum the previous data element with the new data element. This will allow you to create various outputs that show both the historic and current data represented by the same variable within a single output. If you do not do this, you would have to select the 2 (or more) separate data elements that now represent this concept when performing analysis. This would also seem disjointed as they would be represented by different lines in a chart, different rows or columns in a table etc. 
