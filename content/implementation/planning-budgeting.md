@@ -1,4 +1,4 @@
-# High level planning and budgeting guidance for sustainable DHIS2 systems
+# High level planning and budgeting guidance for sustainable DHIS2 systems { #planning-budgeting }
 
 Proper planning and budgeting is an important activity in order to sustain a good system design over time, making sure the DHIS2 system develops in a healthy way, is updated frequently, responds to user needs and operates according to rules and regulations. This includes making sure the system responds to basic user needs in terms of data collection, data quality checks, data analysis and presentations, and remains relevant to all key health programs and at all levels of the health system (from facility/community to national level).
 
@@ -18,7 +18,7 @@ The DHIS2 maturity profile supports countries to;
 - encourage investments in core DHIS2 capacity (i.e. foundational areas) that contributes to a sustainable HIS supporting health programs
 - align across investments/donor interventions
 - assist in planning DHIS2 implementation and strengthening activities
-- Identify areas in need of more in depth evaluation or monitoring
+- identify areas in need of more in depth evaluation or monitoring
 
 The DHIS2 Maturity Profile is an important tool for building and costing coordinated and sustainable DHIS2 plans in a country.
 
@@ -51,7 +51,6 @@ While this is not a quick fix in any country, guidance and technical assistance 
 
 #### Resources
 
-- Assessment tools
 - Links to guidance/implementation guidance
 - Generic Scope of Work
 
@@ -63,9 +62,7 @@ There might be costs associated with assistance to support this strategy develop
 
 #### Resources
 
-- Assessment tools
 - Links to guidance/implementation guidance
-- Generic Scope of Work
 
 ### DHIS2 security and compliance
 
@@ -79,8 +76,7 @@ Security and compliance is to a large extent about policies and delegation of re
 
 #### Resources
 
-- Security assessment/audit tool (link)
-- Security considerations when implementing DHIS2 (link to section in impl guide)
+- [Security considerations when implementing DHIS2](#security-considerations)
 - Generic Scope of Work
 
 ### Core team for DHIS2 maintenance
@@ -95,10 +91,8 @@ Costs will include salaries or secondments, workshops with travel and per diems,
 
 #### Resources
 
-- Assessment tools
-- Links to guidance/implementation guidance
 - Link to description of roles/competencies needed in core team
-- Capacity building plans
+- Capacity building plan example
 - Generic Scope of Work
 
 ### DHIS2 metadata and org units
@@ -111,8 +105,8 @@ While maintenance of metadata and orgunits is in general an integral part of the
 
 #### Resources
 
-- Assessment tools
-- Links to guidance/implementation guidance
+- [Guidance on metadata quality and integrity](#metadata-integrity-and-quality)
+- [Metadata assessment tool](https://github.com/dhis2/metadata-assessment)
 - Generic Scope of Work
 
 ### Training end users
@@ -123,7 +117,6 @@ HISP groups typically conduct Training of Trainers (TOT) to help countries run t
 
 #### Resources
 
-- Assessment tools
 - Links to guidance/implementation guidance
 - Generic Scope of Work
 
@@ -137,7 +130,6 @@ In addition to the ongoing staff requirements to keep this information updated a
 
 #### Resources
 
-- Assessment tools
 - Links to guidance/implementation guidance
 - Generic Scope of Work
 
@@ -149,8 +141,8 @@ There are many different options for hosting an online system, both in terms of 
 
 #### Resources
 
-- Assessment tools
-- Links to guidance/implementation guidance
+- [Overview of deployment strategies](#deployment-strategies)
+- [DHIS2 server installation tools and guide (draft)](https://github.com/bobjolliffe/dhis2-tools-ng)
 - Generic Scope of Work
 
 ### Improving or implementing a new programme/data set - aggregate data
@@ -165,7 +157,10 @@ There are different approaches to incorporating a new health domain into DHIS2. 
 
 #### Resources
 
-- Link to design principles?
+- [WHO Health Data Toolkit](https://dhis2.org/who/)
+- [Metadata packages](https://dhis2.org/metadata/)
+- [CHIS implementation guide](https://docs.dhis2.org/en/implement/chis-implementation/background.html)
+- [Aggregate system design](#data-elements-and-custom-dimensions)
 - Scope of Work
 
 ### Improving or implementing a new programme/data set - individual data/tracker
@@ -179,3 +174,10 @@ A tracker program typically affects a lot of users, and training of trainers, en
 More resources on considerations for tracker can be found in the [tracker implementation guide](https://docs.dhis2.org/en/implement/tracker-implementation/introduction.html).
 
 In general, the foundational domains should all be at minimum acceptable level before additional tracker programs are implemented, i.e. scoring at least "Early progress", and preferably "Adequate" when using the Maturity Profile tool. No foundational areas in the maturity profile tool should have the score "Not yet achieved" before starting a tracker program, and DHIS2 security and compliance should always be at least "Adequate". As with aggregate systems, when planning and budgeting implementation of new individual data domains, it is critically important that the plans also provide for strengthening the foundational areas that are in need of improvement. The project plan should clearly identify actions to improve foundational pieces of DHIS2 while planning for new tracker programs. It is also key that the attention to aggregate reporting is not lost as a country embarks on advanced tracker programs - often it is the same personnel working on both.
+
+#### Resources
+
+- [WHO Health Data Toolkit](https://dhis2.org/who/)
+- [Metadata packages](https://dhis2.org/metadata/)
+- [Tracker implementation guide](https://docs.dhis2.org/en/implement/tracker-implementation/introduction.html)
+- Scope of Work
