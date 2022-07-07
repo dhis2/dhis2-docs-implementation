@@ -150,7 +150,7 @@ The pull requests are reviewed and merged into the code base as part of the norm
 
 > **Info**
 >
-> The translations adde to transifex will, in general, be in the next available stable release for all supported DHIS 2 versions
+> The translations added to transifex will, in general, be in the next available stable release for all supported DHIS 2 versions
 >
 > _If you need to ensure that your translations are in the next stable release, contact us (translate@dhis2.org) expalining your needs, and we'll let you know what we can do._ 
 
