@@ -136,7 +136,7 @@ In the most general sense we can that there should be:
 - a documented set of technical controls mandated
 - an audit process against those controls
 
-Organisations such as the Centre for Internet Security ([https://cisecurity.org](https://cisecurity.org)) maintain detailed benchmarks for software products which can be used to compile a set of controls for your implementation. In most cases you won\'t apply all of them but will select the ones which are most relevant. From the list available at [https://www.cisecurity.org/cis-benchmarks/](https://www.cisecurity.org/cis-benchmarks/)you should download and study the benchmarks for apache tomcat, postgresql, nginx (or apache2). In addition, depending on your technology choices you might find benchmarks for ubuntu linux, lxd, Docker or Microsoft windows relevant to your implementation.
+Organisations such as the Centre for Internet Security ([https://cisecurity.org](https://cisecurity.org)) maintain detailed benchmarks for software products which can be used to compile a set of controls for your implementation. In most cases you won\'t apply all of them but will select the ones which are most relevant. From the list available at [https://www.cisecurity.org/cis-benchmarks/](https://www.cisecurity.org/cis-benchmarks/) you should download and study the benchmarks for Apache Tomcat, Postgresql, nginx (or Apache2). In addition, depending on your technology choices you might find benchmarks for Ubuntu linux, lxd, Docker or Microsoft Windows relevant to your implementation.
 
 A proposed high priority (top 10) list of technical measures that should be in place:
 
