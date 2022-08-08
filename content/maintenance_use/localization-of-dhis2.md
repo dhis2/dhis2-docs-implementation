@@ -129,9 +129,8 @@ i.e. there is only one source resource for the app (`en.pot`), but we have added
 
 > **Note**
 >
-> In general, we request translators focus on the "**master**" resource; it usually contains all strings from previous versions, and when translations are added the platform will fill in matching translations on the previous versions toolocalization.
-https://dhis2.org/localization/#section-2
- section of our website.
+> In general, we request translators focus on the "**master**" resource; it usually contains all strings from previous versions, and when translations are added the platform will fill in matching translations on the previous versions too. See the [localization](https://dhis2.org/localization/#section-2)
+section of our website.
  
 > **Tip** { .tip }
 >
