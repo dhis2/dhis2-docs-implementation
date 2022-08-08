@@ -78,7 +78,7 @@ chooses Brazilian Portuguese as their language:
 
 ### Translation Platform { #translation-server } 
 
-DHIS2 is now using [transifex](www.transifex.com) as our main platform for
+DHIS2 is now using [transifex](https://www.transifex.com) as our main platform for
 managing translations. You can access the DHIS2 resources at
 [translate.dhis2.org](https://translate.dhis2.org), or directly at
 https://www.transifex.com/hisp-uio/public.
