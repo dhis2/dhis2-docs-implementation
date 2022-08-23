@@ -1,26 +1,41 @@
 # DHIS2 server hosting
 
+This chapter outlines the challenges of setting up a DHIS2 system in production.  It describes various approaches that we commonly see in practice and looks critically at the advantages and disadvantages of each.  It aims to provide practical and pragmatic advice to organisations planning a DHIS2 implementation.  The document refers to a national Ministry of Health (MOH) as the typical system owner, but most of the considerations apply to other types of organisations as well.
+
 ## Architecture
 
 ### Most basic DHIS2 installation
 
-DHIS2 is a database driven java web application which can be setup to run very simply, using just a java servlet engine such as tomcat or jetty and a postgresql database server.  A person with reasonable technical ability can read the DHIS2 reference guide and setup the two packages and the database connection between them relatively simply on a laptop machine.  This type of setup is quite common for developers or people who just want to try DHIS2 out locally and see what it looks like.  
+DHIS2 is a database driven java web application which can be setup to run very simply, using just a java servlet engine such as tomcat or jetty and a postgresql database server.  A person with reasonable technical ability can read the DHIS2 reference guide and setup the two packages and the database connection between them relatively simply on a laptop machine.  This type of setup is quite common for developers or people who just want to try DHIS2 out locally and see what it looks like.  The DHIS2 web application file (the WAR file) is downloaded from the https://dhis2.org/downloads page, the database connection is configured in dhis.conf and the DHIS2 application is accessed via a web browser connecting to the running tomcat server. 
+
+![Simple architecture](resources/images/simple_architecture.png "Simple architecture")
 
 Setting up and running DHIS2 in production involves a lot more than this.
 
 ### DHIS2 in production
 
 Planning for a DHIS2 server that is running in a production environment is a much more detailed and extensive exercise due to the fact that:
+- the application will typically need to be continuously available 24x7 with very little scheduled or unscheduled downtime
 - the data it will hold is valuable and potentially sensitive
 - large sites may have tens of thousands of users and millions of records
-- the system will need to be maintained and updated over many years
+- the system will need to be actively maintained and updated over many years
 
-All of the above give rise to quite complex requirements regarding physical infrastructure, security and performance constraints and a broad range of technical skills.    
+All of the above give rise to quite complex requirements regarding physical infrastructure, security and performance constraints and a broad range of technical skill, none of which are immediately visible when viewing the simple architecture above.  It is essential that the server implementation is properly planned for when an implementation is in its planning stage in order to be able to mobilize the physical and human resources to meet these requirements.
 
 ## Making a plan
 Budget, inventory, one-off vs routine activities, monitoring etc
 
 ## Physical environment
+
+
+|Approach|Description|Cost|Skills|Security|
+|--------|-----------|----|------|--------|
+|In the basement|Server is installed in the ministry, typically in a re-purposed room|Setup costs can be high, getting the room up to standard regarding power, aircon etc|High level of skill required ranging from system admin, network admin and data centre knowledge|Physical and network security are additional challenges|
+|National government data centre|MOH applications are hosted in a purpose builty data centre managed as a cross-government service|Cost to the MOH varies according to the cost recovery mechanisms of the data centre.  Ranges from zero to considerably higher than commercial cloud|Skills required by to run the system limited to system administration.  Dependency that other skills related to networks and virtual machine management and provisioning are available at the data centre|Security concerns are shared across implementers and data centre provider|
+|Commercial cloud 1 (Infrastructure as a service)|MOH has an account with a commercial cloud company and pays for the use of server resources|Generally the lowest cost option.  Considerable variation of pricing plans across the market|Mostly just sysadmin skills required to setup and run the system.  Management processes need to be in place to manage the budget and ensure bills are paid.|Security concerns are shared across implementers and cloud provider|
+|Commercial cloud 2 (Software as service)|MOH has an account with a commercial cloud company which offers DHIS2-as-a-service|More expensive than infrastructure as a service, but no need to pay for expensive system administrator salaries|Management processes need to be in place to manage the budget and ensure bills are paid|Most security concerns are managed by the service provider|
+
+
 Pros and cons of spectrum of choices
 - in the basement
 - national government data centre
