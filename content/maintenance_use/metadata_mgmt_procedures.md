@@ -67,7 +67,7 @@ Just select the category combination for the data element you want to over ride 
 
 #### Aggregate reporting rates
 
-When creating a new data set that will replace a previous data set, you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates associated with it by default. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. You should test this process in a development instance prior to performing it on your production system. Always take a backup before performing any import operations.
+When creating a new data set that will replace a previous data set, you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates associated with it by default. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. _You should test this process in a development instance prior to performing it on your production system_. Always take a backup before performing any import operations.
 
 In order to retrieve the existing reporting rates, you can interact with the /completeDataSetRegistrations resource and use the following query
 
