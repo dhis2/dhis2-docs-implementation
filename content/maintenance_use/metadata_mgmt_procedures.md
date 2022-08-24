@@ -65,6 +65,8 @@ Just select the category combination for the data element you want to over ride 
 
 **Note : You may need to create new category options, categories and category combinations. If you do, please review the example [aggregate metadata procedure.](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing)**
 
+This has the distinct advantage of allowing you to review the data within these re-used data elements over longer periods of time. Any data entered into these data elements using the old form can still be reviewed and compared with periods in which the the new form (and disaggregations) are being used. 
+
 #### Aggregate reporting rates
 
 When creating a new data set that will replace a previous data set, you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates associated with it by default. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. _You should test this process in a development instance prior to performing it on your production system_. Always take a backup before performing any import operations.
