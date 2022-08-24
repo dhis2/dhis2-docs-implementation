@@ -65,15 +65,23 @@ Just select the category combination for the data element you want to over ride 
 
 **Note : You may need to create new category options, categories and category combinations. If you do, please review the example [aggregate metadata procedure.](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing)**
 
-If, during this process, you also create a new data set, note that you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. ***You should test this process in a development instance***.
+#### Aggregate reporting rates
 
-In order to retrieve the reporting rates, you can use the following query
+When creating a new data set that will replace a previous data set, you should consider rationalizing your reporting rates if needed, as the new dataset you make would not have any of your previous reporting rates associated with it by default. If you want to maintain the reporting rates together, you can export/import them from the old data set to the new data set so you can review all of the legacy reporting rates with the new ones together if that is needed. You should test this process in a development instance prior to performing it on your production system. Always take a backup before performing any import operations.
+
+In order to retrieve the existing reporting rates, you can interact with the /completeDataSetRegistrations resource and use the following query
 
 ```
-api/completeDataSetRegistrations.json?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&endDate=2017-07-01&orgUnit=mPlB2jqKNP0&children=true
+api/completeDataSetRegistrations?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&endDate=2017-07-01&orgUnit=mPlB2jqKNP0&children=true
 ```
 
-Note that you should replacing the dataset ID with your own ID, the dates with your dates that you require and the organisation unit ID's with your own IDs.
+NB: note that you should replace the dataset ID in this example with the dataset ID in your own system, the dates with your dates that you require and the organisation unit ID's with your own IDs. In this example we are selecting the reporting rate from all child orgunits, so you replace the organisation unit ID with the parent ID.
+
+This will return a result consisting of the following parameters for each period that is covered in your query.
+
+```
+{completeDataSetRegistrations: [{"period":"201408","dataSet":"XvcWsuHBsGA","organisationUnit":"ZUwksatWvE8","attributeOptionCombo":"HllvX50cXC0","date":"2014-09-15","storedBy":"automatic"}]}
+```
 
 Once you have retrieved the reporting rates, you can push them to the new data set using a POST request to the following endpoint
 
