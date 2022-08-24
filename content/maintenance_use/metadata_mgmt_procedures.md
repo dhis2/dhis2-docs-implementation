@@ -5,7 +5,7 @@ Procedural issues that can result in complications when managing metadata includ
 
 - Gaps in standard operating procedures (SOPs) for adding metadata or modifying the configuration
 - Lack of coordination when adding new metadata
-- Incorrect assumptions when adding WHO digital data packages
+- Incorrect assumptions when adding WHO/standards-based digital data packages
 - Revisions of data collection tools over time
 - Linking historical data using indicators
 
