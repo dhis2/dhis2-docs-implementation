@@ -13,7 +13,7 @@ Procedural issues that can result in complications when managing metadata includ
 
 SOPs for adding metadata should be available for all DHIS2 implementations. You can view some example standard operating procedures for adding [aggregate metadata](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing) and [users](https://docs.google.com/document/d/1pqEQVV5JR7tyo8Zd09vDi3RVQ9E9R782OYNl-w9-5zQ/edit?usp=sharing) respectively.
 
-When implementing a standard operating procedure, training on each specific procedure should be performed and evaluation of its implementation should continue until it is standard practice. These procedures often go beyond the mechanics of customization/modification of metadata and require those that are adding to or modifying the configuration to closely consider how objects are added and the effect this has on the overall ease of use of the system. 
+When implementing a standard operating procedure, training on each specific procedure should be performed and evaluation of its implementation should continue until the defined procedure is standard practice. These procedures often go beyond the mechanics of customization/modification of metadata and require those that are adding to or modifying the configuration to closely consider how objects are added and the effect this has on the overall ease of use of the system. 
 
 ### Lack of coordination when adding new metadata
 
