@@ -75,7 +75,7 @@ In order to retrieve the existing reporting rates, you can interact with the /co
 api/completeDataSetRegistrations?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&endDate=2017-07-01&orgUnit=mPlB2jqKNP0&children=true
 ```
 
-NB: note that you should replace the dataset ID in this example with the dataset ID in your own system, the dates with your dates that you require and the organisation unit ID's with your own IDs. In this example we are selecting the reporting rate from all child orgunits, so you replace the organisation unit ID with the parent ID.
+**NB:** note that you should replace the dataset ID in this example with the dataset ID in your own system, the dates with your dates that you require and the organisation unit ID's with your own IDs. In this example we are selecting the reporting rate from all child orgunits, so you replace the organisation unit ID with the parent ID.
 
 This will return a result consisting of the following parameters for each period that is covered in your query.
 
@@ -89,7 +89,7 @@ Once you have retrieved the reporting rates, you can push them to the new data s
 api/completeDataSetRegistrations
 ```
 
-NB: note that you should replace the dataset IDs returned in the initial query with the dataset ID of the new dataset you are importing these reporting rates to.
+**NB:** note that you should replace the dataset IDs returned in the initial query with the dataset ID of the new dataset you are importing these reporting rates to. Do this prior to posting the information to the completeDataSetRegistrations resource.
 
 ### Linking historical data using indicators
 
