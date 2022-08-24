@@ -1,19 +1,19 @@
-# Procedures for Managing Metadata
+## Procedures for Managing Metadata
 This sections discusses procedures and recommendations related to the long-term maintenance of metadata a DHIS2 implementation. It describes procedural challenges associated with co-ordinating long-term configuration processes and provides example standard operating procedures that can be adapted and used to better co-ordinate these processes.
 
-## Overview
-There are a number of technical tools and approaches to identify quality issues related to metadata that are discused within this guide. The focus of this section however is on the procedural issues that result in these metadata challenges occurring in the first place. By reviewing them and outlining measures to mitigate these challenges going forward; they can hopefully be avoided after a system has been reviewed and cleaned. Procedural issues that can result in complications when managing metadata include
+Procedural issues that can result in complications when managing metadata include
 
 - Lack of procedures for adding metadata or modifying the configuration
 - Lack of coordination when adding new metadata
 - Incorrect assumptions when adding WHO digital data packages
 - Revisions of data collection tools over time
+- Linking historical data using indicators
 
 ### Procedures for adding metadata or modifying the configuration
 
 Procedures for adding metadata should be available for all DHIS2 implementations. You can view some example standard operating procedures for adding [aggregate metadata](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing) and [users](https://docs.google.com/document/d/1pqEQVV5JR7tyo8Zd09vDi3RVQ9E9R782OYNl-w9-5zQ/edit?usp=sharing) respectively.
 
-When implementing a standard operating procedure, training on each specific procedure should be considered. These procedures often go beyond the mechanics of customization/modification of metadata and require those that are adding or modifying the configuration to closely consider how objects are added to the system and the effect this has on the overall ease of use of the system. 
+When implementing a standard operating procedure, training on each specific procedure should be performed and evaluation of its implementation should continue until it is standard practice. These procedures often go beyond the mechanics of customization/modification of metadata and require those that are adding to or modifying the configuration to closely consider how objects are added and the effect this has on the overall ease of use of the system. 
 
 ### Lack of coordination when adding new metadata
 
@@ -25,9 +25,9 @@ In these scenarios, having a coordination mechanism outlined that informs those 
 
 ### Incorrect assumptions when adding digital data packages
 
-[WHO packages](https://dhis2.org/who/) may add a significant amount of duplicate metadata to a system. As an example, packages solely use indicators on their dashboard. These indicators may be duplicates of existing data elements. In addition, if items in an existing system populated with existing metadata are not matched before a WHO package is imported, then this may result in duplicate items (such as category options, option sets, etc.) being created during the import.
+[WHO packages](https://dhis2.org/who/) or other standards based configuration that is being imported into a system may add a significant amount of duplicate metadata. As an example, packages solely use indicators on their dashboard. These indicators may be duplicates of existing data elements. In addition, if items in an existing system populated with existing metadata are not matched before a standards based package is imported, then this may result in duplicate items (such as category options, option sets, etc.) being created during the import.
 
-As a general rule, when importing a WHO package, try to re-use as much existing metadata as possible. This will likely involve editing the json file for the package prior to importing it so that IDs in the import file match existing IDs in the system you are importing to.
+As a general rule, when importing a standards based package, try to re-use as much existing metadata as possible. This will likely involve editing the json file for the package prior to importing it so that IDs in the import file match existing IDs in the system you are importing to.
 
 For the dashboards, the duplicate indicators may not be problematic, particularly if they are grouped together correctly. This should be judged on a case-by-case basis to determine their impact on the system prior to importing the package.
 
@@ -75,7 +75,16 @@ api/completeDataSetRegistrations.json?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&e
 
 Note that you should replacing the dataset ID with your own ID, the dates with your dates that you require and the organisation unit ID's with your own IDs.
 
-Once you have the reporting rates, you can push them to the new data set using the following query
+Once you have retrieved the reporting rates, you can push them to the new data set using a POST request to the following endpoint
 
 ```
+api/completeDataSetRegistrations
 ```
+
+NB: note that you should replace the dataset IDs returned in the initial query with the dataset ID of the new dataset you are importing these reporting rates to.
+
+### Linking historical data using indicators
+
+In the event you have made new data elements to represent a concept that was partially represented previously, it may be worthwhile to create indicators that link these data elements together so this data can be viewed longitudinally over time (ie. you can view data from both new and old forms in one variable when you create an output). This principal operates under the assumption that there is no overlap in the data of the previous and new data elements (ie. they are not being collected during the same period, as this would result in the indicator having an incorrect/duplicated value).
+
+In order to do this, create a new indicator and sum the previous data element(s) with the new data element(s). This will allow you to create various outputs that show both the historic and current data represented by the same variable within a single output. If you do not do this, you would have to select the 2 (or more) separate data elements that now represent this concept when performing analysis. This would also seem disjointed as they would be represented by different lines in a chart, different rows or columns in a table etc., with data only showing for the variables during the period in which collection was being performed.
