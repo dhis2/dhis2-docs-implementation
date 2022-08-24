@@ -56,6 +56,8 @@ Acknowledging the difficulties above, many countries have a trategy of concentra
 -  we often see performance issues with VMs which have been over-provisioned, particularly disk performance of database servers
 
 ### In-country co-location or virtual hosting
+Some countries have successfully made use of local data centre providers to either host physical servers (co-location) or to rent virtual resources.  This approach has the advantage of meeting requirements around geo-location of data (eg. all data must be stored in the country).  Also government tends to have greater leverage over such companies than with large global commercial providers - they are less likely to be cut off when payment of the bill is late! 
+
 ### Commercial cloud providers
 - generic infrastructure as a service (linode, aws, azure etc)
 - specialized DHIS2 service providers - Software as a service (BAO, BlueSquare, HISP SA etc)
