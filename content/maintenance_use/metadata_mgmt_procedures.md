@@ -1,31 +1,19 @@
-# Metadata mainteanance
+# Procedures for Managing Metadata
 This sections discusses procedures and recommendations related to the long-term maintenance of metadata a DHIS2 implementation. It describes procedural challenges associated with co-ordinating long-term configuration processes and provides example standard operating procedures that can be adapted and used to better co-ordinate these processes.
 
-## Procedures
-As discussed in the section on [assessing metadata quality](), there are technical tools and approaches to identify quality issues related to metadata. The focus here is on the procedural issues that result in these metadata challenges occurring in the first place. By reviewing them and outlining measures to mitigate these challenges going forward; they can hopefully be avoided after a system has been reviewed and cleaned. Procedural issues that can result in complications when managing metadata include
+## Overview
+There are a number of technical tools and approaches to identify quality issues related to metadata that are discused within this guide. The focus of this section however is on the procedural issues that result in these metadata challenges occurring in the first place. By reviewing them and outlining measures to mitigate these challenges going forward; they can hopefully be avoided after a system has been reviewed and cleaned. Procedural issues that can result in complications when managing metadata include
 
-- Development instances not available or not used properly
 - Lack of procedures for adding metadata or modifying the configuration
 - Lack of coordination when adding new metadata
 - Incorrect assumptions when adding WHO digital data packages
 - Revisions of data collection tools over time
 
-### Development instances not available or not used properly
-
-When working on your DHIS 2 configuration, it is recommended that you have at least 1 development instance available for you to use. If you have more then 1 production instance, then you should consider having a copy of each of these instances for the purposes of creating new metadata or otherwise modifying your configuration (Figure 1).
-
-![dev_vs_production](resources/images/dev_vs_production.png)
-**Figure 1**
-
-Many metadata challenges result from users adding metadata directly on a production system. This metadata is either not configured correctly, or not used in the system resulting in changes that need to be cleaned up when discovered later on.
-
-By using a development system you can avoid these challenges, as items on the development system should be able to be removed if not needed without any implications on the production system configuration or data.
-
-### Lack of procedures for adding metadata or modifying the configuration
+### Procedures for adding metadata or modifying the configuration
 
 Procedures for adding metadata should be available for all DHIS2 implementations. You can view some example standard operating procedures for adding [aggregate metadata](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing) and [users](https://docs.google.com/document/d/1pqEQVV5JR7tyo8Zd09vDi3RVQ9E9R782OYNl-w9-5zQ/edit?usp=sharing) respectively.
 
-When implementing a standard operating procedure, training on each specific procedure should be considered. These procedures often go beyond the mechanics of customization and require those that are adding or modifying the configuration to closely consider how objects are added to the system.
+When implementing a standard operating procedure, training on each specific procedure should be considered. These procedures often go beyond the mechanics of customization/modification of metadata and require those that are adding or modifying the configuration to closely consider how objects are added to the system and the effect this has on the overall ease of use of the system. 
 
 ### Lack of coordination when adding new metadata
 
