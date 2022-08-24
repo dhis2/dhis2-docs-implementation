@@ -3,15 +3,15 @@ This sections discusses procedures and recommendations related to the long-term 
 
 Procedural issues that can result in complications when managing metadata include
 
-- Lack of procedures for adding metadata or modifying the configuration
+- Gaps in standard operating procedures (SOPs) for adding metadata or modifying the configuration
 - Lack of coordination when adding new metadata
 - Incorrect assumptions when adding WHO digital data packages
 - Revisions of data collection tools over time
 - Linking historical data using indicators
 
-### Procedures for adding metadata or modifying the configuration
+### Standard Operating Procedures for adding metadata or modifying the configuration
 
-Procedures for adding metadata should be available for all DHIS2 implementations. You can view some example standard operating procedures for adding [aggregate metadata](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing) and [users](https://docs.google.com/document/d/1pqEQVV5JR7tyo8Zd09vDi3RVQ9E9R782OYNl-w9-5zQ/edit?usp=sharing) respectively.
+SOPs for adding metadata should be available for all DHIS2 implementations. You can view some example standard operating procedures for adding [aggregate metadata](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing) and [users](https://docs.google.com/document/d/1pqEQVV5JR7tyo8Zd09vDi3RVQ9E9R782OYNl-w9-5zQ/edit?usp=sharing) respectively.
 
 When implementing a standard operating procedure, training on each specific procedure should be performed and evaluation of its implementation should continue until it is standard practice. These procedures often go beyond the mechanics of customization/modification of metadata and require those that are adding to or modifying the configuration to closely consider how objects are added and the effect this has on the overall ease of use of the system. 
 
