@@ -8,7 +8,6 @@ Procedural issues that can result in complications when managing metadata includ
 - Lack of coordination when adding new metadata
 - Incorrect assumptions when adding WHO/standards-based digital data packages
 - Revisions of data collection tools over time
-- Linking historical data using indicators
 
 ## Development instances not available or not used properly
 
@@ -105,7 +104,7 @@ api/completeDataSetRegistrations
 
 **NB:** note that you should replace the dataset IDs returned in the initial query with the dataset ID of the new dataset you are importing these reporting rates to. Do this prior to posting the information to the completeDataSetRegistrations resource.
 
-## Linking historical data using indicators
+### Linking historical data using indicators
 
 In the event you have made new data elements to represent a concept that was partially represented previously, it may be worthwhile to create indicators that link these data elements together so this data can be viewed longitudinally over time (ie. you can view data from both new and old forms in one variable when you create an output). This principal operates under the assumption that there is no overlap in the data of the previous and new data elements (ie. they are not being collected during the same period, as this would result in the indicator having an incorrect/duplicated value).
 
