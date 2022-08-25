@@ -3,11 +3,23 @@ This sections discusses procedures and recommendations related to the long-term 
 
 Procedural issues that can result in complications when managing metadata include
 
+- Development instances not available or not used properly
 - Gaps in standard operating procedures (SOPs) for adding metadata or modifying the configuration
 - Lack of coordination when adding new metadata
 - Incorrect assumptions when adding WHO/standards-based digital data packages
 - Revisions of data collection tools over time
 - Linking historical data using indicators
+
+## Development instances not available or not used properly
+
+When working on your DHIS2 configuration, it is recommended that you have at least 1 development instance available for you to use. If you have more then 1 production instance, then you should consider having a copy of each of these instances for the purposes of creating new metadata or otherwise modifying your configuration (Figure 1).
+
+![dev_vs_production](resources/images/dev_vs_production.png)
+**Figure 1**
+
+Many metadata challenges result from users adding metadata directly on a production system. This metadata is either not configured correctly, or not used in the system resulting in changes that need to be cleaned up when discovered later on.
+
+By using a development system you can avoid these challenges, as items on the development system should be able to be removed if not needed without any implications on the production system configuration or data.
 
 ## Standard Operating Procedures for adding metadata or modifying the configuration
 
