@@ -10,7 +10,7 @@ DHIS2 is a database backed java web application which can be setup to run very s
 
 ![Simple architecture](resources/images/simple_architecture.png "Simple architecture")
 
-Setting up and running DHIS2 in production involves a lot more than this.
+Setting up and running DHIS2 in production involves a lot more than just the connected software components.  Hardware resources need to be provisioned and managed. Software needs to be installed with security, performance and maintainability in mind.  In most cases there will be more than one DHIS2 system and potentially other systems within the architecture. Account needs to be taken of the surrounding infrastructure (monitoring systems, messaging systems, interoperability components etc). Most importantly, a considerable mix of technical skills and experience (warmware) are required to design, install and manage the system.
 
 ### DHIS2 in production
 
@@ -23,9 +23,21 @@ Planning for a DHIS2 server that is running in a production environment is a muc
 All of the above give rise to quite complex requirements regarding physical infrastructure, security and performance constraints and a broad range of technical skill, none of which are immediately visible when viewing the simple architecture above.  It is essential that the server implementation is properly planned for when an implementation is in its planning stage in order to be able to mobilize the physical and human resources to meet these requirements.
 
 ## Making a plan
-- security plan
-- backup plan
-- Budget, inventory, one-off vs routine activities, monitoring etc
+### Security
+Its always useful to have security in mind at the outset.  Practically this might mean that you have budgeted for:
+1. a security officer as part of the core team.  A major part of the role of the security officer will be to make a security management plan, eg. following the guidelines of ISO27001.
+2. internal or preferably external audit of the system annually
+There is more detail on security in this guide in its own section (link?).
+### Backups and archiving
+The detailed considerations here should derive from the security plan and be setup according to the installation process.  We draw special attention here because, in our experience over the years, the most common "disasters" we see relate to inadequate backups, often leading to irrevocable data loss.
+
+Important aspects of the backup plan to consider are 
+1. What are the point in time recovery targets (how much data can you afford to lose)
+2. Automation.  A backup plan which is dependent on human intervention to take the backups is not a reliable plan
+3. Offsite archiving.  Storing backups on the same machine has some value but consideration needs to made for the possibility of catastrophic failure of the machine (or nearby machines).  This includes cloud Virtual Machines.  Also the cost of high speed disk capacity.  For those who can, offsite archiving using object storage (S3 compatible) is now available from a range of cloud providers and is generally the cheapest and simplest way to deal with archiving.
+4. Testing.  Backups need to be periodically tested (preferably automated) to ensure that those files you believe to be backups are actually good backups.
+
+There are other aspects to the backup plan, but the important point to make is that it should be a serious consideration at the start of a project rather than an afterthought.  There always budgetary trade-offs to be made, so any backup plan should be properly costed taking into account retention requirements vs budget.
 
 ## Physical environment
 
@@ -57,6 +69,10 @@ Acknowledging the difficulties above, many countries have a trategy of concentra
 
 ### In-country co-location or virtual hosting
 Some countries have successfully made use of local data centre providers to either host physical servers (co-location) or to rent virtual resources.  This approach has the advantage of meeting requirements around geo-location of data (eg. all data must be stored in the country).  Also government tends to have greater leverage over such companies than with large global commercial providers - they are less likely to be cut off when payment of the bill is late! 
+
+Potential risks with this approach are:
+- due to economies of scale, local hosting tends to be more expensive than global cloud companies
+- where government has mandated that a particular company be used as the "preferred provider" there are often problems with performance and customer service
 
 ### Commercial cloud providers
 - generic infrastructure as a service (linode, aws, azure etc)
@@ -90,3 +106,9 @@ Beyond installation, the ongoing activities typically consists of :
 6.  major operating system/database server upgrades (every 2-3 years)
 
 UIO can provide training on the overall architecture and all things DHIS2-specific and also link the maintainers into the global community of practice in DHIS2 system administration.  Note that there are pre-requisite requirements in terms of the skills listed above.  It is not practical or sensible to depend on system administrators who do not have the requisite experience.
+
+## Software installation and configuration
+There are a number of resources made available by the UIO team to aid in installation:
+- The definitive DHIS2 reference [guide](https://docs.dhis2.org/en/manage/manage.html) is maintained by DHIS2 developers and is important to read thoroughly for a full description of DHIS2 configuration and functionality from the backend perspective.  An experience system administrator can find what she needs in there to design a full production-ready DHIS2 installation.  There is quite a lot of additional work to do to provision, monitor and secure the surrounding environment.
+- Ideally installation should be automated, rather than a hand-crafted work of art.  We provide some [tooling]([https://github](https://github.com/bobjolliffe/dhis2-tools-ng)) for automating at least most aspects of installation using LXD containers.  This has proved useful to many implementations and takes guidance from the reference material above and elsewhere to encode good practice by default. 
+- A current [project](https://github.com/dhis2/dhis2-server-tools) is to modernize the installation approach above and reimplement it to use ansible playbooks and to lessen the dependency on LXD.
