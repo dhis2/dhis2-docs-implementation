@@ -108,6 +108,7 @@ UIO can provide training on the overall architecture and all things DHIS2-specif
 
 ## Software installation and configuration
 There are a number of resources made available by the UIO team to aid in installation:
+
 - The definitive DHIS2 reference [guide](https://docs.dhis2.org/en/manage/manage.html) is maintained by DHIS2 developers and is important to read thoroughly for a full description of DHIS2 configuration and functionality from the backend perspective.  An experience system administrator can find what she needs in there to design a full production-ready DHIS2 installation.  There is quite a lot of additional work to do to provision, monitor and secure the surrounding environment.
 - Ideally installation should be automated, rather than a hand-crafted work of art.  We provide some [tooling]([https://github](https://github.com/bobjolliffe/dhis2-tools-ng)) for automating at least most aspects of installation using LXD containers.  This has proved useful to many implementations and takes guidance from the reference material above and elsewhere to encode good practice by default. 
 - A current [project](https://github.com/dhis2/dhis2-server-tools) is to modernize the installation approach above and reimplement it to use ansible playbooks and to lessen the dependency on LXD.
