@@ -26,8 +26,7 @@ All of the above give rise to quite complex requirements regarding physical infr
 ### Security
 Its always useful to have security in mind at the outset.  Practically this might mean that you have budgeted for:
 1. a security officer as part of the core team.  A major part of the role of the security officer will be to make a security management plan, eg. following the guidelines of ISO27001.
-2. internal or preferably external audit of the system annually
-There is more detail on security in this guide in its own section (link?).
+2. internal or preferably external audit of the system annually. There is more detail on security in this guide in its [own section](#security-considerations).
 ### Backups and archiving
 The detailed considerations here should derive from the security plan and be setup according to the installation process.  We draw special attention here because, in our experience over the years, the most common "disasters" we see relate to inadequate backups, often leading to irrevocable data loss.
 
@@ -60,7 +59,7 @@ The architectural considerations alone make it quite an expensive proposition.  
 Because of the costs and risk involved, in most cases we would not advise going this route.  There is also a larger mix of technical skills required, including data centre engineering, network and security engineering which can be avoided using one of the approaches below.
 
 ### Ministry or national government data centre
-Acknowledging the difficulties above, many countries have a trategy of concentrating the hosting requirements either into government-wide or ministry-wide purpose built data centres.
+Acknowledging the difficulties above, many countries have a strategy of concentrating the hosting requirements either into government-wide or ministry-wide purpose built data centres.
 
 - management varies
 - FOSS skills are not always widespread - a lot of windows, hyperV, vmware
@@ -98,7 +97,7 @@ If this experience is not available in-house, the ministry would be well advised
 ## Maintenance
 
 Beyond installation, the ongoing activities typically consists of : 
-1. provisioning of staging/test/training instances as required; 
+1. provisioning of staging/test/training instances as required 
 2. monitoring performance and tuning the software to suit 
 3.  managing and testing backups 
 4.  patching (typical frequency 4-6 weeks) of minor version upgrades 
