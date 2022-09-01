@@ -4,7 +4,11 @@ DHIS2 is a network enabled application and can be accessed over the
 Internet, a local intranet and as a locally installed system. The
 deployment alternatives for DHIS2 are in this chapter defined as i)
 offline deployment ii) online deployment and iii) hybrid deployment. The
-meaning and differences will be discussed in the following sections.
+meaning and differences will be discussed in the following sections. Note
+that the online deployment mode is by far the most common, and also what is 
+recommended in all but exceptional cases. With an online deployment, partial
+offline use of DHIS2 can be supported through use of mobile devices, as discussed
+in the [Android implementation guide](https://docs.dhis2.org/en/implement/android-implementation/executive-summary.html).
 
 ## Offline Deployment
 
@@ -148,97 +152,9 @@ for each network operator in the relevant country should be investigated
 when deciding which deployment approach to opt for as it might differ
 and cover different parts of the country.
 
-## Server hosting
+## Hosting of DHIS2 online
 
 The online deployment approach raises the question of where and how to
-host the server which will run the DHIS2 application. Typically there
-are several options:
+host the server which will run the DHIS2 application. The first broad choice is between owning your own equipment and hosting facility or making use of a cloud service provider and paying for the use of resources and potentially other services such as application management.  There is no right or wrong answer and how you choose will be determined by factors such as cost, available skills, existing infrastructure, regulatory compliance etc.  DHIS2 has been successfully implemented using a variety of deployment models, though each one comes with its own set of risks and challenges.  
 
-1.  Internal hosting within the Ministry of Health
-
-2.  Hosting within a government data centre
-
-3.  Hosting through an external hosting company
-
-The main reason for choosing the first option is often political
-motivation for having “physical ownership” of the database. This is
-perceived as important by many in order to “own” and control the data.
-There is also a wish to build local capacity for server administration
-related to sustainability of the project. This is often a donor-driven
-initiative as it is perceived as a concrete and helpful mission.
-
-Regarding the second option, some places a government data centre is
-constructed with a view to promoting and improving the use and
-accessibility of public data. Another reason is that a proliferation of
-internal server environments is very resource demanding and it is more
-effective to establish centralized infrastructure and capacity.
-
-Regarding external hosting, there is lately a move towards outsourcing
-the operation and administration of computer resources to an external
-provider, where those resources are accessed over the network, popularly
-referred to as “cloud computing” or “software as a service”. Those
-resources are typically accessed over the Internet using a web browser.
-
-The primary goal for an online server deployment is to provide long-term
-stable and high-performance accessibility to the intended services. When
-deciding which option to choose for server environment there are many
-aspects to consider:
-
-1.  Human capacity for server administration and operation. There must
-    be human resources with general skills in server administration and
-    in the specific technologies used for the application providing the
-    services. Examples of such technologies are web servers and database
-    management platforms.
-
-2.  Reliable solutions for automated backups, including local off-server
-    and remote backup.
-
-3.  Stable connectivity and high network bandwidth for traffic to and
-    from the server.
-
-4.  Stable power supply including a backup solution.
-
-5.  Secure environment for the physical server regarding issues such as
-    access, theft and fire.
-
-6.  Presence of a disaster recovery plan. This plan must contain a
-    realistic strategy for making sure that the service will be only
-    suffering short down-times in the events of hardware failures,
-    network downtime and more.
-
-7.  Feasible, powerful and robust hardware.
-
-All of these aspects must be covered in order to create an appropriate
-hosting environment. The hardware requirement is deliberately put last
-since there is a clear tendency to give it too much attention.
-
-Looking back at the three main hosting options, experience from
-implementation missions in developing countries suggests that all of the
-hosting aspects are rarely present in option one and two at a feasible
-level. Reaching an acceptable level in all these aspects is challenging
-in terms of both human resources and money, especially when compared to
-the cost of option three. It has the benefit that it accommodates the
-mentioned political aspects and building local capacity for server
-administration, on the other hand, can this be provided for in
-alternative ways.
-
-Option three - external hosting - has the benefit that it supports all
-of the mentioned hosting aspects at a very affordable price. Several
-hosting providers - of virtual servers or software as a service - offer
-reliable services for running most kinds of applications. Examples of
-such providers are Linode and Amazon Web Services. Administration of
-such servers happens over a network connection, which most often anyway
-is the case with local server administration. The physical location of
-the server in this case becomes irrelevant in that such providers offer
-services in most parts of the world. This solution is increasingly
-becoming the standard solution for hosting of application services. The
-aspect of building local capacity for server administration is
-compatible with this option since a local ICT team can be tasked with
-maintaining the externally hosted server.
-
-An approach for combining the benefits of external hosting with the need
-for local hosting and physical ownership is to use an external hosting
-provider for the primary transactional system while mirroring this
-server to a locally hosted non-critical server which is used for
-read-only purposes such as data analysis and accessed over the intranet.
-
+The [server hosting](#server-hosting) section of this guide provides an overview of typical hosting options, and brief summary table of factors to consider.
