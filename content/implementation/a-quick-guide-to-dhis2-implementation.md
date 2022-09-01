@@ -120,14 +120,7 @@ implementation.
 
 ### Hosting
 
-  - There are many different options for hosting an online system, both
-    in terms of where to put the server (e.g. in-house vs. cloud) and
-    who to manage the server (e.g. in-house vs. outsourced). Server and
-    hosting alternatives needs to be critically examined with regards to
-    capacity, infrastructural constraints, legal framework, security and
-    confidentiality issues. These decisions may need to be revisited at
-    least annually as server complexity, data types (e.g. aggregate vs.
-    patient) and local capacity may change over time.
+  - Hosting DHIS2 on a national scale is a considerable undertaking which requires planning, provisioning, monitoring and management of potentially complex hardware and/or cloud resources.  For a full discussion of the various tradeoffs of different approaches see the [server hosting](#server-hosting) section.
 
 ## Capacity building
 
