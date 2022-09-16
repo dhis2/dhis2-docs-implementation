@@ -153,7 +153,7 @@ A proposed high priority (top 10) list of technical measures that should be in p
 > 6\. Automated backup system is in place and regularly tested, including offsite.
 > 
 > 7\. Postgres and system users follow the least privilege principle: allow only minimal permissions and access.
-> .
+> 
 > 8\. DHIS2 is exposed via a web-proxy server configured with TLS/SSL (must score a minimum of A in [ssllabs](https://www.ssllabs.com/ssltest/)).
 > 
 > 9\. Database data is in a separate location (data partition, hard disk, cloud storage, etc) allowing encryption at rest.
