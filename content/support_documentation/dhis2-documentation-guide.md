@@ -353,6 +353,17 @@ Long lines
 Buffalo buffalo (the animals called "buffalo" from the city of Buffalo) [that] Buffalo buffalo buffalo (that the animals from the city bully) buffalo Buffalo buffalo (are bullying these animals from that city).
 ```
 
+Highlight specific lines
+
+``` py hl_lines="2 3"
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
+
+
 ### Lists
 
 Unordered
@@ -612,8 +623,12 @@ May be possible depending on plugins/extensions
 
 #### Mathematical equations
 
-Blocks must be enclosed in `\[...\]` or `\begin{} ... \end{}`.  
-Inline blocks must be enclosed in \`#!math ... \` or `\(...\)`.
+[MathJax](https://www.mathjax.org/) provides support for displaying mathematical content
+in the browser with support for mathematical typesetting in different notations
+(e.g. [LaTeX](https://en.wikibooks.org/wiki/LaTeX/Mathematics), [MathML](https://en.wikipedia.org/wiki/MathML), [AsciiMath](http://asciimath.org/)).
+
+Blocks must be enclosed in `\[ ... \]` or `$$ ... $$` or `\begin{} ... \end{}` on separate lines.  
+Inline blocks must be enclosed in `$...$` or `\(...\)`.
 
 === "Equations"
 
@@ -636,10 +651,10 @@ Inline blocks must be enclosed in \`#!math ... \` or `\(...\)`.
 
     where \( \nabla^2 \) is the spatial Laplacian and \( c \) is constant.
 
-    This equation `#!math p(x|y) = \frac{p(y|x)p(x)}{p(y)}` is inline.
+    This equation $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$ is inline.
 
-    The homomorphism `#!math f` is injective if and only if its kernel is only the
-    singleton set `#!math e_G`, because otherwise `#!math \exists a,b\in G` with `#!math a\neq b` such that `#!math f(a)=f(b)`.
+    The homomorphism $f$ is injective if and only if its kernel is only the 
+    singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such that $f(a)=f(b)$.
 
 === "Markdown"
 
@@ -663,11 +678,10 @@ Inline blocks must be enclosed in \`#!math ... \` or `\(...\)`.
 
     where \( \nabla^2 \) is the spatial Laplacian and \( c \) is constant.
 
-    This equation `#!math p(x|y) = \frac{p(y|x)p(x)}{p(y)}` is inline.
+    This equation $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$ is inline.
 
-    The homomorphism `#!math f` is injective if and only if its kernel is only the
-    singleton set `#!math e_G`, because otherwise `#!math \exists a,b\in G` with `#!math a\neq b`
-    such that `#!math f(a)=f(b)`.
+    The homomorphism $f$ is injective if and only if its kernel is only the 
+    singleton set $e_G$, because otherwise $\exists a,b\in G$ with $a\neq b$ such that $f(a)=f(b)$.
     ```
 
 
@@ -740,13 +754,13 @@ Keys is an extension to make entering and styling keyboard key presses easier. S
 
 > **Example**
 >
->    === "Output"
->        ++ctrl+alt+delete++.
+> === "Output"
+>     ++ctrl+alt+delete++.
 >
->    === "Markdown"
->        ```
->        ++ctrl+alt+delete++
->        ```
+> === "Markdown"
+>     ```
+>     ++ctrl+alt+delete++
+>     ```
 
 The following key rendering is supported.
 
@@ -1009,3 +1023,203 @@ Below are list of common sets, those that are not rendered are currently not sup
 === "Symbols"
 
     :one: :two: :three: :four: :five: :six: :seven: :eight: :nine: :keycap_ten: :1234: :zero: :hash: :symbols: :arrow_backward: :arrow_down: :arrow_forward: :arrow_left: :capital_abcd: :abcd: :abc: :arrow_lower_left: :arrow_lower_right: :arrow_right: :arrow_up: :arrow_upper_left: :arrow_upper_right: :arrow_double_down: :arrow_double_up: :arrow_down_small: :arrow_heading_down: :arrow_heading_up: :leftwards_arrow_with_hook: :arrow_right_hook: :left_right_arrow: :arrow_up_down: :arrow_up_small: :arrows_clockwise: :arrows_counterclockwise: :rewind: :fast_forward: :information_source: :ok: :twisted_rightwards_arrows: :repeat: :repeat_one: :new: :top: :up: :cool: :free: :ng: :cinema: :koko: :signal_strength: :u5272: :u5408: :u55b6: :u6307: :u6708: :u6709: :u6e80: :u7121: :u7533: :u7a7a: :u7981: :sa: :restroom: :mens: :womens: :baby_symbol: :no_smoking: :parking: :wheelchair: :metro: :baggage_claim: :accept: :wc: :potable_water: :put_litter_in_its_place: :secret: :congratulations: :m: :passport_control: :left_luggage: :customs: :ideograph_advantage: :cl: :sos: :id: :no_entry_sign: :underage: :no_mobile_phones: :do_not_litter: :non-potable_water: :no_bicycles: :no_pedestrians: :children_crossing: :no_entry: :eight_spoked_asterisk: :eight_pointed_black_star: :heart_decoration: :vs: :vibration_mode: :mobile_phone_off: :chart: :currency_exchange: :aries: :taurus: :gemini: :cancer: :leo: :virgo: :libra: :scorpius: :sagittarius: :capricorn: :aquarius: :pisces: :ophiuchus: :six_pointed_star: :negative_squared_cross_mark: :a: :b: :ab: :o2: :diamond_shape_with_a_dot_inside: :recycle: :end: :on: :soon: :clock1: :clock130: :clock10: :clock1030: :clock11: :clock1130: :clock12: :clock1230: :clock2: :clock230: :clock3: :clock330: :clock4: :clock430: :clock5: :clock530: :clock6: :clock630: :clock7: :clock730: :clock8: :clock830: :clock9: :clock930: :heavy_dollar_sign: :copyright: :registered: :tm: :x: :heavy_exclamation_mark: :bangbang: :interrobang: :o: :heavy_multiplication_x: :heavy_plus_sign: :heavy_minus_sign: :heavy_division_sign: :white_flower: :100: :heavy_check_mark: :ballot_box_with_check: :radio_button: :link: :curly_loop: :wavy_dash: :part_alternation_mark: :trident: :black_square: :white_square: :white_check_mark: :black_square_button: :white_square_button: :black_circle: :white_circle: :red_circle: :large_blue_circle: :large_blue_diamond: :large_orange_diamond: :small_blue_diamond: :small_orange_diamond: :small_red_triangle: :small_red_triangle_down: :shipit:
+
+
+#### Mermaid
+
+[Mermaid.js](https://mermaid-js.github.io/mermaid/) diagrams are now supported natively.
+
+
+##### Flowcharts
+
+[Flowcharts](https://mermaid-js.github.io/mermaid/#/flowchart) are diagrams that represent workflows or processes. The steps
+are rendered as nodes of various kinds and are connected by edges, describing
+the necessary order of steps:
+
+
+=== "Example"
+
+    ``` mermaid
+    graph LR
+    A[Start] --> B{Error?};
+    B -->|Yes| C[Hmm...];
+    C --> D[Debug];
+    D --> B;
+    B ---->|No| E[Yay!];
+    ```
+
+=== "Markdown"
+
+    ```
+
+        ``` mermaid
+        graph LR
+        A[Start] --> B{Error?};
+        B -->|Yes| C[Hmm...];
+        C --> D[Debug];
+        D --> B;
+        B ---->|No| E[Yay!];
+        ```
+
+    ```
+
+##### Sequence diagrams
+
+[Sequence diagrams](https://mermaid-js.github.io/mermaid/#/sequenceDiagram) describe a specific scenario as sequential interactions 
+between multiple objects or actors, including the messages that are exchanged
+between those actors:
+
+
+=== "Example"
+
+    ``` mermaid
+    %%{init: {'mirrorActors': false } }%%
+
+    sequenceDiagram
+
+        autonumber
+        participant G as package URL<br><br>(github/S3)
+        participant M as metatran
+        participant T as transifex
+        participant F as filesystem<br><br>(path)
+        G->>M: package file 
+        T->>M: pull latest translation strings
+        opt 
+            note over M: swap base language
+        end
+
+        opt 
+            note over M: include/exclude languages
+        end
+        M->>+F: New package file
+    ```
+
+=== "Markdown"
+
+    ```
+        ``` mermaid
+        %%{init: {'mirrorActors': false } }%%
+
+        sequenceDiagram
+
+            autonumber
+            participant G as package URL<br><br>(github/S3)
+            participant M as metatran
+            participant T as transifex
+            participant F as filesystem<br><br>(path)
+            G->>M: package file 
+            T->>M: pull latest translation strings
+            opt 
+                note over M: swap base language
+            end
+
+            opt 
+                note over M: include/exclude languages
+            end
+            M->>+F: New package file
+        ```
+    ```
+
+
+
+##### git graphs
+
+
+[Git graphs](https://mermaid.js.org/syntax/gitgraph.html#gitgraph-diagrams) provide a pictorial representation of git commits and git actions on various branches.
+
+
+=== "Example"
+
+    ``` mermaid
+    %%{init: { 'logLevel': 'debug', 'theme': 'dark', 'gitGraph': {
+    'showBranches': true, 
+    'showCommitLabel':false, 
+    'mainBranchName': 'master'}} 
+    }%%
+
+    gitGraph
+        commit
+        commit
+        branch "2.39"
+        checkout "2.39"
+        commit
+        checkout master
+        commit
+        checkout "2.39"
+        branch "patch/2.39.0"
+        checkout "patch/2.39.0"
+        commit
+        checkout master
+        commit
+        checkout "2.39"
+        commit
+        checkout "patch/2.39.0"
+        commit tag: "2.39.0"
+        checkout master
+        commit
+        checkout "2.39"
+        commit
+        commit
+        checkout "master"
+        commit
+        checkout "2.39"
+        branch "patch/2.39.1"
+        checkout "patch/2.39.1"
+        commit
+        commit tag: "2.39.1"
+        checkout "2.39"
+        commit
+        checkout "patch/2.39.1"
+        branch "hotfix 2.39.1.1"
+        commit tag: "2.39.1.1"
+    ```
+
+=== "Markdown"
+
+    ```
+        ``` mermaid
+        %%{init: { 'logLevel': 'debug', 'theme': 'dark', 'gitGraph': {
+        'showBranches': true, 
+        'showCommitLabel':false, 
+        'mainBranchName': 'master'}} 
+        }%%
+
+        gitGraph
+            commit
+            commit
+            branch "2.39"
+            checkout "2.39"
+            commit
+            checkout master
+            commit
+            checkout "2.39"
+            branch "patch/2.39.0"
+            checkout "patch/2.39.0"
+            commit
+            checkout master
+            commit
+            checkout "2.39"
+            commit
+            checkout "patch/2.39.0"
+            commit tag: "2.39.0"
+            checkout master
+            commit
+            checkout "2.39"
+            commit
+            commit
+            checkout "master"
+            commit
+            checkout "2.39"
+            branch "patch/2.39.1"
+            checkout "patch/2.39.1"
+            commit
+            commit tag: "2.39.1"
+            checkout "2.39"
+            commit
+            checkout "patch/2.39.1"
+            branch "hotfix 2.39.1.1"
+            commit tag: "2.39.1.1"
+        ```
+
+    ```
+    
