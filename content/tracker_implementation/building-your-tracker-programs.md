@@ -75,8 +75,7 @@ We recommend to start the design process by asking the following questions to in
 5. Are there data elements you currently collect that you do not need?
 
 
-
-FORMATIVE PHASE
+**FORMATIVE PHASE**
 
 Gain a clear understanding of the health system (or other system that the Tracker program will cover, for non-health implementations) to understand the "pain points” of the current system, identify opportunities for improvement, and ultimately develop a useful and suitable system that addresses these issues and opportunities. This includes understanding health workers, the data they collect, their clinical workflows, and their supervisory and reporting systems.
 
@@ -87,14 +86,14 @@ Gain a clear understanding of the health system (or other system that the Tracke
 - Map indicators and associated data points for reporting.
 - Consider whether there is a need for revision of guidelines or reporting points. If so, make parallel plans for revision of guidelines and reporting.
 
-DEVELOPMENT PHASE
+**DEVELOPMENT PHASE**
 
 - Get an overview of current clinical guidelines, interventions, indicators and algorithms.
 - Based on current guidelines -- as well as indicators and data points for reporting -- formulate algorithms and data points for electronic tracking.
 - Define the target groups and level of complexity of decision support. According to the level of workflow support, create rules for the support and communicate this to software developers in an agreed-upon requirements format.
 - Enable an iterative review process to ensure that the developers’ translation is consistent with the health care providers’ needs.
 
-CUSTOMIZATION AND TEST PHASE
+**CUSTOMIZATION AND TEST PHASE**
 
 This phase is an iterative process of working with stakeholders, software developers, implementers and users and incorporating their feedback.
 
@@ -105,20 +104,53 @@ This phase is an iterative process of working with stakeholders, software develo
 - Define milestones for developers, implementers and users.
 - Establish a structured and easily accessible online digital system for comprehensive and detailed feedback from end users.
 
-Link to WHO package design documentation
+**WHO DHIS2 Health Data Toolkit**
+
+DHIS2 works in partnership with the World Health Organization (WHO) on a variety of health-related initiatives, including the creation of standardized metadata packages to strengthen data use on a national and international level. The WHO-approved DHIS2 Health Data Toolkit provides a digital set of tools to support adoption of WHO routine health data standards into the national routine health information system. Aligned with the WHO Toolkit for Routine Health Information Systems Data, integrated analysis and program-specific DHIS2 modules are designed according to global data analysis guidance and standards for measurement. The DHIS2 toolkit provides a fully digitized reference implementation consisting of installable metadata packages, technical documentation, demo databases and implementation guidance. WHO-approved DHIS2 metadata packages can be installed in standalone DHIS2 systems or integrated into existing DHIS2 instances and adapted according to national context. The metadata packages bring together global standards and DHIS2’s evidence-based design practices for integrated health information systems in an installable toolkit that can be used for design reference or as a direct import for local use.
+
+For more information on the WHO DHIS2 Health Data Toolkit documentation and tools, [see here](https://dhis2.org/who/).
 
 ## Determining your M&E Framework
 
-Intro  
-What does a mature tracker implementation look like?  
-Maintain and evaluate data collection  
-Maintain and evaluate data use practices  
-Maintain and evaluate keep up with new DHIS 2 versions  
-Maintain and evaluate user admin  
-Maintain and evaluate security  
-Maintain and evaluate hosting  
-Maintain and evaluate user support  
-Maintain and evaluate training
+A monitoring and evaluation (M&E) framework is an essential component of a DHIS2 Tracker implementation. It enables the assessment of the implementation's progress and success, and the identification of areas for improvement. A mature tracker implementation should have a robust M&E framework in place to ensure that data collection, use practices, DHIS2 version updates, user administration, security, hosting, user support, and training are all being effectively managed.
+
+**What does a mature tracker implementation look like?**
+
+A mature tracker implementation should have a comprehensive M&E framework that covers all aspects of the implementation. This includes regular evaluations of data collection, data use practices, DHIS2 version updates, user administration, security, hosting, user support, and training. The M&E framework should also include a process for identifying and addressing any issues that arise.
+
+**Maintain and evaluate data collection**
+
+It is important to regularly evaluate the data collection process to ensure that it is accurate, complete, and timely. This includes assessing the quality of data entered, the completeness of the data, and the timeliness of data submission. Identifying and addressing any issues with data collection will improve the overall quality of the data.
+
+**Maintain and evaluate data use practices**
+
+Regularly evaluating data use practices will ensure that the data is being used effectively to inform decision-making and that it is being used in a way that aligns with the organization's goals and objectives. This includes assessing the quality of data analysis, the use of data in decision-making, and the effectiveness of data dissemination.
+
+**Maintain and evaluate keep up with new DHIS 2 versions**
+
+Keeping up with new DHIS2 versions is important to ensure that the implementation is using the most up-to-date version of the software. This includes regularly assessing the version of DHIS2 being used, evaluating the benefits of upgrading to a new version, and implementing any necessary upgrades.
+
+**Maintain and evaluate user admin**
+
+Regularly evaluating user administration will ensure that users have the appropriate access to the system, that user roles and permissions are properly configured, and that user accounts are being managed effectively. This includes assessing the number of active users, the number of new users, and the number of inactive users.
+
+**Maintain and evaluate security**
+
+Regularly evaluating the implementation's security measures will ensure that the data is being protected and that the system is in compliance with security regulations. This includes assessing the effectiveness of the system's authentication and authorization processes, the security of the hosting environment, and the effectiveness of the system's disaster recovery plan.
+
+**Maintain and evaluate hosting**
+
+Regularly evaluating the hosting environment will ensure that the system is properly configured, that the system is performing well, and that the system is available to users. This includes assessing the stability and performance of the hosting environment, the security of the hosting environment, and the availability of the system.
+
+**Maintain and evaluate user suppor**
+
+Regularly evaluating user support will ensure that users are able to effectively use the system and that any issues are being resolved in a timely manner. This includes assessing the responsiveness of the user support team, the effectiveness of the user support team, and the quality of the user support documentation.
+
+**Maintain and evaluate training**
+
+Regularly evaluating the training program will ensure that users are properly trained and that the training program is meeting the needs of the organization. This includes assessing the effectiveness of the training program, the quality of the training materials, and the number of users who have completed the training program.
+
+It is important to note that the monitoring and evaluation framework should be regularly reviewed and updated to ensure that it is meeting the needs of the organization and that it is aligned with the organization's goals and objectives. It should also be compliant with any national and international regulations and standards related to data security and protection.
 
 
 ## Real-time vs secondary data entry
