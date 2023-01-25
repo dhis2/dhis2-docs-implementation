@@ -322,36 +322,19 @@ If Internet connectivity is too slow, unreliable, or non-existent at your traini
 
 ## Relating Tracker to your Aggregate Data System
 
-**Make sure to cover the basic reporting requirements from the HMIS when designing the tracker** to avoid double reporting. The data entered into tracker forms a basis for generating aggregate numbers. E.g. 4 patient entries = 2 with condition X and 2 with condition Y. Tracker should support the aggregate system, rather than be an extra burden on data collectors. System design should take into consideration how to meet aggregate data requirements using the data entered through tracker. 
+When designing the tracker, it is important to consider the basic reporting requirements of the Health Management Information System (HMIS) to avoid double reporting. The data entered into the tracker forms the basis for generating aggregate numbers. For example, if there are 4 patient entries, 2 with condition X and 2 with condition Y. The tracker should support the aggregate system, rather than being an additional burden on data collectors. The system design should take into consideration how to meet aggregate data requirements using the data entered through the tracker.
 
-There are different options to consider, either through automation or manually with the help of tools. You need a clear work flow, tools and governance model for data quality and completeness assurance and the data authorization process. In other words who can approve and process data from individual to aggregate data and how does this happen.
+There are different options to consider, such as automation or manual methods with the help of tools. It is crucial to have a clear workflow, tools, and governance model for data quality and completeness assurance and the data authorization process. This includes determining who can approve and process data from individual to aggregate data and how this process occurs.
 
-When you design the integration with the HMIS, make sure that the aggregation process is well thought through. 
+When designing the integration with the HMIS, make sure to thoroughly review the indicators, create the reports, establish a governance model for data quality and publishing, and ensure that the data revision processes are working. It is important to involve care providers in the process to ensure they understand the indicators and are able to input into how they are calculated. Additionally, involve Ministry/policy-makers in the process so that they understand the fundamental differences between how reporting happened before vs. now in a tracker or eRegistry.
 
-- review the indicators
-- create the reports
-- create a governance model for data quality and publishing
-- ensure the data revision processes are working (who owns the process and the data and what happens if you discover faulty data after deadlines)
+**Feeding into the HMIS**
 
-It is important to make sure that care providers understand the indicators and are able to input into how they are calculated. Involve Ministry/policy-makers in the process so that they understand the fundamental differences between how reporting happened before vs. now in a tracker or eRegistry.
+The data entered into the tracker forms the basis for generating aggregate numbers. The tracker should support the aggregate system, rather than being an additional burden on data collectors. The system design should take into consideration how to meet aggregate data requirements using the data entered through the tracker. In other words, the workflow should avoid additional work for health workers and they should not have to aggregate data manually and enter it manually into the HMIS.
 
+The difference between aggregate data collection systems, where the final numbers are input into online reporting forms, and a tracker/eRegistry that does automated reporting is the significantly more effort required in software design to cover all reporting and indicator needs. It is important to define indicators and understand what is to be measured, including the numerator and denominator.
 
-Feeding into the HMIS  
-The data that is entered into tracker forms a basis for generating aggregate numbers. E.g. 4 patient entries = 2 with condition X and 2 with condition Y. Tracker should support the aggregate system, rather than be an extra burden on data collectors. System design should take into consideration how to meet aggregate data requirements using the data entered through tracker. In other words the workflow should avoid additional work for your health workers. They should not have to aggregate data manually and enter manually into the HMIS. 
- 
-Difference between aggregate data collection system, where the final numbers are input into online reporting forms vs. a tracker/an eRegistry that does automated reporting  
-
-Significantly more effort in software design to cover all reporting and indicator needs 
-
-Important to define indicators and understand what is to be measured: what is the numerator, what is the denominator 
-
-Default denominator in an eRegistry: patients/clients 
-
-Removing traditional paper reporting can be time-consuming, behavior-change takes time  
-
-Important to make sure that care providers understand the indicators and are able to input into how they are calculated 
-
-Involve Ministry/policy-makers in the process so that they understand the fundamental differences between how reporting happened before vs. now in an eRegistry 
+Removing traditional paper reporting can be time-consuming and behavior-change takes time. It is important to make sure that care providers understand the indicators and are able to input into how they are calculated. Involve Ministry/policy-makers in the process so that they understand the fundamental differences between how reporting happened before vs. now in an eRegistry.
 
 > *References*:  
 >
