@@ -155,11 +155,13 @@ It is important to note that the monitoring and evaluation framework should be r
 
 ## Real-time vs secondary data entry
 
-**Carefully evaluate whether the data should be entered real time** as this has several implications for how you structure your project. Trackers are used to track individuals through defined programs with associated data elements and rules. The data can be captured by health personnel during the consultation (real time point of care), or at the end of the day (or when they have time to enter it). The two different approaches naturally have consequences for what the Tracker is used for: If the data is entered at point of care - during the consultation - it is possible to provide decision support and validate data and avoid double data entry. However, it also introduces challenges with regards to connectivity, usability, increased number of devices, etc.
+**Carefully evaluate whether the data should be entered real time** as this has important implications for how you structure your project. Trackers are used to track individuals through defined programs with associated data elements and rules. The data can be captured by health personnel during the consultation (real-time point of care), or at the end of the day (or when they have time to enter it). The two different approaches naturally have consequences for what the Tracker is used for.
 
-Entering data in real time also requires that the the setup of the Tracker matches the clinical (other domain) workflow. Hence it is critical to have clear SOPs for backup paper files, easy navigation to find clients and mechanisms to prevent errors (such as rules that make it impossible to enter a date in the future).
+Entering data in real-time allows for real-time decision support, validation of data, and the prevention of double data entry. However, it also requires a reliable internet connection, which may not be available in certain locations. Additionally, real-time data entry may require the use of mobile devices, which can introduce additional challenges such as device maintenance, power supply, and training for health personnel.
 
-Link to WHO package design documentation
+If the data are entered at the end of the day or when the health personnel have time, it eliminates these challenges with real-time data entry. However, it also means that the data is not available in real-time and may not be as useful for real-time decision support.
+
+When deciding on the approach, it's important to consider the available resources, the local context, and the organization's goals and objectives. It's also important to have clear Standard Operating Procedures (SOPs) for backup paper files, easy navigation to find clients and mechanisms to prevent errors (such as rules that make it impossible to enter a date in the future).
 
 ## Mobile vs Web
 
