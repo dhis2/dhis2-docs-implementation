@@ -225,73 +225,39 @@ Once the team is in place, an internal working hierarchy can be established, fro
 - [Principles of Digital Development](https://digitalprinciples.org/) 
 
 
-
 ## Hosting
 
-The tracker program itself and the collected data needs to be hosted on a server. This can be done locally (for example at the ministry), through a local professional service provider or in the cloud. The different options have pros and cons, e.g. hosting a tracker implementation in the cloud means administrator does not need to worry about server capacity, down time and so forth, but at the same time there might be legislative issues with hosting the data outside the country borders, unless you have a local provider. Regardless of hosting strategy - security is a key consideration. This entails identity management, authentication and authorization (restricting access to data or services) as well as protection of servers.
+The DHIS2 Tracker program and collected data must be hosted on a server. This can be done locally (such as at the ministry of health or IT), through a local professional service provider, or in the cloud. Each option has its own advantages and disadvantages. For example, hosting a tracker implementation in the cloud means the administrator does not need to worry about server capacity and downtime, but there may be legal issues with hosting the data outside the country's borders unless a local provider is used. Regardless of the hosting strategy, security is a key consideration. This includes identity management, authentication and authorization (restricting access to data or services), and protecting servers.
 
-Additionally you have to decide if you want to configure the tracker in a separate or same instance as your aggregate system. A big advantage to having one instance is the possibility to directly generate your reports from tracker data. However, having the two in the same instance requires stricter SOPs for maintaining user accounts to ensure access to patient data is restricted properly.
+Additionally, it is important to decide whether to configure the tracker in a separate or the same instance as your aggregate system. A major advantage of having one instance is the ability to directly generate reports from tracker data. However, having the two in the same instance requires stricter standard operating procedures (SOPs) for maintaining user accounts to ensure proper access to patient data is restricted.
 
-10 principles for hosting and security 
+**10 hosting and security principles that should be included in your hosting plan, regardless of whether the instance is local or in the cloud:**
 
-1. Operating system is a LTS (long term service edition)
-2. There is an automatic process for applying OS security patches    
-3. Host based firewall configured allowing minimal access
-4. Access is via ssh according to agreed policy - keys, no root access etc 
-5. DHIS2 version is not more than 3 versions behind latest release. Process exists to apply patch releases regularly.
-6. Automated backup system is in place and regularly tested, including offsite.
-7. Postgresql database access controls allow minimal access      
-8. Web-proxy server is properly (ssllabs test A+) configured with SSL
-9. Database data is on separate data partition (allowing encryption at rest, performance settings)        
-10. Monitoring and alerting system is in place (wide range of options depending on environment. eg. boombox might be fine with email + logwatch + munin ) 
-
-Enough/stable electricity to charge devices  
-In case of Android - network with a certain amount of uptime in order to sync.  
-In case of web based - stable network
-
-2) Servers/network/hosting
-
-3) Hardware
-
-Experience shows you need X number of devices per user
-
-You need X % of devices for backup
-
-Devices needs to rotate
-
-- Database diagram (including virtual machines and physical networks)
-- Minimum specifications for hardware… 
-    - Servers
-    - PCs
-    - Android / M### Hosting & Securityobile
-    - Other connected devices (e.g. fingerprint readers)
-- Other infrastructure
-    - Network access
-    - Electricity access
-    - SMS and data costs
-    - Shared resources with other projects or ministries (e.g. government contract with SMS gateway provider)
+- The operating system is a Long-Term Service (LTS) edition
+- There is an automatic process for applying OS security patches
+- A host-based firewall is configured to allow minimal access
+- Access is via Secure Shell (SSH) according to agreed policy (keys, no root access, etc.)
+- The DHIS2 version is not more than 3 versions behind the latest release, and a process exists to apply patch releases regularly.
+- An automated backup system is in place and regularly tested, including offsite.
+- PostgreSQL database access controls allow minimal access
+- A Web-proxy server is properly (SSL Labs test A+) configured with Secure Sockets Layer (SSL)
+- All Database data is stored on a separate data partition (allowing encryption at rest, performance settings)
+- A monitoring and alerting system is in place
+      - There is a wide range of options available, depending on the environment. For example, boombox might be fine with email + logwatch + munin.
+- Enough/stable electricity to charge devices
+- If using Android, there must be a network with a certain amount of uptime to sync.
+- If web-based, a stable network is present
 
 
- - Cloud-based vs Locally hosted: Depends on the regulatory environment of PII 
- - Management and sustainability of the IT systems.
- - Documentation exists on security plans and protocols. Both at high-level (non-jargon, but stating the principles) as well as technical procedures. Especially critical for locally-hosted systems without a “security first” culture.
- - One individual needs to be responsible of developing, maintaining and implementing the security plan. Another security manager committed to identifying and mitigating risks. Both roles require experience, capacity, and incentive.
- - Ensure that there is a documented set of technical controls mandated
- - Ensure that there is audit process against those controls
- - SOP for operational, network, and physical security (locking PCs, strong passwords, data encryption, etc)
- - SOP for monitoring and response if system is down or system breach
- - Disaster recovery plan and routine drills
- - Troubleshooting – process for “an external solution” in case of urgent crisis when situation cannot be resolved locally. 
- - What is process for granting database or ssh access to servers?
- - Access control and rules
- - Where should management of the IT system fall within the framework?
+**Management and sustainability of the IT systems:**
 
+Documentation exists on security plans and protocols, both at a high-level as well as technical procedures. Thi is especially critical for locally-hosted systems without a “security first” culture.
 
-  
-    
-*References*:
+One individual needs to be responsible for developing, maintaining, and implementing the security plan. Another security manager committed to identifying and mitigating risks. Both roles require experience, capacity, and incentives.
 
-  -   Security Guidelines for Country Implementers
+Ensure that there is a documented set of technical controls mandated, and that there is an audit process against those controls
+
+Published and available SOPs for operational, network, and physical security (locking PCs, strong passwords, data encryption, etc.), as well as for monitoring and response if the system is down or system breach
 
 
 ## Training and Rollout
