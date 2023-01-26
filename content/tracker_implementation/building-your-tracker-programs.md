@@ -142,7 +142,7 @@ Regularly evaluating the implementation's security measures will ensure that the
 
 Regularly evaluating the hosting environment will ensure that the system is properly configured, that the system is performing well, and that the system is available to users. This includes assessing the stability and performance of the hosting environment, the security of the hosting environment, and the availability of the system.
 
-**Maintain and evaluate user suppor**
+**Maintain and evaluate user support**
 
 Regularly evaluating user support will ensure that users are able to effectively use the system and that any issues are being resolved in a timely manner. This includes assessing the responsiveness of the user support team, the effectiveness of the user support team, and the quality of the user support documentation.
 
@@ -265,7 +265,7 @@ The DHIS2 Tracker program and collected data must be hosted on a server. This ca
 
 Additionally, it is important to decide whether to configure the tracker in a separate or the same instance as your aggregate system. A major advantage of having one instance is the ability to directly generate reports from tracker data. However, having the two in the same instance requires stricter standard operating procedures (SOPs) for maintaining user accounts to ensure proper access to patient data is restricted.
 
-**10 hosting and security principles that should be included in your hosting plan, regardless of whether the instance is local or in the cloud:**
+**Key hosting and security principles that should be included in your hosting plan, regardless of whether the instance is local or in the cloud:**
 
 - The operating system is a Long-Term Service (LTS) edition
 - There is an automatic process for applying OS security patches
