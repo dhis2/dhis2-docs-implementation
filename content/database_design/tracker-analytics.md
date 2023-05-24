@@ -379,7 +379,7 @@ In DHIS2 Tracker, multiple org units may enter event data for the same enrollmen
 
 
 
-* The patient makes a **spontaneous visit** to OrgUnit B. This assumes that the user’s Search Scope allows for access to TEI registered in OrgUnit A. It also assumes that the program access level is either Open, Audited, or Protected. (See [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_nti_access_level) for explanation of the different program access settings). 
+* The patient makes a **spontaneous visit** to OrgUnit B. This assumes that the user’s Search Scope allows for access to TEI registered in OrgUnit A. It also assumes that the program access level is either Open, Audited, or Protected. (See [Docs](l#webapi_nti_access_level) for explanation of the different program access settings). 
 * The user at OrgUnit A makes a **One-time Referral** to OrgUnit B. The program can have any access level to allow this, however OrgUnit B will need to be assigned the program. Users from OrgUnit B will only be able to enter data for a single event within the specified program stage, and they will not be able to edit the previous events.
 * The user at OrgUnit A makes a **Permanent Transfer** to OrgUnit B. The program can have any access level to allow this, however OrgUnit B will need to be assigned the program. This differs from One-Time Referral as OrgUnit B will have edit access to all program stages for the enrollment, which will also be accessible to OrgUnit B in working lists and through search. After this transfer, it could be said that this enrollment now “belongs to” orgUnit B because Ownership has been conferred.
 

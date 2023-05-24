@@ -41,7 +41,7 @@ In DHIS2, strong interaction design can be configured through the following feat
     * [Differences of Android and Web program rule evaluation](#capture_app_pr)
 * **TEI Dashboard layout**
     * [Widget layout](#widget-descriptions)
-    * Feedback and Top Bar dynamic updates [through program rules](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/configuring-the-system/programs.html?h=feedback+widget+use#program_rule_examples)
+    * Feedback and Top Bar dynamic updates [through program rules](#program_rule_examples)
     * “Live” [program indicators](https://community.dhis2.org/t/how-to-create-and-view-indicators-for-a-tracked-entity-instance/51141)
     * [Android Settings app](#capture_app_android_settings_webapp)
 * **Visual Configuration**
