@@ -15,7 +15,7 @@ There are four main ways that tracker data can be consumed by DHIS2 analytics ap
 
 Produces a list of all enrollments or events in a program that meet defined criteria. Those criteria can be a combination of organisation units, time dimensions, and specific data values. For example, you could define a line list for all enrollments in the Malaria treatment program, where the organisation unit is all facilities in the district, enrollment dates were within the last 3 months, and the value for data element ‘’Case Outcome” is death.
 
-The fields for each row in the list can be specified by the user, for example a tracked entity attribute (case ID), a data element value in a given program stage (malaria medication). The example below from the Inpatient morbidity and mortality event program shows admissions by admission date, gender, and discharge date– all filtered by age at admission. It therefore combines TEI Attributes, program indicator values, and data element values.
+The fields for each row in the list can be specified by the user, for example a tracked entity attribute (case ID), a data element value in a given program stage (malaria medication). The example below from the Inpatient morbidity and mortality event program shows admissions by admission date, gender, and discharge date– all filtered by age at admission. It therefore combines tracked entity attributes (TEA), program indicator values, and data element values.
 
 When using tracker programs, you can combine multiple stages, and show data from last X events from each stage in a horizontal list.
 
@@ -45,22 +45,21 @@ _Total number of households checked by malaria focus investigations, by district
 For some configurations, Data Visualizer can be a quick way to get a summary of event data inputs. But there are critical **limitations** to aggregating data elements directly:
 
 
-* The query includes all data element values found in all events for the given program, org unit, and period dimensions. If the data element is present in multiple stages, or is within a repeatable stage, then those data elements would be aggregated together.
-* Only the event date can be used as the time dimension, not the enrollment date or a more complex period boundary to create a “cohort” of events.
+* The query includes all data element values found in all events for the given program, org unit, and period dimensions. If the data element is present in multiple stages, or is within a repeatable stage, then those data element values would be aggregated together.
+* Only the event date can be used as the time dimension, not the enrollment date, nor a retrospective period boundary to create a “cohort” of events from before the period started.
 * You cannot aggregate by an option set value (categorical variable), such as total events where the “Outcome” data element is “Cured”.
 * You cannot apply filters to exclude numeric data element values entered in error above or below thresholds, such as excluding all "infant weights above 10,000g"
 * You cannot apply create disaggregations based on a second event data item, whether numeric or categorical, such as “weight at birth, above and below 35 weeks gestation” or “weight at birth by sex”
+* Note that with the **Maps** app, you can apply event data item filters to event layer queries. The filtered queries can also aggregate values up geographical levels. Such filters are not available in the Data Visualizer app.
 
-*With the Maps app, you can apply event data item filters to event layer queries. The queries can also be aggregated up geographical levels.
-
-Most importantly, it is very difficult to show basic event counts or enrollment counts with given criteria with the data visualizer app. For common Trackers in health, you want to generate a simple count of patients or encounters that meet certain conditions. The aggregation of individual data element values is not as essential.
+Most importantly, it is very difficult to show basic event counts or enrollment counts with given criteria in the data visualizer app. For common Trackers in the health do, you want to generate a simple count of patients or encounters that meet certain conditions. The aggregation of individual data element values is not as essential.
 
 
 ## Program Indicators
 
-Program indicators (PI) are how you can easily configure multi-layered queries of your individual level data. They allow for the creation of values based on data elements and/or tracker attributes belonging to tracker programs. Essentially, we can take the individual data items within a tracker program and generate aggregate values to be used in routine analysis.
+Program indicators (PI) are how you can easily configure multi-layered queries of your individual level data. They allow for the creation of values based on data elements and/or tracked entity attributes belonging to tracker programs. Essentially, we can take the individual data items within a tracker program and generate aggregate values to be used in routine analysis.
 
-PI can be used to summarise data within an event or across an entire enrollment, combining data entered from several different stages or TEI Attributes. Some configurations might also include PI in the “TEI dashboard” on web or Android, to provide calculations across or within events and provide a summary of the enrollment to the user during data entry (total number of events, % of data element values that are blank, days since last visit, etc). Our focus in this section is on configuring program indicators to show summary data (counts, sums, averages, etc.) for all of the events or enrollments within a specified org unit/period.
+PI can be used to summarise data within an event or across an entire enrollment, combining data entered from several different stages or tracked entity attributes. Some configurations might also include PI in the “TEI dashboard” on web or Android, to provide calculations across or within events and provide a summary of the enrollment to the user during data entry (total number of events, % of data element values that are blank, days since last visit, etc). Our focus in this section is on configuring program indicators to show summary data (counts, sums, averages, etc.) for all of the events or enrollments within a specified org unit/period.
 
 There are two _types_ of program indicators:
 
@@ -78,7 +77,7 @@ There are five components of program indicators that define how the value is cal
 |--- |--- |--- |
 |1|Organisation Unit|For event type it is the org unit of the event. For enrollment type it is enrollment org unit, even if some events in an enrollment were entered elsewhere.|
 |2|Period|Defined by analytics period boundaries. Depending on the PI type, it defaults to the enrollment date or event date falling between start and end of the reporting period.|
-|3|Filter|Create a value filter for the event or enrollment. Include tracked entity attribute values, or any data elements within a specific program stage (event type), or any data elements within any program stages. A variety of [functions and variables are available](#program_indicator_functions_variables_operators) for additional operations, like filtering for TEIs where the number of years between the enrollment date and the date of birth is more than 18.|
+|3|Filter|Create a value filter for the event or enrollment. Include tracked entity instance attribute values, or any data elements within a specific program stage (event type), or any data elements within any program stages. A variety of [functions and variables are available](#program_indicator_functions_variables_operators) for additional operations, like filtering for TEIs where the number of years between the enrollment date and the date of birth is more than 18.|
 |4|Expression|The criteria above define which enrollments (or event) to include. The expression is the value that is applied to each enrollment (or event). Usually it will be event_count, enrollment_count, or tei_count, but can also be a data element value or more complex expression.|
 |5|Aggregation Type|How to aggregate up the expression applied to each enrollment (or event). Usually “count” or “average”.|
 
@@ -121,7 +120,7 @@ What follows are illustrative examples of challenges when defining and configuri
 
 The most important decision when building a program indicator is whether it should be event type or enrollment type.
 
-Most implementers know that both types of PI can filter by data element values and/or Tracked Entity Attribute values (TEIA). And if the program indicator must evaluate values from two or more program stages, only enrollment type PI can be used. 
+Most implementers know that both types of PI can filter by data element values and/or Tracked Entity Attribute values (TEA). And if the program indicator must evaluate values from two or more program stages, only enrollment type PI can be used. 
 
 But a very common mistake is to confuse the two types when aggregating data from repeatable program stages.
 
@@ -132,7 +131,7 @@ Implementers must ask: _do I want to sum up all encounters, or just the unique p
 In this example from the Tracker Use Level 1 academy, we are counting cases with underlying conditions in a Covid-19 vaccination program. The data element “COVAC - Underlying conditions” is found in a repeatable program stage.
 
 
-![](resources/images/image25.png "Data element for underlying condition"){ .center width="70%" }
+![](resources/images/image25.png "Data element for underlying condition"){ .center width=70% }
 
 
 We make two program indicators: one is enrollment type with enrollment count aggregation, and the other is event type using an event count aggregation. 
@@ -140,7 +139,7 @@ We make two program indicators: one is enrollment type with enrollment count agg
 You will see the event based indicator reports higher values as it is counting the underlying condition variable for every event; this does not make sense in this scenario if you want to know the total number of unique people with an underlying condition.
 
 
-![Enrollments and Events](resources/images/image38.png){ .center width="80%" }
+![Enrollments and Events](resources/images/image38.png){ .center width=80% }
 
 
 Why is this the case? 
@@ -189,7 +188,7 @@ _“How many pregnancies had at least one ANC visit with a haemoglobin value ove
 
 
 
-You can build a program indicator filter with a combination of data elements and Tracked Entity Instance values. With enrollment indicators, these data elements can come from different program stages, and you can even scan for a data element value that meets certain criteria within all events of a stage. However, you cannot build multiple subexpressions within a `d2:countIfCondition` filter to ensure that two data element values are present in the same event.
+You can build a program indicator filter with a combination of data elements and tracked entity attribute values. With enrollment indicators, these data elements can come from different program stages, and you can even scan for a data element value that meets certain criteria within all events of a stage. However, you cannot build multiple subexpressions within a `d2:countIfCondition` filter to ensure that two data element values are present in the same event.
 
 As an example, you can filter for enrollments where any event reported Underlying Conditions:
 
@@ -210,7 +209,7 @@ The differences between the two PI types are elaborated in the table below.
 |--- |--- |--- |
 |Organization Unit dx|Event OrgUnit|Enrollment OrgUnit|
 |Period dx (default)|Event date|Enrollment date|
-|Can filter by TEIA values|Yes|Yes|
+|Can filter by TEA values|Yes|Yes|
 |Can filter by multiple values in a single non-repeatable stage|Yes|Yes|
 |Can filter by multiple values in a repeatable stage|Yes|Selects the value from latest event of stage in period*|
 |Can filter by values in multiple program stages|No|Yes|
@@ -235,7 +234,7 @@ Two defaults are automatically configured when you choose the program indicator 
 * By default, the period boundaries are set to the start and end of the reporting period in the analytics query.
 
 
-![Enrollment period boundaries](resources/images/image3.png "Enrollment period boundaries"){ .center width="80%" }
+![Enrollment period boundaries](resources/images/image18.png "Enrollment period boundaries"){ .center width="80%" }
 
 
 This means that for _most_ event type program indicators, the program indicator periodicity is defined as event dates falling within the reporting period. For _most_ enrollment type program indicators, the program indicator periodicity is defined as enrollment dates falling within the reporting period.
@@ -380,7 +379,7 @@ In DHIS2 Tracker, multiple org units may enter event data for the same enrollmen
 
 
 
-* The patient makes a **spontaneous visit** to OrgUnit B. This assumes that the user’s Search Scope allows for access to TEI registered in OrgUnit A. It also assumes that the program access level is either Open, Audited, or Protected. (See Docs for explanation of the different program access settings). 
+* The patient makes a **spontaneous visit** to OrgUnit B. This assumes that the user’s Search Scope allows for access to TEI registered in OrgUnit A. It also assumes that the program access level is either Open, Audited, or Protected. (See [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_nti_access_level) for explanation of the different program access settings). 
 * The user at OrgUnit A makes a **One-time Referral** to OrgUnit B. The program can have any access level to allow this, however OrgUnit B will need to be assigned the program. Users from OrgUnit B will only be able to enter data for a single event within the specified program stage, and they will not be able to edit the previous events.
 * The user at OrgUnit A makes a **Permanent Transfer** to OrgUnit B. The program can have any access level to allow this, however OrgUnit B will need to be assigned the program. This differs from One-Time Referral as OrgUnit B will have edit access to all program stages for the enrollment, which will also be accessible to OrgUnit B in working lists and through search. After this transfer, it could be said that this enrollment now “belongs to” orgUnit B because Ownership has been conferred.
 
@@ -466,9 +465,9 @@ Several caveats should be considered when using the ownership organisation unit 
 
 
 
-* Even when there are analytic period boundary offsets shifting the analytics window forward or backward in time, the organisation unit dimension remains the owner at the **end of the reporting period.**
-* If several periods are combined in such a query, then the owner at the beginning of the first period or the owner at the end of the last period should be used. So while “Months this year” and “this Year” cover the same amount of time, “Months this year” would show 12 periods and calculate ownership as of the end of each month, whereas “This year” would show one period and only examine ownership at the end of the year.
-* Referrals do not confer ownership of the enrollment and events. When referrals are made, only the “referral out” organisation unit is the owner for purposes of analytics.
+* Even when there are analytic period boundary offsets shifting the analytics window forward or backward in time, the organisation unit dimension remains the owner at the **beginning or end end of the reporting period.**
+* If several periods are combined in such a query, then the owner at the beginning of the first period or the owner at the end of the last period should be used. So while “Months this year” and “this Year” cover the same amount of time, “Months this year” would show 12 periods and calculate ownership as of the end of each month separately, whereas “This year” would show one period and only examine ownership at the end of the year.
+* Referrals do not confer ownership of the enrollment and its events. When referrals are made, only the “referral out” organisation unit is the owner for purposes of analytics.
 * When a permanent transfer is performed in Capture or Tracker Capture, that date of ownership transfer is the **_current date_**. Therefore, if data entry staff record referrals made in the past, or perform backentry of legacy data, the ownership history should be accurately updated in the DHIS2 backend SQL by system administrators.
 * As of v2.40, the total number of referrals and transfers cannot be calculated using program indicators. This includes questions such as “How many patients were transferred this period?” and “How many patients have been referred in total, and of those, how many completed the event after their referral?” While it may be possible to [find this information through SQL views](https://community.dhis2.org/t/calculate-transferred-patients/44892/3) of the Ownership history table, it is not yet possible to develop a PI to calculate number of transfer or referral actions as of May 2023. This is being developed for future DHIS2 releases.
 
@@ -526,7 +525,7 @@ Two custom DHIS2 apps have been developed to automate disaggregating of program 
 
 ## Implications of Tracker Analytics for Data Use
 
-* Tracker data are longitudinal and geographically distributed. This means tracker data are not inherently tied to one period or one organisation unit. Program indicators define how to query tracker data based on one period dimension and one organisation unit dimension.
+* Tracker data are both longitudinal and geographically distributed. This means data for a single TEI are not inherently tied to one period or one organisation unit. Program indicators define how to query tracker data based on one period dimension and one organisation unit dimension.
 * When designing a program indicator for aggregating tracker data, it is essential to define whether you are counting unique encounters (events) or patients (enrollments, or, if enrollment is repeatable, TEI).
 * All unique patient counts <span style="text-decoration:underline;">must</span> use enrollment type PI, since event type will lead to double counting of patients at lower levels. Similarly, all longitudinal PI (calculations requiring data from more than one event) <span style="text-decoration:underline;">must</span> use enrollment type PI. For DHIS2 versions below 2.40, patient counts and longitudinal indicators are tied to the organisation unit where the patient enrolled, which is sometimes not the location where services were delivered.
 * Enrollment type PI provide a powerful way to query longitudinal data, but in patient management contexts where the enrollment is likely opened for a long duration, adding `d2:countIf()` statements should be used with discretion. When calculated on the fly on dashboards, these statements slow dashboards and diminish system performance. 
@@ -535,7 +534,7 @@ Two custom DHIS2 apps have been developed to automate disaggregating of program 
 * At national scale, event type PI are generally much faster than enrollment type PI to calculate, and potentially easier for end users to interpret. When designing essential program indicators for your program, try to find ways to include all the relevant program data in a single program stage if possible. Program rules allow Assigning data element values from a previous event into subsequent events, or into another stage. Further, program rules can be employed to only show specific sections program stages based on certain data values are entered, making it easier to include all relevant data into a single stage.
 * See the Tracker Implementation Guidance for more lessons from COVID-19 vaccine systems on configuration of [Tracker analytics at scale](#analytics-performance) 
 
-Once you have an idea of TEI attributes, program stages, data elements, and required program indicators you should be able to draw a **system design diagram** for your proposed Tracker system, highlighting how an individual enrollment progresses between each stage. See the DHIS2 Metadata Package documentation for [examples](https://docs.dhis2.org/en/topics/metadata/disease-surveillance/acute-febrile-illness/design.html#program-configuration).
+Once you have an idea of tracked entity attributes, program stages, data elements, and required program indicators you should be able to draw a **system design diagram** for your proposed Tracker system, highlighting how an individual enrollment progresses between each stage. See the DHIS2 Metadata Package documentation for [examples](https://docs.dhis2.org/en/topics/metadata/disease-surveillance/acute-febrile-illness/design.html#program-configuration).
 
 After you have developed a schematic for your program, or an early prototype, you should review additional features that will facilitate end user data entry.
 

@@ -13,12 +13,12 @@ Tracker programs can have one or many program stages. Each program stage defines
 For example, a simple “Disease Treatment” program might have an initial case report stage, a treatment stage, a laboratory stage, and an outcome stage.
 
 
-![](resources/images/simple_program.jpg ""){.center width=70%}
+![Simple disease program](resources/images/simple_program.jpg ""){ .center width=70% }
 
 This program stage design would be rendered in the Tracker Capture app like so:
 
 
-![](resources/images/simple_program_TC.png ""){.center width=80% }
+![](resources/images/simple_program_TC.png ""){ .center width=80% }
 
 
 At this step, there are three important characteristics of program stages to consider:
@@ -121,9 +121,7 @@ Once you have defined the contents of each stage, and determined whether any of 
 As an example, the “Simple Disease Treatment Program” has four stages: an initial case report, treatment, lab test, and outcome. On enrollment, diagnostic details are entered into the Initial Case Report. If the patient recovers, dies, or is considered lost to follow up, this is recorded in the Outcome stage. Treatment and Lab Tests can each be repeated many times, but must occur sometime between Initial Case Report and Outcome stages. Usually, lab tests and treatment visits will be asynchronously documented by separate health workers at a lab and at a clinic. 
 
 
-
-
-![Simple disease treatment program](resources/images/simple_program.jpg)
+![Simple disease treatment program](resources/images/simple_program.jpg){ .center width=80% }
 
 The end user’s sequential process of moving between initial case report, treatment, and lab test forms should be reviewed in more detail.
 
@@ -159,17 +157,17 @@ First, program stages can be sorted when configuring the program in the Maintena
 
 
 
-![Arrange stages in order](resources/images/stage_order_select.png)
+![Arrange stages in order](resources/images/stage_order_select.png){ .center width=80% }
 
 
 
 
-![The sort order is shown in the program stage list when adding a new event](resources/images/image34.png "Sort order new event")
+![The sort order is shown in the program stage list when adding a new event](resources/images/image34.png "Sort order new event"){ .center width=80% }
 
 
 
 
-![...and the order of stages in tabular data entry widget](resources/images/image36.png "Sort order tabular data entry")
+![...and the order of stages in tabular data entry widget](resources/images/image36.png "Sort order tabular data entry"){ .center width=80% }
 
 
 In some use cases, implementations can make the stage order even clearer by adding an ordinal prefix to each stage name, for example, Stage 0 - Previous Deliveries, Stage 1 - First ANC, 2 - Second ANC visit, etc. 
@@ -184,14 +182,14 @@ Here are additional methods for setting a standard sequence of program stages.
 
     
 
-![First stage on registration page](resources/images/image5.png "Registration page")
+![First stage on registration page](resources/images/image5.png "Registration page"){ .center width=80% }
 
 
 * **Ask user to complete the program after completing the stage**. This program stage setting is useful to mark the final program stage of the sequence, since it nudges the user to close the enrollment after the stage is complete.
 
     
 
-!["Are you sure you want to complete this event and enrollment?"](resources/images/image1.png "Ask user to complete")
+!["Are you sure you want to complete this event and enrollment?"](resources/images/image1.png "Ask user to complete"){ .center width=80% }
 
 
 * **Open data entry form after enrollment** will take the user directly to the stage’s data entry form after completing registration. That means the event will be opened by default, with an ACTIVE status. [This setting](#enrollment-with-open-data-entry-form) can only be activated if [“Auto-generate event”](#enrollment-with-auto-generated-events) has been checked.
@@ -290,14 +288,12 @@ Once your tracker has been deployed, you may want to review how closely users ar
 
 **Enrollments**
 
-
-
 * **ACTIVE**. It is used meanwhile when the tracked entity participates in the program.
 * **COMPLETED**. It is used when the tracked entity finishes its participation in the program.
 * **CANCELLED**. "Deactivated" in the web UI. It is used when the tracked entity cancelled its participation on the program.
 
-**Events**
 
+**Events**
 
 
 * **ACTIVE**. When events are created by “Add New”, they are immediately set to ACTIVE. If an event has ACTIVE status, it is possible to edit the event details. COMPLETED events can be turned ACTIVE again and vice versa.
@@ -335,19 +331,19 @@ Some examples of how services under the same program could be modelled as stages
     4. It can be assumed that the Outcome is recorded at the same time as a treatment or lab test result. If a value is entered for the case Outcome, a program rule asks the user to complete the enrollment. Program Rules could also prevent future Visit events from opening for this case.
 
 
-![](resources/images/image50.png "All core services one repeatable Visit stage")
+![](resources/images/image50.png "All core services one repeatable Visit stage"){ .center width=80% }
 
 
 
 2. **All core services as their own non-repeatable or repeatable stages**
-    1. This is a better design if the lab test results are entered asynchronously with the treatment offered (by different users or at different time points).
-    2. However, program indicators across Treatment and Lab Result stages are more difficult to calculate, for instance “Days between Positive Lab Result and Treatment” or “Received Treatment two or more times before receiving positive Lab Result” 
-    3. This example still has a non-repeatable Case Report stage to enter basic case details. Some programs also Show or Hide subsequent events in a stage based on details entered during enrollment or initial case report.
-    4. Since the Lab Results and Treatment are separated, so is the Outcome stage. Here you can configure the setting to complete the program after stage completion.
+	1. his is a better design if the lab test results are entered asynchronously with the treatment offered (by different users or at different time points).
+	2. However, program indicators across Treatment and Lab Result stages are more difficult to calculate, for instance “Days between Positive Lab Result and Treatment” or “Received Treatment two or more times before receiving positive Lab Result” 
+	3. This example still has a non-repeatable Case Report stage to enter basic case details. Some programs also Show or Hide subsequent events in a stage based on details entered during enrollment or initial case report.
+	4. Since the Lab Results and Treatment are separated, so is the Outcome stage. Here you can configure the setting to complete the program after stage completion.
 
 
 
-![](resources/images/image49.png "All core services as their own non-repeatable or repeatable stages")
+![](resources/images/image49.png "All core services as their own non-repeatable or repeatable stages"){ .center width=80% }
 
 
 
@@ -362,18 +358,18 @@ Some examples of how services under the same program could be modelled as stages
 
 
 
-![](resources/images/image39.png "One repeatable Visit stage, show other stages as needed")
+![](resources/images/image39.png "One repeatable Visit stage, show other stages as needed"){ .center width=80% }
 
 
 
 
 4. **Each iteration of a service has its own stage**
     1. No repeatable stages, so must assume fixed maximum number of encounters within enrollment (example, maximum of three follow up tests provided to each TB contact, so FU 1, FU 2, FU3 can each be separate stages)
-    2. In some use cases there are a fixed number of encounters that could or should be seen for every person. For example, a person suspected of TB should be seen EXACTLY five times, on a fixed schedule between each visit. In this scenario, it would make sense to have a separate non-repeatable stage for each step in the sequence: Treatment #1, Treatment #2, and Treatment #3, etc. Program rules could hide all other treatments until Treatment #1 is completed; Treatment # 3 is hidden until treatment #2 is completed, and so on.
+	2. In some use cases there are a fixed number of encounters that could or should be seen for every person. For example, a person suspected of TB should be seen EXACTLY five times, on a fixed schedule between each visit. In this scenario, it would make sense to have a separate non-repeatable stage for each step in the sequence: Treatment #1, Treatment #2, and Treatment #3, etc. Program rules could hide all other treatments until Treatment #1 is completed; Treatment # 3 is hidden until treatment #2 is completed, and so on.
     3. The main positive of this approach is that you can set fixed due date intervals between each encounter. It is also easier to filter with enrollment program indicators data based on where a given data element value occurred within the sequence ( “TB contacts starting treatment at visit # 3”).
     4. This is however unrecommended, because any such “fixed maximum” of encounters are likely to change as systems evolve, and it is difficult to revert to a repeatable stage once data has been entered. Line lists and event type program indicators are more complicated to configure, as you need to combine multiple stages together. Furthermore, it may be burdensome to maintain each stage separately, since changes must be made to each separate stage, and confusing for data entry personnel to navigate.
 
-![](resources/images/image44.png "Each iteration of a service has its own stage")
+![](resources/images/image44.png "Each iteration of a service has its own stage"){ .center width=80% }
 
 
 **Example of HIV Prevention tracker**

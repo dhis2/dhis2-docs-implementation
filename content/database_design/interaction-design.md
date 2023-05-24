@@ -9,7 +9,7 @@ After defining the structure of the program–arranging it into stages, attribut
 
 In practice, real people will be entering individual level data. They will often have pressures on their time to enter many data points for many patients in the same day. They will sometimes make errors and enter invalid or inconsistent data.
 
-Smart **interaction design** improves the user experience, which can help with **improving data quality **and **facilitating intuitive data entry workflows**. These are not just aesthetic considerations, but key tools for supporting data entry personnel by making their jobs easier and more efficient. And as described above, program rules can also be used to support the design of program stage structures required for data entry workflow and analytics outputs.
+Smart **interaction design** improves the user experience, which can help with **improving data quality** and **facilitating intuitive data entry workflows**. These are not just aesthetic considerations, but key tools for supporting data entry personnel by making their jobs easier and more efficient. And as described above, program rules can also be used to support the design of program stage structures required for data entry workflow and analytics outputs.
 
 
 ## Tracker Features To Streamline User Experience
@@ -37,7 +37,7 @@ In DHIS2, strong interaction design can be configured through the following feat
     * [Warning boxes](https://community.dhis2.org/t/how-to-automate-patient-tracking/42304/3)
     * [Error boxes](https://community.dhis2.org/t/any-possibility-to-limit-a-repeatable-program-stage/42213/4)
     * [Priorities of rules to create a cascading logic](https://community.dhis2.org/t/program-rule-for-age-value-type/5002/2)
-    * “Select multiple” data elements  –  Yes Only data elements within the same section with program rules overlaid so only one can be entered
+    * “Select multiple” data elements  –  Yes Only data elements within the same section with program rules overlaid so only one can be entered. Example: Key Population selection in [HIV Case Surveillance](https://docs.dhis2.org/en/topics/metadata/hiv/hiv-case-surveillance/design.html#stages)
     * [Differences of Android and Web program rule evaluation](#capture_app_pr)
 * **TEI Dashboard layout**
     * [Widget layout](#widget-descriptions)
@@ -48,9 +48,9 @@ In DHIS2, strong interaction design can be configured through the following feat
     * Icons and colours on data elements ([Android](#capture_app_visual))
 * **Tracker Data Entry Modes**
     * [Timeline and tabular data entry](#widgets-for-data-entry)
-***Other Tracker features to support intuitive workflows**
-* [Program Notifications](#create-a-program-stage-notification) (SMS alerts, emails, or DHIS2 messages)
-* [User Assignment](#capture_user_assignment)
-* [Relationships](#relationship_model)
+* **Other Tracker features to support intuitive workflows**
+	* [Program Notifications](#create-a-program-stage-notification) (SMS alerts, emails, or DHIS2 messages)
+	* [User Assignment](#capture_user_assignment)
+	* [Relationships](#relationship_model)
 
 During the testing phase of the project, you should consult with beta testers on their experience of using the tracker program prototype, to understand  how these features can be best utilised to support their workflows. 
