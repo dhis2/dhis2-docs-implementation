@@ -39,9 +39,9 @@ They are generally only captured once--the very first time a client is enrolled 
 **Data Elements** are all other data entered for the tracker program. They are normally used to represent a client’s health condition, diagnosis, treatment, outcome, or other services received. Compared to TEA they are much more likely to change between encounters with the health care provider. Note that these data Elements should use domain type “Tracker” to separate these from data elements used in the aggregate domain.
 
 
-> *Tracked Entity Attributes* relate to a client's *identity*, and help the user verify that the TEI they see in DHIS2  represents the specific person in question.
+> ***Tracked Entity Attributes*** relate to a client's *identity*, and help the user verify that the TEI they see in DHIS2  represents the specific person in question.
 >
-> *Data Elements* are all other *form fields*, and usually relate to a client's health record or other services they have received within the program.
+> ***Data Elements*** are all other *form fields*, and usually relate to a client's health record or other services they have received within the program.
 
 
 Standard examples of Tracked Entity Attributes include Client Name, Date of Birth, Phone Number, and other national identifiers. Data elements vary often by health area, but often include Disease Diagnosis, Patient Weight, Lab Result, Medication Provided, and Treatment Outcome. 
@@ -64,7 +64,7 @@ The table below lists common examples of TEA by Availability and Specificity, ba
 |Name of TEA|Availability|Specificity|Comments
 |:--|:--|:--|:----|
 |Family Name|High|Low|In any cultural context, there is often a high proportion of clients with the same last name (Smith, Gonzales, Banda, Ali, Devi, etc). Entering a family name as free text is also prone to misspelling or transliteration issues.|
-|Date of Birth|Medium-High|High|Many clients may not know their precise date of birth. Note that the “Age” type TEIA will calculate an estimated date of birth from the reported age in years at enrollment, and so is very imprecise and inconsistent when used across programs. A better solution is to complement Date of Birth TEIA with a yes-only TEIA for “Date of Birth is Estimated”.|
+|Date of Birth|Medium-High|High|Many clients may not know their precise date of birth. Note that the “Age” type TEA will calculate an estimated date of birth from the reported age in years at enrollment, and so is very imprecise and inconsistent when used across programs. A better solution is to complement Date of Birth TEA with a yes-only TEA for “Date of Birth is Estimated”.|
 |Phone number|Medium-High|High|Phone numbers can act well as distinct identifiers, although they may change over time as clients switch mobile service providers. Note some clients may not own a phone, or might share phone access with someone else. Program rules can validate the length or starting digits of the phone number during data entry.|
 |Address|Medium-Low|Medium-High|Many clients in urban and rural settings live in communal housing or un-addressed residences. Prone to free-text misspellings and less useful as a client search criteria.|
 |Village of Residence (or Other Regional Geographies)|High|Low|May be helpful to confirm a search result, especially if the residence is unaddressed. But similar problems of misspelling and low search accuracy persist.|
@@ -81,23 +81,23 @@ The table below lists common examples of TEA by Availability and Specificity, ba
 
 ### Sharing TEA across Programs
 
-A client’s TEA can also be shared across any of her enrollments within the same DHIS2 database, which makes data entry quicker and supports deduplication efforts for contexts where health areas share clients (for example TB and HIV Case surveillance).
+A client’s TEA values can also be shared across any of her enrollments within the same DHIS2 database, which makes data entry quicker and supports deduplication efforts for contexts where health areas share clients (for example TB and HIV Case surveillance).
 
-If a TEIA will only be used within a single program it should be [assigned to the program itself](#create-or-edit-a-tracker-program). If the TEIA should be shared across multiple programs, you assign it to the tracked entity _type_. If you decide to use the [Relationships](#relationship-model.html) feature to link two Tracked Entity Instances in two separate programs (for example a mother in ANC and child in Immunization Tracker), the TEIA assigned to the Tracked Entity Type will be shown in the dialog box when you searching for the “target” TEI to add the relationship to the current “from” TEI.
-
-
-### Making TEIA Searchable
-
-TEIA are essential to search client records, but to improve system performance, you may want to restrict searching to a smaller subset of all the TEIA associated with the program. There are certain types of searches which may return too many results or cause long server delays, so there is an inherent balance between search flexibility and search performance.
-
-However, as a general rule, you should consider breaking all searchable TEIA into the smallest possible segments. For example, instead of a searchable TEIA for “full name”, consider one for “family name” and one for “given name”. Segmenting search criteria like this will generally provide quicker search results than scanning the entire full name for each TEIA.
-
-TEIA may also be marked “confidential” during program configuration. If encryption is enabled in the DHIS2 instance, all “confidential” TEIA will be encrypted at rest in the database. It should be noted that this means confidential TEIA cannot be used as search criteria by end users.
+If a TEA will only be used within a single program it should be [assigned to the program itself](#create-or-edit-a-tracker-program). If the TEA should be shared across multiple programs, you assign it to the tracked entity _type_. If you decide to use the [Relationships](#relationship-model.html) feature to link two Tracked Entity Instances in two separate programs (for example a mother in ANC and child in Immunization Tracker), the TEA assigned to the Tracked Entity Type will be shown in the dialog box when you searching for the “target” TEI to add the relationship to the current “from” TEI.
 
 
-### The Core TEIA Case Profile
+### Making TEA Searchable
 
-A core set of TEIA captured in case surveillance programs, such as date of birth and given name, have been pre-generated for many DHIS2 metadata packages. An important recommendation for new tracker programs is to install the  [Common Metadata Library package](#gen-lib-design), including the WHO’s Core case profile, as a starting point for program configuration. 
+TEA are essential to search client records, but to improve system performance, you may want to restrict searching to a smaller subset of all the TEA associated with the program. There are certain types of searches which may return too many results or cause long server delays, so there is an inherent balance between search flexibility and search performance.
+
+However, as a general rule, you should consider breaking all searchable TEA into the smallest possible segments. For example, instead of a searchable TEA for “full name”, consider one for “family name” and one for “given name”. Segmenting search criteria like this will generally provide quicker search results than scanning the entire full name for each TEA.
+
+TEA may also be marked “confidential” during program configuration. If encryption is enabled in the DHIS2 instance, all “confidential” TEA will be encrypted at rest in the database. It should be noted that this means confidential TEA cannot be used as search criteria by end users.
+
+
+### The Core TEA Case Profile
+
+A core set of TEA captured in case surveillance programs, such as date of birth and given name, have been pre-generated for many DHIS2 metadata packages. An important recommendation for new tracker programs is to install the  [Common Metadata Library package](#gen-lib-design), including the WHO’s Core case profile, as a starting point for program configuration. 
 
 
 ### Linking Tracker with Population Registers
