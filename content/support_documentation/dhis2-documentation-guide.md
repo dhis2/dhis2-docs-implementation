@@ -355,13 +355,53 @@ Buffalo buffalo (the animals called "buffalo" from the city of Buffalo) [that] B
 
 Highlight specific lines
 
-``` py hl_lines="2 3"
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
+=== "Rendered"
+
+    ``` py hl_lines="2 3"
+    def bubble_sort(items):
+        for i in range(len(items)):
+            for j in range(len(items) - 1 - i):
+                if items[j] > items[j + 1]:
+                    items[j], items[j + 1] = items[j + 1], items[j]
+    ```
+
+=== "Markdown"
+
+    ````
+    ``` py hl_lines="2 3"
+    def bubble_sort(items):
+        for i in range(len(items)):
+            for j in range(len(items) - 1 - i):
+                if items[j] > items[j + 1]:
+                    items[j], items[j + 1] = items[j + 1], items[j]
+    ```
+    ````
+
+Add a title
+
+=== "Rendered"
+
+    ``` py hl_lines="2 3" title="bubble_sort.py"
+    def bubble_sort(items):
+        for i in range(len(items)):
+            for j in range(len(items) - 1 - i):
+                if items[j] > items[j + 1]:
+                    items[j], items[j + 1] = items[j + 1], items[j]
+    ```
+
+=== "Markdown"
+
+    ````
+    ``` py hl_lines="2 3" title="bubble_sort.py"
+    def bubble_sort(items):
+        for i in range(len(items)):
+            for j in range(len(items) - 1 - i):
+                if items[j] > items[j + 1]:
+                    items[j], items[j + 1] = items[j + 1], items[j]
+    ```
+    ````
+
+
 
 
 ### Lists
@@ -466,6 +506,28 @@ Inline classes and styles can be added in curly brackets.
 
 ![The Title](resources/images/dhis2_screenshots.jpg){ .center width=50% }
 
+
+### Youtube
+
+Youtube videos can be embedded in a similar way to images. Simply provide the youtube embed link instead of an image file
+
+``` markdown
+![](https://www.youtube.com/embed/UqXSMaXBtD8)
+```
+
+![](https://www.youtube.com/embed/UqXSMaXBtD8)
+
+> **Note**
+> 
+> Be sure to use the "embed" youtube link!
+
+As with images, adding a title will render the video as a figure
+
+```
+![DHIS2: Information for Action](https://www.youtube.com/embed/UqXSMaXBtD8)
+```
+
+![DHIS2: Information for Action](https://www.youtube.com/embed/UqXSMaXBtD8)
 
 
 ### Admonitions
