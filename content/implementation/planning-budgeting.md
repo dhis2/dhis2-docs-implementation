@@ -36,7 +36,7 @@ Costs are generally highest when getting started and first scaling up DHIS2. Cer
 
 Depending on the state of the core team or maturity of the country, the nature of assistance will change. In an early stage of an implementation, there may be need for external support even for relatively routine or basic activities. As a local capacity and a strong core team is developed, most activities can be handled internally. Outside expertise will then primarily be in the form of providing advice and capacity building in new areas or for new functionality.
 
-General budgeting guidance are located [here](https://docs.google.com/spreadsheets/d/1fTR7mQZk8aAFlGM_jdOZKdzmnVSs0JZ2/edit#gid=1341095871). Note that the guidance mostly covers one-off costs, but we recommend that countries plan longer term and factor in costs that are recurring.
+General budgeting guidance are located [here](https://docs.google.com/spreadsheets/d/104-c0m0CZ6Wcfm8vCAJ-8Os-5GzZRSaT/edit#gid=1341095871). Note that the guidance mostly covers one-off costs, but we recommend that countries plan longer term and factor in costs that are recurring.
 
 
 ## Planning and budgeting the strengthening of foundational areas
