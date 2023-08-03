@@ -2,11 +2,6 @@
 
 ## eLMIS solutions configuration guide
 
-June 2023
-
-HISP Centre University of Oslo
-
-eLMIS team
 
 https://lmis.integration.dhis2.org/sandbox
 
