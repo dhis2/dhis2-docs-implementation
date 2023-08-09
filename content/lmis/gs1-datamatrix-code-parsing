@@ -1,0 +1,65 @@
+**GS1 DATAMATRIX CODE PARSING / Event program**
+
+This Event program allows any DHIS2 user to "read" GS1 DataMatrix codes and parse ("split") the information stored in the alphanumeric text string into their components as indicated by their Application Identifiers (AIs). This Event program is intended for demonstrating DHIS2 capabilities which can be integrated into other applications such as for Traceability and Verification System (TRVST) and the biomedical engineering life cycle management in future.
+
+Currently there are two use cases: reading GS1 DataMatrix codes printed on health care products and reading out the product identification number, batch number, expiry date and serialized number (unit pack number) and presenting them in the correct human readable format. Secondly, to read GS1 DataMatrix codes standardized according to the World Health Organization PQS performance specification E003 for "Global asset identification" and reading out the production identification number (Global Trade Item Number GTIN), production date, unique serial number and the PQS number.
+
+#### Use case
+
+A storekeeper or a health worker such as an immunization worker, scans the GS1 DataMatrix code at the point of dispensing or before administering a vaccination for:
+
+- Recording the batch number and serialized number in the eRegistry of the patient
+
+- Referencing the batch numer and serilized number in case of an AEFI (Adverse Effect Following Immunization)
+
+- Identifying batches subject to a batch recall
+- Managing of health care products at the batch level
+- Alerting users in case health care products have expired
+- Complying with national Track & Trace regulations (in force in many countries since 2019)
+
+- Drug quality verification for detecting counterfeit or falsified health care products
+
+- "Decommissioning" serialized numbers in national or global Track & Trace databases
+
+- Tracking unit packs end to end through global supply networks
+- Matching unit pack distribution paths with temperature records of storage equipment
+
+- Identifying cold chain equipment assets (and other biomedical equipment) through a unique GS1 DataMatrix code.
+
+#### DHIS2 configuration
+
+| **CATEGORY** | **System default settings** |
+| --- | --- |
+| > Data element | Name (\*):<br>\- "Batch number" / "Text"<br>\- "Expiration date" / "Text"<br>\- "Global Individual Asset<br>Identifier (GIAI)" / "Text"<br>\- "GS1 DataMatrix code data<br>string" / "Text"<br>\- "PQS number" / "Text"<br>\- "Production date" / "Text"<br>\- "Product identification<br>number" / "Text"<br>\- "Remaining shelf life"<br>\- "Serialized number":<br>"Text"<br>Short name (\*): same as "Name<br>(\*)"<br>Domain type (\*): "Tracker"<br>Value type (\*): see above |
+| > Program |  |
+| > 1 Program details | Name: "GS1 DataMatrix code<br>parsing"<br>Color:<br>"\<br>#8E24AA"![](media/image35.png)<br>Icon:<br>Short name: "GS1 DataMatrix code<br>parsing"<br>Category combination (\*):<br>"None"<br>Expiry days: "0"<br>Block entry form after completed:<br>tag<br>Validation strategy (\*): "On<br>complete"<br>Pre-generate event UID: tag |
+| > 2 Assign data elements | Assign Data elements in the<br>following order:<br>\- "GS1 DataMatrix code data<br>string"<br>\- "Product identification<br>number"<br>\- "Batch number"<br>\- "Serialized number"<br>\- "Expiration date"<br>\- "Production date"<br>\- "PQS number"<br>\- "Global Individual Asset<br>Identifier (GIAI)"<br>Allow provided elsewhere: tag all<br>Display in reports: select all<br>Mobile render type: "Default"<br>except "Qr code" for "GS1<br>DataMatrix code data string" |
+| > 3 Create data entry form | BASIC<br>"GS1 DataMatrix code data<br>string"<br>"Product identification number"<br>"Batch number"<br>"Serialized number"<br>"Expiration date"<br>"Production date"<br>"PQS number"<br>"Global Individual Asset<br>Identifier (GIAI)" |
+| > 4 Access | \- Select all 5 health care<br>facilities in Mali |
+| > 5 Create notifications | (not applicable) |
+| > Program rule | Program (\*): "GS1 DataMatrix<br>code parsing" |
+| 1 Enter Program rule details | <br>Name (\*): "GS1 DataMatrix code <br>parsing"<br>Description: "Parsing of GS1 <br>DataMatrix code string into <br>product identification number, <br>batch number, expiration date (as <br>represented in the data string) <br>and serial number as well <br>reformatted expiration date" |
+| 2 Enter Program rule expression | d2:hasValue( #{GS1 DataMatrix<br>code data string} ) |
+| 3 Define program rule actions | Action: "Assign value"<br>Data element to assign to:<br>"[Batch number]{.underline}"<br>Expression to evaluate and<br>assign:<br>"d2:extractDataMatrixValue(<br>\'lot number\', #{GS1 DataMatrix<br>code data string})"<br>Action: "Assign value"<br>Data element to assign to:<br>"[Expiration date]{.underline}"<br>Expression to evaluate and<br>assign:<br>"d2:extractDataMatrixValue(<br>\'expiration date\', #{GS1<br>DataMatrix code data string})"<br>Action: "Assign value"<br>Data element to assign to:<br>"[Global Individual Asset<br>Identifier (GIAI)]{.underline}"<br>Expression to evaluate and<br>assign:<br>"d2:extractDataMatrixValue(<br>8004, #{GS1 DataMatrix code data<br>string})"<br>Action: "Assign value"<br>Data element to assign to: "[PQS<br>number]{.underline}"<br>Expression to evaluate and<br>assign:<br>"d2:extractDataMatrixValue( 22,<br>#{GS1 DataMatrix code data<br>string})"<br>Action: "Assign value"<br>Data element to assign to:<br>"[Production date]{.underline}"<br>Expression to evaluate and<br>assign:<br>"d2:extractDataMatrixValue(<br>\'production date\', #{GS1<br>DataMatrix code data string})"<br>Action: "Assign value"<br>Data element to assign to:<br>"[Product identification<br>number]{.underline}"<br>Expression to evaluate and<br>assign:<br>"d2:extractDataMatrixValue(<br>\'gtin\', #{GS1 DataMatrix code<br>data string})<br>Action: "Assign value"<br>Data element to assign to:<br>"[Serialized<br>number]{.underline}"<br>Expression to evaluate and<br>assign:<br>"d2:extractDataMatrixValue(<br>\'serial number\', #{GS1<br>DataMatrix code data string})" |
+| > Program rule variable | Program (\*): "GS1 DataMatrix<br>code parsing"<br>Name (\*): "GS1 DataMatrix -<br>Expiration date dd-mm-yyyy<br>Source type (\*): "Data element<br>in current event"<br>Data element: "Expiration date<br>dd-mm-yyyy"<br>Program (\*): "GS1 DataMatrix<br>code parsing"<br>Name (\*): "GS1 DataMatrix code<br>data string"<br>Source type (\*): "Data element<br>in current event"<br>Data element: "GS1 DataMatrix<br>code data string" |
+| > Program indicator | A separate Program indicator has<br>to be created for every "pair"<br>of item description and<br>transaction type. For example:<br>DASDCHLC5S1 - Distribution |
+| 1 Program indicator details | \- Program (\*): Real-Time Stock<br>Management<br>\- Name (\*): DASDCHLC5S1 -<br>Distribution<br>\- Aggregation type: "Sum"<br>\- Analytics type (\*): "Event"<br>\- Analytics period boundaries:<br>\- - Boundary target: "Event<br>date"<br>\- - Analytics period boundary<br>type: "After start of reporting<br>period"<br>\- - Offset period by amount: 0<br>\- - Period type: (leave blank)<br>\- - Boundary target: "Event<br>date"<br>\- - Analytics period boundary<br>type: "Before end of reporting<br>period"<br>\- - Offset period by amount: 0<br>\- - Period type: (leave blank)<br>\- Display in form: select<br>(appears as a white tick in a<br>blue square) |
+| 2 Edit expression | \- #{CSszngrLaoW.smwdEfUz8vo}<br>"Stock on Hand\\.Stock<br>distribution" |
+| 3 Edit filter | \- A{XYvrLoYSMRU} ==<br>\'DASDCHLC5S1\'<br>"Item code == \'DASDCHLC5S1\'" |
+| > Android Settings app | Appearance \> Program \> Specific<br>settings \> Add a Program Setting<br>Select "Cold chain appliance<br>lifecycle management"<br>Allow the user to create a TEI<br>without searching: check (appears<br>as a white tick in a green box)<br>![](media/image63.png) |
+
+#### DHIS2 user interfaces
+
+**Web portal / Tracker program**
+
+![](media/image33.png)
+
+![](media/image80.png)
+
+**Web portal / Line listing program**
+
+![](media/image55.png)
+
+**Capture Android app**
+
+![](media/image22.png)
