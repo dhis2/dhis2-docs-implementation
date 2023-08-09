@@ -1,5 +1,5 @@
 ### COLD CHAIN EQUIPMENT LIFECYCLE MANAGEMENT / Tracker program
-
+Editing test George 22:46
 This very simple Tracker program is very similar to the biomedical equipment lifecycle management solution but customized for cold chain equipment and considers the World Health Organization PQS (Program Quality Standards) appliance catalogue as well as the WHO PQS standard for Global asset identification.
 
 In addition it offers a solution for creating and maintaining a dedicated catalogue of (selected) prequalified equipment which serves as a template for registering and enrolling new cold chain appliances. This allows "copying" the template of any specific prequalified appliance and adding device specific attributes such as the serial number or manufacturing date.
