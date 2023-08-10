@@ -1,4 +1,6 @@
-# COLD CHAIN EQUIPMENT LIFE CYCLE MANAGEMENT / Tracker program
+# Cold chain equipment life cycle management / Tracker program
+
+## Introduction
 
 This very simple Tracker program is very similar to the biomedical equipment lifecycle management solution but customized for cold chain equipment and considers the World Health Organization PQS (Program Quality Standards) appliance catalogue as well as the WHO PQS standard for Global asset identification.
 
@@ -95,13 +97,13 @@ Aggregation type: "None"
 Inherit: check (appears as a blue tag with a white tick)
 
 ### Tracked entity type
-Name (*): "Cold chain appliance"
+**Name (*)**: "Cold chain appliance"
 
-Color": leave empty
+**Color**: leave empty
 
-Icon": leave empty
+**Icon**: leave empty
 
-Description": leave empty
+**Description**: leave empty
 Enable tracked entity instance audit log: check (appears as white tick in a blue box)
 
 Minimum number of attributes required to search: 1
@@ -127,54 +129,54 @@ Tracked entity type attributes: assign the following Tracked entity attributes i
 - "Unique identifier scan" / "Text"
 - "Donated by" / "Text"
 
-Display in list: tag all
+**Display in list**: tag all
 
-Searchable: tag except for "Appliance image", "Manufactured in" and 
+**Searchable**: tag except for "Appliance image", "Manufactured in" and 
 "Production date"
 
 ### Program
 
 #### 1 Program details
-Name (*): "Cold chain appliance lifecycle management"
+**Name (*)**: "Cold chain appliance lifecycle management"
 
-Short name (*): " Cold chain appliance lifecycle management".
+**Short name (*)**: " Cold chain appliance lifecycle management".
 
-Color: "#64B5F6"
+**Color**: "#64B5F6"
 
-Icon: "cold chain outline"
+**Icon**: "cold chain outline"
 
-Tracked entity type (*): select "Cold chain appliance".
+**Tracked entity type (*)**: select "Cold chain appliance".
 
-Category combination (*): select "None".
+**Category combination (*)**: select "None".
 
-Display front page list: tag
+**Display front page list**: tag
 
 #### 2 Enrollment details
 
-Allow future enrollment dates: do not tag
+**Allow future enrollment dates**: do not tag
 
-Allow future incident dates: do not tag
+**Allow future incident dates**: do not tag
 
-Only enrol once (per tracked entity instance lifetime): do not tag
+**Only enrol once (per tracked entity instance lifetime)**: do not tag
 
-Show incident date: tag
+**Show incident date**: tag
 
-Description of incident date: "Cold chain appliance management"
+**Description of incident date**: "Cold chain appliance management"
 
-Description of enrollment date: leave blank
+**Description of enrollment date**: leave blank
 
-Ignore overdue events: leave untagged.
+**Ignore overdue events**: leave untagged.
 
-Feature type: "Point"
+**Feature type**: "Point"
 
-Related program: (blank)
+**Related program**: (blank)
 
 Note that the "Feature type" will prompt the user to enter the geolocation during registration (by entering longitude and latitude on the web or selecting the pin icon on a mobile device).
 
 #### 3 Attributes
 
 ##### 1 Assign attributes
-"Program tracked entity attributes": select and arrange in the following order:
+**Program tracked entity attributes**: select and arrange in the following order:
 - "Appliance image"
 - "Place of installation"
 - "PQS code category"
@@ -190,12 +192,12 @@ Note that the "Feature type" will prompt the user to enter the geolocation durin
 - "GS1 GIAI"
 - "Unique identifier"
 
-Display in list: tag all
+**Display in list**: tag all
 
-Mobile render type: see above
+**Mobile render type**: see above
 
 ##### 2 Create registration form
-Name: "Cold chain appliance lifecycle management"
+**Name**: "Cold chain appliance lifecycle management"
 
 - "Appliance image"
 - "Place of installation"
@@ -215,7 +217,7 @@ Name: "Cold chain appliance lifecycle management"
 #### 4 Program stages
 
 ##### 1 Stage details
-Name:
+**Name**:
 - "Cold chain appliance transfer" / "Repeatable"
 - "Cold chain appliance installation" / "Repeatable"
 - "Cold chain appliance inspection" / "Repeatable"
@@ -226,7 +228,7 @@ Name:
 - "Cold chain appliance corrective maintenance" / "Repeatable"
 - "Cold chain appliance disposal" / not repeatable
 
-Repeatable: see above
+**Repeatable**: see above
 
 ##### 2 Assign data elements
 Cold chain appliance transfer
@@ -270,57 +272,57 @@ Cold chain appliance corrective maintenance
 - "Technical fault resolved"
 - "Equipment restored to service"
 
-**Cold chain appliance disposal
+Cold chain appliance disposal
 - "Reason for disposal"
 - "Method of disposal"
 - "Equipment removed from cold chain appliance inventory"
 
-Display in report: make visible for all items
+**Display in report**: make visible for all items
 
-Mobile render type: "Default"
+**Mobile render type**: "Default"
 
-Desktop render type: "Default"
+**Desktop render type**: "Default"
 
 ##### 3 Create data entry form
 "BASIC" is configured by default, no configuration is needed.
 
 #### 5 Access
-"Organisation units": tag the health care facility for assigning to the DHIS2 Capture.
+**Organisation units**: tag the health care facility for assigning to the DHIS2 Capture.
 
-"Roles and access": "Biomedical equipment life cycle management" appears by default
+**Roles and access**: "Biomedical equipment life cycle management" appears by default
 
-"SELECT ALL"
+**SELECT ALL**
 
 #### 6 Notifications
 (not applicable)
 
 ### Relationship type
-Name (*): "World Health Organization PQS catalogue"
+**Name (*)**: "World Health Organization PQS catalogue"
 
-Relationship name seen from initiating entity (*): "World Health Organization PQS catalogue"
+**Relationship name seen from initiating entity (*)**: "World Health Organization PQS catalogue"
 
-From constraint (*): "Tracked entity instance"
+**From constraint (*)**: "Tracked entity instance"
 
-Tracked entity type *: "Cold chain appliance"
+**Tracked entity type (*)**: "Cold chain appliance"
 
-Program: "Cold chain appliance lifecycle management"
+**Program**: "Cold chain appliance lifecycle management"
 
-To constraint (*): "Tracked entity instance"
+**To constraint (*)**: "Tracked entity instance"
 
-Tracked entity type *: "Cold chain appliance"
+**Tracked entity type (*)**: "Cold chain appliance"
 
-Program: "Cold chain appliance lifecycle management"
+**Program**: "Cold chain appliance lifecycle management"
 
 ### Program rule
-Program (*): "Cold chain appliance lifecycle management"
+**Program (*)**: "Cold chain appliance lifecycle management"
 
-Name (*): "GS1 GIAI specifications"
+**Name (*)**: "GS1 GIAI specifications"
 
-Description: "Parses the GS1 GIAI, "extracts" GTIN, serialized number and production date and writes them to the respective attribute fields".
+**Description**: "Parses the GS1 GIAI, "extracts" GTIN, serialized number and production date and writes them to the respective attribute fields".
 
-Condition: "d2:hasValue(A{GS1 GIAI})"
+**Condition**: "d2:hasValue(A{GS1 GIAI})"
 
-Action "Assign value"
+**Action** "Assign value"
 
 GTIN
 - Tracked entity attribute to assign to: "GTIN"
@@ -338,17 +340,17 @@ Serial number
 "d2:extractDataMatrixValue( 'serial number', A{GS1 GIAI})"
 
 ### Program rule variable
-Name: "GS1 GIAI"
+**Name2: "GS1 GIAI"
 
-Source type (*): "Tracked entity attribute"
+**Source type (*)**: "Tracked entity attribute"
 
-Tracked entity attribute: "Cold chain appliance lifecycle management GS1 GIAI"
+**Tracked entity attribute**: "Cold chain appliance lifecycle management GS1 GIAI"
 
 
 ### Line Listing
-Name: "Cold chain equipment lifecycle management"
+**Name**: "Cold chain equipment lifecycle management"
 
-Columns:
+**Columns**
 - "Last updated on"
 - "Type of equipment"
 - "Brand name"
@@ -358,7 +360,7 @@ Columns:
 - "Alarm resolved"
 - "Alarm escalated and supervisor informed"
 
-Filter
+**Filters**
 - Organisation Unit: select Organisation units as required
 - Event date: "Last 3 months"
 
