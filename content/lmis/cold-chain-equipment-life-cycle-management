@@ -146,44 +146,45 @@ This application is configured as a "Tracker program" which uses only simple, na
 >>**Related program**: (blank)  
 >>
 >>*Note that the "Feature type" will prompt the user to enter the geolocation during registration (by entering longitude and latitude on the web or selecting the pin icon on a mobile device).*
+>
 >**3 Attributes**
->>>**1 Assign attributes**
->>>>**Program tracked entity attributes**: select and arrange in the following order:
->>>>>"Appliance image"  
->>>>>"Place of installation"  
->>>>>"PQS code category"  
->>>>>"PQS code"  
->>>>>"Type of appliance"  
->>>>>“Company”  
->>>>>"Manufactured in"  
->>>>>"Manufacturer's reference"  
->>>>>"Production date"  
->>>>>"Product number"  
->>>>>"GTIN"  
->>>>>"Serial number"  
->>>>>"GS1 GIAI"  
->>>>>"Unique identifier"  
->>>>
->>>>**Display in list**: tag all  
->>>>**Mobile render type**: see above 
->>>
->>>**2 Create registration form**
->>>>**Name**: "Cold chain appliance lifecycle management"
->>>>**ADD SECTION TO FORM**  
->>>>>"Appliance image"  
->>>>>"Place of installation"  
->>>>>"PQS code category"  
->>>>>"PQS code"  
->>>>>"Type of appliance"  
->>>>>“Company”  
->>>>>"Manufactured in"  
->>>>>"Manufacturer's reference"  
->>>>>"Production date"  
->>>>>"Product number"  
->>>>>"GTIN"  
->>>>>"Serial number"  
+>>**1 Assign attributes**
+>>>**Program tracked entity attributes**: select and arrange in the following order:
+>>>>"Appliance image"  
+>>>>"Place of installation"  
+>>>>"PQS code category"  
+>>>>"PQS code"  
+>>>>"Type of appliance"  
+>>>>“Company”  
+>>>>"Manufactured in"  
+>>>>"Manufacturer's reference"  
+>>>>"Production date"  
+>>>>"Product number"  
+>>>>"GTIN"  
+>>>>"Serial number"  
 >>>>"GS1 GIAI"  
->>>>>"Unique identifier"  
+>>>>"Unique identifier"  
+>>>
+>>>**Display in list**: tag all  
+>>>**Mobile render type**: see above 
+>>
+>>**2 Create registration form**
+>>>**Name**: "Cold chain appliance lifecycle management"
+>>>**ADD SECTION TO FORM**  
+>>>>"Appliance image"  
+>>>>"Place of installation"  
+>>>>"PQS code category"  
+>>>>"PQS code"  
+>>>>"Type of appliance"  
+>>>>“Company”  
+>>>>"Manufactured in"  
+>>>>"Manufacturer's reference"  
+>>>>"Production date"  
+>>>>"Product number"  
+>>>>"GTIN"  
+>>>>"Serial number"  
+>>>"GS1 GIAI"  
+>>>>"Unique identifier"  
 >
 >**4 Program stages**
 >>**1 Stage details**
@@ -263,47 +264,40 @@ This application is configured as a "Tracker program" which uses only simple, na
 >(not applicable)
 
 ### Relationship type
-**Name (*)**: "World Health Organization PQS catalogue"
-
-**Relationship name seen from initiating entity (*)**: "World Health Organization PQS catalogue"
-
-**From constraint (*)**: "Tracked entity instance"
-
-**Tracked entity type (*)**: "Cold chain appliance"
-
-**Program**: "Cold chain appliance lifecycle management"
-
-**To constraint (*)**: "Tracked entity instance"
-
-**Tracked entity type (*)**: "Cold chain appliance"
-
-**Program**: "Cold chain appliance lifecycle management"
+>**Name (*)**: "World Health Organization PQS catalogue"  
+>**Relationship name seen from initiating entity (*)**: "World Health Organization PQS catalogue"  
+>**From constraint (*)**: "Tracked entity instance"  
+>**Tracked entity type (*)**: "Cold chain appliance"  
+>**Program**: "Cold chain appliance lifecycle management"  
+>**To constraint (*)**: "Tracked entity instance"  
+>**Tracked entity type (*)**: "Cold chain appliance"  
+>**Program**: "Cold chain appliance lifecycle management"  
 
 ### Program rule
-**Program (*)**: "Cold chain appliance lifecycle management"
-
-**Name (*)**: "GS1 GIAI specifications"
-
-**Description**: "Parses the GS1 GIAI, "extracts" GTIN, serialized number and production date and writes them to the respective attribute fields".
-
-**Condition**: "d2:hasValue(A{GS1 GIAI})"
-
-**Action** "Assign value"
-
-GTIN
-- Tracked entity attribute to assign to: "GTIN"
-- Expression to evaluate and assign:
-"d2:extractDataMatrixValue( 'gtin', A{GS1 GIAI})"
-
-Production date
-- Tracked entity attribute to assign to: "Production date"
-- Expression to evaluate and assign:
-"d2:extractDataMatrixValue( 'production date', A{GS1 GIAI})"
-
-Serial number
-- Tracked entity attribute to assign to: "Serial number"
-- Expression to evaluate and assign:
-"d2:extractDataMatrixValue( 'serial number', A{GS1 GIAI})"
+>**1 Enter program rule details**  
+>>**Program (*)**: "Cold chain appliance lifecycle management"  
+>>**Name (*)**: "GS1 GIAI specifications"  
+>>**Description**: "Parses the GS1 GIAI, "extracts" GTIN, serialized number and production date and writes them to the respective attribute fields".  
+>
+>**2 Enter program rule expression**  
+>>**Condition**: "d2:hasValue(A{GS1 GIAI})"  
+>
+>**3 Define program rule actions**  
+>>**Action details**   
+>>>**GTIN**  
+>>>>**Action (*)**: "Assign to"  
+>>>>**Tracked entity attribute to assign to**: "GTIN"  
+>>>>**Expression to evaluate and assign**: "d2:extractDataMatrixValue( 'gtin', A{GS1 GIAI})"
+>>>
+>>>**Production date**  
+>>>>**Action (*)**: "Assign to"   
+>>>>Tracked entity attribute to assign to: "Production date"  
+>>>>Expression to evaluate and assign: "d2:extractDataMatrixValue( 'production date', A{GS1 GIAI})"
+>>>
+>>>**Serial number**
+>>>>**Action (*)**: "Assign to"  
+>>>>**Tracked entity attribute to assign to**: "Serial number"  
+>>>>**Expression to evaluate and assign**: "d2:extractDataMatrixValue( 'serial number', A{GS1 GIAI})"
 
 ### Program rule variable
 **Name2: "GS1 GIAI"
