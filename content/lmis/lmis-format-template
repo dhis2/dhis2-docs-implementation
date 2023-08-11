@@ -1,1 +1,130 @@
+# [Chapter name]#
+
+
+## 1 Sub-chapter##
+
+Sub-level 1
+
+### 1.1 Sub-chapter###
+
+Sub-level 2
+
+#### 1.1.1 Sub-chapter####
+
+Sub-level 3
+
+##### 1.1.1.1 Sub-chapter#####
+
+Sub-level 4
+
+###### 1.1.1.1.1 Sub-chapter#####
+
+Sub-level 5
+<br><br>
+
+**Basic formating**
+
+**bold text**
+
+*italicized text*
+
+==highlight==
+
+[link title](https://docs.dhis2.org/en/home.html)
+
+<br><br>
+
+**Bulleted list**
+
+Unordered list
+
+- AAA
+- BBB
+- CCC
+<br><br>
+
+**Hyphenated list**
+
+Hyphenated list
+<br>- AAA
+<br>- BBB
+<br>- CCC
+<br><br>
+
+**Numbered list**
+
+Ordered list
+<br>1. AAA
+<br>2. BBB
+<br>3. CCC
+<br><br>
+
+
+**Table with two columns**
+
+| **Column A** | **Column B** |
+| --- | --- |
+| > AAA | Name A:<br>- AAA<br>- BBB<br>- CCCC<br>
+| > BBB | Name B:<br>- AAA<br>- BBB<br>- CCCC<br>
+| > CCC | Name C:<br>- AAA<br>- BBB<br>- CCCC<br>
+<br><br>
+
+**Horizontal lines separating text**
+
+---
+AAA
+
+---
+BBB
+
+---
+CCC
+
+---
+<br><br>
+
+**Horizontal lines separating text**
+
+***
+AAA
+***
+BBB
+***
+CCC
+***
+<br><br>
+
+>  **Block quote**
+>
+> Text left aligned
+> <br>AAA
+> <br>BBB
+> <br>CCC
+<br><br>
+
+>  **Code quote**
+>
+> Text left aligned
+> ```
+> Code block
+> AAA
+> BBB
+> CCC
+<br><br>
+
+>  **Code block double indented list**
+>
+> Text left aligned
+> ```
+> AAA
+>  AAA
+>   AAAA
+> BBB
+>  BBB>
+>   BBB>
+> CCC
+>  CCC
+>   CCC
+   
+
 
