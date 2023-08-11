@@ -125,166 +125,142 @@ This application is configured as a "Tracker program" which uses only simple, na
 "Production date"
 
 ### Program
-
-#### 1 Program details
-**Name (*)**: "Cold chain appliance lifecycle management"
-
-**Short name (*)**: " Cold chain appliance lifecycle management".
-
-**Color**: "#64B5F6"
-
-**Icon**: "cold chain outline"
-
-**Tracked entity type (*)**: select "Cold chain appliance".
-
-**Category combination (*)**: select "None".
-
-**Display front page list**: tag
-
-#### 2 Enrollment details
-
-**Allow future enrollment dates**: do not tag
-
-**Allow future incident dates**: do not tag
-
-**Only enrol once (per tracked entity instance lifetime)**: do not tag
-
-**Show incident date**: tag
-
-**Description of incident date**: "Cold chain appliance management"
-
-**Description of enrollment date**: leave blank
-
-**Ignore overdue events**: leave untagged.
-
-**Feature type**: "Point"
-
-**Related program**: (blank)
-
-Note that the "Feature type" will prompt the user to enter the geolocation during registration (by entering longitude and latitude on the web or selecting the pin icon on a mobile device).
-
-#### 3 Attributes
-
-##### 1 Assign attributes
-**Program tracked entity attributes**: select and arrange in the following order:
-- "Appliance image"
-- "Place of installation"
-- "PQS code category"
-- "PQS code"
-- "Type of appliance"
-- “Company”
-- "Manufactured in"
-- "Manufacturer's reference"
-- "Production date"
-- "Product number"
-- "GTIN"
-- "Serial number"
-- "GS1 GIAI"
-- "Unique identifier"
-
-**Display in list**: tag all
-
-**Mobile render type**: see above
-
-##### 2 Create registration form
-**Name**: "Cold chain appliance lifecycle management"
-
-- "Appliance image"
-- "Place of installation"
-- "PQS code category"
-- "PQS code"
-- "Type of appliance"
-- “Company”
-- "Manufactured in"
-- "Manufacturer's reference"
-- "Production date"
-- "Product number"
-- "GTIN"
-- "Serial number"
-- "GS1 GIAI"
-- "Unique identifier"
-
-#### 4 Program stages
-
-##### 1 Stage details
-**Name**:
-- "Cold chain appliance transfer" / "Repeatable"
-- "Cold chain appliance installation" / "Repeatable"
-- "Cold chain appliance inspection" / "Repeatable"
-- "Cold chain appliance weekly preventive maintenance" / "Repeatable"
-- "Cold chain appliance monthly preventive maintenance" / "Repeatable"
-- "Cold chain appliance alert" / "Repeatable"
-- "Cold chain appliance repair request" / "Repeatable"
-- "Cold chain appliance corrective maintenance" / "Repeatable"
-- "Cold chain appliance disposal" / not repeatable
-
-**Repeatable**: see above
-
-##### 2 Assign data elements
-Cold chain appliance transfer
-- "Sent from"
-- "Transferred to"
-- "Received from"
-- "Received at"
-
-Cold chain appliance installation
-- "Cold chain appliance installation report"
-
-Cold chain appliance inspection
-- "Daily inspection completed"
-- "Functional status"
-
-Cold chain appliance weekly preventive maintenance
-- "Water removed at the bottom of the refrigerator"
-- "Water droplets wiped off from the inside wall"
-- "Lid gasket checked for sealing when the lid is closed"
-
-Cold chain appliance monthly preventive maintenance
-- “Clean refrigerator with water and mild detergent”
-- “Clean the grill on the side of the refrigerator”
-
-Cold chain appliance alarm
-- "Alarm type"
-- "Alarm cause"
-- "Alarm corrective action"
-- "Alarm resolved"
-- "Alarm escalated to supervisor"
-
-Cold chain appliance repair request
-- "Reason for repair request"
-- "Urgency of repair request"
-- “Defect image”
-- “Cold chain technician”
-
-Cold chain appliance corrective maintenance
-- "Assessment of technical fault"
-- "Interventions"
-- "Technical fault resolved"
-- "Equipment restored to service"
-
-Cold chain appliance disposal
-- "Reason for disposal"
-- "Method of disposal"
-- "Equipment removed from cold chain appliance inventory"
-
-**Display in report**: make visible for all items
-
-**Mobile render type**: "Default"
-
-**Desktop render type**: "Default"
-
-##### 3 Create data entry form
-"BASIC" is configured by default, no configuration is needed.
-
-#### 5 Access
-**Organisation units**: tag the health care facility for assigning to the DHIS2 Capture.
-
-**Roles and access**: "Biomedical equipment life cycle management" appears by default
-
-**SELECT ALL**
-
-#### 6 Notifications
-(not applicable)
+>**1 Program details**
+>>**Name (*)**: "Cold chain appliance lifecycle management"  
+>>**Short name (*)**: " Cold chain appliance lifecycle management"  
+>>**Color**: "#64B5F6"  
+>>**Icon**: "cold chain outline"  
+>>**Tracked entity type (*)**: select "Cold chain appliance"  
+>>**Category combination (*)**: select "None"  
+>>**Display front page list**: tag  
+>
+>**2 Enrollment details**  
+>>**Allow future enrollment dates**: do not tag  
+>>**Allow future incident dates**: do not tag  
+>>**Only enrol once (per tracked entity instance lifetime)**: do not tag  
+>>**Show incident date**: tag  
+>>**Description of incident date**: "Cold chain appliance management"  
+>>**Description of enrollment date**: leave blank  
+>>**Ignore overdue events**: leave untagged  
+>>**Feature type**: "Point"  
+>>**Related program**: (blank)  
+>>
+>>*Note that the "Feature type" will prompt the user to enter the geolocation during registration (by entering longitude and latitude on the web or selecting the pin icon on a mobile device).*
+>**3 Attributes**
+>>>**1 Assign attributes**
+>>>>**Program tracked entity attributes**: select and arrange in the following order:
+>>>>>"Appliance image"  
+>>>>>"Place of installation"  
+>>>>>"PQS code category"  
+>>>>>"PQS code"  
+>>>>>"Type of appliance"  
+>>>>>“Company”  
+>>>>>"Manufactured in"  
+>>>>>"Manufacturer's reference"  
+>>>>>"Production date"  
+>>>>>"Product number"  
+>>>>>"GTIN"  
+>>>>>"Serial number"  
+>>>>>"GS1 GIAI"  
+>>>>>"Unique identifier"  
+>>>>
+>>>>**Display in list**: tag all  
+>>>>**Mobile render type**: see above 
+>>>
+>>>**2 Create registration form**
+>>>>**Name**: "Cold chain appliance lifecycle management"
+>>>>**ADD SECTION TO FORM**  
+>>>>>"Appliance image"  
+>>>>>"Place of installation"  
+>>>>>"PQS code category"  
+>>>>>"PQS code"  
+>>>>>"Type of appliance"  
+>>>>>“Company”  
+>>>>>"Manufactured in"  
+>>>>>"Manufacturer's reference"  
+>>>>>"Production date"  
+>>>>>"Product number"  
+>>>>>"GTIN"  
+>>>>>"Serial number"  
+>>>>"GS1 GIAI"  
+>>>>>"Unique identifier"  
+>
+>**4 Program stages**
+>>**1 Stage details**
+>>>**Name**  
+>>>>"Cold chain appliance transfer" / "Repeatable"  
+>>>>"Cold chain appliance installation" / "Repeatable"  
+>>>>"Cold chain appliance inspection" / "Repeatable"  
+>>>>"Cold chain appliance weekly preventive maintenance" / "Repeatable"  
+>>>>"Cold chain appliance monthly preventive maintenance" / "Repeatable"  
+>>>>"Cold chain appliance alert" / "Repeatable"  
+>>>>"Cold chain appliance repair request" / "Repeatable"  
+>>>>"Cold chain appliance corrective maintenance" / "Repeatable"  
+>>>>"Cold chain appliance disposal" / not repeatable  
+>>>
+>>>**Repeatable**: see above  
+>>
+>>**2 Assign data elements**  
+>>>**Cold chain appliance transfer**  
+>>>"Sent from"  
+>>>"Transferred to"  
+>>>"Received from"  
+>>>"Received at"  
+>>>
+>>>**Cold chain appliance installation**  
+>>>"Cold chain appliance installation report"
+>>>
+>>>**Cold chain appliance inspection**  
+>>>"Daily inspection completed"  
+>>>"Functional status"  
+>>>
+>>>**Cold chain appliance weekly preventive maintenance**
+>>>"Water removed at the bottom of the refrigerator"
+>>>"Water droplets wiped off from the inside wall"
+>>>"Lid gasket checked for sealing when the lid is closed"
+>>>
+>>>**Cold chain appliance monthly preventive maintenance**
+>>>“Clean refrigerator with water and mild detergent”
+>>>“Clean the grill on the side of the refrigerator”
+>>>
+>>>**Cold chain appliance alarm**  
+>>>"Alarm type"  
+>>>"Alarm cause"  
+>>>"Alarm corrective action"  
+>>>"Alarm resolved"  
+>>>"Alarm escalated to supervisor" 
+>>> 
+>>>**Cold chain appliance repair request**  
+>>>"Reason for repair request"  
+>>>"Urgency of repair request"  
+>>>“Defect image”  
+>>>“Cold chain technician”  
+>>>
+>>>**Cold chain appliance corrective maintenance**  
+>>>"Assessment of technical fault"  
+>>>"Interventions"  
+>>>"Technical fault resolved"  
+>>>"Equipment restored to service"  
+>>>
+>>>**Cold chain appliance disposal**  
+>>>"Reason for disposal"
+>>>"Method of disposal"
+>>>"Equipment removed from cold chain appliance inventory"
+>>
+>>**Display in report**: make visible for all items  
+>>**Mobile render type**: "Default"  
+>>**Desktop render type**: "Default"
+>>
+>>**3 Create data entry form**
+>>>**"BASIC"** is configured by default, no configuration is needed.
+>
+>**5 Access**
+>>**Organisation units**: tag the health care facility for assigning to the DHIS2 Capture.  
+>>**Roles and access**: "Biomedical equipment life cycle management" appears by default  
+>>**SELECT ALL**
+>
+>**6 Notifications**
+>(not applicable)
 
 ### Relationship type
 **Name (*)**: "World Health Organization PQS catalogue"
@@ -335,8 +311,6 @@ Serial number
 **Source type (*)**: "Tracked entity attribute"
 
 **Tracked entity attribute**: "Cold chain appliance lifecycle management GS1 GIAI"
-
-
 
 
 ### Line Listing
