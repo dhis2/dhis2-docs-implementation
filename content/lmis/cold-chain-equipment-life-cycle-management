@@ -65,35 +65,31 @@ This application is configured as a "Tracker program" which uses only simple, na
 >**Aggregation type (*)**: "None"  
 
 ### Tracked entity attribute
-Name (*):
-- "Appliance image" / "Image"
-- "Company" / "Text"
-- "Energy source" / "Text"
-- "Freezer gross volume (litres)" / "Number"
-- "GS1 GIAI" / "Text"
-- "GTIN" / "Text"
-- "Manufactured in" / "Text"
-- "Manufacturer's reference" / "Text"
-- "Place of installation" / "Text"
-- "PQS code" / "Text"
-- "PQS code category" / "Text"
-- "Product number" / "Text"
-- "Production date" / "Date"
-- "Product number" / "Text"
-- "Serial number" / "Text"
-- "Type of appliance" / "Text"
-- "Unique identifier" / "Text"
-- "Vaccine gross volume (litres)" / "Number"
-- "Vaccine storage capacity (litres)" / "Number"
-Name (*): (see above)
-
-Short name (*): same as "Name (*)".
-
-Value type: "Text".
-
-Aggregation type: "None"
-
-Inherit: check (appears as a blue tag with a white tick)
+>**Name (*)**
+>"Appliance image" / "Image"  
+>"Company" / "Text"  
+>"Energy source" / "Text"  
+>Freezer gross volume (litres)" / "Number"  
+>"GS1 GIAI" / "Text"  
+>"GTIN" / "Text"  
+>"Manufactured in" / "Text"  
+>"Manufacturer's reference" / "Text"  
+>"Place of installation" / "Text" 
+>"PQS code" / "Text"  
+>"PQS code category" / "Text"  
+>"Product number" / "Text"  
+>"Production date" / "Date"  
+>"Product number" / "Text"  
+>"Serial number" / "Text"  
+>"Type of appliance" / "Text"  
+>"Unique identifier" / "Text"  
+>"Vaccine gross volume (litres)" / "Number"  
+>"Vaccine storage capacity (litres)" / "Number"  
+>**Name (*)**: (see above)  
+>**Short name (*)**: same as "Name  
+>**Value type**: "Text"  
+>**Aggregation type**: "None"  
+>**Inherit**: check (appears as a blue tag with a white tick)
 
 ### Tracked entity type
 **Name (*)**: "Cold chain appliance"
