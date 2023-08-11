@@ -59,7 +59,8 @@ This application is configured as a "Tracker program" which uses only simple, na
 >>"Water droplets wiped off from the inside wall" / "Yes/No"  
 >>"Water removed at the bottom of the refrigerator" / "Yes/No"  
 >>"Weekly tasks" / “Text”  
-**Domain Type (*)**: "Tracker"  
+>
+>**Domain Type (*)**: "Tracker"  
 >**Value type (*)**: see above  
 >**Aggregation type (*)**: "None"
 
@@ -83,7 +84,8 @@ This application is configured as a "Tracker program" which uses only simple, na
 >>"Type of appliance" / "Text"  
 >>"Unique identifier" / "Text"  
 >>"Vaccine gross volume (litres)" / "Number"  
->>"Vaccine storage capacity (litres)" / "Number"  
+>>"Vaccine storage capacity (litres)" / "Number" 
+> 
 >**Name (*)**: (see above)  
 >**Short name (*)**: same as "Name ( *)"  
 >**Value type**: "Text"  
@@ -91,41 +93,35 @@ This application is configured as a "Tracker program" which uses only simple, na
 >**Inherit**: check (appears as a blue tag with a white tick)
 
 ### Tracked entity type
-**Name (*)**: "Cold chain appliance"
-
-**Color**: leave empty
-
-**Icon**: leave empty
-
-**Description**: leave empty
-Enable tracked entity instance audit log: check (appears as white tick in a blue box)
-
-Minimum number of attributes required to search: 1
-Tracked entity type attributes: assign the following Tracked entity attributes in this order
-- "Appliance image" / "Image"
-- "Place of installation" / "Text"
-- "PQS code category" / "Text"
-- "PQS code" / "Text"
-- "Type of appliance" / "Text"
-- "Company" / "Text"
-- "Manufactured in" / "Text"
-- "Manufacturer's reference" / "Text"
-- "Energy source" / "Text"
-- "Vaccine storage capacity (litres)" / "Number"
-- "Vaccine gross volume (litres)" / "Number"
-- "Freezer gross volume (litres)" 
-- "Production date" / "Date"
-- "Product number" / "Text"
-- "GTIN" / "Text"
-- "Serial number" / "Text"
-- "GS1 GIAI" / "Text"
-- "Unique identifier" / "Text"
-- "Unique identifier scan" / "Text"
-- "Donated by" / "Text"
-
-**Display in list**: tag all
-
-**Searchable**: tag except for "Appliance image", "Manufactured in" and 
+>**Color**: leave empty  
+>**Icon**: leave empty  
+>**Description**: leave empty  
+>**Enable tracked entity instance audit log**: check (appears as white tick in a blue box)  
+>**Minimum number of attributes required to search**: 1  
+>**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
+>>"Appliance image" / "Image"  
+>>"Place of installation" / "Text"  
+>>"PQS code category" / "Text"  
+>>"PQS code" / "Text"  
+>>"Type of appliance" / "Text"  
+>>"Company" / "Text"  
+>>"Manufactured in" / "Text"  
+>>"Manufacturer's reference" / "Text"  
+>>"Energy source" / "Text"  
+>>"Vaccine storage capacity (litres)" / "Number"  
+>>"Vaccine gross volume (litres)" / "Number"  
+>>"Freezer gross volume (litres)"  
+>>"Production date" / "Date"  
+>>"Product number" / "Text"  
+>>"GTIN" / "Text"  
+>>"Serial number" / "Text"  
+>>"GS1 GIAI" / "Text"  
+>>"Unique identifier" / "Text"  
+>>"Unique identifier scan" / "Text"  
+>>"Donated by" / "Text"  
+>
+>**Display in list**: tag all  
+>**Searchable**: tag except for "Appliance image", "Manufactured in" and 
 "Production date"
 
 ### Program
