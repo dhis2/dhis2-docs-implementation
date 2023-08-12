@@ -77,7 +77,7 @@ This application is configured as a "Tracker program" which uses only simple, na
 *Note that the Program Indicators are only given for "Refrigerator 1" but are entirely analogous for "Refrigerator 2" etc. except for the "Refrigerator number" in the "Edit filter".*  
 *Note that the various IDs will differ in every DHIS2 instance and the entities are given separately where that is necessary for the configuration.*
 
->**CCE alarme event / count - Refrigerator 1 - PI**  
+>**1. CCE alarme event / count - Refrigerator 1 - PI**  
 >>**1 Program indicator details**
 >>>**Program \(*)**: "Cold chain appliance lifecycle management  
 >>>**Name \(*)**: "CCE alarm event / count - Refrigerator 1 - PI"  
@@ -100,7 +100,7 @@ This application is configured as a "Tracker program" which uses only simple, na
 >>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'enhyS0nPpI7'"  
 >>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'enhyS0nPpI7' ["Cold chain appliance alarm"]*
 >
->**CCE appliance status - Functional count - Refrigerator 1 - PI**  
+>**2. CCE appliance status - Functional count - Refrigerator 1 - PI**  
 >>**1 Program indicator details**
 >>>**Program \(*)**: "Cold chain appliance lifecycle management  
 >>>**Name \(*)**: "CCE appliance status - Functional count - Refrigerator 1 - PI"  
