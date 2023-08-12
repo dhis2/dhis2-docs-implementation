@@ -72,6 +72,94 @@ This application is configured as a "Tracker program" which uses only simple, na
 >**Value type (*)**: see above  
 >**Aggregation type (*)**: "None"
 
+### INDICATOR
+#### Program indicator
+*Note that the Program Indicators are only given for "Refrigerator 1" but are entirely analogous for "Refrigerator 2" etc. except for the "Refrigerator number" in the "Edit filter".*  
+*Note that the various IDs will differ in every DHIS2 instance and the entities are given separately where that is necessary for the configuration.*
+
+>**CCE alarme event / count - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management  
+>>>**Name \(*)**: "CCE alarm event / count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE alarm event / count - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'enhyS0nPpI7'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'enhyS0nPpI7' ["Cold chain appliance alarm"]*
+>
+>**CCE appliance status - Functional count - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management  
+>>>**Name \(*)**: "CCE appliance status - Functional count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE status - Functional count - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "V{program_stage_id}=='YXDjOR3Djyp' && A{dryPiUSHf8c}=='Refrigerator 1' && #{YXDjOR3Djyp.F1Fw6ohltv6}=='1'"  
+>>>*Program stage id=='YXDjOR3Djyp' ["Cold chain appliance inspection"] && Refrigerator number=='Refrigerator 1' && Cold chain appliance inspection\.Appliance functional 0/1=='1'*
+>
+
+CONTINUE EDITING HERE 12-08-2023
+
+
+
+
+>**CCE [template] - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management  
+>>>**Name \(*)**: "CCE alarm event / count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE alarm event / count - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'enhyS0nPpI7'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'enhyS0nPpI7' ["Cold chain appliance alarm"]*
+>
+
+
+
+
+
+
+
+
 ### Tracked entity attribute
 >**Name (*)**:
 >>"Appliance image" / "Image"  
