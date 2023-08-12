@@ -47,6 +47,7 @@ This application is configured as a "Tracker program" which uses only simple, na
 >>"Daily tasks completed" / "Yes/No"  
 >>"Defect image" / "Image"  
 >>"Equipment removed from cold chain appliance inventory" / "Yes/No"  
+>>"Equipment restored to service" / "Yes/No"  
 >>"Interventions" / "Long text"  
 >>“Lid gasket checked for sealing when the lid is closed” / "Yes/No"  
 >>"Method of disposal" / "Long text"  
@@ -66,7 +67,7 @@ This application is configured as a "Tracker program" which uses only simple, na
 >>"Water removed at the bottom of the refrigerator" / "Yes/No"  
 >>"Weekly tasks" / “Text”  
 >
->**Short name (*)**: same as "Name ( ) - CCE"   
+>**Short name (*)**: same as "Name (\*) - CCE"   
 >**Domain Type (*)**: "Tracker"  
 >**Value type (*)**: see above  
 >**Aggregation type (*)**: "None"
@@ -94,7 +95,7 @@ This application is configured as a "Tracker program" which uses only simple, na
 >>"Vaccine storage capacity (litres)" / "Number" 
 > 
 >**Name (*)**: (see above)  
->**Short name (*)**: same as "Name ( *)"  
+>**Short name (*)**: same as "Name \(*)"  
 >**Value type**: "Text"  
 >**Aggregation type**: "None"  
 >**Inherit**: check (appears as a blue tag with a white tick)
