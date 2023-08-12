@@ -88,6 +88,25 @@ Xx
 #### Indicator group set
 
 #### Program indicator
+>**1 Program indicator details**
+>>**Program \(*)**:  
+>>**Name \(*)**:  
+>>**Short Name \(*)**:  
+>>**Aggregation type \(*)**:  
+>>**Organisation unit field**:  
+>>**Analytics period boundaries**  
+>>> **Boundary target**: "Event date"  
+>>> **Analytics period boundary target**: "After start of reporting period"  
+>>> **Boundary target**: "Event date"  
+>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>
+>>**Display in form**: tag  
+>
+>**2 Edit expression**
+>>**Expression**: 
+>
+>**3 Edit filter**
+>>**Expression**: 
 
 #### Program indicator group
 
