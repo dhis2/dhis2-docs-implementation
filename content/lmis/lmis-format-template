@@ -1,26 +1,17 @@
-# [Chapter name]#
+# [Chapter name]
 
 
-## 1 Sub-chapter##
+## Introduction
 
-Sub-level 1
+Xx
 
-### 1.1 Sub-chapter###
+## Use case
 
-Sub-level 2
+Xx
 
-#### 1.1.1 Sub-chapter####
+## Functionality and features
 
-Sub-level 3
-
-##### 1.1.1.1 Sub-chapter#####
-
-Sub-level 4
-
-###### 1.1.1.1.1 Sub-chapter#####
-
-Sub-level 5
-<br><br>
+Xx
 
 ## DHIS2 configuration
 
@@ -435,6 +426,30 @@ Sub-level 5
 
 
 <br><br><br><br><br><br>
+
+# [Chapter name]
+
+
+## 1 Sub-chapter
+
+Sub-level 1
+
+### 1.1 Sub-chapter
+
+Sub-level 2
+
+#### 1.1.1 Sub-chapter
+
+Sub-level 3
+
+##### 1.1.1.1 Sub-chapter
+
+Sub-level 4
+
+###### 1.1.1.1.1 Sub-chapter
+
+Sub-level 5
+<br><br>
 
 **Basic formating**
 
