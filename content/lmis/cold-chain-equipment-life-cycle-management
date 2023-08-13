@@ -175,7 +175,7 @@ This application is configured as a "Tracker program" which uses only simple, na
 >>>*Program stage id=='YXDjOR3Djyp' ["Cold chain appliance inspection"] && Refrigerator number=='Refrigerator 1' && Cold chain appliance inspection\.Appliance functional 0/1=='1'*
 >
 
-CONTINUE EDITING HERE 12-08-2023
+# *CONTINUE EDITING HERE 13-08-2023*
 
 
 
@@ -202,8 +202,6 @@ CONTINUE EDITING HERE 12-08-2023
 >>**3 Edit filter**
 >>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'enhyS0nPpI7'"  
 >>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'enhyS0nPpI7' ["Cold chain appliance alarm"]*
->
-
 
 ### 5 ORGANISATION UNIT
 #### 5.1 Organisation unit
@@ -454,8 +452,70 @@ CONTINUE EDITING HERE 12-08-2023
 >**Source type (*)**: "Tracked entity attribute"  
 >**Tracked entity attribute**: "Cold chain appliance lifecycle management GS1 GIAI"
 
+### 7 OTHER
+#### 7.1 Legend
+>**Name**
+>>"Alarm cause" / "Long text"  
+#### 7.2 Option set
+>**Name**
+>>"Alarm cause" / "Long text"  
+#### 7.3 Program rule
+>**Name**
+>>"Alarm cause" / "Long text"  
+#### 7.4 Program rule variable
+>**Name**
+>>"Alarm cause" / "Long text"  
 
-### Line Listing
+## DHIS2 ANALYTICS
+Xx
+
+### Analytics overview
+>**1. Android Capture app - offline analytics**  
+>>Working list A  
+>>Working list B  
+>>Working list C  
+>>
+>**2. Working list**  
+>>Working list A  
+>>Working list B  
+>>Working list C  
+>>
+>**3. Line Listing**
+>>Line listing A  
+>>Line listing B  
+>>Line listing C  
+>>
+>**4. Data visualizer**  
+>>Data visualizer A  
+>>Data visualizer B  
+>>Data visualizer C  
+>>
+>**5. Event Report**  
+>>Event Report A  
+>>Event Report B  
+>>Event Report C
+>>
+>**6. Maps**  
+>>Map A  
+>>Map B  
+>>Map C
+>>
+>**7. Dashboard**  
+>>Dashboard A  
+>>Dashboard B  
+>>Dashboard C
+
+### 1 Android Capture app - offline analytics
+>**Name**: XXX  
+>>XXX
+>
+
+### 2 Working lists
+>**Name**: XXX  
+>>XXX
+>
+
+### 3 Line Listing
 >**Name**: "Cold chain equipment lifecycle management"  
 >**Columns**  
 >>"Last updated on"  
@@ -470,6 +530,26 @@ CONTINUE EDITING HERE 12-08-2023
 >**Filters**  
 >>Organisation Unit: select Organisation units as required  
 >>Event date: "Last 3 months"  
+
+### 4 Data visualizer
+>**Name**: XXX  
+>>XXX
+>
+
+### 5 Event report
+>**Name**: XXX  
+>>XXX
+>
+
+### 6 Maps
+>**Name**: XXX  
+>>XXX
+>
+
+### 7 Dashboard
+>**Name**: XXX  
+>>XXX
+>
 
 ### Android Settings app
 >Appearance > Program > Specific settings > Add a Program Setting  
@@ -563,5 +643,3 @@ A new icelined refrigerator (E003/007) has been delivered to the health facility
 - Continues work or closes the Capture Android app.
 
 >*Note that this workflow is currently only available in Capture Android app as the DHIS2 web app does not (yet) allow changing the Organisation Unit (OU) when creating a new Tracked Entity Instance (TEI) but this enhancement is planned for future DHIS2 versions.*
-
-
