@@ -20,13 +20,59 @@ For healthcare facilities where cold chain appliance are not yet furnished with 
 
 This application is configured as a "Tracker program" which uses only simple, native DHIS2 functionality. The number, description and contents of each of the stages can be very easily customized to national needs without any programming knowledge.
 
-### Organisation unit
+### Metadata overview
+>**1 CATEGORY**  
+>>1.1 Category option  
+>>1.2 Category  
+>>1.3 Category combination 
+> 
+>**2 DATA ELEMENT**  
+>>2.1 Data element - "Aggregate"  
+>>2.2 Data element - "Tracker"  
+> 
+>**3 DATA SET**  
+>>3.1 Data set  
+> 
+>**4 INDICATOR**  
+>>4.1 Program indicator  
+> 
+>**5 ORGANISATION UNIT**  
+>>5.1 Organisation unit  
+> 
+>**6 PROGRAM**  
+>>6.1 Program  
+>>6.2 Tracked entity attribute  
+>>6.3 Relationship type  
+>>6.4 Tracked entity type  
+>>6.5 Program rule  
+>>6.6 Program rule variable  
+> 
+>**7 OTHER**  
+>>7.1 Option set  
+>>7.2 Legend  
+>>7.3 Predictor  
+>>7.4 Predictor group  
 
->In addition to the national health facility register and structure, create a OU for the PQS catalogue repository:  
->**Name (*)**: "World Health Organization PQS catalogue"  
->**Short name (*)**: "WHO PQS catalogue"
+### 1 CATEGORY
+#### 1.1 Category option
+>**Name**
+>>"Alarm cause" / "Long text"  
+>
+#### 1.2 Category
+>**Name**
+>>"Alarm cause" / "Long text"  
+>
+#### 1.3 Category combination
+>**Name**
+>>"Alarm cause" / "Long text"  
+>
 
-### Data elements
+### 2 DATA ELEMENT
+#### 1.1 Data element - "Aggregate"
+>**Name**
+>>"Alarm cause" / "Long text"  
+
+#### 1.2 Data element - "Tracker"
 >**Name**
 >>"Alarm cause" / "Long text"  
 >>"Alarm corrective action" / "Long text"  
@@ -72,8 +118,13 @@ This application is configured as a "Tracker program" which uses only simple, na
 >**Value type (*)**: see above  
 >**Aggregation type (*)**: "None"
 
-### INDICATOR
-#### Program indicator
+### 3 DATA SET
+#### 3.1 Data set
+>**Name**
+>>"Alarm cause" / "Long text"  
+
+### 4 INDICATOR
+#### 4.1 Program indicator
 *Note that the Program Indicators are only given for "Refrigerator 1" but are entirely analogous for "Refrigerator 2" etc. except for the "Refrigerator number" in the "Edit filter".*  
 *Note that the various IDs will differ in every DHIS2 instance and the entities are given separately where that is necessary for the configuration.*
 
@@ -154,73 +205,16 @@ CONTINUE EDITING HERE 12-08-2023
 >
 
 
+### 5 ORGANISATION UNIT
+#### 5.1 Organisation unit
+
+>In addition to the national health facility register and structure, create a OU for the PQS catalogue repository:  
+>**Name (*)**: "World Health Organization PQS catalogue"  
+>**Short name (*)**: "WHO PQS catalogue"
 
 
-
-
-
-
-### Tracked entity attribute
->**Name (*)**:
->>"Appliance image" / "Image"  
->>"Company" / "Text"  
->>"Energy source" / "Text"  
->>"Freezer gross volume (litres)" / "Number"  
->>"GS1 GIAI" / "Text"  
->>"GTIN" / "Text"  
->>"Manufactured in" / "Text"  
->>"Manufacturer's reference" / "Text"  
->>"Place of installation" / "Text"  
->>"PQS code" / "Text"  
->>"PQS code category" / "Text"  
->>"Product number" / "Text"  
->>"Production date" / "Date"  
->>"Product number" / "Text"  
->>"Serial number" / "Text"  
->>"Type of appliance" / "Text"  
->>"Unique identifier" / "Text"  
->>"Vaccine gross volume (litres)" / "Number"  
->>"Vaccine storage capacity (litres)" / "Number" 
-> 
->**Name (*)**: (see above)  
->**Short name (*)**: same as "Name \(*)"  
->**Value type**: "Text"  
->**Aggregation type**: "None"  
->**Inherit**: check (appears as a blue tag with a white tick)
-
-### Tracked entity type
->**Color**: leave empty  
->**Icon**: leave empty  
->**Description**: leave empty  
->**Enable tracked entity instance audit log**: check (appears as white tick in a blue box)  
->**Minimum number of attributes required to search**: 1  
->**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
->>"Appliance image" / "Image"  
->>"Place of installation" / "Text"  
->>"PQS code category" / "Text"  
->>"PQS code" / "Text"  
->>"Type of appliance" / "Text"  
->>"Company" / "Text"  
->>"Manufactured in" / "Text"  
->>"Manufacturer's reference" / "Text"  
->>"Energy source" / "Text"  
->>"Vaccine storage capacity (litres)" / "Number"  
->>"Vaccine gross volume (litres)" / "Number"  
->>"Freezer gross volume (litres)"  
->>"Production date" / "Date"  
->>"Product number" / "Text"  
->>"GTIN" / "Text"  
->>"Serial number" / "Text"  
->>"GS1 GIAI" / "Text"  
->>"Unique identifier" / "Text"  
->>"Unique identifier scan" / "Text"  
->>"Donated by" / "Text"  
->
->**Display in list**: tag all  
->**Searchable**: tag except for "Appliance image", "Manufactured in" and 
-"Production date"
-
-### Program
+### 6 PROGRAM
+### 6.1 Program
 >**1 Program details**
 >>**Name (*)**: "Cold chain appliance lifecycle management"  
 >>**Short name (*)**: " Cold chain appliance lifecycle management"  
@@ -359,7 +353,35 @@ CONTINUE EDITING HERE 12-08-2023
 >**6 Notifications**
 >(not applicable)
 
-### Relationship type
+### 6.2 Tracked entity attribute
+>**Name (*)**:
+>>"Appliance image" / "Image"  
+>>"Company" / "Text"  
+>>"Energy source" / "Text"  
+>>"Freezer gross volume (litres)" / "Number"  
+>>"GS1 GIAI" / "Text"  
+>>"GTIN" / "Text"  
+>>"Manufactured in" / "Text"  
+>>"Manufacturer's reference" / "Text"  
+>>"Place of installation" / "Text"  
+>>"PQS code" / "Text"  
+>>"PQS code category" / "Text"  
+>>"Product number" / "Text"  
+>>"Production date" / "Date"  
+>>"Product number" / "Text"  
+>>"Serial number" / "Text"  
+>>"Type of appliance" / "Text"  
+>>"Unique identifier" / "Text"  
+>>"Vaccine gross volume (litres)" / "Number"  
+>>"Vaccine storage capacity (litres)" / "Number" 
+> 
+>**Name (*)**: (see above)  
+>**Short name (*)**: same as "Name \(*)"  
+>**Value type**: "Text"  
+>**Aggregation type**: "None"  
+>**Inherit**: check (appears as a blue tag with a white tick)
+
+### 6.3 Relationship type
 >**Name (*)**: "World Health Organization PQS catalogue"  
 >**Relationship name seen from initiating entity (*)**: "World Health Organization PQS catalogue"  
 >**From constraint (*)**: "Tracked entity instance"  
@@ -369,7 +391,39 @@ CONTINUE EDITING HERE 12-08-2023
 >**Tracked entity type (*)**: "Cold chain appliance"  
 >**Program**: "Cold chain appliance lifecycle management"  
 
-### Program rule
+### 6.4 Tracked entity type
+>**Color**: leave empty  
+>**Icon**: leave empty  
+>**Description**: leave empty  
+>**Enable tracked entity instance audit log**: check (appears as white tick in a blue box)  
+>**Minimum number of attributes required to search**: 1  
+>**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
+>>"Appliance image" / "Image"  
+>>"Place of installation" / "Text"  
+>>"PQS code category" / "Text"  
+>>"PQS code" / "Text"  
+>>"Type of appliance" / "Text"  
+>>"Company" / "Text"  
+>>"Manufactured in" / "Text"  
+>>"Manufacturer's reference" / "Text"  
+>>"Energy source" / "Text"  
+>>"Vaccine storage capacity (litres)" / "Number"  
+>>"Vaccine gross volume (litres)" / "Number"  
+>>"Freezer gross volume (litres)"  
+>>"Production date" / "Date"  
+>>"Product number" / "Text"  
+>>"GTIN" / "Text"  
+>>"Serial number" / "Text"  
+>>"GS1 GIAI" / "Text"  
+>>"Unique identifier" / "Text"  
+>>"Unique identifier scan" / "Text"  
+>>"Donated by" / "Text"  
+>
+>**Display in list**: tag all  
+>**Searchable**: tag except for "Appliance image", "Manufactured in" and 
+"Production date"
+
+### 6.5 Program rule
 >**1 Enter program rule details**  
 >>**Program (*)**: "Cold chain appliance lifecycle management"  
 >>**Name (*)**: "GS1 GIAI specifications"  
@@ -395,7 +449,7 @@ CONTINUE EDITING HERE 12-08-2023
 >>>>**Tracked entity attribute to assign to**: "Serial number"  
 >>>>**Expression to evaluate and assign**: "d2:extractDataMatrixValue( 'serial number', A{GS1 GIAI})"
 
-### Program rule variable
+### 6.6 Program rule variable
 >**Name (*)**: "GS1 GIAI"  
 >**Source type (*)**: "Tracked entity attribute"  
 >**Tracked entity attribute**: "Cold chain appliance lifecycle management GS1 GIAI"
