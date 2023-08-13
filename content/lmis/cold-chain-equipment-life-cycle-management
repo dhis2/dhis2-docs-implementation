@@ -164,6 +164,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>**Store zero data values**: tag  
 >>**Category combination \(*)**: "Cold chain appliance report"  
 >>**Aggregation levels**: "Facility"  
+>
 >**2 Refrigerator 1 - MTH**  
 >>**Name \(*)**: "Refrigerator 1 - MTH"  
 >>**Short name \(*)**: "Refrigerator 1 - MTH - CCE"  
@@ -173,6 +174,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>**Store zero data values**: tag  
 >>**Category combination \(*)**: "Cold chain appliance report"  
 >>**Aggregation levels**: "Facility"  
+>
 >**3 Refrigerator 2 - DLY**  
 >>**Name \(*)**: "Refrigerator 2 - DLY"  
 >>**Short name \(*)**: "Refrigerator 2 - DLY - CCE"  
@@ -182,6 +184,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>**Store zero data values**: tag  
 >>**Category combination \(*)**: "Cold chain appliance report"  
 >>**Aggregation levels**: "Facility"  
+>
 >**4 Refrigerator 1 - MTH**  
 >>**Name \(*)**: "Refrigerator 2 - MTH"  
 >>**Short name \(*)**: "Refrigerator 2 - MTH - CCE"  
@@ -595,14 +598,78 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>>>**Expression to evaluate and assign**: "d2:extractDataMatrixValue( 'serial number', A{GS1 GIAI})"
 
 ### 6.6 Program rule variable
->**Name (*)**: "GS1 GIAI"  
+>**Name \(*)**: "GS1 GIAI"  
 >**Source type (*)**: "Tracked entity attribute"  
 >**Tracked entity attribute**: "Cold chain appliance lifecycle management GS1 GIAI"
 
 ### 7 OTHER
 #### 7.1 Legend
->**Name**
->>"Alarm cause" / "Long text"  
+>**1 Alarm count**
+>**Name \(*)**: "Alarm count"  
+>>**1 No alarms**  
+>>>**Name**: "No alarms"  
+>>>**Start value**: "0"  
+>>>**End value**: "1"  
+>>>**Color code**: "#06FF00" (green)  
+>>
+>>**2 1-5 alarms**   
+>>>**Name**: "1-5 alarms"  
+>>>**Start value**: "1"  
+>>>**End value**: "5"  
+>>>**Color code**: "#FFA500" (orange)  
+>>
+>>**3 6-10 alarms**   
+>>>**Name**: "6-10 alarms"  
+>>>**Start value**: "5"  
+>>>**End value**: "10"  
+>>>**Color code**: "#FF1300" (red)  
+>>
+>>**4 More than 10 alarms**  
+>>>**Name**: "More than 10 alarms"  
+>>>**Start value**: "10"  
+>>>**End value**: "100"  
+>>>**Color code**: "#9904A5" (purple)  
+>
+>**2 Cold chain appliance - temperature ranges**
+>**Name \(*)**: "Cold chain appliance - temperature ranges"  
+>>**1 At or below 0° Celsius**  
+>>>**Name**: "At or below 0° Celsius"  
+>>>**Start value**: "-273.15"  
+>>>**End value**: "0"  
+>>>**Color code**: "#0A0909" (black)  
+>>
+>>**2 0° to +2° Celsisus**   
+>>>**Name**: "2 0° to +2° Celsisus"  
+>>>**Start value**: "0"  
+>>>**End value**: "2"  
+>>>**Color code**: "#FB023D" (red)  
+>>
+>>**3 +2° to +8° Celsius**   
+>>>**Name**: "+2° to +8° Celsius"  
+>>>**Start value**: "2"  
+>>>**End value**: "8"  
+>>>**Color code**: "#19F00" (green)  
+>>
+>>**4 Above +8° Celsius**  
+>>>**Name**: "Above +8° Celsius"  
+>>>**Start value**: "8"  
+>>>**End value**: "100"  
+>>>**Color code**: "#FFA500" (orange)  
+>
+>**3 Functional / non-functional**
+>**Name \(*)**: "Functional / non-functional"  
+>>**1 Non-functional alarms**  
+>>>**Name**: "Non-functional"  
+>>>**Start value**: "0"  
+>>>**End value**: "1"  
+>>>**Color code**: "#FF2100" (red)  
+>>
+>>**2 Functional**   
+>>>**Name**: "Functional"  
+>>>**Start value**: "1"  
+>>>**End value**: "2"  
+>>>**Color code**: "#00FF37" (greeen)  
+
 #### 7.2 Option set
 >**Name**
 >>"Alarm cause" / "Long text"  
