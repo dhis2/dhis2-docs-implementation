@@ -54,10 +54,84 @@ This application is configured as a "Tracker program" which uses only simple, na
 >>7.4 Predictor group  
 
 ### 1 CATEGORY
+This metadata is needed (only) for configuring an "aggregate" default Data entry form for "hosting" the daily and monthly aggregated Tracker data and making it available for various analytics visualizations and dashboards.
+
 #### 1.1 Category option
->**Name**
->>"Alarm cause" / "Long text"  
+>**1 CCE Status functional / count**  
+>>**Name \(*)**: "CCE Status functional / count"  
+>>**Short name \(*)**: "CCE Status functional / count - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
 >
+>**2 CCE Status non-functional / count**  
+>>**Name \(*)**: "CCE Status non-functional / count"  
+>>**Short name \(*)**: "CCE Status non-functional / count - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**3 CCE inspection / count**  
+>>**Name \(*)**: "CCE inspection / count"  
+>>**Short name \(*)**: "CCE inspection / count - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**4 Corrective maintenance / count**  
+>>**Name \(*)**: "Corrective maintenance / count"  
+>>**Short name \(*)**: "Corrective maintenance / count - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**5 Repair request / count**  
+>>**Name \(*)**: "Repair request / count"  
+>>**Short name \(*)**: "Repair request / count - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**6 Temperature / average**  
+>>**Name \(*)**: "Temperature / average"  
+>>**Short name \(*)**: "Temperature / average - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**7 Temperature / count**  
+>>**Name \(*)**: "Temperature / count"  
+>>**Short name \(*)**: "Temperature / count - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**8 Temperature / maximum**  
+>>**Name \(*)**: "Temperature / maximum"  
+>>**Short name \(*)**: "Temperature / maximum - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**9 Temperature / minimum**  
+>>**Name \(*)**: "Temperature / minimum"  
+>>**Short name \(*)**: "Temperature / minimum - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**10 Temperature alarm / count**  
+>>**Name \(*)**: "Temperature alarm / count"  
+>>**Short name \(*)**: "Temperature alarm / count - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**11 Temperature count - 0-2° C**  
+>>**Name \(*)**: "Temperature count - 0-2° C"  
+>>**Short name \(*)**: "Temperature count - 0-2° C - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**12 Temperature count - 2-8° C**  
+>>**Name \(*)**: "Temperature count - 2-8° C"  
+>>**Short name \(*)**: "Temperature count - 2-8° C - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**13 Temperature count - above 8° C**  
+>>**Name \(*)**: "Temperature count - above 8° C"  
+>>**Short name \(*)**: "Temperature count - above 8° C"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**14 Temperature count - below 0° C**  
+>>**Name \(*)**: "Temperature count - below 0° C"  
+>>**Short name \(*)**: "Temperature count - below 0° C - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+
+
+
+
+
 #### 1.2 Category
 >**Name**
 >>"Alarm cause" / "Long text"  
@@ -119,6 +193,7 @@ This application is configured as a "Tracker program" which uses only simple, na
 >**Aggregation type (*)**: "None"
 
 ### 3 DATA SET
+*Note that, apart from the period?? the xx and yy are identical*
 #### 3.1 Data set
 >**Name**
 >>"Alarm cause" / "Long text"  
