@@ -127,7 +127,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>**Short name \(*)**: "Temperature count - below 0° C - CCE"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 
-#### 1.3 Category
+#### 1.2 Category
 >**Name \(*)**: **Cold chain appliance report**  
 >**Short name \(*)**: "Cold chain appliance report - CCE"  
 >**Data dimension type \(*)**: "Disaggregation"  
@@ -154,11 +154,45 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >**Categories**: "Cold chain appliance report"  
 
 ### 2 DATA ELEMENT
-#### 1.1 Data element - "Aggregate"
->**Name**
->>"Alarm cause" / "Long text"  
+#### 2.1 Data element - "Aggregate"
+>**1 Refrigerator 1 - DLY**  
+>>**Name \(*)**: "Refrigerator 1 - DLY"  
+>>**Short name \(*)**: "Refrigerator 1 - DLY - CCE"  
+>>**Domain Type \(*)**: "Aggregate"  
+>>**Value type \(*)**: "Number"  
+>>**Aggregation type (*)**: "Sum"  
+>>**Store zero data values**: tag  
+>>**Category combination \(*)**: "Cold chain appliance report"  
+>>**Aggregation levels**: "Facility"  
+>**2 Refrigerator 1 - MTH**  
+>>**Name \(*)**: "Refrigerator 1 - MTH"  
+>>**Short name \(*)**: "Refrigerator 1 - MTH - CCE"  
+>>**Domain Type \(*)**: "Aggregate"  
+>>**Value type \(*)**: "Number"  
+>>**Aggregation type (*)**: "Sum"  
+>>**Store zero data values**: tag  
+>>**Category combination \(*)**: "Cold chain appliance report"  
+>>**Aggregation levels**: "Facility"  
+>**3 Refrigerator 2 - DLY**  
+>>**Name \(*)**: "Refrigerator 2 - DLY"  
+>>**Short name \(*)**: "Refrigerator 2 - DLY - CCE"  
+>>**Domain Type \(*)**: "Aggregate"  
+>>**Value type \(*)**: "Number"  
+>>**Aggregation type (*)**: "Sum"  
+>>**Store zero data values**: tag  
+>>**Category combination \(*)**: "Cold chain appliance report"  
+>>**Aggregation levels**: "Facility"  
+>**4 Refrigerator 1 - MTH**  
+>>**Name \(*)**: "Refrigerator 2 - MTH"  
+>>**Short name \(*)**: "Refrigerator 2 - MTH - CCE"  
+>>**Domain Type \(*)**: "Aggregate"  
+>>**Value type \(*)**: "Number"  
+>>**Aggregation type (*)**: "Sum"  
+>>**Store zero data values**: tag  
+>>**Category combination \(*)**: "Cold chain appliance report"  
+>>**Aggregation levels**: "Facility"  
 
-#### 1.2 Data element - "Tracker"
+#### 2.2 Data element - "Tracker"
 >**Name**
 >>"Alarm cause" / "Long text"  
 >>"Alarm corrective action" / "Long text"  
@@ -199,16 +233,42 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>"Water removed at the bottom of the refrigerator" / "Yes/No"  
 >>"Weekly tasks" / “Text”  
 >
->**Short name (*)**: same as "Name (\*) - CCE"   
->**Domain Type (*)**: "Tracker"  
->**Value type (*)**: see above  
+>**Short name \(*)**: same as "Name (\*) - CCE"   
+>**Domain Type \(*)**: "Tracker"  
+>**Value type \(*)**: see above  
 >**Aggregation type (*)**: "None"
 
 ### 3 DATA SET
-*Note that, apart from the period?? the xx and yy are identical*
+*Note that, apart from the "Period type" the two "Daily" and "Monthly" Data sets are identical*
+
 #### 3.1 Data set
->**Name**
->>"Alarm cause" / "Long text"  
+>**1 Cold chain appliance report - Daily**  
+>>**Name \(*)**: "Cold chain appliance report - Daily"  
+>>**Short name \(*)**: "Cold chain appliance report - Daily - CCE"  
+>>**Expiry days**: "1"  
+>>**Open future periods for data entry**: "1"  
+>>**Days after period to qualify for timely submission**: "1"  
+>>**Period type**: "Daily"  
+>>**Category combination**: "None"  
+>>**Data elements**
+>>>"Refrigerator 1 - DLY"  
+>>>"Refrigerator 2 - DLY"  
+>>
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**2 Cold chain appliance report - Monthly**  
+>>**Name \(*)**: "Cold chain appliance report - Monthly"  
+>>**Short name \(*)**: "Cold chain appliance report - Daily - Monthly"  
+>>**Expiry days**: "1"  
+>>**Open future periods for data entry**: "1"  
+>>**Days after period to qualify for timely submission**: "1"  
+>>**Period type**: "Monthly"  
+>>**Category combination**: "None"  
+>>**Data elements**
+>>>"Refrigerator 1 - MTH"  
+>>>"Refrigerator 2 - MTH"  
+>>
+>>**Organisation units selected**: (select as for the Tracker Program) 
 
 ### 4 INDICATOR
 #### 4.1 Program indicator
