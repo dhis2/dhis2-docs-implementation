@@ -57,19 +57,19 @@ This application is configured as a "Tracker program" which uses only simple, na
 This metadata is needed (only) for configuring an "aggregate" default Data entry form for "hosting" the daily and monthly aggregated Tracker data and making it available for various analytics visualizations and dashboards.
 
 #### 1.1 Category option
->**1 CCE Status functional / count**  
+>**1 CCE Inspection / count**  
+>>**Name \(*)**: "CCE inspection / count"  
+>>**Short name \(*)**: "CCE inspection / count - CCE"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**2 CCE Status functional / count**  
 >>**Name \(*)**: "CCE Status functional / count"  
 >>**Short name \(*)**: "CCE Status functional / count - CCE"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >
->**2 CCE Status non-functional / count**  
+>**3 CCE Status non-functional / count**  
 >>**Name \(*)**: "CCE Status non-functional / count"  
 >>**Short name \(*)**: "CCE Status non-functional / count - CCE"  
->>**Organisation units selected**: (select as for the Tracker Program) 
->
->**3 CCE inspection / count**  
->>**Name \(*)**: "CCE inspection / count"  
->>**Short name \(*)**: "CCE inspection / count - CCE"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >
 >**4 Corrective maintenance / count**  
@@ -126,20 +126,32 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>**Name \(*)**: "Temperature count - below 0° C"  
 >>**Short name \(*)**: "Temperature count - below 0° C - CCE"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
->
 
+#### 1.3 Category
+>**Name \(*)**: **Cold chain appliance report**  
+>**Short name \(*)**: "Cold chain appliance report - CCE"  
+>**Data dimension type \(*)**: "Disaggregation"  
+>**Category options**: *note the order of "Category options"*  
+>>"Temperature / count"  
+>>"Temperature / minimum"  
+>>"Temperature / average"  
+>>"Temperature / maximum"  
+>>"Temperature count - below 0° C"  
+>>"Temperature count - 0-2° C"  
+>>"Temperature count - 2-8° C"  
+>>"Temperature count - above 8° C"  
+>>"Temperature alarm / count"  
+>>"CCE Inspection / count"  
+>>"CCE Status functional / count"  
+>>"CCE Status non-functional / count"  
+>>"Repair request / count"  
+>>"Corrective maintenance / count"  
 
-
-
-
-#### 1.2 Category
->**Name**
->>"Alarm cause" / "Long text"  
->
 #### 1.3 Category combination
->**Name**
->>"Alarm cause" / "Long text"  
->
+>**Name \(*)**: **Cold chain appliance report**  
+>**Data dimension type \(*)**: "Disaggregation"  
+>**Skip category total in reports**: taga  
+>**Categories**: "Cold chain appliance report"  
 
 ### 2 DATA ELEMENT
 #### 1.1 Data element - "Aggregate"
