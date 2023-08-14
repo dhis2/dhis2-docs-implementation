@@ -280,7 +280,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 
 >**1. CCE alarme event / count - Refrigerator 1 - PI**  
 >>**1 Program indicator details**
->>>**Program \(*)**: "Cold chain appliance lifecycle management  
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
 >>>**Name \(*)**: "CCE alarm event / count - Refrigerator 1 - PI"  
 >>>**Short Name \(*)**: "CCE alarm event / count - Ref 1 - PI"  
 >>>**Aggregation type \(*)**: "Count"  
@@ -303,7 +303,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >
 >**2. CCE appliance status - Functional count - Refrigerator 1 - PI**  
 >>**1 Program indicator details**
->>>**Program \(*)**: "Cold chain appliance lifecycle management  
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
 >>>**Name \(*)**: "CCE appliance status - Functional count - Refrigerator 1 - PI"  
 >>>**Short Name \(*)**: "CCE status - Functional count - Ref 1 - PI"  
 >>>**Aggregation type \(*)**: "Count"  
@@ -324,17 +324,11 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>>**Expression**: "V{program_stage_id}=='YXDjOR3Djyp' && A{dryPiUSHf8c}=='Refrigerator 1' && #{YXDjOR3Djyp.F1Fw6ohltv6}=='1'"  
 >>>*Program stage id=='YXDjOR3Djyp' ["Cold chain appliance inspection"] && Refrigerator number=='Refrigerator 1' && Cold chain appliance inspection\.Appliance functional 0/1=='1'*
 >
-
-# *CONTINUE EDITING HERE 13-08-2023*
-
-
-
-
->**CCE [template] - Refrigerator 1 - PI**  
+>**3. CCE appliance status - Non-Functional count - Refrigerator 1 - PI**  
 >>**1 Program indicator details**
->>>**Program \(*)**: "Cold chain appliance lifecycle management  
->>>**Name \(*)**: "CCE alarm event / count - Refrigerator 1 - PI"  
->>>**Short Name \(*)**: "CCE alarm event / count - Ref 1 - PI"  
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE appliance status - Non-functional count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE status - Non-functional count - Ref 1 - PI"  
 >>>**Aggregation type \(*)**: "Count"  
 >>>**Analytics type**: "Event"  
 >>>**Organisation unit field**: "Event organisation unit (default)"  
@@ -350,8 +344,454 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>>**Expression**: "V{event_count}"  
 >>
 >>**3 Edit filter**
->>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'enhyS0nPpI7'"  
->>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'enhyS0nPpI7' ["Cold chain appliance alarm"]*
+>>>**Expression**: "V{program_stage_id}=='YXDjOR3Djyp' ["Cold chain appliance inspection"] && A{dryPiUSHf8c}=='Refrigerator 1' && #{YXDjOR3Djyp.F1Fw6ohltv6}=='0'"  
+>>>*Program stage id=='YXDjOR3Djyp' && Refrigerator number=='Refrigerator 1' && Cold chain appliance inspection\.Appliance functional 0/1=='0'*
+>
+>**4. CCE compartment temperature / -2-0° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / -2-0° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / -2-0° C - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && #{pIxmuheCjo0.rWEbPyt2Fyc}>-2 && #{pIxmuheCjo0.rWEbPyt2Fyc}<=0 && V{program_stage_id}== 'pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Temperature recording\.Temperature recording>-2 && Temperature recording\.Temperature recording<=0 && Program stage id== 'pIxmuheCjo0'*
+>
+>**5. CCE compartment temperature / 0-2° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / 0-2° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / 0-2° C - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && #{pIxmuheCjo0.rWEbPyt2Fyc}>0 && #{pIxmuheCjo0.rWEbPyt2Fyc}<=2 && V{program_stage_id}== 'pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Temperature recording\.Temperature recording>0 && Temperature recording\.Temperature recording<=2 && Program stage id== 'pIxmuheCjo0'*
+>
+>**6. CCE compartment temperature / 10-12° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / 10-12° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / 10-12° C - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && #{pIxmuheCjo0.rWEbPyt2Fyc}>10 && #{pIxmuheCjo0.rWEbPyt2Fyc}<12 && V{program_stage_id}== 'pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Temperature recording\.Temperature recording>10 && Temperature recording\.Temperature recording<=12 && Program stage id== 'pIxmuheCjo0'*
+>
+>**7. CCE compartment temperature / 2-4° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / 2-4° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / 2-4° C - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && #{pIxmuheCjo0.rWEbPyt2Fyc}>2 && #{pIxmuheCjo0.rWEbPyt2Fyc}<=4 && V{program_stage_id}== 'pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Temperature recording\.Temperature recording>2 && Temperature recording\.Temperature recording<=4 && Program stage id== 'pIxmuheCjo0'*
+>
+>**8. CCE compartment temperature / 2-8° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / 2-8° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / 2-8° C - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && #{pIxmuheCjo0.rWEbPyt2Fyc}>2 && #{pIxmuheCjo0.rWEbPyt2Fyc}<=8 && V{program_stage_id}== 'pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Temperature recording\.Temperature recording>2 && Temperature recording\.Temperature recording<=8 && Program stage id== 'pIxmuheCjo0'*
+>
+>**9. CCE compartment temperature / 4-6° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / 4-6° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / 4-6° C - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && #{pIxmuheCjo0.rWEbPyt2Fyc}>4 && #{pIxmuheCjo0.rWEbPyt2Fyc}<=6 && V{program_stage_id}== 'pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Temperature recording\.Temperature recording>4 && Temperature recording\.Temperature recording<=6 && Program stage id== 'pIxmuheCjo0'*
+>
+>**10. CCE compartment temperature / 6-8° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / 6-8° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / 6-8° C - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && #{pIxmuheCjo0.rWEbPyt2Fyc}>6 && #{pIxmuheCjo0.rWEbPyt2Fyc}<=8 && V{program_stage_id}== 'pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Temperature recording\.Temperature recording>6 && Temperature recording\.Temperature recording<=8 && Program stage id== 'pIxmuheCjo0'*
+>
+>**11. CCE compartment temperature / 8-10° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / 8-10° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / 8-10° C - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && #{pIxmuheCjo0.rWEbPyt2Fyc}>8 && #{pIxmuheCjo0.rWEbPyt2Fyc}<=10 && V{program_stage_id}== 'pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Temperature recording\.Temperature recording>8 && Temperature recording\.Temperature recording<=10 && Program stage id== 'pIxmuheCjo0'*
+>
+>**12. CCE compartment temperature / above 8° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / above 8° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / above 8° C - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'pIxmuheCjo0' && #{pIxmuheCjo0.rWEbPyt2Fyc}>8"  
+>>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'pIxmuheCjo0' && Temperature recording\.Temperature recording>8*
+>
+>**13. CCE compartment temperature / average - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / average - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment temperature / avg - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Average"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{pIxmuheCjo0.rWEbPyt2Fyc}"  
+>>*Temperature recording\.Temperature recording*
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1'"  
+>>>*Refrigerator number == 'Refrigerator 1'*
+>
+>**14. CCE compartment temperature / below 0° C - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / below 0° C - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment / below 0° C - Ref 1 - PI "  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && #{pIxmuheCjo0.rWEbPyt2Fyc}<=0 && V{program_stage_id}=='pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Temperature recording\.Temperature recording<=0 && Program stage id=='pIxmuheCjo0'*
+>
+>**15. CCE compartment temperature / maximum - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / maximum - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment temperature / max - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Average"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{pIxmuheCjo0.rWEbPyt2Fyc}"  
+>>*Temperature recording\.Temperature recording*
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1'"  
+>>>*Refrigerator number == 'Refrigerator 1'*
+>
+>**16. CCE compartment temperature / minimum - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature / minimum - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment temperature / min - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Min"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{pIxmuheCjo0.rWEbPyt2Fyc}"  
+>>*Temperature recording\.Temperature recording*
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1'"  
+>>>*Refrigerator number == 'Refrigerator 1'*
+>
+>**17. CCE compartment temperature recording / count - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE compartment temperature recording / count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE compartment temp. / count - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>*Event count (only for event status ACTIVE and/or COMPLETED, it can interfere with event status filter)*
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'pIxmuheCjo0'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'pIxmuheCjo0'*
+>
+>**18. CCE corrective maintenance / count - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE corrective maintenance / count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE corrective maintenance / count - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>*Event count (only for event status ACTIVE and/or COMPLETED, it can interfere with event status filter)*
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'KLP2W5dFdmn'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'KLP2W5dFdmn'*
+>
+>**19. CCE inspection / count - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE inspection / count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE inspection / count - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>*Event count (only for event status ACTIVE and/or COMPLETED, it can interfere with event status filter)*
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'YXDjOR3Djyp'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'YXDjOR3Djyp'*
+>
+>**20. CCE monthly preventive maintenance / count - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE monthly preventive maintenance / count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE monthly preventive / count - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>*Event count (only for event status ACTIVE and/or COMPLETED, it can interfere with event status filter)*
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'mbEAkVCuDDN'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'mbEAkVCuDDN'*
+>
+>**21. CCE repair requests / count - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE repair requests / count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE repair requests / count - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>*Event count (only for event status ACTIVE and/or COMPLETED, it can interfere with event status filter)*
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'rAIjSDYkVLS'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'rAIjSDYkVLS'*
+>
+>**22. CCE weekly preventive maintenance / count - Refrigerator 1 - PI**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Cold chain appliance lifecycle management"  
+>>>**Name \(*)**: "CCE weekly preventive maintenance / count - Refrigerator 1 - PI"  
+>>>**Short Name \(*)**: "CCE weekly preventive / count - Ref 1 - PI"  
+>>>**Aggregation type \(*)**: "Count"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)"  
+>>>**Analytics period boundaries**  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "After start of reporting period"  
+>>>> **Boundary target**: "Event date"  
+>>>> **Analytics period boundary target**: "Before end of reporting period"  
+>>>
+>>>**Display in form**: tag  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "V{event_count}"  
+>>*Event count (only for event status ACTIVE and/or COMPLETED, it can interfere with event status filter)*
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{dryPiUSHf8c} == 'Refrigerator 1' && V{program_stage_id} == 'dbNugAFrdEc'"  
+>>>*Refrigerator number == 'Refrigerator 1' && Program stage id == 'dbNugAFrdEc'*
 
 ### 5 ORGANISATION UNIT
 #### 5.1 Organisation unit
