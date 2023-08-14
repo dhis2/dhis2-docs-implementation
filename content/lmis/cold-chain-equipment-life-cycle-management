@@ -802,7 +802,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 
 
 ### 6 PROGRAM
-### 6.1 Program
+#### 6.1 Program
 >**1 Program details**
 >>**Name (*)**: "Cold chain appliance lifecycle management"  
 >>**Short name (*)**: " Cold chain appliance lifecycle management"  
@@ -941,7 +941,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >**6 Notifications**
 >(not applicable)
 
-### 6.2 Tracked entity attribute
+#### 6.2 Tracked entity attribute
 >**Name (*)**:
 >>"Appliance image" / "Image"  
 >>"Company" / "Text"  
@@ -969,7 +969,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >**Aggregation type**: "None"  
 >**Inherit**: check (appears as a blue tag with a white tick)
 
-### 6.3 Relationship type
+#### 6.3 Relationship type
 >**Name (*)**: "World Health Organization PQS catalogue"  
 >**Relationship name seen from initiating entity (*)**: "World Health Organization PQS catalogue"  
 >**From constraint (*)**: "Tracked entity instance"  
@@ -979,7 +979,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >**Tracked entity type (*)**: "Cold chain appliance"  
 >**Program**: "Cold chain appliance lifecycle management"  
 
-### 6.4 Tracked entity type
+#### 6.4 Tracked entity type
 >**Color**: leave empty  
 >**Icon**: leave empty  
 >**Description**: leave empty  
@@ -1011,7 +1011,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >**Searchable**: tag except for "Appliance image", "Manufactured in" and 
 "Production date"
 
-### 6.5 Program rule
+#### 6.5 Program rule
 >**1 Enter program rule details**  
 >>**Program (*)**: "Cold chain appliance lifecycle management"  
 >>**Name (*)**: "GS1 GIAI specifications"  
@@ -1037,7 +1037,7 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>>>**Tracked entity attribute to assign to**: "Serial number"  
 >>>>**Expression to evaluate and assign**: "d2:extractDataMatrixValue( 'serial number', A{GS1 GIAI})"
 
-### 6.6 Program rule variable
+#### 6.6 Program rule variable
 >**Name \(*)**: "GS1 GIAI"  
 >**Source type (*)**: "Tracked entity attribute"  
 >**Tracked entity attribute**: "Cold chain appliance lifecycle management GS1 GIAI"
@@ -1111,14 +1111,52 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>>**Color code**: "#00FF37" (greeen)  
 
 #### 7.2 Option set
->**Name**
->>"Alarm cause" / "Long text"  
+>**1 Alarm type**  
+>>**PRIMARY DETAILS**  
+>>>**Name**: "Alarm type"  
+>>>**Value type \(*)**: "Text" 
+>> 
+>>**OPTIONS**  
+>>>**1 Audible alarm**
+>>>>**Name \(*)**: "Audible alarm"  
+>>>>**Code \(*)**: "Audible alarm"  
+>>>
+>>>**2 Visual alarm**
+>>>>**Name \(*)**: "Visual alarm"  
+>>>>**Code \(*)**: "Visual alarm"  
+>>>
+>>>**3 Mobile app notification**
+>>>>**Name \(*)**: "Mobile app notification"  
+>>>>**Code \(*)**: "Mobile app notification"  
+>
+>**2 Appliance functional / non-functional**  
+>>**PRIMARY DETAILS**  
+>>>**Name**: "Appliance functional / non-functional"  
+>>>**Value type \(*)**: "Text" 
+>> 
+>>**OPTIONS**  
+>>>**1 Functional**
+>>>>**Name \(*)**: "Functional"  
+>>>>**Code \(*)**: "Functional"  
+>>>
+>>>**2 Non-functional**
+>>>>**Name \(*)**: "Non-functional"  
+>>>>**Code \(*)**: "Non-functional"  
+
 #### 7.3 Program rule
 >**Name**
 >>"Alarm cause" / "Long text"  
+
+
+
+
+
 #### 7.4 Program rule variable
 >**Name**
 >>"Alarm cause" / "Long text"  
+
+
+
 
 ## DHIS2 ANALYTICS
 Xx
