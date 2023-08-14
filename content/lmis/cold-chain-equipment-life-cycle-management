@@ -1143,20 +1143,270 @@ This metadata is needed (only) for configuring an "aggregate" default Data entry
 >>>>**Name \(*)**: "Non-functional"  
 >>>>**Code \(*)**: "Non-functional"  
 
-#### 7.3 Program rule
->**Name**
->>"Alarm cause" / "Long text"  
+#### 7.3 Predictor
+*Note that the Predictors are only given for "Refrigerator 1" but are entirely analogous for "Refrigerator 2" etc. except for selecting the corresponding Program Indicator with "Refrigerator 2" in the "Generator"*.  
+*Note that the Predictors are only given for the "Daily" "Period type" denoted by "DLY" (and for "Refrigerator 1") but are entirely analogous for "Monthly" "Period type" denoted by "MTH" except for selecting the corresponding "Output data element" of "Refrigerator 1 - MTH" and selecting "Monthly" as "Period type"*  
+>**1 T2A - Refrigerator 1 - CCE status functional / count  - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - CCE status functional / count  - DLY"  
+>>**Short name \(*)**: "T2A - Ref 1 - CCE status functional / count  - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "CCE Status functional / count"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Ref 1 - CCE status functional / count  - DLY"  
+>>>**Expression**: "I{otg8rNpyfYz}"  
+*CCE appliance status - Functional count - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**2 T2A - Refrigerator 1 - CCE status non-functional / count  - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - CCE status non-functional / count  - DLY"  
+>>**Short name \(*)**: "T2A - Ref 1 - CCE status non-funct / count  - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "CCE Status non-functional / count"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Ref 1 - CCE status non-funct / count  - DLY"  
+>>>**Expression**: "I{abLaHl56JjE}"  
+*CCE appliance status - Non-functional count - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**3 T2A - Refrigerator 1 - Cold chain appliance alarm event / count - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Cold chain appliance alarm event / count - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Alarm count - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature alarm / count"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Alarm count - DLY"  
+>>>**Expression**: "I{PBUg2Gas2jj}"  
+*CCE alarm event / count - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**4 T2A - Refrigerator 1 - Cold chain appliance compartment temperature 0-2° C / count  - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Cold chain appliance compartment temperature 0-2° C / count  - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Temp 0-2° C count - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature count - 0-2° C"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Temp 0-2° C count - DLY"  
+>>>**Expression**: "I{NZUDjkS0za9}"  
+*CCE compartment temperature / 0-2° C - Refrigerator 1 - PI*  
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**5 T2A - Refrigerator 1 - Cold chain appliance compartment temperature 2-8° C / count  - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Cold chain appliance compartment temperature 2-8° C / count  - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Temp 2-8° C count - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature count - 2-8° C"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Temp 2-8° C count - DLY"  
+>>>**Expression**: "I{tv3ZdB5fpAO}"  
+*CCE compartment temperature / 2-8° C - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**6 T2A - Refrigerator 1 - Cold chain appliance compartment temperature above 8° C / count  - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Cold chain appliance compartment temperature above 8° C / count  - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Temp above 8° C count - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature count - above 8° C"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Temp above 8° C count - DLY"  
+>>>**Expression**: "CCE compartment temperature / above 8° C - Refrigerator 1 - PI"  
+**
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**7 T2A - Refrigerator 1 - Cold chain appliance compartment temperature below 0° C / count  - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Cold chain appliance compartment temperature below 0° C / count  - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Temp below 0° C count - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** ""  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Temp below 0° C count - DLY"  
+>>>**Expression**: "I{hPXNqqtp3PH}"  
+*CCE compartment temperature / below 0° C - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**8 T2A - Refrigerator 1 - Cold chain appliance corrective maintenance / count - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Cold chain appliance corrective maintenance / count - DLY"  
+>>**Short name \(*)**: "T2A - Ref 1 - Corrective maintenance - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Repair request / count"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Ref 1 - Corrective maintenance - DLY"  
+>>>**Expression**: "I{Ff3Slc3H12n}"  
+*CCE corrective maintenance / count - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**9 T2A - Refrigerator 1 - Cold chain appliance temperature recording / count - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Cold chain appliance temperature recording / count - DLY"  
+>>**Short name \(*)**: "T2A - Ref 1 - Temperture count - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature / count"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Ref 1 - Temperture count - DLY"  
+>>>**Expression**: "I{aeNUUrSzVgn}"  
+*CCE compartment temperature recording / count - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**10 T2A - Refrigerator 1 - Cold chain inspection / count - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Cold chain inspection / count - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Inspection count - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "CCE inspection / count"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Inspection count - DLY"  
+>>>**Expression**: "I{jZdvDePrnGf}"  
+*CCE inspection / count - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**11 T2A - Refrigerator 1 - Compartment temperature average - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Compartment temperature average - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Temp avg - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature / average"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Temp avg - DLY"  
+>>>**Expression**: "I{sdCM8qkTgLp}"  
+*CCE compartment temperature / average - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**12 T2A - Refrigerator 1 - Compartment temperature maximum - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Compartment temperature maximum - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Temp max - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature / maximum"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Temp max - DLY"  
+>>>**Expression**: "I{Y9nlWojSPM4}"  
+*CCE compartment temperature / maximum - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**13 T2A - Refrigerator 1 - Compartment temperature minimum - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Compartment temperature minimum - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Temp min - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature / minimum"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Temp min - DLY"  
+>>>**Expression**: "I{SPjXOLRNqBe}"  
+*CCE compartment temperature / minimum - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**14 T2A - Refrigerator 1 - Repair request / count - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 1 - Repair request / count - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 1 - Repair request - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Repair request / count"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 1 - Repair request - DLY"  
+>>>**Expression**: "I{jOpIYexqBu8}"  
+*CCE repair requests / count - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**15 T2A - Refrigerator 2 - Cold chain appliance alarm event / count - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 2 - Cold chain appliance alarm event / count - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 2 - Alarm count - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature alarm / count"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 2 - Alarm count - DLY"  
+>>>**Expression**: "I{PBUg2Gas2jj}"  
+*CCE alarm event / count - Refrigerator 1 - PI*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**16 T2A - Refrigerator 2 - Cold chain appliance compartment temperature 0-2° C / count  - DLY**
+>>**Name \(*)**: "T2A - Refrigerator 2 - Cold chain appliance compartment temperature 0-2° C / count  - DLY"  
+>>**Short name \(*)**: "T2A - Refrigerator 2 - 0-2° C count - DLY"  
+>>**Output data element \(*)**: "Refrigerator 1 - DLY"  
+>>**Output category option combo** "Temperature count - 0-2° C"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+>>**Generator \(*)**
+>>>**Description**: "T2A - Refrigerator 2 - 0-2° C count - DLY"  
+>>>**Expression**: "I{NZUDjkS0za9}"  
+*CCE compartment temperature / 0-2° C - Refrigerator 1 - PI *
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
 
-
-
-
-
-#### 7.4 Program rule variable
->**Name**
->>"Alarm cause" / "Long text"  
-
-
-
+#### 7.4 Predictor group
+>**Name \(*)**: "DHIS2-CCE - T2A - Predictors"  
+>**Predictors**
+>>"T2A - Refrigerator 1 - [any description]"  
+>>"T2A - Refrigerator 2 - [any description]"  
 
 ## DHIS2 ANALYTICS
 Xx
