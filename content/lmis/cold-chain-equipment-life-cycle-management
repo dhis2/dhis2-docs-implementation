@@ -1454,111 +1454,269 @@ Xx
 >>**TO BE DEVELOPED**
 
 ### 2 Working lists
->WL 1 **Catalogue WHO PQS**  
->>Columns to show in table
->>>"Appliance image" (not that currently only a hyperlink for opening an image is available)  
->>>"PQS category"  
->>>"PQS code"  
->>>"Type of appliance"  
->>>"Company"  
->>>"Manufactured in"  
->>>"Manufacturer's reference"  
->>>"Energy source"  
->>>"Vaccine storage capacity (litres)"  
->>>"Vaccine gross volume (litres)"  
->>>"Freezer gross volume (litres)"  
+WL 1 **Catalogue WHO PQS**  
+>Columns to show in table
+>>"Appliance image" (not that currently only a hyperlink for opening an image is available)  
+>>"PQS category"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufactured in"  
+>>"Manufacturer's reference"  
+>>"Energy source"  
+>>"Vaccine storage capacity (litres)"  
+>>"Vaccine gross volume (litres)"  
+>>"Freezer gross volume (litres)"  
+>
+>More filters
+>>"Place of installation": select "Catalogue WHO PQS"  
+>>"PQS category"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufactured in"  
+>>"Manufacturer's reference"  
+>>"Energy source"  
+>>"Vaccine storage capacity (litres)"  
+>>"Vaccine gross volume (litres)"  
+>>"Freezer gross volume (litres)"  
+
+WL 2 **National Cold Chain Appliance Registry - Detailed**  
+>Columns to show in table
+>>"Appliance image" (not that currently only a hyperlink for opening an image is available)  
+>>"Refrigerator number"  
+>>"Place of installation"  
+>>"PQS category"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufactured in"  
+>>"Manufacturer's reference"  
+>>"Energy source"  
+>>"Vaccine storage capacity (litres)"  
+>>"Vaccine gross volume (litres)"  
+>>"Freezer gross volume (litres)"  
+>>"Production date"  
+>>"Product number"  
+>>"GTIN"  
+>>"Serial number"  
+>>"GS1 GIAI"  
+>>"Unique identifier"  
+>>"Donor name"  
+>>"Date of donation"  
 >>
->>More filters
->>>"Place of installation": select "Catalogue WHO PQS"  
->>>"PQS category"  
->>>"PQS code"  
->>>"Type of appliance"  
->>>"Company"  
->>>"Manufactured in"  
->>>"Manufacturer's reference"  
->>>"Energy source"  
->>>"Vaccine storage capacity (litres)"  
->>>"Vaccine gross volume (litres)"  
->>>"Freezer gross volume (litres)"  
->
->WL 2 **National Cold Chain Appliance Registry - Detailed**  
->>Columns to show in table
->>>"Appliance image" (not that currently only a hyperlink for opening an image is available)  
->>>"Refrigerator number"  
->>>"Place of installation"  
->>>"PQS category"  
->>>"PQS code"  
->>>"Type of appliance"  
->>>"Company"  
->>>"Manufactured in"  
->>>"Manufacturer's reference"  
->>>"Energy source"  
->>>"Vaccine storage capacity (litres)"  
->>>"Vaccine gross volume (litres)"  
->>>"Freezer gross volume (litres)"  
->>>"Production date"  
->>>"Product number"  
->>>"GTIN"  
->>>"Serial number"  
->>>"GS1 GIAI"  
->>>"Unique identifier"  
->>>"Donor name"  
->>>"Date of donation"  
->>>
->>More filters
->>>"Place of installation": exclude "Catalogue WHO PQS"  
->>>"PQS code"  
->>>"Energy source"  
->>>"Serial number"  
->
->WL 3 **National Cold Chain Appliance Registry - Compact**  
->>Columns to show in table
->>>"Appliance image" (not that currently only a hyperlink for opening an image is available)  
->>>"Refrigerator number"  
->>>"Place of installation"  
->>>"PQS category"  
->>>"PQS code"  
->>>"Type of appliance"  
->>>"Company"  
->>>"Manufactured in"  
->>>"Manufacturer's reference"  
->>>"Energy source"  
->>>"Vaccine storage capacity (litres)"  
->>>"Vaccine gross volume (litres)"  
->>>"Freezer gross volume (litres)"  
->>>"Production date"  
->>>"Product number"  
->>>"GTIN"  
->>>"Serial number"  
->>>"GS1 GIAI"  
->>>"Unique identifier"  
->>>"Donor name"  
->>>"Date of donation"  
->>>
->>More filters
->>>"Place of installation": exclude "Catalogue WHO PQS"  
->>>"PQS code"  
->>>"Type of appliance"  
->>>"Company"  
->>>"Manufacturer's reference"  
->>>"Serial number"  
->>>"Donor name"  
+>More filters
+>>"Place of installation": exclude "Catalogue WHO PQS"  
+>>"PQS code"  
+>>"Energy source"  
+>>"Serial number"  
+
+WL 3 **National Cold Chain Appliance Registry - Compact**  
+>Columns to show in table
+>>"Appliance image" (not that currently only a hyperlink for opening an image is available)  
+>>"Refrigerator number"  
+>>"Place of installation"  
+>>"PQS category"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufactured in"  
+>>"Manufacturer's reference"  
+>>"Energy source"  
+>>"Vaccine storage capacity (litres)"  
+>>"Vaccine gross volume (litres)"  
+>>"Freezer gross volume (litres)"  
+>>"Production date"  
+>>"Product number"  
+>>"GTIN"  
+>>"Serial number"  
+>>"GS1 GIAI"  
+>>"Unique identifier"  
+>>"Donor name"  
+>>"Date of donation"  
+>>
+>More filters
+>>"Place of installation": exclude "Catalogue WHO PQS"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>"Serial number"  
+>>"Donor name"  
 
 ### 3 Line Listing
->**Name**: "Cold chain equipment lifecycle management"  
+LL 1 - **Name**: "Cold chain equipment alarm report"  
 >**Columns**  
->>"Last updated on"  
->>"Type of equipment"  
->>"Brand name"  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>"Serial number"  
 >>"Alarm type"  
->>"Alarm cause" / Condition "is not empty / not null" (optional)  
+>>"Alarm cause": "Condition": "is not empty / not null"
 >>"Alarm corrective action"  
 >>"Alarm resolved"  
 >>"Alarm escalated and supervisor informed"  
+
+LL 2 - **Name**: "CCE Cold chain appliance corrective maintenance"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>"Assessment of technical fault"  
+>>"Interventions"  
+>>"Technical fault resolved"
+>>"Equipment restored to service"  
+
+LL 3 - **Name**: "CCE Cold chain appliance disposal report"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>"Serial number"  
+>>"Reason for disposal"  
+>>"Method of disposal"
+>>"Equipment removed from cold chain appliance inventory"  
 >
->**Filters**  
->>Organisation Unit: select Organisation units as required  
->>Event date: "Last 3 months"  
+
+LL 4 - **Name**: "CCE Cold chain appliance inspection report"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>"Serial number"  
+>>"Daily inspection completed"  
+>>"Appliance functional/non-functional": select "functional" and "non-functional"
+>>"Appliance functional 0/1"  
+>
+>**Options > Legend**  
+>>Use a legend for table cell colours": tag
+>>Legend style: "Legend changes background colour"
+>>Legend type: "Choose a single legend for the entire visualization"
+>>Legend: "Functional / non-functional"
+>>Show legend key: tag
+
+LL 5 - **Name**: "CCE Cold chain appliance installation report"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>"Serial number"  
+>>"Cold chain appliance report"  
+
+LL 6 - **Name**: "CCE Cold chain appliance life cycle report"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>""  
+>>""  
+>>""
+>>""  
+>
+
+LL 7 - **Name**: "CCE Cold chain appliance corrective maintenance"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>""  
+>>""  
+>>""
+>>""  
+>
+
+LL 8 - **Name**: "CCE Cold chain appliance corrective maintenance"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>""  
+>>""  
+>>""
+>>""  
+>
+
+LL 9 - **Name**: "CCE Cold chain appliance corrective maintenance"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>""  
+>>""  
+>>""
+>>""  
+>
+
+LL 10 - **Name**: "CCE Cold chain appliance corrective maintenance"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>""  
+>>""  
+>>""
+>>""  
+>
+
+LL 11 - **Name**: "CCE Cold chain appliance corrective maintenance"  
+>**Columns**  
+>>"Last updated on": select "Today" and "Last 30 days" 
+>>"Organisation unit" select the country or lower level as required
+>>"Place of installation"  
+>>"PQS code"  
+>>"Type of appliance"  
+>>"Company"  
+>>"Manufacturer's reference"  
+>>""  
+>>""  
+>>""
+>>""  
+>
+
+
+
+
+
 
 ### 4 Data visualizer
 >**Name**: XXX  
