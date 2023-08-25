@@ -1413,49 +1413,54 @@ Xx
 
 ### Analytics overview
 >**1. Android Capture app - offline analytics**  
->>Working list A  
->>Working list B  
->>Working list C  
+>>OA 1 - [Title]  
+>>OA 2 - [Title]  
+>>OA 3 - [Title]  
+>>**TO BE DEVELOPED**
 >>
 >**2. Working list**  
->>Working list A  
->>Working list B  
->>Working list C  
+>>WL 1 - [Title]  
+>>WL 2 - [Title]    
+>>WL 3 - [Title]    
 >>
 >**3. Line Listing**
->>Line listing A  
->>Line listing B  
->>Line listing C  
+>>LL 1 - [Title]  
+>>LL 2 - [Title]    
+>>LL 3 - [Title]    
 >>
 >**4. Data visualizer**  
->>Data visualizer A  
->>Data visualizer B  
->>Data visualizer C  
+>>DV 1 - [Title]  
+>>DV 2 - [Title]    
+>>DV 3 - [Title]    
 >>
 >**5. Event Report**  
->>Event Report A  
->>Event Report B  
->>Event Report C
+>>ER 1 - [Title]  
+>>ER 2 - [Title]    
+>>ER 3 - [Title]    
 >>
 >**6. Maps**  
->>Map A  
->>Map B  
->>Map C
+>>Map 1 - [Title]  
+>>Map 2 - [Title]  
+>>Map 3 - [Title]
 >>
 >**7. Dashboard**  
->>Dashboard A  
->>Dashboard B  
->>Dashboard C
+>>DB 1 - [Title]  
+>>DB 2 - [Title]  
+>>DB 3 - [Title]
 
 ### 1 Android Capture app - offline analytics
 >**Name**: XXX  
->>XXX
->
+>>XXX  
+>>**TO BE DEVELOPED**
 
 ### 2 Working lists
 >**Name**: XXX  
->>XXX
->
+>>WL 1 - National Cold Chain Appliance Registry
+>>>Columns to show in table
+>>>>"Appliance image" (not that currently only a hyperlink for opening an image is available)
+>>>>
+
+
 
 ### 3 Line Listing
 >**Name**: "Cold chain equipment lifecycle management"  
