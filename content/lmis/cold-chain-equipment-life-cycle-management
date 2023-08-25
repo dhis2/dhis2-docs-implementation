@@ -1454,13 +1454,95 @@ Xx
 >>**TO BE DEVELOPED**
 
 ### 2 Working lists
->**Name**: XXX  
->>WL 1 - National Cold Chain Appliance Registry
->>>Columns to show in table
->>>>"Appliance image" (not that currently only a hyperlink for opening an image is available)
->>>>
-
-
+>WL 1 **Catalogue WHO PQS**  
+>>Columns to show in table
+>>>"Appliance image" (not that currently only a hyperlink for opening an image is available)  
+>>>"PQS category"  
+>>>"PQS code"  
+>>>"Type of appliance"  
+>>>"Company"  
+>>>"Manufactured in"  
+>>>"Manufacturer's reference"  
+>>>"Energy source"  
+>>>"Vaccine storage capacity (litres)"  
+>>>"Vaccine gross volume (litres)"  
+>>>"Freezer gross volume (litres)"  
+>>
+>>More filters
+>>>"Place of installation": select "Catalogue WHO PQS"  
+>>>"PQS category"  
+>>>"PQS code"  
+>>>"Type of appliance"  
+>>>"Company"  
+>>>"Manufactured in"  
+>>>"Manufacturer's reference"  
+>>>"Energy source"  
+>>>"Vaccine storage capacity (litres)"  
+>>>"Vaccine gross volume (litres)"  
+>>>"Freezer gross volume (litres)"  
+>
+>WL 2 **National Cold Chain Appliance Registry - Detailed**  
+>>Columns to show in table
+>>>"Appliance image" (not that currently only a hyperlink for opening an image is available)  
+>>>"Refrigerator number"  
+>>>"Place of installation"  
+>>>"PQS category"  
+>>>"PQS code"  
+>>>"Type of appliance"  
+>>>"Company"  
+>>>"Manufactured in"  
+>>>"Manufacturer's reference"  
+>>>"Energy source"  
+>>>"Vaccine storage capacity (litres)"  
+>>>"Vaccine gross volume (litres)"  
+>>>"Freezer gross volume (litres)"  
+>>>"Production date"  
+>>>"Product number"  
+>>>"GTIN"  
+>>>"Serial number"  
+>>>"GS1 GIAI"  
+>>>"Unique identifier"  
+>>>"Donor name"  
+>>>"Date of donation"  
+>>>
+>>More filters
+>>>"Place of installation": exclude "Catalogue WHO PQS"  
+>>>"PQS code"  
+>>>"Energy source"  
+>>>"Serial number"  
+>
+>WL 3 **National Cold Chain Appliance Registry - Compact**  
+>>Columns to show in table
+>>>"Appliance image" (not that currently only a hyperlink for opening an image is available)  
+>>>"Refrigerator number"  
+>>>"Place of installation"  
+>>>"PQS category"  
+>>>"PQS code"  
+>>>"Type of appliance"  
+>>>"Company"  
+>>>"Manufactured in"  
+>>>"Manufacturer's reference"  
+>>>"Energy source"  
+>>>"Vaccine storage capacity (litres)"  
+>>>"Vaccine gross volume (litres)"  
+>>>"Freezer gross volume (litres)"  
+>>>"Production date"  
+>>>"Product number"  
+>>>"GTIN"  
+>>>"Serial number"  
+>>>"GS1 GIAI"  
+>>>"Unique identifier"  
+>>>"Donor name"  
+>>>"Date of donation"  
+>>>
+>>More filters
+>>>"Place of installation": exclude "Catalogue WHO PQS"  
+>>>"PQS code"  
+>>>"Type of appliance"  
+>>>"Company"  
+>>>"Manufacturer's reference"  
+>>>"Serial number"  
+>>>"Donor name"  
 
 ### 3 Line Listing
 >**Name**: "Cold chain equipment lifecycle management"  
