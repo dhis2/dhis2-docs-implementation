@@ -1,0 +1,36 @@
+**HEALTH CARE PRODUCT CATALOGUE / Tracker program**
+
+This simple Tracker program allows building and digitally sharing a simple product catalogue with a picture of the product as well as essential product information which health professionals can consult on a mobile device on- or offline.
+
+#### Use case
+
+A health worker who requires information on what health care products are available at the respective health or requires details on the product searches on- or offline in the product catalogue, views the image, consults the specifications and (where available) opens the link to more detailed information.
+
+#### DHIS2 configuration
+
+The product catalogue is configured as a very simple "Tracker program" which uses only simple, native DHIS2 functionality but without any actual program "stages".
+
+| **CATEGORY** | **System default settings** |
+| --- | --- |
+| > Tracked entity attribute | Name:<br>\- "Electronic product<br>information" / "URL"<br>\- "Item barcode image" / "Text"<br>\- "Item code" / "Text"<br>\- "Item description" / "Text"<br>\- "Item group code" / "Text"<br>\- "Item group description" /<br>"Text"<br>\- "Product image" / "Image"<br>\- "Regulations" / "Text"<br>\- "Required storage temperature /<br>° Celsius" / "Text"<br>\- "Secondary packaging quantity"<br>/ "Text"<br>\- "WHO EML classification number"<br>/ "Text"<br>\- "WHO EML classification<br>description" / "Text"<br>Short Name (\*): (same as name)<br>Value type (8\*): (see above)<br>Aggregation type (\*): "None" |
+| > Tracked entity type | Name: "Health care product<br>specifications"<br>Minimum number of attributes<br>required to search: "1"<br>Feature type: "None"<br>Tracked entity type attributes,<br>assign in the following order:<br>\- "Product image" [ensures image<br>is visible]<br>\- "Item code"<br>\- "Item group code"<br>\- "Item group description"<br>\- "Item description"<br>\- "Secondary packaging quantity"<br>\- "WHO EML classification number"<br>\- "WHO EML classification<br>description"<br>\- "Required storage temperature /<br>° Celsius"<br>\- "Regulations"<br>\- "Electronic product<br>information" / URL<br>\- "Item barcode image"<br>Display in list: tag all<br>Mandatory: tag all<br>Searchable: tag all |
+| > Program |  |
+| > 1 Program details | Name (\*): "Health care product<br>catalogue"<br>Short name (\*): "Health care<br>product catalogue"<br>Color:<br>"#F50057"![](media/image41.png)<br>Icon:<br>Tracked entity type (\*): "Health<br>care product specifications"<br>Category combination (\*): "None"<br>Display front page list: tag<br>Access level: "Open"<br>Completed events expiry days: "0"<br>Expiry days: "0"<br>Minimum number of attributes<br>required to search: "1"<br>Maximum number of tracked entity<br>instance to return in search: "0" |
+| > 2 Enrollment details | Show incident date: tag |
+| > 3 Attributes | Assign attributes in the following |
+| > | order: |
+| > 1 Assign attributes | <br>\- "Item description" / <br>"Default"<br>\- "Item code" / "Bar code"<br>\- "WHO EML classification <br>description" / "Default"<br>\- "Item group code" / "Default"<br>\- "Item group description" / <br>"Default"<br>\- "WHO EML classification number" <br>/ "Default"<br>\- "Secondary packaging quantity" <br>/ "Default"<br>\- "Required storage temperature / <br>° Celsius" / "Default"<br>\- "Regulations" / "Default"<br>\- "Electronic product <br>information" / "Default"<br>\- "Item barcode image" / <br>"Default"<br>\- "Product image" / "Default"<br>Display in list: tag all<br>Mandatory: leave all untagged<br>Searchable: tag all<br>Mobile render type: (see above) |
+| > 3 Attributes | "SECTION" assign Tracked entity |
+| > | attributes in the following order: |
+| > 2 Create registration form | <br>\- "Item code"<br>\- "Item description"<br>\- "Item group code"<br>\- "Item group description"<br>\- "Secondary packaging quantity"<br>\- "WHO EML classification number"<br>\- "WHO EML classification <br>description"<br>\- "Required storage temperature / <br>° Celsius"<br>\- "Regulations"<br>\- "Electronic product <br>information"<br>\- "Item barcode image"<br>\- "Item barcode image"<br>\- "Product image |
+| > 4 Program stages | (none) |
+| > 5 Access | Organisation units: assign as<br>required |
+| > 6 Notifications | (none) |
+
+#### DHIS2 user interfaces
+
+**Web portal / Capture app**![](media/image73.png)
+
+**Capture Android app**
+
+![](media/image86.png)

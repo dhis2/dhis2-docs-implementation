@@ -1,0 +1,48 @@
+### BIOMEDICAL ENGINEERING LIFE CYCLE MANAGEMENT / Tracker program
+
+This simple Tracker program provides an asset register similar to the product catalogue which can be customized to any type of biomedical equipment, including but not limited to cold chain equipment. In addition, this mobile application allows maintaining a detailed record of installation, alarm record, equipment status, servicing, repair and disposal and thereby covering the entire life cycle of biomedical equipment with records available to health care facility staff off-line and to any other other authorized staff anywhere in the country through the web portal.
+
+#### Use case
+
+The biomedical engineering or cold chain technician team establishes a detailed asset register for each health care facility or uploads data from a national database. Biomedical engineers or technicians document the installation, testing, commissioning and initial training when setting up new pieces of equipment. Health staff and/or technicians carry out period (daily/weekly/monthly) equipment checks and document alarm events, causes as well as resolution. Biomedical engineers and/or technicians maintain a detailed record for each servicing or repair which documents works, parts repaired or replaced and testing. Finally, when the equipment reaches the end of its useful life time, the decommissioning and disposal of equipment is documented before removing it from the asset register.
+
+#### DHIS2 configuration
+
+This application is configured as a "Tracker program" which uses only simple, native DHIS2 functionality. The number, description and contents of each of the stages can be very easily customized to national needs without the need for any programming knowledge.
+
+| **CATEGORY** | **System default settings** |
+| --- | --- |
+| > Data element | Name (for stages)<br>\- "Biomedical equipment<br>alarm" / "Long text"<br>\- "Biomedical equipment<br>disposal" / "Long text"<br>\- "Biomedical equipment<br>installation" / "Long text"<br>\- "Biomedical equipment<br>repair" / "Long text"<br>\- "Biomedical equipment<br>servicing" / "Long text"<br>\- "Biomedical equipment<br>status" / "Long text"<br>Name (for questions within<br>stages)<br>\- "Alarm cause" / "Long<br>text"<br>\- "Alarm corrective action" /<br>"Long text"<br>\- "Alarm escalated and<br>supervisor informed" / "Long<br>text"<br>\- "Alarm resolved" / "Long<br>text"<br>\- "Alarm type" / "Long<br>text"<br>\- "Audible or visible alarm"<br>/ "Long text"<br>\- "Equipment switches on" /<br>"Long text"<br>Domain type: "Tracker"<br>Value type: see above |
+| > Tracked entity type attributes | Name:<br>\- "Brand name" / "Text"<br>\- "Country of Origin" /<br>"Text"<br>\- "Department of<br>installation" / "Text"<br>\- "Equipment code" / "Text"<br>\- "Equipment image" /<br>"Text"<br>\- "Equipment model" /<br>"Text"<br>\- "Manufacturer" / "Text"<br>\- "Provided by" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Type of equipment" /<br>"Text"<br>\- "Warranty expiry date" /<br>"Text"<br>Aggregation type (\*): "None" |
+| > Tracked entity type | Name: "Biomedical equipment<br>life cycle management"<br>Enable tracked entity instance<br>audit log: tag<br>Minimum number of attributes<br>required to search: 1<br>Maximum number of tracked entity<br>instances to return in search:<br>100<br>Tracked entity type attributes<br>(assign in the following order):<br>\- "Equipment image" /<br>"Text"<br>\- "Type of equipment" /<br>"Text"<br>\- "Brand name" / "Text"<br>\- "Equipment model" /<br>"Text"<br>\- "Equipment code" / "Text"<br>\- "Manufacturer" / "Text"<br>\- "Country of Origin" /<br>"Text"<br>\- "Department of<br>installation" / "Text"<br>\- "Provided by" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Warranty expiry date" /<br>"Text"<br>\- "Unique identification<br>number" / "Text"<br>Display in list: tag all<br>Mandatory: leave untagged<br>Searchable: tag all except for<br>"Equipment image" |
+| > Program |  |
+| > 1 Program details | Name (\*): "Biomedical<br>equipment life cycle<br>management"<br>Short name (\*): "Biomedical<br>equipment life cycle<br>management"<br>Color:<br>"#6<br>200EA"![](media/image59.p<br>ng)<br>Icon:<br>Tracked entity type (\*):<br>"Biomedical equipment life<br>cycle management"<br>Category combination (\*):<br>"None"<br>Display front page list: tag<br>Access level: "Open"<br>Completed events expiry days:<br>"0"<br>Expiry days: "0"<br>Minimum number of attributes<br>required to search: "1"<br>Maximum number of tracked entity<br>instances to return in search:<br>"0" |
+| > 2 Enrollment details | Allow future enrollment dates:<br>tag<br>Show incident data: tag<br>Ignore overdue events: do not<br>tag |
+| > 3 Attributes | Program tracked entity |
+| > | attributes (assign in the |
+| > 1 Assign attributes | following order):<br>\- "Unique identification <br>number" / "Text"<br>\- "Type of equipment" / <br>"Text"<br>\- "Equipment image" / <br>"Text"<br>\- "Department of <br>installation" / "Text"<br>\- "Manufacturer" / "Text"<br>\- "Brand name" / "Text"<br>\- "Equipment model" / <br>"Text"<br>\- "Equipment code" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Country of Origin" / <br>"Text"<br>\- "Provided by" / "Text"<br>\- "Warranty expiry date" / <br>"Text"<br>Display in list: tag all<br>Mandatory: not tagged<br>Searchable: tag all except <br>"Equipment image"<br>Mobile render type: "Default" <br>except "Qr code" for "Unique <br>identification number" |
+| > 3 Attributes | Name: "Biomedical life cycle |
+| > | equipment monitoring" |
+| > 2 Create registration form | <br>"SECTION" assign Tracked <br>entity attributes in the <br>following order:<br>\- "Type of equipment" / <br>"Text"<br>\- "Department of <br>installation" / "Text"<br>\- "Unique identification <br>number" / "Text"<br>\- "Manufacturer" / "Text"<br>\- "Brand name" / "Text"<br>\- "Equipment model" / <br>"Text"<br>\- "Equipment code" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Country of Origin" / <br>"Text"<br>\- "Provided by" / "Text"<br>\- "Equipment image" / <br>"Text"<br>\- "Warranty expiry date" / <br>"Text" |
+| > 4 Program stages | Name: "Biomedical equipment<br>installation"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>installation"<br>Name: "Biomedical equipment<br>alarm" / "Repeatable"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Alarm type"<br>\- "Alarm cause"<br>\- "Alarm corrective action"<br>\- "Alarm resolved"<br>\- "Alarm escalated and<br>supervisor informed"<br>Name: "Biomedical equipment<br>status" / "Repeatable"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>status"<br>Name: "Biomedical equipment<br>servicing" / "Repeatable"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>servicing"<br>Name: "Biomedical equipment<br>repair" / "Repeatable"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>repair"<br>Name: "Biomedical equipment<br>disposal"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>disposal"<br>Display generate event box when<br>completed: tag<br>Auto-generate event: tag<br>Hide due date: tag |
+| > 5 Access | Organisation units: assign as<br>requested |
+| > 6 Notifications | (not applicable) |
+| > Line Listing | Name: "Biomedical equipment<br>alarm report"<br>Columns:<br>\- "Last updated on"<br>\- "Type of equipment"<br>\- "Brand name"<br>\- "Alarm type"<br>\- "Alarm cause" / Condition<br>"is not empty / not null"<br>(optional)<br>\- "Alarm corrective action"<br>\- "Alarm resolved"<br>\- "Alarm escalated and<br>supervisor informed"<br>Filter<br>\- Organisation Unit: select<br>Organisation units as required<br>\- Event date: "Last 3 months"<br>Name (configure the reports<br>accordingly):<br>\- "Biomedical equipment<br>disposal report"<br>\- "Biomeical equipment repair<br>report"<br>\- "Biomedical equipment<br>service report"<br>\- "Biomedical equipment status<br>report" |
+
+#### DHIS2 user interfaces
+
+**Web portal / Tracker program**
+
+![](media/image51.png)
+
+**Web portal / Line listing**![](media/image66.png)
+
+![](media/image4.png)
+
+![](media/image27.png)
+
+![](media/image28.png)
+
+**Capture Android app**
+
+![](media/image26.png)
