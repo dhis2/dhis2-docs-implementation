@@ -130,7 +130,7 @@ Validation rules[LINK] are a critical component of ensuring that  individual dat
 
 In DHIS2, validation rules consist of two values (a left side and a right side) which are compared using a mathematical operator (less than, greater than, etc) to produce a logical true or false result. Validation rules compare values which are within DHIS2, at the level of capture and periodicity as defined by the validation rule. Using our examples above, a validation rule can look like the following in DHIS2:
 
-![](resources\images/images/image3.png)
+![](resources/images/dq_image3.png)
 
 If this data is collected monthly at the facility level, then it can be compared at least every month at the facility level, and additionally can be run at higher levels and lower frequencies if needed (for example, at district level for a year). 
 
@@ -141,18 +141,18 @@ Note that validation rules are not triggered when working offline in the web-bas
 
 Let us create the validation rule example we have mentioned previously in DHIS2. As malaria testing can be performed using different methods, we will create this rule specifically for RDT tests.
 
-![](resources\images/images/image3.png)
+![](resources/images/dq_image3.png)
 
 
 1. Start by opening the Maintenance app and select the Validation tab.
 
-![](resources\images/images/image44.png)
+![](resources/images/dq_image44.png)
 
-![](resources\images/images/image32.png)
+![](resources/images/dq_image32.png)
 
 2. Create a new rule by selecting the “+” icon underneath validation rule
 
-![](resources\images/images/image81.png)
+![](resources/images/dq_image81.png)
 
 3. Review the fields that will be used to describe the rule. You will need to enter a name, select the importance and period type and define your left side, right side and operator at minimum.
 
@@ -162,7 +162,7 @@ Let us create the validation rule example we have mentioned previously in DHIS2.
 
 6. (Optional) Assign the rule a short name, code, description.
 
-![](resources\images/images/image63.png)
+![](resources/images/dq_image63.png)
 
 7. Select an Importance: High, Medium or Low. This is a description of the validation rule that will be displayed to the user and does not affect priority or whether it is run or not.
 
@@ -183,7 +183,7 @@ Let us create the validation rule example we have mentioned previously in DHIS2.
    5. Build an expression based on the available data elements, program objects, organisation units, counts and constants. To do this, In the right pane, double-click the data objects you want to include in the expression. Combine them with the mathematical operators located below the left pane.
 
 
-![](resources\images/images/image69.png)
+![](resources/images/dq_image69.png)
 
 ```
 Note:
@@ -195,13 +195,13 @@ It is recommended to use the disaggregated data elements instead of the total da
 
   6. As you add your data items from the right pane to the left pane, you will be seeing #{data element uid.category option combo uid}. This may not make a whole lot of sense, but if you scroll down you will see the name in plain text. 
 
-![](resources\images/images/image106.png)
+![](resources/images/dq_image106.png)
 
 
 
 7. Once you have selected all of your required inputs, select Save. The left side description should appear after saving the left side.
 
-![](resources\images/images/image102.png)
+![](resources/images/dq_image102.png)
 
 
 10. Select an Operator: Compulsory pair, Equal to, Exclusive pair, Greater than, Greater than or equal to or Not equal to.
@@ -211,13 +211,13 @@ It is recommended to use the disaggregated data elements instead of the total da
     3. In this example we will select less than or equal to
 
 
-![](resources\images/images/image60.png)
+![](resources/images/dq_image60.png)
 
 11. Create the right side of the expression, following the same process as for the left side (point 9 above)
 12. With your left side, operator, and right side selected you should see the descriptions and operators for each of these items within the validation maintenance screen
 
 
-![](resources\images/images/image90.png)
+![](resources/images/dq_image90.png)
 
 13. (Optional) Choose which Organisation unit levels this rule should be evaluated for. Leaving this empty will cause the validation rule to be evaluated at all levels and is the most frequently used option. 
 
@@ -232,11 +232,11 @@ After we have created our validation rules, we should group them together. Group
 
 Go to Maintenance> Validation> Validation Group
 
-![](resources\images/images/image65.png)
+![](resources/images/dq_image65.png)
 
 Select the add button and fill in the details of the validation group (the name, code and description).
 
-![](resources\images/images/image48.png)
+![](resources/images/dq_image48.png)
 
 Add in all of the related validation rules that you have made to group by selecting them from the left pane and moving them to the right pane. When you have added all of your related rules to the group, select “Save.” How to best define groups depends on how data elements and data sets are structured in a particular implementation. However, examples can be:
 
@@ -250,33 +250,33 @@ As each system will have a different configuration, validation rules will need t
 
 Let us take a look at our example again
 
-![](resources\images/images/image3.png)
+![](resources/images/dq_image3.png)
 
 We can start by reviewing our validation rules in the data entry app. We have set the period for the validation rule we have defined as “monthly” as the data for malaria is collected monthly. In our example, the data comes from the following table
 
-![](resources\images/images/image46.png)
+![](resources/images/dq_image46.png)
 
 In order to check if there is any issue with our data based on the validation rules we have defined, we can scroll either to the top or bottom of the data set within the data entry app and select “Run validation” [Note: validation rules will also run if you select “Complete” at the bottom of the data entry screen].
 
-![](resources\images/images/image15.png)
+![](resources/images/dq_image15.png)
 
 This will run any of the validation rules that are using data elements within the data set you have selected.
 
 We can see the results within a pop-up window showing us the validation rules that have been violated when checked within data entry. 
 
-![](resources\images/images/image75.png)
+![](resources/images/dq_image75.png)
 
 We can see there are multiple violations, including the rule that was created previously. At this time, it would be a good idea to review each of these rules to ensure that the data values in this dataset have been entered correctly before finalizing the data entry process. If possible, incorrect values should be changed in order to minimize errors at the source of collection. 
 
 Reviewing our example we can see an obvious error and would want to correct this to the correct value
 
-![](resources\images/images/image18.png)
+![](resources/images/dq_image18.png)
 
-![](resources\images/images/image7.png)
+![](resources/images/dq_image7.png)
 
 If we go through and correct all the errors that were identified as part of running validation within this dataset, period and organisation unit combination and run validation again, we should get a message indicating that validation has passed successfully.
 
-![](resources\images/images/image59.png)
+![](resources/images/dq_image59.png)
 
 Ideally, we should strive to have validation rules created prior to performing training on data entry for a particular program, as it would allow you to perform training on validation violations and correction during training. During training, you should then make sure all data sets successfully pass validation where possible prior to submission. 
 
@@ -284,12 +284,12 @@ Ideally, we should strive to have validation rules created prior to performing t
 
 Validation rules can also be run in the new data entry app (available from version 2.39). Do this by selecting either “Run validation” at any time or “Mark complete” if the data set is supposed to be completed. 
 
-![](resources\images/images/image29.png)
+![](resources/images/dq_image29.png)
 
 
 Results will show on the right side of the data entry app, indicating the number of High, Medium and Low priority violations as well as listing the violations highlighted in the appropriate colour depending on the priority they have been assigned. We will see the new app displays the violations slightly differently then the previous data entry app, showing the instruction, then the left side along with its value, the operator, and the right side along with its value. 
 
-![](resources\images/images/image68.png)
+![](resources/images/dq_image68.png)
 
 We would want to go through a similar process as described for the data entry app and review each of the values associated with these rules to determine if a correction can be made prior to proceeding with other operations in DHIS2.
 
@@ -297,7 +297,7 @@ We would want to go through a similar process as described for the data entry ap
 
 Validation rule notifications provide a way to create messages that can be sent in response to a validation rule being violated. These notifications consist of the validation rule(s) which trigger the notification, recipient(s), and the message that is tied to the violation. The notifications can be sent out as messages to intended recipients using 3 mechanisms within DHIS2: e-mail, SMS and through the DHIS2 internal messaging service. A review of configuring e-mail and SMS in DHIS2 is located here[LINK]. Here is an example of a validation rule notification sent out via e-mail.
 
-![](resources\images/images/image4.png)
+![](resources/images/dq_image4.png)
 
 Regarding the creation and use validation rule notifications, we need to be careful to ensure that the results within a message are not ignored. Usually, we would be conservative in the number of notifications we are creating so that users do not receive too many messages. Experience dictates that when this is the case, users tend to ignore these messages and areas that are actually problematic are not fixed. In general, create notifications for priority areas of correction and ensure that these notifications are being sent only to the users who need to see them. Other violations can be identified via routine data quality review procedures.
 
@@ -307,37 +307,37 @@ In order to create a validation rule notification, user groups are used to defin
 
 Go to Maintenance> Validation> Validation Notification
 
-![](resources\images/images/image89.png)
+![](resources/images/dq_image89.png)
 
 Select the add button to review the details of a new validation notification. There are a number of fields that we can break down. 
 
 1. Name: This is the name for the validation notification you are creating
 2. Code: You can also add in a code if required. The code can be used to uniquely identify the notification instead of the UID for example.
 
-![](resources\images/images/image98.png)
+![](resources/images/dq_image98.png)
 
 3. Validation rules: In this section you decide which validation rules you want to add to your notification. While you can add more than one validation rule to your notification, to make messages easier to interpret it is generally recommended that only one validation rule is within your notification. Keep in mind that there could be multiple violations within a given period if the users receiving the notification have access to several organisation units, and each violation would be identified in the message you are sending. 
 
-![](resources\images/images/image30.png)
+![](resources/images/dq_image30.png)
 
 4. User groups: This section defines who will receive the notification that you are creating. You must have user groups created in order to use validation notifications. You can review[ this section in the documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/users-roles-and-groups.html#mgt_usergroup) in order to review how to create user groups. Depending on the method you are using to send the message, the user must have the related relevant information filled in. For example, if you are sending notifications via e-mail, users within the user group you have selected need to have their e-mail filled in or they will not receive the notification.You can select multiple user groups if needed, but just keep in mind that you should only be sending out the notification to those who need to receive this information rather than trying to target a wide range of users who may ignore the message. 
 
-![](resources\images/images/image21.png)
+![](resources/images/dq_image21.png)
 
 5. Notification strategy: Here we decide how we want to send out our notifications when multiple validation violations are detected (for example over several org units and/or time periods). 
     1. Collective summary: This will generate a summary of all of the violations that have been detected for the period(s)/organisation unit(s) you are monitoring during your review of the validation rules. For example, if you detect 10 violations, these will be all summarized together in one e-mail/SMS/DHIS2 message
     2. Single notification: In this case, a message will be sent out for each and every validation violation that is detected for the organsation units and periods you are reviewing. For example, if you detect 10 violations, then 10 separate messages will be sent out. Use this option sparingly for high priority violations.
 
-![](resources\images/images/image37.png)
+![](resources/images/dq_image37.png)
 
 6. Notify users in hierarchy only: 
 7. Message template: In this section, we define what the message will look like when it is sent out to our recipients. The template can consist of both template variables as well as plain text. The template variables will be replaced with the values collected from DHIS2.
 
-![](resources\images/images/image11.png)
+![](resources/images/dq_image11.png)
 
 We can review an example of an output message to review how template variables and plain text appear within a notification when it is sent out.
 
-![](resources\images/images/image6.png)
+![](resources/images/dq_image6.png)
 
 1. This represents the subject template in the message. Each violation will have this displayed prior to showing you the contents of the message template. 
 2. In the template itself we have a mix of free text and variables. The first variable is the left side description. In the message, this is replaced with Positive (RDT). 
@@ -352,7 +352,7 @@ We can see we can use a number of different variables to create our message and 
 
 To create the template, populate the message with a mix of free text and by selecting appropriate variables from the right side of the screen. 
 
-![](resources\images/images/image6.png)
+![](resources/images/dq_image6.png)
 
 
 Once you are done filling in these fields, select Save to save the notification.
@@ -398,7 +398,7 @@ Min-max values can currently only be viewed within the data entry app; the dedic
 
 In the data entry app, double clicking within an input field (i.e. the cells for data entry) open as a pop-up window with information about that particular data element and category option combination. 
 
-![](resources\images/images/image86.png)
+![](resources/images/dq_image86.png)
 
 The section in the top right corner of the window shows any currently set min-max limits, and allows users with the appropriate permissions to remove and/or save new min-max values. As explained below, these values will then be applicable to that particular combination of data element, category option combination and organization units. The _Data element history_ graph will also show the maximum value when set. 
 
@@ -406,11 +406,11 @@ The section in the top right corner of the window shows any currently set min-ma
 
 In the data entry (beta) app, information about min-max values is shown by highlighting an input field (i.e. the cells for data entry) and clicking the View details button in the toolbar at the bottom of the app. 
 
-![](resources\images/images/image104.png)
+![](resources/images/dq_image104.png)
 
 This opens a Details panel on the right side of the screen, with a dedicated section for min-max limits. Any user can see the currently set min-max values, and users with the appropriate permissions can also edit or delete them. 
 
-![](resources\images/images/image20.png)
+![](resources/images/dq_image20.png)
 
 #### Built-in generator
 
@@ -424,11 +424,11 @@ DHIS2 includes functionality to bulk generate and remove min-max values for one 
 
 Note: min-max values are only generated for combinations for data element, category option combination and orgunit for which data already exists, and this happens independently of how the data set is assigned.
 
-![](resources\images/images/image34.png)
+![](resources/images/dq_image34.png)
 
 DHIS2 generates min-max values by determining the mean of all existing data values (for a given data element/category option combo/organisation unit combination) and then calculating lower and upper bounds based on a certain number of standard deviations from this mean. The number of standard deviations that is used is based on a system setting property called _Data analysis std dev factor_. The default value that is used is 2 standard deviations. This can be changed in the System settings app, under the General section.
 
-![](resources\images/images/image97.png)
+![](resources/images/dq_image97.png)
 
 
 ##### Limitations with min/max values
@@ -473,19 +473,19 @@ This tool is designed to address the main shortcomings of the built-in min-max g
 
 No user action is required to review min-max values in the data entry app: when a number outside the specified min-max value is entered, a pop-up window immediately appears with a warning message, and the cell is highlighted in dark orange. 
 
-![](resources\images/images/image91.png)
-![](resources\images/images/image101.png)
+![](resources/images/dq_image91.png)
+![](resources/images/dq_image101.png)
 
 
 Upon marking the data set as complete or using the Run validation button, the min-max violations are also listed in a similar way as validation rule violations.
 
-![](resources\images/images/image51.png)
+![](resources/images/dq_image51.png)
 
 #### Review min-max values in the Data quality app
 
 Min-max values can be reviewed in batch as part of Outlier detection in the Data Quality app. Min-max is available as one of the available “Algorithms”.
 
-![](resources\images/images/image110.png)
+![](resources/images/dq_image110.png)
 
 
 To perform an analysis of values outside the min-max thresholds:
@@ -498,7 +498,7 @@ To perform an analysis of values outside the min-max thresholds:
 
 The result is presented as a list showing the data element, period and organization unit where a value outside the min and max thresholds have been reported.
 
-![](resources\images/images/image87.png)
+![](resources/images/dq_image87.png)
 
 The _Value_ column is the reported data value, _Deviation_ is how much above the max or below the min thresholds the number is, and the _Min_ and _Max_ columns show the min-max thresholds for the particular data element and organization unit. The table is sorted by Deviation, since the violations with the highest deviation have the biggest impact on the overall data. Follow-up allows data values to be marked for follow-up; they can then be review later using the Follow-up analysis [LINK] functionality.
 
@@ -531,11 +531,11 @@ In data visualizer, you will be able to review dataset completeness and timeline
 
 Within data visualizer, select your “Data” input, along with “Data Set” as the data type. This will allow you to search or add filters for the data set and metric type that you want to add to your visualization.
 
-![](resources\images/images/image94.png)
+![](resources/images/dq_image94.png)
 
 Here is an example of a chart comparing BCG doses given with the reporting rate of the immunization data set
 
-![](resources\images/images/image52.png)
+![](resources/images/dq_image52.png)
 
 We can quickly note that several of the districts have reporting rates &lt; 80%, and therefore the data being displayed may not be fully representative of the situation in the country. It may be important to verify this through a more detailed analysis reviewing the facilities affecting this value and/or using data element completeness [LINK]
 
@@ -545,95 +545,95 @@ We can go through some examples of tables and charts you could potentially creat
 
 Select Pivot table as the output type
 
-![](resources\images/images/image115.png)
+![](resources/images/dq_image115.png)
 
 
 * Select data and modify the data type to Data Sets
 * Select the metrics you want to add to your table
 
-![](resources\images/images/image14.png)
+![](resources/images/dq_image14.png)
 
 Either hide or update the data selector and proceed to modify your periods and organisation units
 
-![](resources\images/images/image62.png)
+![](resources/images/dq_image62.png)
 
-![](resources\images/images/image76.png)
+![](resources/images/dq_image76.png)
 
 After all of your selections are made modify your layout and update your table
 
-![](resources\images/images/image107.png)
+![](resources/images/dq_image107.png)
 
 You should now be able to see the table with your inputs selected. 
 
-![](resources\images/images/image57.png)
+![](resources/images/dq_image57.png)
 
 
 **Example 2** : Line chart comparing completeness and timeliness over several periods
 
 Select line as the output type
 
-![](resources\images/images/image19.png)
+![](resources/images/dq_image19.png)
 
 * Select data and modify the data type to Data Sets
 * Select the metrics you want to add to your chart. Only one is selected here but you can use as many as necessary.
 
-![](resources\images/images/image84.png)
+![](resources/images/dq_image84.png)
 
 * Either hide or update the data selector and proceed to modify your periods and organisation units.
 
-![](resources\images/images/image62.png)
-![](resources\images/images/image76.png)
+![](resources/images/dq_image62.png)
+![](resources/images/dq_image76.png)
 
 * Modify the layout of your chart and update when ready
 
-![](resources\images/images/image1.png)
+![](resources/images/dq_image1.png)
 
 **Example 3** : A 2-axes chart comparing service data with dataset completeness
 
 Select column as the output type
 
-![](resources\images/images/image35.png)
+![](resources/images/dq_image35.png)
 
 * Select data and modify the data type to Data Sets. Select the metric(s) you want to add to your chart
 
-![](resources\images/images/image84.png)
+![](resources/images/dq_image84.png)
 
 * Change the data type. Data elements are used in this example, but you are able to combine the completeness and timeliness metric with any of the existing DHIS2 data types in data visualizer
 
-![](resources\images/images/image114.png)
+![](resources/images/dq_image114.png)
 
 
 * Either hide or update the data selector and proceed to modify your periods and organisation units.
 
-![](resources\images/images/image40.png)
-![](resources\images/images/image76.png)
+![](resources/images/dq_image40.png)
+![](resources/images/dq_image76.png)
 
 * Modify the layout of your chart and update when ready
 
-![](resources\images/images/image17.png)
+![](resources/images/dq_image17.png)
 
 * To move one of the items to the 2nd axes, select Options, then Series. Modify the data items to appear on the axes you want using the correct visualization type and update your chart
 
-![](resources\images/images/image82.png)
+![](resources/images/dq_image82.png)
 
-![](resources\images/images/image36.png)
+![](resources/images/dq_image36.png)
 
 
 * Additional options, such as ordering the chart items and adding chart titles can then be added to the chart using the options button within the visualizer app
 
-![](resources\images/images/image27.png)
-![](resources\images/images/image109.png)
-![](resources\images/images/image52.png)
+![](resources/images/dq_image27.png)
+![](resources/images/dq_image109.png)
+![](resources/images/dq_image52.png)
 
 #### Using the reports app
 
 In order to review completeness and timeliness within the reports app, navigate to apps -> Reports
 
-![](resources\images/images/image67.png)
+![](resources/images/dq_image67.png)
 
 From here, select “Get Report” under the Reporting Rate Summary heading
 
-![](resources\images/images/image42.png)
+![](resources/images/dq_image42.png)
 
 Start by selecting your inputs:
 
@@ -643,15 +643,15 @@ Start by selecting your inputs:
 
 3. Selecting the reporting period, followed by the period itself/
 
-![](resources\images/images/image96.png)
+![](resources/images/dq_image96.png)
 
 If you select Show more options, you can use an organisation unit group set to select organisation unit groups to further filter your report; however this is optional.
 
-![](resources\images/images/image111.png)
+![](resources/images/dq_image111.png)
 
 After you have selected all of your inputs, select “Get report” to produce the report.
 
-![](resources\images/images/image13.png)
+![](resources/images/dq_image13.png)
 
 This will produce a report with the following columns
 
@@ -674,7 +674,7 @@ Data Set completeness is based on the organisation unit assignment of your datas
 Navigate to maintenance -> data set -> and select or create the intended data set. Within this data set scroll to the very bottom to find the organisation unit assignment
 
 
-![](resources\images/images/image99.png)
+![](resources/images/dq_image99.png)
 
 You can assign your dataset to organisation units by selecting them individually or using levels or groups. 
 
@@ -685,7 +685,7 @@ The important factor to consider here is to make sure that the dataset **_IS NOT
 
 Timeliness is also configured within the maintenance app when creating or editing a dataset, using the field “days after period to qualify for a timely submission.”
 
-![](resources\images/images/image43.png)
+![](resources/images/dq_image43.png)
 
 In the above example, the data set is collected monthly and the timeliness is set to 15. This 
 means that the data set must be completed within 15 days after the end of the previous month in order to qualify as a timely submission.
@@ -751,7 +751,7 @@ In the following, we will use ANC 1 (i.e. pregnant women making their first ante
 
 Data elements are needed to hold the aggregate data values generated by the two predictors doing the actual calculations for this indicator. The data elements should be named according to local naming convention, be in the aggregate domain, and (in most cases) have value type Positive or zero integer. 
 
-![](resources\images/images/image43.png)
+![](resources/images/dq_image43.png)
 
 For ANC 1, we could create these two data elements:
 
@@ -765,24 +765,24 @@ Next, we must set up two predictors to calculate the data values for our two dat
 
 1. Provide name (required), short name, code and description to the predictor
 
-   ![](resources\images/images/image95.png)
+   ![](resources/images/dq_image95.png)
 
 2. Specify the output data element; this should refer to the data elements we created in the previous step
 
-   ![](resources\images/images/image72.png)
+   ![](resources/images/dq_image72.png)
 
 3. Specify the period type of the predictor; this should match the period type of the data element we are assessing. In this example, we are assessing ANC 1, which we assume is collected monthly.
 
-    ![](resources\images/images/image70.png)
+    ![](resources/images/dq_image70.png)
 
 4. Specify the organisation unit level. For this data quality indicator, this should be the level at which data is collected, typically the facility level.  \
 We also need to make a selection in the “Organisation units providing data”, which should be “At selected level(s) only”, since we are calculating the consistently of reporting only based on the level we have selected as the data collection level.
 
-    ![](resources\images/images/image23.png)
+    ![](resources/images/dq_image23.png)
 
 5. Next, we must specify the Generator. This is where we define the actual expression for calculating the consistency of reporting.
 
-    ![](resources\images/images/image49.png)
+    ![](resources/images/dq_image49.png)
 
     1. To calculate the predictor for “number of orgunits reported in _all_ the last 12 Months”, we use the formula “if( sum( if(isNotNull([data element]), 1, 0)) == 12, 1, 0)”
         1. **if**(**isNotNull(**[data element]**), 1, 0)**, and produces a 1 if a value exists, and 0 otherwise
@@ -790,19 +790,19 @@ We also need to make a selection in the “Organisation units providing data”,
         3. **if**(sum(if(isNotNull([data element]), 1, 0))** == 12, 1, 0) **checks whether the number of periods that has been added up by sum() equals the number of periods we as assessing. If we are assessing a monthly data set for a 1-year period, we comper this to 12. If the number of periods with a value  matches 12, the predictor produces a 1. This indicates that the organisation unit has reported in all the previous 12 months.
 
     
-        ![](resources\images/images/image80.png)
+        ![](resources/images/dq_image80.png)
 
 
     2. To calculate the predictor for “number of orgunits reported in _any _of the last 12 Months”, we use the formula “if(isNotNull([data element]),1,0)”
         4. **if**(**isNotNull(**[data element]**), 1, 0)**, and produces a 1 if a value exists in any of the periods, and 0 otherwise. 1 indicates that the organisation unit has reported in _at least one _of the previous 12 months.
 
-       ![](resources\images/images/image45.png)
+       ![](resources/images/dq_image45.png)
 
 
 6. Finally, we need to specify the sample and skip counts. Sample skip test should not be set. Sequential sample count should be set to the number of periods we want to calculate the consistency of reporting for. For monthly data that we want to assess for one year, we should set the Sequential sample count to 12. This means that the 12 months preceding the period which we are generating the predictor for will be checked.  \
 Annual sample count and sequential sample count should both be 0. 
 
-   ![](resources\images/images/image77.png)
+   ![](resources/images/dq_image77.png)
 
 #### Creating the indicator
 
@@ -811,7 +811,7 @@ When the two data elements and two predictors have been defined, we can define t
 
 1. The indicator name, shortName, code and description should be specified according to local naming and coding conventions.
 
-![](resources\images/images/image53.png)
+![](resources/images/dq_image53.png)
 
 
 2. The indicator should** not** be annualized, and the indicator type should be Percentage (factor = 100)
@@ -820,8 +820,8 @@ When the two data elements and two predictors have been defined, we can define t
 
 4. The denominator expression should be Facilities that have reported in any of the previous 12 months (assuming the data is monthly)
 
-![](resources\images/images/image28.png)
-![](resources\images/images/image54.png)
+![](resources/images/dq_image28.png)
+![](resources/images/dq_image54.png)
 
 After predictors have been generated and aggregate analytics have been run (see below [LINK]), the indicator is available for use in the Data visualizer and Maps applications..
 
@@ -878,7 +878,7 @@ We explain first how to configure the options that can be done with indicators d
 
 As explained above, the numerator should be the count of values for a data element (with or without disaggregation). From version 2.38, this can be done directly in an aggregate indicator using a subExpression with a isNotNull conditional statement in the expression. This will return a 1 value for any time there is a number (including zero) entered for this data element. An example is given below.
 
-![](resources\images/images/image39.png)
+![](resources/images/dq_image39.png)
 
 * **if(isNotNull(**[data element id]**), 1, 0) **will return 1 for every value for that data element, 0 otherwise.
     * If the data element has no disaggregation, it will return 1 or 0 depending on whether data has been reported.
@@ -935,7 +935,7 @@ When you have decided on what appropriate approach, follow these steps to make t
 
 13. Define the Generator, using one of the expressions outlined above.
 
-![](resources\images/images/image8.png)
+![](resources/images/dq_image8.png)
 
 
 14. Create a predictor group and add this predictor to that group.
@@ -954,7 +954,7 @@ While the numerator for a data element completeness indicator is always the coun
 
 4. Count of orgunits that have previously reported on the data element itself
 
-![](resources\images/images/image38.png)
+![](resources/images/dq_image38.png)
 
 Which of these options are appropriate depends several contextual factors, such as how correct and updated the assignment of  data set is, and whether the purpose is to look at the overall completeness of the data element (how much of the true figure do I capture) or the completeness within a data set (how completely are facility staff and data entry clerks filling in the reporting form). Each option is outlined below, with instructions for configuration both in 2.38 and above, and 2.37 and below.
 
@@ -966,7 +966,7 @@ The first option is to use the assignment of the data set that the data element 
 To use this as a denominator, simply choose the _expected reports_ variable that is available when configuring the indicator denominator:
 
 
-![](resources\images/images/image93.png)
+![](resources/images/dq_image93.png)
 
 The denominator expression is R{[data set id].EXPECTED_REPORTS}, for example R{tQc4Gv2Jwco.EXPECTED_REPORTS}
 
@@ -977,9 +977,9 @@ Special care needs to be taken in cases where the same data element is reported 
 
 Option 2 is similar to option 1, but instead of using the actual reports as denominator rather than expected reports. Choosing actual reports will give an indicator that assesses the completeness of the data element among the organization units that reported, i.e. a measure of how often a particular data element is filled in the data sets that are submitted. 
 
-![](resources\images/images/image103.png)
+![](resources/images/dq_image103.png)
 
-![](resources\images/images/image71.png)
+![](resources/images/dq_image71.png)
 
 
 Again, special care needs to be taken in cases where the same data element is reported in multiple data sets. If the data sets are not used in the same organization units, adding up the expected reports for each data set will give a correct denominator. However, if there is a risk that the same organization units will have two data sets assigned with the data element included, this option will not provide a reliable denominator.
@@ -1038,7 +1038,7 @@ To get a better understanding of data element completeness of a large number of 
 3. Modify the layout, placing Periods as columns (e.g. for last 12 months) and Data on Rows \
 
 
-![](resources\images/images/image56.png)
+![](resources/images/dq_image56.png)
 
 
 4. Open Option and
@@ -1047,20 +1047,20 @@ To get a better understanding of data element completeness of a large number of 
 
 5. Update the visualization, and optionally sort the total column from high to low (note: the total for “expected reports” will show NaN, but remain at the top)
 
-![](resources\images/images/image113.png)
+![](resources/images/dq_image113.png)
 
 
 The table produced is now showing on the top row the data element completeness “denominator”, i.e. the expected reports based on the data set (actual reports can also be used). In the other rows, the data element completeness “numerator” for each data element (with disaggregation) is shown. This table allows you to quickly review the completeness of a large number of data elements within a data set.
 
 Following the same approach (using aggregation type “Count”), if looking at a single period a bar chart sorted from High to low will give a quick overview of data element completeness.
 
-![](resources\images/images/image50.png)
+![](resources/images/dq_image50.png)
 
 ## Consistency of related data
 
 ### Scatter plots in data visualizer
 
-![](resources\images/images/image25.png)
+![](resources/images/dq_image25.png)
 
 This is a scatterplot in which an outlier analysis or two related variables at the facility level is being performed. The two variables on this chart are related to one another - ANC 1 and ANC 4 - and this is why you can see many of the values so closely clustered together in green colour.
 
@@ -1080,27 +1080,27 @@ Scatter plots can be created in the data visualizer app.
 
 Start the process by selecting the scatter plot from the visualization selector in data visualizer.
 
-![](resources\images/images/image26.png)
+![](resources/images/dq_image26.png)
 
 Review the layout after selecting this chart type. Certain items are locked which differentiates it from a number of charts. You must select data items for both the vertical (Y) and horizontal (X) axes of the chart. The points will also always be org units. As discussed, you should select related data items for this type of chart. If you select unrelated data items, your output is unlikely to be useful.
 
 Select your vertical and horizontal data. We will select ANC 1 and ANC 4 as they are related (you will typically see less ANC4 than ANC1 within an identified period for example).
 
-![](resources\images/images/image74.png)
-![](resources\images/images/image100.png)
+![](resources/images/dq_image74.png)
+![](resources/images/dq_image100.png)
 
 
 Select your org unit (in this case all facilities)
 
-![](resources\images/images/image31.png)
+![](resources/images/dq_image31.png)
 
 Select your period
 
-![](resources\images/images/image83.png)
+![](resources/images/dq_image83.png)
 
 Update your chart.
 
-![](resources\images/images/image5.png)
+![](resources/images/dq_image5.png)
 
 You will now see the scatterplot between these two related items. We can see how they are clustered closely in the bottom left corner of the chart as this is where the majority of values lie. We have not yet added our outlier information to this chart; we can do this as a next step.
 
@@ -1109,7 +1109,7 @@ You will now see the scatterplot between these two related items. We can see how
 
 To add in the outlier details select the chart options and the “outliers” section
 
-![](resources\images/images/image9.png)
+![](resources/images/dq_image9.png)
 
 Enable both the outlier analysis as well as the extreme lines.
 
@@ -1119,21 +1119,21 @@ You do not need to completely understand this method of outlier detection; just 
 
 You can also select the “Extreme lines” option. This will help you to identify the most extreme outlier values that are potential sources of error
 
-![](resources\images/images/image41.png)
+![](resources/images/dq_image41.png)
 
 After selecting these options, update your chart.
 
-![](resources\images/images/image25.png)
+![](resources/images/dq_image25.png)
 
 Let us review how we can interpret our output. First, let us zoom in on our cluster of values to review them more closely. We can do this by dragging our mouse cursor over the area we want to zoom into.
 
-![](resources\images/images/image33.png)
+![](resources/images/dq_image33.png)
 
 We can reset the zoom if needed by selecting “reset zoom” after we have zoomed in
 
 Review one of the outlier values highlighted in red
 
-![](resources\images/images/image112.png)
+![](resources/images/dq_image112.png)
 
 The model for this data is very narrow (ie, most values are closely clustered together); however we see some values that are quite far outside of the outlier boundaries. Neither of these values on its own may be considered an outlier (there are other ANC 1 values that are higher, and other ANC 4 values that are higher); however, this value pairing we have highlighted on the above chart lies outside of the range of 1% of the total y values (which represents ANC 1). This is because a typical ANC 4 value in this range has a much lower ANC 1 value in comparison when reviewing the majority of the other data values.
 
@@ -1149,11 +1149,11 @@ In order to run validation rule analysis, go to the data quality app and select 
 
 Apps -> Data Quality
 
-![](resources\images/images/image22.png)
+![](resources/images/dq_image22.png)
 
 Select Run validation under the “Validation Rule Analysis” heading
 
-![](resources\images/images/image24.png)
+![](resources/images/dq_image24.png)
 
 From here, you will need to select your inputs. This includes the following:
 
@@ -1164,22 +1164,22 @@ From here, you will need to select your inputs. This includes the following:
 * Send notifications: this will send out any validation notifications based on the validation violations that are found
 * Persist new results
 
-![](resources\images/images/image88.png)
+![](resources/images/dq_image88.png)
 
 Once you have selected the inputs select “Validate.” It may take a little while to run the validation analysis depending on the amount of data you have selected to review. If you are planning to review large amounts of data at once (for example many org units across many periods including many validation rules), the validation rule analysis will take longer to run in comparison to running it for a smaller amount of data. 
 
 If there are no violations of the validation rules, you'll see a message saying “Validation passed successfully.” If there are validation violations, they will be presented in a list like the following:
 
-![](resources\images/images/image66.png)
+![](resources/images/dq_image66.png)
 
 
 To review the validation details, select the info button under the details column. 
 
-![](resources\images/images/image61.png)
+![](resources/images/dq_image61.png)
 
 This will open up a pop-window with more information on the violation
 
-![](resources\images/images/image85.png)
+![](resources/images/dq_image85.png)
 
 We can see how validation rule analysis can be useful in reviewing the violations for multiple org units/time periods at once, as we can also see all the component parts of the violation. This can allow us to identify exactly which value is incorrect and requires further follow-up.
 
@@ -1187,7 +1187,7 @@ The validation details show a the name and description of the violation along wi
 
 You are also able to download these validation rule violations. This may be helpful if you want to refer to this list and follow-up on values to fix them over time. Do this by selecting one of the file types in the top right corner after running validation analysis.
 
-![](resources\images/images/image58.png)
+![](resources/images/dq_image58.png)
 
 
 
@@ -1198,42 +1198,42 @@ You are also able to download these validation rule violations. This may be help
 
 ### Year-over-year charts
 
-![](resources\images/images/image12.png)
+![](resources/images/dq_image12.png)
 
 
 This is a year-over-year (line) chart. A year-over-year (line) chart is used to evaluate consistency over time of a single data type (data element, indicator, etc.). In this example, we are displaying data for ANC 1 visits for all 12 months within a year for 2023, 2022 and 2021. This chart allows us to easily identify obvious outliers as we are able to see increases or decreases (if they exist) quite easily when compared to current and previous data. As an example, you can see obvious outliers in January 2023, May 2022 and September 2023 by reviewing each of the lines on this chart and comparing them to their own historical trends. The next step would be taking this chart and drilling down into the hierarchy for these specific periods in order to find the source of these outliers. These charts could be placed on a dashboard for key variables within your workflow to allow for staff to review these on a routine basis based on how frequently the data is collected. 
 
 In order to create this visualization, you will use data visualizer
 
-![](resources\images/images/image78.png)
+![](resources/images/dq_image78.png)
 
 
 Select year-over-year (line) to start creating this chart
 
-![](resources\images/images/image19.png)
+![](resources/images/dq_image19.png)
 
 #### The interface - Period selection and filter
 
 After we select this chart type, we can see that both the category and the series are automatically populated with period types. The period selection on the left menu where other dimensions are selected is also greyed out. Organisation units and data are automatically placed in the filter. For this reason, this chart type works best when only one data item is selected for comparison. Multiple organisation units can be used in the filter however depending on what you want displayed (it will filter the data belonging to these organisation units).
 
-![](resources\images/images/image64.png)
+![](resources/images/dq_image64.png)
 
 #### The interface - Category
 
 In this example, the category determines the periods that will be displayed along the x-axis and group the data together. So with “months per year” selected, all the months within a year from January - December will be displayed. If we were to select “Quarters per year” it would instead display the 4 quarters of a year along the x-axis.
 
-![](resources\images/images/image73.png)
+![](resources/images/dq_image73.png)
 
 
 You will notice that the selections in the categories are all relative periods, you can not select for example specific months in the category in this chart type.
 
-![](resources\images/images/image16.png)
+![](resources/images/dq_image16.png)
 
 #### The interface - Series
 
 The series determines which years you will be displaying data for. If I have this year and last year selected, it will display these years respectively based on the current date. I can also specify years rather than a relative period, for example 2021, 2022 and 2023.
 
-![](resources\images/images/image47.png)
+![](resources/images/dq_image47.png)
 
 With these two options selected I am now creating a chart which will display data from January - December (due to the category selection) along the x-axis. And with 2021, 2022 and 2023 selected as my series, data values from these 3 years will be displayed by month on the year over year chart.
 
@@ -1241,7 +1241,7 @@ With these two options selected I am now creating a chart which will display dat
 
 When selecting data, it is best to only select one data item. These could be supplemented by choosing groups or disaggregations to further filter the data by, however as the data selection is automatically added to the filter and can not be moved, adding in more than one data item will have no effect on the chart.
 
-![](resources\images/images/image74.png)
+![](resources/images/dq_image74.png)
 
 **Update and review the chart**
 
@@ -1251,7 +1251,7 @@ We can see how the chart has been generated based on our category and series per
 
 The series has determined which years we are displaying data for, while the category determines how to group the data along the x-axis.
 
-![](resources\images/images/image12.png)
+![](resources/images/dq_image12.png)
 
 
 ## WHO Data Quality Tool
