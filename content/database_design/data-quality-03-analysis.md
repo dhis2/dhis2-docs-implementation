@@ -1,7 +1,6 @@
 # Assessing data quality
 
-DHIS2 has a wide range of functions for assessing data quality, available across different apps and functions, and this section gives and overview of this functionality. It is structured according to the type of data quality metric:
-
+DHIS2 has a wide range of functions for assessing data quality, available across different apps and functions, and this section gives and overview of this functionality. It is structured according to three types of data quality metrics:
 
 * Completeness and timeliness of data
 * Consistency of data across related variables
@@ -9,117 +8,15 @@ DHIS2 has a wide range of functions for assessing data quality, available across
 
 ## Completeness and timeliness
 
-_Completeness_ of reporting gives an indication of how much of the expected data has actually been reported. In DHIS2, most of the completeness checks are based on assessing the _data set_ completeness, i.e. how many data sets (forms) have been submitted by organisation unit and period. The timeliness calculation is based on a system setting called Days after period end to qualify for timely data submission. 
+***Completeness*** of reporting gives an indication of how much of the expected data has actually been reported. In DHIS2, most of the completeness checks are based on assessing the _data set_ completeness, i.e. how many data sets (forms) have been submitted by organisation unit and period. The timeliness calculation is based on a system setting called "Days after period end to qualify for timely data submission." 
 
-The built-in functionality for completeness and timeliness in DHIS2, e.g. what is built into the Data Visualizer, Reports and Maps application, refers to _data set _reporting rates. However, we can also configure DHIS2 to assess the proportion of facilities that are _consistently reporting_, as well as the completeness of individual data elements.
-
+The built-in functionality for completeness and timeliness in DHIS2, e.g. what is built into the Data Visualizer, Reports and Maps application, refers to *data set reporting rates*. However, we can also configure DHIS2 to assess the proportion of facilities that are _consistently reporting_, as well as the *completeness of individual data elements*.
 
 ### Data set completeness and timeliness
 
 The completeness reports will also show which organisation units in an area are reporting on time, and the percentage of timely reporting facilities in a given area. 
 
 Data set completeness and timeliness can be reviewed in the reports app as well as  core visualization apps (Data visualizer and Maps). The core visualization apps allow for you to review completeness and timeliness in more significant detail across multiple org units and periods; however the reports app has a simplified user experience that has been validated by its widely observed use in comparison to other apps within DHIS2. 
-
-
-#### Using Data Visualizer
-
-In data visualizer, you will be able to review dataset completeness and timeliness measures similar to the reports app; however you are now free to select multiple data sets, periods and organisation units at the same time. You can also add completeness and timeliness measures to charts and tables that include other data, such as health service delivery data, to verify that the data you are reviewing is representative of the situation within the country you are working with. This gives you much more flexibility when compared to the reports app; however the additional options can make it less accessible compared to the reports app. Ideally, these visualizations are pre-made and placed on a dashboard for users to review routinely; however it is useful for a subset of users to know how to create outputs using these metrics within the data visualizer.
-
-Within data visualizer, select your “Data” input, along with “Data Set” as the data type. This will allow you to search or add filters for the data set and metric type that you want to add to your visualization.
-
-![](resources/images/dq_image94.png)
-
-Here is an example of a chart comparing BCG doses given with the reporting rate of the immunization data set
-
-![](resources/images/dq_image52.png)
-
-We can quickly note that several of the districts have reporting rates &lt; 80%, and therefore the data being displayed may not be fully representative of the situation in the country. It may be important to verify this through a more detailed analysis reviewing the facilities affecting this value and/or using data element completeness [LINK]
-
-We can go through some examples of tables and charts you could potentially create when reviewing completeness and timeliness within the data visualizer app
-
-**Example 1** : Pivot Table comparing completeness and timeliness over several datasets, periods and organisation units
-
-Select Pivot table as the output type
-
-![](resources/images/dq_image115.png)
-
-
-* Select data and modify the data type to Data Sets
-* Select the metrics you want to add to your table
-
-![](resources/images/dq_image14.png)
-
-Either hide or update the data selector and proceed to modify your periods and organisation units
-
-![](resources/images/dq_image62.png)
-
-![](resources/images/dq_image76.png)
-
-After all of your selections are made modify your layout and update your table
-
-![](resources/images/dq_image107.png)
-
-You should now be able to see the table with your inputs selected. 
-
-![](resources/images/dq_image57.png)
-
-
-**Example 2** : Line chart comparing completeness and timeliness over several periods
-
-Select line as the output type
-
-![](resources/images/dq_image19.png)
-
-* Select data and modify the data type to Data Sets
-* Select the metrics you want to add to your chart. Only one is selected here but you can use as many as necessary.
-
-![](resources/images/dq_image84.png)
-
-* Either hide or update the data selector and proceed to modify your periods and organisation units.
-
-![](resources/images/dq_image62.png)
-![](resources/images/dq_image76.png)
-
-* Modify the layout of your chart and update when ready
-
-![](resources/images/dq_image1.png)
-
-**Example 3** : A 2-axes chart comparing service data with dataset completeness
-
-Select column as the output type
-
-![](resources/images/dq_image35.png)
-
-* Select data and modify the data type to Data Sets. Select the metric(s) you want to add to your chart
-
-![](resources/images/dq_image84.png)
-
-* Change the data type. Data elements are used in this example, but you are able to combine the completeness and timeliness metric with any of the existing DHIS2 data types in data visualizer
-
-![](resources/images/dq_image114.png)
-
-
-* Either hide or update the data selector and proceed to modify your periods and organisation units.
-
-![](resources/images/dq_image40.png)
-![](resources/images/dq_image76.png)
-
-* Modify the layout of your chart and update when ready
-
-![](resources/images/dq_image17.png)
-
-* To move one of the items to the 2nd axes, select Options, then Series. Modify the data items to appear on the axes you want using the correct visualization type and update your chart
-
-![](resources/images/dq_image82.png)
-
-![](resources/images/dq_image36.png)
-
-
-* Additional options, such as ordering the chart items and adding chart titles can then be added to the chart using the options button within the visualizer app
-
-![](resources/images/dq_image27.png)
-![](resources/images/dq_image109.png)
-![](resources/images/dq_image52.png)
 
 #### Using the reports app
 
@@ -163,6 +60,106 @@ This will produce a report with the following columns
 
 6. [Dataset name] - Reporting rate on time : This rate = actual reports reports on time /expected reports x 100%
 
+#### Using Data Visualizer
+
+In data visualizer, you will be able to review dataset completeness and timeliness measures similar to the reports app; however you are now free to select multiple data sets, periods and organisation units at the same time. You can also add completeness and timeliness measures to charts and tables that include other data, such as health service delivery data, to verify that the data you are reviewing is representative of the situation within the country you are working with. This gives you much more flexibility when compared to the reports app; however the additional options can make it less accessible compared to the reports app. Ideally, these visualizations are pre-made and placed on a dashboard for users to review routinely; however it is useful for a subset of users to know how to create outputs using these metrics within the data visualizer.
+
+Within data visualizer, select your “Data” input, along with “Data Set” as the data type. This will allow you to search or add filters for the data set and metric type that you want to add to your visualization.
+
+![](resources/images/dq_image94.png)
+
+Here is an example of a chart comparing BCG doses given with the reporting rate of the immunization data set
+
+![](resources/images/dq_image52.png)
+
+We can quickly note that several of the districts have reporting rates &lt; 80%, and therefore the data being displayed may not be fully representative of the situation in the country. It may be important to verify this through a more detailed analysis reviewing the facilities affecting this value and/or using data element completeness [LINK]
+
+We can go through some examples of tables and charts you could potentially create when reviewing completeness and timeliness within the data visualizer app
+
+##### Example 1 : Pivot Table comparing completeness and timeliness over several datasets, periods and organisation units
+
+Select Pivot table as the output type
+
+![](resources/images/dq_image115.png)
+
+
+* Select data and modify the data type to Data Sets
+* Select the metrics you want to add to your table
+
+![](resources/images/dq_image14.png)
+
+Either hide or update the data selector and proceed to modify your periods and organisation units
+
+![](resources/images/dq_image62.png)
+
+![](resources/images/dq_image76.png)
+
+After all of your selections are made modify your layout and update your table
+
+![](resources/images/dq_image107.png)
+
+You should now be able to see the table with your inputs selected. 
+
+![](resources/images/dq_image57.png)
+
+
+##### Example 2 : Line chart comparing completeness and timeliness over several periods
+
+Select line as the output type
+
+![](resources/images/dq_image19.png)
+
+* Select data and modify the data type to Data Sets
+* Select the metrics you want to add to your chart. Only one is selected here but you can use as many as necessary.
+
+![](resources/images/dq_image84.png)
+
+* Either hide or update the data selector and proceed to modify your periods and organisation units.
+
+![](resources/images/dq_image62.png)
+![](resources/images/dq_image76.png)
+
+* Modify the layout of your chart and update when ready
+
+![](resources/images/dq_image1.png)
+
+##### Example 3 : A 2-axes chart comparing service data with dataset completeness
+
+Select column as the output type
+
+![](resources/images/dq_image35.png)
+
+* Select data and modify the data type to Data Sets. Select the metric(s) you want to add to your chart
+
+![](resources/images/dq_image84.png)
+
+* Change the data type. Data elements are used in this example, but you are able to combine the completeness and timeliness metric with any of the existing DHIS2 data types in data visualizer
+
+![](resources/images/dq_image114.png)
+
+
+* Either hide or update the data selector and proceed to modify your periods and organisation units.
+
+![](resources/images/dq_image40.png)
+![](resources/images/dq_image76.png)
+
+* Modify the layout of your chart and update when ready
+
+![](resources/images/dq_image17.png)
+
+* To move one of the items to the 2nd axes, select Options, then Series. Modify the data items to appear on the axes you want using the correct visualization type and update your chart
+
+![](resources/images/dq_image82.png)
+
+![](resources/images/dq_image36.png)
+
+
+* Additional options, such as ordering the chart items and adding chart titles can then be added to the chart using the options button within the visualizer app
+
+![](resources/images/dq_image27.png)
+![](resources/images/dq_image109.png)
+![](resources/images/dq_image52.png)
+
 #### Configuring Data Set Completeness
 
 Data Set completeness is based on the organisation unit assignment of your dataset. This determines the value for your expected reports based on the periodicity of the dataset. This is configured within the maintenance app
@@ -200,14 +197,11 @@ Data set completeness and timeliness are useful measures to monitor the overall 
 
 Often, one or more of these conditions are _not_ met, which means that it is necessary to also do additional analysis of the reporting completeness. In this section we show 
 
+* How to analyse the proportion of facilities that _consistently report_ data element values over a time period, and
 
+* How to analyse completeness of an individual data element
 
-* how to analyse the proportion of facilities that _consistently report_ data element values over a time period, and
-
-* how to analyse completeness of an individual data element
-
-Common for the approaches outlined is that they require us to configure additional metadata for each variable we want to assess. In practice, this means that they can only be implemented for a limited set of data elements. The implementation section[LINK] below discusses this further.
-
+Common for the approaches outlined is that they require us to configure additional metadata for each variable we want to assess. In practice, this means that they can only be implemented for a limited set of data elements. The implementation section discusses this further.
 
 #### Orgunits consistently reporting
 
@@ -457,7 +451,7 @@ Which of these options are appropriate depends several contextual factors, such 
 
 ##### Option 1 - Count of orgunits to which the data set(s) the data element is part of is assigned
 
-The first option is to use the assignment of the data set that the data element is part of as the basis for calculating completeness. This measure is quite similar to how the data set completeness (reporting rates) described above [LINK] works. This option is relatively straightforward to configure, since the “expected reports” of a data set is available directly to use in indicator expressions. The main limitation of using the data set expected reports as the denominator for data element completeness is that it assumes that data set assignment is correct and kept up to date.
+The first option is to use the assignment of the data set that the data element is part of as the basis for calculating completeness. This measure is quite similar to how the data set completeness (reporting rates) [described above works](#configuring-data-set-completeness). This option is relatively straightforward to configure, since the “expected reports” of a data set is available directly to use in indicator expressions. The main limitation of using the data set expected reports as the denominator for data element completeness is that it assumes that data set assignment is correct and kept up to date.
 
 To use this as a denominator, simply choose the _expected reports_ variable that is available when configuring the indicator denominator:
 
@@ -512,9 +506,9 @@ Please refer to the section on how to configure the numerator[LINK] if using a r
 
 ##### Option 4 - Count of orgunits that have previously reported on the data element itself
 
-The final option is to use the count of facilities that have reported on the data element previously, within a given time frame, as denominator. This is similar to the denominator used for the indicator on “facilities consistently reporting” [LINK]. This can be a good estimation of the number of expected reports, in particular in cases where data set assignment is not accurate: if a facilities has reported on a particular data element previously, it typically means the the facility is providing whatever service/diagnostic the data element represents and one can expect it should report on it routinely. However, the results should still be analyzed together with the overall data set completeness since it will not include facilities that are _supposed_ to report, but have not done so in the given time period.
+The final option is to use the count of facilities that have reported on the data element previously, within a given time frame, as denominator. This is similar to the denominator used for the indicator on [“facilities consistently reporting.”](#orgunits-consistently-reporting) This can be a good estimation of the number of expected reports, in particular in cases where data set assignment is not accurate: if a facilities has reported on a particular data element previously, it typically means the the facility is providing whatever service/diagnostic the data element represents and one can expect it should report on it routinely. However, the results should still be analyzed together with the overall data set completeness since it will not include facilities that are _supposed_ to report, but have not done so in the given time period.
 
-To calculate the count of times an orgunit has reported on the data element you are assessing in any of the previous last 12 months, we must use a predictor and extra data element. This is the same calculation as for the denominator described above in the section on Orgunits consistently reporting[LINK]. In summary, a predictor with a generator 
+To calculate the count of times an orgunit has reported on the data element you are assessing in any of the previous last 12 months, we must use a predictor and extra data element. This is the same calculation as for the denominator described above in the section on [Orgunits consistently reporting](#orgunits-consistently-reporting). In summary, a predictor with a generator 
 
 **if**(**isNotNull(**[data element]**), 1, 0) **
 
@@ -531,15 +525,15 @@ To get a better understanding of data element completeness of a large number of 
 2. As Data dimension, choose:
     1. The expected or actual reports for a particular data set
     2. All or some data elements within the same data set, using the “Details only” option for disaggregation
-3. Modify the layout, placing Periods as columns (e.g. for last 12 months) and Data on Rows \
+3. Modify the layout, placing Periods as columns (e.g. for last 12 months) and Data as the Rows
 
 
 ![](resources/images/dq_image56.png)
 
 
-4. Open Option and
-    3. Enable Row totals
-    4. In the Advanced section, change the Aggregation type to “Count”
+4. Open the Options menu and
+   1. Enable Row totals
+   2. In the Advanced section, change the Aggregation type to “Count”
 
 5. Update the visualization, and optionally sort the total column from high to low (note: the total for “expected reports” will show NaN, but remain at the top)
 
@@ -639,7 +633,7 @@ When reviewing this type of chart, you therefore must review the relationship be
 
 Validation rules are integrated into the data entry apps of DHIS2, and can be reviewed there during data entry[LINK to above section]. Validation rule violations can also be viewed in the Validation rule analysis section of the Data quality app. This is useful as it allows you to review validation rule violations in bulk; rather than reviewing them for a specific organisation unit, period and dataset you can review them for many organisation units over any specified period of time. This also makes it possible for users who do not do data entry, or even have access to the data entry app, to analyse and monitor validation rule violations.
 
-When reviewing validation rules using this method, it is best to divide your validation rules into validation rule groups. The configuration of these groups is shown in the section https://docs.google.com/document/d/1CkL9Cb6rU5m1XIYDJQfKU-f73Ze8HKKyb0xCknbJ3Ik/edit#heading=h.3ll3cq25tjxs
+When reviewing validation rules using this method, it is best to divide your validation rules into validation rule groups. The configuration of these groups is shown in the section on validation rule groups. 
 
 In order to run validation rule analysis, go to the data quality app and select “Run validation”
 
@@ -769,5 +763,5 @@ The below table gives an overview of what functionality is available in the WHO 
 | Consistency over time using scatterplots           	| Supported                               	| Not supported   	|
 | Automatic generation of annual data quality report 	| Supported                               	| Not supported   	|
 
-A dedicated [user manual](https://docs.dhis2.org/en/use/optional-apps/who-data-quality-tool/installation-and-configuration.html#how-to-configure-the-dhis2-based-who-data-quality-tool) is available for the WHO Data Quality Tool, and its functionality is therefore not discussed in this guide.
+A dedicated [user manual](https://docs.dhis2.org/en/use/optional-apps/who-data-quality-tool/installation-and-configuration.html#how-to-configure-the-dhis2-based-who-data-quality-tool) along with a [training package](https://www.who.int/publications/i/item/9789240036475) is available for the WHO Data Quality Tool, and its functionality is therefore not discussed in this guide.
 
