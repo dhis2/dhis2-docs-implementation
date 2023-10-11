@@ -53,7 +53,7 @@ The goal of a data element reporting rate is to assess the reporting consistency
 
 Data element completeness = Number of received values / Number of expected values x 100%
 
-This section[LINK] in this toolkit describes completeness and timeliness measures in DHIS2 in more detail.
+This section in this toolkit describes completeness and timeliness measures in DHIS2 in more detail.
 
 ### Internal Consistency
 

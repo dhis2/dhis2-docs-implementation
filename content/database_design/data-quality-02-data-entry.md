@@ -401,4 +401,3 @@ The result is presented as a list showing the data element, period and organizat
 ![](resources/images/dq_image87.png)
 
 The _Value_ column is the reported data value, _Deviation_ is how much above the max or below the min thresholds the number is, and the _Min_ and _Max_ columns show the min-max thresholds for the particular data element and organization unit. The table is sorted by Deviation, since the violations with the highest deviation have the biggest impact on the overall data. Follow-up allows data values to be marked for follow-up; they can then be review later using the [Follow-up analysis](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/collecting-data/data-quality.html?h=follow-up+anal+master+use#about-follow-up-analysis) functionality.
-
