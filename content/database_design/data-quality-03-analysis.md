@@ -72,7 +72,7 @@ Here is an example of a chart comparing BCG doses given with the reporting rate 
 
 ![](resources/images/dq_image52.png)
 
-We can quickly note that several of the districts have reporting rates &lt; 80%, and therefore the data being displayed may not be fully representative of the situation in the country. It may be important to verify this through a more detailed analysis reviewing the facilities affecting this value and/or using data element completeness [LINK]
+We can quickly note that several of the districts have reporting rates &lt; 80%, and therefore the data being displayed may not be fully representative of the situation in the country. It may be important to verify this through a more detailed analysis reviewing the facilities affecting this value and/or using data element completeness.
 
 We can go through some examples of tables and charts you could potentially create when reviewing completeness and timeliness within the data visualizer app
 
@@ -251,7 +251,7 @@ For ANC 1, we could create these two data elements:
 
 #### Creating predictors
 
-Next, we must set up two predictors to calculate the data values for our two data elements. Documentation on predictors is available here [LINK]
+Next, we must set up two predictors to calculate the data values for our two data elements. Documentation on predictors is available [here](#manage-predictors)
 
 1. Provide name (required), short name, code and description to the predictor
 
@@ -313,7 +313,7 @@ When the two data elements and two predictors have been defined, we can define t
 ![](resources/images/dq_image28.png)
 ![](resources/images/dq_image54.png)
 
-After predictors have been generated and aggregate analytics have been run (see below [LINK]), the indicator is available for use in the Data visualizer and Maps applications..
+After predictors have been generated and aggregate analytics have been run ([see below](#scheduling), the indicator is available for use in the Data visualizer and Maps applications..
 
 #### Calculating data element completeness
 
@@ -323,7 +323,7 @@ A reporting rate is: 100 x (Number of received values / Number of expected value
 
 To calculate the reporting rate for a data element we have to define an indicator with the numerator (number of received values) and the denominator (number of expected values), and with a factor of 100 (percentage indicator type). While the numerator is always the count of data values, there are various options for defining the denominator, and which one of these is appropriate must be decided based on the local situation.
 
-How data element completeness is configured in DHIS2 also depends on the DHIS2 version: some ways of defining the numerator and denominator requires that predictors are used as an intermediate step in the calculation, in particular in 2.37 and below. Note that predictors will need to be scheduled to run on the server, see the final section[LINK] for guidance on instructions.
+How data element completeness is configured in DHIS2 also depends on the DHIS2 version: some ways of defining the numerator and denominator requires that predictors are used as an intermediate step in the calculation, in particular in 2.37 and below. Note that predictors will need to be scheduled to run on the server, see the [final section](#scheduling) for guidance on instructions.
 
 #### Configuring the numerator - values received
 
@@ -331,7 +331,7 @@ We first review how to define the _numerator_ of our data element completeness i
 
 **Zero value storage**
 
-For several reasons [link], it is generally recommended to _not_ store zero values being reported for data elements unless there is a clear reason for it (for example the “aggregation type” being of a type where zeros are relevant, such as average). This has implications when reviewing data element completeness, since for data elements where zero values are not entered and stored we cannot differentiate between facilities that have 0 to report and facilities that have not reported. One option is to enable zero values storage for the specific data elements where you want to define data element completeness indicators. However, this is difficult to implement in practice since data entry users must then know for what specific data input fields a 0 is expected. A more practical option is to focus configuration of data element completeness on data elements where all or almost all facilities are expected to have a value > 0 to report, and being explicit in descriptions of the indicator and visualizations that reaching 100% data element completeness is not necessarily expected.
+For several reasons, it is generally recommended to _not_ store zero values being reported for data elements unless there is a clear reason for it (for example the “aggregation type” being of a type where zeros are relevant, such as average). This has implications when reviewing data element completeness, since for data elements where zero values are not entered and stored we cannot differentiate between facilities that have 0 to report and facilities that have not reported. One option is to enable zero values storage for the specific data elements where you want to define data element completeness indicators. However, this is difficult to implement in practice since data entry users must then know for what specific data input fields a 0 is expected. A more practical option is to focus configuration of data element completeness on data elements where all or almost all facilities are expected to have a value > 0 to report, and being explicit in descriptions of the indicator and visualizations that reaching 100% data element completeness is not necessarily expected.
 
 **Disaggregations**
 
@@ -345,7 +345,7 @@ How to take into consideration any disaggregations that might be applied to the 
 
 The decision on this depends on the specific data element and disaggregation. For child vaccinations, the target age group for vaccinations is &lt; 1 year, and it might be common that there is no data to report in the 1+ year age group. Thus it would make sense to define the completeness for &lt; 1 year specifically. On the other hand, if “Confirmed malaria cases” is disaggregated into &lt; 5 years and 5+ years, facilities can be expected to have a values for each age group and it would make sense to consider both values to be expected; in this case, the denominator must be adjusted accordingly.
 
-The same consideration applies when data sets are disaggregated with an attribute option combination[LINK], though this is less common.
+The same consideration applies when data sets are disaggregated with an [attribute option combination](#about-additional-data-dimensions), though this is less common.
 
 The following table outlines the alternative approaches for configuring the numerator, considering whether the data element is disaggregated, how to evaluate completeness of disaggregations when applicable, and whether they can be configured directly in indicators or first using predictors.
 
@@ -742,6 +742,270 @@ We can see how the chart has been generated based on our category and series per
 The series has determined which years we are displaying data for, while the category determines how to group the data along the x-axis.
 
 ![](resources/images/dq_image12.png)
+
+### Statistical outliers in time series
+
+"Extreme outliers" are values which are highly suspicious and which need to be double checked for accuracy. These are different from the values normally reported by a health facility. If extreme outliers are found to be incorrect, then they should be edited following local procedures outlining how data values should be edited. In this section, we show how outliers *in the time dimension* can be identified in DHIS2 using [predictors](#manage_predictor), and with the [outlier analysis](#outlier_detection) function. We specify *over time* to differentiate this from the outliers described in the section on [scatter plots](#scatter-plots-in-data-visualizer), which identify organization units that are outliers for a single period.
+
+The two functions presented for identifying outliers each have some advantages. The *DHIS2 Data Quality app* permits doing analysis in bulk (i.e. for large numbers of variables at the same time) without any prior configuration. It lets the users choose different statistical methods for the outlier calculation, and run it on any data set and period combination. It is thus both flexible and powerful, but requires users to open the app, choose the appropriate parameters, and wait for the analysis to finish. By using *predictors* to calculate outliers thresholds and related data elements and indicators, we can create notifications, view these values on the dashboard, or use it in combination with other DHIS2 functionality such as validation rules. This results in a greater flexibility in how to make the results of the outlier analysis available to users in different ways, but requires configuration of multiple metadata objects for *each* variable we want to assess. The two methods should therefore be considered complementary.
+
+#### Outlier analysis with predictors and indicators
+
+
+> **Note**
+>
+> In a live implementation, predictors can be resource intensive and specific care needs to be taken to stress test the DHIS2 system in order to ensure it is able to generate predictors on an ongoing, regularly scheduled basis as new data is added prior to live implementation. In addition, even after the Predictor has generated new data, the data will not be visible until Analytics has been updated; this is another step which may require significant time depending on the size of the system. As a result, considerable patience and several prolonged pauses in the workflow are likely to be required the first time guidance is followed. ***It is important to replicate and test predictors on development systems first, so they can be thoroughly tested*** ***without affecting a production system.***
+
+[Predictors](#manage-predictors) provides generic functionality in DHIS2, which we will here show how to apply for the purpose of outlier detection and analysis. While the initial process of creating predictors can be time consuming, once you have successfully configured one data element/indicator and confirmed that the resulting outputs are correct, the configuration process for each subsequent data element or indicator should take less time.
+
+Configuring predictors for outlier detection requires two sets of predictors:
+
+-   one predictor to calculate the *outlier threshold*. This is defined from analyzing previously reported data, and defining thresholds over which values are considered outliers (for a combination of data element and organization unit).
+
+-   one or more predictors that use the outlier threshold in further calculations, such as counting how many facilities have reported outliers, assigning only outlier or non-outlier values to separate data elements for analysis etc.
+
+Since predictors produce data values that need to be stored before they're used in further calculations, each new predictor needs to be associated with a data element. These data elements could be organized in one or more new data sets.
+
+There are several alternatives in terms of what predictors/data elements and indicators that can be configure for each of the variables you would like to analyze/monitor:
+
+-   Outlier threshold (predictor/data element)
+
+-   Count of values that *are* outliers (predictor/data element)
+
+-   Count of values that are *not* outliers (predictor/data element)
+
+-   Values that are outliers (%) (indicator)
+
+-   Values that *are* outliers (predictor/data element)
+
+-   Values that are *not* outliers (predictor data element)
+
+-   Data values excluding outliers (indicator)
+
+These are further defined and explained below. First, it is important to understand how the data flow is for these metadata objects, outlined in this figure
+
+![](resources/images/dq_outlier_image11.png)
+
+Predictors must be scheduled to run by the system, just like the *analytics* process. Scheduling is therefore critical for this to work. For the indicators to be available to end users, we first need to run the first set of predictors (calculating thresholds), then the second set of predictors, and finally the normal analytics process for the data sets and indicators to be available in Data visualizer and other analysis tools. This is discussed further [here](#scheduling).
+
+##### Predictor for outlier threshold
+
+We first configure the predictor and data element that calculates the outlier threshold for a particular variable, either a data element (default/total) or one particular disaggregation (category option combination). In the following example we'll use *Malaria confirmed cases* as an example.
+
+**Configuration steps**
+
+1.  Create a data element to store the outlier threshold value:
+
+    -   Name: "DQ - Malaria confirmed cases outlier threshold (mean + 3 SD)"
+
+    -   Description: "Auto-generated from predictor. Outlier threshold for the Malaria confirmed cases data element (total for all disaggregations), based on the average + 3 standard deviations over the previous 12 months. This can be used for identifying potential outliers."
+
+    -   Type: Aggregate
+
+    -   Value type: Positive or zero integer
+
+2.  Create a new predictor with basic properties:
+
+    -   Name: "DQ - Malaria confirmed cases outlier threshold (mean + 3 SD)"
+
+    -   Description: "Generates the outlier threshold for malaria confirmed cases, defined as mean + 3 standard deviations, not including the values for last month."
+
+3.  Set the Output data element to point to the data element created in step 1.
+
+4.  Set Period type to match the data collection frequency of the data element we are assessing. For our Malaria confirmed cases example this is collected Monthly.
+
+5.  Set Organisation units levels to the level at which the data is collected, which in most cases will be Facility.
+
+![](resources/images/dq_outlier_image10.png)
+
+6.  Configure the *Generator*, which is the expression that defines the actual calculation performed by the predictor.
+
+    -   Set Missing value strategy to Skip if all values are missing.
+
+    -   The expression in this case should be:
+
+*avg({data_element_uid}) + (3 \* stddevPop({data_element_uid}))*
+
+*avg()* gives us the average/mean for the data element in the periods we are assessing (defined in the next step. *stddevPop()* gives us the population-based standard deviation for the data element in the periods we're assessing, and we multiply this with 3 since we want the thresholds to be 3 standard deviations above the average. We use 3 here because it's often used as the definition of extreme outliers, but other values can be used.
+
+![](resources/images/dq_outlier_image9.png)
+
+7.  Finally, set the Sequential sample count. This defines how many previous periods of data should be included in the calculation. In this case, the data is monthly (defined in step 4), and we want to use 1 year of previous data to calculate the threshold and therefore set this to 12. Annual sample count and sequential skip count should be 0 (the default)
+
+![](resources/images/dq_outlier_image3.png)
+
+##### Predictors for outlier metrics
+
+When the outlier threshold is defined and stored as a data element value, we can create additional predictors to do more specific calculations. These are configured in the same way, except the actual Generator expression. We outline the general steps to create the predictors once, whilst the actual expression for each of the specific predictors are provided in table below.
+
+We will review how to create four different predictors/data elements using the outlier threshold:
+
+  ---------------------------------------------------------------------------------------
+  Data element excluding outliers   Data element values that are not outliers.
+  --------------------------------- -----------------------------------------------------
+  Data element outliers             Data element values that *are* outliers.
+
+  Data element non-outlier count    Count of data element values that are not outliers.
+
+  Data element outlier count        Count of data element values that are outliers.
+  ---------------------------------------------------------------------------------------
+
+The following example (with ANC 1st visit as the data element we are assessing) shows for an time series what output the different predictors are expected to produce
+
+| | **Jan** | **Feb** | **Mar** | **Apr** | **May** | **Jun** | **Jul** |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | 
+| ANC 1 | 165 | 196 | 214 | 204 | 219 | 4243 | 195 | 
+| ANC 1 outlier threshold | 253 | 265 | 253 | 244 | 242 | 246 | 4716 | 
+| ANC 1 excl outliers | 165 | 196 | 214 | 204 | 219 | | 195 | 
+| ANC 1 outliers | | | | | | 4243 | | 
+| ANC 1 non-outlier count | 1 | 1 | 1 | 1 | 1 | | 1 | 
+| ANC 1 outlier count | | | | | | 1 | | 
+
+To configure these predictors, follow these general steps after first creating data elements to which the values can be assigned:
+
+1.  Create a new predictor
+
+2.  Set the Output data element to point to the data element that has been created
+
+3.  Set Period type to match the data collection frequency of the data element we are assessing.
+
+4.  Set Organisation units levels to the level at which the data is collected, in most cases Facility.
+
+5.  Configure the *Generator*, using the appropriate expression from the table below
+
+6.  Set the Sequential sample count to **1**, the annual sample count to 0, and sequential skip count to 0.
+
+This table provides the expressions that should be used in Generator of the different predictors:
+
+  
+| Predictor | Expression | Example | Explanation |
+| :-- | :-- | :-- | :-- | 
+| Data element excluding outliers | if( {DE} \<= {DE threshold}, {DE}, 0) | if(#{KV1LlPytf4f}\<=#{dx8Y0ZrHji7}, #{KV1LlPytf4f}, 0) | If the data element value is below the threshold, use the data element value, else return 0. | 
+| Data element outliers | if( {DE} \> {DE threshold}, {DE}, 0) | if(#{KV1LlPytf4f} \> #{dx8Y0ZrHji7}, #{KV1LlPytf4f}, 0) | If the data element value is above the threshold, use the data element value, else return 0. | 
+| Data element non-outlier count | if( {DE} \<= {DE threshold}, 1, 0) | if(#{KV1LlPytf4f}\<=#{dx8Y0ZrHji7}, 1, 0) | If the data element value is below the threshold, return 1, else return 0. | 
+| Data element outlier count | if( {DE} \> {DE threshold}, 1, 0) | if(#{KV1LlPytf4f}>#{dx8Y0ZrHji7}, 1, 0) | If the data element value is above the threshold, return 1, else return 0. | 
+ 
+  
+The data elements populated by these predictors can be used in visualizations and on dashboards directly, e.g. showing the reported values against the threshold, having a simple counter of the number of outliers that were flagged in the previous month, or producing tables that highlight the specific outlier values by facility.
+
+![](resources/images/dq_outlier_image4.png)
+
+##### Indicators for outlier analysis
+
+When predictors and data elements have been configured for these core data quality measure as explained above, we can define two indicators:
+
+**Percentage of values that are outlier values** for a particular data element:
+
+Numerator: count of outlier values
+
+Denominator: count of outlier values + count of non-outlier values
+
+Factor: 100
+
+Purpose: metric of the data quality, and can be used to look at geographical comparisons or changes over time
+
+**Value excluding outliers as a percentage of the overall value** for a particular data element:
+
+Numerator: the values for the data element that are not outliers
+
+Denominator: all values for the data element
+
+Factor: 100
+
+Purpose: metric for the *significance* the outlier values has on the overall value for a data element, and can be used both for time trends and geographical comparisons. Also gives an indication of how significantly outliers affect the overall data which is an important consideration when analyzing data.
+
+Configuration of these indicators are straightforward once the underlying predictors/data elements are available (options a and b below refers to each of the above indicators)
+
+1.  Create a new indicator with an appropriate name and description. Description is important here since these indicators might be new to most users.
+
+2.  Set the indicator type to be Percentage (exact name can vary, but the factor of the indicator type should be 100)
+
+3.  Configure the numerator
+
+    a.  Count of outliers (example: Malaria confirmed cases outlier count)
+
+    b.  Values excluding outliers (example: Malaria confirmed cases excluding outliers)
+
+4.  Configure the denominator
+
+    a.  Count of outlier values + count of non-outlier values (example: Malaria confirmed cases outlier count + Malaria confirmed cases non-outlier count)
+
+    b.  Data element values (example: Malaria confirmed cases)
+
+5.  Save the indicator and assign it to appropriate groups
+
+These indicators can now be used in visualizations and dashboards, allowing users to easily monitor trends in outliers, make geographical comparisons, and monitor the overall impact of outliers on the data element in question.
+
+#### DHIS2 Outlier analysis
+
+It is not realistic to configure a set of predictors, data elements and indicators for every data element. Outlier analysis in the Data Quality makes it possible to run outlier analysis on whole data sets, and is therefore a useful complement to the predictor-based outlier checks.
+
+To run outlier analysis, open the Data Quality app, and click Analyze under Outlier detection.
+
+![](resources/images/dq_outlier_image6.png)
+
+Start by selecting the key parameters for the analysis:
+
+-   Data set - choose one or more data sets to include in the analysis
+
+-   Organization units - choose one or more organization units to include; all orgunits below the selected units will be included.
+
+-   Start and end dates - periods within this date range will be included. Note that these are the periods we are analyzing for outliers. Data from *all* periods for a particular organization unit and data element is included when the average/median and standard deviation is calculated, unless otherwise specified (see advanced options below).
+
+![](resources/images/dq_outlier_image5.png)
+
+Next, specify the statistical methods and parameters to use for the analysis.
+
+-   Algorithm:
+
+    -   Z-score - detection of outliers based on standard deviations from the mean. More information [[about z-score]{.ul}](https://en.wikipedia.org/wiki/Standard_score).
+
+    -   Modified z-score - detection of outliers based on standard deviations from the median.
+
+    -   Min-max - based on min-max values, discussed [here](#review-min-max-values-in-the-data-quality-app)
+
+-   Threshold - the number of standard deviations from the mean/median a value must be before it is considered an outlier. The default is 3, which is often used as a default definition of an "extreme" outlier.
+
+-   Max results - the maximum number of outliers that will be included in the results table.
+
+![](resources/images/dq_outlier_image2.png)
+
+Optionally, change the advanced options:
+
+-   Data start and end date - allows you to limit what data is used as the basis for calculating the mean/median and standard deviations, overriding the default options which is to include all data. Note that a certain number of periods are needed for the statistical calculations to be meaningful.
+
+-   Sort by - specified how the results are sorted, with two options
+
+    -   Absolute deviation from median/mean (default) - this sorts the resulting table of outliers according to the absolute deviation of the outlier from the median/mean. In general, this means that the outliers with the biggest significance/impact on the result is shown first.
+
+    -   Z-score/modified z-score - this sorts the resulting table according to the z-score, i.e. "how extreme" the outlier is. This means that a relatively small value (i.e. from a small facility) could be displayed before a much larger number (i.e. from a big facility), if the smaller value is further from the mean/median.
+
+![](resources/images/dq_outlier_image8.png)
+
+Finally, click Start to run the analysis. Depending on the parameters selected and size of the database, this may take some time. The resulting table lists all the outliers that have been detected (up to the maximum allowed results), with information on:
+
+-   Data element
+
+-   Period
+
+-   Organization unit
+
+-   Value - the value that has been identified as an outlier
+
+-   Z-score - the z-score of the outlier
+
+-   Deviation - the deviation of the outlier, i.e. the difference between the mean/median and the actual value
+
+-   Std Dev - the value of one standard deviation.
+
+-   Median/mean - median/mean value, depending on the method used
+
+-   Min and Max - min and max value for the data element, based on the specified number of standard deviations set in the parameters section.
+
+-   Follow-up - check-box that allows values to be marked for follow-up, which means they can be listed using the "Follow-up analysis" function of the Data Quality app.
+
+![](resources/images/dq_outlier_image1.png)
+
 
 
 ## WHO Data Quality Tool
