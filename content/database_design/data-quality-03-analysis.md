@@ -880,10 +880,10 @@ This table provides the expressions that should be used in Generator of the diff
   
 | Predictor | Expression | Example | Explanation |
 | :-- | :-- | :-- | :-- | 
-| Data element excluding outliers | if( {DE} \<= {DE threshold}, {DE}, 0) | if(#{KV1LlPytf4f}\<=#{dx8Y0ZrHji7}, #{KV1LlPytf4f}, 0) | If the data element value is below the threshold, use the data element value, else return 0. | 
-| Data element outliers | if( {DE} \> {DE threshold}, {DE}, 0) | if(#{KV1LlPytf4f} \> #{dx8Y0ZrHji7}, #{KV1LlPytf4f}, 0) | If the data element value is above the threshold, use the data element value, else return 0. | 
-| Data element non-outlier count | if( {DE} \<= {DE threshold}, 1, 0) | if(#{KV1LlPytf4f}\<=#{dx8Y0ZrHji7}, 1, 0) | If the data element value is below the threshold, return 1, else return 0. | 
-| Data element outlier count | if( {DE} \> {DE threshold}, 1, 0) | if(#{KV1LlPytf4f}>#{dx8Y0ZrHji7}, 1, 0) | If the data element value is above the threshold, return 1, else return 0. | 
+| Data element excluding outliers | if( {DE} <= {DE threshold}, {DE}, 0) | if(#{KV1LlPytf4f}<=#{dx8Y0ZrHji7}, #{KV1LlPytf4f}, 0) | If the data element value is below the threshold, use the data element value, else return 0. | 
+| Data element outliers | if( {DE} > {DE threshold}, {DE}, 0) | if(#{KV1LlPytf4f} > #{dx8Y0ZrHji7}, #{KV1LlPytf4f}, 0) | If the data element value is above the threshold, use the data element value, else return 0. | 
+| Data element non-outlier count | if( {DE} <= {DE threshold}, 1, 0) | if(#{KV1LlPytf4f}<=#{dx8Y0ZrHji7}, 1, 0) | If the data element value is below the threshold, return 1, else return 0. | 
+| Data element outlier count | if( {DE} > {DE threshold}, 1, 0) | if(#{KV1LlPytf4f}>#{dx8Y0ZrHji7}, 1, 0) | If the data element value is above the threshold, return 1, else return 0. | 
  
   
 The data elements populated by these predictors can be used in visualizations and on dashboards directly, e.g. showing the reported values against the threshold, having a simple counter of the number of outliers that were flagged in the previous month, or producing tables that highlight the specific outlier values by facility.
