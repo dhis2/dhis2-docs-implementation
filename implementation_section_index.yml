@@ -56,6 +56,8 @@ Maintenance and use:
   - Tracker and aggregate data integration:  '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/tracker-aggregate-integration.md, master)'
   - Data Analysis Tools Overview: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/data-analysis-tools-overview.md, master)'
   - Localization of DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/localization-of-dhis2.md, master)'
+Logistics:
+  - Real Time Stock: '@github(dhis2/dhis2-docs-implementation, content/lmis/real-time-stock-management.md, lmis_init)'  
 Support and documentation:
   - DHIS2 Documentation Guide: '@github(dhis2/dhis2-docs-implementation, content/support_documentation/dhis2-documentation-guide.md, master)'
   - Submitting quick document fixes: '@github(dhis2/dhis2-docs, src/common/submitting-a-doc-fix.md, master)'
