@@ -78,8 +78,10 @@ Software Release Information:
       - Upgrade Notes: '@github(dhis2/dhis2-releases,releases/2.35/README.md, master)'
   Android app releases:
     alt__DHIS core version 2.40:
+      alt__Android app version 2.9.0:
+        - Release Notes: '@github(dhis2/dhis2-releases,android-releases/2.9/ReleaseNote-2.9.0.md, 2.9)'
       alt__Android app version 2.8.0:
-        - Release Notes: '@github(dhis2/dhis2-releases,android-releases/2.8/ReleaseNote-2.8.0.md, 2.8)'
+        - Release Notes: '@github(dhis2/dhis2-releases,android-releases/2.8/ReleaseNote-2.8.0.md, master)'
     alt__DHIS core version 2.39:
       alt__Android app version 2.7.0:
         - Release Notes: '@github(dhis2/dhis2-releases,android-releases/2.7/ReleaseNote-2.7.0.md, master)'
