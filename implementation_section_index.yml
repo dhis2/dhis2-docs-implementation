@@ -29,8 +29,13 @@ CHIS implementation:
   - Training and Supervision: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/07_training_support.md, master)'
   - Sustainability and Governance: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/08_governance_sustainability.md, master)'
   - CHIS Assessment Tool: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/09_appendices.md, master)'
+Data quality: 
+  - OVERVIEW: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-00-intro.md, data-quality-toolkit)'
+  - Principles: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-01-principles.md, data-quality-toolkit)'
+  - Data entry: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-02-data-entry.md, data-quality-toolkit)'
+  - Analysis: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-03-analysis.md, data-quality-toolkit)'
+  - Implementation of funtionality and procedures: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-04-implementation.md, data-quality-toolkit)'
 Database design:
-  - Data Quality: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality.md, master)'
   - Organisation Units: '@github(dhis2/dhis2-docs-implementation, content/database_design/organisation-units.md, master)'
   - Aggregate system design:
     - Data Elements and Custom Dimensions: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-elements-and-custom-dimensions.md, master)'
@@ -51,6 +56,8 @@ Maintenance and use:
   - Tracker and aggregate data integration:  '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/tracker-aggregate-integration.md, master)'
   - Data Analysis Tools Overview: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/data-analysis-tools-overview.md, master)'
   - Localization of DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/localization-of-dhis2.md, master)'
+Logistics:
+  - Real Time Stock: '@github(dhis2/dhis2-docs-implementation, content/lmis/real-time-stock-management.md, lmis_init)'  
 Support and documentation:
   - DHIS2 Documentation Guide: '@github(dhis2/dhis2-docs-implementation, content/support_documentation/dhis2-documentation-guide.md, master)'
   - Submitting quick document fixes: '@github(dhis2/dhis2-docs, src/common/submitting-a-doc-fix.md, master)'
