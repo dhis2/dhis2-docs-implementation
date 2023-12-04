@@ -29,13 +29,13 @@ CHIS implementation:
   - Training and Supervision: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/07_training_support.md, master)'
   - Sustainability and Governance: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/08_governance_sustainability.md, master)'
   - CHIS Assessment Tool: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/09_appendices.md, master)'
+Data quality: 
+  - OVERVIEW: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-00-intro.md, data-quality-toolkit)'
+  - Principles: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-01-principles.md, data-quality-toolkit)'
+  - Data entry: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-02-data-entry.md, data-quality-toolkit)'
+  - Analysis: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-03-analysis.md, data-quality-toolkit)'
+  - Implementation of funtionality and procedures: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-04-implementation.md, data-quality-toolkit)'
 Database design:
-  - Data Quality: 
-    - OVERVIEW: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-00-intro.md, data-quality-toolkit)'
-    - Principles: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-01-principles.md, data-quality-toolkit)'
-    - Data entry: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-02-data-entry.md, data-quality-toolkit)'
-    - Analysis: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-03-analysis.md, data-quality-toolkit)'
-    - Implementation of funtionality and procedures: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-04-implementation.md, data-quality-toolkit)'
   - Organisation Units: '@github(dhis2/dhis2-docs-implementation, content/database_design/organisation-units.md, master)'
   - Aggregate system design:
     - Data Elements and Custom Dimensions: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-elements-and-custom-dimensions.md, master)'
