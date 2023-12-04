@@ -57,8 +57,8 @@ Maintenance and use:
   - Data Analysis Tools Overview: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/data-analysis-tools-overview.md, master)'
   - Localization of DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/localization-of-dhis2.md, master)'
 Health:
-  - DHIS2 WHO Digital Health Data Toolkit:
-    - About the WHO Digital Health Data Toolkit: '@github(dhis2/dhis2-docs, src/metadata/about-metadata.md, master)'
+  - DHIS2 Health Data Toolkit:
+    - About the DHIS2 Health Data Toolkit: '@github(dhis2/dhis2-docs, src/metadata/about-metadata.md, master)'
     - General Design Principles for WHO Metadata Packages: '@github(dhis2/dhis2-docs, src/metadata/metadata-design-principles.md, master)'
     - Common Metadata Library:
       - Design: '@github(dhis2-metadata/GEN_LIB, docs/gen_lib-design.md, master)'
