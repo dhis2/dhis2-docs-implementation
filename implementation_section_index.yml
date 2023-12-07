@@ -199,19 +199,23 @@ Health:
       - Design:
          - HIV Surveillance: '@github(dhis2-metadata/HIV_AGG, docs/hiv_agg-design.md, master)'
          - HIV Prevention Dashboards: '@github(dhis2-metadata/HIV_AGG, docs/hiv_prev_dashboards_datasets-design.md, master)'
+         - HIV Case Surveillance Dashboards: '@github(dhis2-metadata/HIV_AGG, docs/hiv_cs_dashboards_datasets-design.md, master)'
          - LMIS: '@github(dhis2-metadata/GEN_DOCS, docs/lmis_agg-design.md, master)'
          - HIV Logistics: '@github(dhis2-metadata/HIV_AGG, docs/hiv_agg_stk-design.md, master)'
       - Installation: '@github(dhis2-metadata/HIV_AGG, docs/hiv_agg-installation.md, master)'
     - HIV Case Surveillance:
       - OVERVIEW: '@github(dhis2-metadata/HIV_CS, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/HIV_CS, docs/release_note.md, master)'
-      - Design: '@github(dhis2-metadata/HIV_CS, docs/hiv_cs-design.md, master)'
+      - Design:
+         - HIV Case Surveillance Tracker: '@github(dhis2-metadata/HIV_CS, docs/hiv_cs-design.md, master)'
+         - HIV Case Surveillance Dashboards: '@github(dhis2-metadata/HIV_AGG, docs/hiv_cs_dashboards_datasets-design.md, master)'
       - Installation: '@github(dhis2-metadata/HIV_CS, docs/hiv_cs-installation.md, master)'
     - HIV Prevention:
       - OVERVIEW: '@github(dhis2-metadata/HIV_PREV, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/HIV_PREV, docs/release_note.md, master)'
-      - Design: '@github(dhis2-metadata/HIV_PREV, docs/hiv_prev-design.md, master)'
-      - HIV Prevention Dashboards: '@github(dhis2-metadata/HIV_AGG, docs/hiv_prev_dashboards_datasets-design.md, master)'
+      - Design:
+         - HIV Prevention Tracker: '@github(dhis2-metadata/HIV_PREV, docs/hiv_prev-design.md, master)'
+         - HIV Prevention Dashboards: '@github(dhis2-metadata/HIV_AGG, docs/hiv_prev_dashboards_datasets-design.md, master)'
       - Installation: '@github(dhis2-metadata/HIV_PREV, docs/hiv_prev-installation.md, master)'
   - Immunization:
     - Expanded Programme on Immunization (EPI) Aggregate:
