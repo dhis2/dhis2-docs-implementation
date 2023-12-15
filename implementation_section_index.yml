@@ -64,6 +64,11 @@ Health:
       - Design: '@github(dhis2-metadata/GEN_LIB, docs/gen_lib-design.md, master)'
       - Installation: '@github(dhis2-metadata/GEN_LIB, docs/gen_lib-installation.md, master)'
     - Naming Conventions: '@github(dhis2/dhis2-docs, src/metadata/metadata-naming-conventions.md, master)'
+  - Health Facility Profile:
+    - OVERVIEW: '@github(dhis2-metadata/HFP, docs/overview.md, master'
+    - Release Note: '@github(dhis2-metadata/HFP, docs/release_note.md, master'
+    - Design: '@github(dhis2-metadata/HFP, docs/hfp-design.md, master'
+    - Installation: '@github(dhis2-metadata/HFP, docs/hfp-installation.md, master'
   - CHIS Community Health Information System:
     - OVERVIEW: '@github(dhis2-metadata/CHIS_AGG, docs/overview.md, master'
     - Release Note: '@github(dhis2-metadata/CHIS_AGG, docs/release_note.md, master'
