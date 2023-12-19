@@ -69,6 +69,7 @@ jobs:
     - name: Run sed Command
       run: |
         sed -i "s;\(github(dhis2/dhis2-docs-implementation,.*, \)master);\1${GITHUB_HEAD_REF});" mkdocs.yml
+        cat mkdocs.yml
 
     - name: Build the docs
       run: |
