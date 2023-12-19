@@ -19,16 +19,6 @@ Android implementation:
   - '@github(dhis2/dhis2-android-docs, DHIS2_Android_Implementation_INDEX.yml, main)' #Android uses external INDEX files
   - Managing mobile devices:
     - '@github(dhis2/dhis2-android-docs, DHIS2_Android_MDM_INDEX.yml, main)' #Android uses external INDEX files
-CHIS implementation:
-  - Background: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/01_background.md, master)'
-  - Foundational Terms: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/02_foundational terms.md, master)'
-  - Design Principles: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/03_design_principles.md, master)'
-  - Assessing CHIS: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/04_assessment.md, master)'
-  - Data Quality and Use: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/05_data_use.md, master)'
-  - Sustainable Design and Architecture: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/06_dhis2_configuration.md, master)'
-  - Training and Supervision: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/07_training_support.md, master)'
-  - Sustainability and Governance: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/08_governance_sustainability.md, master)'
-  - CHIS Assessment Tool: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/09_appendices.md, master)'
 Data quality: 
   - OVERVIEW: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-00-intro.md, master)'
   - Principles: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-01-principles.md, master)'
@@ -95,6 +85,16 @@ Health:
       - Sexual and Reproductive Health: '@github(dhis2-metadata/CHIS_AGG, docs/chis_agg_srh-design.md, master'
       - Tuberculosis: '@github(dhis2-metadata/CHIS_AGG, docs/chis_agg_tb-design.md, master'
       - Water, Sanitation and Hygiene: '@github(dhis2-metadata/CHIS_AGG, docs/chis_agg_wash-design.md, master'
+    - Implementation:
+      - Background: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/01_background.md, master)'
+      - Foundational Terms: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/02_foundational terms.md, master)'
+      - Design Principles: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/03_design_principles.md, master)'
+      - Assessing CHIS: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/04_assessment.md, master)'
+      - Data Quality and Use: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/05_data_use.md, master)'
+      - Implementation Planning: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/06_dhis2_configuration.md, master)'
+      - Training and Supervision: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/07_training_support.md, master)'
+      - Sustainability and Governance: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/08_governance_sustainability.md, master)'
+      - CHIS Assessment Tool: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/09_appendices.md, master)'
     - Installation: '@github(dhis2-metadata/CHIS_AGG, docs/chis_agg-installation.md, master'
   - COVID-19 Surveillance:
     - OVERVIEW: '@github(dhis2-metadata/C19_CS, docs/c19_surveillance-digital_data_package-2022.md, master)'
