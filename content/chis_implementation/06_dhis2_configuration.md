@@ -4,16 +4,12 @@ A sustainable CHIS needs to be well designed to meet the information needs of th
 
 - Person leading the data model design has extensive working knowledge of DHIS data models: aggregated, events, and tracker
 - Person leading the roll out has extensive knowledge of the national infrastructure and previous experience on similar roll-outs
-
-## CHIS System Design, Develop, Test, and Deploy Process: 
-
-The process of designing a CHIS in DHIS2 is composed of a nine step process.
-
+  
 ### 1. Mapping Current State Business Processes
 
 The worst configuration of a CHIS in DHIS2 is typically where the current community health program business processes are simply digitized into DHIS2 without any modifications to optimize them. To avoid this mistake the first step to designing a well-functioning CHIS in DHIS2 to perform a thorough mapping of the current state of the community health program M&E data flow. The principal goal of mapping the current state are to:
 
-1. Harmonize CHW reporting tool into as few as possible (1 or 2).
+1. Harmonize CHW reporting tools into as few as possible 
 2. Standardized the harmonized reporting tools across the whole country.
 3. Identify what is working well.
 4. Identify what is not working well and how it could be improved.
@@ -21,357 +17,67 @@ The worst configuration of a CHIS in DHIS2 is typically where the current commun
 There are essentially two steps to mapping the current business process.
 
 1. Compile all current data collection forms. For each form identify:
-	- What are the data elements and indicators on this data collection form? Are these in the CHIS M&E framework? If not, should we still capture them?
-	- Who is responsible for capturing the data and how long does it take complete?
-	- What is the frequency of the completing the reporting form?
-	- What are the common mistakes or difficulties with completing the data collection form?
-	- What job aids or workflow support tools are built into the data collection form? Do they work? Are more needed?
-	- Map the electronic or paper data flow from point of collection to central level
-		- What organizational unit is the data captured against?
-		- What are the points of aggregation? Who performs the aggregations?
+   - What are the data elements and indicators on this data collection form? Are these in the CHIS M&E framework? If not, should we still capture them?
+   - Who is responsible for capturing the data and how long does it take complete?
+   - What is the frequency of the completing the reporting form?
+   - What are the common mistakes or difficulties with completing the data collection form?
+   - What job aids or workflow support tools are built into the data collection form? Do they work? Are more needed?
+   - Map the electronic or paper data flow from point of collection to central level
+     - What organizational unit is the data captured against?
+     - What are the points of aggregation? Who performs the aggregations?
 2. Compile all current data analysis/data use tool. For each tool identify:
-	- What is the level of granularity of the data presented?
-		* Organizational level of aggregation (i.e. community, facility, district, or national)
-		* Periodicity level of aggregation (i.e. daily, weekly, monthly, ex.)
-	- What decisions are made or actions performed based on that tool?
-	- What are the problems or issues with the tool?
-	- What could be done to address these problems or issues?
+   - What is the level of granularity of the data presented?
+     * Organizational level of aggregation (i.e. community, facility, district, or national)
+     * Periodicity level of aggregation (i.e. daily, weekly, monthly, ex.)
+   - What decisions are made or actions performed based on that tool?
+   - What are the problems or issues with the tool?
+   - What could be done to address these problems or issues?
 
 ### 2. Considerations in Translating Business Process to DHIS2
 
 Translating the data flows of community in DHIS2 is the most crucial step in the design process. There are nine critical elements that must be considered. These are:
 
-1. Logic of data aggregation
+1. Types of CHW data
 2. Reporting periods and frequency
-3. Organizational hierarchy
-4. Vertical health programs vis-à-vis HMIS
-5. Partner reporting
-6. Outputs: Internal and External
+3. Organizational hierarchy: reporting structures & relation to national HMIS
+4. Vertical health programs and integrated reporting
+5. Implementing partner considerations
+6. Core indicators & analysis needs
 7. Infrastructure considerations
-8. Technology considerations for data acquisition = tool selection
+8. Technology considerations (devices, connectivity)
 9. Security
 
-#### Logic of Data Aggregation 
+#### Types of CHW data
 
-**Extending from the existing facility system** to community health workers needs to ensure that the logic for data aggregation stays synchronized within the existing CHIS. While designing the aggregation, there could be five typical scenarios.
+**Community health service delivery data** is often considered an extension of facility-based services to the community with strong linkages to referrals. CHWs also participate in other periodic household level data collection activities, as well as campaigns, education and prevention, and community-based surveillance. 
 
-1. **CHW Aggregate data reporting**: If aggregate data is being collected at facility level, and CHWs are also submitting aggregate numbers, the summed value of facility and CHW needs to represent a meaningful figure. For example:
-	- Case 1 - CHWs is solely responsible for reporting on all pregnant women registered for ANC in the area. This data element should be reported by all CHWs and its aggregate should be taken as facility reported number: i.e. Number of pregnant women registered for ANC at facility = CHW1+ CHW2 ...
-	- Case 2 - In case CHWs are to report on this data element of community services and the facility is also providing similar services, then the total count of services provided is the sum of CHWs + facility: i.e. Number of pregnant women registered for ANC = facility + CHW1+ CHW2 ...
+1. **CHW Aggregate data reporting**: aggregated data from CHWs on routine service delivery and outreach activities are reported into DHIS2 alongside aggregate facility data. The data structure should allow for disaggregation by services delivered in the community or in the facility, as well as meaningful aggregation at the lowest levels of the HMIS hierarchy.  
+2. **Household surveys**: annual household surveys are conducted by CHWs and data can be used to populate community-level denominators or provide annual data for triangulation with routine service delivery data. 
+3. **Campaigns:** CHWs may be responsible for supporting community-based campaign style interventions that are planned as supplemental activities to routine service delivery
+4. **Individual-level longitudinal data**: digitalization of person-centered data collection, such as clients in the community enrolled into a vertical health program like Family Planning services; or clients tracker for prevention, education and service delivery through integrated digital registers.
 
-    > **Note**
-    > 
-    > It is generally considered a best practice to have separate data sets for facilities and CHWs. Meaning, the CHW should not be submitting data via the facility data set. This is to minimize potential for double counting of patient between facility and CHW, and it enables better performance monitoring of CHWs and facilities.
-
-2. **Case based (tracker) data reporting where case location is [not]{.ul} important**: In case aggregate data is being collected at facility and CHWs are to collect name/case based data for the same, in such case aggregation of all case/names should be done at facility level. Meaning cases should be enrolled as tracked entities against the facility even if CHWs are capturing the data.
-
-    > For example, if there are 10 records of individual ANC cases captured by the CHW in the ANC tracker program for one month, then the facility value for ANC cases is 10. In DHIS2, this process of aggregation is automated.
-    >
-    > An example organizational hierarchy:
-    >
-    > - Facility (Org unit level)
-    > 	- ANC Case 1 (Tracked entity)
-	> 	- ANC Case 2 (Tracked entity)
-    >	- ANC Case 3
-    >	- etc.
-
-3. **Case based (tracker) data reporting where case location is important**: In situations where the case location is important (i.e. village, community, etc) for epidemiological disease control (ex: malaria active case detection) or door-to-door outreach services (ex: immunization campaigns) it may be best for the case to be enrolled in the tracker program against the lowest level organizational unit that reflects their location of habitation, where they live. In this situation aggregated facility reporting will typically be a separate data set and only capture aggregated cases that happen just at the facility. Often in the case of epidemiological control programs facilities will also be performing individual case reporting.
-
-    > For example, in a malaria program where CHW are performing active case detection to villages of people who test positive for malaria the individual case should be enrolled against the village. This allows CHWs to know the location of cases for active case detection. Example organizational hierarchy below:
-
-    > - Facility (Org unit level)
-    > 	- Village (Org unit level)
-    >		- Malaria Case 1 (Tracked entity)
-    >		- Malaria Case 2 (Tracked entity)
-    >		- etc.
-
-4. **Case based (tracker) data reporting where case association with CHW is important:** In situations where it is important to associate specific cases with a CHW that is providing services (ex: health education program) the case may be enrolled into the tracker program against the CHW which is actually configured as an organizational unit. To accommodate for high CHW turnover it is very important that the organizational unit for the CHW represents the CHW's position and not necessarily the specific name of the CHW, meaning the actual CHW working as an organizational unit can change without having to change the name of the organizational unit itself.
-
-    > For example, in a HIV/AIDs education program where a CHW will provide young women with STI education, contraceptives, and counseling and testing it may be very important to associate an individual case with a specific CHW. The example organizational hierarchy is below:
-    >
-    > - Facility (Org unit level)
-    > 	- CHW 1 (org unit level)
-    >		- Girl 1 (Tracked entity)
-    >		- Girl 2
-    >	- CHW 2
-    >		- Girl 3 (tracked entity)
-
-5. **Designing a new CHIS** when it is not required to feed into an existing facility HIS, then it leaves space for the defining aggregation logic to be relatively independent of the need to synchronize with bringing aggregation to the facility. An example of this could be a CHIS being set up from scratch for a specific campaign or event, then this is relatively independent of the aggregation logic of the facility.
-
+The various reporting structures should be mapped against the availability of paper-based and electronic tools to determine the most appropriate point of data integration in DHIS2. 
 
 #### Reporting Periods/Frequency
 
-Important when the reporting period for CHWs is different from the reporting period at the next level which is the facility. The CHW reporting should be at the same frequency or more frequent than facility reporting. Facility reporting should not be more frequent that CHW. For example:
+While the frequency of source data collection may vary depending on the availability of CHW level data collection tools, it is important to consider the harmonization of reporting period or frequency for integrating aggregate CHW data with aggregate facility data in an HMIS. For example, a given set of related elements for a service such as RDT testing should share the same frequency (e.g. in a DHIS2 dataset_ to enable comparable analysis of community and facility data.
 
-CHW data element:
+#### Organization Units & Reporting Structures
 
-- Number of mosquito bed nets distributed today (daily reporting)
-- Number of mosquito bed nets distributed this week (weekly reporting)
-
-Facility data element:
-
-- Number of mosquito bed nets distributed this month
-
-In the first case (a) 30 daily reports will make monthly aggregate for bed nets distributed: Total nets distributed = Facility (Month) + CHW Day 1 + CHW Day 2 . . . . . + CHW Day 30
-
-In the second case (b) 4 weekly reports will make the monthly aggregate for bed nets distributed. Total nets distributed = Facility (Month) + Week 1 + CHW week 2 . . . . . + CHW week 4
-
-If the reporting periodicity is same for CHW and facility, then we must ensure that the aggregation logics must be matched, as discussed above.
-
-#### Organization Units and Hierarchy
-
-Another important consideration is how to add CHWs in the reporting hierarchy. Given the scale and number of CHWs, this becomes one of the fundamental decisions in CHIS design.
+The logic of reporting structures should be considered with relation to aggregation through the organisation unit hierarchy and linkages with HMIS administrative structures, such as facility catchment areas or supervisory reporting flows from CHWs to facilities. Another important consideration is how to add CHWs in the reporting hierarchy. Given the scale and number of CHWs, this becomes one of the fundamental decisions in CHIS design.
 
 A organizational tree represents the administrative or geographical division located inside a hierarchy. For example:
 
 > - Country, HQ \[L1\]
-> 	- Province, district (administrative unit) \[L2\]
->		- Facility, clinic, hospital (providing services) \[L3\]
+>   - Province, district (administrative unit) \[L2\]
+>     - Facility, clinic, hospital (providing services) \[L3\]
 
-In this example above the organizational unit hierarchy follows the administrative and geographical division. The hierarchy is then divided into organizational units such as a province, district, or individual facility. Organizational units drive: data entry, security: capture and outputs, and analytics: data is aggregated/rolled up through the hierarchy **(Gold Rule: Aggregation should always be meaningful).**
+Designing the organization unit hierarchy to integrate community and facility data should take into account: 
 
-**The when properly configured the organizational hierarchy should enable the user to know:**
-
-1. **Where** the data is associated with (i.e. individual patient, household, village, health facility, community health posts, etc.).
+1. **Where** the data is associated with (i.e. individual patient, household, village, health facility, community health posts, facility catchment areas etc.).
 2. **What** the data means. Is the data able to be aggregated up the hierarchy in a meaningful way? Is data captured at that organizational unit meaningful to that level?
 3. **When** is the data captured. The period assigned to the data set or the program should be aggregable up the hierarchy to larger and larger periods. For example, you can not have a monthly reported data element at community level aggregating into a weekly data element at its parent facility.
-4. **Who** captures the data and provides the services. This is especially important for community health programs where we need to know the actions and services delivered by individual CHWs. This is possible to configure in the hierarchy.
-
-
-> Important
-> 
-> **Every hierarchy should pass the CHIS hierarchy test:**
->
-> 1. Does it enable data to be captured against an organizational unit that represents where and who the data is associated? 
-> 2. Does the organizational hierarchy enable security and access controls? 
-> 3. Does the aggregation produce the desired outputs: indicators, analytics, dashboards, maps, etc. 
-> 4. Is the data able to be associated with a single CHW? (Not necessary, but highly recommended) 
-
-Based on the empirical experiences from various country setting, we understand that could be found the following organizational hierarchy scenarios:
-
-##### Case 1 - One or more CHW work in specific villages (BUT NOT in other villages). 
-
-> - Country \[L1\]
-> 	- Regions \[L2\]
-> 		- Facilities \[L3\]
-> 			- Village \[L4\]
-> 				- CHW 1 \[L5 or Tracked Entity\]
-> 				- CHW 2 \[L5 or Tracked Entity\]
-> 			- Village \[L4\]
-> 				- CHW 3 \[L5 or Tracked Entity\]
-> 				- CHW 4 \[L5 or Tracked Entity\]
-
-Does it pass the test?
-
-1. Does it enable data to be captured against an organizational unit that represents where and who the data is associated?
-*Yes, data can be captured at CHW level \[L5\], which is only present under one Village \[L4\]. This represents that data was collected by the specific Health Worker and that it belongs to one specific Village unequivocally.*
-2. Does the organizational hierarchy enable security and access controls?
-*Yes, every CHW will be assigned to its own organization unit, which is the lowest level. It implies that s/he will be able to see only data that him/herself has collected.*
-3. Does the aggregation produce the desired outputs: indicators, analytics, dashboards, maps, etc.
-*Yes, aggregation at each level will accumulate data into health worker, villages, facilities, regions...*
-4. Is the data able to be associated with a single CHW? (Not necessary, but highly recommended)
-*Yes, data can always be associated to the level where it was captured, which in this case is the CHW.*
-
-Yes, it passes the test.
-
-**If you are considering representing the CHW as a tracked entity**: In this case CHWs could be represented as tracked entities if programmatically required. However, it is not advised to represent the CHWs as tracked entities if they are also responsible for reporting on a different type of tracked entity such as malaria cases or a stockout that needs to be associated with the CHW. In this case the CHW should be represented as an organizational unit.
-
-Recommended configuration if CHWs need to be associated with a tracked entity.
-
-> - Country \[L1\]
-> 	- Regions \[L2\]
-> 		- Facilities \[L3\]
-> 			- Village \[L4\]
-> 				- CHW 1 \[L5\]
-> 					- Malaria Case \[Tracked Entity\]
-> 					- Malaria Case \[Tracked Entity\]
-
-
-##### Case 2 - CHW works in several villages/communities. CHWs DO NOT share villages.
-
-> - Country \[L1\]
-> 	- Regions \[L2\]
-> 		- Facilities \[L3\]
->   		- CHW 1 \[L4\]
->	 			- Village A \[L5 or Tracked Entity\]
->	 			- Village B \[L5 or Tracked Entity\]
->   		- CHW 2 \[L4\]
->	 			- Village C \[L5 or Tracked Entity\]
->	 			- Village D \[L5 or Tracked Entity\]
-
-
-Does it pass the test?
-
-1. Does it enable data to be captured against an organizational unit that represents where and who the data is associated?
-*Yes, data can be captured at Village level \[L5\], which is only present under one CHW \[L4\]. This represents that data was collected in the specific Village and that it belongs to one specific Health Worker unequivocally.*
-2. Does the organizational hierarchy enable security and access controls?
-*Yes, every health worker will be assigned to its own organization unit \[L4\], being able to see data that belongs to that organization unit and its children \[L5\]. In this case children are Villages in which the health worker works, hence, s/he will be able to access only to data that him/herself has collected.*
-3. Does the aggregation produce the desired outputs: indicators, analytics, dashboards, maps, etc.
-*Yes, aggregation at each level will accumulate data into village, health worker, facilities, regions...*
-4. Is the data able to be associated with a single CHW? (Not necessary, but highly recommended)
-*Yes, data can always be associated to the Health Worker level \[L4\].*
-
-Yes, it passes the test on the web or Android, but does not work for SMS data capture.
-
-**If you are considering representing the village as a tracked entity:** There may be a programmatic or administrative reason that villages should be represented as a tracked entity, such as the villages change constantly due to seasonal population migration (administrative) or the need to track villages through some sort of outreach or educational program (programmatic). An issue does develop if, for example, a patient in a village also needs to be tracked and associated via a relationship with a village. DHIS2 is currently unable to build tracked entity analytics based upon relationships between two different types of tracked entity. Therefore, it is recommended that if patients need to be tracked and associated with a village then the village should remain as an organizational unit. Example below:
-
-Recommended configuration if a village needs to be associated with a tracked entity.
-
-> - Country \[L1\]
-> 	- Regions \[L2\]
-> 		- Facilities \[L3\]
-> 			- CHW 1 \[L4\]
-> 				- Village A \[L5\]
->					- Patient 1 \[Tracked Entity\]
->					- Patient 2 \[Tracked Entity\]
->					- Patient 3 \[Tracked Entity\]
-
-##### Case 3 - CHW works in more than one village/community
-> - Country \[L1\]
-> 	- Regions \[L2\]
-> 		- Facilities \[L3\]
-> 			- Village A \[L4\]
-> 				- CHW 1 \[L5\]
-> 				- CHW 2 V-A \[L5\]
-> 			- Village B \[L4\]
-> 				- CHW 2 V-B \[L5\]
-> 				- CHW 3 \[L5\]
-
-Does it pass the test?
-
-1. Does it enable data to be captured against an organizational unit that represents where and who the data is associated?
-*Yes, data can be captured at CHW level \[L5\], which is under one or more Villages \[L4\]. This represents that data was collected by the specific Health Worker and that it belongs to one specific Village unequivocally.*
-2. Does the organizational hierarchy enable security and access controls?
-*Yes, every CHW will be assigned to its own organization unit, which is the lowest level. It implies that s/he will be able to see only data that him/herself has collected.*
-3. Does the aggregation produce the desired outputs: indicators, analytics, dashboards, maps, etc.
-*No, we can aggregate by village, facility, region... , however, due to the repetition of CHW in different villages (CHW 2 in the example) we cannot aggregate data by CHW using the hierarchy.*
-4. Is the data able to be associated with a single CHW? (Not necessary, but highly recommended)
-*Yes, data can always be associated to the CHW level \[L5\].*
-
-No, it does not pass the test because CHW work cannot be aggregated because of repeated names. This will also not work for SMS.
-
-##### Case 4 -- Multiple CHWs works in single village. 
-
-> - Country \[L1\]
-> 	- Regions \[L2\]
-> 		- Facilities \[L3\]
-> 			- CHW 1 \[L4\]
-> 				- Village A HW1 \[L5\]
-> 				- Village B HW1 \[L5\]
-> 			- CHW 2 \[L4\]
-> 				- Village B HW2 \[L5\]
-
-Does this pass the test?
-
-1. Does it enable data to be captured against an organizational unit that represents where and who the data is associated?
-*Yes, data can be captured at Village level \[L5\], which is only under the CHW \[L4\]. This represents that data was collected in the specific Village and that it belongs to one specific Health Worker unequivocally.*
-2. Does the organizational hierarchy enable security and access controls?
-*Yes, every CHW will be assigned to its own organization unit \[L4\], being able to see data that belongs to that organization unit and its children \[L5\]. In this case children are Villages in which the health worker works, hence, s/he will be able to access only to data that him/herself has collected.*
-3. Does the aggregation produce the desired outputs: indicators, analytics, dashboards, maps, etc.
-*No, aggregation at each level will accumulate data into health worker, facilities, regions... but we cannot aggregate data by Village using the hierarchy (see Village B).*
-4. Is the data able to be associated with a single CHW? (Not necessary, but highly recommended)
-*Yes, data can always be associated to the Health Worker level \[L4\].*
-
-No, it does not pass the test. Village data cannot be aggregated. This will also not work for SMS.
-
-##### Case 5 - CHW is assigned to a village as a user but not represented in the hierarchy. 
-
-> - Country \[L1\]
-> 	- Regions \[L2\]
-> 		- Facilities \[L3\]
-> 			- Village A \[L4\]
-> 			- Village B \[L4\]
-
-Does this pass the test?
-
-1. Does it enable data to be captured against an organizational unit that represents where and who the data is associated?
-*Partially, data can be captured at Village level \[L4\] but there is no organization unit to relate to the Health Worker.*
-2. Does the organizational hierarchy enable security and access controls?
-*Partially, as long as the Health Worker is allowed to access all data in the Village to which s/he is assigned.*
-3. Does the aggregation produce the desired outputs: indicators, analytics, dashboards, maps, etc.
-*Partially, as long as we don't need aggregation by Health Worker. Aggregation at each level will accumulate data into villages, facilities, regions...*
-4. Is the data able to be associated with a single CHW? (Not necessary, but highly recommended)
-*No, CHW is not present in the Hierarchy and we cannot filter data by Health Worker using the hierarchy.*
-
-Partially (first 3 questions but not 4). The work of a single CHW is not defined in the hierarchy and will not be able to be viewed in the analytics. Custom analytics could be made to produce this, but these analytics will require significant development and maintenance.
-
-##### Case 6 - Community data is submitted as aggregate at facility or higher level.
-
-> - Country \[L1\]
-> 	- Regions \[L2\]
-> 		- Facilities \[L3\] ← Aggregated village data
-
-Does this pass the test?
-
-1. Does it enable data to be captured against an organizational unit that represents where and who the data is associated?
-*No, we cannot register data against the community or the village.*
-2. Does the organizational hierarchy enable security and access controls?
-*No, all village and community data will be accessible from all users assigned to the Facility level \[L3\]*
-3. Does the aggregation produce the desired outputs: indicators, analytics, dashboards, maps, etc.
-*No, aggregation at each level will start accumulating at facility level, we cannot have data aggregated by village or community.*
-4. Is the data able to be associated with a single CHW? (Not necessary, but highly recommended)
-*No, CHW is not present in the Hierarchy and we cannot filter data by Health Worker using the hierarchy.*
-
-No, it does not pass the test. The data for an individual community cannot be disaggregated.
-
-##### Case 7 - Representing a CHW as Category Option
-
-In small CHIS where there are less than 250 CHWs it is possible to use configure CHWs as category options. This configuration will satisfy the test. The graphic below illustrates how this option can associate a village with many CHWs:
-
-![](resources/images/chis_figure21.png)
-
-*Figure 4.1:* Relationship possibilities when CHWs are represented by category options.
-
-Does this pass the test?
-
-1. Does it enable data to be captured against an organizational unit that represents where and who the data is associated?
-*Yes, data can be captured at Village level \[L4\] and we can relate it to the Health Worker using the Health Worker Category as a filter.*
-2. Does the organizational hierarchy enable security and access controls?
-*Partially, if the Health Worker is allowed to access all data in the Village to which s/he is assigned.*
-3. Does the aggregation produce the desired outputs: indicators, analytics, dashboards, maps, etc.
-*Yes, aggregation at each level will accumulate data into village, facilities, regions... And data can be discriminated by Health Worker by using the Category as a filter.*
-4. Is the data able to be associated with a single CHW? (Not necessary, but highly recommended)
-*Yes, data is linked to the Health Worker through the Category Option selected in Data Entry.*
-
-Yes, it passes the test. However, **this configuration is not scalable for large CHIS with many CHWs**. It also is not currently enabled for SMS or Android Data Capture without a custom application.
-
-##### Keeping the Organizational Hierarchy Clean
-
-DHIS2 does not support multiple organizational hierarchies. To enable data mining at scale each level should represent a single type of reporting unit. Different types of reporting units at a single level make it virtually impossible to perform analytics in DHIS2. For example:
-
-> **Bad**
-> 
-> - Facility \[Org unit level\]
-> 	- CHW 1 \[Org unit level\]
-> 	- Village 1
-> 	- CHW 2
-> 	- Village 2
-> 	- Borehole 1
-> 	- Borehole 2
-> 	- Village 3
-> 	- Village 4
-> 	- Borehole 3
-> 	- Borehole 4
-> 	- Borehole 5
-
-> **Good**
-> 
-> - Facility \[Org unit level\]
-> 	- CHW 1 \[Org unit level\]
-> 		- Village 1 \[Org unit level\]
-> 			- Borehole 1 \[Tracked Entity\]
-> 			- Borehole 2
-> 		- Village 2
-> 			- Borehole 3
-> 	- CHW 2
-> 		- Village 3
-> 			- Borehole 4
-> 			- Borehole 5
-> 		- Village 4
-
-> **Warning**
->
-> If CHWs are included in the hierarchy it is best practice to name the organizational unit with the position and not the actual name of the CHW. For example, if Peter Banda is a CHW working as a CHW under Choma Health Facility; his organizational unit would be named, "Ndola CHW 01," and not "Peter Banda CHW." In this example if Peter leaves the role of a CHW then a new CHW can be trained to replace him and can then fill the organizational unit Choma CHW 01. If 20% of CHWs need to be replaced annually and the name of the CHW is the name of the organizational unit they represent then 20% of the CHIS organizational unit will have to be changed annually.
+4. **Who** captures the data and provides the services. This is especially important for community health programs where we need to know the actions and services delivered by individual CHWs; or need to maintain a mapping from CHW rosters to more stable HMIS hierarchies for data integrationl. 
 
 ##### Scale - How big is too big for the hierarchy? 
 
@@ -379,17 +85,17 @@ If CHWs or individual communities are included in the hierarchy and the CHIS is 
 
 In dealing with the above multiplicity of conditions presented, CHW can be created as an organization unit in DHIS2 or as a user for the org unit. In each case, it is important to consider and evaluate vis-à-vis the complete organization hierarchy for the country or project, to ensure the hierarchy is manageable, typically not going beyond 7-8 levels.
 
-#### Vertical Health Program vis-à-vis HMIS 
+#### Vertical Health Programs vs Integrated reporting 
 
-In case CHWs are being introduced to report on health program specific data (malaria, HIV, infant feeding habits, contraception counselling, etc.), and this data needs to be included in the facility reporting system / routine HMIS, in such case additions need to be made in the facility dataset reflected in the DHIS2.
+In some cases, CHWs networks focus on health program specific interventions and reporting (malaria, HIV, infant feeding habits, contraception counselling, etc.). In other cases, CHWs may be trained on different types of services, such as outreach and education, integrated community case management or integrated RMNCAH services. These reporting structures should be considered in the design and assignment of data sets to user groups and org units. 
 
-#### Partner Reporting 
+#### Implementing Partner Reporting 
 
-In case CHWs are being introduced to report on specific projects being run by a partner (and not the routine facility HIS), in such a case project specific data sets and data flows should be defined and followed, which would be independent of the routine HIS.
+In some countries, CHW networks are supported by specific projects or implementing partners, a dimension which is not typically represented in a national HMIS. These reporting and data flows should be defined to determine the appropriate level of aggregation and integration with HMIS data. Where the CHIS is in a separate instance, it may also be possible to accommodate analysis by implementing partner dimensions using features such as data set attributes. 
 
-#### Outputs: Internal and External
+#### Core indicators & analysis needs
 
-[Dashboards, visualizations, internal reports, donor reports, other agencies reports]{.ul} - One of the crucial element running the CHIS system design is the expected outputs and analytics from the system. Though this is a general rule of thumb in the design of any information system at any level, but becomes a crucial consideration in a CHIS when the scale of data is very large and has immediate implications on the workload of a CHW.
+CHIS system design should be driven by the expected outputs and analytics required from the system. Core indicators may be defined through country level steering committees or routine HMIS reviews with government stakeholders. These processes should take into consideration alignment and integration with facility-based and HMIS data; as well as defining reporting requirements based on data use. Though this is a general rule of thumb in the design of any information system at any level, it is a crucial consideration in a CHIS when the scale of data is very large and has immediate implications on the workload of a CHW, as well as the fluctuation of CHWs, availability of devices and connectivity, and other operational challenges. 
 
 #### Infrastructure Considerations
 
@@ -402,7 +108,7 @@ In case CHWs are being introduced to report on specific projects being run by a 
 	- Right at the time of giving the devices (phones, tables, etc.) to CHWs, it is important to clarify the 'ownership' of the devices along with responsibilities of maintenance, upkeep and loss. There is often confusion on whether the device is owned by the institution or the individual, and what the respective responsibilities are.
 	- However, if the CHWs are expected to use personal devices for reporting, it is all the more important to clarify issues on airtime/data cost along with the reimbursement mechanism.
 
-#### Technology Considerations for Data Acquisition I.e. Tool Selection
+#### Technology Considerations (Devices, Connectivity)
 
 | | **Paper** | **SMS/USSD** | **Simple phones** | **Smart Phones** | **3rd party integration** | **Computers** |
 |:- |:- |:- |:- |:- |:- |:- |
@@ -495,11 +201,13 @@ In some CHIS, CHWs may be tracking individual patients completely paperless via 
 
 ### 6. Develop CHIS Meta-Data Dictionary
 
-A meta-data dictionary is used to describe all of the meta-data attributes. The enables that system users and administrators understand the meaning and purpose of each meta-data item.
+A meta-data dictionary is used to describe all of the meta-data attributes. The enables that system users and administrators understand the meaning and purpose of each meta-data item. A reference metadata dictionary is available for download from the DHIS2 CHIS resources based on the WHO and UNICEF recommended guidelines for monitoring CHW data, including core indicators, datasets, data elements and recommended disaggregations. 
 
 ### 7. Perform DHIS2 Configuration 
 
-The final step after compiling a meta-data dictionary to actually perform DHIS2 system configuration. Step-by-step guidelines for configuration of DHIS2 have been well documented and available on DHIS2 website ([[www.dhis2.org/documentation]{.ul}](http://www.dhis2.org/documentation)).
+The final step after compiling a meta-data dictionary to actually perform DHIS2 system configuration. 
+
+**See the CHIS System Design chapter for more information on DHIS2 configuration for CHW reporting and integration of community and HMIS data.**
 
 ### 8. Populate Prototype Database and Test
 
@@ -641,7 +349,7 @@ The dominant assumption of BPR system development is based on a clean slate appr
 
 > **Exampel**
 >
-> **Case Study: CHIS design in Mocambique**
+> **Case Study: CHIS design in Mozambique**
 > A HISP project was introducing DHIS in the community health system in Mozambique While conducting training at the community level, various strengths of the CHWs were seen.
 >
 > 1. CHWs had strong abilities to multi-task, developed through decades of working in extremely resource constrained environments. For example, they could engage in providing care in addition to doing administrative tasks at the same time.
