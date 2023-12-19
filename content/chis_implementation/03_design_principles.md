@@ -1,4 +1,4 @@
-# Five Design Principles for Implementing CHIS
+# Guiding Principles for Implementing CHIS
 
 When creating new CHIS in DHIS2, the system builders face many fundamental system design considerations, and the choices they make profoundly influence the trajectory of the CHIS. We describe these principles below and list a set of action points under each to enable operationalization of the design principles in practice.
 
@@ -8,7 +8,7 @@ When creating new CHIS in DHIS2, the system builders face many fundamental syste
 4. Strengthening capacity of CHWs and other stakeholders as a team.
 5. Follow incremental and evolutionary principles of system design and development.
 
-## Design Principle 1: Strengthen Government Ownership and Sustainability of the CHIS
+## Principle 1: Strengthen Government Ownership and Sustainability of the CHIS
 
 In the same way as community health fits within the larger arena of public health, the CHIS must fit within the larger ecosystem of public health information systems. A government-led CHIS strategy and implementation process ensures that essential community-level data are collected sustainably and promptly delivered to the right people in the health system, to enable effective decisions to strengthen health services delivery can be taken. Integrated design approaches which inherently strengthen government ownership will help reduce the unsustainable fragmentation of information systems, arising when non-standard systems are introduced by third-party agencies such as donors, NGOs, and faith-based organizations.
 
@@ -22,7 +22,7 @@ In the same way as community health fits within the larger arena of public healt
 5. Review CHIS-related health policies, M&E plans, and legislation regarding issues such as confidentiality, privacy, and data disaggregation.   
 
 
-## Design Principle 2: Enable and Strengthen Community Engagement
+## Principle 2: Enable and Strengthen Community Engagement
 
 Data collected through CHIS will only be accurate and consistent when the community and its leaders find value in the data generated and use it for local action. The CHIS, thus, must be designed to support community-based action, meaning that relevant local stakeholders should participate early in system design and implementation, and be able to see added value to their everyday work from the CHIS.
 
@@ -35,7 +35,7 @@ Data collected through CHIS will only be accurate and consistent when the commun
 5. Promote community-led CHIS innovations that improve data use, using an approach that encourages critical thinking and problem solving. Identify good ideas generated in the community and nurture them to scale.    
 
 
-## Design Principle 3: Build a Balance between Reporting Burden and Provision of Care
+## Principle 3: Build a Balance between Reporting Burden and Provision of Care
 
 CHWs bear the brunt of data collection processes introduced by health programs and donors. Data collection often cuts into the time and energy that CHWs could be using to provide health care services. CHWs should prioritize care-giving tasks over data-reporting ones, which require CHIS designers to promote local action over upward reporting to national systems. While detailed household and individual data is essential for local use, it is not needed for action at higher levels which requires more aggregated data. As a general principle, data should not be transmitted upwards unless it can be used at higher levels.
 
@@ -49,7 +49,7 @@ CHWs bear the brunt of data collection processes introduced by health programs a
 6. Integrate job aids such as data quality assessments or CHW diagnosis guides into the CHIS.
 
 
-## Design Principle 4: Strengthening Capacity Development Processes of All CHIS Stakeholders
+## Principle 4: Strengthening Capacity Development Processes of All CHIS Stakeholders
 
 CHIS should be both an object of capacity strengthening and a means to support teams of CHWs and stakeholders to conduct community-based health provision tasks. For example, CHWs need to build skills and capacity to use a mobile device based CHIS, but using this application they are able to strengthen their interactions with other CHWs and clinicians which can contribute to building their capacity to provide better health care services. Because of this potential, capacity strengthening around CHIS needs to span the entire information cycle. Some areas of capacity building that require attention in this context include:
 
@@ -78,7 +78,7 @@ CHIS should be both an object of capacity strengthening and a means to support t
 6. Identify and train IT counterparts in local government who will be responsible for maintaining the CHIS in the long-term, as part of the overall HIS strengthening. 
 
 
-## Design Principle 5: Follow Incremental and Evolutionary Principles of System Design and Development
+## Principle 5: Follow Incremental and Evolutionary Principles of System Design and Development
 
 This design principle focuses on adopting participatory and prototype processes that are incremental and evolutionary in nature, rather than attempting perfection at the first attempt. This requires building a prototype, exposing it to users and adapting and improving the prototype based on the feedback received. This process reflects an iterative process of evolving system improvements, and strengthening user ownership.
 
