@@ -1,0 +1,98 @@
+name: Preview Docs
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    env:
+      # Set up docs preview only for PRs from the upstream repository, not from forks.
+      DOCS_PR_PREVIEW: ${{ github.event_name == 'pull_request' && !github.event.pull_request.head.repo.fork }}
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout DHIS2 Docs Builder Repository
+      uses: actions/checkout@v2
+      with:
+        repository: dhis2/dhis2-docs-builder
+
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Install custom pre-processor
+      run: |
+        cd tools/python/markdown-pp-master
+        python3 setup.py develop
+        pip install MarkdownPP
+
+    - name: Install markdown extensions
+      run: |
+        cd tools/python/markdown-extensions/d_card
+        python3 setup.py develop
+        pip install d_card
+
+    - name: Install dhis2_plugins for mkdocs
+      run: |
+        cd tools/python/dhis2_plugins
+        python3 setup.py develop
+        pip install dhis2_plugins
+
+    - name: Install markdown hacks
+      run: |
+        # temporary hacks
+        python3 -m site
+        cp tools/python/blockprocessors.py ${pythonLocation}/lib/python3.8/site-packages/markdown/
+        cp tools/python/attr_list.py ${pythonLocation}/lib/python3.8/site-packages/markdown/extensions/
+        cp tools/python/tables.py ${pythonLocation}/lib/python3.8/site-packages/markdown/extensions/
+
+    - name: Install node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: install prettier
+      run: npm install -g prettier
+
+    - name: Run sed Command
+      run: |
+        sed -i "s;\(github(dhis2/dhis2-docs-implementation,.*, \)master);\1${GITHUB_HEAD_REF});" mkdocs.yml
+
+    - name: Build the docs
+      run: |
+        mkdocs build
+
+    - name: Sync docs to S3 for PR preview
+      if: ${{ env.DOCS_PR_PREVIEW == 'true' }}
+      uses: dhis2/s3-sync-action@master
+      # with:
+      #  args: --delete --exclude 'full*'
+      env:
+        AWS_S3_BUCKET: ${{ secrets.DHIS2_S3_DOCS_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.DHIS2_S3_DOCS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.DHIS2_S3_DOCS_ACCESS_KEY }}
+        AWS_REGION: 'eu-west-1'
+        SOURCE_DIR: 'target/en/.'
+        DEST_DIR: "temp/PR/implementer-${GITHUB_HEAD_REF}/en/"
+
+    - name: Add comment with preview link
+      if: ${{ env.DOCS_PR_PREVIEW == 'true' }}
+      uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          CI Preview: https://docs.dhis2.org/temp/PR/implementer-${{ github.event.pull_request.head.ref }}/en/home.html
+
+         
