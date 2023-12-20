@@ -327,6 +327,11 @@ Health:
       - Release Note: '@github(dhis2-metadata/TB_CS, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/TB_CS, docs/tb_cs-design.md, master)'
       - Installation: '@github(dhis2-metadata/TB_CS, docs/tb_cs-installation.md, master)'
+    - TB Household Contacts Investigation:
+      - OVERVIEW: '@github(dhis2-metadata/TB_HH, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/TB_HH, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/TB_HH, docs/tb_hh-design.md, master)'
+      - Installation: '@github(dhis2-metadata/TB_HH, docs/tb_hh-installation.md, master)'
     - Anti-Tuberculosis Drug Resistance Survey (DRS):
       - OVERVIEW: '@github(dhis2-metadata/TB_DRS, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/TB_DRS, docs/release_note.md, master)'
