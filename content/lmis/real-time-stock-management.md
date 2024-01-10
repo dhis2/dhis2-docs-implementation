@@ -2460,3 +2460,5 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Organisation unit name
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
+
+Editing test GMc on 10-01-2024 at 18:15
