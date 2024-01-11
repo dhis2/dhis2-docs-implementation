@@ -2462,3 +2462,5 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Stock "Receipt": quantities and date/time stamp
 
 bbh10012024
+
+GMc editing test on 11-01-2024 at 19:11
