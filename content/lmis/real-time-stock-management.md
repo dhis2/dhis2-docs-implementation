@@ -107,11 +107,15 @@ All transactions as well as the actual "Stock on hand" always have positive inte
 
 Transactions have different boundaries and affect the calculated logistics data in different ways:
 
-Transaction type Effect on "Stock on hand" Effect on total monthly demand
-
----
-
-Distribution Decrease Increase Discard Decrease Not effected Correction: SoH \> calculated value Increase Not effected Correction: SoH \< calculated value Decrease Not effected Return Increase Decrease Transfer Decrease Not effected Receipt Increase Not effected
+| Transaction type | Effect on "Stock on hand" | Effect on total monthly demand |
+| :--- | :--- | :--- |
+| Distribution | Decrease | Increase |
+| Discard | Decrease | Not affected |
+| Correction: SoH > calculated value | Increase | Not affected |
+| Correction: SoH < calculated value | Decrease | Not affected |
+| Return | Increase | Decrease |
+| Transfer | Decrease | Not affected |
+| Receipt | Increase | Not affected |
 
 ### Mobile device management
 
@@ -146,7 +150,7 @@ One possible (future) option for resolving the conflict between a small and ligh
 
 In case the mobile device fails or malfunctions for any reason (out of charge, damaged, not found, stolen, authentication forgotten) or the Internet access is not available for more than one day, healthcare facilities should consider using alternative mobile device or Internet access.
 
-**In case the Internet is unavailable for less than one day**
+#### In case the Internet is unavailable for less than one day
 
 - Wait for restoring of the Internet connection provided no urgent orders have to be treated
 
@@ -154,12 +158,12 @@ In case the mobile device fails or malfunctions for any reason (out of charge, d
 
 - Retrospectively enter the transaction by scrolling down the stock item list and recording quantities
 
-**In case of Internet is unavailable for more than one day**
+#### In case of Internet is unavailable for more than one day
 
 - Resume manual recording of transactions on stock cards
 - Use a DHIS2 Default Data Entry Form at the end of the month (which is much less work than retrospectively entering hundreds of transactions
 
-**In case all systems fail**
+#### In case all systems fail
 
 At any time, users can resort to the manual, paper- or spreadsheet-based method which were in use before the introduction of the DHIS2-RTS application:
 
@@ -1256,7 +1260,7 @@ The "Android settings app" allows to customize some functionality across all mob
 
 #### Synchronization settings
 
-**Global**
+##### Global
 
 While it is strongly recommended that users synchronize mobile devices data immediately after every completed transaction, a daily synchronization is recommended as a backup.
 
@@ -1268,7 +1272,7 @@ Since it will be difficult to inform all users of any change to the metadata, it
 
 Note that this daily, periodic synchronization will only be affected automatically if a network connection is available at the time the synchronization is prompted on the mobile device.
 
-**Data sets**
+##### Data sets
 
 Limiting the number of periods for which data is downloaded to the mobile device will limit storage requirements and improve usability. Moreover, it is unlikely a storekeeper would want to analyse monthly report daily, say, five years back and one year of data should be sufficient.
 
@@ -2454,8 +2458,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-<<<<<<< HEAD
-Last edit: GMc on 12-01-2024 at 21:58
-=======
-Last edit: GMc on 12-01-2024 at 21:12
->>>>>>> 448484093b8f4967c755ac2108cb48588fcdec38
+Last edit: GMc on 12-01-2024 at 22:07
