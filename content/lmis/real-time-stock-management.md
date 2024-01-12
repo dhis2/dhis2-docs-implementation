@@ -220,198 +220,194 @@ Note that the Category option names are intentionally kept short to reduce the o
 >>**Short name \(*)**: "DIS - (Other)"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Diagn. imaging**  
+>**2 DIS - Diagn. imaging**  
 >>**Name \(*)**: "DIS - Diagn. imaging"  
 >>**Short name \(*)**: "DIS - Diagn. imaging"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Emergency Room**  
+>**3 DIS - Emergency Room**  
 >>**Name \(*)**: "DIS - Emergency Room"  
 >>**Short name \(*)**: "DIS - Emergency Room"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - High Depend. Unit**  
+>**4 DIS - High Depend. Unit**  
 >>**Name \(*)**: "DIS - High Depend. Unit"  
 >>**Short name \(*)**: "DIS - High Depend. Unit"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Housekeeping**  
+>**5 DIS - Housekeeping**  
 >>**Name \(*)**: "DIS - Housekeeping"  
 >>**Short name \(*)**: "DIS - Housekeeping"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Inp. Med. Depart.**  
+>**6 DIS - Inp. Med. Depart.**  
 >>**Name \(*)**: "DIS - Inp. Med. Depart."  
 >>**Short name \(*)**: "DIS - Inp. Med. Depart."  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Inp. Surg. Depart.**  
+>**7 DIS - Inp. Surg. Depart.**  
 >>**Name \(*)**: "DIS - Inp. Surg. Depart."  
 >>**Short name \(*)**: "DIS - Inp. Surg. Depart."  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Laboratory Depart.**  
+>**8 DIS - Laboratory Depart.**  
 >>**Name \(*)**: "DIS - Laboratory Depart."  
 >>**Short name \(*)**: "DIS - Laboratory Depart."  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Mortuary**  
+>**9 DIS - Mortuary**  
 >>**Name \(*)**: "DIS - Mortuary"  
 >>**Short name \(*)**: "DIS - Mortuary"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - OPD**  
+>**10 DIS - OPD**  
 >>**Name \(*)**: "DIS - OPD"  
 >>**Short name \(*)**: "DIS - OPD"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Obst. & Gynae.**  
+>**11 DIS - Obst. & Gynae.**  
 >>**Name \(*)**: "DIS - Obst. & Gynae."  
 >>**Short name \(*)**: "DIS - Obst. & Gynae."  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Oper. Theatre**  
+>**12 DIS - Oper. Theatre**  
 >>**Name \(*)**: "DIS - Oper. Theatre"  
 >>**Short name \(*)**: "DIS - Oper. Theatre"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Paed. Dep.**  
+>**13 DIS - Paed. Dep.**  
 >>**Name \(*)**: "DIS - Paed. Dep."  
 >>**Short name \(*)**: "DIS - Paed. Dep."  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Physioth. Dep.**  
+>**14 DIS - Physioth. Dep.**  
 >>**Name \(*)**: "DIS - Physioth. Dep."  
 >>**Short name \(*)**: "DIS - Physioth. Dep."  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Recovery Room**  
+>**15 DIS - Recovery Room**  
 >>**Name \(*)**: "DIS - Recovery Room"  
 >>**Short name \(*)**: "DIS - Recovery Room"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Steril. Dep.**  
+>**16 DIS - Steril. Dep.**  
 >>**Name \(*)**: "DIS - Steril. Dep."  
 >>**Short name \(*)**: "DIS - Steril. Dep."  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**DIS - Transf. services**  
+>**17 DIS - Transf. services**  
 >>**Name \(*)**: "DIS - Transf. services"  
 >>**Short name \(*)**: "DIS - Transf. services"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**Previous stock balance**  
+>**18 Previous stock balance**  
 >>**Name \(*)**: "Previous stock balance"  
 >>**Short name \(*)**: "Previous stock balance"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**Stock correction**  
+>**19 Stock correction**  
 >>**Name \(*)**: "Stock correction"  
 >>**Short name \(*)**: "Stock correction"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**Stock discard**  
+>**20 Stock discard**  
 >>**Name \(*)**: "Stock discard"  
 >>**Short name \(*)**: "Stock discard"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**Stock distribution**  
+>**21 Stock distribution**  
 >>**Name \(*)**: "Stock distribution"  
 >>**Short name \(*)**: "Stock distribution"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**Stock on hand**  
+>**22 Stock on hand**  
 >>**Name \(*)**: "Stock on hand"  
 >>**Short name \(*)**: "Stock on hand"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**Stock receipt**  
+>**23 Stock receipt**  
 >>**Name \(*)**: "Stock receipt"  
 >>**Short name \(*)**: "Stock receipt"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
->**Stock on hand Yes/No**  
+>**24 Stock on hand Yes/No**  
 >>**Name \(*)**: "Stock on hand Yes/No"  
 >>**Short name \(*)**: "Stock on hand Yes/No"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >****
 
+#### 1.2 Category
+>**1 RTS - Daily stock report**  
+>>**Name \(*)**: **RTS - Daily stock report**  
+>>**Short name \(*)**: "RTS - Daily stock report"  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Data dimension \(*)**: check (appears as white tick in a blue square)   
+>>**Category options**: *note the order of "Category options"*:  
+>>>"Previous stock balance"
+>>>"Stock receipt"
+>>>"DIS - Diagn. imaging"
+>>>"DIS - Emergency Room"
+>>>"DIS - High Depend. Unit"
+>>>"DIS - Housekeeping"
+>>>"DIS - Inp. Med. Depart."
+>>>"DIS - Inp. Surg. Depart."
+>>>"DIS - Laboratory Depart."
+>>>"DIS - Mortuary"
+>>>"DIS - Obst. & Gynae."
+>>>"DIS - OPD"
+>>>"DIS - Oper. Theatre"
+>>>"DIS - (Other)"
+>>>"DIS - Paed. Dep."
+>>>"DIS - Physioth. Dep."
+>>>"DIS - Recovery Room"
+>>>"DIS - Steril. Dep."
+>>>"DIS - Transf. services"
+>>>Stock distribution
+>>>Stock discard
+>>>Stock correction
+>>>Stock on hand
+>>>Stock on hand Yes/No
+>
+>**2 RTS - Monthly stock report**  
+>>**Name \(*)**: **RTS - Monthly stock report**  
+>>**Short name \(*)**: "RTS - Monthly stock report"  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Data dimension \(*)**: check (appears as white tick in a blue square)   
+>>**Category options**: *note the order of "Category options"*  
+>>>"Previous stock balance"
+>>>"Stock receipt"
+>>>"DIS - Diagn. imaging"
+>>>"DIS - Emergency Room"
+>>>"DIS - High Depend. Unit"
+>>>"DIS - Housekeeping"
+>>>"DIS - Inp. Med. Depart."
+>>>"DIS - Inp. Surg. Depart."
+>>>"DIS - Laboratory Depart."
+>>>"DIS - Mortuary"
+>>>"DIS - Obst. & Gynae."
+>>>"DIS - OPD"
+>>>"DIS - Oper. Theatre"
+>>>"DIS - (Other)"
+>>>"DIS - Paed. Dep."
+>>>"DIS - Physioth. Dep."
+>>>"DIS - Recovery Room"
+>>>"DIS - Steril. Dep."
+>>>"DIS - Transf. services"
+>>>Stock distribution
+>>>Stock discard
+>>>Stock correction
+>>>Stock on hand
+
+#### 1.3 Category combination
+>**Name \(*)**: **RTS - Monthly stock report**  
+>**Short name \(*)**: "RTS - Monthly stock report"  
+>**Data dimension type \(*)**: "Disaggregation"  
+>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
+>**Categories**: "RTS - Monthly stock report"
+
 xxxxxxxxxxx CONSTRUCTION SITE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-#### Category
-
-The Category "RTS - Daily stock report" combines the following "Category options":
-
-- Name (\*): "RTS - Daily stock report"
-- Short name (\*): "RTS - Daily stock report"
-- Data dimension type (\*): "Disaggregation"
-- "Data dimension": check (appears as white tick in a blue square)
-- Category options (please note the correct order):
-- Previous stock balance
-- Stock receipt
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - Obst. & Gynae."
-- "DIS - OPD"
-- "DIS - Oper. Theatre"
-- "DIS - (Other)"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-- Stock on hand Yes/No
-
-The Category "RTS - Monthly stock report" combines the following "Category options":
-
-- Name (\*): "RTS - Monthly stock report"
-- Short name (\*): "RTS - Monthly stock report"
-- Data dimension type (\*): "Disaggregation"
-- "Data dimension": check (appears as white tick in a blue square)
-- Category options (please note the correct order):
-- Previous stock balance
-- Stock receipt
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - Obst. & Gynae."
-- "DIS - OPD"
-- "DIS - Oper. Theatre"
-- "DIS - (Other)"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-
-#### Category combination
-
-The only "Category combination" mirrors the only "Category": which is required for technical reasons:
-
-- Name (\*): "RTS - Monthly stock report"
-- Data dimension type (\*): "Disaggregation"
-- Categories: "RTS - Monthly stock report"
-
-#### Data element - item catalogue
+### DATA ELEMENT - Item catalogue
 
 Data elements represent the items (healthcare products) for which logistics data is recorded and managed.
 
