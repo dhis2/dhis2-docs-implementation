@@ -213,48 +213,130 @@ The required metadata settings seetings are presented in the order in which it i
 This metadata is needed (only) for configuring an "aggregate" default Data entry form for "hosting" the daily and monthly aggregated Tracker data and making it available for various analytics visualizations and dashboards. In case the DHIS2-RTS mobile app (temporarily) falls, the aggregate Data Entry form can also be used for collecting monthly stock data.
 
 #### 1.1 Category option
-Note that the Category option names are intentionally kept as short as possible to reduce the overall width of the Data Entry form and ease visualizing and navigating the form.
+Note that the Category option names are intentionally kept short to reduce the overall width of the Data Entry form and ease visualizing and navigating the form. The "Stock distribution" corresponds to the total quantity of all the "DIS - [Deliver to] Category options and can be removed/added or be hidden/unhidden as and if needed.
 
->**1 CCE Inspection / count**  
+>**1 DIS - (Other)**  
 >>**Name \(*)**: "DIS - (Other)"  
 >>**Short name \(*)**: "DIS - (Other)"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
->
->>**Name \(*)**: "Xxx"  
->>**Short name \(*)**: "Xxx"  
+>****
+>**DIS - Diagn. imaging**  
+>>**Name \(*)**: "DIS - Diagn. imaging"  
+>>**Short name \(*)**: "DIS - Diagn. imaging"  
 >>**Organisation units selected**: (select as for the Tracker Program) 
->
-
-
+>****
+>**DIS - Emergency Room**  
+>>**Name \(*)**: "DIS - Emergency Room"  
+>>**Short name \(*)**: "DIS - Emergency Room"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - High Depend. Unit**  
+>>**Name \(*)**: "DIS - High Depend. Unit"  
+>>**Short name \(*)**: "DIS - High Depend. Unit"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Housekeeping**  
+>>**Name \(*)**: "DIS - Housekeeping"  
+>>**Short name \(*)**: "DIS - Housekeeping"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Inp. Med. Depart.**  
+>>**Name \(*)**: "DIS - Inp. Med. Depart."  
+>>**Short name \(*)**: "DIS - Inp. Med. Depart."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Inp. Surg. Depart.**  
+>>**Name \(*)**: "DIS - Inp. Surg. Depart."  
+>>**Short name \(*)**: "DIS - Inp. Surg. Depart."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Laboratory Depart.**  
+>>**Name \(*)**: "DIS - Laboratory Depart."  
+>>**Short name \(*)**: "DIS - Laboratory Depart."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Mortuary**  
+>>**Name \(*)**: "DIS - Mortuary"  
+>>**Short name \(*)**: "DIS - Mortuary"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - OPD**  
+>>**Name \(*)**: "DIS - OPD"  
+>>**Short name \(*)**: "DIS - OPD"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Obst. & Gynae.**  
+>>**Name \(*)**: "DIS - Obst. & Gynae."  
+>>**Short name \(*)**: "DIS - Obst. & Gynae."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Oper. Theatre**  
+>>**Name \(*)**: "DIS - Oper. Theatre"  
+>>**Short name \(*)**: "DIS - Oper. Theatre"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Paed. Dep.**  
+>>**Name \(*)**: "DIS - Paed. Dep."  
+>>**Short name \(*)**: "DIS - Paed. Dep."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Physioth. Dep.**  
+>>**Name \(*)**: "DIS - Physioth. Dep."  
+>>**Short name \(*)**: "DIS - Physioth. Dep."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Recovery Room**  
+>>**Name \(*)**: "DIS - Recovery Room"  
+>>**Short name \(*)**: "DIS - Recovery Room"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Steril. Dep.**  
+>>**Name \(*)**: "DIS - Steril. Dep."  
+>>**Short name \(*)**: "DIS - Steril. Dep."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**DIS - Transf. services**  
+>>**Name \(*)**: "DIS - Transf. services"  
+>>**Short name \(*)**: "DIS - Transf. services"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**Previous stock balance**  
+>>**Name \(*)**: "Previous stock balance"  
+>>**Short name \(*)**: "Previous stock balance"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**Stock correction**  
+>>**Name \(*)**: "Stock correction"  
+>>**Short name \(*)**: "Stock correction"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**Stock discard**  
+>>**Name \(*)**: "Stock discard"  
+>>**Short name \(*)**: "Stock discard"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**Stock distribution**  
+>>**Name \(*)**: "Stock distribution"  
+>>**Short name \(*)**: "Stock distribution"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**Stock on hand**  
+>>**Name \(*)**: "Stock on hand"  
+>>**Short name \(*)**: "Stock on hand"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**Stock receipt**  
+>>**Name \(*)**: "Stock receipt"  
+>>**Short name \(*)**: "Stock receipt"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**Stock on hand Yes/No**  
+>>**Name \(*)**: "Stock on hand Yes/No"  
+>>**Short name \(*)**: "Stock on hand Yes/No"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
 
 xxxxxxxxxxx CONSTRUCTION SITE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-- "DIS - (Other)"
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - OPD"
-- "DIS - Obst. & Gynae."
-- "DIS - Oper. Theatre"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Previous stock balance
-- Stock correction
-- Stock discard
-- Stock distribution
-- Stock on hand
-- Stock receipt
-- Stock on hand Yes/No
-
-Note that the "Stock distribution" corresponds to the total quantity of all the "DIS - [Deliver to] Category options and can be removed/added or be hidden/unhidden as and if needed.
 
 #### Category
 
