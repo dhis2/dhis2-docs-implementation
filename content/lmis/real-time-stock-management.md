@@ -166,93 +166,68 @@ At any time, users can resort to the manual, paper- or spreadsheet-based method 
 
 - Calculate the monthly replenishment order using a paper record or a spreadsheet application
 
-## DHIS2 configuration
+## Maintainance Web App - DHIS2 configuration
 
-Although configuration of DHIS2 in general and the DHIS2 Tracker Program in particular are not part of the development, many settings are closely linked to the custom development and critical for its functioning. Moreover, this chapter is added in order to provide full documentation of the entire system which is required for running and using DHIS2-RTS.
+This chapters provides a complete overview all metadata elements and their settings which are required specifically for configuring the DHIS2-RTS Tracker Program as well as the "aggregate" Data Entry form for recording daily and monthly "snapshots". Most of the settings can be modified and adapted to the specific context of an implementation while some settings, such as the Program rule or Use-case-configuration app, must not be modified as the function of the mobile application may be impaired.
 
-All the configurations and settings use only native DHIS2 functionality and do not require extending or developing any DHIS2 features.
+### Metadata overview
+The required metadata settings seetings are presented in the order in which it is presented in the DHIS2 Maintenance Web App.
 
-### DHIS2 server instance system configuration
+>**1 CATEGORY**  
+>>1.1 Category option  
+>>1.2 Category  
+>>1.3 Category combination 
+> 
+>**2 DATA ELEMENT**  
+>>2.1 Data element - "Aggregate"  
+>>2.2 Data element - "Tracker"  
+>>2.2 Data element group  
+> 
+>**3 DATA SET**  
+>>3.1 Data set  
+> 
+>**4 INDICATOR**  
+>>4.1 Indicator  
+>>4.2 Indicator type  
+>>4.3 Program indicator  
+> 
+>**5 ORGANISATION UNIT**  
+>>5.1 Organisation unit  
+>>5.1 Organisation unit groupo  
+> 
+>**6 PROGRAM**  
+>>6.1 Program  
+>>6.2 Tracked entity attribute  
+>>6.3 Relationship type  
+>>6.4 Tracked entity type  
+>>6.5 Program rule  
+>>6.6 Program rule variable  
+> 
+>**7 OTHER**  
+>>7.1 Option set  
+>>7.2 Legend  
+>>7.3 Predictor  
+>>7.4 Predictor group  
 
-The DHIS2 server (instance) is the physical device where the DHIS2 software as well as the database holding the data is installed, permanently running and allows a large number of users to connect to the DHIS2 web portal as well as the DHIS2 mobile device application and its data base at any time.
+### 1 CATEGORY
+This metadata is needed (only) for configuring an "aggregate" default Data entry form for "hosting" the daily and monthly aggregated Tracker data and making it available for various analytics visualizations and dashboards. In case the DHIS2-RTS mobile app (temporarily) falls, the aggregate Data Entry form can also be used for collecting monthly stock data.
 
-Maintenance of the server, backups, upgrades and resolving errors will have to be ensured by the entity in charge of managing the public health supply system, usually the Ministry of Health (MoH). This work is carried out according to standard DHIS2 guidelines and recommendations.
+#### 1.1 Category option
+Note that the Category option names are intentionally kept as short as possible to reduce the overall width of the Data Entry form and ease visualizing and navigating the form.
 
-### User app
+>**1 CCE Inspection / count**  
+>>**Name \(*)**: "DIS - (Other)"  
+>>**Short name \(*)**: "DIS - (Other)"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>>**Name \(*)**: "Xxx"  
+>>**Short name \(*)**: "Xxx"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
 
-The Users app allows configuring User roles, creating user profiles for individual users and assigning them to defined User groups.
 
-#### User
 
-User access will be managed by the entity managing the central DHIS2 server and according to national policies concerning data security.
-
-By default, the language is set to the national language used in the country, or in case there is more than one, according to national policies but can be adapted to individual users or user groups if needed.
-
-The DHIS2-RTS should allow using any language configured on the central DHIS2 server.
-
-According to their responsibilities, needs for accessing (viewing) data and authority to change (edit) data, every user is assigned one or several of the "User roles" and assigned to one specific (or exceptionally more than one) Organisation unit for which s/he has access for viewing and editing data.
-
-#### User role
-
-Three distinct User roles are configured which each give access to specific DHIS2 apps and determine whether users can access certain metadata such as Data elements, Data sets or Organisation units.
-
-If a Default Data Entry Form is configured as a "backup" in case of DHIS2-RTS failure, user rights have to be configured both for the Data Entry Form as well as the Tracker Program.
-
-While configuring user settings is a native DHIS2 functionality, the details of providing users access to the DHIS2-RTS mobile app (and module) need to be developed.
-
-##### DHIS2-RTS - Data entry
-
-This User role allows users to access the DHIS2 Capture Android app (native app) on mobile devices as well as to DHIS2-RTS within the "module" for viewing, entering and recording transactions.
-
-##### DHIS2-RTS - Reader
-
-This User role allows users to view stock data in the DHIS2-RTS (or only viewing the in-app off-line analytics reports).
-
-##### DHIS2-RTS - Superuser
-
-This user role is reserved to system administrators and allows configuring settings and managing the DHIS2 instance and system.
-
-#### User group
-
-The main purpose of user groups is facilitating configuration of "Sharing" settings (which determine viewing and editing rights) by groups rather than having to manage them at the level of hundreds of individual users.
-
-User groups should be configured according to the User Role into the same three groups:
-
-- Data entry
-- Reader
-- Superuser
-
-### Maintenance app
-
-The DHIS2 Maintenance app allows the system administrator to configure and modify DHIS2 metadata which are necessary for running the DHIS2 application as well as the DHIS" RTS mobile application.
-
-All geographical conventions must follow national conventions, ideally replicating conventions of a national Master Facility List.
-
-Metadata requires configuration only when setting up the DHIS2 instance and whenever changing the master data such as adding or "inactivating" Organisation units, adding or removing items from the item catalogue. These configurations and settings are not changed frequently but need to be carefully and meticulously managed to ensure that the DHIS2 is always kept up to date.
-
-In DHIS2 all metadata is automatically assigned unique IDs ("keys") which are not visible to field users but indispensable for the functioning of databases.
-
-#### Organisation Unit
-
-This application allows creating new and editing existing geographical entities. As the hierarchy of regions, countries and First Administrative Level is defined by national policies and does not change, the main objective of this application is adding new healthcare facilities.
-
-The "Latitude" and "Longitude" are useful for mapping the location of healthcare facilities in the Data Visualizer.
-
-#### Organisation Unit group
-
-The "Organisation unit groups" allow grouping healthcare facilities according to their level of care, for example "clinic", "hospital" etc. and are configured according to national policies.
-
-#### Organisation Unit level
-
-The Organisation unit levels allow representing the geographical structure and hierarchy of healthcare facilities and are configured according to national policies and the Master Facility List.
-
-#### Hierarchy operations
-
-The Hierarchy operations application represents the complete geographical and hierarchical structure of the Organisation units and allows changing the position of Organisation units in the Organisation unit hierarchy if they were not created at the correct hierarchical levels. Once created, the place in the hierarchy should, in principle, never change.
-
-#### Category option
-
-Category options are not needed for recording transactions in the Tracker Program but required for the monthly Tracker Program "snapshot" data as well as a fallback system in case the DHIS2-RTS (temporarily) fails. In addition to the transactions, a separate Category option is needed for each of the "Deliver to" options in order to record all details of "Distribution" transactions:
+xxxxxxxxxxx CONSTRUCTION SITE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 - "DIS - (Other)"
 - "DIS - Diagn. imaging"
@@ -1195,7 +1170,42 @@ Stock
 
 ![](media/image8.png)
 
-#### Capture app (web portal)
+
+
+##### DHIS2-RTS - Data entry
+
+This User role allows users to access the DHIS2 Capture Android app (native app) on mobile devices as well as to DHIS2-RTS within the "module" for viewing, entering and recording transactions.
+
+##### DHIS2-RTS - Reader
+
+This User role allows users to view stock data in the DHIS2-RTS (or only viewing the in-app off-line analytics reports).
+
+##### DHIS2-RTS - Superuser
+
+This user role is reserved to system administrators and allows configuring settings and managing the DHIS2 instance and system.
+
+#### User group
+
+The main purpose of user groups is facilitating configuration of "Sharing" settings (which determine viewing and editing rights) by groups rather than having to manage them at the level of hundreds of individual users.
+
+User groups should be configured according to the User Role into the same three groups:
+
+- Data entry
+- Reader
+- Superuser
+
+
+
+#### Data Entry (beta) Web App
+
+Category options are not needed for recording transactions in the Tracker Program but required for the monthly Tracker Program "snapshot" data as well as a fallback system in case the DHIS2-RTS (temporarily) fails. In addition to the transactions, a separate Category option is needed for each of the "Deliver to" options in order to record all details of "Distribution" transactions:
+
+
+
+
+
+
+#### Capture Web App
 
 The web portal Capture app is used for "enrolling" new Tracked Entity Instances which each correspond to an item (health care product).
 
@@ -1826,6 +1836,37 @@ The table below summarizes the main metadata configurations and settings for the
 | > Program rule variable | Program (\*): "Real-Time Stock<br>Management"<br>Name / Data element<br>\- "Initial stock on hand -<br>Previous event": "Data element<br>from previous event" / "Stock<br>on hand"<br>\- "Previous stock balance":<br>"Data element in current<br>event" / "Previous stock<br>balance"<br>\- "Stock correction": "Data<br>element in current event" /<br>"Stock on hand"<br>\- "Stock count": "Data<br>element in current event"/<br>"Stock on hand"<br>\- "Stock discarded": "Data<br>element in current event" /<br>"Stock discarded"<br>\- "Stock distribution":<br>"Data element in current<br>event" / "Stock distribution"<br>\- "Stock received": "Data<br>element in current event" /<br>"Stock received"<br>Source type (\*): see above<br>Data element: see above |
 | > Use case configuration app | Use case configuration app<br>Configure Program<br>General<br>\- Program Types: "Logistics"<br>\- Description: "Real-time<br>stock management application"<br>\- Program \*: "Real-Time Stock<br>Management"<br>Details<br>\- Item Code \*: "Item code"<br>\- Item Description \*: "Item<br>description"<br>\- Stock on Hand \*: "Stock on<br>hand"<br>Transactions<br>Distributed<br>\- Distributed to \*: "Deliver<br>to"<br>\- Distributed Stock \*: "Stock<br>distribution"<br>Corrected<br>\- Corrected Stock \*: "Stock<br>correction"<br>\- Stock Count \*: "Stock<br>count"<br>Discarded<br>\- Discarded Stock \*: "Stock<br>discard" |
 
+
+
+
+PARKING LOT xxxxxxxxxxxxxxxxxxxxxx
+
+
+### "Users" app
+
+The Users app allows configuring User roles, creating user profiles for individual users and assigning them to defined User groups.
+
+#### User
+
+User access will be managed by the entity managing the central DHIS2 server and according to national policies concerning data security.
+
+By default, the language is set to the national language used in the country, or in case there is more than one, according to national policies but can be adapted to individual users or user groups if needed.
+
+The DHIS2-RTS should allow using any language configured on the central DHIS2 server.
+
+According to their responsibilities, needs for accessing (viewing) data and authority to change (edit) data, every user is assigned one or several of the "User roles" and assigned to one specific (or exceptionally more than one) Organisation unit for which s/he has access for viewing and editing data.
+
+#### User role
+
+Three distinct User roles are configured which each give access to specific DHIS2 apps and determine whether users can access certain metadata such as Data elements, Data sets or Organisation units.
+
+If a Default Data Entry Form is configured as a "backup" in case of DHIS2-RTS failure, user rights have to be configured both for the Data Entry Form as well as the Tracker Program.
+
+While configuring user settings is a native DHIS2 functionality, the details of providing users access to the DHIS2-RTS mobile app (and module) need to be developed.
+
+
+
+
 ## DHIS2 REAL-TIME STOCK MANAGEMENT MOBILE APPLICATION
 
 The mobile device application (front-end, user interface) consists of a login screen, a single screen for entering and editing data by pharmacy staff, a third (and last) screen for viewing and correcting the summary and a final screen for the analytics.
@@ -2452,4 +2493,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-Last edit: GMc on 12-01-2024 at 22:45
+Last edit: GMc on 12-01-2024 at 23:40
