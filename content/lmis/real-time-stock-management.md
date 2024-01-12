@@ -1,13 +1,10 @@
-# Real-Time Stock Management Tool
+# DHIS2-RTS Real-Time Stock Management Tool / Tracker program
 
+## Introduction
 
-![](media/image95.png)
+This document describes the use case, configuration and management of the DHIS2-RTS application for the real-time management of medical stocks at healthcare facilities using mobile devices.
 
-## 1 OVERVIEW OF THE DHIS2 REAL-TIME STOCK MANAGEMENT TOOL
-
-This entire document describes the expected system behaviour, functionality and management and neither the current processes or systems nor the change from the "as is" to the "to be" state.
-
-### 1.1 Use case overview
+### Use case overview
 
 The DHIS2-RTS provides a web and mobile app-based tool (with off-line capability), real-time digital solution for stock management which can be integrated with national eLMIS systems for managing stock replenishment as well as end-to-end supply chain analytics.
 
@@ -50,7 +47,7 @@ The application is based on adherence to specific structures and processes which
 - Mobile devices are available and reliably maintained.
 - Staff at the healthcare facility are conversant with the use of mobile devices or can be trained (within reasonable time).
 
-### 1.2 System components
+### System components
 
 The system consists of the following distinct components:
 
@@ -68,7 +65,7 @@ The system consists of the following distinct components:
 
 The guiding principle of the DHIS2-RTS concept is using mainly national eLMIS functionality for managing all logistics processes and collecting only the data which is generated at the healthcare facility with the DHIS2-RTS app. This strictly follows the DRY ("Don\'t Repeat Yourself") software development principle: "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system".
 
-### 1.3 Overview of business processes and workflows
+### Overview of business processes and workflows
 
 The DHIS2-RTS mobile application is used by storekeepers of pharmacies and medical stores at healthcare facilities, called "end-users".
 
@@ -94,7 +91,7 @@ Around 50 stock items (Primary Health Care centre) to 500 stock items (hospitals
 
 The DHIS2 web portal may be used by managers at the healthcare facilities but is more likely to be used by health or logistics managers almost exclusively for consulting analytics reports.
 
-### 1.4 Stock calculations
+### Stock calculations
 
 The "Stock on hand" is (re)calculated in real-time after every transaction which are mainly recorded on the mobile device but are also be affected by transactions through the Tracker Program in the web portal or through integrations with a national upstream eLMIS.
 
@@ -116,7 +113,7 @@ Transaction type Effect on "Stock on hand" Effect on total monthly demand
 
 Distribution Decrease Increase Discard Decrease Not effected Correction: SoH \> calculated value Increase Not effected Correction: SoH \< calculated value Decrease Not effected Return Increase Decrease Transfer Decrease Not effected Receipt Increase Not effected
 
-### 1.5 Mobile device management
+### Mobile device management
 
 The entity or organization, such as the Ministry of Health, must provide and ensure maintenance of mobile devices and govern their use. For the sake of data protection, sustainability and managing data subscriptions, the use of private devices should be discouraged.
 
@@ -147,7 +144,7 @@ Construction Lifespan of at least 2 years Android operating system version minim
 
 One possible (future) option for resolving the conflict between a small and light device for order picking and the preference of a larger screen for analytics is attaching a larger mobile device to a cart during transactions while scanning the barcodes with an external barcode scanner connected to the mobile device through an USB-cable or a Bluetooth connection.
 
-### 1.6 Contingency plan in case of device failure
+### Contingency plan in case of device failure
 
 In case the mobile device fails or malfunctions for any reason (out of charge, damaged, not found, stolen, authentication forgotten) or the Internet access is not available for more than one day, healthcare facilities should consider using alternative mobile device or Internet access.
 
@@ -173,23 +170,23 @@ At any time, users can resort to the manual, paper- or spreadsheet-based method 
 
 - Calculate the monthly replenishment order using a paper record or a spreadsheet application
 
-## 2 DHIS2 METADATA CONFIGURATION
+## DHIS2 METADATA CONFIGURATION
 
 Although configuration of DHIS2 in general and the DHIS2 Tracker Program in particular are not part of the development, many settings are closely linked to the custom development and critical for its functioning. Moreover, this chapter is added in order to provide full documentation of the entire system which is required for running and using DHIS2-RTS.
 
 All the configurations and settings use only native DHIS2 functionality and do not require extending or developing any DHIS2 features.
 
-### 2.1 DHIS2 server instance system configuration
+### DHIS2 server instance system configuration
 
 The DHIS2 server (instance) is the physical device where the DHIS2 software as well as the database holding the data is installed, permanently running and allows a large number of users to connect to the DHIS2 web portal as well as the DHIS2 mobile device application and its data base at any time.
 
 Maintenance of the server, backups, upgrades and resolving errors will have to be ensured by the entity in charge of managing the public health supply system, usually the Ministry of Health (MoH). This work is carried out according to standard DHIS2 guidelines and recommendations.
 
-### 2.2 User app
+### User app
 
 The Users app allows configuring User roles, creating user profiles for individual users and assigning them to defined User groups.
 
-#### 2.2.1 User
+#### User
 
 User access will be managed by the entity managing the central DHIS2 server and according to national policies concerning data security.
 
@@ -199,7 +196,7 @@ The DHIS2-RTS should allow using any language configured on the central DHIS2 se
 
 According to their responsibilities, needs for accessing (viewing) data and authority to change (edit) data, every user is assigned one or several of the "User roles" and assigned to one specific (or exceptionally more than one) Organisation unit for which s/he has access for viewing and editing data.
 
-#### 2.2.2 User role
+#### User role
 
 Three distinct User roles are configured which each give access to specific DHIS2 apps and determine whether users can access certain metadata such as Data elements, Data sets or Organisation units.
 
@@ -219,7 +216,7 @@ This User role allows users to view stock data in the DHIS2-RTS (or only viewing
 
 This user role is reserved to system administrators and allows configuring settings and managing the DHIS2 instance and system.
 
-#### 2.2.3 User group
+#### User group
 
 The main purpose of user groups is facilitating configuration of "Sharing" settings (which determine viewing and editing rights) by groups rather than having to manage them at the level of hundreds of individual users.
 
@@ -229,7 +226,7 @@ User groups should be configured according to the User Role into the same three 
 - Reader
 - Superuser
 
-### 2.3 Maintenance app
+### Maintenance app
 
 The DHIS2 Maintenance app allows the system administrator to configure and modify DHIS2 metadata which are necessary for running the DHIS2 application as well as the DHIS" RTS mobile application.
 
@@ -239,25 +236,25 @@ Metadata requires configuration only when setting up the DHIS2 instance and when
 
 In DHIS2 all metadata is automatically assigned unique IDs ("keys") which are not visible to field users but indispensable for the functioning of databases.
 
-#### 2.3.1 Organisation Unit
+#### Organisation Unit
 
 This application allows creating new and editing existing geographical entities. As the hierarchy of regions, countries and First Administrative Level is defined by national policies and does not change, the main objective of this application is adding new healthcare facilities.
 
 The "Latitude" and "Longitude" are useful for mapping the location of healthcare facilities in the Data Visualizer.
 
-#### 2.3.2 Organisation Unit group
+#### Organisation Unit group
 
 The "Organisation unit groups" allow grouping healthcare facilities according to their level of care, for example "clinic", "hospital" etc. and are configured according to national policies.
 
-#### 2.3.3 Organisation Unit level
+#### Organisation Unit level
 
 The Organisation unit levels allow representing the geographical structure and hierarchy of healthcare facilities and are configured according to national policies and the Master Facility List.
 
-#### 2.3.4 Hierarchy operations
+#### Hierarchy operations
 
 The Hierarchy operations application represents the complete geographical and hierarchical structure of the Organisation units and allows changing the position of Organisation units in the Organisation unit hierarchy if they were not created at the correct hierarchical levels. Once created, the place in the hierarchy should, in principle, never change.
 
-#### 2.3.5 Category option
+#### Category option
 
 Category options are not needed for recording transactions in the Tracker Program but required for the monthly Tracker Program "snapshot" data as well as a fallback system in case the DHIS2-RTS (temporarily) fails. In addition to the transactions, a separate Category option is needed for each of the "Deliver to" options in order to record all details of "Distribution" transactions:
 
@@ -288,7 +285,7 @@ Category options are not needed for recording transactions in the Tracker Progra
 
 Note that the "Stock distribution" corresponds to the total quantity of all the "DIS - [Deliver to] Category options and can be removed/added or be hidden/unhidden as and if needed.
 
-#### 2.3.6 Category
+#### Category
 
 The Category "RTS - Daily stock report" combines the following "Category options":
 
@@ -353,7 +350,7 @@ The Category "RTS - Monthly stock report" combines the following "Category optio
 - Stock correction
 - Stock on hand
 
-#### 2.3.7 Category combination
+#### Category combination
 
 The only "Category combination" mirrors the only "Category": which is required for technical reasons:
 
@@ -361,7 +358,7 @@ The only "Category combination" mirrors the only "Category": which is required f
 - Data dimension type (\*): "Disaggregation"
 - Categories: "RTS - Monthly stock report"
 
-#### 2.3.8 Data element - item catalogue
+#### Data element - item catalogue
 
 Data elements represent the items (healthcare products) for which logistics data is recorded and managed.
 
@@ -389,7 +386,7 @@ Data elements which have been created and used cannot be deleted from the databa
 
 In addition, for each item an equivalent item with the suffix "DAY" is needed for configuring the "RTS Daily report" Data set.
 
-#### 2.3.9 Data element group
+#### Data element group
 
 The creation of Data element groups is a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
 
@@ -405,7 +402,7 @@ The creation of Data element groups is a precondition for using the "Group Predi
 - Short name (\*): "[Stock item list] - DAY"
 - Data elements: include all Data elements from daily RTS report
 
-#### 2.3.10 Data set
+#### Data set
 
 Data sets for each Organisation unit are required both for recording monthly "snapshots" of Tracker Program data as well as a fallback system in case the DHIS2-RTS fails.
 
@@ -445,13 +442,13 @@ In addition, a separate Data set for the daily aggregate reports is required:
 - Category combination (\*): "None"
 - Data elements: add all Data elements with the suffix "DAY" required for the respective health facility.
 
-#### 2.3.11 Default Data Entry form for monthly stock data "snapshots"
+#### Default Data Entry form for monthly stock data "snapshots"
 
 The Data set with its components such as the Category options appears as a Default Data Entry form in the "Data Entry" app. As Custom Data Entry Forms do not render on mobile devices, they must not be used. All users must have the option of entering monthly stock report data on a mobile device as a fallback option in case the DHIS2-RTS mobile application (temporarily) fails.
 
 Ideally, two reports one with the total distributions and one with the "Deliver to" details would be available but it is not possible to assign more than one "Category combination" to any Data element and for displaying two different Data Entry forms, every Data element would have to be duplicated. As a work around, one single Data Entry form contains all the the "Deliver to" options as separate columns as well as the "Distribution" which is the summary of total distributions. This allows to configure two separate reports (and others of course) as "Pivot table" in the "Data Visualizer".
 
-#### 2.3.12 Indicator
+#### Indicator
 
 The Indicator functionality is used to configure the "Stock coverage time". In principle it would be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings.
 
@@ -501,24 +498,24 @@ DORACEFI4T - CEFIXIME, 400 mg, tab. T2A DAY Stock on hand Yes/No
 
 Denominator: 1
 
-#### 2.3.13 Indicator type
+#### Indicator type
 
 The "Indicator type" is a precondition for configuring any "Indicator".
 
 - Name (\*): "Number factor 1"
 - Factor (\*): "1"
 
-### 2.4 Tracker Program
+### Tracker Program
 
 The DHIS2 Tracker Program which serves as the foundation on which the DHIS2-RTS mobile application is built, is very simple and uses only native DHIS2 functionality without any modifications. The two program rules are absolutely critical to the entire configuration as they provide and ensure the real-time calculation of the stock on hand as soon as any transaction is validated.
 
-#### 2.4.1 Organisation Unit
+#### Organisation Unit
 
 The Organisation Unit, Organisation Unit group and Organisation Unit level described above apply to the entire database and therefore also apply to all Tracker Programs.
 
 Organisation Units are created and added according to national protocols and policies and/or existing DHIS2 configuration.
 
-#### 2.4.2 Data element
+#### Data element
 
 In addition to the Data elements created for each of the items, the Tracker Program requires a separate Data element for each of the "Program stages":
 
@@ -549,7 +546,7 @@ Note that the Data element names must not have any prefixes or suffixes as these
 
 While for "Stock distribution" and "Stock discard" only positive integers are meaningful, zero is allowed for technical reasons as the entry of "0" on the mobile device cannot be prevented but systematically prompts an unresolvable synchronization error.
 
-#### 2.4.3 Option set
+#### Option set
 
 Option sets are used for listing, managing and editing the "Deliver to" places as well as for the Transaction types [to be discussed]. The use of options provides a great deal of flexibility to the customization by individual countries, which are indispensable, without having to modify the DHIS2-RTS app code itself.
 
@@ -599,7 +596,7 @@ The following options are configured by default which can be customized by remov
 
 It is important to always include the "(Other)" option to avoid that other departments or services are "polluted" with transaction data which actually does not apply to them.
 
-#### 2.4.4 Tracked entity attribute
+#### Tracked entity attribute
 
 This are the "fixed" attributes of the items (compared with the "variable" data which is collected).
 
@@ -620,7 +617,7 @@ Name (\*):
 
 Note that the "Item code" is unique only for any specific Organisation Unit but the same "Item code" can be used in any number of different Organisation Units.
 
-#### 2.4.5 Tracked entity type
+#### Tracked entity type
 
 "Name (\*)": "Item"
 
@@ -639,13 +636,13 @@ Note that the "Item code" is unique only for any specific Organisation Unit but 
 - "Mandatory": unchecked for all three Tracked Entity Attributes
 - "Searchable": "Item PSM - Barcode" = "Searchable" the other two are not "Searchable"
 
-#### 2.4.6 Program
+#### Program
 
 Name: "Real-Time Stock Management"
 
 Program type: "Tracker Program"
 
-## 1 Program details
+## Program details
 
 Name (\*): "Real-Time Stock Management"
 
@@ -667,11 +664,11 @@ Version: (automatically numbered)
 
 "Minimum number of attributes required to search": "1".
 
-## 2 Enrollment details
+## Enrollment details
 
 "Show incident date": check (appears as white tick in a blue square)
 
-## 3 Attributes - 1 Assign attributes
+## Attributes - 1 Assign attributes
 
 - Program tracked entity attributes:
 - - "Item code"
@@ -681,15 +678,15 @@ Note that the item code is separate as it is needed as a distinct field for scan
 
 ![](media/image11.png)
 
-## 3 Attributes - 2 Create registration form
+## Attributes - 2 Create registration form
 
 (Leave blank)
 
-## 4 Programme stages
+## Programme stages
 
 "Stock on Hand"
 
-### 4.1 Program stages - "1 Stage Details"
+### Program stages - "1 Stage Details"
 
 Name: "Stock on Hand"
 
@@ -697,7 +694,7 @@ Scheduled days from start (\*): "0"
 
 "Repeatable": check (appears as white tick in a blue square)
 
-### 4.2 Program stages - "Assign data elements"
+### Program stages - "Assign data elements"
 
 Search available/selected items:
 
@@ -712,7 +709,7 @@ Search available/selected items:
 
 ![](media/image36.png)
 
-### 4.2 Program stages - "Create data entry form"
+### Program stages - "Create data entry form"
 
 "BASIC"
 
@@ -725,7 +722,7 @@ Search available/selected items:
 - "Stock count"
 - "Stock correction"
 
-## 5 Access
+## Access
 
 "X Organisation units selected": select each Organisation Unit separately (at the lowest level) but not the Organisation Unit levels.
 
@@ -733,11 +730,11 @@ Search available/selected items:
 
 "APPLY TO SELECTED STAGES": "Stock on Hand": check (appears as white tick in a blue square)
 
-## 6 Notifications
+## Notifications
 
 (blank)
 
-#### 2.4.7 Program rule
+#### Program rule
 
 In total, four Program rules are configured for completing all required calculations:
 
@@ -893,7 +890,7 @@ Expression to evaluate and assign:
 
 "#{Stock count}"
 
-#### 2.4.8 Program rule variable
+#### Program rule variable
 
 Initial stock on hand - Previous event
 
@@ -930,7 +927,7 @@ Stock received
 - Source type (\*): "Data element in current event"
 - Data element: "Stock receipt"
 
-#### 2.4.9 Program indicator
+#### Program indicator
 
 Program indicators are the work-around for avoiding the use of third party apps or scripts. Data elements can be displayed in the Data Visualizer but only count the number of events and do not aggregate the transaction values.
 
@@ -983,7 +980,7 @@ Note that the same "Program Indicator" can "feed" the Predictor for the "MTH" (m
 
 "Item code == \'DASDCHLC5S1\'"
 
-#### 2.4.10 Predictor
+#### Predictor
 
 These Predictors "transfer" the Program indicators to the respective Category option of the Data Entry form for providing users with daily or monthly "snapshots" of all transactions. Note that in principle the same Program indicator can be used for daily and monthly aggregations ("snapshots") but separate Predictors, one with the "Period type (\*)" daily is needed for daily "snapshots" and a second Predictor with "Period type (\*)" monthly is needed for monthly "snapshots".
 
@@ -1150,14 +1147,14 @@ if(#{?de.KoT8qU1DYiB}==0,1,0)
 
 - Sequential sample count (\*): "0" (this calculation is based on values from the current day)
 
-#### 2.4.11 Predictor group
+#### Predictor group
 
 The "Predictor group" is required in order to allow running all Predictors periodically and together by the "Scheduler" rather than having to prompt them one by one.
 
 - Name (\*): "T2A Predictors"
 - Predictors: include all configured Predictors.
 
-#### 2.4.12 Scheduler app
+#### Scheduler app
 
 The "Scheduler" app allows configuring the automatic and periodic execution of all Predictors (separately or conveniently grouped in a "Predictor group":
 
@@ -1178,7 +1175,7 @@ Note that the "Relative start" and "Relative end" are always configured in days.
 
 This configuration will update Predictors once every day in order to provide monthly updates on transaction quantities rather than showing zero for the entire month and then providing values for the previous month only on the first day of the following month.
 
-#### 2.4.13 Legend
+#### Legend
 
 A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
 
@@ -1202,7 +1199,7 @@ Stock
 
 ![](media/image8.png)
 
-#### 2.4.14 Capture app (web portal)
+#### Capture app (web portal)
 
 The web portal Capture app is used for "enrolling" new Tracked Entity Instances which each correspond to an item (health care product).
 
@@ -1237,7 +1234,7 @@ Note that the order of the columns can be changed by "drag and drop" in the cogw
 
 [Question: apparently the "Program stage" filter is not saved and disappears when exiting the screen without any possibility to "update" or "save" the view].![](media/image37.png)
 
-#### 2.4.15 Capture app
+#### Capture app
 
 In principle, this application will not be used as transactions will be exclusively managed in the customized app and a dashboard will be available for analysis of all transactions. However, the Capture app may be used for registering and enrolling (additional) items in an Organisation unit (health facility) and possibly for managing "manual" stock receipts for a small number of items.
 
@@ -1255,11 +1252,11 @@ This dashboard shows the "Item profile" as well as a record of all transactions 
 
 Note that the transactions with the same date are not placed in chronological order. Therefore any data entry through the web portal must only be made on the very last transactions as otherwise the Program rules lead to incorrect values for the current stock on hand.
 
-### 2.5 Android settings app configuration
+### Android settings app configuration
 
 The "Android settings app" allows to customize some functionality across all mobile devices using the Capture Android app. The settings in this chapter should be merely considered as a recommendation to simplify user interfaces but do not have any immediate impact on the DHIS2-RTS app itself.
 
-#### 2.5.1 Synchronization settings
+#### Synchronization settings
 
 **Global**
 
@@ -1279,7 +1276,7 @@ Limiting the number of periods for which data is downloaded to the mobile device
 
 Maximum number of periods to download data sets for: "12".
 
-#### 2.5.2 Appearance settings
+#### Appearance settings
 
 Although this settings does not affect the DHIS2-RTS app itself (for which the home screen is "fixed", for convenience it is recommended to reduce the filter options on the home screen.
 
@@ -1291,11 +1288,11 @@ Sync status: do not tag
 
 Assigned to me: do not tag
 
-#### 2.5.3 Analytics settings
+#### Analytics settings
 
 This chapter describes the configuration for visualizing some analytics on the mobile device.
 
-### 2.6 Use Case Configuration app
+### Use Case Configuration app
 
 This new DHIS2 app "links" the "Real-Time Stock Management" Tracker Program to the customized mobile app. While the Tracker Program will have the appearance of any other Tracker Program on the Capture Android app home screen, selecting a Tracker Program which is "linked" to the "Real-Time Stock Management" app will invoke the customized app instead of opening the conventional TEI dashboard.
 
@@ -1331,7 +1328,7 @@ Discarded
 
 - Discarded Stock \*: "Stock discard"
 
-### 2.7 Analytics configuration
+### Analytics configuration
 
 The DHIS2-RTS analytics are a critical and indispensable component of the DHIS2-RTS concept. The DHIS2-RTS app allows managing all transactions without the need for keeping paper records. However, recording transactions as such is nearly useless unless a record of all transactions is instantly and available to the storekeeper. Despite the availability of detailed transactional reports, compliance with monthly reporting requirements must be maintained.
 
@@ -1339,7 +1336,7 @@ The DHIS2 analytics provides reports both on individual transactions as well as 
 
 Reports are accessible to all users with the respective authorities on mobile device (with limitations) as well as in the web portal.
 
-#### 2.7.1 Line Listing
+#### Line Listing
 
 The Line Listing reports provide details of individual transactions but are not able to provide any type of aggregation.
 
@@ -1347,7 +1344,7 @@ Important notice: the "Last updated on" date and time stamp indicates the actual
 
 For stock receipts entered through the web portal, the "Last updated on" reflects the server time of the DHIS2 instance. Therefore, the server time and the time on mobile devices must both be set to the same date and time and should correspond to the time zone used in the respective country. If the times set on mobile devices and the DHIS2 server instance differ, the Line Listing will no longer display all transactions made on mobile devices and the web portal in chronological order.
 
-##### 2.7.1.1 DHIS2-RTS Digital stock card
+##### DHIS2-RTS Digital stock card
 
 This report replaces the manual (hand written) stock card and displays the accurate chronology of all transactions with the "Previous stock balance" and the "Stock on hand" (after the transaction).
 
@@ -1381,7 +1378,7 @@ This report replaces the manual (hand written) stock card and displays the accur
 
 - Style / Digit group separator: "Comma"![](media/image76.png)
 
-##### 2.7.1.2 DHIS2-RTS Stock distribution report
+##### DHIS2-RTS Stock distribution report
 
 This report (selectively) lists all "Distribution" transactions.
 
@@ -1412,7 +1409,7 @@ This report (selectively) lists all "Distribution" transactions.
 
 ![](media/image16.png)
 
-##### 2.7.1.3 Current Stock on hand report
+##### Current Stock on hand report
 
 This report is identical to viewing the stock item list with available stocks in the DHIS2-RTS and may be considered as redundant. The advantage of having a separate report is the possibility to give users (such as health staff in wards and services) read only access and not having to train them on the DHIS2-RTS. Moreover there is no need to select a "Transaction type" and "Deliver to" just to view the current stock position.
 
@@ -1449,7 +1446,7 @@ Exceptionally and intentionally, "Event" (and not "Enrollment") has to be select
 
 ![](media/image43.png)
 
-##### 2.7.1.4 DHIS2-RTS Discard report
+##### DHIS2-RTS Discard report
 
 This report (selectively) lists all "Discard" transactions.
 
@@ -1480,7 +1477,7 @@ This report (selectively) lists all "Discard" transactions.
 
 ![](media/image21.png)
 
-##### 2.7.1.5 DHIS2-RTS Stock correction report
+##### DHIS2-RTS Stock correction report
 
 This report (selectively) lists all "Stock correction" transactions.
 
@@ -1511,11 +1508,11 @@ This report (selectively) lists all "Stock correction" transactions.
 
 ![](media/image18.png)
 
-#### 2.7.2 Data Visualizer / Data Entry form
+#### Data Visualizer / Data Entry form
 
 These group of reports is generated from Data elements and the category options from the Data Entry form for visualizing daily and monthly totals of transactions.
 
-##### 2.7.2.1 DHIS2-RTS Monthly report - Summary
+##### DHIS2-RTS Monthly report - Summary
 
 This reports provides the monthly totals of all transactions but only with the total "Distribution" quantity without details on the "Deliver to" for "Distribution" transactions.
 
@@ -1550,7 +1547,7 @@ This reports provides the monthly totals of all transactions but only with the t
 
 ![](media/image53.png)
 
-##### 2.7.2.2 DHIS2-RTS Monthly report - Details
+##### DHIS2-RTS Monthly report - Details
 
 This reports provides the monthly totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
 
@@ -1602,7 +1599,7 @@ This reports provides the monthly totals of all transactions including details o
 
 ![](media/image64.png)
 
-##### 2.7.2.3 DHIS2-RTS Monthly stockout days count report
+##### DHIS2-RTS Monthly stockout days count report
 
 This report automatically provides the monthly number of stockout days for each item which is managed with the DHIS2-RTS mobile application.
 
@@ -1629,7 +1626,7 @@ This report automatically provides the monthly number of stockout days for each 
 
 ![](media/image75.png)
 
-##### 2.7.2.4 DHIS2-RTS Daily report - Summary
+##### DHIS2-RTS Daily report - Summary
 
 This reports provides the daily totals of all transactions but without details on the "Deliver to" for "Distribution" transactions.
 
@@ -1665,7 +1662,7 @@ Note that the order of these two fields can be switched either displaying items 
 
 ![](media/image38.png)
 
-##### 2.7.2.5 DHISDaily report - Details
+##### DHISDaily report - Details
 
 This reports provides the daily totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
 
@@ -1717,7 +1714,7 @@ This reports provides the daily totals of all transactions including details on 
 
 ![](media/image10.png)
 
-##### 2.7.2.6 DHIS2-RTS Daily stockout days count report
+##### DHIS2-RTS Daily stockout days count report
 
 This report automatically provides the number of items which are out of stock every day for each item which is managed with the DHIS2-RTS mobile application.
 
@@ -1744,17 +1741,17 @@ This report automatically provides the number of items which are out of stock ev
 
 ![](media/image48.png)
 
-#### 2.7.3 DHIS2-RTS Dashboards
+#### DHIS2-RTS Dashboards
 
 Each of the DHIS2-RTS dashboards presents a single Line Listing or Data Visualizer report or visualization in order to maximize their size when viewed on a (small) mobile device.
 
 All dashboards need to be configured as "Make available offline" so that they can be viewed on a mobile device when it is offline.
 
-### 2.8 Summary of metadata configuration
+### Summary of metadata configuration
 
 This chapter provides a summary of the metadata configuration.
 
-#### 2.8.1 Summary of data model
+#### Summary of data model
 
 The following logic is used for configuring the metadata used for the Tracker Program:
 
@@ -1803,7 +1800,7 @@ The user of the "Imprest Level" inventory control system is highly recommended b
 | > **SCHEDULER** |  |
 | > Scheduler app | "Imprest level - predictor -<br>rolling forward to the next month"<br>running at 00:05:00 every first day<br>of the month |
 
-#### 2.8.3 Summary of metadata configuration for Tracker Program
+#### Summary of metadata configuration for Tracker Program
 
 The table below summarizes the main metadata configurations and settings for the Tracker Program on which the customized DHIS2-RTS is based and using "in the background". While not visible to users it is indispensable and critical for customizing the configuration to individual countries as well as for managing data such as adding or removing items (health care products).
 
@@ -1835,13 +1832,13 @@ The table below summarizes the main metadata configurations and settings for the
 | > Program rule variable | Program (\*): "Real-Time Stock<br>Management"<br>Name / Data element<br>\- "Initial stock on hand -<br>Previous event": "Data element<br>from previous event" / "Stock<br>on hand"<br>\- "Previous stock balance":<br>"Data element in current<br>event" / "Previous stock<br>balance"<br>\- "Stock correction": "Data<br>element in current event" /<br>"Stock on hand"<br>\- "Stock count": "Data<br>element in current event"/<br>"Stock on hand"<br>\- "Stock discarded": "Data<br>element in current event" /<br>"Stock discarded"<br>\- "Stock distribution":<br>"Data element in current<br>event" / "Stock distribution"<br>\- "Stock received": "Data<br>element in current event" /<br>"Stock received"<br>Source type (\*): see above<br>Data element: see above |
 | > Use case configuration app | Use case configuration app<br>Configure Program<br>General<br>\- Program Types: "Logistics"<br>\- Description: "Real-time<br>stock management application"<br>\- Program \*: "Real-Time Stock<br>Management"<br>Details<br>\- Item Code \*: "Item code"<br>\- Item Description \*: "Item<br>description"<br>\- Stock on Hand \*: "Stock on<br>hand"<br>Transactions<br>Distributed<br>\- Distributed to \*: "Deliver<br>to"<br>\- Distributed Stock \*: "Stock<br>distribution"<br>Corrected<br>\- Corrected Stock \*: "Stock<br>correction"<br>\- Stock Count \*: "Stock<br>count"<br>Discarded<br>\- Discarded Stock \*: "Stock<br>discard" |
 
-## 3 DHIS2 REAL-TIME STOCK MANAGEMENT MOBILE APPLICATION
+## DHIS2 REAL-TIME STOCK MANAGEMENT MOBILE APPLICATION
 
 The mobile device application (front-end, user interface) consists of a login screen, a single screen for entering and editing data by pharmacy staff, a third (and last) screen for viewing and correcting the summary and a final screen for the analytics.
 
 Any other functionality is placed in the native DHIS2 settings menu.
 
-### 3.1 General use case
+### General use case
 
 Medical stocks comprise drug products (tablets, injections, diagnostic test etc.) as well as single use medical devices such as syringes, bandages, catheters, drains, x-ray films etc.
 
@@ -1895,7 +1892,7 @@ The DHIS2-RTS data and analytics provides the storekeeper with information on:
 
 - distributions by supplied ward or service
 
-### 3.2 General design principles and business requirements
+### General design principles and business requirements
 
 The principle of "digital frugality" of keeping the mobile device application as simple, "light" and "lean" as possible is an explicit objective of the project. The mobile device application features only a login window for authentication, a window for order picking and a third window for reviewing and confirmation. Any information displayed on any user interface must be essential and indispensable to business processes and workflows.
 
@@ -1942,7 +1939,7 @@ This mobile application will mainly be used by health workers which have not rec
 - Any data values entered on the mobile device using the DHIS2 Capture Android is stored instantly upon entry and does not require "saving"
 - The mobile device application does not allow users to export or download data from the mobile device in any way nor is this required. Previously recorded data can be viewed in dashboards on the mobile device or in the DHIS2 web portal
 
-### 3.3 DHIS2 mobile device application installation
+### DHIS2 mobile device application installation
 
 Before using the application for the very first time, as well as in case of any error in the mobile device, the mobile device application must be installed on every mobile device individually.
 
@@ -1950,7 +1947,7 @@ As the DHIS2-RTS is a native module in the DHIS2 Capture Android app, installati
 
 The user downloads the native DHIS2 Capture Android app from Google Play Store by searching for "DHIS2" and installing the mobile app like any other application.
 
-### 3.4 DHIS2 mobile device application user access (login and logout)
+### DHIS2 mobile device application user access (login and logout)
 
 This process allows users to login and access the mobile device application.
 
@@ -1958,7 +1955,7 @@ As the DHIS2-RTS is a native module in the DHIS2 Capture Android app, the login 
 
 Users can login according to their user profile and account settings as configured in the DHIS2 web portal. Access to the DHIS2-RTS functionality is controlled through the user settings, the Tracker Program setting as well as the Android Settings app [this to be confirmed].
 
-### 3.5 "Distribution" transaction
+### "Distribution" transaction
 
 More than 99% of all transactions will be "Distribution" transactions where storekeepers pick and pack healthcare goods requested by a department, service, community health care and immunization workers which are then either picked up by the requester or delivered by the pharmacy.
 
@@ -1970,7 +1967,7 @@ The DHIS2-RTS is designed for instant digital recording and explicitly not inten
 
 - As the stock on hand is automatically calculated, users have the possibility of manually correcting any discrepancies by recording correcting the actual, current stock on hand.
 
-#### 3.5.1 "Distribution" transaction workflow
+#### "Distribution" transaction workflow
 
 For each "Distribution" transaction the following workflow is required. User
 
@@ -1991,7 +1988,7 @@ For each "Distribution" transaction the following workflow is required. User
 
 - informs the requester to pick up the goods are delivers them to the requesting department/service
 
-#### 3.5.2 "Distribution" transaction use case
+#### "Distribution" transaction use case
 
 1.  User authenticates and accesses the DHIS2 Capture Android app.
 2.  The DHIS2 Capture Android app home screen appears and displays all the DHIS2 Data Sets and Programs to which the user is assigned and has access to. ![](media/image25.png)
@@ -2049,7 +2046,7 @@ For each "Distribution" transaction the following workflow is required. User
 45. User selects "Not now" to close the confirmation message.
 46. The confirmation message closes, the home screen reverts and the user is ready for entering the next transaction. ![](media/image34.png)
 
-### 3.6 "Discard" transaction
+### "Discard" transaction
 
 Stock is discarded whenever healthcare goods are expired, damaged or no longer usable for other reasons. Those products must be removed from the "active" stock and segregated in a locked cupboard or room to prevent inadvertent use until the products are disposed of.
 
@@ -2061,7 +2058,7 @@ There are several reasons for differentiating between "Distribution" and "Discar
 
 The workflow and use case are almost identical with those of the "Distribution" transaction with the only difference that the "Deliver to" option is not required and therefore not displayed.
 
-#### 3.6.1 "Discard" transaction workflow
+#### "Discard" transaction workflow
 
 For each "Discard" transaction the following workflow is required: user
 
@@ -2079,7 +2076,7 @@ For each "Discard" transaction the following workflow is required: user
 
 - places the selected products in quarantine to prevent inadvertent use
 
-#### 3.6.2 "Discard" transaction use case
+#### "Discard" transaction use case
 
 This use case only shows the steps which differ from the "Distribution" use case.
 
@@ -2094,7 +2091,7 @@ This use case only shows the steps which differ from the "Distribution" use case
 7.  User selects the Organisation unit from the "From" drop-down menu (see "Distribution" transaction).
 8.  The header displays "Discard" as transaction type and the Organisation unit as "From" and the user is ready to select the items and quantities which need to be discarded in the same way as for the "Distribution" workflow. ![](media/image91.png)
 
-### 3.7 "Correction" transaction
+### "Correction" transaction
 
 Stock corrections must only be made if the mistake in previous transactions cannot be correct by recording additional transactions and may be needed for various reasons:
 
@@ -2110,7 +2107,7 @@ In most case the mistake will never be found and it is important to differentiat
 
 The workflow for "Correction" transactions is almost identical with the "Distribution" workflow with the important difference that, unlike all other transactions, the user does not enter the transaction quantity but instead enters the quantity resulting from a physical stock count and DHIS2-RTS then calculates the discrepancy. Moreover, the "Correction" transaction is the only transaction where entries or "0" (zero) make sense.
 
-#### 3.7.1 "Correction" transaction workflow
+#### "Correction" transaction workflow
 
 For each "Correction" transaction the following workflow is required, user:
 
@@ -2126,7 +2123,7 @@ For each "Correction" transaction the following workflow is required, user:
 - repeats process for each item
 - carries out a final review of all items for which a stock correction was entered
 
-#### 3.7.2 "Correction" transaction use case
+#### "Correction" transaction use case
 
 This use case only shows the steps which differ from the "Distribution" use case.
 
@@ -2143,7 +2140,7 @@ This use case only shows the steps which differ from the "Distribution" use case
 11. The user interface displays the correct stock on hand in the "Stock" column.
 12. The user repeats the process above for every item to be picked, proceed to the "Review" and completes the transaction as described in the previous sub-chapter.
 
-### 3.8 Mobile device analytics
+### Mobile device analytics
 
 DHIS2 natively provides users with on-line and off-line analytics.
 
@@ -2159,7 +2156,7 @@ It is important to note that apart from the pharmacy staff as the main user, any
 
 - Checking the availability of stocks by department/ward supervisors before preparing their daily/weekly orders and, if necessary, ordering (more of) alternative health care products
 
-#### 3.8.1 Analytics through progressive web app (PWA)
+#### Analytics through progressive web app (PWA)
 
 The native DHIS2 progressive web app functionality allows viewing any DHIS2 dashboards which are configured as "Make available offline" on a mobile device through any installed web browser.
 
@@ -2169,15 +2166,15 @@ The DHIS2 analytics (as of the time the mobile device was connected to the Inter
 
 In order to view the the visualizations without the dashboard headers select "View fullscreen" from the three dot menu in the upper right corner of each visualization.
 
-#### 3.8.2 Summary analytics through Data entry forms
+#### Summary analytics through Data entry forms
 
 While the Pivot tables from the Data Visualizer app are too complex for viewing the offline analytics, the same information is available from the daily and monthly detailed reports from the respective Data entry forms which are natively available offline.
 
-#### 3.8.3 Offline in-app analytics
+#### Offline in-app analytics
 
 _Under development_.
 
-### 3.9 Mobile device synchronization
+### Mobile device synchronization
 
 The DHIS2-RTS mobile app uses the native synchronization functionality which is included in the detailed DHIS2 documentation. The simplest way for synchronizing the mobile after every transaction is using the synchronization icon (double reverse arrow) in the header bar without having to leave the DHIS2-RTS user interface. However, there are some important operational considerations which are specific to the real-time stock management use case.
 
@@ -2215,11 +2212,11 @@ If the network connectivity does not allow synchronizing mobile devices with the
 
 Note that, by design, the DHIS2 Capture Android app does not automatically synchronize data with the central DHIS2 server during login and if any data was not yet synchronized before logging out, the synchronization will have to be prompted "manually".
 
-## 4 DHIS2 REAL-TIME STOCK WEB PORTAL MANAGEMENT
+## DHIS2 REAL-TIME STOCK WEB PORTAL MANAGEMENT
 
 While the DHIS2-RTS use at the health facility level is conceived for exclusive use on mobile devices, the initial set-up and configuration, routine administration as well as the regular stock receipts can only be made through the DHIS2 web portal.
 
-### 4.1 Creating stock item list
+### Creating stock item list
 
 Before the DHIS2-RTS mobile application can be used, all health care products (items) used in any specific health facility (Organisation unit) must be "registered" and "enrolled" with their own and unique ID (identification) in each of the health care facility where those products are used. For example, paracetamol tablet, 500 mg has to be enrolled and registered in each Organisation unit (OU) separately as the product must uniquely assigned to its Organisation unit for correctly recording transactions and providing correct analytics. Note that an item, such as paracetamol tablets, with identical specifications in many facilities across a country, has to have its own and unique ID for each of these health facilities.
 
@@ -2227,13 +2224,13 @@ Items can be "registered" and "enrolled" manually through the native Capture app
 
 Alternatively a list of items can be uploaded by using the "TEI import" function of the native DHIS2 Import/Export app or the third-party "Bulk Load" app.
 
-### 4.2 Adding items to and removing from the DHIS2-RTS app
+### Adding items to and removing from the DHIS2-RTS app
 
 In the same way that items are created and added to the stock item list initially, items can be added to any health facility at any time.
 
 [Question: how to remove (or "hide") items no longer in use. If they are deleted, will the analytics still be available].
 
-### 4.3 Stock receipts
+### Stock receipts
 
 When consignments are received at the health care facility, the user confirms receipt to the district level where the stocks are uploaded from an electronic record.
 
@@ -2241,21 +2238,21 @@ The DHIS2-RTS design intentionally does not foresee any possibility for users to
 
 Stock receipts can be effected using the native Import/Export app or the third-party Bulk Load app. But ideally, all stock receipts should be effected directly and automatically through a real-time integration with the upstream, national LMIS. In this system, the items and quantities on the respective packing list are "loaded" into DHIS2 directly through its API-endpoints from the upstream, national LMIS as soon as the storekeeper has confirmed receipt.
 
-### 4.4 Adding items to and removing from the Default Data Entry Form
+### Adding items to and removing from the Default Data Entry Form
 
 Whenever items (health care products) are added to the DHIS2 Tracker Program, the corresponding Data elements must be configured and must be added to all DHIS2-RTS Data entry forms.
 
 At any item, the list of TEIs (Tracked Entity Instances) of any Organisation unit must correspond completely and exactly with the list of Data elements in all DHIS2-RTS Data sets in order to ensure availability of the Data entry form for monthly reporting as a backup as well as for ensuring accurate analytics reporting.
 
-### 4.5 Web portal analytics
+### Web portal analytics
 
 All the analytics indicated in chapter 2.7 "Analytics configuration" are available in the DHIS2 web portal.
 
-## 5 PHARMACY STOCK MANAGEMENT WITH THE DHIS2-RTS APP
+## PHARMACY STOCK MANAGEMENT WITH THE DHIS2-RTS APP
 
 In any implementation, national regulations and guidelines must be respected. This chapter focuses on technical and practical aspects and should only be considered as recommendations which may or may not be useful.
 
-### 5.1 Preparations for implementing the mobile application
+### Preparations for implementing the mobile application
 
 Using the DHIS2-RTS mobile application requires availability and sustainable management of an existing central DHIS2 server instance with technical support.
 
@@ -2265,25 +2262,25 @@ Any implementation must be approved and planned by the national Health authoriti
 
 Mobile device need to be provided and sustained, a really network connection needs to be available and financed and competent users need to be identified and trained on the application.
 
-#### 5.1.1 Providing and setting up mobile devices
+#### Providing and setting up mobile devices
 
 Every health facility should have at least one tablet PCsavailable which is dedicated for use by storekeepers and, ideally, a second backup device which may be shared with other users at the health facility.
 
 Private devices should not be used as this poses data security risks and leads to arguments about payment for the Internet connection. Details on the specifications for recommended devices are given in chapter 1.6.
 
-#### 5.1.2 Obtaining user access
+#### Obtaining user access
 
 At every health facility, at least the (main) pharmacist or storekeeper and another person replacing her/him in case of absence should have full access to the mobile device and the application. Other staff supervising pharmacists or storekeepers should also have access in order to be able to provide advice and training as well as understand any problems which may occur.
 
 Every user must be configured in the central DHIS2 database with a username, password, user profile and corresponding user access and user rights.
 
-#### 5.1.3 Adding health facilities to DHIS2
+#### Adding health facilities to DHIS2
 
 Only health care facilities which use the DHIS2-RTS should be configured in the DHIS2-RTS Tracker Program and therefore any additional health facility which intend to implement the system must be configured by DHIS2 system administrator.
 
 Any Organisation units which are already configured in the DHIS2 database and in use for other DHIS2 applications must be used to avoid duplication of facilities and facility names.
 
-#### 5.1.4 Setting up stock item list in DHIS2
+#### Setting up stock item list in DHIS2
 
 A single, central stock item list for each health care facility is indispensable for using the DHIS2-RTS as well as for order management and stock management. In most cases, such a stock item list which details of all items which are permanently maintained in the pharmacy and are regularly replenished will already be available.
 
@@ -2299,17 +2296,17 @@ The use of item codes is optional but recommended. It is important to note that 
 
 If no coding system is used or the coding system (such as numbers) do not allow grouping items, grouping can be achieved by preceding item descriptions with abbreviations for product groups such as DORA (oral drugs), DVAS (vaccines), MDRE (dressing material) etc.
 
-#### 5.1.5 Uploading initial stock
+#### Uploading initial stock
 
 Before the DHIS2-RTS mobile application is used, a complete phyiscal stock count should be carried out to confirm the available stock on hand. The result of this stock count is then simply uploaded as the initial stock receipt explained in chapter 4.3.
 
-### 5.2 Pharmacy setup
+### Pharmacy setup
 
 Again, this chapter should be considered as a recommendation and possible solution which has been tried and tested in the field but which is superseded by national regulations and policies.
 
 Using the DHIS2 Reat-Time Stock management system requires a high level of discipline and accuracy since the application automatically recalculates the remaining stock balance after every transaction and any mistakes are perpetuated.
 
-#### 5.2.1 Storage equipment and health care good storage
+#### Storage equipment and health care good storage
 
 All stocks should be arranged in alphabetical order of their item groups and within by item codes and item descriptions. The first batch of each item should be placed in a bin ("active bin") according to FEFO/FIFO. Any other batches which are not received in the tertiary supplier packaging should also be placed in separate bins while any health care goods delivered in tertiary supplier packaging should not be opened but placed on the shelf in the order of expiry dates. When the "active bin" is emptied, stock from the next batch can be placed in that bin for the next distribution.
 
@@ -2321,7 +2318,7 @@ Below an example of a best practice set-up from an actual implementation in hosp
 
 Note the scanning barcode requires good lighting conditions and that barcodes must not be placed to close together as at any time a single barcode must be visible in the barcode scanner viewer finder for that barcode to be promptly and correctly recognized by the software application.
 
-#### 5.2.2 Generating barcode labels for stock
+#### Generating barcode labels for stock
 
 Linear barcodes as well as QR codes are both equally recognized with the DHIS2-RTS mobile app. Linear barcodes have the advantage that they can be easily generated from a simple Excel spreadsheet but the disadvantage that they are quite long even for codes with only a few characters and the mobile device has to be held exactly horizontally during scanning (the red line in the barcode scanner window has to cover the entire barcode from left to right) in order for the barcode to be recognized.
 
@@ -2353,7 +2350,7 @@ The "PSM barcode label template" Excel file contains three worksheets
 
 "C Label print": this worksheet correctly formats the item code, barcode and item description on four labels per page if printed in landscape which can be printed on any printer.
 
-#### 5.2.3 Stock receipts
+#### Stock receipts
 
 The receipt of consignments should must be acknowledged to the medical distribution centre shipping them, ideally using a simple DHIS2 application. After receiving the respective (district) medical store has received this notification, the logistics team will upload the items and quantities indicated in the packing list to the respective Organisation unit (health facility) where those quantities will be automatically added to the "Stock on hand". Ideally, this process will be fully automatized by integrating the upstream national LMIS with the DHIS2 serve.
 
@@ -2361,7 +2358,7 @@ It is important that the mobile device at the health facility receiving consignm
 
 In case of any discrepancies between the packing list and the physically received consignments, the logistic team should be contacted for either arranging delivery of the short-shipped items and quantities or correcting the records in national LMIS system. If excess stock was delivered, the logistics services can simply issue a packing list for the missing quantities which are again acknowledged with the IRIS "Goods Confirmation" application and will correct the record. Either way, the corrected stock receipt quantities will eventually be updated in the DHIS2 database.
 
-#### 5.2.4 Recording distributions
+#### Recording distributions
 
 Storekeepers will usually receive a list of items and quantities required for each ward or service once a day, weekly or according to another established schedule.
 
@@ -2375,11 +2372,11 @@ In case during the order picking mistakes were made, they cannot be corrected af
 
 The "excess" quantity can also be given to another ward or service without recording. While the total stock on hand is thereby corrected, the statistics on distributions to each ward or service would again no longer be correct (and cannot be corrected).
 
-#### 5.2.5 Recording discarded stocks
+#### Recording discarded stocks
 
 Stock which is expired, damaged or unusable for other reasons must be removed from the stock and be stored in a locked cupboard or room which is dedicated only to stock waiting for disposable. In order to account for reduction of the stock on hand without allocating stocks as distribution to any specific ward or service, the storekeeper carries out a "Discard" transaction in the same way as for the "Distribution" transaction.
 
-#### 5.2.6 Recording stock corrections
+#### Recording stock corrections
 
 Discrepancies between the physically available stock on hand on the shelf and the stock on hand balance calculated in the DHIS2-RTS mobile application may occur for various reasons.
 
@@ -2393,7 +2390,7 @@ In all of these cases, storekeepers must effect a "Correction" transaction in th
 
 In case "loans" are given to or received from other organizations or health care facilities options are not to create any transaction (as eventually the loan will be "repaid") or by effecting two stock corrections which cancel each other out.
 
-#### 5.2.7 Residual balance counting for stock on hand
+#### Residual balance counting for stock on hand
 
 As the stock on hand as well as the transaction quantities are instantly updated in the DHIS2-RTS mobile application, a complete and updated record of the current stock on hand is available in the system at any time and in principle no (monthly) physical stock counts are necessary. However, if stocks are never counted, discrepancies will only become apparent if and once negative stocks would occur during a transaction.
 
@@ -2407,7 +2404,7 @@ Residual balance counting methods include:
 
 - physically counting the remaining stock on hand for small quantities of items which can be effected quickly
 
-### 5.3 Backup plan in case of system failure
+### Backup plan in case of system failure
 
 Any digital systems can fail at any level: the mobile device at the health facility, the Internet connection can fail for prolonged periods and central servers and databases can fail.
 
@@ -2417,7 +2414,7 @@ The simplest way is to continue or resume the use of stock cards for any transac
 
 For the "Advanced mode", the quantities distributed to each ward or service can be tallied up and entered with a single transaction for each ward or service once the system is restored. This will falsify the transaction dates but still maintain an accurate record of the total quantities distributed to each ward or service. In case of prolonged system failure, the "aggregate" Data entry form with a monthly reporting period can be used for documenting the stock on hand at the end of the month as well as the total quantities during the month. The details of these transactions will be permanently missing in the system but, after effecting a stock "Correction", use of the DHIS2-RTS mobile application can be resumed once all systems are restored.
 
-## 6 DHIS2 REAL-TIME STOCK INTEGRATION WITH NATIONAL eLMIS
+## DHIS2 REAL-TIME STOCK INTEGRATION WITH NATIONAL eLMIS
 
 As the integration of DHIS2 with an upstream, national eLMIS requires a detailed mapping of data and a dedicated project, this chapter can only provide an general outline of an integration.
 
@@ -2429,7 +2426,7 @@ The integration of DHIS2 used (only) at the health facility level with a nationa
 
 The synchronization of facility level DHIS2 data with the central DHIS2 server is managed fully by native DHIS2 functionality. The integration of DHIS2 with the national eLMIS requires synchronization of data from the central DHIS2 server with the national eLMIS server as well as synchronization of (some) data from the national eLMIS server with the central DHIS2 server. As every DHIS2 entity features a unique ID, integration is best accomplished by using (only) these IDs rather than the actual field names appearing for users which are natively available from any DHIS2 instance through the Web API.
 
-### 6.1 Data synchronization from DHIS2 to national eLMIS from
+### Data synchronization from DHIS2 to national eLMIS from
 
 The following data fields from the DHIS2 Tracker Program need to by synchronized with the national eLMIS server, ideally in real-time.
 
@@ -2451,7 +2448,7 @@ The following data fields from the DHIS2 Tracker Program need to by synchronized
 
 - Consignment: ID and date/time stamp, optional: user name
 
-### 6.2 Data synchronization from DHIS2 to national eLMIS from
+### Data synchronization from DHIS2 to national eLMIS from
 
 The following data fields need to be synchronized from the national eLMIS to the central DHIS2 server, which in turn manages synchronization of the data with the respective mobile devices at health facilities.
 
@@ -2461,4 +2458,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-Editing test GMc on 10-01-2024 at 18:15
+Last edit: GMc on 12-01-2024 at 23:00
