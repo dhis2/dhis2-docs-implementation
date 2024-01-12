@@ -26,7 +26,7 @@ Recording individual stock transactions rather than recording and reporting stoc
 
 - The system eliminates redundancies for data collection with national LMIS systems (even if on paper or in Excel) as a single data value, namely the transaction quantity of every item, is recorded.
 
-**Structures and preconditions**
+#### Structures and preconditions
 
 The application is based on adherence to specific structures and processes which inform the system design and functionality.
 
@@ -71,7 +71,7 @@ The DHIS2-RTS mobile application is used by storekeepers of pharmacies and medic
 
 "Department and service" stands for any facility or service within any healthcare facility which holds and manages stocks of any kind which are regularly replenished such as patient wards, dispensaries (OPD), operating theatres, sterilization services, laboratory and blood transfusion services, diagnostic imaging, laundry, maintenance services or other services.
 
-**Processes**
+#### Processes
 
 - Receiving and put-away of stocks received from upstream medical distribution centres
 
@@ -139,12 +139,6 @@ If mobile devices are purchased specifically for the implementation of DHIS2-RTS
 - The device should withstand the rugged climatic conditions in the country in terms of temperature, humidity and dust and be resilient to drops and other physical damage
 
 The DHIS2 documentation lists the following mobile device specification requirements: [DHIS2 Mobile Device Specifications](https://docs.dhis2.org/en/implement/android-implementation/mobile-device-specifications.html)
-
-**Specification** **DHIS2**
-
-Construction Lifespan of at least 2 years Android operating system version minimum 5.0, minimum recommended 7.X and recommended 8.X or higher Processor 4 cores, 1.2 GHz RAM (tablet) minimum 1.5 Gb, recommended more than 3 Gb Storage minimum 8 Gb, recommended 32 Gb Screen size minimum 7 inches Camera minimum 5 megapixel, recommended at least 8 mega pixel Connectivity 4G (LTE) / 3G and WLAN
-
-One possible (future) option for resolving the conflict between a small and light device for order picking and the preference of a larger screen for analytics is attaching a larger mobile device to a cart during transactions while scanning the barcodes with an external barcode scanner connected to the mobile device through an USB-cable or a Bluetooth connection.
 
 ### Contingency plan in case of device failure
 
@@ -2458,4 +2452,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-Last edit: GMc on 12-01-2024 at 22:07
+Last edit: GMc on 12-01-2024 at 22:45
