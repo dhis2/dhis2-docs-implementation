@@ -134,11 +134,9 @@ If mobile devices are purchased specifically for the implementation of DHIS2-RTS
 
 - The device should withstand the rugged climatic conditions in the country in terms of temperature, humidity and dust and be resilient to drops and other physical damage
 
-The DHIS2 documentation lists the following mobile device specification requirements (last updated 11.08.2022): [DHIS2 Mobile Device Specifications](https://docs.dhis2.org/en/implement/android-implementation/mobile-device-specifications.html)
+The DHIS2 documentation lists the following mobile device specification requirements: [DHIS2 Mobile Device Specifications](https://docs.dhis2.org/en/implement/android-implementation/mobile-device-specifications.html)
 
 **Specification** **DHIS2**
-
----
 
 Construction Lifespan of at least 2 years Android operating system version minimum 5.0, minimum recommended 7.X and recommended 8.X or higher Processor 4 cores, 1.2 GHz RAM (tablet) minimum 1.5 Gb, recommended more than 3 Gb Storage minimum 8 Gb, recommended 32 Gb Screen size minimum 7 inches Camera minimum 5 megapixel, recommended at least 8 mega pixel Connectivity 4G (LTE) / 3G and WLAN
 
@@ -170,7 +168,7 @@ At any time, users can resort to the manual, paper- or spreadsheet-based method 
 
 - Calculate the monthly replenishment order using a paper record or a spreadsheet application
 
-## DHIS2 METADATA CONFIGURATION
+## DHIS2 configuration
 
 Although configuration of DHIS2 in general and the DHIS2 Tracker Program in particular are not part of the development, many settings are closely linked to the custom development and critical for its functioning. Moreover, this chapter is added in order to provide full documentation of the entire system which is required for running and using DHIS2-RTS.
 
@@ -204,15 +202,15 @@ If a Default Data Entry Form is configured as a "backup" in case of DHIS2-RTS fa
 
 While configuring user settings is a native DHIS2 functionality, the details of providing users access to the DHIS2-RTS mobile app (and module) need to be developed.
 
-**DHIS2-RTS - Data entry**
+##### DHIS2-RTS - Data entry
 
 This User role allows users to access the DHIS2 Capture Android app (native app) on mobile devices as well as to DHIS2-RTS within the "module" for viewing, entering and recording transactions.
 
-**DHIS2-RTS - Reader**
+##### DHIS2-RTS - Reader
 
 This User role allows users to view stock data in the DHIS2-RTS (or only viewing the in-app off-line analytics reports).
 
-**DHIS2-RTS - Superuser**
+##### DHIS2-RTS - Superuser
 
 This user role is reserved to system administrators and allows configuring settings and managing the DHIS2 instance and system.
 
@@ -390,13 +388,13 @@ In addition, for each item an equivalent item with the suffix "DAY" is needed fo
 
 The creation of Data element groups is a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
 
-**[Stock item list - CL]**
+##### [Stock item list] - CL
 
 - Name (\*): "Stock item list"
 - Short name (\*): Stock item list
 - Data elements: include all Data elements of Data collection and calculation report
 
-**[Stock item list] - DAY**
+##### [Stock item list] - DAY**
 
 - Name (\*): "[Stock item list] - DAY"
 - Short name (\*): "[Stock item list] - DAY"
@@ -479,7 +477,7 @@ DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock on hand/DORAALBE4T - ALBENDAZOLE, 4
 
 Denominator: 1
 
-**Stockout days**
+##### Stockout days
 
 This indicator returns the value "1" for any day where the stock on hand is zero otherwise a "0" and allows automatically calculating the number of stockout days in a month. An indicator is needed for every Data element separately.
 
@@ -642,7 +640,7 @@ Name: "Real-Time Stock Management"
 
 Program type: "Tracker Program"
 
-## Program details
+##### Program details
 
 Name (\*): "Real-Time Stock Management"
 
@@ -664,11 +662,11 @@ Version: (automatically numbered)
 
 "Minimum number of attributes required to search": "1".
 
-## Enrollment details
+##### Enrollment details
 
 "Show incident date": check (appears as white tick in a blue square)
 
-## Attributes - 1 Assign attributes
+##### Attributes - 1 Assign attributes
 
 - Program tracked entity attributes:
 - - "Item code"
@@ -678,15 +676,15 @@ Note that the item code is separate as it is needed as a distinct field for scan
 
 ![](media/image11.png)
 
-## Attributes - 2 Create registration form
+##### Attributes - 2 Create registration form
 
 (Leave blank)
 
-## Programme stages
+##### Programme stages
 
 "Stock on Hand"
 
-### Program stages - "1 Stage Details"
+##### Program stages - "1 Stage Details"
 
 Name: "Stock on Hand"
 
@@ -694,7 +692,7 @@ Scheduled days from start (\*): "0"
 
 "Repeatable": check (appears as white tick in a blue square)
 
-### Program stages - "Assign data elements"
+##### Program stages - "Assign data elements"
 
 Search available/selected items:
 
@@ -709,7 +707,7 @@ Search available/selected items:
 
 ![](media/image36.png)
 
-### Program stages - "Create data entry form"
+##### Program stages - "Create data entry form"
 
 "BASIC"
 
@@ -722,7 +720,7 @@ Search available/selected items:
 - "Stock count"
 - "Stock correction"
 
-## Access
+##### Access
 
 "X Organisation units selected": select each Organisation Unit separately (at the lowest level) but not the Organisation Unit levels.
 
@@ -730,7 +728,7 @@ Search available/selected items:
 
 "APPLY TO SELECTED STAGES": "Stock on Hand": check (appears as white tick in a blue square)
 
-## Notifications
+##### Notifications
 
 (blank)
 
@@ -776,7 +774,7 @@ Two program rules manage the calculation of the "Stock correction". Entering a q
 
 - "Assign Stock correction": if the "Stock count" field has a value entered, the difference between the "Previous stock balance" and the "Stock count" is "written" to the field "Stock correction".
 
-**Calculations**
+##### Calculations
 
 Stock on Hand = "Previous stock balance" + "Stock received" - "Stock distribution" - "Stock discarded"
 
@@ -794,7 +792,7 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 
 - positive integer if the physical stock count is greater than the calculated value
 
-**Assign Stock correction**
+##### Assign Stock correction
 
 [1 Enter program rule details]{.underline}
 
@@ -818,7 +816,7 @@ Expression to evaluate and assign:
 
 "#{Stock count }-#{ Previous stock balance}"
 
-**Assign Stock on Hand**
+##### Assign Stock on Hand
 
 [1 Enter program rule details]{.underline}
 
@@ -842,7 +840,7 @@ Expression to evaluate and assign:
 
 "#{Previous stock balance} + #{Stock received} - #{Stock distributed} - #{Stock discarded} "
 
-**Assign previous stock balance**
+##### Assign previous stock balance
 
 [1 Enter program rule details]{.underline}
 
@@ -866,7 +864,7 @@ Expression to evaluate and assign:
 
 "#{Initial stock on hand - Previous event}"
 
-**Assign Stock on Hand correction**
+##### Assign Stock on Hand correction
 
 [1 Enter program rule details]{.underline}
 
@@ -951,7 +949,7 @@ It is critically important that the "Aggregation type (\*)" of the Data element 
 
 Note that the same "Program Indicator" can "feed" the Predictor for the "MTH" (monthly period) as well as the "DAY" (daily period).
 
-**Program indicator**
+##### Program indicator
 
 - Program (\*): Real-Time Stock Management
 - Name (\*): DASDCHLC5S1 - Distribution
@@ -968,13 +966,13 @@ Note that the same "Program Indicator" can "feed" the Predictor for the "MTH" (m
 - - Period type: (leave blank)
 - Display in form: select (appears as a white tick in a blue square)
 
-**Edit expression**
+##### Edit expression
 
 - #{CSszngrLaoW.smwdEfUz8vo}
 
 "Stock on Hand\\.Stock distribution"
 
-**Edit filter**
+##### Edit filter
 
 - A{XYvrLoYSMRU} == \'DASDCHLC5S1\'
 
@@ -1036,7 +1034,7 @@ Note that one Predictor is needed to "feed" the monthly report while a second Pr
 
 Below the configuration for a single Predictor is given as an example while all other Predictors are created analogously:
 
-**Predictor**
+##### Predictor
 
 - Name: "T2A - DORAALBE4T - ALBENDAZOLE, 400 mg, tab. - DIST - PR - MTH/DAY
 
@@ -1050,7 +1048,7 @@ Below the configuration for a single Predictor is given as an example while all 
 
 - Organisation units providing data (\*): "At selected level(s) only"
 
-"**Generator**"
+##### Generator
 
 - Description: "T2A - DORAALBE4T - ALBENDAZOLE, 400 mg, tab. - PR - MTH/DAY"
 
@@ -1073,7 +1071,7 @@ Note: the Predictor "copies" the Program indicator without any aggregation (such
 
 The following differences need to be considered for the different Predictors as the "Opening SoH" and "Stock on hand" are (re)calculated from other Predictor calculation results rather than from Program Indicators as these values are not sums but only the last value in the month is needed.
 
-**Opening SoH**
+##### Opening SoH
 
 - Output category option combo: "Opening SoH"
 - Generator:
@@ -1084,7 +1082,7 @@ avg(DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock on hand)
 
 - Sequential sample count (\*): "1" (this calculation is based on values from the previous month)
 
-**SoH closing**
+##### SoH closing
 
 The "Stock on hand" is (re)calculating by adding all transactions to the "Opening balance" as the "Stock on hand" cannot be aggregated from the Tracker Program values.
 
@@ -1117,7 +1115,7 @@ Please note that the "Stock correction" has to be added (and not be subtracted).
 
 - Sequential sample count (\*): "0" (this calculation is based on the values from the current month)
 
-**STOCK ITEM LIST - Stock coverage - PR**
+##### STOCK ITEM LIST - Stock coverage - PR
 
 - Output data element (\*): "DORAALBE4T - ALBENDAZOLE, 400 mg, tab."
 - Output category option combo: "Stock coverage"
@@ -1131,7 +1129,7 @@ forEach ?de in Stock item list \--\> #{?de.dOkDb0N10Aw}/#{?de.X57v4Hidl3C}
 
 - Sequential sample count (\*): "0" (this calculation is based on values from the current month)
 
-**[Stock list] - Stockout days count**
+##### [Stock list] - Stockout days count
 
 - Output data element (\*): "DORACEFI4T - CEFIXIME, 400 mg, tab. T2A DAY"
 
@@ -1298,21 +1296,21 @@ This new DHIS2 app "links" the "Real-Time Stock Management" Tracker Program to t
 
 Select "Add Program" to add a new Tracker Program configured for real-time stock management.
 
-**Configure Program**
+##### Configure Program
 
-**General**
+##### General
 
 - Program Types: "Logistics"
 - Description: "Real-time stock management application"
 - Program \*: "Real-Time Stock Management"
 
-**Details**
+##### Details
 
 - Item Code \*: "Item code"
 - Item Description \*: "Item description"
 - Stock on Hand \*: "Stock on hand"
 
-**Transactions**
+##### Transactions
 
 Distributed
 
@@ -1348,16 +1346,16 @@ For stock receipts entered through the web portal, the "Last updated on" reflect
 
 This report replaces the manual (hand written) stock card and displays the accurate chronology of all transactions with the "Previous stock balance" and the "Stock on hand" (after the transaction).
 
-**Input**
+##### Input
 
 - Event
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: "Real-Time Stock Management"
 - Stage: "Stock on Hand"
 
-**Columns**
+##### Columns
 
 - Last updated on: "Today", "Last 90 days"
 - Deliver to: (no condition)
@@ -1370,11 +1368,11 @@ This report replaces the manual (hand written) stock card and displays the accur
 - Stock correction (no condition)
 - Stock on hand (no condition)
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - Style / Digit group separator: "Comma"![](media/image76.png)
 
@@ -1382,16 +1380,16 @@ This report replaces the manual (hand written) stock card and displays the accur
 
 This report (selectively) lists all "Distribution" transactions.
 
-**Input**
+##### Input
 
 - Event
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: Real-Time Stock Management
 - Stage: Stock on Hand
 
-**Columns**
+##### Columns
 
 - Last updated on: "Today", "Last 90 days"
 - Deliver to (no condition)
@@ -1399,31 +1397,31 @@ This report (selectively) lists all "Distribution" transactions.
 - Item description (no condition)
 - Stock distribution: "greater than (\>)" 0
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - Style / Digit group separator: "Comma"
 
 ![](media/image16.png)
 
-##### Current Stock on hand report
+#### Current Stock on hand report
 
 This report is identical to viewing the stock item list with available stocks in the DHIS2-RTS and may be considered as redundant. The advantage of having a separate report is the possibility to give users (such as health staff in wards and services) read only access and not having to train them on the DHIS2-RTS. Moreover there is no need to select a "Transaction type" and "Deliver to" just to view the current stock position.
 
 Exceptionally and intentionally, "Event" (and not "Enrollment") has to be selected as "Input".
 
-**Input**
+##### Input
 
 - Enrollment (!)
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: Real-Time Stock Management
 
-**Columns**
+##### Columns
 
 - Item code (no condition)
 - Item description (no condition)
@@ -1433,11 +1431,11 @@ Exceptionally and intentionally, "Event" (and not "Enrollment") has to be select
 
 - Enrollment date: "Relative periods" and "Months": "This month" and "Last 12 months"
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - Style / Digit group separator: "Comma"
 - Legend: "Choose a single legend for the entire visualization": "Stockout"
@@ -1446,20 +1444,20 @@ Exceptionally and intentionally, "Event" (and not "Enrollment") has to be select
 
 ![](media/image43.png)
 
-##### DHIS2-RTS Discard report
+#### DHIS2-RTS Discard report
 
 This report (selectively) lists all "Discard" transactions.
 
-**Input**
+##### Input
 
 - Event
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: Real-Time Stock Management
 - Stage: Stock on Hand
 
-**Columns**
+##### Columns
 
 - Last updated on: "Today", "Last 90 days"
 - Deliver to (no condition)
@@ -1467,30 +1465,30 @@ This report (selectively) lists all "Discard" transactions.
 - Item description (no condition)
 - Stock discard: "greater than (\>)" 0
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - **Style / Digit group separator: "Comma"**
 
 ![](media/image21.png)
 
-##### DHIS2-RTS Stock correction report
+#### DHIS2-RTS Stock correction report
 
 This report (selectively) lists all "Stock correction" transactions.
 
-**Input**
+##### Input
 
 - Event
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: Real-Time Stock Management
 - Stage: Stock on Hand
 
-**Columns**
+##### Columns
 
 - Last updated on: "Today", "Last 90 days"
 - Deliver to (no condition)
@@ -1498,11 +1496,11 @@ This report (selectively) lists all "Stock correction" transactions.
 - Item description (no condition)
 - Stock correction: "greater than (\>)" 0
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - **Style / Digit group separator: "Comma"**
 
@@ -1516,11 +1514,11 @@ These group of reports is generated from Data elements and the category options 
 
 This reports provides the monthly totals of all transactions but only with the total "Distribution" quantity without details on the "Deliver to" for "Distribution" transactions.
 
-**Name**
+##### Name
 
 "RTS Monthly report - Detailed"
 
-**Columns**
+##### Columns 
 
 "RTS - Monthly stock report" (from "Your Dimensions"):
 
@@ -1531,31 +1529,31 @@ This reports provides the monthly totals of all transactions but only with the t
 - Stock correction
 - Stock on hand
 
-**Rows**
+##### Rows
 
 - Data: "Data Type" = "Data elements", then select all Data elements
 
 - Period: "Fixed periods" and "Monthly", then select the last three months (or more as required)
 
-**Filter**
+##### Filter
 
 - Organisation unit: "0001 CH Mahosot"
 
-**Options**
+##### Options
 
 - Empty data: "Hide empty columns" and "Hide empty rows": check both
 
 ![](media/image53.png)
 
-##### DHIS2-RTS Monthly report - Details
+#### DHIS2-RTS Monthly report - Details
 
 This reports provides the monthly totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
 
-**Name**
+##### Name
 
 "RTS Monthly report - Detailed"
 
-**Columns**
+##### Columns
 
 "RTS - Monthly stock report" (from "Your Dimensions"):
 
@@ -1583,58 +1581,58 @@ This reports provides the monthly totals of all transactions including details o
 - Stock correction
 - Stock on hand
 
-**Rows**
+##### Rows
 
 - Data: "Data Type" = "Data elements", then select all Data elements
 
 - Period: "Fixed periods" and "Monthly", then select January to December 2023
 
-**Filter**
+##### Filter
 
 - Organisation unit: "0001 CH Mahosot"
 
-**Options**
+##### Options
 
 - Empty data: "Hide empty columns" and "Hide empty rows": check both
 
 ![](media/image64.png)
 
-##### DHIS2-RTS Monthly stockout days count report
+#### DHIS2-RTS Monthly stockout days count report
 
 This report automatically provides the monthly number of stockout days for each item which is managed with the DHIS2-RTS mobile application.
 
-**Name**
+##### Name
 
 "DHIS2-RTS Stockout days count - Monthly"
 
-**Columns**
+##### Columns
 
 - Period: "Fixed periods" and "Monthly", then select all months for 2023
 
-**Rows**
+##### Rows
 
 - Data: "Data Type" = "Indicators", then select all "Stockout days" indicators
 
-**Filter**
+##### Filter
 
 - Organisation unit: "0001 CH Mahosot"
 
-**Options**
+##### Options
 
 - Data: "Columns totals" and "Row totals"
 - Empty data: "Hide empty columns" and "Hide empty rows": check both
 
 ![](media/image75.png)
 
-##### DHIS2-RTS Daily report - Summary
+#### DHIS2-RTS Daily report - Summary
 
 This reports provides the daily totals of all transactions but without details on the "Deliver to" for "Distribution" transactions.
 
-**Name**
+##### Name
 
 "RTS Monthly report - Detailed"
 
-**Columns**
+##### Columns
 
 "RTS - Monthly stock report" (from "Your Dimensions"):
 
@@ -1646,31 +1644,31 @@ This reports provides the daily totals of all transactions but without details o
 - Stock on hand
 - Period: "Fixed periods" and "Monthly", then select the last three months (or more as required)
 
-**Rows**
+##### Rows
 
 Note that the order of these two fields can be switched either displaying items with their chronological order of transactions or displaying days in chronological order with the transactions of every day in alphabetical order of the items.
 
 - Data: "Data Type" = "Data elements", then select all Data elements
 
-**Filter**
+##### Filter
 
 - Organisation unit: "0001 CH Mahosot"
 
-**Options**
+##### Options
 
 - Empty data: "Hide empty columns" and "Hide empty rows": check both
 
 ![](media/image38.png)
 
-##### DHISDaily report - Details
+#### DHISDaily report - Details
 
 This reports provides the daily totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
 
-**Name**
+##### Name
 
 "RTS Daily report - Detailed"
 
-**Columns**
+##### Columns
 
 "RTS - Monthly stock report" (from "Your Dimensions"):
 
@@ -1698,17 +1696,17 @@ This reports provides the daily totals of all transactions including details on 
 - Stock correction
 - Stock on hand
 
-**Rows**
+##### Rows
 
 - Data: "Data Type" = "Data elements", then select all Data elements
 
 - Period: "Fixed periods" and "Daily", then select all days for 2023
 
-**Filter**
+##### Filter
 
 - Organisation unit: "0001 CH Mahosot"
 
-**Options**
+##### Options
 
 - Empty data: "Hide empty columns" and "Hide empty rows": check both
 
@@ -1718,23 +1716,23 @@ This reports provides the daily totals of all transactions including details on 
 
 This report automatically provides the number of items which are out of stock every day for each item which is managed with the DHIS2-RTS mobile application.
 
-**Name**
+##### Name
 
 "DHIS2-RTS Stockout days count - Daily"
 
-**Columns**
+##### Columns
 
 - Period: "Fixed periods" and "Daily", then select all days for 2023
 
-**Rows**
+##### Rows
 
 - Data: "Data Type" = "Indicators", then select all "Stockout days" indicators
 
-**Filter**
+##### Filter
 
 - Organisation unit: "0001 CH Mahosot"
 
-**Options**
+##### Options
 
 - Data: "Columns totals" and "Row totals"
 - Empty data: "Hide empty columns" and "Hide empty rows": check both
@@ -1757,8 +1755,6 @@ The following logic is used for configuring the metadata used for the Tracker Pr
 
 Data element Represent the various transactions which affect the Stock on hand calculations (receipt, distributions, corrections etc.)
 
----
-
 Option set The "Deliver to" Data element uses the "Deliver to" Option Set which lists the names of the different departments Tracked entity attribute The item attributes are Item code, description and the barcode (field for scanning) Tracked entity type The item (health care product) is tracked
 
 > The "Previous stock balance" Data element is needed for the Program rules to temporarily store Stock on hand values.
@@ -1767,7 +1763,7 @@ Option set The "Deliver to" Data element uses the "Deliver to" Option Set which 
 
 ![](media/image88.png)
 
-**2.8.2 Summary of metadata configuration for "aggregate" Data entry form**
+2.8.2 Summary of metadata configuration for "aggregate" Data entry form**
 
 The table below summarizes the main metadata configurations and settings for the "aggregate" Default Data Entry Form which is used in parallel to the Tracker Program for capturing monthly "snapshots" of the last stock on hand record during any reporting period and the total monthly distribution for each reporting period. This monthly data will also be used for analytics.
 
@@ -2458,4 +2454,8 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
+<<<<<<< HEAD
+Last edit: GMc on 12-01-2024 at 21:58
+=======
 Last edit: GMc on 12-01-2024 at 21:12
+>>>>>>> 448484093b8f4967c755ac2108cb48588fcdec38
