@@ -2604,4 +2604,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-Last edit: GMc on 13-01-2024 at 01:52
+Last edit: GMc on 13-01-2024 at 20:40
