@@ -405,10 +405,7 @@ Note that the Category option names are intentionally kept short to reduce the o
 >**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
 >**Categories**: "RTS - Monthly stock report"
 
-xxxxxxxxxxx CONSTRUCTION SITE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-### DATA ELEMENT - Item catalogue
-
+### 2 DATA ELEMENT
 Data elements represent the items (healthcare products) for which logistics data is recorded and managed.
 
 All health care products which are registered in the DHIS2-RTS as "Tracked Entity Instance" (TEIs) need to be "mirrored" as identical Data Elements for configuring the Data Sets which are needed for every Organization Unit as a backup system.
@@ -423,33 +420,100 @@ The "Domain type" must be set to "Aggregate", the "Value type" to "Positive or Z
 
 Data elements which have been created and used cannot be deleted from the database any more as the historic data needs to be maintained. But Data Elements which are no longer needed can simply be removed from the respective Data Sets.
 
-- Name (\*): DORAALBE4T - ALBENDAZOLE, 400 mg, tab. MTH
-- Short name (\*): DORAALBE4T - MTH
-- Code: DORAALBE4T - MTH
-- Domain type (\*): "Aggregate"
-- Value type (\*): "Positive or Zero Integer"
-- Store zero data values: check (appears as white tick in a blue square)
+#### 2.1 Data element - "Aggregate"
+Below the configuration for a single Data Element is presented which needs to be applied to each item in the required item catalogue.
+>**Name \(*)**: "DORAALBE4T - ALBENDAZOLE, 400 mg, tab. MTH"  
+>**Short name \(*)**: "DORAALBE4T - ALBENDAZOLE, 400 mg, tab. MTH"
+>**Code \(*)**:  "DORAALBE4T - MTH"
+>**Domain Type \(*)**: "Aggregate"  
+>**Value type \(*)**: "Positive or Zero Integer"  
+>**Aggregation type (*)**: "Sum"  
+>**Store zero data values**: tag (appears as white tick in a blue square) 
+>**Category combination \(*)**: "RTS - Monthly stock report"  
+>**Aggregation levels**: "Facility"  
 
-- Category combination (\*): "RTS - Monthly stock report"
-- Aggregation levels: "Facility" [Question: confirm this need]
+### 2.2 Data element - "Tracker"
+These Data elements are required for configuring the Program stages of the DHIS2-RTS Tracker Program. Note that the Data element names must not have any prefixes or suffixes as these are redundant and will appear in the Line Listing.
+>**1 Deliver to**  
+>>**Name \(*)**: "Deliver to"  
+>>**Short name \(*)**: "Deliver to"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Number"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: do not tag (appears as white square) 
+>>**Option set \(*)**: "Deliver to"  
+>****
+>**2 Previous Stock Balance**
+>>**Name \(*)**: "Previous Stock Balance"  
+>>**Short name \(*)**: "Previous Stock Balance"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive or Zero Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: tag (appears as white tick in a blue square) 
+>****
+>**3 Stock correction**  
+>>**Name \(*)**: ""  
+>>**Short name \(*)**: ""
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: tag (appears as white tick in a blue square)  
+>****
+>**4 Stock count**  
+>>**Name \(*)**: "Stock count"  
+>>**Short name \(*)**: "Stock count"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive or Zero Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: tag (appears as white tick in a blue square)   
+>****
+>**5 Stock discard**  
+>>**Name \(*)**: "Stock discard"  
+>>**Short name \(*)**: "Stock discard"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive or Zero Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: do not tag (appears as white square) 
+>****
+>**6 Stock distribution**  
+>>**Name \(*)**: "Stock distribution"  
+>>**Short name \(*)**: "Stock distribution"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive or Zero Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: do not tag (appears as white square) 
+>****
+>**7 Stock on hand**  
+>>**Name \(*)**: "Stock on hand"  
+>>**Short name \(*)**: "Stock on hand"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive or Zero Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: tag (appears as white tick in a blue square) 
+>****
+>**8 Stock receipt**  
+>>**Name \(*)**: "Stock receipt"  
+>>**Short name \(*)**: "Stock receipt"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: do not tag (appears as white square) 
 
-In addition, for each item an equivalent item with the suffix "DAY" is needed for configuring the "RTS Daily report" Data set.
+#### 2.3 Data element group
 
-#### Data element group
+The creation of Data element groups is a DHIS2 best practice but also a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
 
-The creation of Data element groups is a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
+>**1 Stock item list - DAY**  
+>**Name \(*)**: "Stock item list - DAY"  
+>**Short name \(*)**: "Stock item list - DAY"
+>**Data elements \(*)**: *select all Data elements with the "DAY" suffix"*    
+>****
+>**2 Stock item list - MTH**  
+>**Name \(*)**: "Stock item list - MTH"  
+>**Short name \(*)**: "Stock item list - MTH"
+>**Data elements \(*)**: *select all Data elements with the "MTH" suffix"*    
 
-##### [Stock item list] - CL
-
-- Name (\*): "Stock item list"
-- Short name (\*): Stock item list
-- Data elements: include all Data elements of Data collection and calculation report
-
-##### [Stock item list] - DAY**
-
-- Name (\*): "[Stock item list] - DAY"
-- Short name (\*): "[Stock item list] - DAY"
-- Data elements: include all Data elements from daily RTS report
+xxxxxxxxxxx CONSTRUCTION SITE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 #### Data set
 
@@ -563,37 +627,6 @@ The DHIS2 Tracker Program which serves as the foundation on which the DHIS2-RTS 
 The Organisation Unit, Organisation Unit group and Organisation Unit level described above apply to the entire database and therefore also apply to all Tracker Programs.
 
 Organisation Units are created and added according to national protocols and policies and/or existing DHIS2 configuration.
-
-#### Data element
-
-In addition to the Data elements created for each of the items, the Tracker Program requires a separate Data element for each of the "Program stages":
-
-Name (\*):
-
-- "Deliver to": "Text", "Option set" = "Deliver to"
-- "Previous Stock Balance": "Positive or Zero Integer"
-- "Stock correction": "Integer"
-- "Stock count": "Positive or Zero Integer"
-- "Stock discard": "Positive or Zero Integer"
-- "Stock distribution": "Positive or Zero Integer"
-- "Stock on hand": "Positive or Zero Integer"
-- "Stock receipt": "Positive integer"
-
-Short name (\*): (same as "Name (\*)"
-
-Domain type (\*): "Tracker"
-
-Value type (\*): differs depending on the Data Element, see above
-
-Aggregation type (\*): "Sum"
-
-Store zero data values: not check (appears as a blank square)
-
-Aggregation levels: "None"
-
-Note that the Data element names must not have any prefixes or suffixes as these are redundant and will appear in the Line Listing.
-
-While for "Stock distribution" and "Stock discard" only positive integers are meaningful, zero is allowed for technical reasons as the entry of "0" on the mobile device cannot be prevented but systematically prompts an unresolvable synchronization error.
 
 #### Option set
 
@@ -2571,4 +2604,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-Last edit: GMc on 13-01-2024 at 00:08
+Last edit: GMc on 13-01-2024 at 01:52
