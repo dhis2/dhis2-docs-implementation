@@ -993,45 +993,53 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 >>>>**Expression to evaluate and assign**: "#{Initial stock on hand - Previous event}"
 
 #### 6.5 Program rule variable
-
-Initial stock on hand - Previous event
-
-- Source type (\*): "Data element from previous event"
-- Data element: "Stock on hand"
-
-Previous stock balance
-
-- Source type (\*): "Data element in current event"
-- Data element: "Previous stock balance"
-
-Stock correction
-
-- Source type (\*): ""Data element in current event"
-- Data element: "Stock on hand"
-
-Stock count
-
-- Source type (\*): ""Data element in current event"
-- Data element: "Stock count"
-
-Stock discarded
-
-- Source type (\*): "Data element in current event"
-- Data element: "Stock discard"
-
-Stock distribution
-
-- Source type (\*): "Data element in current event"
-- Data element: "Stock distribution"
-
-Stock received
-
-- Source type (\*): "Data element in current event"
-- Data element: "Stock receipt"
-
-
-
-
+>**1 Initial stock on hand - Previous event**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Initial stock on hand - Previous event"  
+>>**Source type \(*)**: "Data element from previous event"  
+>>**Data element**: "Data element from previous event"  
+>
+>**2 Previous stock balance**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Previous stock balance"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Previous stock balance"  
+>
+>**3 Stock correction**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock correction"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock on hand"  
+>
+>**4 Stock count**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock count"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock count"  
+>
+>**5 Stock discarded**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock discarded"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock discard"  
+>
+>**6 Stock distribution**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock distribution"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock distribution"  
+>
+>**7 Stock on hand**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock on hand"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock on hand"  
+>
+>**8 Stock received**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock received"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock receipt"  
 
 ### 7 Other
 
