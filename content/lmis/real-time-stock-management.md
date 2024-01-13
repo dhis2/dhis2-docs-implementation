@@ -166,7 +166,7 @@ At any time, users can resort to the manual, paper- or spreadsheet-based method 
 
 - Calculate the monthly replenishment order using a paper record or a spreadsheet application
 
-## Maintainance Web App - DHIS2 configuration
+## Maintenance Web App - DHIS2 configuration
 
 This chapters provides a complete overview all metadata elements and their settings which are required specifically for configuring the DHIS2-RTS Tracker Program as well as the "aggregate" Data Entry form for recording daily and monthly "snapshots". Most of the settings can be modified and adapted to the specific context of an implementation while some settings, such as the Program rule or Use-case-configuration app, must not be modified as the function of the mobile application may be impaired.
 
