@@ -754,7 +754,6 @@ Note that the same "Program Indicator" can be used for the Predictor for the "MT
 The Organisation Unit, Organisation Unit group and Organisation Unit level are created and added according to national protocols and policies and/or existing DHIS2 configuration and there are no specific requirements for using the DHIS2-RTS.
 
 ### 6 Program
-
 The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, is very simple to configure, uses only native DHIS2 functionality and governs the customized user interface on the mobile device.
 
 #### 6.1 Program
@@ -830,152 +829,41 @@ The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, 
 >**6 Notifications**
 >(not applicable)
 
-
-
-
-
-xxxxxx
-
-
-#### Tracked entity attribute
-
-This are the "fixed" attributes of the items (compared with the "variable" data which is collected).
-
-Name (\*):
-
-- "Item code" / "Unique"
-- Item description / not "Unique"
-
-"Short name (\*)": same as "Name"
-
-"Short name (\*)": "Barcode" (etc.)
-
-"Value type (\*)": "Text"
-
-"Aggregation type (\*)": "None"
-
-"Unique": see above
-
+#### 6.2 Tracked entity attribute
+The DHIS2-RTS uses the "Item code" and "Item descriptions" as the two Tracked entity attributes of the Trached entity type "Item".
 Note that the "Item code" is unique only for any specific Organisation Unit but the same "Item code" can be used in any number of different Organisation Units.
 
-#### Tracked entity type
+>**1 Item code**:  
+>**Name \(*)**: "Item code"  
+>**Short name (*)**: "Item code"  
+>**Value type**: "Text"  
+>**Aggregation type**: "None"  
+>**Unique**: tag (appears as a blue tag with a white tick) 
+>**Option (from drop-down menu)**: "Organisation unit"
+>**Inherit**: do not tag  
+>
+>**2 Item description**:  
+>**Name \(*)**: "Item description"  
+>**Short name \(*)**: "Item description"  
+>**Value type**: "Text"  
+>**Aggregation type**: "None"  
+>**Unique**: do not tag
+>**Inherit**: do not tag  
 
-"Name (\*)": "Item"
+#### 6.3 Tracked entity type
+>**1 Item**:  
+>**Name \(*)**: "Item"  
+>**Enable tracked entity instance audit log**: not checked
+>**Minimum number of attributes required to search**: 1  
+>**Maximum number of tracked entity instances to return in search**: 0  
+>**Feature type**: "None"  
+>**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
+>>"Item code"  
+>>"Item description"  
+>**Display in list**: tag all  
+>**Searchable**: tag all
 
-"Enable tracked entity instance audit log": not checked
-
-"Minimum number of attributes required to search": "1"
-
-"Maximum number of tracked entity instances to return in search": "0"
-
-"Feature type": "None"
-
-"Tracked entity type attributes": move all three "Tracked entity attributes" (see above) to the right column, arrange the fields in the correct order
-
-- "Display in list": unchecked for all three Tracked Entity Attributes
-
-- "Mandatory": unchecked for all three Tracked Entity Attributes
-- "Searchable": "Item PSM - Barcode" = "Searchable" the other two are not "Searchable"
-
-#### Program
-
-Name: "Real-Time Stock Management"
-
-Program type: "Tracker Program"
-
-##### Program details
-
-Name (\*): "Real-Time Stock Management"
-
-Short name (\*): "Real-Time Stock Management"
-
-Color: #304FFE![](media/image12.png)
-
-Icon: "homework"
-
-Version: (automatically numbered)
-
-"Tracked entity type (\*)": "Item"
-
-"Category combination": "None"
-
-"Display front page list": check (appears as white tick in a blue square)
-
-"Access level": "Open"
-
-"Minimum number of attributes required to search": "1".
-
-##### Enrollment details
-
-"Show incident date": check (appears as white tick in a blue square)
-
-##### Attributes - 1 Assign attributes
-
-- Program tracked entity attributes:
-- - "Item code"
-- - "Item description"
-
-Note that the item code is separate as it is needed as a distinct field for scanning the barcode.
-
-![](media/image11.png)
-
-##### Attributes - 2 Create registration form
-
-(Leave blank)
-
-##### Programme stages
-
-"Stock on Hand"
-
-##### Program stages - "1 Stage Details"
-
-Name: "Stock on Hand"
-
-Scheduled days from start (\*): "0"
-
-"Repeatable": check (appears as white tick in a blue square)
-
-##### Program stages - "Assign data elements"
-
-Search available/selected items:
-
-- "Stock distribution"
-- "Stock discard"
-- "Stock receipt"
-- "Stock on hand"
-- "Deliver to"
-- "Previous stock balance"
-- "Stock count"
-- "Stock correction"
-
-![](media/image36.png)
-
-##### Program stages - "Create data entry form"
-
-"BASIC"
-
-- "Stock distribution"
-- "Stock discard"
-- "Stock receipt"
-- "Stock on hand"
-- "Deliver to"
-- "Previous stock balance"
-- "Stock count"
-- "Stock correction"
-
-##### Access
-
-"X Organisation units selected": select each Organisation Unit separately (at the lowest level) but not the Organisation Unit levels.
-
-"Roles and Access": "Pharmacy Stock Management"
-
-"APPLY TO SELECTED STAGES": "Stock on Hand": check (appears as white tick in a blue square)
-
-##### Notifications
-
-(blank)
-
-#### Program rule
+#### 6.4 Program rule
 
 In total, four Program rules are configured for completing all required calculations:
 
@@ -1131,7 +1019,7 @@ Expression to evaluate and assign:
 
 "#{Stock count}"
 
-#### Program rule variable
+#### 6.5 Program rule variable
 
 Initial stock on hand - Previous event
 
@@ -1172,9 +1060,9 @@ Stock received
 
 
 
-### Other
+### 7 Other
 
-#### Option set
+#### 7.1 Option set
 
 Option sets are used for listing, managing and editing the "Deliver to" places as well as for the Transaction types [to be discussed]. The use of options provides a great deal of flexibility to the customization by individual countries, which are indispensable, without having to modify the DHIS2-RTS app code itself.
 
@@ -1224,7 +1112,7 @@ The following options are configured by default which can be customized by remov
 
 It is important to always include the "(Other)" option to avoid that other departments or services are "polluted" with transaction data which actually does not apply to them.
 
-#### Legend
+#### 7.2 Legend
 
 A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
 
@@ -1248,7 +1136,7 @@ Stock
 
 ![](media/image8.png)
 
-#### Predictor
+#### 7.3 Predictor
 
 These Predictors "transfer" the Program indicators to the respective Category option of the Data Entry form for providing users with daily or monthly "snapshots" of all transactions. Note that in principle the same Program indicator can be used for daily and monthly aggregations ("snapshots") but separate Predictors, one with the "Period type (\*)" daily is needed for daily "snapshots" and a second Predictor with "Period type (\*)" monthly is needed for monthly "snapshots".
 
@@ -1415,17 +1303,12 @@ if(#{?de.KoT8qU1DYiB}==0,1,0)
 
 - Sequential sample count (\*): "0" (this calculation is based on values from the current day)
 
-#### Predictor group
+#### 7.4 Predictor group
 
 The "Predictor group" is required in order to allow running all Predictors periodically and together by the "Scheduler" rather than having to prompt them one by one.
 
 - Name (\*): "T2A Predictors"
 - Predictors: include all configured Predictors.
-
-
-
-
-
 
 
 
