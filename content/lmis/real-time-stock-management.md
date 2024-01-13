@@ -193,7 +193,7 @@ The required metadata settings seetings are presented in the order in which it i
 > 
 >**5 ORGANISATION UNIT**  
 >>5.1 Organisation unit  
->>5.1 Organisation unit groupo  
+>>5.1 Organisation unit group  
 > 
 >**6 PROGRAM**  
 >>6.1 Program  
@@ -513,7 +513,7 @@ The creation of Data element groups is a DHIS2 best practice but also a precondi
 >**Short name \(*)**: "Stock item list - MTH"
 >**Data elements \(*)**: *select all Data elements with the "MTH" suffix"*    
 
-#### Data set
+### Data set
 
 Data sets for each Organisation unit are required both for recording daily and monthly "snapshots" of Tracker Program data as well as a fallback system in case the DHIS2-RTS fails.
 
@@ -544,154 +544,221 @@ Data sets for each Organisation unit are required both for recording daily and m
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >
 
-
-xxxxxxxxxxx CONSTRUCTION SITE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
-#### Indicator
+### Indicator
 
 The Indicator functionality is used to configure the "Stock coverage time". In principle it would be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings.
 
 Note that using the Indicator for calculating stock coverage times allows using only the distribution from the current month (which is highly inaccurate and leads to high fluctuations) and does not allow calculating an average, for example over the past three to six months.
 
-A separate Indicator is required for every Data element.
+#### Indicator
 
-Name (\*): Stock coverage time - [Data element name]
+The "Stockout days" indicator returns the value "1" for any day where the stock on hand is zero otherwise a "0" and allows automatically calculating the number of stockout days in a month.
 
-Short name (\*): Stock coverage time - [Data element code]
+For both Indicators, a separate Indicator is required for every Data element and the configuration below provides only one example.
 
-Decimals in data output: "1"
-
-Indicator type (\*): "Number factor 1"
-
-Legends: "Stock coverage time"
-
-Edit enumerator:
-
-- Description: "Stock coverage time - [Data element name]"
-- Calculation: #{XsOfl0jZU8S.dOkDb0N10Aw}/#{XsOfl0jZU8S.X57v4Hidl3C}
-
-[Data element.Stock on hand] / [Data element.Stock distribution] /
-
-For example:
-
-DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock on hand/DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock distribution
-
-Denominator: 1
-
-##### Stockout days
-
-This indicator returns the value "1" for any day where the stock on hand is zero otherwise a "0" and allows automatically calculating the number of stockout days in a month. An indicator is needed for every Data element separately.
-
-Name (\*): DORACEFI4T - CEFIXIME, 400 mg, tab. T2A MTH - Stockout days
-
-Short name (\*): DORACEFI4T MTH - Stockout days
-
-Indicator type (\*): "Number factor 1"
-
-Edit enumerator:
-
-- Description: "DORACEFI4T MTH - Stockout days"
-- Calculation: #{GdVh0GGFZh1.t4Exdgy3kDb}
-
-DORACEFI4T - CEFIXIME, 400 mg, tab. T2A DAY Stock on hand Yes/No
-
-Denominator: 1
+>**1 Coverage time**  
+>>**Name \(*)**: "[Data element name] - Coverage time"  
+>>**Short Name \(*)**: "[Item code] - Coverage time"  
+>>**Description**: "[Data element name] - Coverage time"  
+>>**Decimals in data output**: "1"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Legends**: "Stock coverage time"  
+>>**Edit numerator**:
+>>>**Description**: "[Data element name] - Coverage time - Numerator"
+>>>**Calculation**: "#{XsOfl0jZU8S.dOkDb0N10Aw}/#{XsOfl0jZU8S.X57v4Hidl3C}"  
+[Data element.Stock on hand] / [Data element.Stock distribution] /  
+>>
+>>**Edit denominator**:
+>>>**Description**: "[Data element name] - Coverage time - Denominator"
+>>>**Calculation**: "1"
+>
+>**2 Stockout days**  
+>>**Name \(*)**: "[Data element name] - Stockout days"  
+>>**Short Name \(*)**: "[Item code] - Stockout days"  
+>>**Description**: "[Data element name] - Stockout days"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "[Data element name] - Stockout days - Numerator"
+>>>**Calculation**: "#{GdVh0GGFZh1.t4Exdgy3kDb}"  
+[Data element] T2A DAY Stock on hand Yes/No
+>>
+>>**Edit denominator**:
+>>>**Description**: "[Data element name] - Coverage time - Denominator"
+>>>**Calculation**: "1"
 
 #### Indicator type
 
 The "Indicator type" is a precondition for configuring any "Indicator".
+>**1 Number (Factor 2)**  
+>>**Name \(*)**: "Number (Factor 1)"  
+>>**Factor \(*)**: "1"  
 
-- Name (\*): "Number factor 1"
-- Factor (\*): "1"
+#### Program indicator
 
-### Tracker Program
+Program indicators in conjunction with Predictors allow automatically aggregating Tracker Program data and recording daily and monthly aggregate values in the respective Data Entry forms for analysis and reporting.
 
-The DHIS2 Tracker Program which serves as the foundation on which the DHIS2-RTS mobile application is built, is very simple and uses only native DHIS2 functionality without any modifications. The two program rules are absolutely critical to the entire configuration as they provide and ensure the real-time calculation of the stock on hand as soon as any transaction is validated.
+A separate Program indicator has to be created for every "pair" of item description and transaction type and one example is given below for each of the transactions for one item:
 
-#### Organisation Unit
+[Data element] - Distribution
+
+[Data element] - Discard
+
+[Data element] - Correction
+
+[Data element] - Receipt
+
+[Data element] - Stock on hand
+
+The item is determined by setting a corresponding "filter" and the transaction type by selecting the respective Data element from the "Stock on Hand" program stage.
+
+Below one example for the configuration of the aggregated, daily "Distribution" quantities is detailed for one item.
+
+It is critically important that the "Aggregation type (\*)" of the Data element (for example for "Stock distribution") is set to "Sum" in the Data element settings since otherwise the transaction quantities will not aggregte.
+
+Note that the same "Program Indicator" can be used for the Predictor for the "MTH" (monthly period) as well as the "DAY" (daily period).
+
+>**1 [Data element] - Distribution**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Distribution"  
+>>>**Short Name \(*)**: "[Item code] - Distribution"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.lpGYJoVUudr}"  
+>>>Stock on hand\\.Stock distribution  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
+>**2 [Data element] - Discard**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Discard"  
+>>>**Short Name \(*)**: "[Item code] - Discard"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.I7cmT3iXT0y}"  
+>>>Stock on hand\\.Stock discard  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
+>**3 [Data element] - Correction**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Correction"  
+>>>**Short Name \(*)**: "[Item code] - Correction"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.ej1YwWaYGmm}"  
+>>>Stock on hand\\.Stock correction  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
+>**4 [Data element] - Receipt**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Receipt"  
+>>>**Short Name \(*)**: "[Item code] - Receipt"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.j3ydinp6Qp8}"  
+>>>Stock on hand\\.Stock receipt  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
+>**5 [Data element] - Stock on hand**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Stock on hand"  
+>>>**Short Name \(*)**: "[Item code] - Stock on hand"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.ypCQAFr1a5l}"  
+>>>Stock on hand\\.Stock on hand  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
+
+### Organisation Unit
 
 The Organisation Unit, Organisation Unit group and Organisation Unit level described above apply to the entire database and therefore also apply to all Tracker Programs.
 
 Organisation Units are created and added according to national protocols and policies and/or existing DHIS2 configuration.
 
-#### Option set
+xxxxxxxxxxx CONSTRUCTION SITE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-Option sets are used for listing, managing and editing the "Deliver to" places as well as for the Transaction types [to be discussed]. The use of options provides a great deal of flexibility to the customization by individual countries, which are indispensable, without having to modify the DHIS2-RTS app code itself.
+### Program
 
-The following options are configured by default which can be customized by removing, changing or adding to national needs as required:
-
-[PRIMARY DETAILS]{.underline}
-
-"Name (\*)": "Destinations / supplied to"
-
-"Value type (\*)": "Text"
-
-[OPTIONS ("Name (\*)" / "Code (\*)")]{.underline}
-
-"Diagnostic imaging (X-Ray)" / "x-ray"
-
-"Emergency Room" / "emerg_room"
-
-"High Dependency Unit" / "hi_dep_unit"
-
-"Inpatient Medical Department" / "inp_med_dep"
-
-"Inpatient Surgical Department" / "inp_surg_dep"
-
-"Laboratory Department" / "lab_dep"
-
-"Mortuary" / "mortuary"
-
-"Obstetrics & Gynaecology services" / "obs_gyn"
-
-"Operating Theatre" / "op_theatre"
-
-"Out-Patient Department" / "outp_dep"
-
-"Paediatric Department" / "paed_dep"
-
-"Physiotherapy Department" / "pt_dep"
-
-"Recovery Room" / "rec_room"
-
-"Sanitation / Housekeeping" / "san_housek"
-
-"Sterilization Department" / "steriliz_dep"
-
-"Transfusion services" / "transf_serv"
-
-"(Other)" / other
-
-It is important to always include the "(Other)" option to avoid that other departments or services are "polluted" with transaction data which actually does not apply to them.
-
-#### Legend
-
-A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
-
-- Stock on Hand = 0: red background
-- Stock on Hand \>=1: light yellow background
-- Name (\*): "Stockout"
-
-Stockout
-
-- Name: Stockout
-- Start value: 0
-- End value: 1
-- Colour: #F74432
-
-Stock
-
-- Name: Stock
-- Start value: 1
-- End value: 999999
-- Colour: #F9E6BB
-
-![](media/image8.png)
-
-
-
-
+The DHIS2 Tracker Program which serves as the foundation on which the DHIS2-RTS mobile application is built, is very simple and uses only native DHIS2 functionality without any modifications. The two program rules are absolutely critical to the entire configuration as they provide and ensure the real-time calculation of the stock on hand as soon as any transaction is validated.
 
 
 
@@ -1026,58 +1093,85 @@ Stock received
 - Source type (\*): "Data element in current event"
 - Data element: "Stock receipt"
 
-#### Program indicator
 
-Program indicators are the work-around for avoiding the use of third party apps or scripts. Data elements can be displayed in the Data Visualizer but only count the number of events and do not aggregate the transaction values.
 
-A separate Program indicator has to be created for every "pair" of item description and transaction type. For example:
 
-DASDCHLC5S1 - Distribution
 
-DASDCHLC5S1 - Discard
+### Other
 
-DASDCHLC5S1 - Correction
+#### Option set
 
-DASDCHLC5S1 - Receipt
+Option sets are used for listing, managing and editing the "Deliver to" places as well as for the Transaction types [to be discussed]. The use of options provides a great deal of flexibility to the customization by individual countries, which are indispensable, without having to modify the DHIS2-RTS app code itself.
 
-DASDCHLC5S1 - Stock on hand
+The following options are configured by default which can be customized by removing, changing or adding to national needs as required:
 
-The item is determined by setting a corresponding "filter" and the transaction type by selecting the respective Data element from the "Stock on Hand" program stage.
+[PRIMARY DETAILS]{.underline}
 
-Below one example for the configuration of the aggregated, daily "Distribution" quantities is detailed for one item.
+"Name (\*)": "Destinations / supplied to"
 
-It is critically important that the "Aggregation type (\*)" of the Data element (for example for "Stock distribution") is set to "Sum" in the Data element settings since otherwise the transaction quantities will not aggregte.
+"Value type (\*)": "Text"
 
-Note that the same "Program Indicator" can "feed" the Predictor for the "MTH" (monthly period) as well as the "DAY" (daily period).
+[OPTIONS ("Name (\*)" / "Code (\*)")]{.underline}
 
-##### Program indicator
+"Diagnostic imaging (X-Ray)" / "x-ray"
 
-- Program (\*): Real-Time Stock Management
-- Name (\*): DASDCHLC5S1 - Distribution
-- Aggregation type: "Sum"
-- Analytics type (\*): "Event"
-- Analytics period boundaries:
-- - Boundary target: "Event date"
-- - Analytics period boundary type: "After start of reporting period"
-- - Offset period by amount: 0
-- - Period type: (leave blank)
-- - Boundary target: "Event date"
-- - Analytics period boundary type: "Before end of reporting period"
-- - Offset period by amount: 0
-- - Period type: (leave blank)
-- Display in form: select (appears as a white tick in a blue square)
+"Emergency Room" / "emerg_room"
 
-##### Edit expression
+"High Dependency Unit" / "hi_dep_unit"
 
-- #{CSszngrLaoW.smwdEfUz8vo}
+"Inpatient Medical Department" / "inp_med_dep"
 
-"Stock on Hand\\.Stock distribution"
+"Inpatient Surgical Department" / "inp_surg_dep"
 
-##### Edit filter
+"Laboratory Department" / "lab_dep"
 
-- A{XYvrLoYSMRU} == \'DASDCHLC5S1\'
+"Mortuary" / "mortuary"
 
-"Item code == \'DASDCHLC5S1\'"
+"Obstetrics & Gynaecology services" / "obs_gyn"
+
+"Operating Theatre" / "op_theatre"
+
+"Out-Patient Department" / "outp_dep"
+
+"Paediatric Department" / "paed_dep"
+
+"Physiotherapy Department" / "pt_dep"
+
+"Recovery Room" / "rec_room"
+
+"Sanitation / Housekeeping" / "san_housek"
+
+"Sterilization Department" / "steriliz_dep"
+
+"Transfusion services" / "transf_serv"
+
+"(Other)" / other
+
+It is important to always include the "(Other)" option to avoid that other departments or services are "polluted" with transaction data which actually does not apply to them.
+
+#### Legend
+
+A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
+
+- Stock on Hand = 0: red background
+- Stock on Hand \>=1: light yellow background
+- Name (\*): "Stockout"
+
+Stockout
+
+- Name: Stockout
+- Start value: 0
+- End value: 1
+- Colour: #F74432
+
+Stock
+
+- Name: Stock
+- Start value: 1
+- End value: 999999
+- Colour: #F9E6BB
+
+![](media/image8.png)
 
 #### Predictor
 
@@ -1253,8 +1347,17 @@ The "Predictor group" is required in order to allow running all Predictors perio
 - Name (\*): "T2A Predictors"
 - Predictors: include all configured Predictors.
 
-## Maintenance Web App - DHIS2 configuration
-Xx
+
+
+
+
+
+
+
+
+
+
+
 
 ## Data Visualizer Web App - "Aggregate" Analytics and Visualizations
 Xx
@@ -2298,72 +2401,6 @@ Option set The "Deliver to" Data element uses the "Deliver to" Option Set which 
 
 ![](media/image88.png)
 
-2.8.2 Summary of metadata configuration for "aggregate" Data entry form**
-
-The table below summarizes the main metadata configurations and settings for the "aggregate" Default Data Entry Form which is used in parallel to the Tracker Program for capturing monthly "snapshots" of the last stock on hand record during any reporting period and the total monthly distribution for each reporting period. This monthly data will also be used for analytics.
-
-The user of the "Imprest Level" inventory control system is highly recommended but could be replaced by other systems or removed if the stock replenishment is managed in the upstream, national eLMIS.
-
-| **ORGANISATION UNIT** |  |
-| --- | --- |
-| > Organisation unit | Name of the healthcare facility<br>(for each healthcare facility) |
-| > Organisation unit group | [Created/Added according to<br>national policies and/or existing<br>DHIS2 configuration] |
-| > Organisation unit group set | [Created/Added according to<br>national policies and/or existing<br>DHIS2 configuration] |
-| > Organisation unit level | [Created/Added according to<br>national policies and/or existing<br>DHIS2 configuration] |
-| > Hierarchy operations | [derives from the settings above] |
-| > **CATEGORY** | **System default settings** |
-| > Category option | Imprest Level (only for monthly<br>"snapshots")<br>Stock distributed<br>Stock on hand |
-| > Category | [Healthcare facility name] -<br>monthly stock report |
-| > Category combination | [Healthcare facility name] -<br>monthly stock report |
-| > Category option combination | (auto-generated by the system) |
-| > Category option group | (not used) |
-| > Category option group set | (not used) |
-| > **DATA ELEMENT** |  |
-| > Data element | One Data element is created for<br>every item (healthcare product)<br>with [Item code] - [Item<br>description] with the "Category<br>combination" [Healthcare facility<br>name] - monthly stock report |
-| > Data element group | (not used) |
-| > Data element group set | (not used) |
-| > **DATA ELEMENT** |  |
-| > Data set | One Data set (stock item list) for<br>every healthcare facility with<br>[Healthcare facility name] -<br>stock item list |
-| > Data set notifications | (not used) |
-| > **PREDICTOR** |  |
-| > Predictor | One predictor for every Data<br>element with [Item name] -<br>"Imprest Level Predictor" |
-| > Predictor group | "Imprest Level - carried forward<br>from previous month" grouping all<br>Predictors |
-| > **SCHEDULER** |  |
-| > Scheduler app | "Imprest level - predictor -<br>rolling forward to the next month"<br>running at 00:05:00 every first day<br>of the month |
-
-#### Summary of metadata configuration for Tracker Program
-
-The table below summarizes the main metadata configurations and settings for the Tracker Program on which the customized DHIS2-RTS is based and using "in the background". While not visible to users it is indispensable and critical for customizing the configuration to individual countries as well as for managing data such as adding or removing items (health care products).
-
-| **CATEGORY** | **System default settings** |
-| --- | --- |
-| > Organisation unit | According to national protocols<br>and policies and/or existing<br>DHIS2 configuration |
-| > Data element | Name (\*):<br>\- "Deliver to": "Text" /<br>"Option set" = "Deliver to"<br>\- "Previous stock balance":<br>"Positive integer"<br>\- "Stock correction":<br>"Number"<br>\- "Stock count": "Positive<br>integer"<br>\- "Stock discard": "Positive<br>integer"<br>\- "Stock distribution":<br>"Positive integer"<br>\- "Stock on hand": "Positive<br>integer"<br>\- "Stock received":<br>"Positive integer"<br>Domain type (\*): "Tracker"<br>Value type (\*): see above<br>Store zero data values: tag |
-| > Option set | Primary Details / Name:<br>"Deliver to"<br>Primary Details / Value type:<br>"Text"<br>Options / Name:<br>\- "Diagnostic imaging<br>(X-ray)" / "diagn_imag"<br>\- "Emergency Room" /<br>"emerg_room"<br>\- "High Dependency Unit" /<br>"hi_dep_unit"<br>\- "Inpatient Medical<br>Department" / "inp_med_dep"<br>\- "Inpatient Surgical<br>Department" /<br>"inp_surg_dep"<br>\- "Laboratory Department" /<br>"lab_dep"<br>\- "Mortuary" / "mort"<br>\- "Obstetrics an Gynaecology<br>services" / "obs_gyn"<br>\- "Operating Theatre" /<br>"op_theatre"<br>\- "Out-Patient Department" /<br>"outpat_dep"<br>\- "Paediatric Department" /<br>"paed_dep"<br>\- "Physiotherapy Department"<br>/ "phys_dep"<br>\- "Recovery Room" /<br>"rec_room"<br>\- "Sanitation and<br>Housekeeping" / "san_housek"<br>\- "Sterilization Department"<br>/ "sterii_dep"<br>\- "Transfusion services" /<br>"transf_serv" |
-| > Tracked entity attribute | Name:<br>\- "Item barcode"<br>\- "Item code"<br>\- "Item description"<br>"Value type (\*)": "Text"<br>"Aggregation type (\*)":<br>"None"<br>"Unique": "Unique" /<br>"Organisation unit" |
-| > Tracked entity type | Name: "Item"<br>"Minimum number of attributes<br>required to search": "1"<br>"Feature type": "None"<br>"Tracked entity type<br>attributes":<br>\- Item code / not "Searchable"<br>\- Item description / not<br>"Searchable"<br>\- "Display in list":<br>unchecked<br>\- "Mandatory": unchecked<br>\- "Searchable": see above<br>Note: "Item barcode" is<br>intentionally not included here. |
-| > Program | "Real-Time Stock management" |
-| > 1 Program details | "Name (\*)": "Real-Time Stock<br>Management"<br>"Short name (\*)": "Real-Time<br>Stock Management"<br>"Tracked entity type (\*)":<br>"Item"<br>"Display front page list":<br>check (appears as white tick in<br>a blue square)<br>"Access level": "Open"<br>"Minimum number of attributes<br>required to search": "1". |
-| > 2 Enrollment details | "Show incident date": check |
-| > 3 Attributes |  |
-| > Assign attributes | "Program tracked entity<br>attributes":<br>\- Item barcode<br>\- Item code<br>\- Item description |
-| > Create registration form | Leave blank |
-| > 4 Program stages |  |
-| > Stage Details | Name: "Stock on Hand"<br>"Scheduled days from start<br>(\*)": "0"<br>Repeatable: check (appears as<br>white tick in a blue square) |
-| > Assign data elements | Selected items:<br>\- "Stock count"<br>\- "Stock distribution"<br>\- "Stock correction"<br>\- "Stock discarded"<br>\- "Stock received"<br>\- "Stock on Hand"<br>\- "Deliver to"<br>\- "Previous stock balance" |
-| > Create data entry form | BASIC: "Stock management":<br>\- "Stock distribution"<br>\- "Stock count"<br>\- "Stock discarded"<br>\- "Stock received"<br>\- "Stock on hand"<br>\- "Deliver to"<br>\- "Previous stock balance" |
-| > 5 Access | X Organisation units:<br>\- "0001 CH Mahosot"<br>\- "0002 CH Mittahap»<br>"Roles and Access":<br>"Real-Time Stock Management"<br>"APPLY TO SELECTED STAGES":<br>"Stock on Hand" |
-| > 6 Notification | (blank) |
-| > Program rule |  |
-| > Assign Stock correction | Program (\*): "Real-Time Stock<br>Management"<br>Name (\*): "Assign Stock<br>correction"<br>Condition: "d2:hasValue(<br>#{Stock count} )"<br>Action: "Assign value"<br>Data element to assign to:<br>"Stock on hand"<br>Expression to evaluate and<br>assign: "#{Stock<br>count}-#{Previous stock<br>balance}" |
-| > Assign Stock on Hand | Program (\*): "Real-Time Stock<br>Management"<br>Name (\*): "Assign Stock on<br>Hand"<br>Condition: "true"<br>Action: "Assign value"<br>Data element to assign to:<br>"Stock on hand"<br>Expression to evaluate and<br>assign: "#{Previous stock<br>balance}+#{Stock<br>received}-#{Stock<br>distribution}-#{Stock<br>discarded}" |
-| > Assign Stock on hand | Program (\*): "Real-Time Stock |
-| > correction | Management"<br>Name (\*): "Assign Stock <br>correction"<br>Condition: "d2:hasValue( <br>#{Stock count} )"<br>Action: "Assign value"<br>Data element to assign to: <br>"Stock on hand"<br>Expression to evaluate and <br>assign: "#{Stock count}" |
-| > Assign previous stock balance | Name (\*): "Assign previous<br>stock balance"<br>Condition: "d2:hasValue(<br>#{Initial stock on hand -<br>Previous event} )"<br>Action: "Assign value"<br>Data element to assign to:<br>"Previous Stock Balance"<br>Expression to evaluate and<br>assign: "#{Initial stock on<br>hand - Previous event}" |
-| > Program rule variable | Program (\*): "Real-Time Stock<br>Management"<br>Name / Data element<br>\- "Initial stock on hand -<br>Previous event": "Data element<br>from previous event" / "Stock<br>on hand"<br>\- "Previous stock balance":<br>"Data element in current<br>event" / "Previous stock<br>balance"<br>\- "Stock correction": "Data<br>element in current event" /<br>"Stock on hand"<br>\- "Stock count": "Data<br>element in current event"/<br>"Stock on hand"<br>\- "Stock discarded": "Data<br>element in current event" /<br>"Stock discarded"<br>\- "Stock distribution":<br>"Data element in current<br>event" / "Stock distribution"<br>\- "Stock received": "Data<br>element in current event" /<br>"Stock received"<br>Source type (\*): see above<br>Data element: see above |
-| > Use case configuration app | Use case configuration app<br>Configure Program<br>General<br>\- Program Types: "Logistics"<br>\- Description: "Real-time<br>stock management application"<br>\- Program \*: "Real-Time Stock<br>Management"<br>Details<br>\- Item Code \*: "Item code"<br>\- Item Description \*: "Item<br>description"<br>\- Stock on Hand \*: "Stock on<br>hand"<br>Transactions<br>Distributed<br>\- Distributed to \*: "Deliver<br>to"<br>\- Distributed Stock \*: "Stock<br>distribution"<br>Corrected<br>\- Corrected Stock \*: "Stock<br>correction"<br>\- Stock Count \*: "Stock<br>count"<br>Discarded<br>\- Discarded Stock \*: "Stock<br>discard" |
-
-
 
 
 PARKING LOT xxxxxxxxxxxxxxxxxxxxxx
@@ -2591,6 +2628,7 @@ In order to ensure continuity of services while at the same maintaining an accur
 The simplest way is to continue or resume the use of stock cards for any transactions which cannot be reported in DHIS2.
 
 For the "Advanced mode", the quantities distributed to each ward or service can be tallied up and entered with a single transaction for each ward or service once the system is restored. This will falsify the transaction dates but still maintain an accurate record of the total quantities distributed to each ward or service. In case of prolonged system failure, the "aggregate" Data entry form with a monthly reporting period can be used for documenting the stock on hand at the end of the month as well as the total quantities during the month. The details of these transactions will be permanently missing in the system but, after effecting a stock "Correction", use of the DHIS2-RTS mobile application can be resumed once all systems are restored.
+
 
 ## DHIS2 REAL-TIME STOCK INTEGRATION WITH NATIONAL eLMIS
 
