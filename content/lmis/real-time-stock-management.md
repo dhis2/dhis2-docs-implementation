@@ -198,10 +198,9 @@ The required metadata settings seetings are presented in the order in which it i
 >**6 PROGRAM**  
 >>6.1 Program  
 >>6.2 Tracked entity attribute  
->>6.3 Relationship type  
->>6.4 Tracked entity type  
->>6.5 Program rule  
->>6.6 Program rule variable  
+>>6.3 Tracked entity type  
+>>6.4 Program rule  
+>>6.5 Program rule variable  
 > 
 >**7 OTHER**  
 >>7.1 Option set  
@@ -513,8 +512,9 @@ The creation of Data element groups is a DHIS2 best practice but also a precondi
 >**Short name \(*)**: "Stock item list - MTH"
 >**Data elements \(*)**: *select all Data elements with the "MTH" suffix"*    
 
-### Data set
+### 3 Data set
 
+#### 3.1 Data set
 Data sets for each Organisation unit are required both for recording daily and monthly "snapshots" of Tracker Program data as well as a fallback system in case the DHIS2-RTS fails.
 
 >**1 RTS Monthly report**  
@@ -544,13 +544,13 @@ Data sets for each Organisation unit are required both for recording daily and m
 >>**Organisation units selected**: (select as for the Tracker Program) 
 >
 
-### Indicator
+### 4 Indicator
 
 The Indicator functionality is used to configure the "Stock coverage time". In principle it would be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings.
 
 Note that using the Indicator for calculating stock coverage times allows using only the distribution from the current month (which is highly inaccurate and leads to high fluctuations) and does not allow calculating an average, for example over the past three to six months.
 
-#### Indicator
+#### 4.1 Indicator
 
 The "Stockout days" indicator returns the value "1" for any day where the stock on hand is zero otherwise a "0" and allows automatically calculating the number of stockout days in a month.
 
@@ -593,7 +593,7 @@ The "Indicator type" is a precondition for configuring any "Indicator".
 >>**Name \(*)**: "Number (Factor 1)"  
 >>**Factor \(*)**: "1"  
 
-#### Program indicator
+#### 4.3 Program indicator
 
 Program indicators in conjunction with Predictors allow automatically aggregating Tracker Program data and recording daily and monthly aggregate values in the respective Data Entry forms for analysis and reporting.
 
@@ -748,18 +748,93 @@ Note that the same "Program Indicator" can be used for the Predictor for the "MT
 >>>Item code == '[Item code]'
 >
 
-### Organisation Unit
+### 5 Organisation Unit
 
-The Organisation Unit, Organisation Unit group and Organisation Unit level described above apply to the entire database and therefore also apply to all Tracker Programs.
+### 5.1 Organisation Unit
+The Organisation Unit, Organisation Unit group and Organisation Unit level are created and added according to national protocols and policies and/or existing DHIS2 configuration and there are no specific requirements for using the DHIS2-RTS.
 
-Organisation Units are created and added according to national protocols and policies and/or existing DHIS2 configuration.
+### 6 Program
 
-xxxxxxxxxxx CONSTRUCTION SITE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, is very simple to configure, uses only native DHIS2 functionality and governs the customized user interface on the mobile device.
 
-### Program
+#### 6.1 Program
+>**1 Program details**
+>>**Name \(*)**: "Real-Time Stock Management"  
+>>**Short name (*)**: "Real-Time Stock Management"  
+>>**Color**: "#64DD17"  
+>>**Icon**: "rural post outline"  
+>>**Icon**: (automatically numbered by the system)
+>>**Tracked entity type (*)**: select "Item"  
+>>**Category combination (*)**: select "None"  
+>>**Display front page list**: tag (appears as a white tick in a blue square) 
+>>**Access level**: "Open"  
+>>**Completed events expiry days**: "0"  
+>>**Expiry days**: "0"  
+>>**Minimum number of attributes required to search**: "1"  
+>>**Maximum number of treacked entity instances to return in search**: "0"  
+>
+>**2 Enrollment details**  
+>>**Allow future enrollment dates**: do not tag  
+>>**Allow future incident dates**: do not tag  
+>>**Only enrol once (per tracked entity instance lifetime)**: do not tag  
+>>**Show incident date**: tag (appears as a white tick in a blue square)   
+>>**Description of incident date**: "Stock transaction"  
+>>**Ignore overdue events**: do not tag  
+>>**Feature type**: (blank)
+>>
+>**3 Attributes**
+>>**1 Assign attributes**
+>>>**Program tracked entity attributes**: select and arrange in the following order:
+>>>>"Item code"  
+>>>>"Item description"  
+>>>*Note that the item code is separate as it is needed as a distinct field for scanning the barcode*.  
+>>>**Display in list**: tag all  
+>>>**Searchable**: tag "Item description" ("Item code tagged by the system)  
+>>>**Mobile render type**: "Default"
+>>>**Desktop render type**: "Default"
+![](media/image11.png)
+>>
+>>**2 Create registration form**
+>>>(leave blank, no configuration needed)
+>>
+>**4 Program stages**
+>>**1 Stage details**
+>>>**Name \(*)**: "Stock on Hand"  
+>>>**Scheduled days from start (*)**: "0"  
+>>>**Repeatable**: tag (appears as white tig in a blue square)  
+>>
+>>**2 Assign data elements**  
+>>>**Search available/selected items**:  
+>>>>"Stock distribution"  
+>>>>"Stock discard"  
+>>>>"Stock receipt"  
+>>>>"Stock on hand"  
+>>>>"Deliver to"  
+>>>>"Previous stock balance"  
+>>>>"Stock count"  
+>>>>"Stock correction"  
+>>>>![](media/image36.png)
+>>>
+>>>**Display in report**: make visible for all items  
+>>>**Mobile render type**: "Default"  
+>>>**Desktop render type**: "Default"
+>>
+>>**3 Create data entry form**
+>>>**"BASIC"** (configured by the system by default, no configuration is needed).
+>
+>**5 Access**
+>>**Organisation units**: tag the health care facilities where the Tracker Program is used  
+>>**Roles and access**: "Stock on Hand" appears by default  
+>>**SELECT ALL**: tag (a white tick appears in the blue square)
+>
+>**6 Notifications**
+>(not applicable)
 
-The DHIS2 Tracker Program which serves as the foundation on which the DHIS2-RTS mobile application is built, is very simple and uses only native DHIS2 functionality without any modifications. The two program rules are absolutely critical to the entire configuration as they provide and ensure the real-time calculation of the stock on hand as soon as any transaction is validated.
 
+
+
+
+xxxxxx
 
 
 #### Tracked entity attribute
