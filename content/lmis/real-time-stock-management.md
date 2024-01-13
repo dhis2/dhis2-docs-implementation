@@ -833,35 +833,36 @@ The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, 
 The DHIS2-RTS uses the "Item code" and "Item descriptions" as the two Tracked entity attributes of the Trached entity type "Item".
 Note that the "Item code" is unique only for any specific Organisation Unit but the same "Item code" can be used in any number of different Organisation Units.
 
->**1 Item code**:  
->**Name \(*)**: "Item code"  
->**Short name (*)**: "Item code"  
->**Value type**: "Text"  
->**Aggregation type**: "None"  
->**Unique**: tag (appears as a blue tag with a white tick) 
->**Option (from drop-down menu)**: "Organisation unit"
->**Inherit**: do not tag  
+>**1 Item code**  
+>>**Name \(*)**: "Item code"  
+>>**Short name (*)**: "Item code"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: tag (appears as a blue tag with a white tick) 
+>>**Option (from drop-down menu)**: "Organisation unit"
+>>**Inherit**: do not tag  
 >
->**2 Item description**:  
->**Name \(*)**: "Item description"  
->**Short name \(*)**: "Item description"  
->**Value type**: "Text"  
->**Aggregation type**: "None"  
->**Unique**: do not tag
->**Inherit**: do not tag  
+>**2 Item description**  
+>>**Name \(*)**: "Item description"  
+>>**Short name \(*)**: "Item description"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag  
 
 #### 6.3 Tracked entity type
 >**1 Item**:  
->**Name \(*)**: "Item"  
->**Enable tracked entity instance audit log**: not checked
->**Minimum number of attributes required to search**: 1  
->**Maximum number of tracked entity instances to return in search**: 0  
->**Feature type**: "None"  
->**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
->>"Item code"  
->>"Item description"  
->**Display in list**: tag all  
->**Searchable**: tag all
+>>**Name \(*)**: "Item"  
+>>**Enable tracked entity instance audit log**: not checked
+>>**Minimum number of attributes required to search**: 1  
+>>**Maximum number of tracked entity instances to return in search**: 0  
+>>**Feature type**: "None"  
+>>**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
+>>>"Item code"  
+>>>"Item description"  
+>>
+>>**Display in list**: tag all  
+>>**Searchable**: tag all
 
 #### 6.4 Program rule
 
@@ -875,9 +876,9 @@ The other two Program rule manage the "Stock correction" transaction:
 - "Assign Stock correction"
 - "Assign Stock on Hand correction".
 
-Two Program rules together provide the real time stock on hand update.
+Two Program rules together provide the real-time stock on hand update.
 
-In principle, the transaction quantities from the current event are added to the current Stock on Hand. But since
+In principle, the transaction quantities from the current event are added to the current Stock on Hand.
 
 If "Stock on hand" had a previous event, the "Stock on hand" value from the previous event is written to the Data Element "Previous Stock Balance". This Program rule "saves" the current "Stock on hand" value which is used as a basis for the (re)calculation of the current "Stock on hand". Using a single field would lead to an infinite recursion and an error as, for example, "Stock on hand" cannot be equal to "Stock on hand" + "Receipt" at the same time. Instead two different fields are needed which interact with each other:
 
@@ -923,101 +924,73 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 
 - positive integer if the physical stock count is greater than the calculated value
 
-##### Assign Stock correction
-
-[1 Enter program rule details]{.underline}
-
-Program (\*): "Real-Time Stock Management"
-
-"Trigger rule only for program stage"
-
-Name (\*): "Assign Stock correction"
-
-[2 Enter program rule expression]{.underline}
-
-Condition: "d2:hasValue(#{Stock count})"
-
-[3 Define program rule actions]{.underline}
-
-Action: "Assign value"
-
-Data element to assign to: "Stock correction"
-
-Expression to evaluate and assign:
-
-"#{Stock count }-#{ Previous stock balance}"
-
-##### Assign Stock on Hand
-
-[1 Enter program rule details]{.underline}
-
-Program (\*): "Real-Time Stock Management"
-
-"Trigger rule only for program stage"
-
-Name (\*): "Assign Stock on Hand"
-
-[2 Enter program rule expression]{.underline}
-
-Condition: "true"
-
-[3 Define program rule actions]{.underline}
-
-Action: "Assign value"
-
-Data element to assign to: "Stock on hand"
-
-Expression to evaluate and assign:
-
-"#{Previous stock balance} + #{Stock received} - #{Stock distributed} - #{Stock discarded} "
-
-##### Assign previous stock balance
-
-[1 Enter program rule details]{.underline}
-
-Program (\*): "Real-Time Stock Management"
-
-"Trigger rule only for program stage"
-
-Name (\*): "Assign previous stock balance"
-
-[2 Enter program rule expression]{.underline}
-
-Condition: "d2:hasValue(#{Initial stock on hand - Previous event})"
-
-[3 Define program rule actions]{.underline}
-
-Action: "Assign value"
-
-Data element to assign to: "Previous stock balance"
-
-Expression to evaluate and assign:
-
-"#{Initial stock on hand - Previous event}"
-
-##### Assign Stock on Hand correction
-
-[1 Enter program rule details]{.underline}
-
-Program (\*): "Real-Time Stock Management"
-
-"Trigger rule only for program stage"
-
-Name (\*): "Assign Stock on Hand correction"
-
-[2 Enter program rule expression]{.underline}
-
-Condition: "d2:hasValue(#{Stock count})"
-
-[3 Define program rule actions]{.underline}
-
-Action: "Assign value"
-
-Data element to assign to: "Stock on hand"
-
-Expression to evaluate and assign:
-
-"#{Stock count}"
+>**1 Assign stock correction**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock correction"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "d2:hasValue(#{Stock count})"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Stock correction"
+>>>>**Expression to evaluate and assign**: "#{Stock count}-#{Previous stock balance}"
+>
+>**2 Assign Stock on Hand**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock on Hand"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "true"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Stock on hand"
+>>>>**Expression to evaluate and assign**: ""#{Previous stock balance} + #{Stock received} - #{Stock distributed} - #{Stock discarded} ""
+>
+>**3 Assign Stock on hand correction**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock on hand correction"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "d2:hasValue(#{Stock count})"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Stock on hand"
+>>>>**Expression to evaluate and assign**: "#{Stock count}"
+>
+>**4 Assign previous stock balance**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock on hand correction"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "Condition: "d2:hasValue(#{Initial stock on hand - Previous event})"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Previous stock balance"
+>>>>**Expression to evaluate and assign**: "#{Initial stock on hand - Previous event}"
 
 #### 6.5 Program rule variable
 
