@@ -1045,53 +1045,84 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 
 #### 7.1 Option set
 
-Option sets are used for listing, managing and editing the "Deliver to" places as well as for the Transaction types [to be discussed]. The use of options provides a great deal of flexibility to the customization by individual countries, which are indispensable, without having to modify the DHIS2-RTS app code itself.
+Option sets are used for listing, managing and editing the "Deliver to" places. The use of options provides a great deal of flexibility to the customization by individual countries, which are indispensable, without having to modify the DHIS2-RTS app code itself. However, please note that if the "Deliver to" options are modified, the Program Indicators, Predictors as well as the "aggregate" Data entry form have to be adapted accordingly.
 
-The following options are configured by default which can be customized by removing, changing or adding to national needs as required:
+The following options are configured by default which can be customized by removing, changing or adding to national needs as required. It is important to always include the "(Other)" option to avoid that other departments or services are "polluted" with transaction data which actually does not apply to them.
 
-[PRIMARY DETAILS]{.underline}
+>**1 Deliver to**  
+>>**PRIMARY DETAILS**  
+>>>**Name \(*)**: "Deliver to"  
+>>>**Code**: "deliver_to"  
+>>>**Value type \(*)**: "Text" 
+> 
+>>**OPTIONS**  
+>>>**1 Diagnostic Imaging (X-ray)**
+>>>>**Name \(*)**: "Diagnostic Imaging (X-ray)"  
+>>>>**Code \(*)**: "diagn_imag"  
+>
+>>>**2 Emergency Room**
+>>>>**Name \(*)**: "Emergency Room"  
+>>>>**Code \(*)**: "emerg_room"  
+>
+>>>**3 High Dependency Unit**
+>>>>**Name \(*)**: "High Dependency Unit"  
+>>>>**Code \(*)**: "hi_dep_unit"  
+>
+>>>**4 Inpatient Medical Department**
+>>>>**Name \(*)**: "Inpatient Medical Department"  
+>>>>**Code \(*)**: "inp_med_dep"  
+>
+>>>**5 Inpatient Surgical Department**
+>>>>**Name \(*)**: "Inpatient Surgical Department"  
+>>>>**Code \(*)**: "inp_surg_dep"  
 
-"Name (\*)": "Destinations / supplied to"
-
-"Value type (\*)": "Text"
-
-[OPTIONS ("Name (\*)" / "Code (\*)")]{.underline}
-
-"Diagnostic imaging (X-Ray)" / "x-ray"
-
-"Emergency Room" / "emerg_room"
-
-"High Dependency Unit" / "hi_dep_unit"
-
-"Inpatient Medical Department" / "inp_med_dep"
-
-"Inpatient Surgical Department" / "inp_surg_dep"
-
-"Laboratory Department" / "lab_dep"
-
-"Mortuary" / "mortuary"
-
-"Obstetrics & Gynaecology services" / "obs_gyn"
-
-"Operating Theatre" / "op_theatre"
-
-"Out-Patient Department" / "outp_dep"
-
-"Paediatric Department" / "paed_dep"
-
-"Physiotherapy Department" / "pt_dep"
-
-"Recovery Room" / "rec_room"
-
-"Sanitation / Housekeeping" / "san_housek"
-
-"Sterilization Department" / "steriliz_dep"
-
-"Transfusion services" / "transf_serv"
-
-"(Other)" / other
-
-It is important to always include the "(Other)" option to avoid that other departments or services are "polluted" with transaction data which actually does not apply to them.
+>>>**6 Laboratory Department**
+>>>>**Name \(*)**: "Laboratory Department"  
+>>>>**Code \(*)**: "lab_dep"  
+>
+>>>**7 Mortuary**
+>>>>**Name \(*)**: "Mortuary"  
+>>>>**Code \(*)**: "mortuary"  
+>
+>>>**8 Obstetrics & Gynaecology services**
+>>>>**Name \(*)**: "Obstetrics & Gynaecology services"  
+>>>>**Code \(*)**: "obs_gyn"  
+>
+>>>**9 Operating Theatre**
+>>>>**Name \(*)**: "Operating Theatre"  
+>>>>**Code \(*)**: "op_theatre"  
+>
+>>>**10 Out-Patient Department**
+>>>>**Name \(*)**: "Out-Patient Department"  
+>>>>**Code \(*)**: "outp_dep"  
+>
+>>>**11 Paediatric Department**
+>>>>**Name \(*)**: "paed_dep"  
+>>>>**Code \(*)**: "paed_dep"  
+>
+>>>**12 Physiotherapy Department**
+>>>>**Name \(*)**: "pt_dep"  
+>>>>**Code \(*)**: "pt_dep"  
+>
+>>>**13 Recovery Room**
+>>>>**Name \(*)**: "Recovery Room"  
+>>>>**Code \(*)**: "rec_room"  
+>
+>>>**14 Sanitation / Housekeeping**
+>>>>**Name \(*)**: "Sanitation / Housekeeping"  
+>>>>**Code \(*)**: "san_housek"  
+>
+>>>**15 Sterilization Department**
+>>>>**Name \(*)**: "Sterilization Department"  
+>>>>**Code \(*)**: "steriliz_dep"  
+>
+>>>**16 Transfusion services**
+>>>>**Name \(*)**: "Transfusion services"  
+>>>>**Code \(*)**: "transf_serv"  
+>
+>>>**17 (Other)**
+>>>>**Name \(*)**: "(Other)"  
+>>>>**Code \(*)**: "other"  
 
 #### 7.2 Legend
 
