@@ -1432,9 +1432,11 @@ Both Data entry forms (as configured according to the settings above) are config
 
 ## Capture Web App - Tracked Entity Instance Management
 
-The web portal Capture app is used for "enrolling" new Tracked Entity Instances which each correspond to an item (health care product).
+The Capture Web app must not be used for recording or editing transactions as the lack of a time stamp displays them in an arbitrary order and consequently the "Previous stock balance" used for the next transaction is also selected arbitrarily among previous transactions and incorrect (but this issue does not apply to the DHIS2-RTS mobile application).
+However, the Capture Web App is required for registering, enrolling, "completing" and "activating" Tracked Entity Instances.
 
-TEIs are registered once in a specific DHIS2 database and the same TEI (with the same ID) is used for different OUs as well as possibly in other Tracker programs or Event programs.
+
+xxx
 
 Note that the "Report date" can be added from the cog wheel menu once the "STAGE FILTER" has been added.
 
@@ -2292,6 +2294,13 @@ Note that, by design, the DHIS2 Capture Android app does not automatically synch
 
 ## Medical Stock Management with the DHIS2-RTS application
 Xx
+
+xxx
+Adding and removing TEIs.
+TEIs are registered once in a specific DHIS2 database and the same TEI (with the same ID) is used for different OUs as well as possibly in other Tracker programs or Event programs.
+
+
+
 
 ## Integration with national eLMIS
 Xx
