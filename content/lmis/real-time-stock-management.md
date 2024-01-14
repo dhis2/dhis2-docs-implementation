@@ -1151,94 +1151,79 @@ A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock o
 
 These Predictors "transfer" the Program indicators to the respective Category option of the Data Entry form for providing users with daily or monthly "snapshots" of all transactions. Note that in principle the same Program indicator can be used for daily and monthly aggregations ("snapshots") but separate Predictors, one with the "Period type (\*)" daily is needed for daily "snapshots" and a second Predictor with "Period type (\*)" monthly is needed for monthly "snapshots".
 
-One Predictor is needed for each item (Data element = Tracked Entity Instance), for each transaction type as well as for each for each "Deliver to" (Category option) and one each for the daily report and the monthly report as the "Group Predictor" function is not available for Program Indicators. List of Predictors required for every Data element:
+One Predictor is needed for each item (Data element = Tracked Entity Instance), for each transaction type as well as for each "Deliver to" (Category option) and one each for the daily report and the monthly report as the "Group Predictor" function is not available for Program Indicators. List of Predictors required for every Data element:
 
-[Data element name] - Discard
+- [Data element name] - Discard
 
-[Data element name] - Distribution - Diagnostic imaging (X-Ray)
+- [Data element name] - Distribution - Diagnostic imaging (X-Ray)
 
-[Data element name] - Distribution - Distribution - total (for all wards/services)
+- [Data element name] - Distribution - Distribution - total (for all wards/services)
 
-[Data element name] - Distribution - Emergency Room
+- [Data element name] - Distribution - Emergency Room
 
-[Data element name] - Distribution - High Dependency Unit
+- [Data element name] - Distribution - High Dependency Unit
 
-[Data element name] - Distribution - Inpatient Medical Department
+- [Data element name] - Distribution - Inpatient Medical Department
 
-[Data element name] - Distribution - Inpatient Surgical Department
+- [Data element name] - Distribution - Inpatient Surgical Department
 
-[Data element name] - Distribution - Laboratory Department
+- [Data element name] - Distribution - Laboratory Department
 
-[Data element name] - Distribution - Mortuary
+- [Data element name] - Distribution - Mortuary
 
-[Data element name] - Distribution - Obstetric & Gynaecology services
+- [Data element name] - Distribution - Obstetric & Gynaecology services
 
-[Data element name] - Distribution - Opening balance (stock on hand)
+- [Data element name] - Distribution - Opening balance (stock on hand)
 
-[Data element name] - Distribution - Operating Theatre
+- [Data element name] - Distribution - Operating Theatre
 
-[Data element name] - Distribution - Out-Patient Department
+- [Data element name] - Distribution - Out-Patient Department
 
-[Data element name] - Distribution - Paediatric Department
+- [Data element name] - Distribution - Paediatric Department
 
-[Data element name] - Distribution - Physiotherapy Department
+- [Data element name] - Distribution - Physiotherapy Department
 
-[Data element name] - Distribution - Receipt
+- [Data element name] - Distribution - Receipt
 
-[Data element name] - Distribution - Recovery Room
+- [Data element name] - Distribution - Recovery Room
 
-[Data element name] - Distribution - Sanitation Housekeeping
+- [Data element name] - Distribution - Sanitation Housekeeping
 
-[Data element name] - Distribution - Sterilization Department
+- [Data element name] - Distribution - Sterilization Department
 
-[Data element name] - Distribution - Stock on hand (closing balance)
+- [Data element name] - Distribution - Stock on hand (closing balance)
 
-[Data element name] - Distribution - Transfusion services
+- [Data element name] - Distribution - Transfusion services
 
-[Data element name] - Distribution (Other)
+- [Data element name] - Distribution (Other)
 
-[Data element name] - Stock correction
+- [Data element name] - Stock correction
 
-Note that one Predictor is needed to "feed" the monthly report while a second Predictor "feeds" the daily report.
+Below the configuration for a single Predictor is given as an example while all other Predictors are created analogously:  
+T2A - DORACEFI4T - CEFIXIME, 400 mg, tab. - DIST - Inpatient Medical Department - PR - MTH
 
-Below the configuration for a single Predictor is given as an example while all other Predictors are created analogously:
+>**1 T2A - DORACEFI4T - CEFIXIME, 400 mg, tab. - DIST - Diagnostic imaging (X-Ray) - PR - MTH**  
+>>**Name \(*)**: "T2A - [Item] - DIST - Diagnostic imaging (X-Ray) - PR - MTH"  
+>>**Short name \(*)**: "T2A - [Item code] - DIST - X-Ray - PR - MTH"
+>>**Output data element \(*)**: "[Item] T2A MTH"  
+>>**Output category option combo** "DIS - Diagn. imaging"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "T2A - [Item code] - DIST - X-Ray - PR - MTH"
+>>>**Expression**: "I{xwiNF9EsUHx}"  
+*[Item code] - Distribution - Diagnostic imaging (X-Ray)*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
 
-##### Predictor
-
-- Name: "T2A - DORAALBE4T - ALBENDAZOLE, 400 mg, tab. - DIST - PR - MTH/DAY
-
-- Short name (\*): "T2A - DORAALBE4T - DIST - PR - MTH/DAY
-- Output data element: DORAALBE4T - ALBENDAZOLE, 400 mg, tab. MTH/DAY
-- Output category option combo: "Stock distribution"
-- Period type (\*): "Monthly" / "Daily" for the "DAY" Predictor
-- Organisation unit levels: "Facility"
-
-**_THIS IS ABSOLUTELY CRITICAL and must the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank._**
-
-- Organisation units providing data (\*): "At selected level(s) only"
-
-##### Generator
-
-- Description: "T2A - DORAALBE4T - ALBENDAZOLE, 400 mg, tab. - PR - MTH/DAY"
-
-- Generator:
-- - Programs: "Real-Time Stock Management"
-- - Indicators: select [Item] - [Transaction type] from the available options
-
-- - Generator field: I{[Item] - [Transaction type]}
-
-For example: "I{SPzpOCVuS4e}"
-
-"DORAALBE4T - Distribution"
-
-- Sequential sample count: "0" (which means the calculation is based only on the value of one previous month)
-
-- Annual sample count: "0"
-- Sequential skip count: (blank)
-
-Note: the Predictor "copies" the Program indicator without any aggregation (such as sum) as the aggregation is already achieved by the Program indicator. The "Sequential sample count" of 0 ensures that the transaction quantities of the current day or month or aggregated.
+*Note: the Predictor "copies" the Program indicator without any aggregation (such as sum) as the aggregation is already achieved by the Program indicator. The "Sequential sample count" of 0 ensures that the transaction quantities of the current day or month are aggregated.*
 
 The following differences need to be considered for the different Predictors as the "Opening SoH" and "Stock on hand" are (re)calculated from other Predictor calculation results rather than from Program Indicators as these values are not sums but only the last value in the month is needed.
+
+xxxxxx CONTINUE HERE xxxxx
 
 ##### Opening SoH
 
