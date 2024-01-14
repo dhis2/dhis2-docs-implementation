@@ -1054,72 +1054,72 @@ The following options are configured by default which can be customized by remov
 >>>**Name \(*)**: "Deliver to"  
 >>>**Code**: "deliver_to"  
 >>>**Value type \(*)**: "Text" 
-> 
+>>
 >>**OPTIONS**  
 >>>**1 Diagnostic Imaging (X-ray)**
 >>>>**Name \(*)**: "Diagnostic Imaging (X-ray)"  
 >>>>**Code \(*)**: "diagn_imag"  
->
+>>>
 >>>**2 Emergency Room**
 >>>>**Name \(*)**: "Emergency Room"  
 >>>>**Code \(*)**: "emerg_room"  
->
+>>>
 >>>**3 High Dependency Unit**
 >>>>**Name \(*)**: "High Dependency Unit"  
 >>>>**Code \(*)**: "hi_dep_unit"  
->
+>>>
 >>>**4 Inpatient Medical Department**
 >>>>**Name \(*)**: "Inpatient Medical Department"  
 >>>>**Code \(*)**: "inp_med_dep"  
->
+>>>
 >>>**5 Inpatient Surgical Department**
 >>>>**Name \(*)**: "Inpatient Surgical Department"  
 >>>>**Code \(*)**: "inp_surg_dep"  
-
+>>>
 >>>**6 Laboratory Department**
 >>>>**Name \(*)**: "Laboratory Department"  
 >>>>**Code \(*)**: "lab_dep"  
->
+>>>
 >>>**7 Mortuary**
 >>>>**Name \(*)**: "Mortuary"  
 >>>>**Code \(*)**: "mortuary"  
->
+>>>
 >>>**8 Obstetrics & Gynaecology services**
 >>>>**Name \(*)**: "Obstetrics & Gynaecology services"  
 >>>>**Code \(*)**: "obs_gyn"  
->
+>>>
 >>>**9 Operating Theatre**
 >>>>**Name \(*)**: "Operating Theatre"  
 >>>>**Code \(*)**: "op_theatre"  
->
+>>>
 >>>**10 Out-Patient Department**
 >>>>**Name \(*)**: "Out-Patient Department"  
 >>>>**Code \(*)**: "outp_dep"  
->
+>>>
 >>>**11 Paediatric Department**
 >>>>**Name \(*)**: "paed_dep"  
 >>>>**Code \(*)**: "paed_dep"  
->
+>>>
 >>>**12 Physiotherapy Department**
 >>>>**Name \(*)**: "pt_dep"  
 >>>>**Code \(*)**: "pt_dep"  
->
+>>>
 >>>**13 Recovery Room**
 >>>>**Name \(*)**: "Recovery Room"  
 >>>>**Code \(*)**: "rec_room"  
->
+>>>
 >>>**14 Sanitation / Housekeeping**
 >>>>**Name \(*)**: "Sanitation / Housekeeping"  
 >>>>**Code \(*)**: "san_housek"  
->
+>>>
 >>>**15 Sterilization Department**
 >>>>**Name \(*)**: "Sterilization Department"  
 >>>>**Code \(*)**: "steriliz_dep"  
->
+>>>
 >>>**16 Transfusion services**
 >>>>**Name \(*)**: "Transfusion services"  
 >>>>**Code \(*)**: "transf_serv"  
->
+>>>
 >>>**17 (Other)**
 >>>>**Name \(*)**: "(Other)"  
 >>>>**Code \(*)**: "other"  
@@ -1149,7 +1149,14 @@ A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock o
 
 #### 7.3 Predictor
 
-These Predictors "transfer" the Program indicators to the respective Category option of the Data Entry form for providing users with daily or monthly "snapshots" of all transactions. Note that in principle the same Program indicator can be used for daily and monthly aggregations ("snapshots") but separate Predictors, one with the "Period type (\*)" daily is needed for daily "snapshots" and a second Predictor with "Period type (\*)" monthly is needed for monthly "snapshots".
+Predictors are used in two different ways:
+- for "transferring" aggregate Program indicator values to the daily/monthly Data entry form
+- "copying" the "Stock on hand" at the end of the previous month to the "Opening SoH" of the current month
+- calculating the "Closing SoH" from the data values of the current month  
+
+*Note that only transactional quantities (stock distributed, discarded and corrections) can be aggregated from the Tracker Program data. But as the stock balances are calculated after every transaction, aggregating them does not yield any meaningful results*.
+
+The Predictors which "transfer" the Program indicators to the respective Category option of the Data Entry form provide users with daily or monthly "snapshots" of all transactions. Note that in principle the same Program indicator can be used for daily and monthly aggregations ("snapshots") but separate Predictors, one with the "Period type (\*)" daily is needed for daily "snapshots" and a second Predictor with "Period type (\*)" monthly is needed for monthly "snapshots".
 
 One Predictor is needed for each item (Data element = Tracked Entity Instance), for each transaction type as well as for each "Deliver to" (Category option) and one each for the daily report and the monthly report as the "Group Predictor" function is not available for Program Indicators. List of Predictors required for every Data element:
 
@@ -1202,7 +1209,9 @@ One Predictor is needed for each item (Data element = Tracked Entity Instance), 
 Below the configuration for a single Predictor is given as an example while all other Predictors are created analogously:  
 T2A - DORACEFI4T - CEFIXIME, 400 mg, tab. - DIST - Inpatient Medical Department - PR - MTH
 
->**1 T2A - DORACEFI4T - CEFIXIME, 400 mg, tab. - DIST - Diagnostic imaging (X-Ray) - PR - MTH**  
+>**1 T2A - [Item] - DIST - Diagnostic imaging (X-Ray) - PR - MTH**  
+*This Predictor aggregates all "Distribution" transaction for the respective item and month*
+>>
 >>**Name \(*)**: "T2A - [Item] - DIST - Diagnostic imaging (X-Ray) - PR - MTH"  
 >>**Short name \(*)**: "T2A - [Item code] - DIST - X-Ray - PR - MTH"
 >>**Output data element \(*)**: "[Item] T2A MTH"  
@@ -1218,99 +1227,63 @@ T2A - DORACEFI4T - CEFIXIME, 400 mg, tab. - DIST - Inpatient Medical Department 
 >>
 >>**Sequential sample count \(*)**: "0"  
 >>**Annual sample count \(*)**: "0"  
-
-*Note: the Predictor "copies" the Program indicator without any aggregation (such as sum) as the aggregation is already achieved by the Program indicator. The "Sequential sample count" of 0 ensures that the transaction quantities of the current day or month are aggregated.*
-
-The following differences need to be considered for the different Predictors as the "Opening SoH" and "Stock on hand" are (re)calculated from other Predictor calculation results rather than from Program Indicators as these values are not sums but only the last value in the month is needed.
-
-xxxxxx CONTINUE HERE xxxxx
-
-##### Opening SoH
-
-- Output category option combo: "Opening SoH"
-- Generator:
-- - Data elements: select [Data element] - Stock on hand
-- - avg(#{XsOfl0jZU8S.dOkDb0N10Aw})
-
-avg(DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock on hand)
-
-- Sequential sample count (\*): "1" (this calculation is based on values from the previous month)
-
-##### SoH closing
-
-The "Stock on hand" is (re)calculating by adding all transactions to the "Opening balance" as the "Stock on hand" cannot be aggregated from the Tracker Program values.
-
-Opening SoH +
-
-Stock receipt -
-
-Stock distribution -
-
-Stock discard +
-
-Stock correction
-
-- Output category option combo: "Stock on hand"
-- Generator:
-
-{XsOfl0jZU8S.r8mxZGLEIpr}+
-
-{XsOfl0jZU8S.EGYpLpsRoYC}-
-
-{XsOfl0jZU8S.X57v4Hidl3C}-
-
-{XsOfl0jZU8S.KwF12LCuQqt}+
-
-{XsOfl0jZU8S.qrAl2aJnDop}
-
-DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Opening SoH+ DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock receipt- DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock distribution- DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock discard+ DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock correction
-
-Please note that the "Stock correction" has to be added (and not be subtracted).
-
-- Sequential sample count (\*): "0" (this calculation is based on the values from the current month)
-
-##### STOCK ITEM LIST - Stock coverage - PR
-
-- Output data element (\*): "DORAALBE4T - ALBENDAZOLE, 400 mg, tab."
-- Output category option combo: "Stock coverage"
-- Generator:
-
-forEach ?de in :DEG:lbfCwX4ahtd \--\> #{?de.dOkDb0N10Aw}/#{?de.X57v4Hidl3C}
-
-[Data element].Stock on hand / [Data element].Stock distribution
-
-forEach ?de in Stock item list \--\> #{?de.dOkDb0N10Aw}/#{?de.X57v4Hidl3C}
-
-- Sequential sample count (\*): "0" (this calculation is based on values from the current month)
-
-##### [Stock list] - Stockout days count
-
-- Output data element (\*): "DORACEFI4T - CEFIXIME, 400 mg, tab. T2A DAY"
-
-- Output category option combo: "Stock on hand Yes/No"
-- Generator:
-
-```
-forEach ?de in :DEG:yhNPz0Qve28 → if(#{?de.KoT8qU1DYiB}==0,1,0)
-
-forEach ?de in [Stock item list] - DAY \--\>
-if(#{?de.KoT8qU1DYiB}==0,1,0)
-```
-
-- Sequential sample count (\*): "0" (this calculation is based on values from the current day)
+>
+>*Note: the Predictor "copies" the Program indicator without any aggregation (such as sum) as the aggregation is already achieved by the Program indicator. The "Sequential sample count" of 0 ensures that the transaction quantities of the current day or month are aggregated.*
+>
+>**2 T2A -  [Item] - SOH opening - PR - DAY**  
+*This Predictor "copies" data values within the Data entry form*
+>>
+>>**Name \(*)**: "T2A -  [Item] - SOH opening - PR - DAY"  
+>>**Short name \(*)**: "T2A -  [Item code] - SOH opening - PR - DAY"
+>>**Output data element \(*)**: "[Item]"  
+>>**Output category option combo** "Opening SoH"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "T2A - [Item code] - SOH opening - PR - DAY"
+>>>**Expression**: "avg(#{ZNi9SCtVA83.rZ5LF3cNuPb})"  
+*avg([Item code])*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**3 T2A -  [Item] - SOH closing - PR - DAY**  
+*This Predictor "copies" data values within the Data entry form*
+>>
+>>**Name \(*)**: "T2A -  [Item] - SOH closing - PR - DAY"  
+>>**Short name \(*)**: "T2A -  [Item code] - SOH opening - PR - DAY"
+>>**Output data element \(*)**: "[Item]"  
+>>**Output category option combo** "Stock on hand"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "T2A - [Item code] - SOH closing - PR - DAY"  
+>>>**Expression**: 
+#{ZNi9SCtVA83.srqJsVxtLdA}+
+#{ZNi9SCtVA83.iHrG3AK8XxK}-
+#{ZNi9SCtVA83.QjLESy7VVB6}-
+#{ZNi9SCtVA83.Hy0b1skIzyR}+
+#{ZNi9SCtVA83.tb7HW13vK6X}"  
+*[Item] Opening SoH+[Item] Stock receipt-[Item] Stock distribution-[Item] Stock discard+[Item] Stock correction*  
+*Please note that the "Stock correction" has to be added (and not be subtracted).*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
 
 #### 7.4 Predictor group
 
-The "Predictor group" is required in order to allow running all Predictors periodically and together by the "Scheduler" rather than having to prompt them one by one.
+The "Predictor group" is required in order to allow running all Predictors periodically and together by the "Scheduler" rather than having to prompt them one by one. All Predictors required for the DHIS2-RTS can be grouped together and be run together in the Scheduler App
 
-- Name (\*): "T2A Predictors"
-- Predictors: include all configured Predictors.
-
-
-
-
-
-
+>**1 DHIS2-RTS - T2A - Predictor**  
+>**Name \(*)**: "DHIS2-RTS - T2A - Predictors"  
+>**Predictors**
+>>"T2A - [Item] - [Deliver to] - PR - DAY"  
+>>"T2A - [Item] - [Deliver to] - PR - MTH"  
+>>*Include all configured Predictors for the DHIS2-RTS application*
 
 
 ## Data Visualizer Web App - "Aggregate" Analytics and Visualizations
