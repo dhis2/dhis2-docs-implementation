@@ -1358,47 +1358,33 @@ User groups may be configured according to the User roles into the same two grou
 
 ## Android Settings Web App - Synchronization and Offline Analytics
 Xx
-The "Android settings app" allows to customize some functionality across all mobile devices using the Capture Android app. The settings in this chapter should be merely considered as a recommendation to simplify user interfaces but do not have any immediate impact on the DHIS2-RTS app itself.
+The "Android settings Web App" allows customizing synchronization settings as well as configuring offline analytics.
 
-#### Synchronization settings
-
-##### Global
-
-While it is strongly recommended that users synchronize mobile devices data immediately after every completed transaction, a daily synchronization is recommended as a backup.
-
-Since it will be difficult to inform all users of any change to the metadata, its synchronization should also be completed once a day to ensure that all mobile devices are always updated.
-
-> How often should metadata sync?: "1 Day"
+>**Synchronization**  
+>>**Global sync settings**
+>>>**How often should metadata sync**: "Manual"  
+>>>**How often should data sync**: "Manual"  
+>>>*Note: it is critical that users can control the synchronization settings so that they can synchronize mobile devices whenever Tracked Entity Instances (TEIs) are added or removed and that they can (ideally) synchronize the mobile device after every transaction.*
+>>
+>>**Programs**
+>>>**Programs specific download sync settings**
+>>>>**Setting level**: "All Org Units"
+>>>>**Maximum Tracked Entity Instance (TEI) download per program**: [to be confirmed]
+>>>>**Download TEI with status**: "Only Active"
+>>>>**Download TEI with enrollment date within**: "Any period"
+>>>>**Download TEI that have been updated within**: "Any time period"
 >
-> How often should data sync?: "1 Day"
-
-Note that this daily, periodic synchronization will only be affected automatically if a network connection is available at the time the synchronization is prompted on the mobile device.
-
-##### Data sets
-
-Limiting the number of periods for which data is downloaded to the mobile device will limit storage requirements and improve usability. Moreover, it is unlikely a storekeeper would want to analyse monthly report daily, say, five years back and one year of data should be sufficient.
-
-Maximum number of periods to download data sets for: "12".
-
-#### Appearance settings
-
-Although this settings does not affect the DHIS2-RTS app itself (for which the home screen is "fixed", for convenience it is recommended to reduce the filter options on the home screen.
-
-Date: do not tag
-
-Organisation Unit: tag
-
-Sync status: do not tag
-
-Assigned to me: do not tag
-
-#### Analytics settings
-
-This chapter describes the configuration for visualizing some analytics on the mobile device.
-
-
-
-
+>**Analytics**  
+>>**Program**  
+>>>**1 Visualization A**  
+>>>>**Program**: "Real-Time Stock Management"  
+>>>>**Visualization item**: [to be added]  
+>>>>**Visualization title**: [to be added]  
+>>>
+>>>**2 Visualization BA**  
+>>>>**Program**: "Real-Time Stock Management"  
+>>>>**Visualization item**: [to be added]  
+>>>>**Visualization title**: [to be added]  
 
 ## Use Case Configuration Web App - Program Configuration
 Xx
