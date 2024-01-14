@@ -26,7 +26,7 @@ Recording individual stock transactions rather than recording and reporting stoc
 
 - The system eliminates redundancies for data collection with national LMIS systems (even if on paper or in Excel) as a single data value, namely the transaction quantity of every item, is recorded.
 
-#### Structures and preconditions
+### Structures and preconditions
 
 The application is based on adherence to specific structures and processes which inform the system design and functionality.
 
@@ -70,8 +70,6 @@ The guiding principle of the DHIS2-RTS concept is using mainly national eLMIS fu
 The DHIS2-RTS mobile application is used by storekeepers of pharmacies and medical stores at healthcare facilities, called "end-users".
 
 "Department and service" stands for any facility or service within any healthcare facility which holds and manages stocks of any kind which are regularly replenished such as patient wards, dispensaries (OPD), operating theatres, sterilization services, laboratory and blood transfusion services, diagnostic imaging, laundry, maintenance services or other services.
-
-#### Processes
 
 - Receiving and put-away of stocks received from upstream medical distribution centres
 
@@ -155,7 +153,7 @@ In case the mobile device fails or malfunctions for any reason (out of charge, d
 #### In case of Internet is unavailable for more than one day
 
 - Resume manual recording of transactions on stock cards
-- Use a DHIS2 Default Data Entry Form at the end of the month (which is much less work than retrospectively entering hundreds of transactions
+- Use a DHIS2 Default Data Entry Form at the end of the month (which is much less work than retrospectively entering many transactions in the correct chronological order)
 
 #### In case all systems fail
 
@@ -166,7 +164,7 @@ At any time, users can resort to the manual, paper- or spreadsheet-based method 
 
 - Calculate the monthly replenishment order using a paper record or a spreadsheet application
 
-## Maintenance Web App - DHIS2 configuration
+## Maintenance Web App - DHIS2 metadata configuration
 
 This chapters provides a complete overview all metadata elements and their settings which are required specifically for configuring the DHIS2-RTS Tracker Program as well as the "aggregate" Data Entry form for recording daily and monthly "snapshots". Most of the settings can be modified and adapted to the specific context of an implementation while some settings, such as the Program rule or Use-case-configuration app, must not be modified as the function of the mobile application may be impaired.
 
@@ -1286,9 +1284,249 @@ The "Predictor group" is required in order to allow running all Predictors perio
 >>*Include all configured Predictors for the DHIS2-RTS application*
 
 
-## Data Visualizer Web App - "Aggregate" Analytics and Visualizations
+
+
+## Scheduler Web App - Predictor Scheduling
+Xx
+The "Scheduler" app allows configuring the automatic and periodic execution of all Predictors (separately or conveniently grouped in a "Predictor group":
+
+Configuration
+
+- Name \*: "T2A Predictors"
+- Job type \*: "Predictor"
+- CRON Expression \*: "00 05 00 \* \* \*" ("At 12:05:00 AM)
+
+This CRON job is automatically executed every day at 00:05. If required, the Scheduler can also be set to run more frequently, for example twice a day, every four hours or every hour.
+
+Parameters
+
+- Relative start: "-32"
+- Relative end: "32"
+
+Note that the "Relative start" and "Relative end" are always configured in days. In order for the Predictors to aggregate the enter last month, the "Relative start" must always be set to a day in the previous month and the "Relative end" date must also fall into the next month. In order to cater for all possible constellations during the month, 32 days should be used.
+
+This configuration will update Predictors once every day in order to provide monthly updates on transaction quantities rather than showing zero for the entire month and then providing values for the previous month only on the first day of the following month.
+
+
+## User Web App - User management
 Xx
 
+### "Users" app
+
+The Users app allows configuring User roles, creating user profiles for individual users and assigning them to defined User groups.
+
+#### User
+
+User access will be managed by the entity managing the central DHIS2 server and according to national policies concerning data security.
+
+By default, the language is set to the national language used in the country, or in case there is more than one, according to national policies but can be adapted to individual users or user groups if needed.
+
+The DHIS2-RTS should allow using any language configured on the central DHIS2 server.
+
+According to their responsibilities, needs for accessing (viewing) data and authority to change (edit) data, every user is assigned one or several of the "User roles" and assigned to one specific (or exceptionally more than one) Organisation unit for which s/he has access for viewing and editing data.
+
+#### User role
+
+Three distinct User roles are configured which each give access to specific DHIS2 apps and determine whether users can access certain metadata such as Data elements, Data sets or Organisation units.
+
+If a Default Data Entry Form is configured as a "backup" in case of DHIS2-RTS failure, user rights have to be configured both for the Data Entry Form as well as the Tracker Program.
+
+While configuring user settings is a native DHIS2 functionality, the details of providing users access to the DHIS2-RTS mobile app (and module) need to be developed.
+
+##### DHIS2-RTS - Data entry
+
+This User role allows users to access the DHIS2 Capture Android app (native app) on mobile devices as well as to DHIS2-RTS within the "module" for viewing, entering and recording transactions.
+
+##### DHIS2-RTS - Reader
+
+This User role allows users to view stock data in the DHIS2-RTS (or only viewing the in-app off-line analytics reports).
+
+##### DHIS2-RTS - Superuser
+
+This user role is reserved to system administrators and allows configuring settings and managing the DHIS2 instance and system.
+
+#### User group
+
+The main purpose of user groups is facilitating configuration of "Sharing" settings (which determine viewing and editing rights) by groups rather than having to manage them at the level of hundreds of individual users.
+
+User groups should be configured according to the User Role into the same three groups:
+
+- Data entry
+- Reader
+- Superuser
+
+
+
+## Android Settings Web App - Synchronization and Offline Analytics
+Xx
+The "Android settings app" allows to customize some functionality across all mobile devices using the Capture Android app. The settings in this chapter should be merely considered as a recommendation to simplify user interfaces but do not have any immediate impact on the DHIS2-RTS app itself.
+
+#### Synchronization settings
+
+##### Global
+
+While it is strongly recommended that users synchronize mobile devices data immediately after every completed transaction, a daily synchronization is recommended as a backup.
+
+Since it will be difficult to inform all users of any change to the metadata, its synchronization should also be completed once a day to ensure that all mobile devices are always updated.
+
+> How often should metadata sync?: "1 Day"
+>
+> How often should data sync?: "1 Day"
+
+Note that this daily, periodic synchronization will only be affected automatically if a network connection is available at the time the synchronization is prompted on the mobile device.
+
+##### Data sets
+
+Limiting the number of periods for which data is downloaded to the mobile device will limit storage requirements and improve usability. Moreover, it is unlikely a storekeeper would want to analyse monthly report daily, say, five years back and one year of data should be sufficient.
+
+Maximum number of periods to download data sets for: "12".
+
+#### Appearance settings
+
+Although this settings does not affect the DHIS2-RTS app itself (for which the home screen is "fixed", for convenience it is recommended to reduce the filter options on the home screen.
+
+Date: do not tag
+
+Organisation Unit: tag
+
+Sync status: do not tag
+
+Assigned to me: do not tag
+
+#### Analytics settings
+
+This chapter describes the configuration for visualizing some analytics on the mobile device.
+
+
+
+
+
+## Use Case Configuration Web App - Program Configuration
+Xx
+This new DHIS2 app "links" the "Real-Time Stock Management" Tracker Program to the customized mobile app. While the Tracker Program will have the appearance of any other Tracker Program on the Capture Android app home screen, selecting a Tracker Program which is "linked" to the "Real-Time Stock Management" app will invoke the customized app instead of opening the conventional TEI dashboard.
+
+Select "Add Program" to add a new Tracker Program configured for real-time stock management.
+
+##### Configure Program
+
+##### General
+
+- Program Types: "Logistics"
+- Description: "Real-time stock management application"
+- Program \*: "Real-Time Stock Management"
+
+##### Details
+
+- Item Code \*: "Item code"
+- Item Description \*: "Item description"
+- Stock on Hand \*: "Stock on hand"
+
+##### Transactions
+
+Distributed
+
+- Distributed to \*: "Deliver to"
+- Distributed Stock \*: "Stock distribution"
+
+Corrected
+
+- Corrected Stock \*: "Stock correction"
+- Stock Count \*: "Stock count"
+
+Discarded
+
+- Discarded Stock \*: "Stock discard"
+
+
+
+
+## APK Distribution Web App - User Management
+Xx
+
+
+
+
+## Data Entry (Beta) Web App - "Snapshots" and fallback data entry
+Xx
+**Data Entry (beta) - to be added**
+The Data set with its components such as the Category options appears as a Default Data Entry form in the "Data Entry" app. As Custom Data Entry Forms do not render on mobile devices, they must not be used. All users must have the option of entering monthly stock report data on a mobile device as a fallback option in case the DHIS2-RTS mobile application (temporarily) fails.
+
+Ideally, two reports one with the total distributions and one with the "Deliver to" details would be available but it is not possible to assign more than one "Category combination" to any Data element and for displaying two different Data Entry forms, every Data element would have to be duplicated. As a work around, one single Data Entry form contains all the the "Deliver to" options as separate columns as well as the "Distribution" which is the summary of total distributions. This allows to configure two separate reports (and others of course) as "Pivot table" in the "Data Visualizer".
+
+Category options are not needed for recording transactions in the Tracker Program but required for the monthly Tracker Program "snapshot" data as well as a fallback system in case the DHIS2-RTS (temporarily) fails. In addition to the transactions, a separate Category option is needed for each of the "Deliver to" options in order to record all details of "Distribution" transactions:
+
+
+
+
+Capture Web App - Tracked Entity Instance Management
+Xx
+The web portal Capture app is used for "enrolling" new Tracked Entity Instances which each correspond to an item (health care product).
+
+TEIs are registered once in a specific DHIS2 database and the same TEI (with the same ID) is used for different OUs as well as possibly in other Tracker programs or Event programs.
+
+Note that the "Report date" can be added from the cog wheel menu once the "STAGE FILTER" has been added.
+
+Note that the order of the columns can be changed by "drag and drop" in the cogwheel menu.
+
+**DHIS2-RTS Stock report working list**
+
+- Open "Capture" app and "Save as": "DHIS2-RTS Stock report" (note that a new name cannot be created later on)
+
+**More filters**
+
+- "Program stage": "Stock on hand"
+- Add all available filters for the columns displayed below.
+
+**Select columns** - "Columns to show in table" (cogwheel icon)
+
+- "Report Date"
+- "Deliver to"
+- "Item code"
+- "Item description"
+- "Previous Stock Balance"
+- "Stock receipt"
+- "Stock distribution"
+- "Stock discard"
+- "Stock correction"
+- "Stock on hand"
+- "Stock count"
+
+[Question: apparently the "Program stage" filter is not saved and disappears when exiting the screen without any possibility to "update" or "save" the view].![](media/image37.png)
+
+xxx
+In principle, this application will not be used as transactions will be exclusively managed in the customized app and a dashboard will be available for analysis of all transactions. However, the Capture app may be used for registering and enrolling (additional) items in an Organisation unit (health facility) and possibly for managing "manual" stock receipts for a small number of items.
+
+**Working list**
+
+Saved as "DHIS2-RTS Stock item list" after customization:
+
+![](media/image65.png)
+
+**Enrollment Dashboard**
+
+This dashboard shows the "Item profile" as well as a record of all transactions in chronological order:
+
+![](media/image40.png)
+
+Note that the transactions with the same date are not placed in chronological order. Therefore any data entry through the web portal must only be made on the very last transactions as otherwise the Program rules lead to incorrect values for the current stock on hand.
+
+
+
+## Bulk Load Web App - Uploading Stock Receipts
+Xx
+
+
+
+
+## Data Visualizer Web App - "Aggregate" Analytics and Visualizations
+Xx
+xxx
+The DHIS2-RTS analytics are a critical and indispensable component of the DHIS2-RTS concept. The DHIS2-RTS app allows managing all transactions without the need for keeping paper records. However, recording transactions as such is nearly useless unless a record of all transactions is instantly and available to the storekeeper. Despite the availability of detailed transactional reports, compliance with monthly reporting requirements must be maintained.
+
+The DHIS2 analytics provides reports both on individual transactions as well as "snapshots" with stock values on the last day of every month.
+
+Reports are accessible to all users with the respective authorities on mobile device (with limitations) as well as in the web portal.
+xxx
 These group of reports is generated from Data elements and the category options from the Data Entry form for visualizing daily and monthly totals of transactions.
 
 ##### DHIS2-RTS Monthly report - Summary
@@ -1520,11 +1758,8 @@ This report automatically provides the number of items which are out of stock ev
 
 ![](media/image48.png)
 
-## Dashboard Web App - DHIS2-RTS Dashboard
 
-Each of the DHIS2-RTS dashboards presents a single Line Listing or Data Visualizer report or visualization in order to maximize their size when viewed on a (small) mobile device.
 
-All dashboards need to be configured as "Make available offline" so that they can be viewed on a mobile device when it is offline.
 
 ## Line Listing Web App - Transaction Analytics and Visualizations
 Xx
@@ -1698,219 +1933,24 @@ This report (selectively) lists all "Stock correction" transactions.
 
 ![](media/image18.png)
 
+
+
+
+
 ## Maps Web App - Analytics and Visualizations
 Xx
 
-## User Web App - User management
-Xx
 
-### "Users" app
 
-The Users app allows configuring User roles, creating user profiles for individual users and assigning them to defined User groups.
+## Dashboard Web App - DHIS2-RTS Dashboard
 
-#### User
+Each of the DHIS2-RTS dashboards presents a single Line Listing or Data Visualizer report or visualization in order to maximize their size when viewed on a (small) mobile device.
 
-User access will be managed by the entity managing the central DHIS2 server and according to national policies concerning data security.
+All dashboards need to be configured as "Make available offline" so that they can be viewed on a mobile device when it is offline.
 
-By default, the language is set to the national language used in the country, or in case there is more than one, according to national policies but can be adapted to individual users or user groups if needed.
 
-The DHIS2-RTS should allow using any language configured on the central DHIS2 server.
 
-According to their responsibilities, needs for accessing (viewing) data and authority to change (edit) data, every user is assigned one or several of the "User roles" and assigned to one specific (or exceptionally more than one) Organisation unit for which s/he has access for viewing and editing data.
 
-#### User role
-
-Three distinct User roles are configured which each give access to specific DHIS2 apps and determine whether users can access certain metadata such as Data elements, Data sets or Organisation units.
-
-If a Default Data Entry Form is configured as a "backup" in case of DHIS2-RTS failure, user rights have to be configured both for the Data Entry Form as well as the Tracker Program.
-
-While configuring user settings is a native DHIS2 functionality, the details of providing users access to the DHIS2-RTS mobile app (and module) need to be developed.
-
-##### DHIS2-RTS - Data entry
-
-This User role allows users to access the DHIS2 Capture Android app (native app) on mobile devices as well as to DHIS2-RTS within the "module" for viewing, entering and recording transactions.
-
-##### DHIS2-RTS - Reader
-
-This User role allows users to view stock data in the DHIS2-RTS (or only viewing the in-app off-line analytics reports).
-
-##### DHIS2-RTS - Superuser
-
-This user role is reserved to system administrators and allows configuring settings and managing the DHIS2 instance and system.
-
-#### User group
-
-The main purpose of user groups is facilitating configuration of "Sharing" settings (which determine viewing and editing rights) by groups rather than having to manage them at the level of hundreds of individual users.
-
-User groups should be configured according to the User Role into the same three groups:
-
-- Data entry
-- Reader
-- Superuser
-
-## Android Settings Web App - Synchronization and Offline Analytics
-Xx
-The "Android settings app" allows to customize some functionality across all mobile devices using the Capture Android app. The settings in this chapter should be merely considered as a recommendation to simplify user interfaces but do not have any immediate impact on the DHIS2-RTS app itself.
-
-#### Synchronization settings
-
-##### Global
-
-While it is strongly recommended that users synchronize mobile devices data immediately after every completed transaction, a daily synchronization is recommended as a backup.
-
-Since it will be difficult to inform all users of any change to the metadata, its synchronization should also be completed once a day to ensure that all mobile devices are always updated.
-
-> How often should metadata sync?: "1 Day"
->
-> How often should data sync?: "1 Day"
-
-Note that this daily, periodic synchronization will only be affected automatically if a network connection is available at the time the synchronization is prompted on the mobile device.
-
-##### Data sets
-
-Limiting the number of periods for which data is downloaded to the mobile device will limit storage requirements and improve usability. Moreover, it is unlikely a storekeeper would want to analyse monthly report daily, say, five years back and one year of data should be sufficient.
-
-Maximum number of periods to download data sets for: "12".
-
-#### Appearance settings
-
-Although this settings does not affect the DHIS2-RTS app itself (for which the home screen is "fixed", for convenience it is recommended to reduce the filter options on the home screen.
-
-Date: do not tag
-
-Organisation Unit: tag
-
-Sync status: do not tag
-
-Assigned to me: do not tag
-
-#### Analytics settings
-
-This chapter describes the configuration for visualizing some analytics on the mobile device.
-
-## Use Case Configuration Web App - Program Configuration
-Xx
-This new DHIS2 app "links" the "Real-Time Stock Management" Tracker Program to the customized mobile app. While the Tracker Program will have the appearance of any other Tracker Program on the Capture Android app home screen, selecting a Tracker Program which is "linked" to the "Real-Time Stock Management" app will invoke the customized app instead of opening the conventional TEI dashboard.
-
-Select "Add Program" to add a new Tracker Program configured for real-time stock management.
-
-##### Configure Program
-
-##### General
-
-- Program Types: "Logistics"
-- Description: "Real-time stock management application"
-- Program \*: "Real-Time Stock Management"
-
-##### Details
-
-- Item Code \*: "Item code"
-- Item Description \*: "Item description"
-- Stock on Hand \*: "Stock on hand"
-
-##### Transactions
-
-Distributed
-
-- Distributed to \*: "Deliver to"
-- Distributed Stock \*: "Stock distribution"
-
-Corrected
-
-- Corrected Stock \*: "Stock correction"
-- Stock Count \*: "Stock count"
-
-Discarded
-
-- Discarded Stock \*: "Stock discard"
-
-## APK Distribution Web App - User Management
-Xx
-
-## Scheduler Web App - Predictor Scheduling
-Xx
-The "Scheduler" app allows configuring the automatic and periodic execution of all Predictors (separately or conveniently grouped in a "Predictor group":
-
-Configuration
-
-- Name \*: "T2A Predictors"
-- Job type \*: "Predictor"
-- CRON Expression \*: "00 05 00 \* \* \*" ("At 12:05:00 AM)
-
-This CRON job is automatically executed every day at 00:05. If required, the Scheduler can also be set to run more frequently, for example twice a day, every four hours or every hour.
-
-Parameters
-
-- Relative start: "-32"
-- Relative end: "32"
-
-Note that the "Relative start" and "Relative end" are always configured in days. In order for the Predictors to aggregate the enter last month, the "Relative start" must always be set to a day in the previous month and the "Relative end" date must also fall into the next month. In order to cater for all possible constellations during the month, 32 days should be used.
-
-This configuration will update Predictors once every day in order to provide monthly updates on transaction quantities rather than showing zero for the entire month and then providing values for the previous month only on the first day of the following month.
-
-## Data Entry (Beta) Web App - Predictor Scheduling
-Xx
-**Data Entry (beta) - to be added**
-The Data set with its components such as the Category options appears as a Default Data Entry form in the "Data Entry" app. As Custom Data Entry Forms do not render on mobile devices, they must not be used. All users must have the option of entering monthly stock report data on a mobile device as a fallback option in case the DHIS2-RTS mobile application (temporarily) fails.
-
-Ideally, two reports one with the total distributions and one with the "Deliver to" details would be available but it is not possible to assign more than one "Category combination" to any Data element and for displaying two different Data Entry forms, every Data element would have to be duplicated. As a work around, one single Data Entry form contains all the the "Deliver to" options as separate columns as well as the "Distribution" which is the summary of total distributions. This allows to configure two separate reports (and others of course) as "Pivot table" in the "Data Visualizer".
-
-Category options are not needed for recording transactions in the Tracker Program but required for the monthly Tracker Program "snapshot" data as well as a fallback system in case the DHIS2-RTS (temporarily) fails. In addition to the transactions, a separate Category option is needed for each of the "Deliver to" options in order to record all details of "Distribution" transactions:
-
-## Capture Web App - Tracked Entity Instance Management
-Xx
-The web portal Capture app is used for "enrolling" new Tracked Entity Instances which each correspond to an item (health care product).
-
-TEIs are registered once in a specific DHIS2 database and the same TEI (with the same ID) is used for different OUs as well as possibly in other Tracker programs or Event programs.
-
-Note that the "Report date" can be added from the cog wheel menu once the "STAGE FILTER" has been added.
-
-Note that the order of the columns can be changed by "drag and drop" in the cogwheel menu.
-
-**DHIS2-RTS Stock report working list**
-
-- Open "Capture" app and "Save as": "DHIS2-RTS Stock report" (note that a new name cannot be created later on)
-
-**More filters**
-
-- "Program stage": "Stock on hand"
-- Add all available filters for the columns displayed below.
-
-**Select columns** - "Columns to show in table" (cogwheel icon)
-
-- "Report Date"
-- "Deliver to"
-- "Item code"
-- "Item description"
-- "Previous Stock Balance"
-- "Stock receipt"
-- "Stock distribution"
-- "Stock discard"
-- "Stock correction"
-- "Stock on hand"
-- "Stock count"
-
-[Question: apparently the "Program stage" filter is not saved and disappears when exiting the screen without any possibility to "update" or "save" the view].![](media/image37.png)
-
-xxx
-In principle, this application will not be used as transactions will be exclusively managed in the customized app and a dashboard will be available for analysis of all transactions. However, the Capture app may be used for registering and enrolling (additional) items in an Organisation unit (health facility) and possibly for managing "manual" stock receipts for a small number of items.
-
-**Working list**
-
-Saved as "DHIS2-RTS Stock item list" after customization:
-
-![](media/image65.png)
-
-**Enrollment Dashboard**
-
-This dashboard shows the "Item profile" as well as a record of all transactions in chronological order:
-
-![](media/image40.png)
-
-Note that the transactions with the same date are not placed in chronological order. Therefore any data entry through the web portal must only be made on the very last transactions as otherwise the Program rules lead to incorrect values for the current stock on hand.
-
-## Bulk Load Web App - Uploading Stock Receipts
-Xx
 
 ## Android Capture App - DHIS2-RTS mobile application
 Xx
@@ -2160,8 +2200,6 @@ For each "Discard" transaction the following workflow is required: user
 
 This use case only shows the steps which differ from the "Distribution" use case.
 
-.
-
 1.  User accesses the DHIS2-RTS mobile device application.
 2.  The DHIS2-RTS home screen opens. ![](media/image7.png)
 3.  User taps on the "Distribution" button of the DHIS2-RTS home screen.
@@ -2246,14 +2284,6 @@ The DHIS2 analytics (as of the time the mobile device was connected to the Inter
 
 In order to view the the visualizations without the dashboard headers select "View fullscreen" from the three dot menu in the upper right corner of each visualization.
 
-#### Summary analytics through Data entry forms
-
-While the Pivot tables from the Data Visualizer app are too complex for viewing the offline analytics, the same information is available from the daily and monthly detailed reports from the respective Data entry forms which are natively available offline.
-
-#### Offline in-app analytics
-
-_Under development_.
-
 ### Mobile device synchronization
 
 The DHIS2-RTS mobile app uses the native synchronization functionality which is included in the detailed DHIS2 documentation. The simplest way for synchronizing the mobile after every transaction is using the synchronization icon (double reverse arrow) in the header bar without having to leave the DHIS2-RTS user interface. However, there are some important operational considerations which are specific to the real-time stock management use case.
@@ -2305,13 +2335,6 @@ xxxxxxxxxx
 
 
 
-### Analytics configuration
-
-The DHIS2-RTS analytics are a critical and indispensable component of the DHIS2-RTS concept. The DHIS2-RTS app allows managing all transactions without the need for keeping paper records. However, recording transactions as such is nearly useless unless a record of all transactions is instantly and available to the storekeeper. Despite the availability of detailed transactional reports, compliance with monthly reporting requirements must be maintained.
-
-The DHIS2 analytics provides reports both on individual transactions as well as "snapshots" with stock values on the last day of every month.
-
-Reports are accessible to all users with the respective authorities on mobile device (with limitations) as well as in the web portal.
 
 
 #### Summary of data model
@@ -2433,13 +2456,11 @@ Every Data set is assigned to the Organisation Unit for which it has been config
 
 The "Period type" is set to "Monthly" by default as all healthcare facilities are requested to submit reports every month.
 
-
-
-
-
 #### Uploading initial stock
 
 Before the DHIS2-RTS mobile application is used, a complete phyiscal stock count should be carried out to confirm the available stock on hand. The result of this stock count is then simply uploaded as the initial stock receipt explained in chapter 4.3.
+
+
 
 
 ## Medical stores management
@@ -2601,4 +2622,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-Last edit: GMc on 14-01-2024 at 01:47
+Last edit: GMc on 14-01-2024 at 12:51
