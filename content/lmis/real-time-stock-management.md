@@ -1132,21 +1132,20 @@ A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock o
 - Stock on Hand \>=1: light yellow background
 - Name (\*): "Stockout"
 
-Stockout
-
-- Name: Stockout
-- Start value: 0
-- End value: 1
-- Colour: #F74432
-
-Stock
-
-- Name: Stock
-- Start value: 1
-- End value: 999999
-- Colour: #F9E6BB
-
-![](media/image8.png)
+>**1 Stockout**
+>>**1 Stockout**
+>>>**Name**: "Stockout"  
+>>>**Start value**: "0"  
+>>>**End value**: "1"  
+>>>**Color code**: "#F74432" (red)  
+>>
+>>**1 Stock**
+>>>**Name**: "Stock"  
+>>>**Start value**: "1"  
+>>>**End value**: "999999"  
+>>>**Color code**: "#F9E6BB" (cream-coloure)  
+>>
+>>![](media/image8.png)
 
 #### 7.3 Predictor
 
