@@ -1357,7 +1357,6 @@ User groups may be configured according to the User roles into the same two grou
 - DHIS2-RTS - Analytics access
 
 ## Android Settings Web App - Synchronization and Offline Analytics
-Xx
 The "Android settings Web App" allows customizing synchronization settings as well as configuring offline analytics.
 
 >**Synchronization**  
