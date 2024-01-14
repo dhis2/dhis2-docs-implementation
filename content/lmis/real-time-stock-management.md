@@ -1276,86 +1276,85 @@ T2A - DORACEFI4T - CEFIXIME, 400 mg, tab. - DIST - Inpatient Medical Department 
 
 The "Predictor group" is required in order to allow running all Predictors periodically and together by the "Scheduler" rather than having to prompt them one by one. All Predictors required for the DHIS2-RTS can be grouped together and be run together in the Scheduler App
 
->**1 DHIS2-RTS - T2A - Predictor**  
->**Name \(*)**: "DHIS2-RTS - T2A - Predictors"  
+>**1 DHIS2-RTS - T2A - Predictorr - DAY**  
+>**Name \(*)**: "DHIS2-RTS - T2A - Predictors DAY"  
 >**Predictors**
 >>"T2A - [Item] - [Deliver to] - PR - DAY"  
+>>
+>**2 DHIS2-RTS - T2A - Predictorr - DAY**  
+>**Name \(*)**: "DHIS2-RTS - T2A - Predictors MTH"  
+>**Predictors**
 >>"T2A - [Item] - [Deliver to] - PR - MTH"  
->>*Include all configured Predictors for the DHIS2-RTS application*
-
-
-
 
 ## Scheduler Web App - Predictor Scheduling
-Xx
-The "Scheduler" app allows configuring the automatic and periodic execution of all Predictors (separately or conveniently grouped in a "Predictor group":
+"Scheduler" app allows configuring the automatic and periodic execution of Predictors by Predictor group for the daily and monthly Data entry forms.
 
-Configuration
+>**1 DHIS2-RTS - T2A - Predictors - DAY**  
+>>**Configuration**
+>>>**Name \(*)**: "DHIS2-RTS - T2A - Predictors - DAY"  
+>>>**Job type \(*)**: "Predictor"  
+>>>**CRON Expression \(*)**: "00 05 00 * * *" ("At 12:05:00 AM)
+>>
+>>**Parameters**
+>>>**Relative start**: "-1"  
+>>>**Relative end**: "1"  
+>>>**Predictor groups**: "DHIS2-RTS - T2A - Predictors DAY"  
+This CRON job is automatically executed every day at 00:05. If required, the Scheduler can also be set to run more frequently, for example twice a day, every four hours or every hour.  
+>
+>**2 DHIS2-RTS - T2A - Predictors - MTH**  
+>>**Configuration**
+>>>**Name \(*)**: "DHIS2-RTS - T2A - Predictors - MTH"  
+>>>**Job type \(*)**: "Predictor"  
+>>>**CRON Expression \(*)**: "00 05 00 1 * *" ("At 12:05:00 AM, on day 1 of the month)
+>>
+>>**Parameters**
+>>>**Relative start**: "-32"  
+>>>**Relative end**: "1"  
+>>>**Predictor groups**: "DHIS2-RTS - T2A - Predictors MTH"  
+This CRON job is automatically executed on the first day of every month at 00:05. If required, the Scheduler can also be set to run more frequently, for example once a week or once a day.
 
-- Name \*: "T2A Predictors"
-- Job type \*: "Predictor"
-- CRON Expression \*: "00 05 00 \* \* \*" ("At 12:05:00 AM)
+## Users Web App - User management
 
-This CRON job is automatically executed every day at 00:05. If required, the Scheduler can also be set to run more frequently, for example twice a day, every four hours or every hour.
+The configuration of user roles, user groups and individual users will follow national policies and protocols and the majority of users will already have a DHIS2 user profile before starting the use of DHIS2-RTS. Nevertheless, all users need to have access to the Android Capture app for using the DHIS2-RTS application. If the daily or monthly Data entry form is used as a fallback in case the mobile application fails, users also require the respective user authorities for entering and editing data. Finally, all users should have access to the DHIS2 analytics.
 
-Parameters
+### User
+Existing users can be assigned additional user roles while a user profile needs to be created for all new users.
 
-- Relative start: "-32"
-- Relative end: "32"
+### User role
+All users which are recording transactions must be (also) asssigned to the User role "DHIS2-RTS Android Capture app" while other users might not record any transaction but still need to access (only) the DHIS2 analytics.
 
-Note that the "Relative start" and "Relative end" are always configured in days. In order for the Predictors to aggregate the enter last month, the "Relative start" must always be set to a day in the previous month and the "Relative end" date must also fall into the next month. In order to cater for all possible constellations during the month, 32 days should be used.
+>**1 DHIS2-RTS - Android Capture App**  
+>>**Name \(*)**: "DHIS2-RTS - Android Capture App"  
+>>**Description**: "Android Capture App data entry"  
+>>**Metadata authorities**  
+>>>"Data Value": "Add/Update Public" and "Delete"  
+>>
+>>**Other authorities / Selected tracker authorities**  
+>>>"Search Tracked Entity Instance in All Org Units"  
+>>>"View event analytics"  
+>>>"Update tracked entities"  
+>>>"Uncomplete events"
+>
+>**2 DHIS2-RTS - Analytics access**  
+>>**Name \(*)**: "DHIS2-RTS - Analytics access"  
+>>**Description**: "Dashboard and analytic apps access"  
+>>**Other authorities / Selected app authorities**
+>>>"Browser Cache Cleaner app"  
+>>>"Menu Management app"  
+>>>"Data Visualizer app"  
+>>>"linelisting app"  
+>>>"Dashboard app"  
+>>
+>>**Other authorities / Selected tracker authorities**  
+>>>"View event analytics"  
 
-This configuration will update Predictors once every day in order to provide monthly updates on transaction quantities rather than showing zero for the entire month and then providing values for the previous month only on the first day of the following month.
-
-
-## User Web App - User management
-Xx
-
-### "Users" app
-
-The Users app allows configuring User roles, creating user profiles for individual users and assigning them to defined User groups.
-
-#### User
-
-User access will be managed by the entity managing the central DHIS2 server and according to national policies concerning data security.
-
-By default, the language is set to the national language used in the country, or in case there is more than one, according to national policies but can be adapted to individual users or user groups if needed.
-
-The DHIS2-RTS should allow using any language configured on the central DHIS2 server.
-
-According to their responsibilities, needs for accessing (viewing) data and authority to change (edit) data, every user is assigned one or several of the "User roles" and assigned to one specific (or exceptionally more than one) Organisation unit for which s/he has access for viewing and editing data.
-
-#### User role
-
-Three distinct User roles are configured which each give access to specific DHIS2 apps and determine whether users can access certain metadata such as Data elements, Data sets or Organisation units.
-
-If a Default Data Entry Form is configured as a "backup" in case of DHIS2-RTS failure, user rights have to be configured both for the Data Entry Form as well as the Tracker Program.
-
-While configuring user settings is a native DHIS2 functionality, the details of providing users access to the DHIS2-RTS mobile app (and module) need to be developed.
-
-##### DHIS2-RTS - Data entry
-
-This User role allows users to access the DHIS2 Capture Android app (native app) on mobile devices as well as to DHIS2-RTS within the "module" for viewing, entering and recording transactions.
-
-##### DHIS2-RTS - Reader
-
-This User role allows users to view stock data in the DHIS2-RTS (or only viewing the in-app off-line analytics reports).
-
-##### DHIS2-RTS - Superuser
-
-This user role is reserved to system administrators and allows configuring settings and managing the DHIS2 instance and system.
-
-#### User group
+### User group
 
 The main purpose of user groups is facilitating configuration of "Sharing" settings (which determine viewing and editing rights) by groups rather than having to manage them at the level of hundreds of individual users.
 
-User groups should be configured according to the User Role into the same three groups:
-
-- Data entry
-- Reader
-- Superuser
-
-
+User groups may be configured according to the User roles into the same two groups:
+- DHIS2-RTS - Android Capture App
+- DHIS2-RTS - Analytics access
 
 ## Android Settings Web App - Synchronization and Offline Analytics
 Xx
