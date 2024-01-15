@@ -1,13 +1,10 @@
-# Real-Time Stock Management Tool
+# DHIS2-RTS Real-Time Stock Management Tool / Tracker program
 
+## Introduction
 
-![](media/image95.png)
+This document describes the use case, configuration and management of the DHIS2-RTS application for the real-time management of medical stocks at healthcare facilities using mobile devices.
 
-## 1 OVERVIEW OF THE DHIS2 REAL-TIME STOCK MANAGEMENT TOOL
-
-This entire document describes the expected system behaviour, functionality and management and neither the current processes or systems nor the change from the "as is" to the "to be" state.
-
-### 1.1 Use case overview
+### Use case overview
 
 The DHIS2-RTS provides a web and mobile app-based tool (with off-line capability), real-time digital solution for stock management which can be integrated with national eLMIS systems for managing stock replenishment as well as end-to-end supply chain analytics.
 
@@ -29,7 +26,7 @@ Recording individual stock transactions rather than recording and reporting stoc
 
 - The system eliminates redundancies for data collection with national LMIS systems (even if on paper or in Excel) as a single data value, namely the transaction quantity of every item, is recorded.
 
-**Structures and preconditions**
+### Structures and preconditions
 
 The application is based on adherence to specific structures and processes which inform the system design and functionality.
 
@@ -50,7 +47,7 @@ The application is based on adherence to specific structures and processes which
 - Mobile devices are available and reliably maintained.
 - Staff at the healthcare facility are conversant with the use of mobile devices or can be trained (within reasonable time).
 
-### 1.2 System components
+### System components
 
 The system consists of the following distinct components:
 
@@ -68,13 +65,11 @@ The system consists of the following distinct components:
 
 The guiding principle of the DHIS2-RTS concept is using mainly national eLMIS functionality for managing all logistics processes and collecting only the data which is generated at the healthcare facility with the DHIS2-RTS app. This strictly follows the DRY ("Don\'t Repeat Yourself") software development principle: "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system".
 
-### 1.3 Overview of business processes and workflows
+### Overview of business processes and workflows
 
 The DHIS2-RTS mobile application is used by storekeepers of pharmacies and medical stores at healthcare facilities, called "end-users".
 
 "Department and service" stands for any facility or service within any healthcare facility which holds and manages stocks of any kind which are regularly replenished such as patient wards, dispensaries (OPD), operating theatres, sterilization services, laboratory and blood transfusion services, diagnostic imaging, laundry, maintenance services or other services.
-
-**Processes**
 
 - Receiving and put-away of stocks received from upstream medical distribution centres
 
@@ -94,7 +89,7 @@ Around 50 stock items (Primary Health Care centre) to 500 stock items (hospitals
 
 The DHIS2 web portal may be used by managers at the healthcare facilities but is more likely to be used by health or logistics managers almost exclusively for consulting analytics reports.
 
-### 1.4 Stock calculations
+### Stock calculations
 
 The "Stock on hand" is (re)calculated in real-time after every transaction which are mainly recorded on the mobile device but are also be affected by transactions through the Tracker Program in the web portal or through integrations with a national upstream eLMIS.
 
@@ -110,13 +105,17 @@ All transactions as well as the actual "Stock on hand" always have positive inte
 
 Transactions have different boundaries and affect the calculated logistics data in different ways:
 
-Transaction type Effect on "Stock on hand" Effect on total monthly demand
+| Transaction type | Effect on "Stock on hand" | Effect on total monthly demand |
+| :--- | :--- | :--- |
+| Distribution | Decrease | Increase |
+| Discard | Decrease | Not affected |
+| Correction: SoH > calculated value | Increase | Not affected |
+| Correction: SoH < calculated value | Decrease | Not affected |
+| Return | Increase | Decrease |
+| Transfer | Decrease | Not affected |
+| Receipt | Increase | Not affected |
 
----
-
-Distribution Decrease Increase Discard Decrease Not effected Correction: SoH \> calculated value Increase Not effected Correction: SoH \< calculated value Decrease Not effected Return Increase Decrease Transfer Decrease Not effected Receipt Increase Not effected
-
-### 1.5 Mobile device management
+### Mobile device management
 
 The entity or organization, such as the Ministry of Health, must provide and ensure maintenance of mobile devices and govern their use. For the sake of data protection, sustainability and managing data subscriptions, the use of private devices should be discouraged.
 
@@ -137,21 +136,13 @@ If mobile devices are purchased specifically for the implementation of DHIS2-RTS
 
 - The device should withstand the rugged climatic conditions in the country in terms of temperature, humidity and dust and be resilient to drops and other physical damage
 
-The DHIS2 documentation lists the following mobile device specification requirements (last updated 11.08.2022): [DHIS2 Mobile Device Specifications](https://docs.dhis2.org/en/implement/android-implementation/mobile-device-specifications.html)
+The DHIS2 documentation lists the following mobile device specification requirements: [DHIS2 Mobile Device Specifications](https://docs.dhis2.org/en/implement/android-implementation/mobile-device-specifications.html)
 
-**Specification** **DHIS2**
-
----
-
-Construction Lifespan of at least 2 years Android operating system version minimum 5.0, minimum recommended 7.X and recommended 8.X or higher Processor 4 cores, 1.2 GHz RAM (tablet) minimum 1.5 Gb, recommended more than 3 Gb Storage minimum 8 Gb, recommended 32 Gb Screen size minimum 7 inches Camera minimum 5 megapixel, recommended at least 8 mega pixel Connectivity 4G (LTE) / 3G and WLAN
-
-One possible (future) option for resolving the conflict between a small and light device for order picking and the preference of a larger screen for analytics is attaching a larger mobile device to a cart during transactions while scanning the barcodes with an external barcode scanner connected to the mobile device through an USB-cable or a Bluetooth connection.
-
-### 1.6 Contingency plan in case of device failure
+### Contingency plan in case of device failure
 
 In case the mobile device fails or malfunctions for any reason (out of charge, damaged, not found, stolen, authentication forgotten) or the Internet access is not available for more than one day, healthcare facilities should consider using alternative mobile device or Internet access.
 
-**In case the Internet is unavailable for less than one day**
+#### In case the Internet is unavailable for less than one day
 
 - Wait for restoring of the Internet connection provided no urgent orders have to be treated
 
@@ -159,12 +150,12 @@ In case the mobile device fails or malfunctions for any reason (out of charge, d
 
 - Retrospectively enter the transaction by scrolling down the stock item list and recording quantities
 
-**In case of Internet is unavailable for more than one day**
+#### In case of Internet is unavailable for more than one day
 
 - Resume manual recording of transactions on stock cards
-- Use a DHIS2 Default Data Entry Form at the end of the month (which is much less work than retrospectively entering hundreds of transactions
+- Use a DHIS2 Default Data Entry Form at the end of the month (which is much less work than retrospectively entering many transactions in the correct chronological order)
 
-**In case all systems fail**
+#### In case all systems fail
 
 At any time, users can resort to the manual, paper- or spreadsheet-based method which were in use before the introduction of the DHIS2-RTS application:
 
@@ -173,196 +164,245 @@ At any time, users can resort to the manual, paper- or spreadsheet-based method 
 
 - Calculate the monthly replenishment order using a paper record or a spreadsheet application
 
-## 2 DHIS2 METADATA CONFIGURATION
+## Maintenance Web App - DHIS2 metadata configuration
 
-Although configuration of DHIS2 in general and the DHIS2 Tracker Program in particular are not part of the development, many settings are closely linked to the custom development and critical for its functioning. Moreover, this chapter is added in order to provide full documentation of the entire system which is required for running and using DHIS2-RTS.
+This chapters provides a complete overview all metadata elements and their settings which are required specifically for configuring the DHIS2-RTS Tracker Program as well as the "aggregate" Data Entry form for recording daily and monthly "snapshots". Most of the settings can be modified and adapted to the specific context of an implementation while some settings, such as the Program rule or Use-case-configuration app, must not be modified as the function of the mobile application may be impaired.
 
-All the configurations and settings use only native DHIS2 functionality and do not require extending or developing any DHIS2 features.
+### Metadata overview
+The required metadata settings seetings are presented in the order in which it is presented in the DHIS2 Maintenance Web App.
 
-### 2.1 DHIS2 server instance system configuration
+>**1 CATEGORY**  
+>>1.1 Category option  
+>>1.2 Category  
+>>1.3 Category combination 
+> 
+>**2 DATA ELEMENT**  
+>>2.1 Data element - "Aggregate"  
+>>2.2 Data element - "Tracker"  
+>>2.2 Data element group  
+> 
+>**3 DATA SET**  
+>>3.1 Data set  
+> 
+>**4 INDICATOR**  
+>>4.1 Indicator  
+>>4.2 Indicator type  
+>>4.3 Program indicator  
+> 
+>**5 ORGANISATION UNIT**  
+>>5.1 Organisation unit  
+>>5.1 Organisation unit group  
+> 
+>**6 PROGRAM**  
+>>6.1 Program  
+>>6.2 Tracked entity attribute  
+>>6.3 Tracked entity type  
+>>6.4 Program rule  
+>>6.5 Program rule variable  
+> 
+>**7 OTHER**  
+>>7.1 Option set  
+>>7.2 Legend  
+>>7.3 Predictor  
+>>7.4 Predictor group  
 
-The DHIS2 server (instance) is the physical device where the DHIS2 software as well as the database holding the data is installed, permanently running and allows a large number of users to connect to the DHIS2 web portal as well as the DHIS2 mobile device application and its data base at any time.
+### 1 CATEGORY
+This metadata is needed (only) for configuring an "aggregate" default Data entry form for "hosting" the daily and monthly aggregated Tracker data and making it available for various analytics visualizations and dashboards. In case the DHIS2-RTS mobile app (temporarily) falls, the aggregate Data Entry form can also be used for collecting monthly stock data.
 
-Maintenance of the server, backups, upgrades and resolving errors will have to be ensured by the entity in charge of managing the public health supply system, usually the Ministry of Health (MoH). This work is carried out according to standard DHIS2 guidelines and recommendations.
+#### 1.1 Category option
+Note that the Category option names are intentionally kept short to reduce the overall width of the Data Entry form and ease visualizing and navigating the form. The "Stock distribution" corresponds to the total quantity of all the "DIS - [Deliver to] Category options and can be removed/added or be hidden/unhidden as and if needed.
 
-### 2.2 User app
+>**1 DIS - (Other)**  
+>>**Name \(*)**: "DIS - (Other)"  
+>>**Short name \(*)**: "DIS - (Other)"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**2 DIS - Diagn. imaging**  
+>>**Name \(*)**: "DIS - Diagn. imaging"  
+>>**Short name \(*)**: "DIS - Diagn. imaging"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**3 DIS - Emergency Room**  
+>>**Name \(*)**: "DIS - Emergency Room"  
+>>**Short name \(*)**: "DIS - Emergency Room"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**4 DIS - High Depend. Unit**  
+>>**Name \(*)**: "DIS - High Depend. Unit"  
+>>**Short name \(*)**: "DIS - High Depend. Unit"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**5 DIS - Housekeeping**  
+>>**Name \(*)**: "DIS - Housekeeping"  
+>>**Short name \(*)**: "DIS - Housekeeping"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**6 DIS - Inp. Med. Depart.**  
+>>**Name \(*)**: "DIS - Inp. Med. Depart."  
+>>**Short name \(*)**: "DIS - Inp. Med. Depart."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**7 DIS - Inp. Surg. Depart.**  
+>>**Name \(*)**: "DIS - Inp. Surg. Depart."  
+>>**Short name \(*)**: "DIS - Inp. Surg. Depart."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**8 DIS - Laboratory Depart.**  
+>>**Name \(*)**: "DIS - Laboratory Depart."  
+>>**Short name \(*)**: "DIS - Laboratory Depart."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**9 DIS - Mortuary**  
+>>**Name \(*)**: "DIS - Mortuary"  
+>>**Short name \(*)**: "DIS - Mortuary"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**10 DIS - OPD**  
+>>**Name \(*)**: "DIS - OPD"  
+>>**Short name \(*)**: "DIS - OPD"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**11 DIS - Obst. & Gynae.**  
+>>**Name \(*)**: "DIS - Obst. & Gynae."  
+>>**Short name \(*)**: "DIS - Obst. & Gynae."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**12 DIS - Oper. Theatre**  
+>>**Name \(*)**: "DIS - Oper. Theatre"  
+>>**Short name \(*)**: "DIS - Oper. Theatre"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**13 DIS - Paed. Dep.**  
+>>**Name \(*)**: "DIS - Paed. Dep."  
+>>**Short name \(*)**: "DIS - Paed. Dep."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**14 DIS - Physioth. Dep.**  
+>>**Name \(*)**: "DIS - Physioth. Dep."  
+>>**Short name \(*)**: "DIS - Physioth. Dep."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**15 DIS - Recovery Room**  
+>>**Name \(*)**: "DIS - Recovery Room"  
+>>**Short name \(*)**: "DIS - Recovery Room"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**16 DIS - Steril. Dep.**  
+>>**Name \(*)**: "DIS - Steril. Dep."  
+>>**Short name \(*)**: "DIS - Steril. Dep."  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**17 DIS - Transf. services**  
+>>**Name \(*)**: "DIS - Transf. services"  
+>>**Short name \(*)**: "DIS - Transf. services"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**18 Previous stock balance**  
+>>**Name \(*)**: "Previous stock balance"  
+>>**Short name \(*)**: "Previous stock balance"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**19 Stock correction**  
+>>**Name \(*)**: "Stock correction"  
+>>**Short name \(*)**: "Stock correction"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**20 Stock discard**  
+>>**Name \(*)**: "Stock discard"  
+>>**Short name \(*)**: "Stock discard"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**21 Stock distribution**  
+>>**Name \(*)**: "Stock distribution"  
+>>**Short name \(*)**: "Stock distribution"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**22 Stock on hand**  
+>>**Name \(*)**: "Stock on hand"  
+>>**Short name \(*)**: "Stock on hand"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**23 Stock receipt**  
+>>**Name \(*)**: "Stock receipt"  
+>>**Short name \(*)**: "Stock receipt"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
+>**24 Stock on hand Yes/No**  
+>>**Name \(*)**: "Stock on hand Yes/No"  
+>>**Short name \(*)**: "Stock on hand Yes/No"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>****
 
-The Users app allows configuring User roles, creating user profiles for individual users and assigning them to defined User groups.
+#### 1.2 Category
+>**1 RTS - Daily stock report**  
+>>**Name \(*)**: **RTS - Daily stock report**  
+>>**Short name \(*)**: "RTS - Daily stock report"  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Data dimension \(*)**: check (appears as white tick in a blue square)   
+>>**Category options**: *note the order of "Category options"*:  
+>>>"Previous stock balance"
+>>>"Stock receipt"
+>>>"DIS - Diagn. imaging"
+>>>"DIS - Emergency Room"
+>>>"DIS - High Depend. Unit"
+>>>"DIS - Housekeeping"
+>>>"DIS - Inp. Med. Depart."
+>>>"DIS - Inp. Surg. Depart."
+>>>"DIS - Laboratory Depart."
+>>>"DIS - Mortuary"
+>>>"DIS - Obst. & Gynae."
+>>>"DIS - OPD"
+>>>"DIS - Oper. Theatre"
+>>>"DIS - (Other)"
+>>>"DIS - Paed. Dep."
+>>>"DIS - Physioth. Dep."
+>>>"DIS - Recovery Room"
+>>>"DIS - Steril. Dep."
+>>>"DIS - Transf. services"
+>>>Stock distribution
+>>>Stock discard
+>>>Stock correction
+>>>Stock on hand
+>>>Stock on hand Yes/No
+>
+>**2 RTS - Monthly stock report**  
+>>**Name \(*)**: **RTS - Monthly stock report**  
+>>**Short name \(*)**: "RTS - Monthly stock report"  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Data dimension \(*)**: check (appears as white tick in a blue square)   
+>>**Category options**: *note the order of "Category options"*  
+>>>"Previous stock balance"
+>>>"Stock receipt"
+>>>"DIS - Diagn. imaging"
+>>>"DIS - Emergency Room"
+>>>"DIS - High Depend. Unit"
+>>>"DIS - Housekeeping"
+>>>"DIS - Inp. Med. Depart."
+>>>"DIS - Inp. Surg. Depart."
+>>>"DIS - Laboratory Depart."
+>>>"DIS - Mortuary"
+>>>"DIS - Obst. & Gynae."
+>>>"DIS - OPD"
+>>>"DIS - Oper. Theatre"
+>>>"DIS - (Other)"
+>>>"DIS - Paed. Dep."
+>>>"DIS - Physioth. Dep."
+>>>"DIS - Recovery Room"
+>>>"DIS - Steril. Dep."
+>>>"DIS - Transf. services"
+>>>Stock distribution
+>>>Stock discard
+>>>Stock correction
+>>>Stock on hand
 
-#### 2.2.1 User
+#### 1.3 Category combination
+>**Name \(*)**: **RTS - Monthly stock report**  
+>**Short name \(*)**: "RTS - Monthly stock report"  
+>**Data dimension type \(*)**: "Disaggregation"  
+>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
+>**Categories**: "RTS - Monthly stock report"
 
-User access will be managed by the entity managing the central DHIS2 server and according to national policies concerning data security.
-
-By default, the language is set to the national language used in the country, or in case there is more than one, according to national policies but can be adapted to individual users or user groups if needed.
-
-The DHIS2-RTS should allow using any language configured on the central DHIS2 server.
-
-According to their responsibilities, needs for accessing (viewing) data and authority to change (edit) data, every user is assigned one or several of the "User roles" and assigned to one specific (or exceptionally more than one) Organisation unit for which s/he has access for viewing and editing data.
-
-#### 2.2.2 User role
-
-Three distinct User roles are configured which each give access to specific DHIS2 apps and determine whether users can access certain metadata such as Data elements, Data sets or Organisation units.
-
-If a Default Data Entry Form is configured as a "backup" in case of DHIS2-RTS failure, user rights have to be configured both for the Data Entry Form as well as the Tracker Program.
-
-While configuring user settings is a native DHIS2 functionality, the details of providing users access to the DHIS2-RTS mobile app (and module) need to be developed.
-
-**DHIS2-RTS - Data entry**
-
-This User role allows users to access the DHIS2 Capture Android app (native app) on mobile devices as well as to DHIS2-RTS within the "module" for viewing, entering and recording transactions.
-
-**DHIS2-RTS - Reader**
-
-This User role allows users to view stock data in the DHIS2-RTS (or only viewing the in-app off-line analytics reports).
-
-**DHIS2-RTS - Superuser**
-
-This user role is reserved to system administrators and allows configuring settings and managing the DHIS2 instance and system.
-
-#### 2.2.3 User group
-
-The main purpose of user groups is facilitating configuration of "Sharing" settings (which determine viewing and editing rights) by groups rather than having to manage them at the level of hundreds of individual users.
-
-User groups should be configured according to the User Role into the same three groups:
-
-- Data entry
-- Reader
-- Superuser
-
-### 2.3 Maintenance app
-
-The DHIS2 Maintenance app allows the system administrator to configure and modify DHIS2 metadata which are necessary for running the DHIS2 application as well as the DHIS" RTS mobile application.
-
-All geographical conventions must follow national conventions, ideally replicating conventions of a national Master Facility List.
-
-Metadata requires configuration only when setting up the DHIS2 instance and whenever changing the master data such as adding or "inactivating" Organisation units, adding or removing items from the item catalogue. These configurations and settings are not changed frequently but need to be carefully and meticulously managed to ensure that the DHIS2 is always kept up to date.
-
-In DHIS2 all metadata is automatically assigned unique IDs ("keys") which are not visible to field users but indispensable for the functioning of databases.
-
-#### 2.3.1 Organisation Unit
-
-This application allows creating new and editing existing geographical entities. As the hierarchy of regions, countries and First Administrative Level is defined by national policies and does not change, the main objective of this application is adding new healthcare facilities.
-
-The "Latitude" and "Longitude" are useful for mapping the location of healthcare facilities in the Data Visualizer.
-
-#### 2.3.2 Organisation Unit group
-
-The "Organisation unit groups" allow grouping healthcare facilities according to their level of care, for example "clinic", "hospital" etc. and are configured according to national policies.
-
-#### 2.3.3 Organisation Unit level
-
-The Organisation unit levels allow representing the geographical structure and hierarchy of healthcare facilities and are configured according to national policies and the Master Facility List.
-
-#### 2.3.4 Hierarchy operations
-
-The Hierarchy operations application represents the complete geographical and hierarchical structure of the Organisation units and allows changing the position of Organisation units in the Organisation unit hierarchy if they were not created at the correct hierarchical levels. Once created, the place in the hierarchy should, in principle, never change.
-
-#### 2.3.5 Category option
-
-Category options are not needed for recording transactions in the Tracker Program but required for the monthly Tracker Program "snapshot" data as well as a fallback system in case the DHIS2-RTS (temporarily) fails. In addition to the transactions, a separate Category option is needed for each of the "Deliver to" options in order to record all details of "Distribution" transactions:
-
-- "DIS - (Other)"
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - OPD"
-- "DIS - Obst. & Gynae."
-- "DIS - Oper. Theatre"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Previous stock balance
-- Stock correction
-- Stock discard
-- Stock distribution
-- Stock on hand
-- Stock receipt
-- Stock on hand Yes/No
-
-Note that the "Stock distribution" corresponds to the total quantity of all the "DIS - [Deliver to] Category options and can be removed/added or be hidden/unhidden as and if needed.
-
-#### 2.3.6 Category
-
-The Category "RTS - Daily stock report" combines the following "Category options":
-
-- Name (\*): "RTS - Daily stock report"
-- Short name (\*): "RTS - Daily stock report"
-- Data dimension type (\*): "Disaggregation"
-- "Data dimension": check (appears as white tick in a blue square)
-- Category options (please note the correct order):
-- Previous stock balance
-- Stock receipt
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - Obst. & Gynae."
-- "DIS - OPD"
-- "DIS - Oper. Theatre"
-- "DIS - (Other)"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-- Stock on hand Yes/No
-
-The Category "RTS - Monthly stock report" combines the following "Category options":
-
-- Name (\*): "RTS - Monthly stock report"
-- Short name (\*): "RTS - Monthly stock report"
-- Data dimension type (\*): "Disaggregation"
-- "Data dimension": check (appears as white tick in a blue square)
-- Category options (please note the correct order):
-- Previous stock balance
-- Stock receipt
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - Obst. & Gynae."
-- "DIS - OPD"
-- "DIS - Oper. Theatre"
-- "DIS - (Other)"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-
-#### 2.3.7 Category combination
-
-The only "Category combination" mirrors the only "Category": which is required for technical reasons:
-
-- Name (\*): "RTS - Monthly stock report"
-- Data dimension type (\*): "Disaggregation"
-- Categories: "RTS - Monthly stock report"
-
-#### 2.3.8 Data element - item catalogue
-
+### 2 DATA ELEMENT
 Data elements represent the items (healthcare products) for which logistics data is recorded and managed.
 
 All health care products which are registered in the DHIS2-RTS as "Tracked Entity Instance" (TEIs) need to be "mirrored" as identical Data Elements for configuring the Data Sets which are needed for every Organization Unit as a backup system.
@@ -377,367 +417,452 @@ The "Domain type" must be set to "Aggregate", the "Value type" to "Positive or Z
 
 Data elements which have been created and used cannot be deleted from the database any more as the historic data needs to be maintained. But Data Elements which are no longer needed can simply be removed from the respective Data Sets.
 
-- Name (\*): DORAALBE4T - ALBENDAZOLE, 400 mg, tab. MTH
-- Short name (\*): DORAALBE4T - MTH
-- Code: DORAALBE4T - MTH
-- Domain type (\*): "Aggregate"
-- Value type (\*): "Positive or Zero Integer"
-- Store zero data values: check (appears as white tick in a blue square)
+#### 2.1 Data element - "Aggregate"
+Below the configuration for a single Data Element is presented which needs to be applied to each item in the required item catalogue.
+>**Name \(*)**: "DORAALBE4T - ALBENDAZOLE, 400 mg, tab. MTH"  
+>**Short name \(*)**: "DORAALBE4T - ALBENDAZOLE, 400 mg, tab. MTH"
+>**Code \(*)**:  "DORAALBE4T - MTH"
+>**Domain Type \(*)**: "Aggregate"  
+>**Value type \(*)**: "Positive or Zero Integer"  
+>**Aggregation type (*)**: "Sum"  
+>**Store zero data values**: tag (appears as white tick in a blue square) 
+>**Category combination \(*)**: "RTS - Monthly stock report"  
+>**Aggregation levels**: "Facility"  
 
-- Category combination (\*): "RTS - Monthly stock report"
-- Aggregation levels: "Facility" [Question: confirm this need]
+### 2.2 Data element - "Tracker"
+These Data elements are required for configuring the Program stages of the DHIS2-RTS Tracker Program. Note that the Data element names must not have any prefixes or suffixes as these are redundant and will appear in the Line Listing.
+>**1 Deliver to**  
+>>**Name \(*)**: "Deliver to"  
+>>**Short name \(*)**: "Deliver to"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Text"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: do not tag (appears as white square) 
+>>**Option set \(*)**: "Deliver to"  
+>****
+>**2 Previous Stock Balance**
+>>**Name \(*)**: "Previous Stock Balance"  
+>>**Short name \(*)**: "Previous Stock Balance"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: tag (appears as white tick in a blue square) 
+>****
+>**3 Stock correction**  
+>>**Name \(*)**: ""  
+>>**Short name \(*)**: ""
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Number"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: tag (appears as white tick in a blue square)  
+>****
+>**4 Stock count**  
+>>**Name \(*)**: "Stock count"  
+>>**Short name \(*)**: "Stock count"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: tag (appears as white tick in a blue square)   
+>****
+>**5 Stock discard**  
+>>**Name \(*)**: "Stock discard"  
+>>**Short name \(*)**: "Stock discard"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: do not tag (appears as white square) 
+>****
+>**6 Stock distribution**  
+>>**Name \(*)**: "Stock distribution"  
+>>**Short name \(*)**: "Stock distribution"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: do not tag (appears as white square) 
+>****
+>**7 Stock on hand**  
+>>**Name \(*)**: "Stock on hand"  
+>>**Short name \(*)**: "Stock on hand"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: tag (appears as white tick in a blue square) 
+>****
+>**8 Stock receipt**  
+>>**Name \(*)**: "Stock receipt"  
+>>**Short name \(*)**: "Stock receipt"
+>>**Domain Type \(*)**: "Tracker"  
+>>**Value type \(*)**: "Positive Integer"  
+>>**Aggregation type (*)**: "None"  
+>>**Store zero data values**: do not tag (appears as white square) 
 
-In addition, for each item an equivalent item with the suffix "DAY" is needed for configuring the "RTS Daily report" Data set.
+#### 2.3 Data element group
 
-#### 2.3.9 Data element group
+The creation of Data element groups is a DHIS2 best practice but also a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
 
-The creation of Data element groups is a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
+>**1 Stock item list - DAY**  
+>**Name \(*)**: "Stock item list - DAY"  
+>**Short name \(*)**: "Stock item list - DAY"
+>**Data elements \(*)**: *select all Data elements with the "DAY" suffix"*    
+>****
+>**2 Stock item list - MTH**  
+>**Name \(*)**: "Stock item list - MTH"  
+>**Short name \(*)**: "Stock item list - MTH"
+>**Data elements \(*)**: *select all Data elements with the "MTH" suffix"*    
 
-**[Stock item list - CL]**
+### 3 Data set
 
-- Name (\*): "Stock item list"
-- Short name (\*): Stock item list
-- Data elements: include all Data elements of Data collection and calculation report
+#### 3.1 Data set
+Data sets for each Organisation unit are required both for recording daily and monthly "snapshots" of Tracker Program data as well as a fallback system in case the DHIS2-RTS fails.
 
-**[Stock item list] - DAY**
+>**1 RTS Monthly report**  
+>>**Name \(*)**: "RTS Monthly report"  
+>>**Short name \(*)**: "RTS Monthly report"  
+>>**Expiry days**: "5"  
+>>**Open future periods for data entry**: "1"  
+>>**Days after period to qualify for timely submission**: "5"  
+>>**Period type**: "Monthly"  
+>>**Category combination**: "None"  
+>>**Data elements**
+>>>"Data elements: add all Data elements with the suffix "MTH" required for the respective health facility.
+>>
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**2 RTS Daily report**  
+>>**Name \(*)**: "RTS Daily report"  
+>>**Short name \(*)**: "RTS Daily report"  
+>>**Expiry days**: "5"  
+>>**Open future periods for data entry**: "1"  
+>>**Days after period to qualify for timely submission**: "5"  
+>>**Period type**: "Daily"  
+>>**Category combination**: "None"  
+>>**Data elements**
+>>>"Data elements: add all Data elements with the suffix "DAY" required for the respective health facility.
+>>
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
 
-- Name (\*): "[Stock item list] - DAY"
-- Short name (\*): "[Stock item list] - DAY"
-- Data elements: include all Data elements from daily RTS report
-
-#### 2.3.10 Data set
-
-Data sets for each Organisation unit are required both for recording monthly "snapshots" of Tracker Program data as well as a fallback system in case the DHIS2-RTS fails.
-
-- Name (\*): "RTS Monthly report "
-- Short name (\*): "RTS Monthly report"
-- Expiry days: 5
-- Open future periods for data entry: 1
-- Days after period to qualify for timely submission: 5
-- Period type (\*): "Monthly"
-- Category combination (\*): "None"
-- Data elements: add all Data elements with the suffix "MTH" required for the respective health facility.
-
-The stock item list (list of Data elements) will have to be manually harmonized and aligned with the TEIs registered for the respective Organisation unit.
-
-Every Data set is assigned to the Organisation Unit for which it has been configured. Alternatively, all Organisation Units could use the same Data set.
-
-"Expiry days" denotes the number of days after the end of the monthly reporting period until which data for that reporting period can still be entered. In order to allow completion of physical stock counts in the days following the end of the month in case the end of the month falls on a day off, the default setting is 5 (days).
-
-"Open future periods for data entry" is set to 1 by default which allows to record data any time during the month of the current reporting period. For example, stock data for January can be entered and edited throughout the month from the first to the last day of January.
-
-"Days after period to qualify for timely submission" is also set to 5 days for the sake of consistency meaning that reports completed within the first five days of the following month are considered having been submitted on-time.
-
-The "Period type" is set to "Monthly" by default as all healthcare facilities are requested to submit reports every month.
-
-The "Category combination" is a mandatory field and must be set to "None".
-
-All other settings are left blank.
-
-In addition, a separate Data set for the daily aggregate reports is required:
-
-- Name (\*): "RTS Daily report "
-- Short name (\*): "RTS Daily report"
-- Expiry days: 5
-- Open future periods for data entry": 1
-- Days after period to qualify for timely submission": 5
-- Period type (\*): "Daily"
-- Category combination (\*): "None"
-- Data elements: add all Data elements with the suffix "DAY" required for the respective health facility.
-
-#### 2.3.11 Default Data Entry form for monthly stock data "snapshots"
-
-The Data set with its components such as the Category options appears as a Default Data Entry form in the "Data Entry" app. As Custom Data Entry Forms do not render on mobile devices, they must not be used. All users must have the option of entering monthly stock report data on a mobile device as a fallback option in case the DHIS2-RTS mobile application (temporarily) fails.
-
-Ideally, two reports one with the total distributions and one with the "Deliver to" details would be available but it is not possible to assign more than one "Category combination" to any Data element and for displaying two different Data Entry forms, every Data element would have to be duplicated. As a work around, one single Data Entry form contains all the the "Deliver to" options as separate columns as well as the "Distribution" which is the summary of total distributions. This allows to configure two separate reports (and others of course) as "Pivot table" in the "Data Visualizer".
-
-#### 2.3.12 Indicator
+### 4 Indicator
 
 The Indicator functionality is used to configure the "Stock coverage time". In principle it would be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings.
 
 Note that using the Indicator for calculating stock coverage times allows using only the distribution from the current month (which is highly inaccurate and leads to high fluctuations) and does not allow calculating an average, for example over the past three to six months.
 
-A separate Indicator is required for every Data element.
+#### 4.1 Indicator
 
-Name (\*): Stock coverage time - [Data element name]
+The "Stockout days" indicator returns the value "1" for any day where the stock on hand is zero otherwise a "0" and allows automatically calculating the number of stockout days in a month.
 
-Short name (\*): Stock coverage time - [Data element code]
+For both Indicators, a separate Indicator is required for every Data element and the configuration below provides only one example.
 
-Decimals in data output: "1"
+>**1 Coverage time**  
+>>**Name \(*)**: "[Data element name] - Coverage time"  
+>>**Short Name \(*)**: "[Item code] - Coverage time"  
+>>**Description**: "[Data element name] - Coverage time"  
+>>**Decimals in data output**: "1"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Legends**: "Stock coverage time"  
+>>**Edit numerator**:
+>>>**Description**: "[Data element name] - Coverage time - Numerator"
+>>>**Calculation**: "#{XsOfl0jZU8S.dOkDb0N10Aw}/#{XsOfl0jZU8S.X57v4Hidl3C}"  
+[Data element.Stock on hand] / [Data element.Stock distribution] /  
+>>
+>>**Edit denominator**:
+>>>**Description**: "[Data element name] - Coverage time - Denominator"
+>>>**Calculation**: "1"
+>
+>**2 Stockout days**  
+>>**Name \(*)**: "[Data element name] - Stockout days"  
+>>**Short Name \(*)**: "[Item code] - Stockout days"  
+>>**Description**: "[Data element name] - Stockout days"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "[Data element name] - Stockout days - Numerator"
+>>>**Calculation**: "#{GdVh0GGFZh1.t4Exdgy3kDb}"  
+[Data element] T2A DAY Stock on hand Yes/No
+>>
+>>**Edit denominator**:
+>>>**Description**: "[Data element name] - Coverage time - Denominator"
+>>>**Calculation**: "1"
 
-Indicator type (\*): "Number factor 1"
-
-Legends: "Stock coverage time"
-
-Edit enumerator:
-
-- Description: "Stock coverage time - [Data element name]"
-- Calculation: #{XsOfl0jZU8S.dOkDb0N10Aw}/#{XsOfl0jZU8S.X57v4Hidl3C}
-
-[Data element.Stock on hand] / [Data element.Stock distribution] /
-
-For example:
-
-DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock on hand/DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock distribution
-
-Denominator: 1
-
-**Stockout days**
-
-This indicator returns the value "1" for any day where the stock on hand is zero otherwise a "0" and allows automatically calculating the number of stockout days in a month. An indicator is needed for every Data element separately.
-
-Name (\*): DORACEFI4T - CEFIXIME, 400 mg, tab. T2A MTH - Stockout days
-
-Short name (\*): DORACEFI4T MTH - Stockout days
-
-Indicator type (\*): "Number factor 1"
-
-Edit enumerator:
-
-- Description: "DORACEFI4T MTH - Stockout days"
-- Calculation: #{GdVh0GGFZh1.t4Exdgy3kDb}
-
-DORACEFI4T - CEFIXIME, 400 mg, tab. T2A DAY Stock on hand Yes/No
-
-Denominator: 1
-
-#### 2.3.13 Indicator type
+#### Indicator type
 
 The "Indicator type" is a precondition for configuring any "Indicator".
+>**1 Number (Factor 2)**  
+>>**Name \(*)**: "Number (Factor 1)"  
+>>**Factor \(*)**: "1"  
 
-- Name (\*): "Number factor 1"
-- Factor (\*): "1"
+#### 4.3 Program indicator
 
-### 2.4 Tracker Program
+Program indicators in conjunction with Predictors allow automatically aggregating Tracker Program data and recording daily and monthly aggregate values in the respective Data Entry forms for analysis and reporting.
 
-The DHIS2 Tracker Program which serves as the foundation on which the DHIS2-RTS mobile application is built, is very simple and uses only native DHIS2 functionality without any modifications. The two program rules are absolutely critical to the entire configuration as they provide and ensure the real-time calculation of the stock on hand as soon as any transaction is validated.
+A separate Program indicator has to be created for every "pair" of item description and transaction type and one example is given below for each of the transactions for one item:
 
-#### 2.4.1 Organisation Unit
+[Data element] - Distribution
 
-The Organisation Unit, Organisation Unit group and Organisation Unit level described above apply to the entire database and therefore also apply to all Tracker Programs.
+[Data element] - Discard
 
-Organisation Units are created and added according to national protocols and policies and/or existing DHIS2 configuration.
+[Data element] - Correction
 
-#### 2.4.2 Data element
+[Data element] - Receipt
 
-In addition to the Data elements created for each of the items, the Tracker Program requires a separate Data element for each of the "Program stages":
+[Data element] - Stock on hand
 
-Name (\*):
+The item is determined by setting a corresponding "filter" and the transaction type by selecting the respective Data element from the "Stock on Hand" program stage.
 
-- "Deliver to": "Text", "Option set" = "Deliver to"
-- "Previous Stock Balance": "Positive or Zero Integer"
-- "Stock correction": "Integer"
-- "Stock count": "Positive or Zero Integer"
-- "Stock discard": "Positive or Zero Integer"
-- "Stock distribution": "Positive or Zero Integer"
-- "Stock on hand": "Positive or Zero Integer"
-- "Stock receipt": "Positive integer"
+Below one example for the configuration of the aggregated, daily "Distribution" quantities is detailed for one item.
 
-Short name (\*): (same as "Name (\*)"
+It is critically important that the "Aggregation type (\*)" of the Data element (for example for "Stock distribution") is set to "Sum" in the Data element settings since otherwise the transaction quantities will not aggregte.
 
-Domain type (\*): "Tracker"
+Note that the same "Program Indicator" can be used for the Predictor for the "MTH" (monthly period) as well as the "DAY" (daily period).
 
-Value type (\*): differs depending on the Data Element, see above
+>**1 [Data element] - Distribution**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Distribution"  
+>>>**Short Name \(*)**: "[Item code] - Distribution"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.lpGYJoVUudr}"  
+>>>Stock on hand\\.Stock distribution  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
+>**2 [Data element] - Discard**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Discard"  
+>>>**Short Name \(*)**: "[Item code] - Discard"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.I7cmT3iXT0y}"  
+>>>Stock on hand\\.Stock discard  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
+>**3 [Data element] - Correction**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Correction"  
+>>>**Short Name \(*)**: "[Item code] - Correction"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.ej1YwWaYGmm}"  
+>>>Stock on hand\\.Stock correction  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
+>**4 [Data element] - Receipt**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Receipt"  
+>>>**Short Name \(*)**: "[Item code] - Receipt"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.j3ydinp6Qp8}"  
+>>>Stock on hand\\.Stock receipt  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
+>**5 [Data element] - Stock on hand**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Name \(*)**: "[Data element] - Stock on hand"  
+>>>**Short Name \(*)**: "[Item code] - Stock on hand"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+>>
+>>**2 Edit expression**
+>>>**Expression**: "#{RghnAkDBDI4.ypCQAFr1a5l}"  
+>>>Stock on hand\\.Stock on hand  
+>>
+>>**3 Edit filter**
+>>>**Expression**: "A{hGtASyAiaZz} == '[Item code]'"  
+>>>Item code == '[Item code]'
+>
 
-Aggregation type (\*): "Sum"
+### 5 Organisation Unit
 
-Store zero data values: not check (appears as a blank square)
+### 5.1 Organisation Unit
+The Organisation Unit, Organisation Unit group and Organisation Unit level are created and added according to national protocols and policies and/or existing DHIS2 configuration and there are no specific requirements for using the DHIS2-RTS.
 
-Aggregation levels: "None"
+### 6 Program
+The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, is very simple to configure, uses only native DHIS2 functionality and governs the customized user interface on the mobile device.
 
-Note that the Data element names must not have any prefixes or suffixes as these are redundant and will appear in the Line Listing.
+#### 6.1 Program
+>**1 Program details**
+>>**Name \(*)**: "Real-Time Stock Management"  
+>>**Short name (*)**: "Real-Time Stock Management"  
+>>**Color**: "#64DD17"  
+>>**Icon**: "rural post outline"  
+>>**Icon**: (automatically numbered by the system)
+>>**Tracked entity type (*)**: select "Item"  
+>>**Category combination (*)**: select "None"  
+>>**Display front page list**: tag (appears as a white tick in a blue square) 
+>>**Access level**: "Open"  
+>>**Completed events expiry days**: "0"  
+>>**Expiry days**: "0"  
+>>**Minimum number of attributes required to search**: "1"  
+>>**Maximum number of treacked entity instances to return in search**: "0"  
+>
+>**2 Enrollment details**  
+>>**Allow future enrollment dates**: do not tag  
+>>**Allow future incident dates**: do not tag  
+>>**Only enrol once (per tracked entity instance lifetime)**: do not tag  
+>>**Show incident date**: tag (appears as a white tick in a blue square)   
+>>**Description of incident date**: "Stock transaction"  
+>>**Ignore overdue events**: do not tag  
+>>**Feature type**: (blank)
+>>
+>**3 Attributes**
+>>**1 Assign attributes**
+>>>**Program tracked entity attributes**: select and arrange in the following order:
+>>>>"Item code"  
+>>>>"Item description"  
+>>>*Note that the item code is separate as it is needed as a distinct field for scanning the barcode*.  
+>>>**Display in list**: tag all  
+>>>**Searchable**: tag "Item description" ("Item code tagged by the system)  
+>>>**Mobile render type**: "Default"
+>>>**Desktop render type**: "Default"
+![](media/image11.png)
+>>
+>>**2 Create registration form**
+>>>(leave blank, no configuration needed)
+>>
+>**4 Program stages**
+>>**1 Stage details**
+>>>**Name \(*)**: "Stock on Hand"  
+>>>**Scheduled days from start (*)**: "0"  
+>>>**Repeatable**: tag (appears as white tig in a blue square)  
+>>
+>>**2 Assign data elements**  
+>>>**Search available/selected items**:  
+>>>>"Stock distribution"  
+>>>>"Stock discard"  
+>>>>"Stock receipt"  
+>>>>"Stock on hand"  
+>>>>"Deliver to"  
+>>>>"Previous stock balance"  
+>>>>"Stock count"  
+>>>>"Stock correction"  
+>>>>![](media/image36.png)
+>>>
+>>>**Display in report**: make visible for all items  
+>>>**Mobile render type**: "Default"  
+>>>**Desktop render type**: "Default"
+>>
+>>**3 Create data entry form**
+>>>**"BASIC"** (configured by the system by default, no configuration is needed).
+>
+>**5 Access**
+>>**Organisation units**: tag the health care facilities where the Tracker Program is used  
+>>**Roles and access**: "Stock on Hand" appears by default  
+>>**SELECT ALL**: tag (a white tick appears in the blue square)
+>
+>**6 Notifications**
+>(not applicable)
 
-While for "Stock distribution" and "Stock discard" only positive integers are meaningful, zero is allowed for technical reasons as the entry of "0" on the mobile device cannot be prevented but systematically prompts an unresolvable synchronization error.
-
-#### 2.4.3 Option set
-
-Option sets are used for listing, managing and editing the "Deliver to" places as well as for the Transaction types [to be discussed]. The use of options provides a great deal of flexibility to the customization by individual countries, which are indispensable, without having to modify the DHIS2-RTS app code itself.
-
-The following options are configured by default which can be customized by removing, changing or adding to national needs as required:
-
-[PRIMARY DETAILS]{.underline}
-
-"Name (\*)": "Destinations / supplied to"
-
-"Value type (\*)": "Text"
-
-[OPTIONS ("Name (\*)" / "Code (\*)")]{.underline}
-
-"Diagnostic imaging (X-Ray)" / "x-ray"
-
-"Emergency Room" / "emerg_room"
-
-"High Dependency Unit" / "hi_dep_unit"
-
-"Inpatient Medical Department" / "inp_med_dep"
-
-"Inpatient Surgical Department" / "inp_surg_dep"
-
-"Laboratory Department" / "lab_dep"
-
-"Mortuary" / "mortuary"
-
-"Obstetrics & Gynaecology services" / "obs_gyn"
-
-"Operating Theatre" / "op_theatre"
-
-"Out-Patient Department" / "outp_dep"
-
-"Paediatric Department" / "paed_dep"
-
-"Physiotherapy Department" / "pt_dep"
-
-"Recovery Room" / "rec_room"
-
-"Sanitation / Housekeeping" / "san_housek"
-
-"Sterilization Department" / "steriliz_dep"
-
-"Transfusion services" / "transf_serv"
-
-"(Other)" / other
-
-It is important to always include the "(Other)" option to avoid that other departments or services are "polluted" with transaction data which actually does not apply to them.
-
-#### 2.4.4 Tracked entity attribute
-
-This are the "fixed" attributes of the items (compared with the "variable" data which is collected).
-
-Name (\*):
-
-- "Item code" / "Unique"
-- Item description / not "Unique"
-
-"Short name (\*)": same as "Name"
-
-"Short name (\*)": "Barcode" (etc.)
-
-"Value type (\*)": "Text"
-
-"Aggregation type (\*)": "None"
-
-"Unique": see above
-
+#### 6.2 Tracked entity attribute
+The DHIS2-RTS uses the "Item code" and "Item descriptions" as the two Tracked entity attributes of the Trached entity type "Item".
 Note that the "Item code" is unique only for any specific Organisation Unit but the same "Item code" can be used in any number of different Organisation Units.
 
-#### 2.4.5 Tracked entity type
+>**1 Item code**  
+>>**Name \(*)**: "Item code"  
+>>**Short name (*)**: "Item code"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: tag (appears as a blue tag with a white tick) 
+>>**Option (from drop-down menu)**: "Organisation unit"
+>>**Inherit**: do not tag  
+>
+>**2 Item description**  
+>>**Name \(*)**: "Item description"  
+>>**Short name \(*)**: "Item description"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag  
 
-"Name (\*)": "Item"
+#### 6.3 Tracked entity type
+>**1 Item**:  
+>>**Name \(*)**: "Item"  
+>>**Enable tracked entity instance audit log**: not checked
+>>**Minimum number of attributes required to search**: 1  
+>>**Maximum number of tracked entity instances to return in search**: 0  
+>>**Feature type**: "None"  
+>>**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
+>>>"Item code"  
+>>>"Item description"  
+>>
+>>**Display in list**: tag all  
+>>**Searchable**: tag all
 
-"Enable tracked entity instance audit log": not checked
-
-"Minimum number of attributes required to search": "1"
-
-"Maximum number of tracked entity instances to return in search": "0"
-
-"Feature type": "None"
-
-"Tracked entity type attributes": move all three "Tracked entity attributes" (see above) to the right column, arrange the fields in the correct order
-
-- "Display in list": unchecked for all three Tracked Entity Attributes
-
-- "Mandatory": unchecked for all three Tracked Entity Attributes
-- "Searchable": "Item PSM - Barcode" = "Searchable" the other two are not "Searchable"
-
-#### 2.4.6 Program
-
-Name: "Real-Time Stock Management"
-
-Program type: "Tracker Program"
-
-## 1 Program details
-
-Name (\*): "Real-Time Stock Management"
-
-Short name (\*): "Real-Time Stock Management"
-
-Color: #304FFE![](media/image12.png)
-
-Icon: "homework"
-
-Version: (automatically numbered)
-
-"Tracked entity type (\*)": "Item"
-
-"Category combination": "None"
-
-"Display front page list": check (appears as white tick in a blue square)
-
-"Access level": "Open"
-
-"Minimum number of attributes required to search": "1".
-
-## 2 Enrollment details
-
-"Show incident date": check (appears as white tick in a blue square)
-
-## 3 Attributes - 1 Assign attributes
-
-- Program tracked entity attributes:
-- - "Item code"
-- - "Item description"
-
-Note that the item code is separate as it is needed as a distinct field for scanning the barcode.
-
-![](media/image11.png)
-
-## 3 Attributes - 2 Create registration form
-
-(Leave blank)
-
-## 4 Programme stages
-
-"Stock on Hand"
-
-### 4.1 Program stages - "1 Stage Details"
-
-Name: "Stock on Hand"
-
-Scheduled days from start (\*): "0"
-
-"Repeatable": check (appears as white tick in a blue square)
-
-### 4.2 Program stages - "Assign data elements"
-
-Search available/selected items:
-
-- "Stock distribution"
-- "Stock discard"
-- "Stock receipt"
-- "Stock on hand"
-- "Deliver to"
-- "Previous stock balance"
-- "Stock count"
-- "Stock correction"
-
-![](media/image36.png)
-
-### 4.2 Program stages - "Create data entry form"
-
-"BASIC"
-
-- "Stock distribution"
-- "Stock discard"
-- "Stock receipt"
-- "Stock on hand"
-- "Deliver to"
-- "Previous stock balance"
-- "Stock count"
-- "Stock correction"
-
-## 5 Access
-
-"X Organisation units selected": select each Organisation Unit separately (at the lowest level) but not the Organisation Unit levels.
-
-"Roles and Access": "Pharmacy Stock Management"
-
-"APPLY TO SELECTED STAGES": "Stock on Hand": check (appears as white tick in a blue square)
-
-## 6 Notifications
-
-(blank)
-
-#### 2.4.7 Program rule
+#### 6.4 Program rule
 
 In total, four Program rules are configured for completing all required calculations:
 
@@ -749,9 +874,9 @@ The other two Program rule manage the "Stock correction" transaction:
 - "Assign Stock correction"
 - "Assign Stock on Hand correction".
 
-Two Program rules together provide the real time stock on hand update.
+Two Program rules together provide the real-time stock on hand update.
 
-In principle, the transaction quantities from the current event are added to the current Stock on Hand. But since
+In principle, the transaction quantities from the current event are added to the current Stock on Hand.
 
 If "Stock on hand" had a previous event, the "Stock on hand" value from the previous event is written to the Data Element "Previous Stock Balance". This Program rule "saves" the current "Stock on hand" value which is used as a basis for the (re)calculation of the current "Stock on hand". Using a single field would lead to an infinite recursion and an error as, for example, "Stock on hand" cannot be equal to "Stock on hand" + "Receipt" at the same time. Instead two different fields are needed which interact with each other:
 
@@ -779,7 +904,7 @@ Two program rules manage the calculation of the "Stock correction". Entering a q
 
 - "Assign Stock correction": if the "Stock count" field has a value entered, the difference between the "Previous stock balance" and the "Stock count" is "written" to the field "Stock correction".
 
-**Calculations**
+##### Calculations
 
 Stock on Hand = "Previous stock balance" + "Stock received" - "Stock distribution" - "Stock discarded"
 
@@ -797,388 +922,207 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 
 - positive integer if the physical stock count is greater than the calculated value
 
-**Assign Stock correction**
-
-[1 Enter program rule details]{.underline}
-
-Program (\*): "Real-Time Stock Management"
-
-"Trigger rule only for program stage"
-
-Name (\*): "Assign Stock correction"
-
-[2 Enter program rule expression]{.underline}
-
-Condition: "d2:hasValue(#{Stock count})"
-
-[3 Define program rule actions]{.underline}
-
-Action: "Assign value"
-
-Data element to assign to: "Stock correction"
-
-Expression to evaluate and assign:
-
-"#{Stock count }-#{ Previous stock balance}"
-
-**Assign Stock on Hand**
-
-[1 Enter program rule details]{.underline}
-
-Program (\*): "Real-Time Stock Management"
-
-"Trigger rule only for program stage"
-
-Name (\*): "Assign Stock on Hand"
-
-[2 Enter program rule expression]{.underline}
-
-Condition: "true"
-
-[3 Define program rule actions]{.underline}
-
-Action: "Assign value"
-
-Data element to assign to: "Stock on hand"
-
-Expression to evaluate and assign:
-
-"#{Previous stock balance} + #{Stock received} - #{Stock distributed} - #{Stock discarded} "
-
-**Assign previous stock balance**
-
-[1 Enter program rule details]{.underline}
-
-Program (\*): "Real-Time Stock Management"
-
-"Trigger rule only for program stage"
-
-Name (\*): "Assign previous stock balance"
-
-[2 Enter program rule expression]{.underline}
-
-Condition: "d2:hasValue(#{Initial stock on hand - Previous event})"
-
-[3 Define program rule actions]{.underline}
-
-Action: "Assign value"
-
-Data element to assign to: "Previous stock balance"
-
-Expression to evaluate and assign:
-
-"#{Initial stock on hand - Previous event}"
-
-**Assign Stock on Hand correction**
-
-[1 Enter program rule details]{.underline}
-
-Program (\*): "Real-Time Stock Management"
-
-"Trigger rule only for program stage"
-
-Name (\*): "Assign Stock on Hand correction"
-
-[2 Enter program rule expression]{.underline}
-
-Condition: "d2:hasValue(#{Stock count})"
-
-[3 Define program rule actions]{.underline}
-
-Action: "Assign value"
-
-Data element to assign to: "Stock on hand"
-
-Expression to evaluate and assign:
-
-"#{Stock count}"
-
-#### 2.4.8 Program rule variable
-
-Initial stock on hand - Previous event
-
-- Source type (\*): "Data element from previous event"
-- Data element: "Stock on hand"
-
-Previous stock balance
-
-- Source type (\*): "Data element in current event"
-- Data element: "Previous stock balance"
-
-Stock correction
-
-- Source type (\*): ""Data element in current event"
-- Data element: "Stock on hand"
-
-Stock count
-
-- Source type (\*): ""Data element in current event"
-- Data element: "Stock count"
-
-Stock discarded
-
-- Source type (\*): "Data element in current event"
-- Data element: "Stock discard"
-
-Stock distribution
-
-- Source type (\*): "Data element in current event"
-- Data element: "Stock distribution"
-
-Stock received
-
-- Source type (\*): "Data element in current event"
-- Data element: "Stock receipt"
-
-#### 2.4.9 Program indicator
-
-Program indicators are the work-around for avoiding the use of third party apps or scripts. Data elements can be displayed in the Data Visualizer but only count the number of events and do not aggregate the transaction values.
-
-A separate Program indicator has to be created for every "pair" of item description and transaction type. For example:
-
-DASDCHLC5S1 - Distribution
-
-DASDCHLC5S1 - Discard
-
-DASDCHLC5S1 - Correction
-
-DASDCHLC5S1 - Receipt
-
-DASDCHLC5S1 - Stock on hand
-
-The item is determined by setting a corresponding "filter" and the transaction type by selecting the respective Data element from the "Stock on Hand" program stage.
-
-Below one example for the configuration of the aggregated, daily "Distribution" quantities is detailed for one item.
-
-It is critically important that the "Aggregation type (\*)" of the Data element (for example for "Stock distribution") is set to "Sum" in the Data element settings since otherwise the transaction quantities will not aggregte.
-
-Note that the same "Program Indicator" can "feed" the Predictor for the "MTH" (monthly period) as well as the "DAY" (daily period).
-
-**Program indicator**
-
-- Program (\*): Real-Time Stock Management
-- Name (\*): DASDCHLC5S1 - Distribution
-- Aggregation type: "Sum"
-- Analytics type (\*): "Event"
-- Analytics period boundaries:
-- - Boundary target: "Event date"
-- - Analytics period boundary type: "After start of reporting period"
-- - Offset period by amount: 0
-- - Period type: (leave blank)
-- - Boundary target: "Event date"
-- - Analytics period boundary type: "Before end of reporting period"
-- - Offset period by amount: 0
-- - Period type: (leave blank)
-- Display in form: select (appears as a white tick in a blue square)
-
-**Edit expression**
-
-- #{CSszngrLaoW.smwdEfUz8vo}
-
-"Stock on Hand\\.Stock distribution"
-
-**Edit filter**
-
-- A{XYvrLoYSMRU} == \'DASDCHLC5S1\'
-
-"Item code == \'DASDCHLC5S1\'"
-
-#### 2.4.10 Predictor
-
-These Predictors "transfer" the Program indicators to the respective Category option of the Data Entry form for providing users with daily or monthly "snapshots" of all transactions. Note that in principle the same Program indicator can be used for daily and monthly aggregations ("snapshots") but separate Predictors, one with the "Period type (\*)" daily is needed for daily "snapshots" and a second Predictor with "Period type (\*)" monthly is needed for monthly "snapshots".
-
-One Predictor is needed for each item (Data element = Tracked Entity Instance), for each transaction type as well as for each for each "Deliver to" (Category option) and one each for the daily report and the monthly report as the "Group Predictor" function is not available for Program Indicators. List of Predictors required for every Data element:
-
-[Data element name] - Discard
-
-[Data element name] - Distribution - Diagnostic imaging (X-Ray)
-
-[Data element name] - Distribution - Distribution - total (for all wards/services)
-
-[Data element name] - Distribution - Emergency Room
-
-[Data element name] - Distribution - High Dependency Unit
-
-[Data element name] - Distribution - Inpatient Medical Department
-
-[Data element name] - Distribution - Inpatient Surgical Department
-
-[Data element name] - Distribution - Laboratory Department
-
-[Data element name] - Distribution - Mortuary
-
-[Data element name] - Distribution - Obstetric & Gynaecology services
-
-[Data element name] - Distribution - Opening balance (stock on hand)
-
-[Data element name] - Distribution - Operating Theatre
-
-[Data element name] - Distribution - Out-Patient Department
-
-[Data element name] - Distribution - Paediatric Department
-
-[Data element name] - Distribution - Physiotherapy Department
-
-[Data element name] - Distribution - Receipt
-
-[Data element name] - Distribution - Recovery Room
-
-[Data element name] - Distribution - Sanitation Housekeeping
-
-[Data element name] - Distribution - Sterilization Department
-
-[Data element name] - Distribution - Stock on hand (closing balance)
-
-[Data element name] - Distribution - Transfusion services
-
-[Data element name] - Distribution (Other)
-
-[Data element name] - Stock correction
-
-Note that one Predictor is needed to "feed" the monthly report while a second Predictor "feeds" the daily report.
-
-Below the configuration for a single Predictor is given as an example while all other Predictors are created analogously:
-
-**Predictor**
-
-- Name: "T2A - DORAALBE4T - ALBENDAZOLE, 400 mg, tab. - DIST - PR - MTH/DAY
-
-- Short name (\*): "T2A - DORAALBE4T - DIST - PR - MTH/DAY
-- Output data element: DORAALBE4T - ALBENDAZOLE, 400 mg, tab. MTH/DAY
-- Output category option combo: "Stock distribution"
-- Period type (\*): "Monthly" / "Daily" for the "DAY" Predictor
-- Organisation unit levels: "Facility"
-
-**_THIS IS ABSOLUTELY CRITICAL and must the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank._**
-
-- Organisation units providing data (\*): "At selected level(s) only"
-
-"**Generator**"
-
-- Description: "T2A - DORAALBE4T - ALBENDAZOLE, 400 mg, tab. - PR - MTH/DAY"
-
-- Generator:
-- - Programs: "Real-Time Stock Management"
-- - Indicators: select [Item] - [Transaction type] from the available options
-
-- - Generator field: I{[Item] - [Transaction type]}
-
-For example: "I{SPzpOCVuS4e}"
-
-"DORAALBE4T - Distribution"
-
-- Sequential sample count: "0" (which means the calculation is based only on the value of one previous month)
-
-- Annual sample count: "0"
-- Sequential skip count: (blank)
-
-Note: the Predictor "copies" the Program indicator without any aggregation (such as sum) as the aggregation is already achieved by the Program indicator. The "Sequential sample count" of 0 ensures that the transaction quantities of the current day or month or aggregated.
-
-The following differences need to be considered for the different Predictors as the "Opening SoH" and "Stock on hand" are (re)calculated from other Predictor calculation results rather than from Program Indicators as these values are not sums but only the last value in the month is needed.
-
-**Opening SoH**
-
-- Output category option combo: "Opening SoH"
-- Generator:
-- - Data elements: select [Data element] - Stock on hand
-- - avg(#{XsOfl0jZU8S.dOkDb0N10Aw})
-
-avg(DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock on hand)
-
-- Sequential sample count (\*): "1" (this calculation is based on values from the previous month)
-
-**SoH closing**
-
-The "Stock on hand" is (re)calculating by adding all transactions to the "Opening balance" as the "Stock on hand" cannot be aggregated from the Tracker Program values.
-
-Opening SoH +
-
-Stock receipt -
-
-Stock distribution -
-
-Stock discard +
-
-Stock correction
-
-- Output category option combo: "Stock on hand"
-- Generator:
-
-{XsOfl0jZU8S.r8mxZGLEIpr}+
-
-{XsOfl0jZU8S.EGYpLpsRoYC}-
-
-{XsOfl0jZU8S.X57v4Hidl3C}-
-
-{XsOfl0jZU8S.KwF12LCuQqt}+
-
-{XsOfl0jZU8S.qrAl2aJnDop}
-
-DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Opening SoH+ DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock receipt- DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock distribution- DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock discard+ DORAALBE4T - ALBENDAZOLE, 400 mg, tab. Stock correction
-
-Please note that the "Stock correction" has to be added (and not be subtracted).
-
-- Sequential sample count (\*): "0" (this calculation is based on the values from the current month)
-
-**STOCK ITEM LIST - Stock coverage - PR**
-
-- Output data element (\*): "DORAALBE4T - ALBENDAZOLE, 400 mg, tab."
-- Output category option combo: "Stock coverage"
-- Generator:
-
-forEach ?de in :DEG:lbfCwX4ahtd \--\> #{?de.dOkDb0N10Aw}/#{?de.X57v4Hidl3C}
-
-[Data element].Stock on hand / [Data element].Stock distribution
-
-forEach ?de in Stock item list \--\> #{?de.dOkDb0N10Aw}/#{?de.X57v4Hidl3C}
-
-- Sequential sample count (\*): "0" (this calculation is based on values from the current month)
-
-**[Stock list] - Stockout days count**
-
-- Output data element (\*): "DORACEFI4T - CEFIXIME, 400 mg, tab. T2A DAY"
-
-- Output category option combo: "Stock on hand Yes/No"
-- Generator:
-
-```
-forEach ?de in :DEG:yhNPz0Qve28 → if(#{?de.KoT8qU1DYiB}==0,1,0)
-
-forEach ?de in [Stock item list] - DAY \--\>
-if(#{?de.KoT8qU1DYiB}==0,1,0)
-```
-
-- Sequential sample count (\*): "0" (this calculation is based on values from the current day)
-
-#### 2.4.11 Predictor group
-
-The "Predictor group" is required in order to allow running all Predictors periodically and together by the "Scheduler" rather than having to prompt them one by one.
-
-- Name (\*): "T2A Predictors"
-- Predictors: include all configured Predictors.
-
-#### 2.4.12 Scheduler app
-
-The "Scheduler" app allows configuring the automatic and periodic execution of all Predictors (separately or conveniently grouped in a "Predictor group":
-
-Configuration
-
-- Name \*: "T2A Predictors"
-- Job type \*: "Predictor"
-- CRON Expression \*: "00 05 00 \* \* \*" ("At 12:05:00 AM)
-
-This CRON job is automatically executed every day at 00:05. If required, the Scheduler can also be set to run more frequently, for example twice a day, every four hours or every hour.
-
-Parameters
-
-- Relative start: "-32"
-- Relative end: "32"
-
-Note that the "Relative start" and "Relative end" are always configured in days. In order for the Predictors to aggregate the enter last month, the "Relative start" must always be set to a day in the previous month and the "Relative end" date must also fall into the next month. In order to cater for all possible constellations during the month, 32 days should be used.
-
-This configuration will update Predictors once every day in order to provide monthly updates on transaction quantities rather than showing zero for the entire month and then providing values for the previous month only on the first day of the following month.
-
-#### 2.4.13 Legend
+>**1 Assign stock correction**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock correction"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "d2:hasValue(#{Stock count})"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Stock correction"
+>>>>**Expression to evaluate and assign**: "#{Stock count}-#{Previous stock balance}"
+>
+>**2 Assign Stock on Hand**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock on Hand"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "true"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Stock on hand"
+>>>>**Expression to evaluate and assign**: ""#{Previous stock balance} + #{Stock received} - #{Stock distributed} - #{Stock discarded} ""
+>
+>**3 Assign Stock on hand correction**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock on hand correction"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "d2:hasValue(#{Stock count})"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Stock on hand"
+>>>>**Expression to evaluate and assign**: "#{Stock count}"
+>
+>**4 Assign previous stock balance**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock on hand correction"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "Condition: "d2:hasValue(#{Initial stock on hand - Previous event})"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Previous stock balance"
+>>>>**Expression to evaluate and assign**: "#{Initial stock on hand - Previous event}"
+
+#### 6.5 Program rule variable
+>**1 Initial stock on hand - Previous event**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Initial stock on hand - Previous event"  
+>>**Source type \(*)**: "Data element from previous event"  
+>>**Data element**: "Data element from previous event"  
+>
+>**2 Previous stock balance**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Previous stock balance"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Previous stock balance"  
+>
+>**3 Stock correction**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock correction"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock on hand"  
+>
+>**4 Stock count**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock count"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock count"  
+>
+>**5 Stock discarded**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock discarded"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock discard"  
+>
+>**6 Stock distribution**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock distribution"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock distribution"  
+>
+>**7 Stock on hand**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock on hand"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock on hand"  
+>
+>**8 Stock received**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock received"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock receipt"  
+
+### 7 Other
+
+#### 7.1 Option set
+
+Option sets are used for listing, managing and editing the "Deliver to" places. The use of options provides a great deal of flexibility to the customization by individual countries, which are indispensable, without having to modify the DHIS2-RTS app code itself. However, please note that if the "Deliver to" options are modified, the Program Indicators, Predictors as well as the "aggregate" Data entry form have to be adapted accordingly.
+
+The following options are configured by default which can be customized by removing, changing or adding to national needs as required. It is important to always include the "(Other)" option to avoid that other departments or services are "polluted" with transaction data which actually does not apply to them.
+
+>**1 Deliver to**  
+>>**PRIMARY DETAILS**  
+>>>**Name \(*)**: "Deliver to"  
+>>>**Code**: "deliver_to"  
+>>>**Value type \(*)**: "Text" 
+>>
+>>**OPTIONS**  
+>>>**1 Diagnostic Imaging (X-ray)**
+>>>>**Name \(*)**: "Diagnostic Imaging (X-ray)"  
+>>>>**Code \(*)**: "diagn_imag"  
+>>>
+>>>**2 Emergency Room**
+>>>>**Name \(*)**: "Emergency Room"  
+>>>>**Code \(*)**: "emerg_room"  
+>>>
+>>>**3 High Dependency Unit**
+>>>>**Name \(*)**: "High Dependency Unit"  
+>>>>**Code \(*)**: "hi_dep_unit"  
+>>>
+>>>**4 Inpatient Medical Department**
+>>>>**Name \(*)**: "Inpatient Medical Department"  
+>>>>**Code \(*)**: "inp_med_dep"  
+>>>
+>>>**5 Inpatient Surgical Department**
+>>>>**Name \(*)**: "Inpatient Surgical Department"  
+>>>>**Code \(*)**: "inp_surg_dep"  
+>>>
+>>>**6 Laboratory Department**
+>>>>**Name \(*)**: "Laboratory Department"  
+>>>>**Code \(*)**: "lab_dep"  
+>>>
+>>>**7 Mortuary**
+>>>>**Name \(*)**: "Mortuary"  
+>>>>**Code \(*)**: "mortuary"  
+>>>
+>>>**8 Obstetrics & Gynaecology services**
+>>>>**Name \(*)**: "Obstetrics & Gynaecology services"  
+>>>>**Code \(*)**: "obs_gyn"  
+>>>
+>>>**9 Operating Theatre**
+>>>>**Name \(*)**: "Operating Theatre"  
+>>>>**Code \(*)**: "op_theatre"  
+>>>
+>>>**10 Out-Patient Department**
+>>>>**Name \(*)**: "Out-Patient Department"  
+>>>>**Code \(*)**: "outp_dep"  
+>>>
+>>>**11 Paediatric Department**
+>>>>**Name \(*)**: "paed_dep"  
+>>>>**Code \(*)**: "paed_dep"  
+>>>
+>>>**12 Physiotherapy Department**
+>>>>**Name \(*)**: "pt_dep"  
+>>>>**Code \(*)**: "pt_dep"  
+>>>
+>>>**13 Recovery Room**
+>>>>**Name \(*)**: "Recovery Room"  
+>>>>**Code \(*)**: "rec_room"  
+>>>
+>>>**14 Sanitation / Housekeeping**
+>>>>**Name \(*)**: "Sanitation / Housekeeping"  
+>>>>**Code \(*)**: "san_housek"  
+>>>
+>>>**15 Sterilization Department**
+>>>>**Name \(*)**: "Sterilization Department"  
+>>>>**Code \(*)**: "steriliz_dep"  
+>>>
+>>>**16 Transfusion services**
+>>>>**Name \(*)**: "Transfusion services"  
+>>>>**Code \(*)**: "transf_serv"  
+>>>
+>>>**17 (Other)**
+>>>>**Name \(*)**: "(Other)"  
+>>>>**Code \(*)**: "other"  
+
+#### 7.2 Legend
 
 A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
 
@@ -1186,27 +1130,312 @@ A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock o
 - Stock on Hand \>=1: light yellow background
 - Name (\*): "Stockout"
 
-Stockout
+>**1 Stockout**
+>>**1 Stockout**
+>>>**Name**: "Stockout"  
+>>>**Start value**: "0"  
+>>>**End value**: "1"  
+>>>**Color code**: "#F74432" (red)  
+>>
+>>**1 Stock**
+>>>**Name**: "Stock"  
+>>>**Start value**: "1"  
+>>>**End value**: "999999"  
+>>>**Color code**: "#F9E6BB" (cream-coloure)  
+>>
+>>![](media/image8.png)
 
-- Name: Stockout
-- Start value: 0
-- End value: 1
-- Colour: #F74432
+#### 7.3 Predictor
 
-Stock
+Predictors are used in two different ways:
+- for "transferring" aggregate Program indicator values to the daily/monthly Data entry form
+- "copying" the "Stock on hand" at the end of the previous month to the "Opening SoH" of the current month
+- calculating the "Closing SoH" from the data values of the current month  
 
-- Name: Stock
-- Start value: 1
-- End value: 999999
-- Colour: #F9E6BB
+*Note that only transactional quantities (stock distributed, discarded and corrections) can be aggregated from the Tracker Program data. But as the stock balances are calculated after every transaction, aggregating them does not yield any meaningful results*.
 
-![](media/image8.png)
+The Predictors which "transfer" the Program indicators to the respective Category option of the Data Entry form provide users with daily or monthly "snapshots" of all transactions. Note that in principle the same Program indicator can be used for daily and monthly aggregations ("snapshots") but separate Predictors, one with the "Period type (\*)" daily is needed for daily "snapshots" and a second Predictor with "Period type (\*)" monthly is needed for monthly "snapshots".
 
-#### 2.4.14 Capture app (web portal)
+One Predictor is needed for each item (Data element = Tracked Entity Instance), for each transaction type as well as for each "Deliver to" (Category option) and one each for the daily report and the monthly report as the "Group Predictor" function is not available for Program Indicators. List of Predictors required for every Data element:
 
-The web portal Capture app is used for "enrolling" new Tracked Entity Instances which each correspond to an item (health care product).
+- [Data element name] - Discard
 
-TEIs are registered once in a specific DHIS2 database and the same TEI (with the same ID) is used for different OUs as well as possibly in other Tracker programs or Event programs.
+- [Data element name] - Distribution - Diagnostic imaging (X-Ray)
+
+- [Data element name] - Distribution - Distribution - total (for all wards/services)
+
+- [Data element name] - Distribution - Emergency Room
+
+- [Data element name] - Distribution - High Dependency Unit
+
+- [Data element name] - Distribution - Inpatient Medical Department
+
+- [Data element name] - Distribution - Inpatient Surgical Department
+
+- [Data element name] - Distribution - Laboratory Department
+
+- [Data element name] - Distribution - Mortuary
+
+- [Data element name] - Distribution - Obstetric & Gynaecology services
+
+- [Data element name] - Distribution - Opening balance (stock on hand)
+
+- [Data element name] - Distribution - Operating Theatre
+
+- [Data element name] - Distribution - Out-Patient Department
+
+- [Data element name] - Distribution - Paediatric Department
+
+- [Data element name] - Distribution - Physiotherapy Department
+
+- [Data element name] - Distribution - Receipt
+
+- [Data element name] - Distribution - Recovery Room
+
+- [Data element name] - Distribution - Sanitation Housekeeping
+
+- [Data element name] - Distribution - Sterilization Department
+
+- [Data element name] - Distribution - Stock on hand (closing balance)
+
+- [Data element name] - Distribution - Transfusion services
+
+- [Data element name] - Distribution (Other)
+
+- [Data element name] - Stock correction
+
+Below the configuration for a single Predictor is given as an example while all other Predictors are created analogously:  
+T2A - DORACEFI4T - CEFIXIME, 400 mg, tab. - DIST - Inpatient Medical Department - PR - MTH
+
+>**1 T2A - [Item] - DIST - Diagnostic imaging (X-Ray) - PR - MTH**  
+*This Predictor aggregates all "Distribution" transaction for the respective item and month*
+>>
+>>**Name \(*)**: "T2A - [Item] - DIST - Diagnostic imaging (X-Ray) - PR - MTH"  
+>>**Short name \(*)**: "T2A - [Item code] - DIST - X-Ray - PR - MTH"
+>>**Output data element \(*)**: "[Item] T2A MTH"  
+>>**Output category option combo** "DIS - Diagn. imaging"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "T2A - [Item code] - DIST - X-Ray - PR - MTH"
+>>>**Expression**: "I{xwiNF9EsUHx}"  
+*[Item code] - Distribution - Diagnostic imaging (X-Ray)*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>*Note: the Predictor "copies" the Program indicator without any aggregation (such as sum) as the aggregation is already achieved by the Program indicator. The "Sequential sample count" of 0 ensures that the transaction quantities of the current day or month are aggregated.*
+>
+>**2 T2A -  [Item] - SOH opening - PR - DAY**  
+*This Predictor "copies" data values within the Data entry form*
+>>
+>>**Name \(*)**: "T2A -  [Item] - SOH opening - PR - DAY"  
+>>**Short name \(*)**: "T2A -  [Item code] - SOH opening - PR - DAY"
+>>**Output data element \(*)**: "[Item]"  
+>>**Output category option combo** "Opening SoH"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "T2A - [Item code] - SOH opening - PR - DAY"
+>>>**Expression**: "avg(#{ZNi9SCtVA83.rZ5LF3cNuPb})"  
+*avg([Item code])*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**3 T2A -  [Item] - SOH closing - PR - DAY**  
+*This Predictor "copies" data values within the Data entry form*
+>>
+>>**Name \(*)**: "T2A -  [Item] - SOH closing - PR - DAY"  
+>>**Short name \(*)**: "T2A -  [Item code] - SOH opening - PR - DAY"
+>>**Output data element \(*)**: "[Item]"  
+>>**Output category option combo** "Stock on hand"  
+>>**Period type \(*)**: "Daily"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "T2A - [Item code] - SOH closing - PR - DAY"  
+>>>**Expression**: 
+#{ZNi9SCtVA83.srqJsVxtLdA}+
+#{ZNi9SCtVA83.iHrG3AK8XxK}-
+#{ZNi9SCtVA83.QjLESy7VVB6}-
+#{ZNi9SCtVA83.Hy0b1skIzyR}+
+#{ZNi9SCtVA83.tb7HW13vK6X}"  
+*[Item] Opening SoH+[Item] Stock receipt-[Item] Stock distribution-[Item] Stock discard+[Item] Stock correction*  
+*Please note that the "Stock correction" has to be added (and not be subtracted).*
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+
+#### 7.4 Predictor group
+
+The "Predictor group" is required in order to allow running all Predictors periodically and together by the "Scheduler" rather than having to prompt them one by one. All Predictors required for the DHIS2-RTS can be grouped together and be run together in the Scheduler App
+
+>**1 DHIS2-RTS - T2A - Predictorr - DAY**  
+>**Name \(*)**: "DHIS2-RTS - T2A - Predictors DAY"  
+>**Predictors**
+>>"T2A - [Item] - [Deliver to] - PR - DAY"  
+>>
+>**2 DHIS2-RTS - T2A - Predictorr - DAY**  
+>**Name \(*)**: "DHIS2-RTS - T2A - Predictors MTH"  
+>**Predictors**
+>>"T2A - [Item] - [Deliver to] - PR - MTH"  
+
+## Scheduler Web App - Predictor Scheduling
+"Scheduler" app allows configuring the automatic and periodic execution of Predictors by Predictor group for the daily and monthly Data entry forms.
+
+>**1 DHIS2-RTS - T2A - Predictors - DAY**  
+>>**Configuration**
+>>>**Name \(*)**: "DHIS2-RTS - T2A - Predictors - DAY"  
+>>>**Job type \(*)**: "Predictor"  
+>>>**CRON Expression \(*)**: "00 05 00 * * *" ("At 12:05:00 AM)
+>>
+>>**Parameters**
+>>>**Relative start**: "-1"  
+>>>**Relative end**: "1"  
+>>>**Predictor groups**: "DHIS2-RTS - T2A - Predictors DAY"  
+This CRON job is automatically executed every day at 00:05. If required, the Scheduler can also be set to run more frequently, for example twice a day, every four hours or every hour.  
+>
+>**2 DHIS2-RTS - T2A - Predictors - MTH**  
+>>**Configuration**
+>>>**Name \(*)**: "DHIS2-RTS - T2A - Predictors - MTH"  
+>>>**Job type \(*)**: "Predictor"  
+>>>**CRON Expression \(*)**: "00 05 00 1 * *" ("At 12:05:00 AM, on day 1 of the month)
+>>
+>>**Parameters**
+>>>**Relative start**: "-32"  
+>>>**Relative end**: "1"  
+>>>**Predictor groups**: "DHIS2-RTS - T2A - Predictors MTH"  
+This CRON job is automatically executed on the first day of every month at 00:05. If required, the Scheduler can also be set to run more frequently, for example once a week or once a day.
+
+## Users Web App - User management
+
+The configuration of user roles, user groups and individual users will follow national policies and protocols and the majority of users will already have a DHIS2 user profile before starting the use of DHIS2-RTS. Nevertheless, all users need to have access to the Android Capture app for using the DHIS2-RTS application. If the daily or monthly Data entry form is used as a fallback in case the mobile application fails, users also require the respective user authorities for entering and editing data. Finally, all users should have access to the DHIS2 analytics.
+
+### User
+Existing users can be assigned additional user roles while a user profile needs to be created for all new users.
+
+### User role
+All users which are recording transactions must be (also) asssigned to the User role "DHIS2-RTS Android Capture app" while other users might not record any transaction but still need to access (only) the DHIS2 analytics.
+
+>**1 DHIS2-RTS - Android Capture App**  
+>>**Name \(*)**: "DHIS2-RTS - Android Capture App"  
+>>**Description**: "Android Capture App data entry"  
+>>**Metadata authorities**  
+>>>"Data Value": "Add/Update Public" and "Delete"  
+>>
+>>**Other authorities / Selected tracker authorities**  
+>>>"Search Tracked Entity Instance in All Org Units"  
+>>>"View event analytics"  
+>>>"Update tracked entities"  
+>>>"Uncomplete events"
+>
+>**2 DHIS2-RTS - Analytics access**  
+>>**Name \(*)**: "DHIS2-RTS - Analytics access"  
+>>**Description**: "Dashboard and analytic apps access"  
+>>**Other authorities / Selected app authorities**
+>>>"Browser Cache Cleaner app"  
+>>>"Menu Management app"  
+>>>"Data Visualizer app"  
+>>>"linelisting app"  
+>>>"Dashboard app"  
+>>
+>>**Other authorities / Selected tracker authorities**  
+>>>"View event analytics"  
+
+### User group
+
+The main purpose of user groups is facilitating configuration of "Sharing" settings (which determine viewing and editing rights) by groups rather than having to manage them at the level of hundreds of individual users.
+
+User groups may be configured according to the User roles into the same two groups:
+- DHIS2-RTS - Android Capture App
+- DHIS2-RTS - Analytics access
+
+## Android Settings Web App - Synchronization and Offline Analytics
+The "Android settings Web App" allows customizing synchronization settings as well as configuring offline analytics.
+
+>**Synchronization**  
+>>**Global sync settings**
+>>>**How often should metadata sync**: "Manual"  
+>>>**How often should data sync**: "Manual"  
+>>>*Note: it is critical that users can control the synchronization settings so that they can synchronize mobile devices whenever Tracked Entity Instances (TEIs) are added or removed and that they can (ideally) synchronize the mobile device after every transaction.*
+>>
+>>**Programs**
+>>>**Programs specific download sync settings**
+>>>>**Setting level**: "All Org Units"
+>>>>**Maximum Tracked Entity Instance (TEI) download per program**: [to be confirmed]
+>>>>**Download TEI with status**: "Only Active"
+>>>>**Download TEI with enrollment date within**: "Any period"
+>>>>**Download TEI that have been updated within**: "Any time period"
+>
+>**Analytics**  
+>>**Program**  
+>>>**1 Visualization A**  
+>>>>**Program**: "Real-Time Stock Management"  
+>>>>**Visualization item**: [to be added]  
+>>>>**Visualization title**: [to be added]  
+>>>
+>>>**2 Visualization BA**  
+>>>>**Program**: "Real-Time Stock Management"  
+>>>>**Visualization item**: [to be added]  
+>>>>**Visualization title**: [to be added]  
+
+## Use Case Configuration Web App - Program Configuration
+The Use Case Configuration Web app assigns the "Real-Time Stock Management" Tracker Program and some of its metadata to the customized mobile app. While the Tracker Program will have the appearance of any other Tracker Program on the Android Capture App home screen, selecting a Tracker Program which is assigned to the "Real-Time Stock Management" app will invoke the customized app instead of opening the conventional TEI dashboard.
+Note that only programs which meeting certain configuration criteria can be selected and only those will appear for selection in the respective drop-down menu:  
+- Tracker Program
+- One repeatable Program Stage
+- Program rules which update the stock on hand
+- Event which is not autogenerated
+- Data elements and Tracked Entity Attributes assigned to the Tracker program
+- Value type of Data elements in Program stages: "Number" for "Stock correction" and "Positive integer" for all others
+
+>**Configure Program**  
+>*Note: when setting up the DHIS2-RTS for the first time, please use "Add Program" for configuring a new program.*
+>>**Program name**: "Real-Time Stock Management"  
+>>>**General**  
+>>>>**Program Types**: "Logistics"  
+>>>>**Description**: "DHIS2-RTS Real-Time Stock management system"
+>>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Details**  
+>>>>**Item Code \(*)**: "Item code"  
+>>>>**Item Description \(*)**: "Item description"
+>>>>**Stock on Hand \(*)**: "Stock on hand"  
+>>>**Transactions**  
+>>>>**Distributed**
+>>>>>**Distributed to \(*)**: "Deliver to"  
+>>>>>**Distributed Stock \(*)**: "Stock distribution"  
+>>>>**Corrected**
+>>>>>**Corrected Stock \(*)**: "Stock correction"  
+>>>>>**Stock Count \(*)**: "Stock count"  
+>>>>**Discarded**
+>>>>>**Discarded Stock \(*)**: "Stock discard"  
+
+## Data Entry (Beta) Web App - "Snapshots" and fallback data entry
+Although the DHIS2-RTS mobile application is based solely on a Tracker program, a concurrent Data entry form is recommended for two purposes:
+- Storing aggregate daily/monthly data for analysis and reporting
+- Use as a fallback in the DHIS2-RTS mobile application is (temporarily) not available
+- Aggregate data repository for aggregate analytics and visualizations
+Consequently the list of Tracked Entity Instances (TEIs) for each Organsation Unit must always be aligned with corresponding Data set.
+As Custom Data Entry Forms do not render (correctly/completely) on mobile devices, the Data sets must be configured as "Default" Data entry form to allow use on mobile devices.
+Both Data entry forms (as configured according to the settings above) are configured to display all available data fields. However, the layout can be customized in the Data Visualizer Web App. Examples of monthly and daily Data entry forms:
+
+![Alt text](image.png)
+
+![Alt text](image-2.png)
+
+## Capture Web App - Tracked Entity Instance Management
+
+The Capture Web app must not be used for recording or editing transactions as the lack of a time stamp displays them in an arbitrary order and consequently the "Previous stock balance" used for the next transaction is also selected arbitrarily among previous transactions and incorrect (but this issue does not apply to the DHIS2-RTS mobile application).
+However, the Capture Web App is required for registering, enrolling, "completing" and "activating" Tracked Entity Instances.
+
+
+xxx
 
 Note that the "Report date" can be added from the cog wheel menu once the "STAGE FILTER" has been added.
 
@@ -1237,8 +1466,7 @@ Note that the order of the columns can be changed by "drag and drop" in the cogw
 
 [Question: apparently the "Program stage" filter is not saved and disappears when exiting the screen without any possibility to "update" or "save" the view].![](media/image37.png)
 
-#### 2.4.15 Capture app
-
+xxx
 In principle, this application will not be used as transactions will be exclusively managed in the customized app and a dashboard will be available for analysis of all transactions. However, the Capture app may be used for registering and enrolling (additional) items in an Organisation unit (health facility) and possibly for managing "manual" stock receipts for a small number of items.
 
 **Working list**
@@ -1255,112 +1483,275 @@ This dashboard shows the "Item profile" as well as a record of all transactions 
 
 Note that the transactions with the same date are not placed in chronological order. Therefore any data entry through the web portal must only be made on the very last transactions as otherwise the Program rules lead to incorrect values for the current stock on hand.
 
-### 2.5 Android settings app configuration
 
-The "Android settings app" allows to customize some functionality across all mobile devices using the Capture Android app. The settings in this chapter should be merely considered as a recommendation to simplify user interfaces but do not have any immediate impact on the DHIS2-RTS app itself.
+## Bulk Load Web App - Uploading Stock Receipts
+Xx
 
-#### 2.5.1 Synchronization settings
-
-**Global**
-
-While it is strongly recommended that users synchronize mobile devices data immediately after every completed transaction, a daily synchronization is recommended as a backup.
-
-Since it will be difficult to inform all users of any change to the metadata, its synchronization should also be completed once a day to ensure that all mobile devices are always updated.
-
-> How often should metadata sync?: "1 Day"
->
-> How often should data sync?: "1 Day"
-
-Note that this daily, periodic synchronization will only be affected automatically if a network connection is available at the time the synchronization is prompted on the mobile device.
-
-**Data sets**
-
-Limiting the number of periods for which data is downloaded to the mobile device will limit storage requirements and improve usability. Moreover, it is unlikely a storekeeper would want to analyse monthly report daily, say, five years back and one year of data should be sufficient.
-
-Maximum number of periods to download data sets for: "12".
-
-#### 2.5.2 Appearance settings
-
-Although this settings does not affect the DHIS2-RTS app itself (for which the home screen is "fixed", for convenience it is recommended to reduce the filter options on the home screen.
-
-Date: do not tag
-
-Organisation Unit: tag
-
-Sync status: do not tag
-
-Assigned to me: do not tag
-
-#### 2.5.3 Analytics settings
-
-This chapter describes the configuration for visualizing some analytics on the mobile device.
-
-### 2.6 Use Case Configuration app
-
-This new DHIS2 app "links" the "Real-Time Stock Management" Tracker Program to the customized mobile app. While the Tracker Program will have the appearance of any other Tracker Program on the Capture Android app home screen, selecting a Tracker Program which is "linked" to the "Real-Time Stock Management" app will invoke the customized app instead of opening the conventional TEI dashboard.
-
-Select "Add Program" to add a new Tracker Program configured for real-time stock management.
-
-**Configure Program**
-
-**General**
-
-- Program Types: "Logistics"
-- Description: "Real-time stock management application"
-- Program \*: "Real-Time Stock Management"
-
-**Details**
-
-- Item Code \*: "Item code"
-- Item Description \*: "Item description"
-- Stock on Hand \*: "Stock on hand"
-
-**Transactions**
-
-Distributed
-
-- Distributed to \*: "Deliver to"
-- Distributed Stock \*: "Stock distribution"
-
-Corrected
-
-- Corrected Stock \*: "Stock correction"
-- Stock Count \*: "Stock count"
-
-Discarded
-
-- Discarded Stock \*: "Stock discard"
-
-### 2.7 Analytics configuration
-
+## Data Visualizer Web App - "Aggregate" Analytics and Visualizations
+Xx
+xxx
 The DHIS2-RTS analytics are a critical and indispensable component of the DHIS2-RTS concept. The DHIS2-RTS app allows managing all transactions without the need for keeping paper records. However, recording transactions as such is nearly useless unless a record of all transactions is instantly and available to the storekeeper. Despite the availability of detailed transactional reports, compliance with monthly reporting requirements must be maintained.
 
 The DHIS2 analytics provides reports both on individual transactions as well as "snapshots" with stock values on the last day of every month.
 
 Reports are accessible to all users with the respective authorities on mobile device (with limitations) as well as in the web portal.
+xxx
+These group of reports is generated from Data elements and the category options from the Data Entry form for visualizing daily and monthly totals of transactions.
 
-#### 2.7.1 Line Listing
+##### DHIS2-RTS Monthly report - Summary
 
+This reports provides the monthly totals of all transactions but only with the total "Distribution" quantity without details on the "Deliver to" for "Distribution" transactions.
+
+##### Name
+
+"RTS Monthly report - Detailed"
+
+##### Columns 
+
+"RTS - Monthly stock report" (from "Your Dimensions"):
+
+- Previous stock balance
+- Stock receipt
+- Stock distribution
+- Stock discard
+- Stock correction
+- Stock on hand
+
+##### Rows
+
+- Data: "Data Type" = "Data elements", then select all Data elements
+
+- Period: "Fixed periods" and "Monthly", then select the last three months (or more as required)
+
+##### Filter
+
+- Organisation unit: "0001 CH Mahosot"
+
+##### Options
+
+- Empty data: "Hide empty columns" and "Hide empty rows": check both
+
+![](media/image53.png)
+
+#### DHIS2-RTS Monthly report - Details
+
+This reports provides the monthly totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
+
+##### Name
+
+"RTS Monthly report - Detailed"
+
+##### Columns
+
+"RTS - Monthly stock report" (from "Your Dimensions"):
+
+- Previous stock balance
+- Stock receipt
+- "DIS - Diagn. imaging"
+- "DIS - Emergency Room"
+- "DIS - High Depend. Unit"
+- "DIS - Housekeeping"
+- "DIS - Inp. Med. Depart."
+- "DIS - Inp. Surg. Depart."
+- "DIS - Laboratory Depart."
+- "DIS - Mortuary"
+- "DIS - Obst. & Gynae."
+- "DIS - OPD"
+- "DIS - Oper. Theatre"
+- "DIS - (Other)"
+- "DIS - Paed. Dep."
+- "DIS - Physioth. Dep."
+- "DIS - Recovery Room"
+- "DIS - Steril. Dep."
+- "DIS - Transf. services"
+- Stock distribution
+- Stock discard
+- Stock correction
+- Stock on hand
+
+##### Rows
+
+- Data: "Data Type" = "Data elements", then select all Data elements
+
+- Period: "Fixed periods" and "Monthly", then select January to December 2023
+
+##### Filter
+
+- Organisation unit: "0001 CH Mahosot"
+
+##### Options
+
+- Empty data: "Hide empty columns" and "Hide empty rows": check both
+
+![](media/image64.png)
+
+#### DHIS2-RTS Monthly stockout days count report
+
+This report automatically provides the monthly number of stockout days for each item which is managed with the DHIS2-RTS mobile application.
+
+##### Name
+
+"DHIS2-RTS Stockout days count - Monthly"
+
+##### Columns
+
+- Period: "Fixed periods" and "Monthly", then select all months for 2023
+
+##### Rows
+
+- Data: "Data Type" = "Indicators", then select all "Stockout days" indicators
+
+##### Filter
+
+- Organisation unit: "0001 CH Mahosot"
+
+##### Options
+
+- Data: "Columns totals" and "Row totals"
+- Empty data: "Hide empty columns" and "Hide empty rows": check both
+
+![](media/image75.png)
+
+#### DHIS2-RTS Daily report - Summary
+
+This reports provides the daily totals of all transactions but without details on the "Deliver to" for "Distribution" transactions.
+
+##### Name
+
+"RTS Monthly report - Detailed"
+
+##### Columns
+
+"RTS - Monthly stock report" (from "Your Dimensions"):
+
+- Previous stock balance
+- Stock receipt
+- Stock distribution
+- Stock discard
+- Stock correction
+- Stock on hand
+- Period: "Fixed periods" and "Monthly", then select the last three months (or more as required)
+
+##### Rows
+
+Note that the order of these two fields can be switched either displaying items with their chronological order of transactions or displaying days in chronological order with the transactions of every day in alphabetical order of the items.
+
+- Data: "Data Type" = "Data elements", then select all Data elements
+
+##### Filter
+
+- Organisation unit: "0001 CH Mahosot"
+
+##### Options
+
+- Empty data: "Hide empty columns" and "Hide empty rows": check both
+
+![](media/image38.png)
+
+#### DHISDaily report - Details
+
+This reports provides the daily totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
+
+##### Name
+
+"RTS Daily report - Detailed"
+
+##### Columns
+
+"RTS - Monthly stock report" (from "Your Dimensions"):
+
+- Previous stock balance
+- Stock receipt
+- "DIS - Diagn. imaging"
+- "DIS - Emergency Room"
+- "DIS - High Depend. Unit"
+- "DIS - Housekeeping"
+- "DIS - Inp. Med. Depart."
+- "DIS - Inp. Surg. Depart."
+- "DIS - Laboratory Depart."
+- "DIS - Mortuary"
+- "DIS - Obst. & Gynae."
+- "DIS - OPD"
+- "DIS - Oper. Theatre"
+- "DIS - (Other)"
+- "DIS - Paed. Dep."
+- "DIS - Physioth. Dep."
+- "DIS - Recovery Room"
+- "DIS - Steril. Dep."
+- "DIS - Transf. services"
+- Stock distribution
+- Stock discard
+- Stock correction
+- Stock on hand
+
+##### Rows
+
+- Data: "Data Type" = "Data elements", then select all Data elements
+
+- Period: "Fixed periods" and "Daily", then select all days for 2023
+
+##### Filter
+
+- Organisation unit: "0001 CH Mahosot"
+
+##### Options
+
+- Empty data: "Hide empty columns" and "Hide empty rows": check both
+
+![](media/image10.png)
+
+##### DHIS2-RTS Daily stockout days count report
+
+This report automatically provides the number of items which are out of stock every day for each item which is managed with the DHIS2-RTS mobile application.
+
+##### Name
+
+"DHIS2-RTS Stockout days count - Daily"
+
+##### Columns
+
+- Period: "Fixed periods" and "Daily", then select all days for 2023
+
+##### Rows
+
+- Data: "Data Type" = "Indicators", then select all "Stockout days" indicators
+
+##### Filter
+
+- Organisation unit: "0001 CH Mahosot"
+
+##### Options
+
+- Data: "Columns totals" and "Row totals"
+- Empty data: "Hide empty columns" and "Hide empty rows": check both
+
+![](media/image48.png)
+
+
+
+
+## Line Listing Web App - Transaction Analytics and Visualizations
+Xx
 The Line Listing reports provide details of individual transactions but are not able to provide any type of aggregation.
 
 Important notice: the "Last updated on" date and time stamp indicates the actual data that respective transaction was made on the mobile device (and not the date and time of synchronization). The time indicated in the Line Listing corresponds to the time set on the mobile device.
 
 For stock receipts entered through the web portal, the "Last updated on" reflects the server time of the DHIS2 instance. Therefore, the server time and the time on mobile devices must both be set to the same date and time and should correspond to the time zone used in the respective country. If the times set on mobile devices and the DHIS2 server instance differ, the Line Listing will no longer display all transactions made on mobile devices and the web portal in chronological order.
 
-##### 2.7.1.1 DHIS2-RTS Digital stock card
+##### DHIS2-RTS Digital stock card
 
 This report replaces the manual (hand written) stock card and displays the accurate chronology of all transactions with the "Previous stock balance" and the "Stock on hand" (after the transaction).
 
-**Input**
+##### Input
 
 - Event
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: "Real-Time Stock Management"
 - Stage: "Stock on Hand"
 
-**Columns**
+##### Columns
 
 - Last updated on: "Today", "Last 90 days"
 - Deliver to: (no condition)
@@ -1373,28 +1764,28 @@ This report replaces the manual (hand written) stock card and displays the accur
 - Stock correction (no condition)
 - Stock on hand (no condition)
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - Style / Digit group separator: "Comma"![](media/image76.png)
 
-##### 2.7.1.2 DHIS2-RTS Stock distribution report
+##### DHIS2-RTS Stock distribution report
 
 This report (selectively) lists all "Distribution" transactions.
 
-**Input**
+##### Input
 
 - Event
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: Real-Time Stock Management
 - Stage: Stock on Hand
 
-**Columns**
+##### Columns
 
 - Last updated on: "Today", "Last 90 days"
 - Deliver to (no condition)
@@ -1402,31 +1793,31 @@ This report (selectively) lists all "Distribution" transactions.
 - Item description (no condition)
 - Stock distribution: "greater than (\>)" 0
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - Style / Digit group separator: "Comma"
 
 ![](media/image16.png)
 
-##### 2.7.1.3 Current Stock on hand report
+#### Current Stock on hand report
 
 This report is identical to viewing the stock item list with available stocks in the DHIS2-RTS and may be considered as redundant. The advantage of having a separate report is the possibility to give users (such as health staff in wards and services) read only access and not having to train them on the DHIS2-RTS. Moreover there is no need to select a "Transaction type" and "Deliver to" just to view the current stock position.
 
 Exceptionally and intentionally, "Event" (and not "Enrollment") has to be selected as "Input".
 
-**Input**
+##### Input
 
 - Enrollment (!)
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: Real-Time Stock Management
 
-**Columns**
+##### Columns
 
 - Item code (no condition)
 - Item description (no condition)
@@ -1436,11 +1827,11 @@ Exceptionally and intentionally, "Event" (and not "Enrollment") has to be select
 
 - Enrollment date: "Relative periods" and "Months": "This month" and "Last 12 months"
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - Style / Digit group separator: "Comma"
 - Legend: "Choose a single legend for the entire visualization": "Stockout"
@@ -1449,20 +1840,20 @@ Exceptionally and intentionally, "Event" (and not "Enrollment") has to be select
 
 ![](media/image43.png)
 
-##### 2.7.1.4 DHIS2-RTS Discard report
+#### DHIS2-RTS Discard report
 
 This report (selectively) lists all "Discard" transactions.
 
-**Input**
+##### Input
 
 - Event
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: Real-Time Stock Management
 - Stage: Stock on Hand
 
-**Columns**
+##### Columns
 
 - Last updated on: "Today", "Last 90 days"
 - Deliver to (no condition)
@@ -1470,30 +1861,30 @@ This report (selectively) lists all "Discard" transactions.
 - Item description (no condition)
 - Stock discard: "greater than (\>)" 0
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - **Style / Digit group separator: "Comma"**
 
 ![](media/image21.png)
 
-##### 2.7.1.5 DHIS2-RTS Stock correction report
+#### DHIS2-RTS Stock correction report
 
 This report (selectively) lists all "Stock correction" transactions.
 
-**Input**
+##### Input
 
 - Event
 
-**Program dimensions**
+##### Program dimensions
 
 - Program: Real-Time Stock Management
 - Stage: Stock on Hand
 
-**Columns**
+##### Columns
 
 - Last updated on: "Today", "Last 90 days"
 - Deliver to (no condition)
@@ -1501,347 +1892,42 @@ This report (selectively) lists all "Stock correction" transactions.
 - Item description (no condition)
 - Stock correction: "greater than (\>)" 0
 
-**Filter**
+##### Filter
 
 - Organisation unit / "User organisation unit"
 
-**Options**
+##### Options
 
 - **Style / Digit group separator: "Comma"**
 
 ![](media/image18.png)
 
-#### 2.7.2 Data Visualizer / Data Entry form
 
-These group of reports is generated from Data elements and the category options from the Data Entry form for visualizing daily and monthly totals of transactions.
 
-##### 2.7.2.1 DHIS2-RTS Monthly report - Summary
 
-This reports provides the monthly totals of all transactions but only with the total "Distribution" quantity without details on the "Deliver to" for "Distribution" transactions.
 
-**Name**
+## Maps Web App - Analytics and Visualizations
+Xx
 
-"RTS Monthly report - Detailed"
 
-**Columns**
 
-"RTS - Monthly stock report" (from "Your Dimensions"):
-
-- Previous stock balance
-- Stock receipt
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-
-**Rows**
-
-- Data: "Data Type" = "Data elements", then select all Data elements
-
-- Period: "Fixed periods" and "Monthly", then select the last three months (or more as required)
-
-**Filter**
-
-- Organisation unit: "0001 CH Mahosot"
-
-**Options**
-
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
-
-![](media/image53.png)
-
-##### 2.7.2.2 DHIS2-RTS Monthly report - Details
-
-This reports provides the monthly totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
-
-**Name**
-
-"RTS Monthly report - Detailed"
-
-**Columns**
-
-"RTS - Monthly stock report" (from "Your Dimensions"):
-
-- Previous stock balance
-- Stock receipt
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - Obst. & Gynae."
-- "DIS - OPD"
-- "DIS - Oper. Theatre"
-- "DIS - (Other)"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-
-**Rows**
-
-- Data: "Data Type" = "Data elements", then select all Data elements
-
-- Period: "Fixed periods" and "Monthly", then select January to December 2023
-
-**Filter**
-
-- Organisation unit: "0001 CH Mahosot"
-
-**Options**
-
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
-
-![](media/image64.png)
-
-##### 2.7.2.3 DHIS2-RTS Monthly stockout days count report
-
-This report automatically provides the monthly number of stockout days for each item which is managed with the DHIS2-RTS mobile application.
-
-**Name**
-
-"DHIS2-RTS Stockout days count - Monthly"
-
-**Columns**
-
-- Period: "Fixed periods" and "Monthly", then select all months for 2023
-
-**Rows**
-
-- Data: "Data Type" = "Indicators", then select all "Stockout days" indicators
-
-**Filter**
-
-- Organisation unit: "0001 CH Mahosot"
-
-**Options**
-
-- Data: "Columns totals" and "Row totals"
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
-
-![](media/image75.png)
-
-##### 2.7.2.4 DHIS2-RTS Daily report - Summary
-
-This reports provides the daily totals of all transactions but without details on the "Deliver to" for "Distribution" transactions.
-
-**Name**
-
-"RTS Monthly report - Detailed"
-
-**Columns**
-
-"RTS - Monthly stock report" (from "Your Dimensions"):
-
-- Previous stock balance
-- Stock receipt
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-- Period: "Fixed periods" and "Monthly", then select the last three months (or more as required)
-
-**Rows**
-
-Note that the order of these two fields can be switched either displaying items with their chronological order of transactions or displaying days in chronological order with the transactions of every day in alphabetical order of the items.
-
-- Data: "Data Type" = "Data elements", then select all Data elements
-
-**Filter**
-
-- Organisation unit: "0001 CH Mahosot"
-
-**Options**
-
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
-
-![](media/image38.png)
-
-##### 2.7.2.5 DHISDaily report - Details
-
-This reports provides the daily totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
-
-**Name**
-
-"RTS Daily report - Detailed"
-
-**Columns**
-
-"RTS - Monthly stock report" (from "Your Dimensions"):
-
-- Previous stock balance
-- Stock receipt
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - Obst. & Gynae."
-- "DIS - OPD"
-- "DIS - Oper. Theatre"
-- "DIS - (Other)"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-
-**Rows**
-
-- Data: "Data Type" = "Data elements", then select all Data elements
-
-- Period: "Fixed periods" and "Daily", then select all days for 2023
-
-**Filter**
-
-- Organisation unit: "0001 CH Mahosot"
-
-**Options**
-
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
-
-![](media/image10.png)
-
-##### 2.7.2.6 DHIS2-RTS Daily stockout days count report
-
-This report automatically provides the number of items which are out of stock every day for each item which is managed with the DHIS2-RTS mobile application.
-
-**Name**
-
-"DHIS2-RTS Stockout days count - Daily"
-
-**Columns**
-
-- Period: "Fixed periods" and "Daily", then select all days for 2023
-
-**Rows**
-
-- Data: "Data Type" = "Indicators", then select all "Stockout days" indicators
-
-**Filter**
-
-- Organisation unit: "0001 CH Mahosot"
-
-**Options**
-
-- Data: "Columns totals" and "Row totals"
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
-
-![](media/image48.png)
-
-#### 2.7.3 DHIS2-RTS Dashboards
+## Dashboard Web App - DHIS2-RTS Dashboard
 
 Each of the DHIS2-RTS dashboards presents a single Line Listing or Data Visualizer report or visualization in order to maximize their size when viewed on a (small) mobile device.
 
 All dashboards need to be configured as "Make available offline" so that they can be viewed on a mobile device when it is offline.
 
-### 2.8 Summary of metadata configuration
 
-This chapter provides a summary of the metadata configuration.
 
-#### 2.8.1 Summary of data model
 
-The following logic is used for configuring the metadata used for the Tracker Program:
 
-Data element Represent the various transactions which affect the Stock on hand calculations (receipt, distributions, corrections etc.)
-
----
-
-Option set The "Deliver to" Data element uses the "Deliver to" Option Set which lists the names of the different departments Tracked entity attribute The item attributes are Item code, description and the barcode (field for scanning) Tracked entity type The item (health care product) is tracked
-
-> The "Previous stock balance" Data element is needed for the Program rules to temporarily store Stock on hand values.
->
-> The Tracker Program uses a single repeatable Program stage named "Stock on hand":
-
-![](media/image88.png)
-
-**2.8.2 Summary of metadata configuration for "aggregate" Data entry form**
-
-The table below summarizes the main metadata configurations and settings for the "aggregate" Default Data Entry Form which is used in parallel to the Tracker Program for capturing monthly "snapshots" of the last stock on hand record during any reporting period and the total monthly distribution for each reporting period. This monthly data will also be used for analytics.
-
-The user of the "Imprest Level" inventory control system is highly recommended but could be replaced by other systems or removed if the stock replenishment is managed in the upstream, national eLMIS.
-
-| **ORGANISATION UNIT** |  |
-| --- | --- |
-| > Organisation unit | Name of the healthcare facility<br>(for each healthcare facility) |
-| > Organisation unit group | [Created/Added according to<br>national policies and/or existing<br>DHIS2 configuration] |
-| > Organisation unit group set | [Created/Added according to<br>national policies and/or existing<br>DHIS2 configuration] |
-| > Organisation unit level | [Created/Added according to<br>national policies and/or existing<br>DHIS2 configuration] |
-| > Hierarchy operations | [derives from the settings above] |
-| > **CATEGORY** | **System default settings** |
-| > Category option | Imprest Level (only for monthly<br>"snapshots")<br>Stock distributed<br>Stock on hand |
-| > Category | [Healthcare facility name] -<br>monthly stock report |
-| > Category combination | [Healthcare facility name] -<br>monthly stock report |
-| > Category option combination | (auto-generated by the system) |
-| > Category option group | (not used) |
-| > Category option group set | (not used) |
-| > **DATA ELEMENT** |  |
-| > Data element | One Data element is created for<br>every item (healthcare product)<br>with [Item code] - [Item<br>description] with the "Category<br>combination" [Healthcare facility<br>name] - monthly stock report |
-| > Data element group | (not used) |
-| > Data element group set | (not used) |
-| > **DATA ELEMENT** |  |
-| > Data set | One Data set (stock item list) for<br>every healthcare facility with<br>[Healthcare facility name] -<br>stock item list |
-| > Data set notifications | (not used) |
-| > **PREDICTOR** |  |
-| > Predictor | One predictor for every Data<br>element with [Item name] -<br>"Imprest Level Predictor" |
-| > Predictor group | "Imprest Level - carried forward<br>from previous month" grouping all<br>Predictors |
-| > **SCHEDULER** |  |
-| > Scheduler app | "Imprest level - predictor -<br>rolling forward to the next month"<br>running at 00:05:00 every first day<br>of the month |
-
-#### 2.8.3 Summary of metadata configuration for Tracker Program
-
-The table below summarizes the main metadata configurations and settings for the Tracker Program on which the customized DHIS2-RTS is based and using "in the background". While not visible to users it is indispensable and critical for customizing the configuration to individual countries as well as for managing data such as adding or removing items (health care products).
-
-| **CATEGORY** | **System default settings** |
-| --- | --- |
-| > Organisation unit | According to national protocols<br>and policies and/or existing<br>DHIS2 configuration |
-| > Data element | Name (\*):<br>\- "Deliver to": "Text" /<br>"Option set" = "Deliver to"<br>\- "Previous stock balance":<br>"Positive integer"<br>\- "Stock correction":<br>"Number"<br>\- "Stock count": "Positive<br>integer"<br>\- "Stock discard": "Positive<br>integer"<br>\- "Stock distribution":<br>"Positive integer"<br>\- "Stock on hand": "Positive<br>integer"<br>\- "Stock received":<br>"Positive integer"<br>Domain type (\*): "Tracker"<br>Value type (\*): see above<br>Store zero data values: tag |
-| > Option set | Primary Details / Name:<br>"Deliver to"<br>Primary Details / Value type:<br>"Text"<br>Options / Name:<br>\- "Diagnostic imaging<br>(X-ray)" / "diagn_imag"<br>\- "Emergency Room" /<br>"emerg_room"<br>\- "High Dependency Unit" /<br>"hi_dep_unit"<br>\- "Inpatient Medical<br>Department" / "inp_med_dep"<br>\- "Inpatient Surgical<br>Department" /<br>"inp_surg_dep"<br>\- "Laboratory Department" /<br>"lab_dep"<br>\- "Mortuary" / "mort"<br>\- "Obstetrics an Gynaecology<br>services" / "obs_gyn"<br>\- "Operating Theatre" /<br>"op_theatre"<br>\- "Out-Patient Department" /<br>"outpat_dep"<br>\- "Paediatric Department" /<br>"paed_dep"<br>\- "Physiotherapy Department"<br>/ "phys_dep"<br>\- "Recovery Room" /<br>"rec_room"<br>\- "Sanitation and<br>Housekeeping" / "san_housek"<br>\- "Sterilization Department"<br>/ "sterii_dep"<br>\- "Transfusion services" /<br>"transf_serv" |
-| > Tracked entity attribute | Name:<br>\- "Item barcode"<br>\- "Item code"<br>\- "Item description"<br>"Value type (\*)": "Text"<br>"Aggregation type (\*)":<br>"None"<br>"Unique": "Unique" /<br>"Organisation unit" |
-| > Tracked entity type | Name: "Item"<br>"Minimum number of attributes<br>required to search": "1"<br>"Feature type": "None"<br>"Tracked entity type<br>attributes":<br>\- Item code / not "Searchable"<br>\- Item description / not<br>"Searchable"<br>\- "Display in list":<br>unchecked<br>\- "Mandatory": unchecked<br>\- "Searchable": see above<br>Note: "Item barcode" is<br>intentionally not included here. |
-| > Program | "Real-Time Stock management" |
-| > 1 Program details | "Name (\*)": "Real-Time Stock<br>Management"<br>"Short name (\*)": "Real-Time<br>Stock Management"<br>"Tracked entity type (\*)":<br>"Item"<br>"Display front page list":<br>check (appears as white tick in<br>a blue square)<br>"Access level": "Open"<br>"Minimum number of attributes<br>required to search": "1". |
-| > 2 Enrollment details | "Show incident date": check |
-| > 3 Attributes |  |
-| > Assign attributes | "Program tracked entity<br>attributes":<br>\- Item barcode<br>\- Item code<br>\- Item description |
-| > Create registration form | Leave blank |
-| > 4 Program stages |  |
-| > Stage Details | Name: "Stock on Hand"<br>"Scheduled days from start<br>(\*)": "0"<br>Repeatable: check (appears as<br>white tick in a blue square) |
-| > Assign data elements | Selected items:<br>\- "Stock count"<br>\- "Stock distribution"<br>\- "Stock correction"<br>\- "Stock discarded"<br>\- "Stock received"<br>\- "Stock on Hand"<br>\- "Deliver to"<br>\- "Previous stock balance" |
-| > Create data entry form | BASIC: "Stock management":<br>\- "Stock distribution"<br>\- "Stock count"<br>\- "Stock discarded"<br>\- "Stock received"<br>\- "Stock on hand"<br>\- "Deliver to"<br>\- "Previous stock balance" |
-| > 5 Access | X Organisation units:<br>\- "0001 CH Mahosot"<br>\- "0002 CH Mittahap»<br>"Roles and Access":<br>"Real-Time Stock Management"<br>"APPLY TO SELECTED STAGES":<br>"Stock on Hand" |
-| > 6 Notification | (blank) |
-| > Program rule |  |
-| > Assign Stock correction | Program (\*): "Real-Time Stock<br>Management"<br>Name (\*): "Assign Stock<br>correction"<br>Condition: "d2:hasValue(<br>#{Stock count} )"<br>Action: "Assign value"<br>Data element to assign to:<br>"Stock on hand"<br>Expression to evaluate and<br>assign: "#{Stock<br>count}-#{Previous stock<br>balance}" |
-| > Assign Stock on Hand | Program (\*): "Real-Time Stock<br>Management"<br>Name (\*): "Assign Stock on<br>Hand"<br>Condition: "true"<br>Action: "Assign value"<br>Data element to assign to:<br>"Stock on hand"<br>Expression to evaluate and<br>assign: "#{Previous stock<br>balance}+#{Stock<br>received}-#{Stock<br>distribution}-#{Stock<br>discarded}" |
-| > Assign Stock on hand | Program (\*): "Real-Time Stock |
-| > correction | Management"<br>Name (\*): "Assign Stock <br>correction"<br>Condition: "d2:hasValue( <br>#{Stock count} )"<br>Action: "Assign value"<br>Data element to assign to: <br>"Stock on hand"<br>Expression to evaluate and <br>assign: "#{Stock count}" |
-| > Assign previous stock balance | Name (\*): "Assign previous<br>stock balance"<br>Condition: "d2:hasValue(<br>#{Initial stock on hand -<br>Previous event} )"<br>Action: "Assign value"<br>Data element to assign to:<br>"Previous Stock Balance"<br>Expression to evaluate and<br>assign: "#{Initial stock on<br>hand - Previous event}" |
-| > Program rule variable | Program (\*): "Real-Time Stock<br>Management"<br>Name / Data element<br>\- "Initial stock on hand -<br>Previous event": "Data element<br>from previous event" / "Stock<br>on hand"<br>\- "Previous stock balance":<br>"Data element in current<br>event" / "Previous stock<br>balance"<br>\- "Stock correction": "Data<br>element in current event" /<br>"Stock on hand"<br>\- "Stock count": "Data<br>element in current event"/<br>"Stock on hand"<br>\- "Stock discarded": "Data<br>element in current event" /<br>"Stock discarded"<br>\- "Stock distribution":<br>"Data element in current<br>event" / "Stock distribution"<br>\- "Stock received": "Data<br>element in current event" /<br>"Stock received"<br>Source type (\*): see above<br>Data element: see above |
-| > Use case configuration app | Use case configuration app<br>Configure Program<br>General<br>\- Program Types: "Logistics"<br>\- Description: "Real-time<br>stock management application"<br>\- Program \*: "Real-Time Stock<br>Management"<br>Details<br>\- Item Code \*: "Item code"<br>\- Item Description \*: "Item<br>description"<br>\- Stock on Hand \*: "Stock on<br>hand"<br>Transactions<br>Distributed<br>\- Distributed to \*: "Deliver<br>to"<br>\- Distributed Stock \*: "Stock<br>distribution"<br>Corrected<br>\- Corrected Stock \*: "Stock<br>correction"<br>\- Stock Count \*: "Stock<br>count"<br>Discarded<br>\- Discarded Stock \*: "Stock<br>discard" |
-
-## 3 DHIS2 REAL-TIME STOCK MANAGEMENT MOBILE APPLICATION
-
+## Android Capture App - DHIS2-RTS mobile application
+Xx
 The mobile device application (front-end, user interface) consists of a login screen, a single screen for entering and editing data by pharmacy staff, a third (and last) screen for viewing and correcting the summary and a final screen for the analytics.
 
 Any other functionality is placed in the native DHIS2 settings menu.
 
-### 3.1 General use case
+### General use case
 
 Medical stocks comprise drug products (tablets, injections, diagnostic test etc.) as well as single use medical devices such as syringes, bandages, catheters, drains, x-ray films etc.
 
@@ -1895,7 +1981,7 @@ The DHIS2-RTS data and analytics provides the storekeeper with information on:
 
 - distributions by supplied ward or service
 
-### 3.2 General design principles and business requirements
+### General design principles and business requirements
 
 The principle of "digital frugality" of keeping the mobile device application as simple, "light" and "lean" as possible is an explicit objective of the project. The mobile device application features only a login window for authentication, a window for order picking and a third window for reviewing and confirmation. Any information displayed on any user interface must be essential and indispensable to business processes and workflows.
 
@@ -1942,7 +2028,7 @@ This mobile application will mainly be used by health workers which have not rec
 - Any data values entered on the mobile device using the DHIS2 Capture Android is stored instantly upon entry and does not require "saving"
 - The mobile device application does not allow users to export or download data from the mobile device in any way nor is this required. Previously recorded data can be viewed in dashboards on the mobile device or in the DHIS2 web portal
 
-### 3.3 DHIS2 mobile device application installation
+### DHIS2 mobile device application installation
 
 Before using the application for the very first time, as well as in case of any error in the mobile device, the mobile device application must be installed on every mobile device individually.
 
@@ -1950,7 +2036,7 @@ As the DHIS2-RTS is a native module in the DHIS2 Capture Android app, installati
 
 The user downloads the native DHIS2 Capture Android app from Google Play Store by searching for "DHIS2" and installing the mobile app like any other application.
 
-### 3.4 DHIS2 mobile device application user access (login and logout)
+### DHIS2 mobile device application user access (login and logout)
 
 This process allows users to login and access the mobile device application.
 
@@ -1958,7 +2044,7 @@ As the DHIS2-RTS is a native module in the DHIS2 Capture Android app, the login 
 
 Users can login according to their user profile and account settings as configured in the DHIS2 web portal. Access to the DHIS2-RTS functionality is controlled through the user settings, the Tracker Program setting as well as the Android Settings app [this to be confirmed].
 
-### 3.5 "Distribution" transaction
+### "Distribution" transaction
 
 More than 99% of all transactions will be "Distribution" transactions where storekeepers pick and pack healthcare goods requested by a department, service, community health care and immunization workers which are then either picked up by the requester or delivered by the pharmacy.
 
@@ -1970,7 +2056,7 @@ The DHIS2-RTS is designed for instant digital recording and explicitly not inten
 
 - As the stock on hand is automatically calculated, users have the possibility of manually correcting any discrepancies by recording correcting the actual, current stock on hand.
 
-#### 3.5.1 "Distribution" transaction workflow
+#### "Distribution" transaction workflow
 
 For each "Distribution" transaction the following workflow is required. User
 
@@ -1991,7 +2077,7 @@ For each "Distribution" transaction the following workflow is required. User
 
 - informs the requester to pick up the goods are delivers them to the requesting department/service
 
-#### 3.5.2 "Distribution" transaction use case
+#### "Distribution" transaction use case
 
 1.  User authenticates and accesses the DHIS2 Capture Android app.
 2.  The DHIS2 Capture Android app home screen appears and displays all the DHIS2 Data Sets and Programs to which the user is assigned and has access to. ![](media/image25.png)
@@ -2049,7 +2135,7 @@ For each "Distribution" transaction the following workflow is required. User
 45. User selects "Not now" to close the confirmation message.
 46. The confirmation message closes, the home screen reverts and the user is ready for entering the next transaction. ![](media/image34.png)
 
-### 3.6 "Discard" transaction
+### "Discard" transaction
 
 Stock is discarded whenever healthcare goods are expired, damaged or no longer usable for other reasons. Those products must be removed from the "active" stock and segregated in a locked cupboard or room to prevent inadvertent use until the products are disposed of.
 
@@ -2061,7 +2147,7 @@ There are several reasons for differentiating between "Distribution" and "Discar
 
 The workflow and use case are almost identical with those of the "Distribution" transaction with the only difference that the "Deliver to" option is not required and therefore not displayed.
 
-#### 3.6.1 "Discard" transaction workflow
+#### "Discard" transaction workflow
 
 For each "Discard" transaction the following workflow is required: user
 
@@ -2079,11 +2165,9 @@ For each "Discard" transaction the following workflow is required: user
 
 - places the selected products in quarantine to prevent inadvertent use
 
-#### 3.6.2 "Discard" transaction use case
+#### "Discard" transaction use case
 
 This use case only shows the steps which differ from the "Distribution" use case.
-
-.
 
 1.  User accesses the DHIS2-RTS mobile device application.
 2.  The DHIS2-RTS home screen opens. ![](media/image7.png)
@@ -2094,7 +2178,7 @@ This use case only shows the steps which differ from the "Distribution" use case
 7.  User selects the Organisation unit from the "From" drop-down menu (see "Distribution" transaction).
 8.  The header displays "Discard" as transaction type and the Organisation unit as "From" and the user is ready to select the items and quantities which need to be discarded in the same way as for the "Distribution" workflow. ![](media/image91.png)
 
-### 3.7 "Correction" transaction
+### "Correction" transaction
 
 Stock corrections must only be made if the mistake in previous transactions cannot be correct by recording additional transactions and may be needed for various reasons:
 
@@ -2110,7 +2194,7 @@ In most case the mistake will never be found and it is important to differentiat
 
 The workflow for "Correction" transactions is almost identical with the "Distribution" workflow with the important difference that, unlike all other transactions, the user does not enter the transaction quantity but instead enters the quantity resulting from a physical stock count and DHIS2-RTS then calculates the discrepancy. Moreover, the "Correction" transaction is the only transaction where entries or "0" (zero) make sense.
 
-#### 3.7.1 "Correction" transaction workflow
+#### "Correction" transaction workflow
 
 For each "Correction" transaction the following workflow is required, user:
 
@@ -2126,7 +2210,7 @@ For each "Correction" transaction the following workflow is required, user:
 - repeats process for each item
 - carries out a final review of all items for which a stock correction was entered
 
-#### 3.7.2 "Correction" transaction use case
+#### "Correction" transaction use case
 
 This use case only shows the steps which differ from the "Distribution" use case.
 
@@ -2143,7 +2227,7 @@ This use case only shows the steps which differ from the "Distribution" use case
 11. The user interface displays the correct stock on hand in the "Stock" column.
 12. The user repeats the process above for every item to be picked, proceed to the "Review" and completes the transaction as described in the previous sub-chapter.
 
-### 3.8 Mobile device analytics
+### Mobile device analytics
 
 DHIS2 natively provides users with on-line and off-line analytics.
 
@@ -2159,7 +2243,7 @@ It is important to note that apart from the pharmacy staff as the main user, any
 
 - Checking the availability of stocks by department/ward supervisors before preparing their daily/weekly orders and, if necessary, ordering (more of) alternative health care products
 
-#### 3.8.1 Analytics through progressive web app (PWA)
+#### Analytics through progressive web app (PWA)
 
 The native DHIS2 progressive web app functionality allows viewing any DHIS2 dashboards which are configured as "Make available offline" on a mobile device through any installed web browser.
 
@@ -2169,15 +2253,7 @@ The DHIS2 analytics (as of the time the mobile device was connected to the Inter
 
 In order to view the the visualizations without the dashboard headers select "View fullscreen" from the three dot menu in the upper right corner of each visualization.
 
-#### 3.8.2 Summary analytics through Data entry forms
-
-While the Pivot tables from the Data Visualizer app are too complex for viewing the offline analytics, the same information is available from the daily and monthly detailed reports from the respective Data entry forms which are natively available offline.
-
-#### 3.8.3 Offline in-app analytics
-
-_Under development_.
-
-### 3.9 Mobile device synchronization
+### Mobile device synchronization
 
 The DHIS2-RTS mobile app uses the native synchronization functionality which is included in the detailed DHIS2 documentation. The simplest way for synchronizing the mobile after every transaction is using the synchronization icon (double reverse arrow) in the header bar without having to leave the DHIS2-RTS user interface. However, there are some important operational considerations which are specific to the real-time stock management use case.
 
@@ -2215,11 +2291,53 @@ If the network connectivity does not allow synchronizing mobile devices with the
 
 Note that, by design, the DHIS2 Capture Android app does not automatically synchronize data with the central DHIS2 server during login and if any data was not yet synchronized before logging out, the synchronization will have to be prompted "manually".
 
-## 4 DHIS2 REAL-TIME STOCK WEB PORTAL MANAGEMENT
+## Medical Stock Management with the DHIS2-RTS application
+Xx
+
+xxx
+Adding and removing TEIs.
+TEIs are registered once in a specific DHIS2 database and the same TEI (with the same ID) is used for different OUs as well as possibly in other Tracker programs or Event programs.
+
+
+
+
+## Integration with national eLMIS
+Xx
+
+
+xxxxxxxxxx
+
+
+
+
+
+
+
+#### Summary of data model
+
+The following logic is used for configuring the metadata used for the Tracker Program:
+
+Data element Represent the various transactions which affect the Stock on hand calculations (receipt, distributions, corrections etc.)
+
+Option set The "Deliver to" Data element uses the "Deliver to" Option Set which lists the names of the different departments Tracked entity attribute The item attributes are Item code, description and the barcode (field for scanning) Tracked entity type The item (health care product) is tracked
+
+> The "Previous stock balance" Data element is needed for the Program rules to temporarily store Stock on hand values.
+>
+> The Tracker Program uses a single repeatable Program stage named "Stock on hand":
+
+![](media/image88.png)
+
+
+
+PARKING LOT xxxxxxxxxxxxxxxxxxxxxx
+
+
+
+## DHIS2 REAL-TIME STOCK WEB PORTAL MANAGEMENT
 
 While the DHIS2-RTS use at the health facility level is conceived for exclusive use on mobile devices, the initial set-up and configuration, routine administration as well as the regular stock receipts can only be made through the DHIS2 web portal.
 
-### 4.1 Creating stock item list
+### Creating stock item list
 
 Before the DHIS2-RTS mobile application can be used, all health care products (items) used in any specific health facility (Organisation unit) must be "registered" and "enrolled" with their own and unique ID (identification) in each of the health care facility where those products are used. For example, paracetamol tablet, 500 mg has to be enrolled and registered in each Organisation unit (OU) separately as the product must uniquely assigned to its Organisation unit for correctly recording transactions and providing correct analytics. Note that an item, such as paracetamol tablets, with identical specifications in many facilities across a country, has to have its own and unique ID for each of these health facilities.
 
@@ -2227,13 +2345,13 @@ Items can be "registered" and "enrolled" manually through the native Capture app
 
 Alternatively a list of items can be uploaded by using the "TEI import" function of the native DHIS2 Import/Export app or the third-party "Bulk Load" app.
 
-### 4.2 Adding items to and removing from the DHIS2-RTS app
+### Adding items to and removing from the DHIS2-RTS app
 
 In the same way that items are created and added to the stock item list initially, items can be added to any health facility at any time.
 
 [Question: how to remove (or "hide") items no longer in use. If they are deleted, will the analytics still be available].
 
-### 4.3 Stock receipts
+### Stock receipts
 
 When consignments are received at the health care facility, the user confirms receipt to the district level where the stocks are uploaded from an electronic record.
 
@@ -2241,21 +2359,22 @@ The DHIS2-RTS design intentionally does not foresee any possibility for users to
 
 Stock receipts can be effected using the native Import/Export app or the third-party Bulk Load app. But ideally, all stock receipts should be effected directly and automatically through a real-time integration with the upstream, national LMIS. In this system, the items and quantities on the respective packing list are "loaded" into DHIS2 directly through its API-endpoints from the upstream, national LMIS as soon as the storekeeper has confirmed receipt.
 
-### 4.4 Adding items to and removing from the Default Data Entry Form
+### Adding items to and removing from the Default Data Entry Form
 
 Whenever items (health care products) are added to the DHIS2 Tracker Program, the corresponding Data elements must be configured and must be added to all DHIS2-RTS Data entry forms.
 
 At any item, the list of TEIs (Tracked Entity Instances) of any Organisation unit must correspond completely and exactly with the list of Data elements in all DHIS2-RTS Data sets in order to ensure availability of the Data entry form for monthly reporting as a backup as well as for ensuring accurate analytics reporting.
 
-### 4.5 Web portal analytics
+### Web portal analytics
 
 All the analytics indicated in chapter 2.7 "Analytics configuration" are available in the DHIS2 web portal.
 
-## 5 PHARMACY STOCK MANAGEMENT WITH THE DHIS2-RTS APP
+
+## MEDICAL STOCK MANAGEMENT WITH THE DHIS2-RTS APP
 
 In any implementation, national regulations and guidelines must be respected. This chapter focuses on technical and practical aspects and should only be considered as recommendations which may or may not be useful.
 
-### 5.1 Preparations for implementing the mobile application
+### Preparations for implementing the mobile application
 
 Using the DHIS2-RTS mobile application requires availability and sustainable management of an existing central DHIS2 server instance with technical support.
 
@@ -2265,25 +2384,25 @@ Any implementation must be approved and planned by the national Health authoriti
 
 Mobile device need to be provided and sustained, a really network connection needs to be available and financed and competent users need to be identified and trained on the application.
 
-#### 5.1.1 Providing and setting up mobile devices
+#### Providing and setting up mobile devices
 
 Every health facility should have at least one tablet PCsavailable which is dedicated for use by storekeepers and, ideally, a second backup device which may be shared with other users at the health facility.
 
 Private devices should not be used as this poses data security risks and leads to arguments about payment for the Internet connection. Details on the specifications for recommended devices are given in chapter 1.6.
 
-#### 5.1.2 Obtaining user access
+#### Obtaining user access
 
 At every health facility, at least the (main) pharmacist or storekeeper and another person replacing her/him in case of absence should have full access to the mobile device and the application. Other staff supervising pharmacists or storekeepers should also have access in order to be able to provide advice and training as well as understand any problems which may occur.
 
 Every user must be configured in the central DHIS2 database with a username, password, user profile and corresponding user access and user rights.
 
-#### 5.1.3 Adding health facilities to DHIS2
+#### Adding health facilities to DHIS2
 
 Only health care facilities which use the DHIS2-RTS should be configured in the DHIS2-RTS Tracker Program and therefore any additional health facility which intend to implement the system must be configured by DHIS2 system administrator.
 
 Any Organisation units which are already configured in the DHIS2 database and in use for other DHIS2 applications must be used to avoid duplication of facilities and facility names.
 
-#### 5.1.4 Setting up stock item list in DHIS2
+#### Setting up stock item list in DHIS2
 
 A single, central stock item list for each health care facility is indispensable for using the DHIS2-RTS as well as for order management and stock management. In most cases, such a stock item list which details of all items which are permanently maintained in the pharmacy and are regularly replenished will already be available.
 
@@ -2299,17 +2418,34 @@ The use of item codes is optional but recommended. It is important to note that 
 
 If no coding system is used or the coding system (such as numbers) do not allow grouping items, grouping can be achieved by preceding item descriptions with abbreviations for product groups such as DORA (oral drugs), DVAS (vaccines), MDRE (dressing material) etc.
 
-#### 5.1.5 Uploading initial stock
+To integrate **Stock item list management**
+
+The stock item list (list of Data elements) will have to be manually harmonized and aligned with the TEIs registered for the respective Organisation unit.
+
+Every Data set is assigned to the Organisation Unit for which it has been configured. Alternatively, all Organisation Units could use the same Data set.
+
+"Expiry days" denotes the number of days after the end of the monthly reporting period until which data for that reporting period can still be entered. In order to allow completion of physical stock counts in the days following the end of the month in case the end of the month falls on a day off, the default setting is 5 (days).
+
+"Open future periods for data entry" is set to 1 by default which allows to record data any time during the month of the current reporting period. For example, stock data for January can be entered and edited throughout the month from the first to the last day of January.
+
+"Days after period to qualify for timely submission" is also set to 5 days for the sake of consistency meaning that reports completed within the first five days of the following month are considered having been submitted on-time.
+
+The "Period type" is set to "Monthly" by default as all healthcare facilities are requested to submit reports every month.
+
+#### Uploading initial stock
 
 Before the DHIS2-RTS mobile application is used, a complete phyiscal stock count should be carried out to confirm the available stock on hand. The result of this stock count is then simply uploaded as the initial stock receipt explained in chapter 4.3.
 
-### 5.2 Pharmacy setup
+
+
+
+## Medical stores management
 
 Again, this chapter should be considered as a recommendation and possible solution which has been tried and tested in the field but which is superseded by national regulations and policies.
 
 Using the DHIS2 Reat-Time Stock management system requires a high level of discipline and accuracy since the application automatically recalculates the remaining stock balance after every transaction and any mistakes are perpetuated.
 
-#### 5.2.1 Storage equipment and health care good storage
+#### Storage equipment and health care good storage
 
 All stocks should be arranged in alphabetical order of their item groups and within by item codes and item descriptions. The first batch of each item should be placed in a bin ("active bin") according to FEFO/FIFO. Any other batches which are not received in the tertiary supplier packaging should also be placed in separate bins while any health care goods delivered in tertiary supplier packaging should not be opened but placed on the shelf in the order of expiry dates. When the "active bin" is emptied, stock from the next batch can be placed in that bin for the next distribution.
 
@@ -2321,7 +2457,7 @@ Below an example of a best practice set-up from an actual implementation in hosp
 
 Note the scanning barcode requires good lighting conditions and that barcodes must not be placed to close together as at any time a single barcode must be visible in the barcode scanner viewer finder for that barcode to be promptly and correctly recognized by the software application.
 
-#### 5.2.2 Generating barcode labels for stock
+#### Generating barcode labels for stock
 
 Linear barcodes as well as QR codes are both equally recognized with the DHIS2-RTS mobile app. Linear barcodes have the advantage that they can be easily generated from a simple Excel spreadsheet but the disadvantage that they are quite long even for codes with only a few characters and the mobile device has to be held exactly horizontally during scanning (the red line in the barcode scanner window has to cover the entire barcode from left to right) in order for the barcode to be recognized.
 
@@ -2353,7 +2489,7 @@ The "PSM barcode label template" Excel file contains three worksheets
 
 "C Label print": this worksheet correctly formats the item code, barcode and item description on four labels per page if printed in landscape which can be printed on any printer.
 
-#### 5.2.3 Stock receipts
+#### Stock receipts
 
 The receipt of consignments should must be acknowledged to the medical distribution centre shipping them, ideally using a simple DHIS2 application. After receiving the respective (district) medical store has received this notification, the logistics team will upload the items and quantities indicated in the packing list to the respective Organisation unit (health facility) where those quantities will be automatically added to the "Stock on hand". Ideally, this process will be fully automatized by integrating the upstream national LMIS with the DHIS2 serve.
 
@@ -2361,7 +2497,7 @@ It is important that the mobile device at the health facility receiving consignm
 
 In case of any discrepancies between the packing list and the physically received consignments, the logistic team should be contacted for either arranging delivery of the short-shipped items and quantities or correcting the records in national LMIS system. If excess stock was delivered, the logistics services can simply issue a packing list for the missing quantities which are again acknowledged with the IRIS "Goods Confirmation" application and will correct the record. Either way, the corrected stock receipt quantities will eventually be updated in the DHIS2 database.
 
-#### 5.2.4 Recording distributions
+#### Recording distributions
 
 Storekeepers will usually receive a list of items and quantities required for each ward or service once a day, weekly or according to another established schedule.
 
@@ -2375,11 +2511,11 @@ In case during the order picking mistakes were made, they cannot be corrected af
 
 The "excess" quantity can also be given to another ward or service without recording. While the total stock on hand is thereby corrected, the statistics on distributions to each ward or service would again no longer be correct (and cannot be corrected).
 
-#### 5.2.5 Recording discarded stocks
+#### Recording discarded stocks
 
 Stock which is expired, damaged or unusable for other reasons must be removed from the stock and be stored in a locked cupboard or room which is dedicated only to stock waiting for disposable. In order to account for reduction of the stock on hand without allocating stocks as distribution to any specific ward or service, the storekeeper carries out a "Discard" transaction in the same way as for the "Distribution" transaction.
 
-#### 5.2.6 Recording stock corrections
+#### Recording stock corrections
 
 Discrepancies between the physically available stock on hand on the shelf and the stock on hand balance calculated in the DHIS2-RTS mobile application may occur for various reasons.
 
@@ -2393,7 +2529,7 @@ In all of these cases, storekeepers must effect a "Correction" transaction in th
 
 In case "loans" are given to or received from other organizations or health care facilities options are not to create any transaction (as eventually the loan will be "repaid") or by effecting two stock corrections which cancel each other out.
 
-#### 5.2.7 Residual balance counting for stock on hand
+#### Residual balance counting for stock on hand
 
 As the stock on hand as well as the transaction quantities are instantly updated in the DHIS2-RTS mobile application, a complete and updated record of the current stock on hand is available in the system at any time and in principle no (monthly) physical stock counts are necessary. However, if stocks are never counted, discrepancies will only become apparent if and once negative stocks would occur during a transaction.
 
@@ -2407,7 +2543,7 @@ Residual balance counting methods include:
 
 - physically counting the remaining stock on hand for small quantities of items which can be effected quickly
 
-### 5.3 Backup plan in case of system failure
+### Backup plan in case of system failure
 
 Any digital systems can fail at any level: the mobile device at the health facility, the Internet connection can fail for prolonged periods and central servers and databases can fail.
 
@@ -2417,7 +2553,8 @@ The simplest way is to continue or resume the use of stock cards for any transac
 
 For the "Advanced mode", the quantities distributed to each ward or service can be tallied up and entered with a single transaction for each ward or service once the system is restored. This will falsify the transaction dates but still maintain an accurate record of the total quantities distributed to each ward or service. In case of prolonged system failure, the "aggregate" Data entry form with a monthly reporting period can be used for documenting the stock on hand at the end of the month as well as the total quantities during the month. The details of these transactions will be permanently missing in the system but, after effecting a stock "Correction", use of the DHIS2-RTS mobile application can be resumed once all systems are restored.
 
-## 6 DHIS2 REAL-TIME STOCK INTEGRATION WITH NATIONAL eLMIS
+
+## DHIS2 REAL-TIME STOCK INTEGRATION WITH NATIONAL eLMIS
 
 As the integration of DHIS2 with an upstream, national eLMIS requires a detailed mapping of data and a dedicated project, this chapter can only provide an general outline of an integration.
 
@@ -2429,7 +2566,7 @@ The integration of DHIS2 used (only) at the health facility level with a nationa
 
 The synchronization of facility level DHIS2 data with the central DHIS2 server is managed fully by native DHIS2 functionality. The integration of DHIS2 with the national eLMIS requires synchronization of data from the central DHIS2 server with the national eLMIS server as well as synchronization of (some) data from the national eLMIS server with the central DHIS2 server. As every DHIS2 entity features a unique ID, integration is best accomplished by using (only) these IDs rather than the actual field names appearing for users which are natively available from any DHIS2 instance through the Web API.
 
-### 6.1 Data synchronization from DHIS2 to national eLMIS from
+### Data synchronization from DHIS2 to national eLMIS from
 
 The following data fields from the DHIS2 Tracker Program need to by synchronized with the national eLMIS server, ideally in real-time.
 
@@ -2451,7 +2588,7 @@ The following data fields from the DHIS2 Tracker Program need to by synchronized
 
 - Consignment: ID and date/time stamp, optional: user name
 
-### 6.2 Data synchronization from DHIS2 to national eLMIS from
+### Data synchronization from DHIS2 to national eLMIS from
 
 The following data fields need to be synchronized from the national eLMIS to the central DHIS2 server, which in turn manages synchronization of the data with the respective mobile devices at health facilities.
 
@@ -2460,3 +2597,5 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Organisation unit name
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
+
+Last edit: GMc on 14-01-2024 at 12:51
