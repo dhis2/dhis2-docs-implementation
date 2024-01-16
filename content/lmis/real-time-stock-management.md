@@ -1261,11 +1261,11 @@ T2A - DORACEFI4T - CEFIXIME, 400 mg, tab. - DIST - Inpatient Medical Department 
 >>**Generator \(*)**
 >>>**Description**: "T2A - [Item code] - SOH closing - PR - DAY"  
 >>>**Expression**: 
-#{ZNi9SCtVA83.srqJsVxtLdA}+
-#{ZNi9SCtVA83.iHrG3AK8XxK}-
-#{ZNi9SCtVA83.QjLESy7VVB6}-
-#{ZNi9SCtVA83.Hy0b1skIzyR}+
-#{ZNi9SCtVA83.tb7HW13vK6X}"  
+\#{ZNi9SCtVA83.srqJsVxtLdA}+
+\#{ZNi9SCtVA83.iHrG3AK8XxK}-
+\#{ZNi9SCtVA83.QjLESy7VVB6}-
+\#{ZNi9SCtVA83.Hy0b1skIzyR}+
+\#{ZNi9SCtVA83.tb7HW13vK6X}"  
 *[Item] Opening SoH+[Item] Stock receipt-[Item] Stock distribution-[Item] Stock discard+[Item] Stock correction*  
 *Please note that the "Stock correction" has to be added (and not be subtracted).*
 >>
@@ -1385,6 +1385,8 @@ The "Android settings Web App" allows customizing synchronization settings as we
 >>>>**Visualization item**: [to be added]  
 >>>>**Visualization title**: [to be added]  
 
+[*Offline analytics to be added*]
+
 ## Use Case Configuration Web App - Program Configuration
 The Use Case Configuration Web app assigns the "Real-Time Stock Management" Tracker Program and some of its metadata to the customized mobile app. While the Tracker Program will have the appearance of any other Tracker Program on the Android Capture App home screen, selecting a Tracker Program which is assigned to the "Real-Time Stock Management" app will invoke the customized app instead of opening the conventional TEI dashboard.
 Note that only programs which meeting certain configuration criteria can be selected and only those will appear for selection in the respective drop-down menu:  
@@ -1431,61 +1433,79 @@ Both Data entry forms (as configured according to the settings above) are config
 
 ## Capture Web App - Tracked Entity Instance Management
 
-The Capture Web app must not be used for recording or editing transactions as the lack of a time stamp displays them in an arbitrary order and consequently the "Previous stock balance" used for the next transaction is also selected arbitrarily among previous transactions and incorrect (but this issue does not apply to the DHIS2-RTS mobile application).
-However, the Capture Web App is required for registering, enrolling, "completing" and "activating" Tracked Entity Instances.
+The Capture Web App must not be used for recording or editing transactions as the lack of a time stamp displays them in an arbitrary order. Consequently, the "Previous stock balance" used for the next transaction is also selected arbitrarily among previous transactions, is incorrect and stock on hand is not updated correctly.
+However, the Capture Web App is required for registering, enrolling, "completing" and (re)"activating" Tracked Entity Instances.
+As a general comment, unlike Data sets, item lists cannot be "assigned" to several Organisation units and the list of every Organisation unit has to be managed and edited separately. However, DHIS2 Apps such as the Bulk Load App can be used for managing several items in one or several Organisation units with a single upload.
 
 
-xxx
+**Adding items**  
+New items (healthcare products) have to be added to each Organisation unit separately by registering and enrolling before the DHIS2-RTS mobile app is used for the first time and whenever new items are received at the healthcare facility.
+Note that while any number of Organisations can enroll and register the same item (for example Paracetamol, 500 mg, tab) those items require separate UIDs (ID numbers) in each Organisation unit. However, analysis such as Pivot tables can display data for the same item across different Organisation units.
 
-Note that the "Report date" can be added from the cog wheel menu once the "STAGE FILTER" has been added.
+**Removing items**  
+Items may occasionally need to be removed from the item list of one or several Organisations when that item is no longer available and all stock has been depleted. This may arise because of changes to treatment protocols or when certain healthcare products are withdrawn from the market wich may be replaced with other products with similar but different specifications.
+Items should never be deleted from any Organisation unit as all historical data, analysis and visualizations for those items would be lost. Instead the enrollment of Tracked Entity Instances can be changed to "Complete" which changes the enrollment status to "Completed".
+Those items remain available in the Capture Web App but can be "hidden" in working lists by setting the "Enrollment status" filter to "Active". Nevertheless all historic data and all visualizations of "Completed" TEIs remain available.
+Those items can be "hidden" in the Capture Web App by selecting the "Enrollment status" filter to "Active". The Android Settings Web App allows to only download TEIs with an "Active" status to mobile devices.
 
-Note that the order of the columns can be changed by "drag and drop" in the cogwheel menu.
-
-**DHIS2-RTS Stock report working list**
-
-- Open "Capture" app and "Save as": "DHIS2-RTS Stock report" (note that a new name cannot be created later on)
-
-**More filters**
-
-- "Program stage": "Stock on hand"
-- Add all available filters for the columns displayed below.
-
-**Select columns** - "Columns to show in table" (cogwheel icon)
-
-- "Report Date"
-- "Deliver to"
-- "Item code"
-- "Item description"
-- "Previous Stock Balance"
-- "Stock receipt"
-- "Stock distribution"
-- "Stock discard"
-- "Stock correction"
-- "Stock on hand"
-- "Stock count"
-
-[Question: apparently the "Program stage" filter is not saved and disappears when exiting the screen without any possibility to "update" or "save" the view].![](media/image37.png)
-
-xxx
-In principle, this application will not be used as transactions will be exclusively managed in the customized app and a dashboard will be available for analysis of all transactions. However, the Capture app may be used for registering and enrolling (additional) items in an Organisation unit (health facility) and possibly for managing "manual" stock receipts for a small number of items.
-
-**Working list**
-
-Saved as "DHIS2-RTS Stock item list" after customization:
-
-![](media/image65.png)
-
-**Enrollment Dashboard**
-
-This dashboard shows the "Item profile" as well as a record of all transactions in chronological order:
-
-![](media/image40.png)
-
-Note that the transactions with the same date are not placed in chronological order. Therefore any data entry through the web portal must only be made on the very last transactions as otherwise the Program rules lead to incorrect values for the current stock on hand.
-
+**"Reactivating items**  
+Occasionnaly, items which have been in use at a healthcare facility and have been removed, need to available again. For example if a manufacturer resume production of a product which was with drawn from the market or if in case the change of treatment protocols requires resuming a healthcare product which was previously not recommended.
+Tracked Entity Instances (TEIs) can be simply reactivated by changing the Enrollment to "Mark incomplete" which changes their status back to "Active". The analytics and visualizations will show the entire history of those items during periods when they were "Completed" as well as when they were "Active".
 
 ## Bulk Load Web App - Uploading Stock Receipts
-Xx
+Regestering and enrolling Tracked Entity Instances (TEIs) as well as uploading transactional data can be managed with different tools, among others with the Bulk Load Web App. This DHIS2 App has the advantage of automatically providing the structure and elements of any Tracker Program.
+Before the first use, the Bulk Load Web App needs to installed from the Customs apps section of the DHIS2 App Management App.
+In principle, using the Bulk Load app always has three steps:
+- Download and save a "Template" as an Excel file
+- Copy data to the Excel "Template"
+- Upload the "Template" with the data
+
+### Registering and enrolling new items
+Prepare the item code(s) and item description(s) and ensure that the same item codes and descriptions are used in all Organisation units of the countries (although they require separate and unique UIDs).
+- Open the "Bulk Load" Web app
+- Select the "Download template" button
+- Select "DOWNLOAD TEMPLATE" and save the Excel file on your computer
+- Template: select "Real-Time Stock Mangement" from the drop-down menu
+- Select available organisation untis to include in the template: tag, the Organisation unit tree will open
+- Select the Organisation unit(s) for where items need to be registered and enrolled
+- Select "DOWNLOAD TEMPLATE": an Excel file with the file name "Real-Time Stockmanagement.xlsx" will be downloaded
+- Open the "TEI Instances" worksheet
+- TEI id: enter a UID which is distinct for the DHIS2 instance (for example generated from the "UID Generator" in the BIF Web App)
+- Select the respective "Org Unit *" from the drop-down menu in the Excel filed
+- Enrollment Date (YYYY-MM-DD)*: enter the date of the enrollment (note that the date format has to be YYYY-MM-DD)
+- Item code: enter the required item code(s)
+- Item description: enter the required item code(s)
+- Save the Excel file
+- Revert to the Bulk Load Web app
+- Select "Import data": the "Bulk data import" window opens
+- Drag and drop the edited Excel file to the greyed field or click in the greyed field, navigate to and select the edited Excel file
+- Select "IMPORT DATA": the data is uploaded and a "Synchronization Results" pop-up window opens with the details of the imported data
+- Close the Bulk Load Web app
+
+### Uploading stock receipts
+This "manual" procedure is only needed if the DHIS2 instance is not (yet) integrated with a national eLMIS where the upload of consignment data is automated.  
+*Note: transactions must never be uploaded in the past as the stock on hand balances will not be corrected. Therefore stock receipts can only be recorded after all transactions which are already recorded in the DHIS2 database*.
+- Open the "Bulk Load" Web app
+- Select the "Download template" button
+- Select "DOWNLOAD TEMPLATE" and save the Excel file on your computer
+- Template: select "Real-Time Stock Mangement" from the drop-down menu
+- Select available organisation untis to include in the template: tag, the Organisation unit tree will open
+- Select the Organisation unit(s) for where items need to be registered and enrolled
+- Select "DOWNLOAD TEMPLATE": an Excel file with the file name "Real-Time Stockmanagement.xlsx" will be downloaded
+- Open the "(1) Stock on Hand" worksheet
+- Event id: enter a UID which is distinct for the DHIS2 instance (for example generated from the "UID Generator" in the BIF Web App)
+- TEI Id: select the respective item from the drop-down menu in the Excel file
+- Options: select "default" (the only available option)
+- Date * (YYYY-MM-DD): enter the date of the transaction (note that the date format has to be YYYY-MM-DD)
+- Previous Stock Balance: enter the current stock on hand (before the stock receipt)
+- Stock receipt: enter the quantity which is being received
+- Stock on hand: enter the stock balance after the transaction (Previous Stock Balance + Stock receipt)
+- Save the Excel file
+- Revert to the Bulk Load Web app
+- Select "Import data": the "Bulk data import" window opens
+- Drag and drop the edited Excel file to the greyed field or click in the greyed field, navigate to and select the edited Excel file
+- Select "IMPORT DATA": the data is uploaded and a "Synchronization Results" pop-up window opens with the details of the imported data
+- Close the Bulk Load Web app
 
 ## Data Visualizer Web App - "Aggregate" Analytics and Visualizations
 Xx
@@ -2598,4 +2618,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-Last edit: GMc on 16-01-2024 at 20:02
+Last edit: GMc on 16-01-2024 at 22:20
