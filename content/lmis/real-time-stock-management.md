@@ -52,11 +52,15 @@ The application is based on adherence to specific structures and processes which
 The system consists of the following distinct components:
 
 - Central DHIS2 server and database
+
 - DHIS2 web portal (user interface)
+
 - DHIS2 Tracker Program
+
 - DHIS2 Data Entry Form for monthly "snapshots" as well as a fallback open in case of DHIS2-RTS failure
 
 - DHIS2 mobile app for recording transactions by scanning barcodes
+
 - DHIS2 mobile app analytics in the DHIS2-RTS, particularly electronic stock cards and monthly stock report
 
 - In addition (!!!) mobile app analytics in a default data entry form for monthly reporting and analysis
@@ -74,11 +78,13 @@ The DHIS2-RTS mobile application is used by storekeepers of pharmacies and medic
 - Receiving and put-away of stocks received from upstream medical distribution centres
 
 - Managing medical stocks
+
 - Receiving, recording and managing periodic orders from wards and services (not part of the DHIS2-RTS mobile application but indispensable part of the workflow)
 
 - Picking, packing and delivering ordered goods to departments and services
 
 - Viewing current stock on hand
+
 - Various analytics such as analysis of (aggregate) monthly demand
 
 The mobile device application is primarily intended for collecting, temporarily storing and transmitting only essential data which could not be collected otherwise to the server.
@@ -153,6 +159,7 @@ In case the mobile device fails or malfunctions for any reason (out of charge, d
 #### In case of Internet is unavailable for more than one day
 
 - Resume manual recording of transactions on stock cards
+
 - Use a DHIS2 Default Data Entry Form at the end of the month (which is much less work than retrospectively entering many transactions in the correct chronological order)
 
 #### In case all systems fail
@@ -160,6 +167,7 @@ In case the mobile device fails or malfunctions for any reason (out of charge, d
 At any time, users can resort to the manual, paper- or spreadsheet-based method which were in use before the introduction of the DHIS2-RTS application:
 
 - Carry out the physical stock count
+
 - Record the stock on hand and monthly consumption on a worksheet printout or other paper record
 
 - Calculate the monthly replenishment order using a paper record or a spreadsheet application
@@ -597,15 +605,15 @@ Program indicators in conjunction with Predictors allow automatically aggregatin
 
 A separate Program indicator has to be created for every "pair" of item description and transaction type and one example is given below for each of the transactions for one item:
 
-[Data element] - Distribution
+- [Data element] - Distribution
 
-[Data element] - Discard
+- [Data element] - Discard
 
-[Data element] - Correction
+- [Data element] - Correction
 
-[Data element] - Receipt
+- [Data element] - Receipt
 
-[Data element] - Stock on hand
+- [Data element] - Stock on hand
 
 The item is determined by setting a corresponding "filter" and the transaction type by selecting the respective Data element from the "Stock on Hand" program stage.
 
@@ -867,11 +875,13 @@ Note that the "Item code" is unique only for any specific Organisation Unit but 
 In total, four Program rules are configured for completing all required calculations:
 
 - "Assign previous stock balance"
+
 - "Assign Stock on Hand"
 
 The other two Program rule manage the "Stock correction" transaction:
 
 - "Assign Stock correction"
+
 - "Assign Stock on Hand correction".
 
 Two Program rules together provide the real-time stock on hand update.
@@ -1127,7 +1137,9 @@ The following options are configured by default which can be customized by remov
 A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
 
 - Stock on Hand = 0: red background
+
 - Stock on Hand \>=1: light yellow background
+
 - Name (\*): "Stockout"
 
 >**1 Stockout**
@@ -1148,8 +1160,11 @@ A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock o
 #### 7.3 Predictor
 
 Predictors are used in two different ways:
+
 - for "transferring" aggregate Program indicator values to the daily/monthly Data entry form
+
 - "copying" the "Stock on hand" at the end of the previous month to the "Opening SoH" of the current month
+
 - calculating the "Closing SoH" from the data values of the current month  
 
 *Note that only transactional quantities (stock distributed, discarded and corrections) can be aggregated from the Tracker Program data. But as the stock balances are calculated after every transaction, aggregating them does not yield any meaningful results*.
@@ -1354,6 +1369,7 @@ The main purpose of user groups is facilitating configuration of "Sharing" setti
 
 User groups may be configured according to the User roles into the same two groups:
 - DHIS2-RTS - Android Capture App
+
 - DHIS2-RTS - Analytics access
 
 ## Android Settings Web App - Synchronization and Offline Analytics
@@ -1390,11 +1406,17 @@ The "Android settings Web App" allows customizing synchronization settings as we
 ## Use Case Configuration Web App - Program Configuration
 The Use Case Configuration Web app assigns the "Real-Time Stock Management" Tracker Program and some of its metadata to the customized mobile app. While the Tracker Program will have the appearance of any other Tracker Program on the Android Capture App home screen, selecting a Tracker Program which is assigned to the "Real-Time Stock Management" app will invoke the customized app instead of opening the conventional TEI dashboard.
 Note that only programs which meeting certain configuration criteria can be selected and only those will appear for selection in the respective drop-down menu:  
+
 - Tracker Program
+
 - One repeatable Program Stage
+
 - Program rules which update the stock on hand
+
 - Event which is not autogenerated
+
 - Data elements and Tracked Entity Attributes assigned to the Tracker program
+
 - Value type of Data elements in Program stages: "Number" for "Stock correction" and "Positive integer" for all others
 
 >**Configure Program**  
@@ -1420,9 +1442,13 @@ Note that only programs which meeting certain configuration criteria can be sele
 
 ## Data Entry (Beta) Web App - "Snapshots" and fallback data entry
 Although the DHIS2-RTS mobile application is based solely on a Tracker program, a concurrent Data entry form is recommended for two purposes:
+
 - Storing aggregate daily/monthly data for analysis and reporting
+
 - Use as a fallback in the DHIS2-RTS mobile application is (temporarily) not available
+
 - Aggregate data repository for aggregate analytics and visualizations
+
 Consequently the list of Tracked Entity Instances (TEIs) for each Organsation Unit must always be aligned with corresponding Data set.
 As Custom Data Entry Forms do not render (correctly/completely) on mobile devices, the Data sets must be configured as "Default" Data entry form to allow use on mobile devices.
 Both Data entry forms (as configured according to the settings above) are configured to display all available data fields. However, the layout can be customized in the Data Visualizer Web App. Examples of monthly and daily Data entry forms:
@@ -1456,482 +1482,445 @@ Tracked Entity Instances (TEIs) can be simply reactivated by changing the Enroll
 Regestering and enrolling Tracked Entity Instances (TEIs) as well as uploading transactional data can be managed with different tools, among others with the Bulk Load Web App. This DHIS2 App has the advantage of automatically providing the structure and elements of any Tracker Program.
 Before the first use, the Bulk Load Web App needs to installed from the Customs apps section of the DHIS2 App Management App.
 In principle, using the Bulk Load app always has three steps:
+
 - Download and save a "Template" as an Excel file
+
 - Copy data to the Excel "Template"
+
 - Upload the "Template" with the data
+
+A single random IDs can be generating from the api by entering:
+https://lmis.integration.dhis2.org/sandbox/api/system/id?
+
+And multiple Ids by adding the required number:  
+https://lmis.integration.dhis2.org/sandbox/api/system/id?limit=10
 
 ### Registering and enrolling new items
 Prepare the item code(s) and item description(s) and ensure that the same item codes and descriptions are used in all Organisation units of the countries (although they require separate and unique UIDs).
+
 - Open the "Bulk Load" Web app
+
 - Select the "Download template" button
+
 - Select "DOWNLOAD TEMPLATE" and save the Excel file on your computer
+
 - Template: select "Real-Time Stock Mangement" from the drop-down menu
+
 - Select available organisation untis to include in the template: tag, the Organisation unit tree will open
+
 - Select the Organisation unit(s) for where items need to be registered and enrolled
+
 - Select "DOWNLOAD TEMPLATE": an Excel file with the file name "Real-Time Stockmanagement.xlsx" will be downloaded
+
 - Open the "TEI Instances" worksheet
+
 - TEI id: enter a UID which is distinct for the DHIS2 instance (for example generated from the "UID Generator" in the BIF Web App)
+
 - Select the respective "Org Unit *" from the drop-down menu in the Excel filed
+
 - Enrollment Date (YYYY-MM-DD)*: enter the date of the enrollment (note that the date format has to be YYYY-MM-DD)
+
 - Item code: enter the required item code(s)
+
 - Item description: enter the required item code(s)
+
 - Save the Excel file
+
 - Revert to the Bulk Load Web app
+
 - Select "Import data": the "Bulk data import" window opens
+
 - Drag and drop the edited Excel file to the greyed field or click in the greyed field, navigate to and select the edited Excel file
+
 - Select "IMPORT DATA": the data is uploaded and a "Synchronization Results" pop-up window opens with the details of the imported data
+
 - Close the Bulk Load Web app
 
 ### Uploading stock receipts
 This "manual" procedure is only needed if the DHIS2 instance is not (yet) integrated with a national eLMIS where the upload of consignment data is automated.  
 *Note: transactions must never be uploaded in the past as the stock on hand balances will not be corrected. Therefore stock receipts can only be recorded after all transactions which are already recorded in the DHIS2 database*.
+
 - Open the "Bulk Load" Web app
+
 - Select the "Download template" button
+
 - Select "DOWNLOAD TEMPLATE" and save the Excel file on your computer
+
 - Template: select "Real-Time Stock Mangement" from the drop-down menu
+
 - Select available organisation untis to include in the template: tag, the Organisation unit tree will open
+
 - Select the Organisation unit(s) for where items need to be registered and enrolled
+
 - Select "DOWNLOAD TEMPLATE": an Excel file with the file name "Real-Time Stockmanagement.xlsx" will be downloaded
+
 - Open the "(1) Stock on Hand" worksheet
+
 - Event id: enter a UID which is distinct for the DHIS2 instance (for example generated from the "UID Generator" in the BIF Web App)
+
 - TEI Id: select the respective item from the drop-down menu in the Excel file
+
 - Options: select "default" (the only available option)
+
 - Date * (YYYY-MM-DD): enter the date of the transaction (note that the date format has to be YYYY-MM-DD)
+
 - Previous Stock Balance: enter the current stock on hand (before the stock receipt)
+
 - Stock receipt: enter the quantity which is being received
+
 - Stock on hand: enter the stock balance after the transaction (Previous Stock Balance + Stock receipt)
+
 - Save the Excel file
+
 - Revert to the Bulk Load Web app
+
 - Select "Import data": the "Bulk data import" window opens
+
 - Drag and drop the edited Excel file to the greyed field or click in the greyed field, navigate to and select the edited Excel file
+
 - Select "IMPORT DATA": the data is uploaded and a "Synchronization Results" pop-up window opens with the details of the imported data
+
 - Close the Bulk Load Web app
 
-## Data Visualizer Web App - "Aggregate" Analytics and Visualizations
-Xx
-xxx
-The DHIS2-RTS analytics are a critical and indispensable component of the DHIS2-RTS concept. The DHIS2-RTS app allows managing all transactions without the need for keeping paper records. However, recording transactions as such is nearly useless unless a record of all transactions is instantly and available to the storekeeper. Despite the availability of detailed transactional reports, compliance with monthly reporting requirements must be maintained.
+## DV - Data Visualizer Web App - "Aggregate" Analytics and Visualizations
 
-The DHIS2 analytics provides reports both on individual transactions as well as "snapshots" with stock values on the last day of every month.
+The DHIS2-RTS analytics are a critical and indispensable component of the DHIS2-RTS concept. The DHIS2-RTS app allows managing all transactions without the need for keeping paper records. However, recording transactions as such is nearly useless unless a record of all transactions is instantly available to the storekeeper. Despite the availability of detailed transactional reports, compliance with national (monthly) reporting requirements must also be maintained.
+
+The DHIS2 analytics provides reports both on individual transactions as well as daily and monthly "snapshots" with aggregate transaction quantities and the final stock on hand.
 
 Reports are accessible to all users with the respective authorities on mobile device (with limitations) as well as in the web portal.
-xxx
-These group of reports is generated from Data elements and the category options from the Data Entry form for visualizing daily and monthly totals of transactions.
 
-##### DHIS2-RTS Monthly report - Summary
-
-This reports provides the monthly totals of all transactions but only with the total "Distribution" quantity without details on the "Deliver to" for "Distribution" transactions.
-
-##### Name
-
-"RTS Monthly report - Detailed"
-
-##### Columns 
-
-"RTS - Monthly stock report" (from "Your Dimensions"):
-
-- Previous stock balance
-- Stock receipt
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-
-##### Rows
-
-- Data: "Data Type" = "Data elements", then select all Data elements
-
-- Period: "Fixed periods" and "Monthly", then select the last three months (or more as required)
-
-##### Filter
-
-- Organisation unit: "0001 CH Mahosot"
-
-##### Options
-
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
+>**RTS DV 1 - DHIS2-RTS Monthly report - Summary**  
+>This report provides the monthly totals of all transactions but only with the total "Distribution" quantity without details on the "Deliver to" for "Distribution" transactions.  
+>**Name \(*)**: "RTS DV 1 - DHIS2-RTS Monthly report - Summary"  
+>>**Columns**  
+>>>**Your Dimensions**: "RTS - Monthly stock report"
+>>>>Previous stock balance  
+>>>>Stock receipt  
+>>>>Stock distribution  
+>>>>Stock discard  
+>>>>Stock correction  
+>>>>Stock on hand  
+>>
+>>**Rows**  
+Note that the order of these two fields can be switched either displaying items with their chronological order of transactions or displaying days in chronological order with the transactions of every day in alphabetical order of the items.
+>>>**Data**  
+>>>>**Data Type**: Data elements"  
+>>>>**Selected Items**: [Item Name] T2A MTH  
+>>>
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Years"  
+>>>>**Selected Periods**: "This year"  
+>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
+>>
+>>**Options**  
+>>>**Empty data**  
+>>>>**Hide empty columns**: tag (appears as white tick in a blue square)  
+>>>>**Hide empty rows**: tag (appears as white tick in a blue square)  
 
 ![](media/image53.png)
 
-#### DHIS2-RTS Monthly report - Details
-
-This reports provides the monthly totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
-
-##### Name
-
-"RTS Monthly report - Detailed"
-
-##### Columns
-
-"RTS - Monthly stock report" (from "Your Dimensions"):
-
-- Previous stock balance
-- Stock receipt
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - Obst. & Gynae."
-- "DIS - OPD"
-- "DIS - Oper. Theatre"
-- "DIS - (Other)"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-
-##### Rows
-
-- Data: "Data Type" = "Data elements", then select all Data elements
-
-- Period: "Fixed periods" and "Monthly", then select January to December 2023
-
-##### Filter
-
-- Organisation unit: "0001 CH Mahosot"
-
-##### Options
-
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
+>**RTS DV 2 - DHIS2-RTS Monthly report - Detailed**  
+>This report provides the monthly totals of all transactions with all details on total "Distribution" quantity by "Deliver to" (departments and services) for "Distribution" transactions.  
+>**Name \(*)**: "RTS DV 2 - DHIS2-RTS Monthly report - Detailed"  
+>>**Columns**  
+>>>**Your Dimensions**: "RTS - Monthly stock report"
+>>>>"Previous stock balance"  
+>>>>"Stock receipt"  
+>>>>"DIS - Diagn. imaging"  
+>>>>"DIS - Emergency Room"  
+>>>>"DIS - High Depend. Unit"  
+>>>>"DIS - Housekeeping"  
+>>>>"DIS - Inp. Med. Depart."  
+>>>>"DIS - Inp. Surg. Depart."  
+>>>>"DIS - Laboratory Depart."  
+>>>>"DIS - Mortuary"  
+>>>>"DIS - Obst. & Gynae."  
+>>>>"DIS - OPD"  
+>>>>"DIS - Oper. Theatre"  
+>>>>"DIS - (Other)"  
+>>>>"DIS - Paed. Dep."  
+>>>>"DIS - Physioth. Dep."  
+>>>>"DIS - Recovery Room"  
+>>>>"DIS - Steril. Dep."  
+>>>>"DIS - Transf. services"  
+>>>>"Stock distribution"  
+>>>>"Stock discard"  
+>>>>"Stock correction"  
+>>>>"Stock on hand"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Selected Items**: [Item Name] T2A MTH  
+>>>
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Years"  
+>>>>**Selected Periods**: "This year"  
+>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
+>>
+>>**Options**  
+>>>**Empty data**  
+>>>>**Hide empty columns**: tag (appears as white tick in a blue square)  
+>>>>**Hide empty rows**: tag (appears as white tick in a blue square)  
 
 ![](media/image64.png)
 
-#### DHIS2-RTS Monthly stockout days count report
-
-This report automatically provides the monthly number of stockout days for each item which is managed with the DHIS2-RTS mobile application.
-
-##### Name
-
-"DHIS2-RTS Stockout days count - Monthly"
-
-##### Columns
-
-- Period: "Fixed periods" and "Monthly", then select all months for 2023
-
-##### Rows
-
-- Data: "Data Type" = "Indicators", then select all "Stockout days" indicators
-
-##### Filter
-
-- Organisation unit: "0001 CH Mahosot"
-
-##### Options
-
-- Data: "Columns totals" and "Row totals"
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
+>**RTS DV 3 - DHIS2-RTS Stockout days count - Monthly**  
+>This report automatically provides the monthly number of stockout days for each item which is managed with the DHIS2-RTS mobile application.
+>**Name \(*)**: "RTS DV 3 - DHIS2-RTS Stockout days count - Monthly"  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Month"  
+>>>>**Selected Periods**: "Months this year"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Selected Items**: [Item Name] Stockout days  
+>>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
+>>
+>>**Options**  
+>>>**Totals**  
+>>>>**Columns totals**: tag (appears as white tick in a blue square)  
+>>>>**Row totals**: tag (appears as white tick in a blue square)  
+>>>**Empty data**  
+>>>>**Hide empty columns**: tag (appears as white tick in a blue square)  
+>>>>**Hide empty rows**: tag (appears as white tick in a blue square)  
 
 ![](media/image75.png)
 
-#### DHIS2-RTS Daily report - Summary
-
-This reports provides the daily totals of all transactions but without details on the "Deliver to" for "Distribution" transactions.
-
-##### Name
-
-"RTS Monthly report - Detailed"
-
-##### Columns
-
-"RTS - Monthly stock report" (from "Your Dimensions"):
-
-- Previous stock balance
-- Stock receipt
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-- Period: "Fixed periods" and "Monthly", then select the last three months (or more as required)
-
-##### Rows
-
-Note that the order of these two fields can be switched either displaying items with their chronological order of transactions or displaying days in chronological order with the transactions of every day in alphabetical order of the items.
-
-- Data: "Data Type" = "Data elements", then select all Data elements
-
-##### Filter
-
-- Organisation unit: "0001 CH Mahosot"
-
-##### Options
-
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
+>**RTS DV 4 - DHIS2-RTS Daily report - Summary**  
+>This report provides the daily totals of all transactions but only with the total "Distribution" quantity without details on the "Deliver to" for "Distribution" transactions.  
+>**Name \(*)**: "RTS DV 1 - DHIS2-RTS Daily report - Summary"  
+>>**Columns**  
+>>>**Your Dimensions**: "RTS - Daily stock report"
+>>>>Previous stock balance  
+>>>>Stock receipt  
+>>>>Stock distribution  
+>>>>Stock discard  
+>>>>Stock correction  
+>>>>Stock on hand  
+>>
+>>**Rows**  
+>>Note that the order of these two fields can be switched either displaying items with their chronological order of transactions or displaying days in chronological order with the transactions of every day in alphabetical order of the items.
+>>>**Data**  
+>>>>**Data Type**: Data elements"  
+>>>>**Selected Items**: [Item Name] T2A MTH  
+>>>
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Years"  
+>>>>**Selected Periods**: "This year"  
+>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
 
 ![](media/image38.png)
 
 #### DHISDaily report - Details
 
-This reports provides the daily totals of all transactions including details on the "Deliver to" for "Distribution" transactions.
+>**RTS DV 5 - DHIS2-RTS Monthly report - Detailed**  
+>This report provides the monthly totals of all transactions with all details on total "Distribution" quantity by "Deliver to" (departments and services) for "Distribution" transactions.  
+>**Name \(*)**: "RTS DV 5 - DHIS2-RTS Daily report - Detailed"  
+>>**Columns**  
+>>>**Your Dimensions**: "RTS - Daily stock report"
+>>>>"Previous stock balance"  
+>>>>"Stock receipt"  
+>>>>"DIS - Diagn. imaging"  
+>>>>"DIS - Emergency Room"  
+>>>>"DIS - High Depend. Unit"  
+>>>>"DIS - Housekeeping"  
+>>>>"DIS - Inp. Med. Depart."  
+>>>>"DIS - Inp. Surg. Depart."  
+>>>>"DIS - Laboratory Depart."  
+>>>>"DIS - Mortuary"  
+>>>>"DIS - Obst. & Gynae."  
+>>>>"DIS - OPD"  
+>>>>"DIS - Oper. Theatre"  
+>>>>"DIS - (Other)"  
+>>>>"DIS - Paed. Dep."  
+>>>>"DIS - Physioth. Dep."  
+>>>>"DIS - Recovery Room"  
+>>>>"DIS - Steril. Dep."  
+>>>>"DIS - Transf. services"  
+>>>>"Stock distribution"  
+>>>>"Stock discard"  
+>>>>"Stock correction"  
+>>>>"Stock on hand"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Selected Items**: [Item Name] T2A MTH  
+>>>
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Days"  
+>>>>**Selected Periods**: "[2024]-xx-xx"  
+>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
 
-##### Name
-
-"RTS Daily report - Detailed"
-
-##### Columns
-
-"RTS - Monthly stock report" (from "Your Dimensions"):
-
-- Previous stock balance
-- Stock receipt
-- "DIS - Diagn. imaging"
-- "DIS - Emergency Room"
-- "DIS - High Depend. Unit"
-- "DIS - Housekeeping"
-- "DIS - Inp. Med. Depart."
-- "DIS - Inp. Surg. Depart."
-- "DIS - Laboratory Depart."
-- "DIS - Mortuary"
-- "DIS - Obst. & Gynae."
-- "DIS - OPD"
-- "DIS - Oper. Theatre"
-- "DIS - (Other)"
-- "DIS - Paed. Dep."
-- "DIS - Physioth. Dep."
-- "DIS - Recovery Room"
-- "DIS - Steril. Dep."
-- "DIS - Transf. services"
-- Stock distribution
-- Stock discard
-- Stock correction
-- Stock on hand
-
-##### Rows
-
-- Data: "Data Type" = "Data elements", then select all Data elements
-
-- Period: "Fixed periods" and "Daily", then select all days for 2023
-
-##### Filter
-
-- Organisation unit: "0001 CH Mahosot"
-
-##### Options
-
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
+![](media/image64.png)
 
 ![](media/image10.png)
 
-##### DHIS2-RTS Daily stockout days count report
-
+>**RTS DV 6 - DHIS2-RTS Stockout days count - Daily**  
 This report automatically provides the number of items which are out of stock every day for each item which is managed with the DHIS2-RTS mobile application.
-
-##### Name
-
-"DHIS2-RTS Stockout days count - Daily"
-
-##### Columns
-
-- Period: "Fixed periods" and "Daily", then select all days for 2023
-
-##### Rows
-
-- Data: "Data Type" = "Indicators", then select all "Stockout days" indicators
-
-##### Filter
-
-- Organisation unit: "0001 CH Mahosot"
-
-##### Options
-
-- Data: "Columns totals" and "Row totals"
-- Empty data: "Hide empty columns" and "Hide empty rows": check both
+>**Name \(*)**: "RTS DV 6 - DHIS2-RTS Stockout days count - Daily"  
+>>**Columns**  
+>>>**Period**: "Fixed periods"  
+>>>>**Period type**: "Daily"  
+>>>>**Selected Periods**: [2024]-xx-xx
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Selected Items**: [Item Name] Stockout days  
+>>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
+>>
+>>**Options**  
+>>>**Totals**  
+>>>>**Columns totals**: tag (appears as white tick in a blue square)  
+>>>>**Row totals**: tag (appears as white tick in a blue square)  
+>>>**Empty data**  
+>>>>**Hide empty columns**: tag (appears as white tick in a blue square)  
+>>>>**Hide empty rows**: tag (appears as white tick in a blue square)  
 
 ![](media/image48.png)
 
+## LL - Line Listing Web App - Transaction Analytics and Visualizations
 
-
-
-## Line Listing Web App - Transaction Analytics and Visualizations
-Xx
 The Line Listing reports provide details of individual transactions but are not able to provide any type of aggregation.
 
-Important notice: the "Last updated on" date and time stamp indicates the actual data that respective transaction was made on the mobile device (and not the date and time of synchronization). The time indicated in the Line Listing corresponds to the time set on the mobile device.
+Important notice: the "Last updated on" date and time stamp indicates the actual date that respective transaction was made on the mobile device (and not the date and time of synchronization). The time indicated in the Line Listing corresponds to the time set on the mobile device (which should ideally corresopnd to the DHIS2 server time).
 
 For stock receipts entered through the web portal, the "Last updated on" reflects the server time of the DHIS2 instance. Therefore, the server time and the time on mobile devices must both be set to the same date and time and should correspond to the time zone used in the respective country. If the times set on mobile devices and the DHIS2 server instance differ, the Line Listing will no longer display all transactions made on mobile devices and the web portal in chronological order.
 
-##### DHIS2-RTS Digital stock card
-
+>**RTS LL 1 - DHIS2-RTS Digital stock card**  
 This report replaces the manual (hand written) stock card and displays the accurate chronology of all transactions with the "Previous stock balance" and the "Stock on hand" (after the transaction).
+>**Name \(*)**: "RTS LL 1 - DHIS2-RTS Digital stock card"  
+>>**Input**: "Event"  
+>>>**Program**: "Real-Time Stock Management"
+>>>**Stage**: "Stock on Hand"
+>>**Columns**
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Deliver to": (no condition)
+>>>"Item code": (no condition)
+>>>"Item description": (no condition)
+>>>"Previous Stock Balance": (no condition)
+>>>"Stock receipt": (no condition)
+>>>"Stock distribution": (no condition)
+>>>"Stock discard": (no condition)
+>>>"Stock correction": (no condition)
+>>>"Stock on hand": (no condition)
+>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
+>>
+>>**Options**  
+>>>**Style**  
+>>>>**Digital group separator**: "Comma"
 
-##### Input
+![](media/image76.png)
 
-- Event
-
-##### Program dimensions
-
-- Program: "Real-Time Stock Management"
-- Stage: "Stock on Hand"
-
-##### Columns
-
-- Last updated on: "Today", "Last 90 days"
-- Deliver to: (no condition)
-- Item code (no condition)
-- Item description (no condition)
-- Previous Stock Balance (no condition)
-- Stock receipt (no condition)
-- Stock distribution (no condition)
-- Stock discard (no condition)
-- Stock correction (no condition)
-- Stock on hand (no condition)
-
-##### Filter
-
-- Organisation unit / "User organisation unit"
-
-##### Options
-
-- Style / Digit group separator: "Comma"![](media/image76.png)
-
-##### DHIS2-RTS Stock distribution report
-
+>**RTS LL 2 - Distribution report**  
 This report (selectively) lists all "Distribution" transactions.
-
-##### Input
-
-- Event
-
-##### Program dimensions
-
-- Program: Real-Time Stock Management
-- Stage: Stock on Hand
-
-##### Columns
-
-- Last updated on: "Today", "Last 90 days"
-- Deliver to (no condition)
-- Item code (no condition)
-- Item description (no condition)
-- Stock distribution: "greater than (\>)" 0
-
-##### Filter
-
-- Organisation unit / "User organisation unit"
-
-##### Options
-
-- Style / Digit group separator: "Comma"
+>**Name \(*)**: "RTS LL 2 - Distribution report"  
+>>**Input**: "Event"  
+>>>**Program**: "Real-Time Stock Management"
+>>>**Stage**: "Stock on Hand"
+>>**Columns**
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Deliver to": (no condition)
+>>>"Item code": (no condition)
+>>>"Item description": (no condition)
+>>>"Stock distribution": "greater than (\>)" 0
+>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
+>>
+>>**Options**  
+>>>**Style**  
+>>>>**Digital group separator**: "Comma"
 
 ![](media/image16.png)
 
-#### Current Stock on hand report
-
-This report is identical to viewing the stock item list with available stocks in the DHIS2-RTS and may be considered as redundant. The advantage of having a separate report is the possibility to give users (such as health staff in wards and services) read only access and not having to train them on the DHIS2-RTS. Moreover there is no need to select a "Transaction type" and "Deliver to" just to view the current stock position.
-
+>**RTS LL 3 - DHIS2-RTS Current Stock on hand**  
+This report is identical to viewing the stock item list with available stocks in the DHIS2-RTS and may be considered as redundant. The advantage of having a separate report is the possibility to give users (such as health staff in wards and services) read only access and not having to train them on the DHIS2-RTS. Moreover there is no need to select a "Transaction type" and "Deliver to" just to view the current stock position.  
 Exceptionally and intentionally, "Event" (and not "Enrollment") has to be selected as "Input".
-
-##### Input
-
-- Enrollment (!)
-
-##### Program dimensions
-
-- Program: Real-Time Stock Management
-
-##### Columns
-
-- Item code (no condition)
-- Item description (no condition)
-- Stock on hand:
-- "Conditions": none
-- "Repeated events": "Most recent events" = "1", "Oldest events" = "0"
-
-- Enrollment date: "Relative periods" and "Months": "This month" and "Last 12 months"
-
-##### Filter
-
-- Organisation unit / "User organisation unit"
-
-##### Options
-
-- Style / Digit group separator: "Comma"
-- Legend: "Choose a single legend for the entire visualization": "Stockout"
-
-[Question: legend not appearing under Styles]
+>**Name \(*)**: "RTS LL 3 - DHIS2-RTS Current Stock on hand"  
+>>**Input**: "Enrollment"  
+>>>**Program**: "Real-Time Stock Management"  
+>>**Columns**
+>>>"Item code": (no condition)
+>>>"Item description": (no condition)
+>>>"Stock on hand"
+>>>>**Conditions**: (no condition)  
+>>>>**Repeated events**: Most recent events: "1", Oldest events: "0"
+>>
+>>**Filter**
+>>>**Organisation unit**: tag "User organisation unit"  
+>>>**Enrollment date**
+>>>>**Relative periods**: "Months"  
+>>>>**Selected periods**: "This mont" and "Last 12 months"
+>>
+>>**Options**  
+>>>**Style**  
+>>>>**Digital group separator**: "Comma"
+>>>**Legend**: tag "Use a legend for table cell colores"  
+>>>>**Legend style**
+>>>>>**Legend changes background color**: tag
+>>>>>**Choose a single legend for the entire visualization**: tag
+>>>>>**Legend**: Stockout
 
 ![](media/image43.png)
 
-#### DHIS2-RTS Discard report
-
+>**RTS LL 4 - DHIS2-RTS Discard report**  
 This report (selectively) lists all "Discard" transactions.
-
-##### Input
-
-- Event
-
-##### Program dimensions
-
-- Program: Real-Time Stock Management
-- Stage: Stock on Hand
-
-##### Columns
-
-- Last updated on: "Today", "Last 90 days"
-- Deliver to (no condition)
-- Item code (no condition)
-- Item description (no condition)
-- Stock discard: "greater than (\>)" 0
-
-##### Filter
-
-- Organisation unit / "User organisation unit"
-
-##### Options
-
-- **Style / Digit group separator: "Comma"**
+>**Name \(*)**: "RTS LL 4 - DHIS2-RTS Discard report"  
+>>**Input**: "Event"  
+>>>**Program**: "Real-Time Stock Management"
+>>>**Stage**: "Stock on Hand"
+>>**Columns**
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Deliver to": (no condition)
+>>>"Item code": (no condition)
+>>>"Item description": (no condition)
+>>>"Stock discard": "greater than (\>)" 0
+>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
+>>
+>>**Options**  
+>>>**Style**  
+>>>>**Digital group separator**: "Comma"
 
 ![](media/image21.png)
 
-#### DHIS2-RTS Stock correction report
-
+>**RTS LL 5 - DHIS2-RTS Stock correction report**  
 This report (selectively) lists all "Stock correction" transactions.
-
-##### Input
-
-- Event
-
-##### Program dimensions
-
-- Program: Real-Time Stock Management
-- Stage: Stock on Hand
-
-##### Columns
-
-- Last updated on: "Today", "Last 90 days"
-- Deliver to (no condition)
-- Item code (no condition)
-- Item description (no condition)
-- Stock correction: "greater than (\>)" 0
-
-##### Filter
-
-- Organisation unit / "User organisation unit"
-
-##### Options
-
-- **Style / Digit group separator: "Comma"**
+>**Name \(*)**: "RTS LL 5 - DHIS2-RTS Stock correction report"  
+>>**Input**: "Event"  
+>>>**Program**: "Real-Time Stock Management"
+>>>**Stage**: "Stock on Hand"
+>>**Columns**
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Deliver to": (no condition)
+>>>"Item code": (no condition)
+>>>"Item description": (no condition)
+>>>"Stock correction": "greater than (\>)" 0
+>>
+>>**Filter**: "Organisation unit" and tag "User organisation unit"  
+>>
+>>**Options**  
+>>>**Style**  
+>>>>**Digital group separator**: "Comma"
 
 ![](media/image18.png)
 
+## MP - Maps Web App - Analytics and Visualizations
+*[Under development]*
 
-
-
-
-## Maps Web App - Analytics and Visualizations
-Xx
-
-
-
-## Dashboard Web App - DHIS2-RTS Dashboard
+## DB - Dashboard Web App - DHIS2-RTS Dashboard
 
 Each of the DHIS2-RTS dashboards presents a single Line Listing or Data Visualizer report or visualization in order to maximize their size when viewed on a (small) mobile device.
 
