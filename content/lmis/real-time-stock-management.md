@@ -1949,14 +1949,11 @@ The dashboard should be considered as a visualization library which demonstrates
 >>>"Make available offline" (option then appears as "Remove from offline storage)
 
 ## Android Capture App - DHIS2-RTS mobile application
-Xx
-The mobile device application (front-end, user interface) consists of a login screen, a single screen for entering and editing data by pharmacy staff, a third (and last) screen for viewing and correcting the summary and a final screen for the analytics.
-
-Any other functionality is placed in the native DHIS2 settings menu.
+The mobile device application (front-end, user interface) consists of a login screen, a single screen for entering and editing data by storekeepers and a third (and last) screen for viewing and correcting the summary.
 
 ### General use case
 
-Medical stocks comprise drug products (tablets, injections, diagnostic test etc.) as well as single use medical devices such as syringes, bandages, catheters, drains, x-ray films etc.
+Medical stocks comprise drug products (tablets, injectable drug productss, diagnostic test etc.) as well as single use medical devices such as syringes, bandages, catheters, drains, x-ray films etc.
 
 Medical stores are usually replenished once a month from district, provincial or national stores. Upon delivery, they receive a detailed packing for each consignment which provides details of the item codes and names, quantities, batch numbers and expiry dates. After counting the quantity of each item goods are put away and placed in order of the item group, within alphabetically and within by expiry date in the medical store.
 
@@ -1970,12 +1967,11 @@ The fundamental improvement of the DHIS2-RTS is to record only the stock transac
 
 The DHIS2-RTS will be used by
 
-- pharmacists
-- storekeepers
 - health workers
 - immunization workers
-- supervisors and pharmacy managers
 - community health workers
+- medical storekeepers
+- supervisors and medical store managers
 
 for managing medical stocks at hospitals, Primary Healthcare facilities (clinics), Immunization services and those managed by community health workers.
 
@@ -2008,60 +2004,24 @@ The DHIS2-RTS data and analytics provides the storekeeper with information on:
 
 - distributions by supplied ward or service
 
-### General design principles and business requirements
+### General functionality
 
-The principle of "digital frugality" of keeping the mobile device application as simple, "light" and "lean" as possible is an explicit objective of the project. The mobile device application features only a login window for authentication, a window for order picking and a third window for reviewing and confirmation. Any information displayed on any user interface must be essential and indispensable to business processes and workflows.
-
-The ability to work off-line is absolutely critical for the context of LMICs with intermittent or unreliable network connectivity.
-
-This mobile application will mainly be used by health workers which have not received any training in logistics and supply chain management and most likely have acquired the principles of stock management through "learning by doing". Therefore, the processes, workflows, user interfaces and interactions with the mobile device should be:
-
-- as far as possible, native DHIS2 functionality is used
-- custom development is only applied to functionality which is not natively available but required for the DHIS2-RTS application
-
-- Custom development must be minimized also in order to minimize work for future maintenance such as ensuring compatibility with future DHIS2 versions
-
-- in particular, the functionality of the "Settings" (side bar) menu is maintained for the DHIS2-RTS application
-
-- be as simple as possible
-- be as intuitive as possible
-- be as far as possible be self-evident and require minimal training
-- offer users as few options as necessary
-- guide users to the next step with little possibility of making any errors
-
-- prevent (serious) errors by requiring additional confirmation
-- should offer good usability on mobile phones (6 inch display) as well as tablets
+- The user interfaces display only absolutely essential information and kept as simple as possible
+- only include text and visual elements which are absolutely indispensable
+- fully functional offline (in principle for an indefinite period)
+- Design is as simple and intuitive as possible to maximize usability and  minimizing training requirements
+- Preventing data entry errors by alerts and user information
 
 - should be designed for a highly repetitive task
-- only include text and visual elements which are absolutely indispensable
-
-- Prepare for customization: it is inevitable that user will want to modify the Tracker Program. For example, to modify the list of "Deliver to" options. Another very frequent request is that users want to differentiate "Stock discarded" into expiry, damaged and stolen stock. As far as possible drop-down menus (such as for transaction type and the "Deliver to" options) should be configured in a way that they can be easily modified in the Tracker Program without having to change the app. For example, by using Option sets for the "Deliver to" options or Data elements for the transaction types. This system allows to keep the DHIS2-RTS as simple as possible (rather than building in all possible user requirements) while still allowing easy customization.
-
-- Language: English by default with the DHIS2 native language options
-
-**User interface business requirements**
 
 - All quantities of all healthcare goods are exclusively indicated in units of measure (UoM) of "EA" (Each) and never in any packaging quantities. "EACH" refers to the smallest usable unit of a healthcare product such as one tablet, one syringe, one disposable glove or one pair (!) of sterile gloves (as these must always be used in pairs). In exceptional cases where the packaging quantity (such as "kit of 100 tests" is indicated in the item description, "EACH" refers to one kit (and not one test) as such products do not contain separate diagnostic tests but are an actual kit with bottles of liquids and other components sufficient for the indicated number of tests.
-- In tables, all text fields are left aligned
-- In tables, all value fields are right aligned
-- All dates are displayed in the dd/mm/yyyy (day/month/year) format
-- All times are displayed in the hh:mm (hour/minute) format using 24 hour format.
-- Except for analytics, no decimals are used for values (unnecessary, prone to errors, prone to confusion with thousand separators and decreases legibility)
-- All numbers greater than 999 are displayed with a comma (",") as thousand group separator (for example 1,200).
-- Numeric fields allow values with a maximum of 7 digits (the largest value allowed is 9,999,999)
-- All text fields (including the item code field) are alphanumeric (English alphabet A to Z and numbers 0-9, no other characters are needed).
+
 - All items are sorted alphabetically by their "Name"
-- Single field for concatenation of the item code and item description (not ideal but a constraint in DHIS2)
 - Any data values entered on the mobile device using the DHIS2 Capture Android is stored instantly upon entry and does not require "saving"
-- The mobile device application does not allow users to export or download data from the mobile device in any way nor is this required. Previously recorded data can be viewed in dashboards on the mobile device or in the DHIS2 web portal
 
-### DHIS2 mobile device application installation
+- The mobile device application intentionally does not allow users to export or download data from the mobile device in any way nor is this required. Previously recorded data can be viewed in dashboards on the mobile device or in the DHIS2 web portal
 
-Before using the application for the very first time, as well as in case of any error in the mobile device, the mobile device application must be installed on every mobile device individually.
-
-As the DHIS2-RTS is a native module in the DHIS2 Capture Android app, installation of the DHIS2 Capture Android app automatically covers installation of the DHIS2-RTS application.
-
-The user downloads the native DHIS2 Capture Android app from Google Play Store by searching for "DHIS2" and installing the mobile app like any other application.
+As the DHIS2-RTS is a native module in the DHIS2 Capture Android app, installation of the DHIS2 Capture Android app automatically includes installation of the DHIS2-RTS application.
 
 ### DHIS2 mobile device application user access (login and logout)
 
@@ -2069,9 +2029,14 @@ This process allows users to login and access the mobile device application.
 
 As the DHIS2-RTS is a native module in the DHIS2 Capture Android app, the login (and logout) is also native functionality which applies to the DHIS2-RTS Stock app.
 
-Users can login according to their user profile and account settings as configured in the DHIS2 web portal. Access to the DHIS2-RTS functionality is controlled through the user settings, the Tracker Program setting as well as the Android Settings app [this to be confirmed].
+Users can login according to their user profile and account settings as configured in the DHIS2 web portal. Access to the DHIS2-RTS functionality is controlled through the user settings and the Tracker Program settings.
 
-### "Distribution" transaction
+### DHIS2-RTS transaction types
+
+The DHIS2-RTS mobile application features three transaction types:
+- Distribution
+- Discard
+- Stock correction
 
 More than 99% of all transactions will be "Distribution" transactions where storekeepers pick and pack healthcare goods requested by a department, service, community health care and immunization workers which are then either picked up by the requester or delivered by the pharmacy.
 
@@ -2083,7 +2048,9 @@ The DHIS2-RTS is designed for instant digital recording and explicitly not inten
 
 - As the stock on hand is automatically calculated, users have the possibility of manually correcting any discrepancies by recording correcting the actual, current stock on hand.
 
-#### "Distribution" transaction workflow
+#### "Distribution" transaction
+
+##### "Distribution" transaction workflow
 
 For each "Distribution" transaction the following workflow is required. User
 
@@ -2104,65 +2071,63 @@ For each "Distribution" transaction the following workflow is required. User
 
 - informs the requester to pick up the goods are delivers them to the requesting department/service
 
-#### "Distribution" transaction use case
+##### "Distribution" transaction use case
 
-1.  User authenticates and accesses the DHIS2 Capture Android app.
-2.  The DHIS2 Capture Android app home screen appears and displays all the DHIS2 Data Sets and Programs to which the user is assigned and has access to. ![](media/image25.png)
-3.  User accesses the respective DHIS2-RTS Tracker program from the home screen by tapping on it.
-4.  The DHIS2-RTS home screen opens, and in the top bar by default "Distribution" appears as transaction type with a blue background. If the user is assigned to a single Organisation Unit, it appears by default under "From". By default the "Deliver to" field is blank to force the user to deliberately select one of the options. Note that the "Search" field is not active until the "From" and "Deliver to" fields are filled. ![](media/image9.png)
-5.  Optionally (should be a very rare exception): the user opens the "From" drop-down menu.
-6.  A list of available Organisation Units is displayed in the drop-down menu. If the user is assigned to a single Organisation Unit, the field is "static" and no drop-down menu opens. ![](media/image56.png)
-7.  User selects the required Organisation unit by checking the box and selecting "DONE".
-8.  The DHIS2-RTS home screen reverts which now indicates the selected Organisation unit. ![](media/image68.png)
-9.  User opens the "Deliver to\..." drop-down window for selecting the required department or service which requested the goods and to which the goods are being provided. Note that this drop-down window only applies to "Distribution" (but neither to "Discard" nor to "Correction"). By default the drop-down window is intentionally blank to force the user to enter a selection and the use cannot proceed before completing this selection.
-10. The available "Deliver to" options are displayed in a drop-down window. Note that the details may differ by Tracker Program as these options can be freely configured in the respective "Option set". ![](media/image70.png)
-11. User selects the required "Deliver to" department or service from the drop-down menu.
-12. The drop-down menu collapses and displays only the selected "Deliver to" choice. Note that as soon as all three entries (transaction type, Organisation Unit and "Deliver to") have been selected, the stock item list with the current stock is immediately and automatically displayed. ![](media/image87.png)
-13. This completes the selection of the transaction type, Organisation unit and the "Deliver to" option from the DHIS2-RTS home screen. User selects the "Settings" icon or the "\^" icon for "collapsing" the header.
-14. The header information for the transaction type, Organisation unit and "Deliver to" selection is compacted into the header of the screen and displayed during the entire transaction. ![](media/image49.png)
-15. In case the user tries to make a change to the transaction type after entering any quantity (or quantities), the "From" and "Deliver to" field a warning will appear that any data entered so far will be lost, cannot be retrieved and will have to be entered again.
-16. A dialogue window with the warning is displayed at the bottom of the screen: ![](media/image83.png)
-17. The user can either select "Discard changes" and forgo the entered data or select "Keep editing" and proceed with the transaction with the previously selected Organisation Unit and "Deliver to" selection.
-18. Depending on the choice, the home screen reverts or the user continues where s/he left off editing data.
-19. The user is now ready to start preparing the requisition. The user has three possibilities for searching for items in the list:
+Details of the user action (odd numbers) and the resulting system behaviour (even numbers) with the respective user interface are shown below step by step.
+
+| Number | User action / System behaviour |
+| :---: | :--- |
+| 1 | User authenticates and accesses the DHIS2 Capture Android app. |
+| 2 | The DHIS2 Capture Android app home screen appears and displays all the DHIS2 Data Sets and Programs to which the user is assigned and has access to. ![](media/image25.png) |
+| 3 | User accesses the respective DHIS2-RTS Tracker program from the home screen by tapping on it. |
+| 4 | The DHIS2-RTS home screen opens, and in the top bar by default "Distribution" appears as transaction type with a blue background. If the user is assigned to a single Organisation Unit, it appears by default under "From". By default the "Deliver to" field is blank to force the user to deliberately select one of the options. Note that the "Search" field is not active until the "From" and "Deliver to" fields are filled. ![](media/image9.png) |
+| 5 | Optionally (should be a very rare exception): the user opens the "From" drop-down menu. |
+| 6 | A list of available Organisation Units is displayed in the drop-down menu. If the user is assigned to a single Organisation Unit, the field is "static" and no drop-down menu opens. ![](media/image56.png) |
+| 7 | User selects the required Organisation unit by checking the box and selecting "DONE". |
+| 8 | The DHIS2-RTS home screen reverts which now indicates the selected Organisation unit. ![](media/image68.png) |
+| 9 | User opens the "Deliver to\..." drop-down window for selecting the required department or service which requested the goods and to which the goods are being provided. Note that this drop-down window only applies to "Distribution" (but neither to "Discard" nor to "Correction"). By default the drop-down window is intentionally blank to force the user to enter a selection and the use cannot proceed before completing this selection. |
+| 10 | The available "Deliver to" options are displayed in a drop-down window. Note that the details may differ by Tracker Program as these options can be freely configured in the respective "Option set". ![](media/image70.png) |
+| 11 | User selects the required "Deliver to" department or service from the drop-down menu. |
+| 12 | The drop-down menu collapses and displays only the selected "Deliver to" choice. Note that as soon as all three entries (transaction type, Organisation Unit and "Deliver to") have been selected, the stock item list with the current stock is immediately and automatically displayed. ![](media/image87.png) |
+| 13 | This completes the selection of the transaction type, Organisation unit and the "Deliver to" option from the DHIS2-RTS home screen. User selects the "Settings" icon or the "\^" icon for "collapsing" the header. |
+| 14 | The header information for the transaction type, Organisation unit and "Deliver to" selection is compacted into the header of the screen and displayed during the entire transaction. ![](media/image49.png) |
+| 15 | In case the user tries to make a change to the transaction type after entering any quantity (or quantities), the "From" and "Deliver to" field a warning will appear that any data entered so far will be lost, cannot be retrieved and will have to be entered again. |
+| 16 | A dialogue window with the warning is displayed at the bottom of the screen: ![](media/image83.png) |
+| 17 | The user can either select "Discard changes" and forgo the entered data or select "Keep editing" and proceed with the transaction with the previously selected Organisation Unit and "Deliver to" selection. |
+| 18 | Depending on the choice, the home screen reverts or the user continues where s/he left off editing data. |
+| 19 | The user is now ready to start preparing the requisition. The user has three possibilities for searching for items in the list. 1) Manually scrolling down the list until the requested item is found, 2) Entering a search term in the "Search" window, 3) Scanning the barcode attached to the item on the shelf. The first option is to simply scroll down the list and tap in the "Quantity" field. |
+| 20 | The "Quantity" field becomes editable and the name of the item as well as the entered value appear between the list and the on-screen keyboard in a separate field. ![](media/image61.png) |
+| 21 | The second option is to enter text in the "Search" field. |
+| 22 | The list displays only the items which contain the text entered in the "Search" field. Note that this screen is only "filtering" the entire list according to the most recent search but with the entire list "in the background" and none of the items are actually removed from the list. Also note that this filter is "contextual" and as characters are added, the list of results is automatically adapted and shortened according to the entered text string. The text in the search window can be edited or cleared by tapping on the "X" icon. As above the user taps in the "Quantity" field and enters a value. As soon as the user taps onto the blue ✓ icon or taps into another "Quantity" field, the "Stock" is recalculated in real-time. ![](media/image24.png) |
+| 23 | The third and last option is tapping on the barcode symbol which is found on the far right of the "Search" window. |
+| 24 | The barcode viewfinder window opens which displays a white field with a horizontal red line displaying the view of the mobile device camera: ![](media/image97.png) |
+| 25 | User places the viewfinder window in front of the barcode which is attached to the label on the shelf and positions the red line across the centre of the barcode: ![](media/image50.png) |
+| 26 | The DHIS2 Capture Android app will audibly signal ("beep") as soon as the mobile device has captured the barcode, close the viewfinder window and display only the selected item in the window. The "Search" field will display the selected item as a search result. The window will display the current "Stock" (stock on hand, which should correspond to the actual remaining stock on the shelf) next to the item and reprints the item name with a quantity field at the bottom of the screen for editing. Note that this screen is only "filtering" the entire list according to the most recent search but with the entire list "in the background". ![](media/image89.png) |
+| 27 | User taps in the "Quantity" field for opening the on-screen keyboard and enters the picked quantity. Users are blocked from entering negative values, zero or positive non-integer values. |
+| 28 | The entered "Quantity" is displayed in the respective line as well as in the separate dialogue window window above the on-screen keyboard. The user can edit the quantity or delete it by removing all digits with the "back" button. ![](media/image42.png) |
+| 29 | User confirms the (final) quantity by tapping on the blue ✓ icon.|
+| 30 | The on-screen keyboard and the editing line are closed and the entered quantity is instantly and automatically deducted from the "Stock" and immediately displays the final stock balance (after the respective quantity has been removed from the shelf). ![](media/image52.png) |
+| 31 | The user effects another entry by tapping on the barcode icon or selecting the next item. Note that the list will only display items corresponding to the entry in the "Search" window and for viewing all (so far) selected items, the "Search" field has to be voided by tapping on the "X" icon. |
+| 32 | This completes the recording of the first item which is picked and the user continues to pick the remaining items for the same department or service. The user can either continue using the barcode scanner which does not require "expanding" the entire list. If the user is not using the barcode scanner s/he needs to select the "x" in the search window for reverting to the entire list. Note that if the stock item list is "expanded" all entered values for the selected items are maintained. ![](media/image57.png) |
+| 33 | After the last required item has been picked, the user selects the "Review" button at the bottom right of the screen. |
+| 34 | The user is referred to the "Review" screen which displays only the previously selected items (and not the entire stock item list) with the entered "Quantity" in the alphabetical order of the stock item list. Note that "Under review" is displayed below the item list, the "Review" button is no longer displayed and instead the "Confirm" button is displayed. This screen allows comparing the selected items with the original request from the department or service and, if necessary, making corrections. ![](media/image78.png) |
+| 35 | Optionally: the user can revert from the "Review" to the previous data entry interface (for example because requested items were forgotten) without any previous entries being lost. |
+| 36 | Optionally: after completing the corrections, the user advances to the "Review" screen again. |
+| 37 | By tapping inside the "Quantity" field, the user can reopen the on-screen keyboard and edit as well as delete any quantity. |
+| 38 | The on-screen keyboard is opened and the "Quantity" field is again editable. Note that in this final steps items cannot be added to the list any more and the "Search item" as well as the "Scan" icon can only be used for searching items within the list (in case the list is long and the user is not sure that a certain item was correctly picked). In case items are actually missing the user can either discard all entries and start from scratch or simply complete the transaction and then start a second transaction for the same ward or service for the items which were missed. In case the user entered an incorrect transaction type or "Deliver to" option, the user can discard the transaction by selecting the back button (arrow) but all entered "Quantity" fields will be lost. ![](media/image19.png) |
+| 39 | Once the review and editing has been completed, the user selects the "Confirm" button. **_Note that this step is irreversible_** and cannot be reversed or be undone in any way. |
+| 40 | The home screen reverts with all options in the header reset to their defaults. A dialogue window displaying "The transaction was successfully completed" appears at the bottom of the screen. ![](media/image93.png) |
+| 41 | User selects the synchronization icon at the top right of the screen. The synchronization of the local database with the central server can be effected at any time but any particular transaction can only be synchronized once it has been completed. |
+| 42 | A dialogue window opens at the bottom of the screen with information on the synchronization. ![](media/image77.png) |
+| 43 | User selects the "Send" button. |
+| 44 | The successfully completed synchronization is confirmed by the "Synced" caption and by changing the colour of the synchronization icon from grey to green. Note that the user is offered the "Refresh" option even if the synchronization has been completed successfully in order to align with native DHIS2 behaviour. ![](media/image23.png) |
+| 45 | User selects "Not now" to close the confirmation message. |
+| 46 | The confirmation message closes, the home screen reverts and the user is ready for entering the next transaction.  ![](media/image34.png) |
 
 
-    -   Manually scrolling down the list until the requested
-    item is found
-    -   Entering a search term in the "Search" window
-    -   Scanning the barcode attached to the item on the shelf
-    The first option is to simply scroll down the list and tap
-    in the "Quantity" field.
+#### "Discard" transaction
 
-20. The "Quantity" field becomes editable and the name of the item as well as the entered value appear between the list and the on-screen keyboard in a separate field. ![](media/image61.png)
-21. The second option is to enter text in the "Search" field.
-22. The list displays only the items which contain the text entered in the "Search" field. Note that this screen is only "filtering" the entire list according to the most recent search but with the entire list "in the background" and none of the items are actually removed from the list. Also note that this filter is "contextual" and as characters are added, the list of results is automatically adapted and shortened according to the entered text string. The text in the search window can be edited or cleared by tapping on the "X" icon. As above the user taps in the "Quantity" field and enters a value. As soon as the user taps onto the blue ✓ icon or taps into another "Quantity" field, the "Stock" is recalculated in real-time. ![](media/image24.png)
-23. The third and last option is tapping on the barcode symbol which is found on the far right of the "Search" window.
-24. The barcode viewfinder window opens which displays a white field with a horizontal red line displaying the view of the mobile device camera: ![](media/image97.png)
-25. User places the viewfinder window in front of the barcode which is attached to the label on the shelf and positions the red line across the centre of the barcode: ![](media/image50.png)
-26. The DHIS2 Capture Android app will audibly signal ("beep") as soon as the mobile device has captured the barcode, close the viewfinder window and display only the selected item in the window. The "Search" field will display the selected item as a search result. The window will display the current "Stock" (stock on hand, which should correspond to the actual remaining stock on the shelf) next to the item and reprints the item name with a quantity field at the bottom of the screen for editing. Note that this screen is only "filtering" the entire list according to the most recent search but with the entire list "in the background". ![](media/image89.png)
-27. User taps in the "Quantity" field for opening the on-screen keyboard and enters the picked quantity. Users are blocked from entering negative values, zero or positive non-integer values.
-28. The entered "Quantity" is displayed in the respective line as well as in the separate dialogue window window above the on-screen keyboard. The user can edit the quantity or delete it by removing all digits with the "back" button. ![](media/image42.png)
-29. User confirms the (final) quantity by tapping on the blue ✓ icon.
-30. The on-screen keyboard and the editing line are closed and the entered quantity is instantly and automatically deducted from the "Stock" and immediately displays the final stock balance (after the respective quantity has been removed from the shelf). ![](media/image52.png)
-31. The user effects another entry by tapping on the barcode icon or selecting the next item. Note that the list will only display items corresponding to the entry in the "Search" window and for viewing all (so far) selected items, the "Search" field has to be voided by tapping on the "X" icon.
-32. This completes the recording of the first item which is picked and the user continues to pick the remaining items for the same department or service. The user can either continue using the barcode scanner which does not require "expanding" the entire list. If the user is not using the barcode scanner s/he needs to select the "x" in the search window for reverting to the entire list. Note that if the stock item list is "expanded" all entered values for the selected items are maintained. ![](media/image57.png)
-33. After the last required item has been picked, the user selects the "Review" button at the bottom right of the screen.
-34. The user is referred to the "Review" screen which displays only the previously selected items (and not the entire stock item list) with the entered "Quantity" in the alphabetical order of the stock item list. Note that "Under review" is displayed below the item list, the "Review" button is no longer displayed and instead the "Confirm" button is displayed. This screen allows comparing the selected items with the original request from the department or service and, if necessary, making corrections. ![](media/image78.png)
-35. Optionally: the user can revert from the "Review" to the previous data entry interface (for example because requested items were forgotten) without any previous entries being lost.
-36. Optionally: after completing the corrections, the user advances to the "Review" screen again.
-37. By tapping inside the "Quantity" field, the user can reopen the on-screen keyboard and edit as well as delete any quantity.
-38. The on-screen keyboard is opened and the "Quantity" field is again editable. Note that in this final steps items cannot be added to the list any more and the "Search item" as well as the "Scan" icon can only be used for searching items within the list (in case the list is long and the user is not sure that a certain item was correctly picked). In case items are actually missing the user can either discard all entries and start from scratch or simply complete the transaction and then start a second transaction for the same ward or service for the items which were missed. In case the user entered an incorrect transaction type or "Deliver to" option, the user can discard the transaction by selecting the back button (arrow) but all entered "Quantity" fields will be lost. ![](media/image19.png)
-39. Once the review and editing has been completed, the user selects the "Confirm" button. **_Note that this step is irreversible_** and cannot be reversed or be undone in any way.
-40. The home screen reverts with all options in the header reset to their defaults. A dialogue window displaying "The transaction was successfully completed" appears at the bottom of the screen. ![](media/image93.png)
-41. User selects the synchronization icon at the top right of the screen. The synchronization of the local database with the central server can be effected at any time but any particular transaction can only be synchronized once it has been completed.
-42. A dialogue window opens at the bottom of the screen with information on the synchronization. ![](media/image77.png)
-43. User selects the "Send" button.
-44. The successfully completed synchronization is confirmed by the "Synced" caption and by changing the colour of the synchronization icon from grey to green. Note that the user is offered the "Refresh" option even if the synchronization has been completed successfully in order to align with native DHIS2 behaviour. ![](media/image23.png)
-45. User selects "Not now" to close the confirmation message.
-46. The confirmation message closes, the home screen reverts and the user is ready for entering the next transaction. ![](media/image34.png)
-
-### "Discard" transaction
+##### "Discard" transaction workflow
 
 Stock is discarded whenever healthcare goods are expired, damaged or no longer usable for other reasons. Those products must be removed from the "active" stock and segregated in a locked cupboard or room to prevent inadvertent use until the products are disposed of.
 
@@ -2173,8 +2138,6 @@ There are several reasons for differentiating between "Distribution" and "Discar
 - The amount and value of discarded stock is an important indicator for the quality of stock management
 
 The workflow and use case are almost identical with those of the "Distribution" transaction with the only difference that the "Deliver to" option is not required and therefore not displayed.
-
-#### "Discard" transaction workflow
 
 For each "Discard" transaction the following workflow is required: user
 
@@ -2192,9 +2155,20 @@ For each "Discard" transaction the following workflow is required: user
 
 - places the selected products in quarantine to prevent inadvertent use
 
-#### "Discard" transaction use case
+##### "Discard" transaction use case
 
 This use case only shows the steps which differ from the "Distribution" use case.
+
+| 1 | X |
+| 2 | X |
+| 3 | X |
+| 4 | X |
+| 5 | X |
+| 6 | X |
+| 7 | X |
+| 8 | X |
+
+
 
 1.  User accesses the DHIS2-RTS mobile device application.
 2.  The DHIS2-RTS home screen opens. ![](media/image7.png)
@@ -2205,8 +2179,9 @@ This use case only shows the steps which differ from the "Distribution" use case
 7.  User selects the Organisation unit from the "From" drop-down menu (see "Distribution" transaction).
 8.  The header displays "Discard" as transaction type and the Organisation unit as "From" and the user is ready to select the items and quantities which need to be discarded in the same way as for the "Distribution" workflow. ![](media/image91.png)
 
-### "Correction" transaction
+#### "Correction" transaction
 
+##### "Correction" transaction workflow
 Stock corrections must only be made if the mistake in previous transactions cannot be correct by recording additional transactions and may be needed for various reasons:
 
 - Quantity received physically is more or less than received in the system
@@ -2220,8 +2195,6 @@ Stock corrections must only be made if the mistake in previous transactions cann
 In most case the mistake will never be found and it is important to differentiate these transactions from other transactions as they must not be taken into account for calculating demand and stock replenishment orders.
 
 The workflow for "Correction" transactions is almost identical with the "Distribution" workflow with the important difference that, unlike all other transactions, the user does not enter the transaction quantity but instead enters the quantity resulting from a physical stock count and DHIS2-RTS then calculates the discrepancy. Moreover, the "Correction" transaction is the only transaction where entries or "0" (zero) make sense.
-
-#### "Correction" transaction workflow
 
 For each "Correction" transaction the following workflow is required, user:
 
@@ -2237,7 +2210,7 @@ For each "Correction" transaction the following workflow is required, user:
 - repeats process for each item
 - carries out a final review of all items for which a stock correction was entered
 
-#### "Correction" transaction use case
+##### "Correction" transaction use case
 
 This use case only shows the steps which differ from the "Distribution" use case.
 
@@ -2318,83 +2291,15 @@ If the network connectivity does not allow synchronizing mobile devices with the
 
 Note that, by design, the DHIS2 Capture Android app does not automatically synchronize data with the central DHIS2 server during login and if any data was not yet synchronized before logging out, the synchronization will have to be prompted "manually".
 
-## Medical Stock Management with the DHIS2-RTS application
+## Import/Export Web App
 Xx
-
-xxx
-Adding and removing TEIs.
-TEIs are registered once in a specific DHIS2 database and the same TEI (with the same ID) is used for different OUs as well as possibly in other Tracker programs or Event programs.
-
-
-
 
 ## Integration with national eLMIS
 Xx
-
-
-xxxxxxxxxx
-
-
-
-
-
-
-
-#### Summary of data model
-
-The following logic is used for configuring the metadata used for the Tracker Program:
-
-Data element Represent the various transactions which affect the Stock on hand calculations (receipt, distributions, corrections etc.)
-
-Option set The "Deliver to" Data element uses the "Deliver to" Option Set which lists the names of the different departments Tracked entity attribute The item attributes are Item code, description and the barcode (field for scanning) Tracked entity type The item (health care product) is tracked
-
-> The "Previous stock balance" Data element is needed for the Program rules to temporarily store Stock on hand values.
->
-> The Tracker Program uses a single repeatable Program stage named "Stock on hand":
-
-![](media/image88.png)
-
+[to be added]
 
 
 PARKING LOT xxxxxxxxxxxxxxxxxxxxxx
-
-
-
-## DHIS2 REAL-TIME STOCK WEB PORTAL MANAGEMENT
-
-While the DHIS2-RTS use at the health facility level is conceived for exclusive use on mobile devices, the initial set-up and configuration, routine administration as well as the regular stock receipts can only be made through the DHIS2 web portal.
-
-### Creating stock item list
-
-Before the DHIS2-RTS mobile application can be used, all health care products (items) used in any specific health facility (Organisation unit) must be "registered" and "enrolled" with their own and unique ID (identification) in each of the health care facility where those products are used. For example, paracetamol tablet, 500 mg has to be enrolled and registered in each Organisation unit (OU) separately as the product must uniquely assigned to its Organisation unit for correctly recording transactions and providing correct analytics. Note that an item, such as paracetamol tablets, with identical specifications in many facilities across a country, has to have its own and unique ID for each of these health facilities.
-
-Items can be "registered" and "enrolled" manually through the native Capture app functionality by recording the "Item code" as well well as the "Item description" for each health care product.
-
-Alternatively a list of items can be uploaded by using the "TEI import" function of the native DHIS2 Import/Export app or the third-party "Bulk Load" app.
-
-### Adding items to and removing from the DHIS2-RTS app
-
-In the same way that items are created and added to the stock item list initially, items can be added to any health facility at any time.
-
-[Question: how to remove (or "hide") items no longer in use. If they are deleted, will the analytics still be available].
-
-### Stock receipts
-
-When consignments are received at the health care facility, the user confirms receipt to the district level where the stocks are uploaded from an electronic record.
-
-The DHIS2-RTS design intentionally does not foresee any possibility for users to receive stocks through the DHIS2-RTS app itself as recording a large number of items one by one would be very cumbersome, time consuming and prone to error.
-
-Stock receipts can be effected using the native Import/Export app or the third-party Bulk Load app. But ideally, all stock receipts should be effected directly and automatically through a real-time integration with the upstream, national LMIS. In this system, the items and quantities on the respective packing list are "loaded" into DHIS2 directly through its API-endpoints from the upstream, national LMIS as soon as the storekeeper has confirmed receipt.
-
-### Adding items to and removing from the Default Data Entry Form
-
-Whenever items (health care products) are added to the DHIS2 Tracker Program, the corresponding Data elements must be configured and must be added to all DHIS2-RTS Data entry forms.
-
-At any item, the list of TEIs (Tracked Entity Instances) of any Organisation unit must correspond completely and exactly with the list of Data elements in all DHIS2-RTS Data sets in order to ensure availability of the Data entry form for monthly reporting as a backup as well as for ensuring accurate analytics reporting.
-
-### Web portal analytics
-
-All the analytics indicated in chapter 2.7 "Analytics configuration" are available in the DHIS2 web portal.
 
 
 ## MEDICAL STOCK MANAGEMENT WITH THE DHIS2-RTS APP
@@ -2463,8 +2368,13 @@ The "Period type" is set to "Monthly" by default as all healthcare facilities ar
 
 Before the DHIS2-RTS mobile application is used, a complete phyiscal stock count should be carried out to confirm the available stock on hand. The result of this stock count is then simply uploaded as the initial stock receipt explained in chapter 4.3.
 
+### Stock receipts
 
+When consignments are received at the health care facility, the user confirms receipt to the district level where the stocks are uploaded from an electronic record.
 
+The DHIS2-RTS design intentionally does not foresee any possibility for users to receive stocks through the DHIS2-RTS app itself as recording a large number of items one by one would be very cumbersome, time consuming and prone to error.
+
+Stock receipts can be effected using the native Import/Export app or the third-party Bulk Load app. But ideally, all stock receipts should be effected directly and automatically through a real-time integration with the upstream, national LMIS. In this system, the items and quantities on the respective packing list are "loaded" into DHIS2 directly through its API-endpoints from the upstream, national LMIS as soon as the storekeeper has confirmed receipt.
 
 ## Medical stores management
 
