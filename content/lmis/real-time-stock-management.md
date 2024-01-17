@@ -2159,25 +2159,16 @@ For each "Discard" transaction the following workflow is required: user
 
 This use case only shows the steps which differ from the "Distribution" use case.
 
-| 1 | X |
-| 2 | X |
-| 3 | X |
-| 4 | X |
-| 5 | X |
-| 6 | X |
-| 7 | X |
-| 8 | X |
-
-
-
-1.  User accesses the DHIS2-RTS mobile device application.
-2.  The DHIS2-RTS home screen opens. ![](media/image7.png)
-3.  User taps on the "Distribution" button of the DHIS2-RTS home screen.
-4.  A drop-down menu with all available transactions opens. ![](media/image60.png)
-5.  User selects "Discard" from the drop-down menu.
-6.  "Discard" is displayed instead of "Distribution" in the header, the background colour changes to red and the text colour changes to red to signal that this is not a "Distribution" transaction and ensure users are aware that this is as "Discard" transaction. Note that the "Deliver to" field is no longer available. ![](media/image74.png)
-7.  User selects the Organisation unit from the "From" drop-down menu (see "Distribution" transaction).
-8.  The header displays "Discard" as transaction type and the Organisation unit as "From" and the user is ready to select the items and quantities which need to be discarded in the same way as for the "Distribution" workflow. ![](media/image91.png)
+| Number | User action / System behaviour |
+| :---: | :--- |
+| 1 | User accesses the DHIS2-RTS mobile device application. |
+| 2 | The DHIS2-RTS home screen opens. ![](media/image7.png) |
+| 3 | User taps on the "Distribution" button of the DHIS2-RTS home screen. |
+| 4 | A drop-down menu with all available transactions opens. ![](media/image60.png) |
+| 5 | User selects "Discard" from the drop-down menu. |
+| 6 | "Discard" is displayed instead of "Distribution" in the header, the background colour changes to red and the text colour changes to red to signal that this is not a "Distribution" transaction and ensure users are aware that this is as "Discard" transaction. Note that the "Deliver to" field is no longer available. ![](media/image74.png) |
+| 7 | User selects the Organisation unit from the "From" drop-down menu (see "Distribution" transaction). |
+| 8 | The header displays "Discard" as transaction type and the Organisation unit as "From" and the user is ready to select the items and quantities which need to be discarded in the same way as for the "Distribution" workflow. ![](media/image91.png) |
 
 #### "Correction" transaction
 
@@ -2214,18 +2205,20 @@ For each "Correction" transaction the following workflow is required, user:
 
 This use case only shows the steps which differ from the "Distribution" use case.
 
-1.  User accesses the DHIS2-RTS mobile device application.
-2.  The DHIS2-RTS home screen opens. ![](media/image7.png)
-3.  User taps on the "Distribution" button of the DHIS2-RTS home screen.
-4.  A drop-down menu with the available transactions opens. ![](media/image99.png)
-5.  User selects "Correction" from the drop-down menu.
-6.  "Correction" is displayed as transaction type instead of "Distribution" in the header, the background colour changes to orange and the text colour also changes to orange to signal that this is not a "Distribution" transaction and ensure users are aware that this is as "Correction" transaction. Note that the "Delivery to" option is no longer available and **_instead of the "Quantity" column, the "Count" column is displayed_**. ![](media/image81.png)
-7.  User selects the Organisation unit from the "From" drop-down menu (see "Distribution" transaction).
-8.  The user selects the first item (see the instructions for the "Distribution" transaction) by scrolling, searching or using the barcode scanner.
-9.  Only the selected item appears on the screen.
-10. User counts the actual quantity in stock, compares it with the calculated quantity displayed by the DHIS2-RTS app and, if any discrepancy is confirmed, **_enters the actual quantity in stock_**. Note that DHIS2 will "reset" the Stock on hand to the entered quantity and automatically calculate the difference with the previous value as "stock correction".
-11. The user interface displays the correct stock on hand in the "Stock" column.
-12. The user repeats the process above for every item to be picked, proceed to the "Review" and completes the transaction as described in the previous sub-chapter.
+| Number | User action / System behaviour |
+| :---: | :--- |
+| 1 | User accesses the DHIS2-RTS mobile device application. |
+| 2 | The DHIS2-RTS home screen opens. ![](media/image7.png) |
+| 3 | User taps on the "Distribution" button of the DHIS2-RTS home screen. |
+| 4 | A drop-down menu with the available transactions opens. ![](media/image99.png) |
+| 5 | User selects "Correction" from the drop-down menu. |
+| 6 | "Correction" is displayed as transaction type instead of "Distribution" in the header, the background colour changes to orange and the text colour also changes to orange to signal that this is not a "Distribution" transaction and ensure users are aware that this is as "Correction" transaction. Note that the "Delivery to" option is no longer available and **_instead of the "Quantity" column, the "Count" column is displayed_**. ![](media/image81.png)  |
+| 7 | User selects the Organisation unit from the "From" drop-down menu (see "Distribution" transaction). |
+| 8 | The user selects the first item (see the instructions for the "Distribution" transaction) by scrolling, searching or using the barcode scanner. |
+| 9 | Only the selected item appears on the screen. |
+| 10 | User counts the actual quantity in stock, compares it with the calculated quantity displayed by the DHIS2-RTS app and, if any discrepancy is confirmed, **_enters the actual quantity in stock_**. Note that DHIS2 will "reset" the Stock on hand to the entered quantity and automatically calculate the difference with the previous value as "stock correction". |
+| 11 | The user interface displays the correct stock on hand in the "Stock" column. |
+| 12 | The user repeats the process above for every item to be picked, proceed to the "Review" and completes the transaction as described in the previous sub-chapter. |
 
 ### Mobile device analytics
 
@@ -2237,7 +2230,7 @@ The DHIS2-RTS analytics replaces "reading" of stock records which may be needed 
 - Viewing any (recent) transaction by "Deliver to", item and/or date
 - Analysing demand of a certain item
 
-It is important to note that apart from the pharmacy staff as the main user, any other health professional in the same health care facility also would greatly benefit from access to analytics for:
+It is important to note that apart from the medical storekeepers as the main user, any other health professional in the same health care facility also would greatly benefit from access to analytics for:
 
 - Checking the availability of certain health care products, for example before a physician prescribes a drug product and either confirming availability or prescribing an alternative drug product
 
@@ -2291,16 +2284,59 @@ If the network connectivity does not allow synchronizing mobile devices with the
 
 Note that, by design, the DHIS2 Capture Android app does not automatically synchronize data with the central DHIS2 server during login and if any data was not yet synchronized before logging out, the synchronization will have to be prompted "manually".
 
-## Import/Export Web App
-Xx
+## Import/Export Web App - Uploading DHIS2-RTS configuration
+The configuration of the DHIS2-RTS Tracker Program from scratch can be completed in less than an hour. However, several other settings, among others Data elements, Data sets, Program indicators, Predictors and Analytics which are required for using the system.
+The configuration of all these components can be greatly facilitated by exporting metadata from the DHIS2 sandbox which hosts the most up-to-date version and importing the metadata into another DHIS2 instance.  
+https://lmis.integration.dhis2.org/sandbox/dhis-web-commons/security/login.action  
+However, some important constraints should be considered:
+- Only a few Tracked Entity Instances and Data elements are configured which can server as templates for adding (or uploading) additional items
+- The coding and news of the sample TEIs/DEs will all have to be changed to national standards
+- Program indicators and Predictors need to be created for all of the added TEIs/DEs
+- Metadata needs to be adapted to any changes of the "Delivery to" options
+- Any additional items need to be added to the Visualizations
+- For the selected "Metadata export", all metadata from all sandbox tools will be exported, for example all legends and all user roles
 
-## Integration with national eLMIS
-Xx
-[to be added]
+In principle two sets of data are required for exportign and importing:
+- Metadata dependency export: Real-Time Stock Management Tracker program
+- Metadata export: selected metadata
 
-
-PARKING LOT xxxxxxxxxxxxxxxxxxxxxx
-
+The exportation of the data:
+- Open the Import/Export Web App
+- Select "Metadata dependency export"
+- Object type: "Programs"
+- Object: "Real-Time Stock Management"
+- What format should the data be exported as?: "JSON"
+- Compression type: "Zip"
+- Select: "Export metadata dependencies"
+- Download the "metadata.json.zip" file
+- Select "Metadata export"
+- Tag the following metadata components:  
+  * Category Option
+  * Category
+  * Category Combo
+  * Category Option Combo
+  * Data Element
+  * Data Element Group
+  * Indicator Type
+  * Indicator
+  * Indicator Group
+  * Map
+  * Option
+  * Option set
+  * Organisation Unit
+  * Legend Set
+  * Data Set
+  * Visualization
+  * Dashboard
+  * Predictor
+  * Predictor Group
+  * User Role
+  * User Group
+- What format should the data be exported as?: "JSON"
+- Compression type: "Zip"
+- Select: "Export metadata"
+- Download the "metadata.json.zip" file
+- Upload both files to the DHIS2 instance where the DHIS2-RTS application will be hosted.
 
 ## MEDICAL STOCK MANAGEMENT WITH THE DHIS2-RTS APP
 
@@ -2336,9 +2372,9 @@ Any Organisation units which are already configured in the DHIS2 database and in
 
 #### Setting up stock item list in DHIS2
 
-A single, central stock item list for each health care facility is indispensable for using the DHIS2-RTS as well as for order management and stock management. In most cases, such a stock item list which details of all items which are permanently maintained in the pharmacy and are regularly replenished will already be available.
+A single, central stock item list for each health care facility is indispensable for using the DHIS2-RTS as well as for order management and stock management. In most cases, such a stock item list with details of all items which are permanently maintained in the pharmacy and are regularly replenished will already be available.
 
-The stock item list can differ for each health facility or be standardized for each type of health care facility.
+The stock item list can differ for each health facility, be standardized for each type of health care facility or level of care and can be standardized across all health faciliteis.
 
 All stock item lists must use the same item codes and item descriptions which should be based on the national Essential Drug List managed by the Ministry of Health (MoH) in the country.
 
@@ -2346,13 +2382,11 @@ The consistent use of a single item code and item description across facilities 
 
 It is very strongly recommended to only use "Each" as unit of measure (and never packages) which means that all health care products are managed as number of tablets, ampoules, cannulas, compresses etc. The use of packages is not practical as secondary packaging quantities are likely to differ between manufacturers and manufacturers may change secondary packaging quantities over time which makes the comparison of quantities over time as well as correct stock replenishment calculations impossible.
 
-The use of item codes is optional but recommended. It is important to note that the DHIS2-RTS mobile application will always (and can only) display all items in their alphabetical order and it is not possible to group items into drug products, dressing materials, drains, cannulas etc. Therefore all items would appear "scrambled" according to their alphabetical names. For this reason using item codification systems which group health care products into their category are useful.
+The use of some kind of item codes is required. It is important to note that the DHIS2-RTS mobile application will always (and can only) display all items in their alphabetical order and it is not possible to group items into drug products, dressing materials, drains, cannulas etc. Therefore all items would appear "scrambled" according to their alphabetical names. For this reason using item codification systems which group health care products into their category are useful.
 
-If no coding system is used or the coding system (such as numbers) do not allow grouping items, grouping can be achieved by preceding item descriptions with abbreviations for product groups such as DORA (oral drugs), DVAS (vaccines), MDRE (dressing material) etc.
+If no coding system is used or the coding system (such as numbers) does not allow grouping items, grouping can be achieved by preceding item descriptions with abbreviations for product groups such as DORA (oral drugs), DVAS (vaccines), MDRE (dressing material) etc.
 
-To integrate **Stock item list management**
-
-The stock item list (list of Data elements) will have to be manually harmonized and aligned with the TEIs registered for the respective Organisation unit.
+The stock item list (list of Data elements) will have to be manually harmonized and aligned with the TEIs registered for the respective Organisation unit but the list of TEIs can be "copied" and a list of Data elements can be uploaded.
 
 Every Data set is assigned to the Organisation Unit for which it has been configured. Alternatively, all Organisation Units could use the same Data set.
 
@@ -2366,7 +2400,7 @@ The "Period type" is set to "Monthly" by default as all healthcare facilities ar
 
 #### Uploading initial stock
 
-Before the DHIS2-RTS mobile application is used, a complete phyiscal stock count should be carried out to confirm the available stock on hand. The result of this stock count is then simply uploaded as the initial stock receipt explained in chapter 4.3.
+Before the DHIS2-RTS mobile application is used, a complete phyiscal stock count should be carried out to confirm the available stock on hand. The result of this stock count is then simply uploaded as "Previous stock balance" of zero, stock receipt and the stock on hand both corresponding to the stock on hand reflecting the physical stock count.
 
 ### Stock receipts
 
@@ -2378,9 +2412,9 @@ Stock receipts can be effected using the native Import/Export app or the third-p
 
 ## Medical stores management
 
-Again, this chapter should be considered as a recommendation and possible solution which has been tried and tested in the field but which is superseded by national regulations and policies.
+This chapter should be considered as a recommendation and possible solution which has been tried and tested in the field but which needs to be adapted to ensure compliance with national regulations and policies.
 
-Using the DHIS2 Reat-Time Stock management system requires a high level of discipline and accuracy since the application automatically recalculates the remaining stock balance after every transaction and any mistakes are perpetuated.
+Using the DHIS2 Reat-Time Stock management system requires a high level of discipline and accuracy since the application automatically recalculates the remaining stock balance after every transaction, any mistakes are perpetuated and have to be corrected in the system.
 
 #### Storage equipment and health care good storage
 
@@ -2398,33 +2432,29 @@ Note the scanning barcode requires good lighting conditions and that barcodes mu
 
 Linear barcodes as well as QR codes are both equally recognized with the DHIS2-RTS mobile app. Linear barcodes have the advantage that they can be easily generated from a simple Excel spreadsheet but the disadvantage that they are quite long even for codes with only a few characters and the mobile device has to be held exactly horizontally during scanning (the red line in the barcode scanner window has to cover the entire barcode from left to right) in order for the barcode to be recognized.
 
-Although QR codes can be generated from many websites for free, they can only be generated one by one and cannot be generated with a spreadsheet application. But the have the big advantage of being far smaller, being able to store longer codes and that they can be read from any angle, even if the mobile device is tilted (rotated) to the left or right and from greater distances.
+Therefore the use of QR codes which require much less space, can be read from any angle and greater distances, is recommended which can be generated from numerous freely accessible website.
 
 Barcode labels can be very simply printed from Excel on any computer provided that the "LibreBarcode39" font is installed:
 
-- close all Microsoft Excel files
-- copy the LibreBarcode39-Regular.ttf file to your computer
-- in the Windows Explorer right-click on the file: a pop-up window opens
+- Close all Microsoft Excel files
 
-- select "install": a pop-up window opens
-- select: "Yes": the font installs on the computer
-- open the Excel file for printing barcode labels: any copied Excel file with the font set to barcodes will now display barcodes
+- Copy the LibreBarcode39-Regular.ttf file to your computer
 
-- highlight any (additional) fields which should display barcodes
-- click in the drop-down window with the fonts
-- scroll down to the list of available fonts to the letter L which will appear as a barcode and display "Libre Barcode 39" when mousing over
+- In the Windows Explorer right-click on the file: a pop-up window opens
+
+- Select "install": a pop-up window opens
+
+- Select: "Yes": the font installs on the computer
+
+- Open the Excel file for printing barcode labels: any copied Excel file with the font set to barcodes will now display barcodes
+
+- Highlight any (additional) fields which should display barcodes
+
+- Click in the drop-down window with the fonts
+
+- Scroll down to the list of available fonts to the letter L which will appear as a barcode and display "Libre Barcode 39" when mousing over
 
 ![](media/image47.png)
-
-- Select "Libre Barcode 39": the drop-down window closes and the text appears as barcodes
-
-The "PSM barcode label template" Excel file contains three worksheets
-
-"A Item catalogue": this worksheet contains a list of all the stock items used in the respective pharmacy. The user tags the items for which a label is required by typing "X" next to the item in column B.
-
-"B Label selection": this worksheet uses a lookup function to display only the items selected from the worksheet.
-
-"C Label print": this worksheet correctly formats the item code, barcode and item description on four labels per page if printed in landscape which can be printed on any printer.
 
 #### Stock receipts
 
@@ -2456,11 +2486,11 @@ Stock which is expired, damaged or unusable for other reasons must be removed fr
 
 Discrepancies between the physically available stock on hand on the shelf and the stock on hand balance calculated in the DHIS2-RTS mobile application may occur for various reasons.
 
-• the quantities physically delivered to the health care facility are greater or less than in the electronic record (and not noted at the time of receipts)
+- the quantities physically delivered to the health care facility are greater or less than in the electronic record (and not noted at the time of receipts)
 
-• during order picking either greater or smaller quantities than indicated in the transaction are picked and delivered to wards and services (and not noted)
+- during order picking either greater or smaller quantities than indicated in the transaction are picked and delivered to wards and services (and not noted)
 
-• stock is mislaid, misplaced in a wrong location, lost or stolen
+- stock is mislaid, misplaced in a wrong location, lost or stolen
 
 In all of these cases, storekeepers must effect a "Correction" transaction in the DHIS2-RTS mobile application which will correct the calculated stock on hand. The number of "Correction" transactions and the quantities are a very good indicator for the overall quality of stock management.
 
@@ -2489,7 +2519,6 @@ In order to ensure continuity of services while at the same maintaining an accur
 The simplest way is to continue or resume the use of stock cards for any transactions which cannot be reported in DHIS2.
 
 For the "Advanced mode", the quantities distributed to each ward or service can be tallied up and entered with a single transaction for each ward or service once the system is restored. This will falsify the transaction dates but still maintain an accurate record of the total quantities distributed to each ward or service. In case of prolonged system failure, the "aggregate" Data entry form with a monthly reporting period can be used for documenting the stock on hand at the end of the month as well as the total quantities during the month. The details of these transactions will be permanently missing in the system but, after effecting a stock "Correction", use of the DHIS2-RTS mobile application can be resumed once all systems are restored.
-
 
 ## DHIS2 REAL-TIME STOCK INTEGRATION WITH NATIONAL eLMIS
 
@@ -2535,4 +2564,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-Last edit: GMc on 17-01-2024 at 20:41
+Last edit: GMc on 17-01-2024 at 22:59
