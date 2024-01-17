@@ -1719,9 +1719,7 @@ Note that the order of these two fields can be switched either displaying items 
 
 ![](media/image38.png)
 
-#### DHISDaily report - Details
-
->**RTS DV 5 - DHIS2-RTS Monthly report - Detailed**  
+>**RTS DV 5 - DHIS2-RTS Daily report - Detailed**  
 >This report provides the monthly totals of all transactions with all details on total "Distribution" quantity by "Deliver to" (departments and services) for "Distribution" transactions.  
 >**Name \(*)**: "RTS DV 5 - DHIS2-RTS Daily report - Detailed"  
 >>**Columns**  
@@ -1921,14 +1919,34 @@ This report (selectively) lists all "Stock correction" transactions.
 *[Under development]*
 
 ## DB - Dashboard Web App - DHIS2-RTS Dashboard
+The dashboard should be considered as a visualization library which demonstrates a range of visualizations which can be used as suggested and can be rearranged or modified according to needs for analysis and reporting.
 
-Each of the DHIS2-RTS dashboards presents a single Line Listing or Data Visualizer report or visualization in order to maximize their size when viewed on a (small) mobile device.
-
-All dashboards need to be configured as "Make available offline" so that they can be viewed on a mobile device when it is offline.
-
-
-
-
+>**1 RTS DB 1 - DHIS2-RTS Real-Time Stock Management Dashboard**  
+>>**Dashboard titel**: "RTS DB 1 - DHIS2-RTS Real-Time Stock Management Dashboard"  
+>>**Layout**: "Freeflow"
+>>**Items**
+>>>RTS DV 1 - DHIS2-RTS Monthly report - Summary  
+>>>RTS DV 2 - DHIS2-RTS Monthly report - Detailed  
+>>>RTS DV 3 - DHIS2-RTS Stockout days count - Monthly  
+>>>RTS DV 4 - DHIS2-RTS Daily report - Summary  
+>>>RTS DV 5 - DHIS2-RTS Daily report - Detailed  
+>>>RTS DV 6 - DHIS2-RTS Stockout days count - Daily  
+>>>RTS LL 1 - DHIS2-RTS Digital stock card  
+>>>RTS LL 2 - Distribution report  
+>>>RTS LL 3 - DHIS2-RTS Current Stock on hand  
+>>>RTS LL 4 - DHIS2-RTS Discard report  
+>>>RTS LL 5 - DHIS2-RTS Stock correction report  
+>>
+>>**Sharing and access**
+>>>**Dashboard sharing**
+>>>>**User / Group** / **Access level**
+>>>>>"RTS - Administrator" / "View and edit"
+>>>>>"RTS - Analysts" / "View only"
+>>>>>"RTS - Stock item list managers" / "View only"
+>>>>>"RTS - Stock managers" / "View only"
+>>
+>>**More**
+>>>"Make available offline" (option then appears as "Remove from offline storage)
 
 ## Android Capture App - DHIS2-RTS mobile application
 Xx
@@ -2607,4 +2625,4 @@ The following data fields need to be synchronized from the national eLMIS to the
 - Item code (the item description is redundant and not needed)
 - Stock "Receipt": quantities and date/time stamp
 
-Last edit: GMc on 16-01-2024 at 22:20
+Last edit: GMc on 17-01-2024 at 20:41
