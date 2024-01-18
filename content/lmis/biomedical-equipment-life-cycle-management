@@ -39,14 +39,6 @@ The required metadata settings seetings are presented in the order in which it i
 >>6.2 Tracked entity attribute  
 >>6.3 Relationship type  
 >>6.4 Tracked entity type  
->>6.5 Program rule  
->>6.6 Program rule variable  
-> 
->**7 OTHER**  
->>7.1 Option set  
->>7.2 Legend  
->>7.3 Predictor  
->>7.4 Predictor group 
 
 #### 1.1 Category option
 >**1 Xx**  
@@ -386,241 +378,262 @@ The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, 
 >**5 Access**
 >>**Organisation units**: tag the health care facilities where the Tracker Program is used  
 >>**Roles and access**: "Biomedical equipment life cycle management" appears by default  
->>>**Biomedical equipment transfer**: tag
->>>**Biomedical equipment installation**: tag
->>>**Biomedical equipment inspection**: tag
->>>**Biomedical equipment preventive maintenance**: tag
->>>**Biomedical equipment alarm**: tag
->>>**Biomedical equipment repair request**: tag
->>>**Biomedical equipment corrective maintenance**: tag
->>>**Biomedical equipment disposal**: tag
->
->**6 Notifications**
->(not applicable)
-
-xxxxx
-
+>>>**Biomedical equipment transfer**: tag  
+>>>**Biomedical equipment installation**: tag  
+>>>**Biomedical equipment inspection**: tag  
+>>>**Biomedical equipment preventive maintenance**: tag  
+>>>**Biomedical equipment alarm**: tag  
+>>>**Biomedical equipment repair request**: tag  
+>>>**Biomedical equipment corrective maintenance**: tag  
+>>>**Biomedical equipment disposal**: tag  
+>>
+>>**6 Notifications**  
+>>(not applicable)
 
 #### 6.2 Tracked entity attribute
 The DHIS2-RTS uses the "Item code" and "Item descriptions" as the two Tracked entity attributes of the Trached entity type "Item".
 Note that the "Item code" is unique only for any specific Organisation Unit but the same "Item code" can be used in any number of different Organisation Units.
 
->**1 Item code**  
->>**Name \(*)**: "Item code"  
->>**Short name (*)**: "Item code"  
->>**Value type**: "Text"  
->>**Aggregation type**: "None"  
->>**Unique**: tag (appears as a blue tag with a white tick) 
->>**Option (from drop-down menu)**: "Organisation unit"
->>**Inherit**: do not tag  
->
->**2 Item description**  
->>**Name \(*)**: "Item description"  
->>**Short name \(*)**: "Item description"  
+>**1 Brand name**  
+>>**Name \(*)**: "Brand name"  
+>>**Short name (*)**: "Brand name"  
 >>**Value type**: "Text"  
 >>**Aggregation type**: "None"  
 >>**Unique**: do not tag
->>**Inherit**: do not tag  
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**2 Country of Origin**  
+>>**Name \(*)**: "Country of Origin"  
+>>**Short name \(*)**: "Country of Origin"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**3 Department of installation**  
+>>**Name \(*)**: "Department of installation"  
+>>**Short name \(*)**: "Department of installation"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**4 Country of Origin**  
+>>**Name \(*)**: "Country of Origin"  
+>>**Short name \(*)**: "Country of Origin"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**5 Equipment code**  
+>>**Name \(*)**: "Equipment code"  
+>>**Short name \(*)**: "Equipment code"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**6 Equipment image**  
+>>**Name \(*)**: "Equipment image"  
+>>**Short name \(*)**: "Equipment image"  
+>>**Value type**: "Image"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**7 Equipment model**  
+>>**Name \(*)**: "Equipment model"  
+>>**Short name \(*)**: "Equipment model"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**8 Manufacturer**  
+>>**Name \(*)**: "Manufacturer"  
+>>**Short name \(*)**: "Manufacturer"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**9 Provided by**  
+>>**Name \(*)**: "Provided by"  
+>>**Short name \(*)**: "Provided by"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**10 Serial Number**  
+>>**Name \(*)**: "Serial Number"  
+>>**Short name \(*)**: "Serial Number"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**11 Type of equipment**  
+>>**Name \(*)**: "Type of equipment"  
+>>**Short name \(*)**: "Type of equipment"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
+>
+>**11 Warranty expiry date**  
+>>**Name \(*)**: "Warranty expiry date"  
+>>**Short name \(*)**: "Warranty expiry date"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: tag  (appears as white tick in a blue square)
 
 #### 6.3 Tracked entity type
->**1 Item**:  
->>**Name \(*)**: "Item"  
+>**1 Biomedical equipment**:  
+>>**Name \(*)**: "Biomedical equipment"  
 >>**Enable tracked entity instance audit log**: not checked
 >>**Minimum number of attributes required to search**: 1  
 >>**Maximum number of tracked entity instances to return in search**: 0  
 >>**Feature type**: "None"  
->>**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
->>>"Item code"  
->>>"Item description"  
->>
+>>**Tracked entity type attributes**: assign the following Tracked entity attributes in this order:
+>>>"Equipment image"
+>>>"Type of equipment"
+>>>"Brand name"
+>>>"Equipment model"
+>>>"Equipment code"
+>>>"Manufacturer"
+>>>"Country of Origin"
+>>>"Department of installation"
+>>>"Provided by"
+>>>"Serial Number"
+>>>"Warranty expiry date"
+>>>"Unique identifier"
 >>**Display in list**: tag all  
->>**Searchable**: tag all
+>>**Searchable**: tag all except for "Equipment image"
 
-#### 6.4 Program rule
+# LL - Line Listing Web App - Transaction Analytics and Visualizations
 
-In total, four Program rules are configured for completing all required calculations:
+The Line Listing reports provide details of individual transactions but are not able to provide any type of aggregation.
 
-- "Assign previous stock balance"
+Important notice: the "Last updated on" date and time stamp indicates the actual date that respective transaction was made on the mobile device (and not the date and time of synchronization). The time indicated in the Line Listing corresponds to the time set on the mobile device (which should ideally corresopnd to the DHIS2 server time).
 
-- "Assign Stock on Hand"
-
-The other two Program rule manage the "Stock correction" transaction:
-
-- "Assign Stock correction"
-
-- "Assign Stock on Hand correction".
-
-Two Program rules together provide the real-time stock on hand update.
-
-In principle, the transaction quantities from the current event are added to the current Stock on Hand.
-
-If "Stock on hand" had a previous event, the "Stock on hand" value from the previous event is written to the Data Element "Previous Stock Balance". This Program rule "saves" the current "Stock on hand" value which is used as a basis for the (re)calculation of the current "Stock on hand". Using a single field would lead to an infinite recursion and an error as, for example, "Stock on hand" cannot be equal to "Stock on hand" + "Receipt" at the same time. Instead two different fields are needed which interact with each other:
-
-- "Stock on hand": the most recent value before a transaction is effected
-
-- "Previous stock balance": the most recent Stock on hand value is written to this field as soon as a new transaction is started
-
-- The calculation of the current transaction is effected by adding all transaction quantities to the "Previous stock balance"
-
-- After completing the transaction, the result of the calculation "overwrites" the "Stock on hand" field
-
-- The process starts again from scratch
-
-The screenshot below shows an example of a transaction. Before the transaction was started, the "Stock on hand" was 1. This value is written to the "Previous stock balance". When the "Stock receipt" of 1 is entered, the "Stock on hand" is increased to 2. Not that the "Previous stock balance" is still 1 which keeps the "memory" of the "Stock on hand" before the transaction started.
-
-The two Data elements "Previous Stock Balance" and "Stock on hand" are greyed out as the are automatically updated by Program rules.
-
-![](media/image94.png)
-
-Note that the (re)calculation of the stock on hand is iterative, only based on the most recent transaction and not in anyway affected by retrospective editing of any other than the current transactions. Therefore any editing of past data must be categorically avoided. Any mistakes must only be corrected with the "Correction" transaction.
-
-Two program rules manage the calculation of the "Stock correction". Entering a quantity corresponding to the difference between the "Stock on hand" currently stored in the system and the "Stock on hand" resulting from the physical stock count would require considering whether the correction is a positive or negative value and a calculation by the user which is prone to error. Instead storekeepers enter the result of the physical stock count and the two program rules update the "Stock on hand" and calculate the difference (which can be positive or negative) for the user:
-
-- "Assign Stock on Hand": if the "Stock count" field has a value entered, this value "overwrites" (replaces) the "Stock on hand" which is currently stored in the system
-
-- "Assign Stock correction": if the "Stock count" field has a value entered, the difference between the "Previous stock balance" and the "Stock count" is "written" to the field "Stock correction".
-
-##### Calculations
-
-Stock on Hand = "Previous stock balance" + "Stock received" - "Stock distribution" - "Stock discarded"
-
-Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
-
-"Stock received" (positive integer): increases "Stock on hand"
-
-"Stock distribution" (positive integer): decreases "Stock on hand"
-
-"Stock discard" (positive integer): decreases "Stock on hand"
-
-"Stock correction":
-
-- negative integer if the physical stock count is less than the calculated value
-
-- positive integer if the physical stock count is greater than the calculated value
-
->**1 Assign stock correction**  
->>**1 Enter program rule details**  
->>>**Program \(*)**: "Real-Time Stock Management"  
->>>**Trigger rule only for program stage**: appears by default
->>>**Name \(*)**: "Assign Stock correction"  
->>>**Description**: "Xx"  
->>>**Priority**:  "Xx"
->>
->>**2 Enter program rule expression**  
->>>**Condition**: "d2:hasValue(#{Stock count})"  
->>
->>**3 Define program rule actions**  
->>>**Action details**   
->>>>**Action \(*)**: "Assign value"
->>>>**Data element to assign to**: "Stock correction"
->>>>**Expression to evaluate and assign**: "#{Stock count}-#{Previous stock balance}"
+>**BLM LL 1 - Biomedical equipment alarm report**  
+This report provides a chronological record of all alarms with their details.
+>**Name \(*)**: "BLM LL 1 - Biomedical equipment alarm report"  
+>>**Input**: "Event"  
+>>>**Program**: "Biomedical equipment life cycle management"
+>>>**Stage**: "Biomedical equipment alarm"
+>>**Columns**
+>>>Organisation Unit: tag "User organisation unit"
+>>>"Department of installation"
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Type of equipment"
+>>>"Brand name"
+>>>"Alarm type"
+>>>"Alarm cause" / Condition: "is not empty / not null"
+>>>"Alarm corrective action"
+>>>"Alarm resolved"
+>>>"Alarm escalated and supervisor informed"
 >
->**2 Assign Stock on Hand**  
->>**1 Enter program rule details**  
->>>**Program \(*)**: "Real-Time Stock Management"  
->>>**Trigger rule only for program stage**: appears by default
->>>**Name \(*)**: "Assign Stock on Hand"  
->>>**Description**: "Xx"  
->>>**Priority**:  "Xx"
->>
->>**2 Enter program rule expression**  
->>>**Condition**: "true"  
->>
->>**3 Define program rule actions**  
->>>**Action details**   
->>>>**Action \(*)**: "Assign value"
->>>>**Data element to assign to**: "Stock on hand"
->>>>**Expression to evaluate and assign**: ""#{Previous stock balance} + #{Stock received} - #{Stock distributed} - #{Stock discarded} ""
+>**BLM LL 2 - Biomedical equipment corrective mainteance report**  
+This report provides a chronological record of all corrective maintenance (repairs) with their details.
+>**Name \(*)**: "BLM LL 2 - Biomedical equipment corrective maintenance report"  
+>>**Input**: "Event"  
+>>>**Program**: "Biomedical equipment life cycle management"
+>>>**Stage**: "Biomedical equipment corrective maintenance"
+>>**Columns**
+>>>Organisation Unit: tag "User organisation unit"
+>>>"Department of installation"
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Type of equipment"
+>>>"Brand name"
+>>>"Equipment model
+>>>"Unique identifier"
+>>>"Assessment of technical fault" / Condition: "is not empty / not null"
 >
->**3 Assign Stock on hand correction**  
->>**1 Enter program rule details**  
->>>**Program \(*)**: "Real-Time Stock Management"  
->>>**Trigger rule only for program stage**: appears by default
->>>**Name \(*)**: "Assign Stock on hand correction"  
->>>**Description**: "Xx"  
->>>**Priority**:  "Xx"
->>
->>**2 Enter program rule expression**  
->>>**Condition**: "d2:hasValue(#{Stock count})"  
->>
->>**3 Define program rule actions**  
->>>**Action details**   
->>>>**Action \(*)**: "Assign value"
->>>>**Data element to assign to**: "Stock on hand"
->>>>**Expression to evaluate and assign**: "#{Stock count}"
+>**BLM LL 3 - Biomedical equipment disposal report**  
+This report provides a chronological record of all equipment disposals with their details.
+>**Name \(*)**: "BLM LL 3 - Biomedical equipment disposal report"  
+>>**Input**: "Event"  
+>>>**Program**: "Biomedical equipment life cycle management"
+>>>**Stage**: "Biomedical equipment disposal"
+>>**Columns**
+>>>Organisation Unit: tag "User organisation unit"
+>>>"Department of installation"
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Type of equipment"
+>>>"Brand name"
+>>>"Equipment model
+>>>"Unique identifier"
+>>>"Reason for disposal" / Condition: "is not empty / not null"
+>>>"Equipment removed from inventory - CCE"
 >
->**4 Assign previous stock balance**  
->>**1 Enter program rule details**  
->>>**Program \(*)**: "Real-Time Stock Management"  
->>>**Trigger rule only for program stage**: appears by default
->>>**Name \(*)**: "Assign Stock on hand correction"  
->>>**Description**: "Xx"  
->>>**Priority**:  "Xx"
->>
->>**2 Enter program rule expression**  
->>>**Condition**: "Condition: "d2:hasValue(#{Initial stock on hand - Previous event})"  
->>
->>**3 Define program rule actions**  
->>>**Action details**   
->>>>**Action \(*)**: "Assign value"
->>>>**Data element to assign to**: "Previous stock balance"
->>>>**Expression to evaluate and assign**: "#{Initial stock on hand - Previous event}"
-
-#### 6.5 Program rule variable
->**1 Initial stock on hand - Previous event**
->>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Initial stock on hand - Previous event"  
->>**Source type \(*)**: "Data element from previous event"  
->>**Data element**: "Data element from previous event"  
+>**BLM LL 4 - Biomedical equipment inspection report**  
+This report provides a chronological record of all equipment inspection reports with their details.
+>**Name \(*)**: "BLM LL 4 - Biomedical equipment inspection report"  
+>>**Input**: "Event"  
+>>>**Program**: "Biomedical equipment life cycle management"
+>>>**Stage**: "Biomedical equipment inspection"
+>>**Columns**
+>>>Organisation Unit: tag "User organisation unit"
+>>>"Department of installation"
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Type of equipment"
+>>>"Brand name"
+>>>"Biomedical equipment inspection" / Condition: "is not empty / not null"
 >
->**2 Previous stock balance**
->>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Previous stock balance"  
->>**Source type \(*)**: "Data element in current event"  
->>**Data element**: "Previous stock balance"  
+>**BLM LL 5 - Biomedical equipment preventive maintenance report**  
+This report provides a chronological record of all preventive maintenance rpoerts with their details.
+>**Name \(*)**: "BLM LL 5 - Biomedical equipment preventive maintenance report"  
+>>**Input**: "Event"  
+>>>**Program**: "Biomedical equipment life cycle management"
+>>>**Stage**: "Biomedical equipment preventive maintenance"
+>>**Columns**
+>>>Organisation Unit: tag "User organisation unit"
+>>>"Department of installation"
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Type of equipment"
+>>>"Brand name"
+>>>"Equipment model
+>>>"Unique identifier"
+>>>"Biomedical equipment preentive maintenance"
 >
->**3 Stock correction**
->>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Stock correction"  
->>**Source type \(*)**: "Data element in current event"  
->>**Data element**: "Stock on hand"  
+>**BLM LL 6 - Biomedical equipment repair request report**  
+This report provides a chronological record of all equipment repair request reports with their details.
+>**Name \(*)**: "BLM LL 6 - Biomedical equipment repair request report"  
+>>**Input**: "Event"  
+>>>**Program**: "Biomedical equipment life cycle management"
+>>>**Stage**: "Biomedical equipment repair request"
+>>**Columns**
+>>>Organisation Unit: tag "User organisation unit"
+>>>"Department of installation"
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Type of equipment"
+>>>"Brand name"
+>>>"Equipment model
+>>>"Unique identifier"
+>>>"Reason for repair reauest"  / Condition: "is not empty / not null"
+>>>"Urgency of repair request"
+>>>"Biomedical engineer notification"
 >
->**4 Stock count**
->>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Stock count"  
->>**Source type \(*)**: "Data element in current event"  
->>**Data element**: "Stock count"  
->
->**5 Stock discarded**
->>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Stock discarded"  
->>**Source type \(*)**: "Data element in current event"  
->>**Data element**: "Stock discard"  
->
->**6 Stock distribution**
->>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Stock distribution"  
->>**Source type \(*)**: "Data element in current event"  
->>**Data element**: "Stock distribution"  
->
->**7 Stock on hand**
->>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Stock on hand"  
->>**Source type \(*)**: "Data element in current event"  
->>**Data element**: "Stock on hand"  
->
->**8 Stock received**
->>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Stock received"  
->>**Source type \(*)**: "Data element in current event"  
->>**Data element**: "Stock receipt"  
-
- | > Tracked entity type attributes | Name:<br>\- "Brand name" / "Text"<br>\- "Country of Origin" /<br>"Text"<br>\- "Department of<br>installation" / "Text"<br>\- "Equipment code" / "Text"<br>\- "Equipment image" /<br>"Text"<br>\- "Equipment model" /<br>"Text"<br>\- "Manufacturer" / "Text"<br>\- "Provided by" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Type of equipment" /<br>"Text"<br>\- "Warranty expiry date" /<br>"Text"<br>Aggregation type (\*): "None" |
-| > Tracked entity type | Name: "Biomedical equipment<br>life cycle management"<br>Enable tracked entity instance<br>audit log: tag<br>Minimum number of attributes<br>required to search: 1<br>Maximum number of tracked entity<br>instances to return in search:<br>100<br>Tracked entity type attributes<br>(assign in the following order):<br>\- "Equipment image" /<br>"Text"<br>\- "Type of equipment" /<br>"Text"<br>\- "Brand name" / "Text"<br>\- "Equipment model" /<br>"Text"<br>\- "Equipment code" / "Text"<br>\- "Manufacturer" / "Text"<br>\- "Country of Origin" /<br>"Text"<br>\- "Department of<br>installation" / "Text"<br>\- "Provided by" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Warranty expiry date" /<br>"Text"<br>\- "Unique identification<br>number" / "Text"<br>Display in list: tag all<br>Mandatory: leave untagged<br>Searchable: tag all except for<br>"Equipment image" |
-|
-  > Line Listing | Name: "Biomedical equipment<br>alarm report"<br>Columns:<br>\- "Last updated on"<br>\- "Type of equipment"<br>\- "Brand name"<br>\- "Alarm type"<br>\- "Alarm cause" / Condition<br>"is not empty / not null"<br>(optional)<br>\- "Alarm corrective action"<br>\- "Alarm resolved"<br>\- "Alarm escalated and<br>supervisor informed"<br>Filter<br>\- Organisation Unit: select<br>Organisation units as required<br>\- Event date: "Last 3 months"<br>Name (configure the reports<br>accordingly):<br>\- "Biomedical equipment<br>disposal report"<br>\- "Biomeical equipment repair<br>report"<br>\- "Biomedical equipment<br>service report"<br>\- "Biomedical equipment status<br>report" |
-
-#### DHIS2 user interfaces
+>**BLM LL 7 - Biomedical equipment transfer report**  
+This report provides a chronological record of all alarms with their details.
+>**Name \(*)**: "BLM LL 1 - Biomedical equipment transfer report"  
+>>**Input**: "Event"  
+>>>**Program**: "Biomedical equipment life cycle management"
+>>>**Stage**: "Biomedical equipment transfer"
+>>**Columns**
+>>>Organisation Unit: tag "User organisation unit"
+>>>"Department of installation"
+>>>Last updated on: "Today", "Last 90 days"
+>>>"Type of equipment"
+>>>"Brand name"
+>>>"Sent from"
+>>>"Transferred to"
+>>>"Received from"
+>>>"Received at"
 
 **Web portal / Tracker program**
 
