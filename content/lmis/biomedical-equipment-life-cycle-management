@@ -1,12 +1,22 @@
-### BIOMEDICAL ENGINEERING LIFE CYCLE MANAGEMENT / Tracker program
+# DHIS2-RTS Real-Time Stock Management Tool / Tracker program
+
+## Introduction
+
+This document describes the use case, configuration and management of the DHIS2-RTS application for the real-time management of medical stocks at healthcare facilities using mobile devices.
+
+### Use case overview
+
+
+
+BIOMEDICAL ENGINEERING LIFE CYCLE MANAGEMENT / Tracker program
 
 This simple Tracker program provides an asset register similar to the product catalogue which can be customized to any type of biomedical equipment, including but not limited to cold chain equipment. In addition, this mobile application allows maintaining a detailed record of installation, alarm record, equipment status, servicing, repair and disposal and thereby covering the entire life cycle of biomedical equipment with records available to health care facility staff off-line and to any other other authorized staff anywhere in the country through the web portal.
 
-#### Use case
+# Use case
 
 The biomedical engineering or cold chain technician team establishes a detailed asset register for each health care facility or uploads data from a national database. Biomedical engineers or technicians document the installation, testing, commissioning and initial training when setting up new pieces of equipment. Health staff and/or technicians carry out period (daily/weekly/monthly) equipment checks and document alarm events, causes as well as resolution. Biomedical engineers and/or technicians maintain a detailed record for each servicing or repair which documents works, parts repaired or replaced and testing. Finally, when the equipment reaches the end of its useful life time, the decommissioning and disposal of equipment is documented before removing it from the asset register.
 
-#### DHIS2 configuration
+## DHIS2 configuration
 
 This application is configured as a "Tracker program" which uses only simple, native DHIS2 functionality. The number, description and contents of each of the stages can be very easily customized to national needs without the need for any programming knowledge.
 
