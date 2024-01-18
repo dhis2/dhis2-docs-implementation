@@ -1,43 +1,624 @@
-# DHIS2-RTS Real-Time Stock Management Tool / Tracker program
+# BIOMEDICAL ENGINEERING LIFE CYCLE MANAGEMENT / Tracker program
 
 ## Introduction
 
-This document describes the use case, configuration and management of the DHIS2-RTS application for the real-time management of medical stocks at healthcare facilities using mobile devices.
-
-### Use case overview
-
-
-
-BIOMEDICAL ENGINEERING LIFE CYCLE MANAGEMENT / Tracker program
-
 This simple Tracker program provides an asset register similar to the product catalogue which can be customized to any type of biomedical equipment, including but not limited to cold chain equipment. In addition, this mobile application allows maintaining a detailed record of installation, alarm record, equipment status, servicing, repair and disposal and thereby covering the entire life cycle of biomedical equipment with records available to health care facility staff off-line and to any other other authorized staff anywhere in the country through the web portal.
 
-# Use case
+## Use case
 
 The biomedical engineering or cold chain technician team establishes a detailed asset register for each health care facility or uploads data from a national database. Biomedical engineers or technicians document the installation, testing, commissioning and initial training when setting up new pieces of equipment. Health staff and/or technicians carry out period (daily/weekly/monthly) equipment checks and document alarm events, causes as well as resolution. Biomedical engineers and/or technicians maintain a detailed record for each servicing or repair which documents works, parts repaired or replaced and testing. Finally, when the equipment reaches the end of its useful life time, the decommissioning and disposal of equipment is documented before removing it from the asset register.
 
-## DHIS2 configuration
+## Maintenance Web App - DHIS2 metadata configuration
 
-This application is configured as a "Tracker program" which uses only simple, native DHIS2 functionality. The number, description and contents of each of the stages can be very easily customized to national needs without the need for any programming knowledge.
+This application is configured as a "Tracker program" which uses only simple, native DHIS2 functionality. The number, description and contents of each of the stages can be very easily customized to national protocols and needs without the need for any programming knowledge.
+The "aggregate" Data entry form is used for storing and visualizing aggregate daily and monthly data but not used for entering data.
 
-| **CATEGORY** | **System default settings** |
-| --- | --- |
-| > Data element | Name (for stages)<br>\- "Biomedical equipment<br>alarm" / "Long text"<br>\- "Biomedical equipment<br>disposal" / "Long text"<br>\- "Biomedical equipment<br>installation" / "Long text"<br>\- "Biomedical equipment<br>repair" / "Long text"<br>\- "Biomedical equipment<br>servicing" / "Long text"<br>\- "Biomedical equipment<br>status" / "Long text"<br>Name (for questions within<br>stages)<br>\- "Alarm cause" / "Long<br>text"<br>\- "Alarm corrective action" /<br>"Long text"<br>\- "Alarm escalated and<br>supervisor informed" / "Long<br>text"<br>\- "Alarm resolved" / "Long<br>text"<br>\- "Alarm type" / "Long<br>text"<br>\- "Audible or visible alarm"<br>/ "Long text"<br>\- "Equipment switches on" /<br>"Long text"<br>Domain type: "Tracker"<br>Value type: see above |
-| > Tracked entity type attributes | Name:<br>\- "Brand name" / "Text"<br>\- "Country of Origin" /<br>"Text"<br>\- "Department of<br>installation" / "Text"<br>\- "Equipment code" / "Text"<br>\- "Equipment image" /<br>"Text"<br>\- "Equipment model" /<br>"Text"<br>\- "Manufacturer" / "Text"<br>\- "Provided by" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Type of equipment" /<br>"Text"<br>\- "Warranty expiry date" /<br>"Text"<br>Aggregation type (\*): "None" |
+### Metadata overview
+The required metadata settings seetings are presented in the order in which it is presented in the DHIS2 Maintenance Web App.
+
+>**1 CATEGORY**  
+>>1.1 Category option  
+>>1.2 Category  
+>>1.3 Category combination 
+> 
+>**2 DATA ELEMENT**  
+>>2.1 Data element - "Aggregate"  
+>>2.2 Data element - "Tracker"  
+> 
+>**3 DATA SET**  
+>>3.1 Data set  
+> 
+>**4 INDICATOR**  
+>>4.1 Program indicator  
+> 
+>**5 ORGANISATION UNIT**  
+>>5.1 Organisation unit  
+> 
+>**6 PROGRAM**  
+>>6.1 Program  
+>>6.2 Tracked entity attribute  
+>>6.3 Relationship type  
+>>6.4 Tracked entity type  
+>>6.5 Program rule  
+>>6.6 Program rule variable  
+> 
+>**7 OTHER**  
+>>7.1 Option set  
+>>7.2 Legend  
+>>7.3 Predictor  
+>>7.4 Predictor group 
+
+#### 1.1 Category option
+>**1 Xx**  
+>>**Name \(*)**: "Xx "  
+>>**Short name \(*)**: "Xx "  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>
+>**2 Xx**  
+>>**Name \(*)**: "Xx"  
+>>**Short name \(*)**: "Xx"  
+>>**Organisation units selected**: (select as for the Tracker Program) 
+
+#### 1.2 Category
+>**1 Xx**  
+>>**Name \(*)**: "Xx"  
+>>**Short name \(*)**: "Xx "  
+>>**Data dimension type**: "Disaggregation"  
+>>**Category options**: "Xx"
+
+#### 1.1 Category combination
+>**Name \(*)**: **Xx**  
+>**Data dimension type \(*)**: "Disaggregation"  
+>**Skip category total in reports**: tag
+>**Categories**: "Xx" 
+
+### 2 DATA ELEMENT
+#### 2.1 Data element - "Aggregate"
+>**1 Xx**  
+>>**Name \(*)**: "Xx"  
+>>**Short name \(*)**: "Xx"  
+>>**Domain Type \(*)**: "Aggregate"  
+>>**Value type \(*)**: "Number"  
+>>**Aggregation type (*)**: "Sum"  
+>>**Store zero data values**: tag  
+>>**Category combination \(*)**: "Xx"  
+>>**Aggregation levels**: "Facility"  
+
+#### 2.2 Data element - "Tracker"
+>**Name** - for Program stages  
+>>"Biomedical equipment alarm"  
+>>"Biomedical equipment disposal"  
+>>"Biomedical equipment installation"  
+>>"Biomedical equipment repair"  
+>>"Biomedical equipment servicing"  
+>>"Biomedical equipment status"  
+>
+>**Name** - for questions  
+>>"Biomedical equipment alarm"  
+>>"Alarm cause"  
+>>"Alarm corrective action"  
+>>"Alarm escalated and supervisor informed"  
+>>"Alarm resolved"  
+>>"Alarm type"  
+>>"Audible or visible alarm"  
+>>"Equipment switches on"  
+>
+>**Short name \(*)**: same as "Name (\*) - CCE"   
+>**Domain Type \(*)**: "Tracker"  
+>**Value type \(*)**: "Long text"
+>**Aggregation type (*)**: "None"
+
+#### 2.3 Data element group
+
+The creation of Data element groups is a DHIS2 best practice but also a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
+
+>**1 Xx**  
+>**Name \(*)**: "Xx"  
+>**Short name \(*)**: "Xx"
+>**Data elements \(*)**: *select all Data elements with the "DAY" suffix"*    
+>****
+>**X**  
+>**Name \(*)**: "X"  
+>**Short name \(*)**: "Xx"
+>**Data elements \(*)**: *select all Data elements with the "MTH" suffix"*    
+ 
+#### 3.1 Data set
+Data sets for each Organisation unit are required both for recording daily and monthly "snapshots" of Tracker Program .
+
+>**Xx**  
+>>**Name \(*)**: "Xx"  
+>>**Short name \(*)**: "Xx"  
+>>**Expiry days**: "5"  
+>>**Open future periods for data entry**: "1"  
+>>**Days after period to qualify for timely submission**: "5"  
+>>**Period type**: "Monthly"  
+>>**Category combination**: "None"  
+>>**Data elements**
+>>>"Data elements: add all Data elements with the suffix "XXX" required for the respective health facility.
+>>
+>>**Organisation units selected**: (select as for the Tracker Program) 
+
+## 4 Indicator
+
+The Indicator functionality is used to configure the "Stock coverage time". In principle it would be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings.
+
+#### 4.1 Program indicator
+
+Program indicators in conjunction with Predictors allow automatically aggregating Tracker Program data and recording daily and monthly aggregate values in the respective Data Entry forms for analysis and reporting.
+
+A separate Program indicator has to be created for every "pair" of item description and transaction type and one example is given below for each of the transactions for one item:
+
+>**1 [Data element] - Xx**  
+>>**1 Program indicator details**
+>>>**Program \(*)**: "Xx"  
+>>>**Name \(*)**: "[Data element] - Xx"  
+>>>**Short Name \(*)**: "[Item code] - XX"  
+>>>**Aggregation type \(*)**: "Sum"  
+>>>**Analytics type**: "Event"  
+>>>**Organisation unit field**: "Event organisation unit (default)  
+>>>**Analytics period boundaries**  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "Before end of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>>**Boundary target**: "Event date"  
+>>>>**Analytics period boundary target**: "After start of reporting period"  
+>>>>**Offset period by amount**: "0"  
+>>>
+>>>**Display in form**: tag (appears as white tick in blue square)  
+
+### 5 Organisation Unit
+
+### 5.1 Organisation Unit
+The Organisation Unit, Organisation Unit group and Organisation Unit level are created and added according to national protocols and policies and/or existing DHIS2 configuration and there are no specific requirements for using the Biomedical EQuipment Life Cycle Management program.
+
+### 6 Program
+The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, is very simple to configure, uses only native DHIS2 functionality and governs the customized user interface on the mobile device.
+
+#### 6.1 Program
+>**1 Program details**
+>>**Name \(*)**: "Biomedical equipment life cycle management"  
+>>**Short name (*)**: "Biomedical equipment life cycle management"  
+>>**Color**: "#6200EA"  
+>>**Icon**: "Factory worker outline"  
+>>**Version**: (automatically numbered by the system)
+>>**Tracked entity type (*)**: select "Biomedical equipment"  
+>>**Category combination (*)**: select "None"  
+>>**Display front page list**: tag (appears as a white tick in a blue square) 
+>>**Access level**: "Open"  
+>>**Completed events expiry days**: "0"  
+>>**Expiry days**: "0"  
+>>**Minimum number of attributes required to search**: "1"  
+>>**Maximum number of treacked entity instances to return in search**: "0"  
+>
+>**2 Enrollment details**  
+>>**Allow future enrollment dates**: do not tag  
+>>**Allow future incident dates**: do not tag  
+>>**Only enrol once (per tracked entity instance lifetime)**: do not tag  
+>>**Show incident date**: tag (appears as a white tick in a blue square)   
+>>**Description of incident date**: "Biomedical equipment life cycle management report"  
+>>**Ignore overdue events**: do not tag  
+>>**Feature type**: select "Point"
+>>
+>**3 Attributes**
+>>**1 Assign attributes**
+>>>**Program tracked entity attributes**: select and arrange in the following order:
+>>>>"Item code"  
+>>>>"Item description"  
+>>>*Note that the item code is separate as it is needed as a distinct field for scanning the barcode*.  
+>>>**Display in list**: tag all  
+>>>**Searchable**: tag "Item description" ("Item code tagged by the system)  
+>>>**Mobile render type**: "Default"
+>>>**Desktop render type**: "Default"
+![](media/image11.png)
+>>
+>>**2 Create registration form**
+>>>**Name**: "Biomedical life cycle equipment monitoring"
+>>>**ADD SECTION TO FORM**  
+>>>"SECTION" assign Tracked entity attributes in the following order:
+>>>>"Type of equipment"  
+>>>>"Department of installation"  
+>>>>"Unique identifier"  
+>>>>"Manufacturer"  
+>>>>"Brand name"  
+>>>>"Equipment model"  
+>>>>"Equipment code"  
+>>>>"Serial Number"  
+>>>>"Country of Origin"  
+>>>>"Provided by"  
+>>>>"Equipment image"  
+>>>>"Warranty expiry date"  
+>>
+>**4 Program stages**
+>>**1 Biomedical equipment transfer**
+>>>**1 Stage details**
+>>>>**Name \(*)**: "Biomedical equipment transfer"  
+>>>>**Scheduled days from start (*)**: "0"  
+>>>>**Repeatable**: tag (appears as white tig in a blue square)  
+>>>
+>>>**2 Assign data elements**  
+>>>>**Search available/selected items**:  
+>>>>Assign attributes in the following order  
+>>>>>"Unique identification number"
+>>>>>"Type of equipment"
+>>>>>"Equipment image"
+>>>>>"Department of installation"
+>>>>>"Manufacturer"
+>>>>>"Brand name"
+>>>>>"Equipment model"
+>>>>>"Equipment code"
+>>>>>"Product number"
+>>>>>"Serial number"
+>>>>>"Country of Origin"
+>>>>>"Provided by"
+>>>>>"Warranty expiry date"
+>>>>
+>>>>**Compulsory**: tag  
+>>>>**Display in reports**: make visible
+>>>
+>>>**3 Create data entry form**
+>>>>**"BASIC"** (configured by the system by default, no configuration is needed)
+>>>
+>>**2 Biomedical equipment installation**
+>>>**1 Stage details**
+>>>>**Name \(*)**: "Biomedical equipment installation"  
+>>>>**Scheduled days from start (*)**: "0"  
+>>>>**Repeatable**: do not tag
+>>>
+>>>**2 Assign data elements**  
+>>>>**Search available/selected items**:  
+>>>>>"Biomedical equipment installation"  
+>>>>
+>>>>**Compulsory**: tag  
+>>>>**Display in reports**: make visible
+>>>
+>>>**3 Create data entry form**
+>>>>**"BASIC"** (configured by the system by default, no configuration is needed)
+>>>
+>>**3 Biomedical equipment inspection**
+>>>**1 Stage details**
+>>>>**Name \(*)**: "Biomedical equipment inspection"  
+>>>>**Scheduled days from start (*)**: "0"  
+>>>>**Repeatable**: tag (appears as white tick in a blue square)
+>>>
+>>>**2 Assign data elements**  
+>>>>**Search available/selected items**:  
+>>>>>"Biomedical equipment inspection"  
+>>>>
+>>>>**Compulsory**: tag  
+>>>>**Display in reports**: make visible
+>>>
+>>>**3 Create data entry form**
+>>>>**"BASIC"** (configured by the system by default, no configuration is needed)
+>>>
+>>**4 Biomedical equipment preventive maintenance**
+>>>**1 Stage details**
+>>>>**Name \(*)**: "Biomedical equipment preventive maintenance"  
+>>>>**Scheduled days from start (*)**: "0"  
+>>>>**Repeatable**: tag (appears as white tick in a blue square)
+>>>
+>>>**2 Assign data elements**  
+>>>>**Search available/selected items**:  
+>>>>>"Biomedical equipment preventive maintenance"  
+>>>>
+>>>>**Compulsory**: tag  
+>>>>**Display in reports**: make visible
+>>>
+>>>**3 Create data entry form**
+>>>>**"BASIC"** (configured by the system by default, no configuration is needed)
+>>>
+>>**5 Biomedical equipment alarm**
+>>>**1 Stage details**
+>>>>**Name \(*)**: "Biomedical equipment alarm"  
+>>>>**Scheduled days from start (*)**: "0"  
+>>>>**Repeatable**: tag (appears as white tick in a blue square)
+>>>
+>>>**2 Assign data elements**  
+>>>>**Search available/selected items**:  
+>>>>>"Alarm type"  
+>>>>>"Alarm cause"  
+>>>>>"Alarm corrective action"  
+>>>>>"Alarm resolved"  
+>>>>>"Alarm escalated to supervisor"  
+>>>>>"Delete - alarm count"  
+>>>>
+>>>>**Compulsory**: tag for all
+>>>>**Display in reports**: make all visible
+>>>
+>>>**3 Create data entry form**
+>>>>**"BASIC"** (configured by the system by default, no configuration is needed)
+>>>
+>>**6 Biomedical equipment repair request**
+>>>**1 Stage details**
+>>>>**Name \(*)**: "Biomedical equipment repair request"  
+>>>>**Scheduled days from start (*)**: "0"  
+>>>>**Repeatable**: tag (appears as white tick in a blue square)
+>>>
+>>>**2 Assign data elements**  
+>>>>**Search available/selected items**:  
+>>>>>"Reason for repair request"  
+>>>>>"Urgency of repair request"  
+>>>>>"Report iamge"  
+>>>>>"Biomedical engineer notification"  
+>>>>
+>>>>**Compulsory**: tag "Reason for repair request" and "Urgency of repair request"
+>>>>**Display in reports**: make visible
+>>>
+>>>**3 Create data entry form**
+>>>>**"BASIC"** (configured by the system by default, no configuration is needed)
+>>>
+>>**7 Biomedical equipment corrective maintenance**
+>>>**1 Stage details**
+>>>>**Name \(*)**: "Biomedical equipment installation"  
+>>>>**Scheduled days from start (*)**: "0"  
+>>>>**Repeatable**: tag (appears as white tick in a blue square)
+>>>
+>>>**2 Assign data elements**  
+>>>>**Search available/selected items**:  
+>>>>>"Assessment of technical fault"  
+>>>>>"Interventions"  
+>>>>>"Technical fault resolved"  
+>>>>>"Equipment restored to service"  
+>>>>
+>>>>**Compulsory**: tag all  
+>>>>**Display in reports**: make visible
+>>>
+>>>**3 Create data entry form**
+>>>>**"BASIC"** (configured by the system by default, no configuration is needed)
+>>>
+>>**8 Biomedical equipment disposal**
+>>>**1 Stage details**
+>>>>**Name \(*)**: "Biomedical equipment installation"  
+>>>>**Scheduled days from start (*)**: "0"  
+>>>>**Repeatable**: tag (appears as white tick in a blue square)
+>>>
+>>>**2 Assign data elements**  
+>>>>**Search available/selected items**:  
+>>>>>"Reason for disposal"  
+>>>>>"Method of disposal"  
+>>>>>"Equipment removed from cold chain appliance inventory"  
+>>>>
+>>>>**Compulsory**: tag all  
+>>>>**Display in reports**: make visible
+>>>
+>>>**3 Create data entry form**
+>>>>**"BASIC"** (configured by the system by default, no configuration is needed)
+>
+>**5 Access**
+>>**Organisation units**: tag the health care facilities where the Tracker Program is used  
+>>**Roles and access**: "Biomedical equipment life cycle management" appears by default  
+>>>**Biomedical equipment transfer**: tag
+>>>**Biomedical equipment installation**: tag
+>>>**Biomedical equipment inspection**: tag
+>>>**Biomedical equipment preventive maintenance**: tag
+>>>**Biomedical equipment alarm**: tag
+>>>**Biomedical equipment repair request**: tag
+>>>**Biomedical equipment corrective maintenance**: tag
+>>>**Biomedical equipment disposal**: tag
+>
+>**6 Notifications**
+>(not applicable)
+
+xxxxx
+
+
+#### 6.2 Tracked entity attribute
+The DHIS2-RTS uses the "Item code" and "Item descriptions" as the two Tracked entity attributes of the Trached entity type "Item".
+Note that the "Item code" is unique only for any specific Organisation Unit but the same "Item code" can be used in any number of different Organisation Units.
+
+>**1 Item code**  
+>>**Name \(*)**: "Item code"  
+>>**Short name (*)**: "Item code"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: tag (appears as a blue tag with a white tick) 
+>>**Option (from drop-down menu)**: "Organisation unit"
+>>**Inherit**: do not tag  
+>
+>**2 Item description**  
+>>**Name \(*)**: "Item description"  
+>>**Short name \(*)**: "Item description"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag  
+
+#### 6.3 Tracked entity type
+>**1 Item**:  
+>>**Name \(*)**: "Item"  
+>>**Enable tracked entity instance audit log**: not checked
+>>**Minimum number of attributes required to search**: 1  
+>>**Maximum number of tracked entity instances to return in search**: 0  
+>>**Feature type**: "None"  
+>>**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
+>>>"Item code"  
+>>>"Item description"  
+>>
+>>**Display in list**: tag all  
+>>**Searchable**: tag all
+
+#### 6.4 Program rule
+
+In total, four Program rules are configured for completing all required calculations:
+
+- "Assign previous stock balance"
+
+- "Assign Stock on Hand"
+
+The other two Program rule manage the "Stock correction" transaction:
+
+- "Assign Stock correction"
+
+- "Assign Stock on Hand correction".
+
+Two Program rules together provide the real-time stock on hand update.
+
+In principle, the transaction quantities from the current event are added to the current Stock on Hand.
+
+If "Stock on hand" had a previous event, the "Stock on hand" value from the previous event is written to the Data Element "Previous Stock Balance". This Program rule "saves" the current "Stock on hand" value which is used as a basis for the (re)calculation of the current "Stock on hand". Using a single field would lead to an infinite recursion and an error as, for example, "Stock on hand" cannot be equal to "Stock on hand" + "Receipt" at the same time. Instead two different fields are needed which interact with each other:
+
+- "Stock on hand": the most recent value before a transaction is effected
+
+- "Previous stock balance": the most recent Stock on hand value is written to this field as soon as a new transaction is started
+
+- The calculation of the current transaction is effected by adding all transaction quantities to the "Previous stock balance"
+
+- After completing the transaction, the result of the calculation "overwrites" the "Stock on hand" field
+
+- The process starts again from scratch
+
+The screenshot below shows an example of a transaction. Before the transaction was started, the "Stock on hand" was 1. This value is written to the "Previous stock balance". When the "Stock receipt" of 1 is entered, the "Stock on hand" is increased to 2. Not that the "Previous stock balance" is still 1 which keeps the "memory" of the "Stock on hand" before the transaction started.
+
+The two Data elements "Previous Stock Balance" and "Stock on hand" are greyed out as the are automatically updated by Program rules.
+
+![](media/image94.png)
+
+Note that the (re)calculation of the stock on hand is iterative, only based on the most recent transaction and not in anyway affected by retrospective editing of any other than the current transactions. Therefore any editing of past data must be categorically avoided. Any mistakes must only be corrected with the "Correction" transaction.
+
+Two program rules manage the calculation of the "Stock correction". Entering a quantity corresponding to the difference between the "Stock on hand" currently stored in the system and the "Stock on hand" resulting from the physical stock count would require considering whether the correction is a positive or negative value and a calculation by the user which is prone to error. Instead storekeepers enter the result of the physical stock count and the two program rules update the "Stock on hand" and calculate the difference (which can be positive or negative) for the user:
+
+- "Assign Stock on Hand": if the "Stock count" field has a value entered, this value "overwrites" (replaces) the "Stock on hand" which is currently stored in the system
+
+- "Assign Stock correction": if the "Stock count" field has a value entered, the difference between the "Previous stock balance" and the "Stock count" is "written" to the field "Stock correction".
+
+##### Calculations
+
+Stock on Hand = "Previous stock balance" + "Stock received" - "Stock distribution" - "Stock discarded"
+
+Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
+
+"Stock received" (positive integer): increases "Stock on hand"
+
+"Stock distribution" (positive integer): decreases "Stock on hand"
+
+"Stock discard" (positive integer): decreases "Stock on hand"
+
+"Stock correction":
+
+- negative integer if the physical stock count is less than the calculated value
+
+- positive integer if the physical stock count is greater than the calculated value
+
+>**1 Assign stock correction**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock correction"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "d2:hasValue(#{Stock count})"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Stock correction"
+>>>>**Expression to evaluate and assign**: "#{Stock count}-#{Previous stock balance}"
+>
+>**2 Assign Stock on Hand**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock on Hand"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "true"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Stock on hand"
+>>>>**Expression to evaluate and assign**: ""#{Previous stock balance} + #{Stock received} - #{Stock distributed} - #{Stock discarded} ""
+>
+>**3 Assign Stock on hand correction**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock on hand correction"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "d2:hasValue(#{Stock count})"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Stock on hand"
+>>>>**Expression to evaluate and assign**: "#{Stock count}"
+>
+>**4 Assign previous stock balance**  
+>>**1 Enter program rule details**  
+>>>**Program \(*)**: "Real-Time Stock Management"  
+>>>**Trigger rule only for program stage**: appears by default
+>>>**Name \(*)**: "Assign Stock on hand correction"  
+>>>**Description**: "Xx"  
+>>>**Priority**:  "Xx"
+>>
+>>**2 Enter program rule expression**  
+>>>**Condition**: "Condition: "d2:hasValue(#{Initial stock on hand - Previous event})"  
+>>
+>>**3 Define program rule actions**  
+>>>**Action details**   
+>>>>**Action \(*)**: "Assign value"
+>>>>**Data element to assign to**: "Previous stock balance"
+>>>>**Expression to evaluate and assign**: "#{Initial stock on hand - Previous event}"
+
+#### 6.5 Program rule variable
+>**1 Initial stock on hand - Previous event**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Initial stock on hand - Previous event"  
+>>**Source type \(*)**: "Data element from previous event"  
+>>**Data element**: "Data element from previous event"  
+>
+>**2 Previous stock balance**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Previous stock balance"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Previous stock balance"  
+>
+>**3 Stock correction**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock correction"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock on hand"  
+>
+>**4 Stock count**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock count"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock count"  
+>
+>**5 Stock discarded**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock discarded"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock discard"  
+>
+>**6 Stock distribution**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock distribution"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock distribution"  
+>
+>**7 Stock on hand**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock on hand"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock on hand"  
+>
+>**8 Stock received**
+>>**Program \(*)**: "Real-Time Stock Management"  
+>>**Name \(*)**: "Stock received"  
+>>**Source type \(*)**: "Data element in current event"  
+>>**Data element**: "Stock receipt"  
+
+ | > Tracked entity type attributes | Name:<br>\- "Brand name" / "Text"<br>\- "Country of Origin" /<br>"Text"<br>\- "Department of<br>installation" / "Text"<br>\- "Equipment code" / "Text"<br>\- "Equipment image" /<br>"Text"<br>\- "Equipment model" /<br>"Text"<br>\- "Manufacturer" / "Text"<br>\- "Provided by" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Type of equipment" /<br>"Text"<br>\- "Warranty expiry date" /<br>"Text"<br>Aggregation type (\*): "None" |
 | > Tracked entity type | Name: "Biomedical equipment<br>life cycle management"<br>Enable tracked entity instance<br>audit log: tag<br>Minimum number of attributes<br>required to search: 1<br>Maximum number of tracked entity<br>instances to return in search:<br>100<br>Tracked entity type attributes<br>(assign in the following order):<br>\- "Equipment image" /<br>"Text"<br>\- "Type of equipment" /<br>"Text"<br>\- "Brand name" / "Text"<br>\- "Equipment model" /<br>"Text"<br>\- "Equipment code" / "Text"<br>\- "Manufacturer" / "Text"<br>\- "Country of Origin" /<br>"Text"<br>\- "Department of<br>installation" / "Text"<br>\- "Provided by" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Warranty expiry date" /<br>"Text"<br>\- "Unique identification<br>number" / "Text"<br>Display in list: tag all<br>Mandatory: leave untagged<br>Searchable: tag all except for<br>"Equipment image" |
-| > Program |  |
-| > 1 Program details | Name (\*): "Biomedical<br>equipment life cycle<br>management"<br>Short name (\*): "Biomedical<br>equipment life cycle<br>management"<br>Color:<br>"#6<br>200EA"![](media/image59.p<br>ng)<br>Icon:<br>Tracked entity type (\*):<br>"Biomedical equipment life<br>cycle management"<br>Category combination (\*):<br>"None"<br>Display front page list: tag<br>Access level: "Open"<br>Completed events expiry days:<br>"0"<br>Expiry days: "0"<br>Minimum number of attributes<br>required to search: "1"<br>Maximum number of tracked entity<br>instances to return in search:<br>"0" |
-| > 2 Enrollment details | Allow future enrollment dates:<br>tag<br>Show incident data: tag<br>Ignore overdue events: do not<br>tag |
-| > 3 Attributes | Program tracked entity |
-| > | attributes (assign in the |
-| > 1 Assign attributes | following order):<br>\- "Unique identification <br>number" / "Text"<br>\- "Type of equipment" / <br>"Text"<br>\- "Equipment image" / <br>"Text"<br>\- "Department of <br>installation" / "Text"<br>\- "Manufacturer" / "Text"<br>\- "Brand name" / "Text"<br>\- "Equipment model" / <br>"Text"<br>\- "Equipment code" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Country of Origin" / <br>"Text"<br>\- "Provided by" / "Text"<br>\- "Warranty expiry date" / <br>"Text"<br>Display in list: tag all<br>Mandatory: not tagged<br>Searchable: tag all except <br>"Equipment image"<br>Mobile render type: "Default" <br>except "Qr code" for "Unique <br>identification number" |
-| > 3 Attributes | Name: "Biomedical life cycle |
-| > | equipment monitoring" |
-| > 2 Create registration form | <br>"SECTION" assign Tracked <br>entity attributes in the <br>following order:<br>\- "Type of equipment" / <br>"Text"<br>\- "Department of <br>installation" / "Text"<br>\- "Unique identification <br>number" / "Text"<br>\- "Manufacturer" / "Text"<br>\- "Brand name" / "Text"<br>\- "Equipment model" / <br>"Text"<br>\- "Equipment code" / "Text"<br>\- "Serial Number" / "Text"<br>\- "Country of Origin" / <br>"Text"<br>\- "Provided by" / "Text"<br>\- "Equipment image" / <br>"Text"<br>\- "Warranty expiry date" / <br>"Text" |
-| > 4 Program stages | Name: "Biomedical equipment<br>installation"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>installation"<br>Name: "Biomedical equipment<br>alarm" / "Repeatable"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Alarm type"<br>\- "Alarm cause"<br>\- "Alarm corrective action"<br>\- "Alarm resolved"<br>\- "Alarm escalated and<br>supervisor informed"<br>Name: "Biomedical equipment<br>status" / "Repeatable"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>status"<br>Name: "Biomedical equipment<br>servicing" / "Repeatable"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>servicing"<br>Name: "Biomedical equipment<br>repair" / "Repeatable"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>repair"<br>Name: "Biomedical equipment<br>disposal"<br>Assign data elements / Create<br>data entry form "BASIC":<br>\- "Biomedical equipment<br>disposal"<br>Display generate event box when<br>completed: tag<br>Auto-generate event: tag<br>Hide due date: tag |
-| > 5 Access | Organisation units: assign as<br>requested |
-| > 6 Notifications | (not applicable) |
-| > Line Listing | Name: "Biomedical equipment<br>alarm report"<br>Columns:<br>\- "Last updated on"<br>\- "Type of equipment"<br>\- "Brand name"<br>\- "Alarm type"<br>\- "Alarm cause" / Condition<br>"is not empty / not null"<br>(optional)<br>\- "Alarm corrective action"<br>\- "Alarm resolved"<br>\- "Alarm escalated and<br>supervisor informed"<br>Filter<br>\- Organisation Unit: select<br>Organisation units as required<br>\- Event date: "Last 3 months"<br>Name (configure the reports<br>accordingly):<br>\- "Biomedical equipment<br>disposal report"<br>\- "Biomeical equipment repair<br>report"<br>\- "Biomedical equipment<br>service report"<br>\- "Biomedical equipment status<br>report" |
+|
+  > Line Listing | Name: "Biomedical equipment<br>alarm report"<br>Columns:<br>\- "Last updated on"<br>\- "Type of equipment"<br>\- "Brand name"<br>\- "Alarm type"<br>\- "Alarm cause" / Condition<br>"is not empty / not null"<br>(optional)<br>\- "Alarm corrective action"<br>\- "Alarm resolved"<br>\- "Alarm escalated and<br>supervisor informed"<br>Filter<br>\- Organisation Unit: select<br>Organisation units as required<br>\- Event date: "Last 3 months"<br>Name (configure the reports<br>accordingly):<br>\- "Biomedical equipment<br>disposal report"<br>\- "Biomeical equipment repair<br>report"<br>\- "Biomedical equipment<br>service report"<br>\- "Biomedical equipment status<br>report" |
 
 #### DHIS2 user interfaces
 
