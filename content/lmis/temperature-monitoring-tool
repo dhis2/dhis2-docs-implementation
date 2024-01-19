@@ -1,24 +1,14 @@
-# Temperature monitoring tool
+# TEMPERATURE MONITORING TOOL / "Aggregate" Data Entry Form
 
-This Default Data Entry Form ("aggregate") allows storekeepers at health care facilities to enter monthly data on demand ("consumption") as well as stock on hand digitally on a on- or off-line on a mobile device and synchronize the data with a central DHIS2 server for analysis, data sharing and integration with national eLMIS systems.
+This simple Default Data Entry allows digitizing the  twice daily manual temperature recordings on paper forms, sharing and analysing them digitally on the DHIS2 database.
 
 ## Use case
 
-### Monthly stock report - Data recording
-
-At the end of the month, storekeepers will count the quantity of all health care products in the medical store and record the stock on hand. Furthermore, to obtain the total amount of each health care product issued from the medical store from the first to the last day of the month and record the total monthly demand ("consumption") directly on a mobile device. The list of stock items ("Data Elements") can be adapted to each health care facility as needed and user access can be given selectively to individual storekeepers as required.
-
-### Monthly stock report - Data recording and calculation
-
-In addition to the above: at the end of the month after the physical stock count and all data has been entered, Predictors automatically calculate the following data:
-- Opening balance: identical with the "Stock on hand" from the end of the previous month
-- Closing balance: Opening balance + Stock received - Stock distributed - Stock redistributed - Stock discarded   
-- Stock discrepancy: Stock on hand (as counted) - Closing balance
-- Stock on hand Yes/No: calculates whether a stockout occurred at the end of the month (at the time of the physical stock count)  
+Twice a day, in the morning when starting work and in the afternoon before leaving, the storekeeper reads out the room temperature from the storeroom as well as each refrigerator and freezer used for storing vaccines and other drug products and records the minimum, current as well as maximum temperature on a mobile device. The storekeeper at the health care facility as well as cold chain technicians or biomedical engineers anywhere else can access the record and review the data table as well as the chart for assessing the cold chain.
 
 ## Maintenance Web App - DHIS2 metadata configuration
 
-The configuration of this Default Data Entry form uses "Disaggregation categories" as this is technically the only way to display a table for recording data in the DHIS2 Android Capture App on a mobile device and relies only on basic, native DHIS2 functionality.
+The configuration of this Default Data Entry form uses "Disaggregation categories" as this is technically the only way to display a table for recording data in the DHIS2 Capture app on a mobile device. Every refrigerator, freezer or other place (such as a store room) where temperature needs to be recorded is configured as a separate "Data element". The application uses only simple and native DHIS2 functionality.
 
 ### Metadata overview
 The required metadata settings seetings are presented in the order in which it is presented in the DHIS2 Maintenance Web App.
@@ -34,132 +24,103 @@ The required metadata settings seetings are presented in the order in which it i
 > 
 >**3 DATA SET**  
 >>3.1 Data set  
->>3.1.1 Monthly stock report - Data recording  
->>3.1.2 Monthly stock report - Data recording and calculation 
-> 
->**4 INDICATOR**  
->>4.1 Indicator  
->>4.1.1 Indicator type
-> 
->**5 OTHER**  
->>5.1 Legend  
->>5.2 Predictor  
->>5.3 Predictor group
 
 ### 1 CATEGORY
 
 #### 1.1 Category option
->**1 Stock correction**  
->>**Name \(*)**: "Stock correction"  
->>**Short name \(*)**: "Stock correction"  
+>**1 Current**  
+>>**Name \(*)**: "Current"  
+>>**Short name \(*)**: "Current - TMT"  
 >>**Organisation units selected**: (select as required) 
 >
->**2 Stock discarded**  
->>**Name \(*)**: "Stock discarded"  
->>**Short name \(*)**: "Stock discarded"  
+>**2 Maximum**  
+>>**Name \(*)**: "Maximum"  
+>>**Short name \(*)**: "Maximum - TMT"  
 >>**Organisation units selected**: (select as required) 
 >
->**3 Stock distributed**  
->>**Name \(*)**: "Stock distributed"  
->>**Short name \(*)**: "Stock distributed"  
+>**3 Minimum**  
+>>**Name \(*)**: "Minimum"  
+>>**Short name \(*)**: "Minimum - TMT"  
 >>**Organisation units selected**: (select as required) 
 >
->**4 Stock received**  
->>**Name \(*)**: "Stock received"  
->>**Short name \(*)**: "Stock received"  
+>**4 Temperature recording - afternoon**  
+>>**Name \(*)**: "Temperature recording - afternoon"  
+>>**Short name \(*)**: "Temperature recording - afternoon - TMT"  
 >>**Organisation units selected**: (select as required) 
 >
->**5 Stock redistributed**  
->>**Name \(*)**: "Stock redistributed"  
->>**Short name \(*)**: "Stock redistributed"  
->>**Organisation units selected**: (select as required) 
->
->**6 Stock correction**  
->>**Name \(*)**: "Stock on hand"  
->>**Short name \(*)**: "Stock on hand"  
+>**5 Temperature recording - morning**  
+>>**Name \(*)**: "Temperature recording - morning"  
+>>**Short name \(*)**: "Temperature recording - morning - TMT"  
 >>**Organisation units selected**: (select as required) 
 
 #### 1.2 Category
->**1 MSR - Monthly stock report - Data recording**  
->>**Name \(*)**: "MSR - Monthly stock report - Data recording"  
->>**Short name \(*)**: "Monthly stock report - Data recording"  
+>**1 Temperature recording - Measurement**  
+>>**Name \(*)**: "Temperature recording - Measurement"  
+>>**Short name \(*)**: "Temperature recording - Measurement - TMT"  
 >>**Data dimension type \(*)**: "Disaggregation"  
 >>**Data dimension**: tag (appears as white tick in a blue square)  
 >>**Category options**: *note the order of "Category options"*:  
->>>"Stock received"  
->>>"Stock distributed"  
->>>"Stock redistributed"  
->>>"Stock discarded"  
->>>"Stock on hand"  
->>>"Stock correction"  
+>>>"Minimum"  
+>>>"Current"  
+>>>"Maximum"  
 >
->**2 MSR - Monthly stock report - Data recording and calculation**  
->>**Name \(*)**: "MSR - Monthly stock report - Data recording and calculation"  
->>**Short name \(*)**: "Monthly stock report - Data recording and calculation"  
+>**2 Temperature recording - Time of day**  
+>>**Name \(*)**: "Temperature recording - Time of day"  
+>>**Short name \(*)**: "Temperature recording - Time of day - TMT"  
 >>**Data dimension type \(*)**: "Disaggregation"  
 >>**Data dimension**: tag (appears as white tick in a blue square)  
 >>**Category options**: *note the order of "Category options"*:  
->>>"Opening balance"  
->>>"Stock received"  
->>>"Stock distributed"  
->>>"Stock redistributed"  
->>>"Stock discarded"
->>>"Stock on hand"  
->>>"Closing balance"  
->>>"Stock discrepancy"  
->>>"Stock correction"  
->>>"Stock on hand Yes/No"  
+>>>"Temperature recording - morning"  
+>>>"Temperature recording - afternoon"  
 
 #### 1.3 Category combination
->**1 MSR Monthly stock report - Data recording**  
->>**Name \(*)**: **Monthly stock report - Data recording**  
+>**1 Health facility - temperature recording**  
+>>**Name \(*)**: **Health facility - temperature recording**  
 >>**Data dimension type \(*)**: "Disaggregation"  
 >>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
->>**Categories**: "Monthly stock report - Data recording"
->
->**2 Monthly stock report - Data recording and calculation**  
->>**Name \(*)**: **Monthly stock report - Data recording and calculation**  
->>**Data dimension type \(*)**: "Disaggregation"  
->>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
->>**Categories**: "Monthly stock report - Data recording and calculation"
+>>**Categories**
+>>>"Temperature recording - Time of day"
+>>>"Temperature recording - Measurement"
 
 ### 2 DATA ELEMENT
 
 ### 2.1 Data element
-Data elements represent the items (healthcare products) for which logistics data is recorded and managed. A separate and unique Data element needs to be configured for each item (healthcare product).
+Data elements represent the cold chain equipment devices such as refrigerators or freezers. It is recommended to assign generic names such as "Refrigerator 1" and mark devices at healthcare facilities accordingly since otherwise all cold chain devices would have to be managed as separate entities with specifications and serial numbers.
 
->**1 ATROPINE SULFATE, 1mg/ml, 1ml, amp. - MSR**
->>**Name \(*)**: "ATROPINE SULFATE, 1mg/ml, 1ml, amp. - MSR"  
->>**Short name \(*)**: "DINJATRO1A"
->>**Code \(*)**:  "DINJATRO1A"
+>**1 Vaccine refrigerator 1**
+>>**Name \(*)**: "Vaccine refrigerator 1"  
+>>**Short name \(*)**: "Vaccine refrigerator 1 - TMT"
+>>**Code \(*)**:  (none)
 >>**Domain Type \(*)**: "Aggregate"  
->>**Value type \(*)**: "Integer"  
+>>**Value type \(*)**: "Number"  
 >>**Aggregation type (*)**: "Sum"  
 >>**Store zero data values**: tag (appears as white tick in a blue square) 
->>**Category combination \(*)**: "Monthly stock report - Data collection"  
+>>**Category combination \(*)**: "Health facility - temperature monitoring"  
 >
->**[Number] [Item] - MSR**
->>**Name \(*)**: "X [Item] - MSR"  
->>**Short name \(*)**: "[Item code]"
->>**Code \(*)**:  "[Item code]"
+>**2 Vaccine refrigerator 2**
+>>**Name \(*)**: "Vaccine refrigerator 2"  
+>>**Short name \(*)**: "Vaccine refrigerator 2 - TMT"
+>>**Code \(*)**:  (none)
 >>**Domain Type \(*)**: "Aggregate"  
->>**Value type \(*)**: "Integer"  
+>>**Value type \(*)**: "Number"  
 >>**Aggregation type (*)**: "Sum"  
 >>**Store zero data values**: tag (appears as white tick in a blue square) 
->>**Category combination \(*)**: "Monthly stock report - Data collection"  
+>>**Category combination \(*)**: "Health facility - temperature monitoring"  
 
 ### 2.2 Data element group
 
 The creation of Data element groups is a DHIS2 best practice but also a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
 
->**1 Stock item list - MSR**  
->**Name \(*)**: "Stock item list - MSR"  
->**Short name \(*)**: "Stock item list - MSR"
->**Data elements \(*)**: *select all Data elements with the "MSR" suffix"*    
+>**1 [Cold chain equipment]**  
+>**Name \(*)**: "[Cold chain equipment]"  
+>**Short name \(*)**: "[Cold chain equipment] - TMT"
+>**Data elements \(*)**
+>>"Vaccine refrigerator 1"
+>>"Vaccine refrigerator 2"
 
 ### 3 Data set
 
-This Default Data Entry Form ("aggregate") allows storekeepers at health care facilities to enter monthly data on demand ("consumption") as well as stock on hand digitally on a on- or off-line on a mobile device and synchronize the data with a central DHIS2 server for analysis, data sharing and integration with national eLMIS systems.
+This Default Data Entry Form ("aggregate") allows storekeepers at health care facilities to enter temperature recordings twice a day digitally on a on- or off-line on a mobile device and synchronize the data with a central DHIS2 server for analysis, data sharing and integration with national eLMIS systems.
 
 #### 3.1 Data set
 Data sets for each Organisation unit are required for recording and storing monthly stock report data.
@@ -168,128 +129,25 @@ The configuration for two Data sets are presented below, but either the one or t
 - "MSR - Monthly stock report - Data recording"
 - "MSR - Monthly stock report - Data recording and calculation"
 
->**1 MSR - Monthly stock report - Data recording**  
->>**Name \(*)**: "MSR - Monthly stock report - Data recording"  
->>**Short name \(*)**: "Monthly stock report - Data recording"
->>**Color**: "#00ACC1"  
->>**Expiry days**: "5"  
+>**1 Health facility - Temperature monitoring**  
+>>**Name \(*)**: "Health facility - Temperature monitoring"  
+>>**Short name \(*)**: "Health facility - Temperature monitoring - TMT"
+>>**Color**: "#304FFE"  
+>>**Expiry days**: "1"  
 >>**Open future periods for data entry**: "1"  
 >>**Days after period to qualify for timely submission**: "5"  
->>**Period type**: "Monthly"  
+>>**Period type**: "Daily"  
 >>**Category combination**: "None"  
->>**Render sections as tabs**: tag (appears as white tick in a blue square)  
 >>**Data elements**  
->>>*Add all Data elements with the suffix "MSR" required for the respective health facility*.
+>>>"Vaccine refrigerator 1"
+>>>"Vaccine refrigerator 2"
 >>
 >>**Organisation units selected**: (select as for the Tracker Program) 
->>
->>**Actions**
->>>**Manage sections**
->>>>**Name**
->>>>>**1 DASD**
->>>>>>**DASD**
->>>>>>**Data elements**
->>>>>>>**CHLORHEXIDINE DIGLUCONATE 5% , solution, 1L, btl. - MSR**
->>>>>>>**IODINE POVIDONE, 10%, solution, 1L, btl. - MSR**
->>>>>**2 [Section 2]**
->>>>>>**[Section 2]**
->>>>>>**Data elements**
->>>>>>>**[Data element]**
->
->**2 MSR - Monthly stock report - Data recording and calculation**  
-In addition to the configuration presented above, this Default Data Entry Form automatically calculates the "Opening balance" (stock on hand from the end of the previous month), "Closing balance" (Opening balance plus all stock receipts minus all stock issues) as well as "Stock discrepancy" (difference between the Stock on hand as counted and the calculated Closing balance).
->>**Name \(*)**: "MSR - Monthly stock report - Data recording and calculation"  
->>**Short name \(*)**: "MSR - Monthly stock report - Data recording and calculation"
->>**Color**: "#00838F"  
->>**Expiry days**: "5"  
->>**Open future periods for data entry**: "1"  
->>**Days after period to qualify for timely submission**: "5"  
->>**Period type**: "Monthly"  
->>**Category combination**: "None"  
->>**Render sections as tabs**: tag (appears as white tick in a blue square)  
->>**Data elements**  
->>>*Add all Data elements with the suffix "MSR" required for the respective health facility*.
->>
->>**Organisation units selected**: (select as for the Tracker Program) 
->>
->>**Actions**
->>>**Manage sections**
->>>>**Name**
->>>>>**1 DORA**
->>>>>>**DORA**
->>>>>>**Data elements**
->>>>>>>**CLOXACILLIN, 250 mg, caps. - MSR**
->>>>>>>**FOLIC ACID, 5 mg, tab. - MSR**
->>>>>**2 [Section 2]**
->>>>>>**[Section 2**
->>>>>>**Data elements**
->>>>>>>**[Data element]**
-
 
 XXXXX
 
 
-3 MANUAL TEMPERATURE RECORDING / "aggregate" data entry form
-This simple Default Data Entry allows digitizing the the twice daily manual temperature recordings on paper forms, sharing and analysing them digitally on the DHIS2 database
-3.1 Use case
-Twice a day, in the morning when starting work and in the afternoon before leaving, the storekeeper reads out the room temperature from the storeroom as well as each refrigerator and freezer used for storing vaccines and other drug products and records the minimum, current as well as maximum temperature on a mobile device. The storekeeper at the health care facility as well as cold chain technicians or biomedical engineers anywhere else can access the record and review the data table as well as the chart for assessing the cold chain.
-3.2 DHIS2 configuration
-The configuration of this Default Data Entry form uses "Disaggregation categories" as this is technically the only way to display a table for recording data in the DHIS2 Capture app on a mobile device. Every refrigerator, freezer or other place (such as a store room) where temperature needs to be recorded is configured as a separate "Data element". The application uses only simple and native DHIS2 functionality.
 
-CATEGORY
-System default settings
-Category option
-Name:
-- "Current"
-- "Maximum"
-- "Minimum"
-- "Stock on hand"
-- "Temperature recording - morning"
-- "Temperature recording - afternoon"
-Organisation units: assign as required
-Category
-Name: "Temperature recording - Time of day"
-Category options:
--  "Temperature recording - morning"
-- "Temperature recording - afternoon"
-Name: "Temperature recording - Time of day"
-Category options: "Temperature recording - Measurement"
-- "Minimum"
-- "Current"
-- "Maximum"
-Data dimension type: "Disaggregation"
-(Not shared).
-Category combination
-Name: "Monthly stock report - Data collection"
-Data dimension type: "Disaggregation"
-Skip category total in reports: tag
-Categories: "Monthly stock report - Data collection"
-(Not shared).
-Data element
-Name (examples only, configure according to national drug list):
-- "Vaccine refrigerator 1"
-- "Vaccine refrigerator 2"
-Domain type (*): "Aggregate"
-Value type (*): "Number"
-Aggregation type (*): "Sum"
-Store zero data values: tag
-Category combination (*): "Health facility - temperature recording"
-(Not shared).
-Data set
-Name: "Health facility - Temperature monitoring"
-Color: "#304FFE"
-Icon: 
-
-Expiry days: "2"
-Open future periods for data entry: "1"
-Days after period to qualify for timely submission: "15"
-Period type (*): "Daily"
-Category combination (*): "None"
-Data elements:
-- "Vaccine refrigerator 1"
-- "Vaccine refrigerator 2"
-Organisation units: select as required
-Sharing settings: share with users or user groups as required
 Data visualizer
 Name: "Temperature monitoring - Daily reporting / Table"
 Visualization type: "Pivot table"
@@ -301,7 +159,10 @@ Columns:
 Rows
 - Period: "Last 30 days"
 Filter: Organisation Unit: select Organisation units as required
-+++
+
+## DV - Data Visualizer Web App - "Aggregate" Analytics and Visualizations
+
+[To be added]
 Name: "Temperature monitoring - Daily reporting / Chart / Vaccine refrigerator 1 / Last 30 days#"
 Visualization type: "Line"
 Series: "Temperature recording - Measurement": "Minimum", "Current", "Maximum"
@@ -309,6 +170,7 @@ Category:
 - "Temperature recording - Time of day": "Temperature recording - morning", "Temperature recording - afternoon"
 - Period: "Relative periods" / "Days" / "Last 30 days"
 Filter: Organisation Unit: select Organisation units as required
+
 3.3 DHIS2 user interfaces
 Web portal / Data Entry form
 
@@ -317,123 +179,5 @@ Web portal / Data Entry form
 
 
 
-### 5 Other
 
-#### 5.1 Legend
-Xx
-
-Legend
-
-Name: **"Stock discrepancy"**
-Code: "STOCK DISCREPANCY"
-Legend item "Negative"
-
-
-
-Name: "Negative"
-
-Start value: "-1000000"
-
-End value: "0"
-
-Colour: #8411D7
-Legend item "Correct stock"
-
-
-
-Name: "Correct stock"
-
-Start value: "0"
-
-End value: "1"
-
-Colour: #68FE4C
-Legend item "Positive"
-
-
-
-Name: "Positive"
-
-Start value: "1"
-
-End value: "1000000"
-
-Colour: #FF2000
-
-
-
-Name: **"Stock coverage time"**
-Code: "STOCK_COVERAGE_TIME"
-Legend item "Stockout"
-
-
-
-Name: "Stockout"
-
-Start value: "0"
-
-End value: "0.00001"
-
-Colour: #EE391E
-Legend item "Understock"
-
-
-
-Name: "Understock"
-
-Start value: "0.0001"
-
-End value: "2"
-
-Colour: #FEFB08
-Legend item "Adequate stock"
-
-
-
-Name: "Adequate stock"
-
-Start value: "2"
-
-End value: "3"
-
-Colour: #0BFF00
-Legend item "Overstock"
-
-
-
-Name: "Overstock"
-
-Start value: "3"
-
-End value: "12"
-
-Colour: #0011FF
-Legend item "Excessive stock"
-
-
-
-Name: "Excessive stock"
-
-Start value: "12"
-
-End value: "1000"
-
-Colour: #DC00FF
-
-
-
-#### 2b.3 DHIS2 user interfaces
-
-Web portal / Data Entry form
-
-
-**Web portal / Data Visualizer**
-
-Monthly stock report - Data collection
-
-
-Monthly stock report - Data collection and calculation
-
-
-**Capture Android app**
 
