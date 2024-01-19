@@ -1,0 +1,812 @@
+# Temperature monitoring tool
+
+This Default Data Entry Form ("aggregate") allows storekeepers at health care facilities to enter monthly data on demand ("consumption") as well as stock on hand digitally on a on- or off-line on a mobile device and synchronize the data with a central DHIS2 server for analysis, data sharing and integration with national eLMIS systems.
+
+## Use case
+
+### Monthly stock report - Data recording
+
+At the end of the month, storekeepers will count the quantity of all health care products in the medical store and record the stock on hand. Furthermore, to obtain the total amount of each health care product issued from the medical store from the first to the last day of the month and record the total monthly demand ("consumption") directly on a mobile device. The list of stock items ("Data Elements") can be adapted to each health care facility as needed and user access can be given selectively to individual storekeepers as required.
+
+### Monthly stock report - Data recording and calculation
+
+In addition to the above: at the end of the month after the physical stock count and all data has been entered, Predictors automatically calculate the following data:
+- Opening balance: identical with the "Stock on hand" from the end of the previous month
+- Closing balance: Opening balance + Stock received - Stock distributed - Stock redistributed - Stock discarded   
+- Stock discrepancy: Stock on hand (as counted) - Closing balance
+- Stock on hand Yes/No: calculates whether a stockout occurred at the end of the month (at the time of the physical stock count)  
+
+## Maintenance Web App - DHIS2 metadata configuration
+
+The configuration of this Default Data Entry form uses "Disaggregation categories" as this is technically the only way to display a table for recording data in the DHIS2 Android Capture App on a mobile device and relies only on basic, native DHIS2 functionality.
+
+### Metadata overview
+The required metadata settings seetings are presented in the order in which it is presented in the DHIS2 Maintenance Web App.
+
+>**1 CATEGORY**  
+>>1.1 Category option  
+>>1.2 Category  
+>>1.3 Category combination 
+> 
+>**2 DATA ELEMENT**  
+>>2.1 Data element - "Aggregate"  
+>>2.3 Data element group  
+> 
+>**3 DATA SET**  
+>>3.1 Data set  
+>>3.1.1 Monthly stock report - Data recording  
+>>3.1.2 Monthly stock report - Data recording and calculation 
+> 
+>**4 INDICATOR**  
+>>4.1 Indicator  
+>>4.1.1 Indicator type
+> 
+>**5 OTHER**  
+>>5.1 Legend  
+>>5.2 Predictor  
+>>5.3 Predictor group
+
+### 1 CATEGORY
+
+#### 1.1 Category option
+>**1 Stock correction**  
+>>**Name \(*)**: "Stock correction"  
+>>**Short name \(*)**: "Stock correction"  
+>>**Organisation units selected**: (select as required) 
+>
+>**2 Stock discarded**  
+>>**Name \(*)**: "Stock discarded"  
+>>**Short name \(*)**: "Stock discarded"  
+>>**Organisation units selected**: (select as required) 
+>
+>**3 Stock distributed**  
+>>**Name \(*)**: "Stock distributed"  
+>>**Short name \(*)**: "Stock distributed"  
+>>**Organisation units selected**: (select as required) 
+>
+>**4 Stock received**  
+>>**Name \(*)**: "Stock received"  
+>>**Short name \(*)**: "Stock received"  
+>>**Organisation units selected**: (select as required) 
+>
+>**5 Stock redistributed**  
+>>**Name \(*)**: "Stock redistributed"  
+>>**Short name \(*)**: "Stock redistributed"  
+>>**Organisation units selected**: (select as required) 
+>
+>**6 Stock correction**  
+>>**Name \(*)**: "Stock on hand"  
+>>**Short name \(*)**: "Stock on hand"  
+>>**Organisation units selected**: (select as required) 
+
+#### 1.2 Category
+>**1 MSR - Monthly stock report - Data recording**  
+>>**Name \(*)**: "MSR - Monthly stock report - Data recording"  
+>>**Short name \(*)**: "Monthly stock report - Data recording"  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Data dimension**: tag (appears as white tick in a blue square)  
+>>**Category options**: *note the order of "Category options"*:  
+>>>"Stock received"  
+>>>"Stock distributed"  
+>>>"Stock redistributed"  
+>>>"Stock discarded"  
+>>>"Stock on hand"  
+>>>"Stock correction"  
+>
+>**2 MSR - Monthly stock report - Data recording and calculation**  
+>>**Name \(*)**: "MSR - Monthly stock report - Data recording and calculation"  
+>>**Short name \(*)**: "Monthly stock report - Data recording and calculation"  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Data dimension**: tag (appears as white tick in a blue square)  
+>>**Category options**: *note the order of "Category options"*:  
+>>>"Opening balance"  
+>>>"Stock received"  
+>>>"Stock distributed"  
+>>>"Stock redistributed"  
+>>>"Stock discarded"
+>>>"Stock on hand"  
+>>>"Closing balance"  
+>>>"Stock discrepancy"  
+>>>"Stock correction"  
+>>>"Stock on hand Yes/No"  
+
+#### 1.3 Category combination
+>**1 MSR Monthly stock report - Data recording**  
+>>**Name \(*)**: **Monthly stock report - Data recording**  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
+>>**Categories**: "Monthly stock report - Data recording"
+>
+>**2 Monthly stock report - Data recording and calculation**  
+>>**Name \(*)**: **Monthly stock report - Data recording and calculation**  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
+>>**Categories**: "Monthly stock report - Data recording and calculation"
+
+### 2 DATA ELEMENT
+
+### 2.1 Data element
+Data elements represent the items (healthcare products) for which logistics data is recorded and managed. A separate and unique Data element needs to be configured for each item (healthcare product).
+
+>**1 ATROPINE SULFATE, 1mg/ml, 1ml, amp. - MSR**
+>>**Name \(*)**: "ATROPINE SULFATE, 1mg/ml, 1ml, amp. - MSR"  
+>>**Short name \(*)**: "DINJATRO1A"
+>>**Code \(*)**:  "DINJATRO1A"
+>>**Domain Type \(*)**: "Aggregate"  
+>>**Value type \(*)**: "Integer"  
+>>**Aggregation type (*)**: "Sum"  
+>>**Store zero data values**: tag (appears as white tick in a blue square) 
+>>**Category combination \(*)**: "Monthly stock report - Data collection"  
+>
+>**[Number] [Item] - MSR**
+>>**Name \(*)**: "X [Item] - MSR"  
+>>**Short name \(*)**: "[Item code]"
+>>**Code \(*)**:  "[Item code]"
+>>**Domain Type \(*)**: "Aggregate"  
+>>**Value type \(*)**: "Integer"  
+>>**Aggregation type (*)**: "Sum"  
+>>**Store zero data values**: tag (appears as white tick in a blue square) 
+>>**Category combination \(*)**: "Monthly stock report - Data collection"  
+
+### 2.2 Data element group
+
+The creation of Data element groups is a DHIS2 best practice but also a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
+
+>**1 Stock item list - MSR**  
+>**Name \(*)**: "Stock item list - MSR"  
+>**Short name \(*)**: "Stock item list - MSR"
+>**Data elements \(*)**: *select all Data elements with the "MSR" suffix"*    
+
+### 3 Data set
+
+This Default Data Entry Form ("aggregate") allows storekeepers at health care facilities to enter monthly data on demand ("consumption") as well as stock on hand digitally on a on- or off-line on a mobile device and synchronize the data with a central DHIS2 server for analysis, data sharing and integration with national eLMIS systems.
+
+#### 3.1 Data set
+Data sets for each Organisation unit are required for recording and storing monthly stock report data.
+The sections can be displayed in the Data Entry (beta) Web App as well as in the Capture Android App either in a single table or as separate tabs.
+The configuration for two Data sets are presented below, but either the one or the other should be used:
+- "MSR - Monthly stock report - Data recording"
+- "MSR - Monthly stock report - Data recording and calculation"
+
+>**1 MSR - Monthly stock report - Data recording**  
+>>**Name \(*)**: "MSR - Monthly stock report - Data recording"  
+>>**Short name \(*)**: "Monthly stock report - Data recording"
+>>**Color**: "#00ACC1"  
+>>**Expiry days**: "5"  
+>>**Open future periods for data entry**: "1"  
+>>**Days after period to qualify for timely submission**: "5"  
+>>**Period type**: "Monthly"  
+>>**Category combination**: "None"  
+>>**Render sections as tabs**: tag (appears as white tick in a blue square)  
+>>**Data elements**  
+>>>*Add all Data elements with the suffix "MSR" required for the respective health facility*.
+>>
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>>
+>>**Actions**
+>>>**Manage sections**
+>>>>**Name**
+>>>>>**1 DASD**
+>>>>>>**DASD**
+>>>>>>**Data elements**
+>>>>>>>**CHLORHEXIDINE DIGLUCONATE 5% , solution, 1L, btl. - MSR**
+>>>>>>>**IODINE POVIDONE, 10%, solution, 1L, btl. - MSR**
+>>>>>**2 [Section 2]**
+>>>>>>**[Section 2]**
+>>>>>>**Data elements**
+>>>>>>>**[Data element]**
+>
+>**2 MSR - Monthly stock report - Data recording and calculation**  
+In addition to the configuration presented above, this Default Data Entry Form automatically calculates the "Opening balance" (stock on hand from the end of the previous month), "Closing balance" (Opening balance plus all stock receipts minus all stock issues) as well as "Stock discrepancy" (difference between the Stock on hand as counted and the calculated Closing balance).
+>>**Name \(*)**: "MSR - Monthly stock report - Data recording and calculation"  
+>>**Short name \(*)**: "MSR - Monthly stock report - Data recording and calculation"
+>>**Color**: "#00838F"  
+>>**Expiry days**: "5"  
+>>**Open future periods for data entry**: "1"  
+>>**Days after period to qualify for timely submission**: "5"  
+>>**Period type**: "Monthly"  
+>>**Category combination**: "None"  
+>>**Render sections as tabs**: tag (appears as white tick in a blue square)  
+>>**Data elements**  
+>>>*Add all Data elements with the suffix "MSR" required for the respective health facility*.
+>>
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>>
+>>**Actions**
+>>>**Manage sections**
+>>>>**Name**
+>>>>>**1 DORA**
+>>>>>>**DORA**
+>>>>>>**Data elements**
+>>>>>>>**CLOXACILLIN, 250 mg, caps. - MSR**
+>>>>>>>**FOLIC ACID, 5 mg, tab. - MSR**
+>>>>>**2 [Section 2]**
+>>>>>>**[Section 2**
+>>>>>>**Data elements**
+>>>>>>>**[Data element]**
+
+### 4 Indicator
+
+#### 4.1 Indicator
+
+Indicators are used for calculating the following logistics metrics:
+
+- Number of items in stock coverage bins (0-1, 1-2, 2-3 months etc.) for visualizing the stock coverage time distribution 
+
+- Stock coverage time (stock on hand / average monthly demand)
+
+- Stock availability (percentage of items which are on hand)
+
+- Stockout count (number of items which are out of stock)
+
+For the "Stock coverage time" indicator it would in principle be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings.
+
+>**1 0-1 months - MSR**  
+>This indicator counts the number of items with a stock coverage time greater than 0 but less than 1. For each item the Indicator returns "1" if the item has stock and stock coverage time is less than 1 and otherwise returns "0".
+>>**Name \(*)**: "0-1 months - MSR"  
+>>**Short Name \(*)**: "0-1 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 0-1 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "O-1 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>0 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<1,1,0)+
+f(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>0 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<1,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>0 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<1,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>0 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<1,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>0 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<1,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>0 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<1,1,0  
+>
+if([Item 1] Stock on hand/[Item 1] Stock distributed]>0 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<1,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>0 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<1,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "O-1 months - MSR - Denominator"
+>>>**Calculation**: "1"
+
+
+
+
+[Data element.Stock on hand] / [Data element.Stock distribution] /  
+
+>  **Indicator**
+>
+>  - Name: **"Stockouts"**
+>   Short name: "Stockouts"
+>    Description: "Number of items with a stockout"
+>    Numerator description: "Stockouts - Numerator"
+>    Numerator: [Item 1.Stock on hand]
+>   ```
+>   if(#{uwQn42CZ5qI.eKdBeWyrmPN}==0,1,0)+
+>   if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}==0,1,0)+
+>   if(#{irAGhTCJcO8.eKdBeWyrmPN}==0,1,0)+
+>   if(#{Z4bjHvGS6aH.iIC4YhgrxQY}==0,1,0)+
+>   if(#{Csg4rTaIYDj.eKdBeWyrmPN}==0,1,0)+
+>   if(#{mIYcOnLcqes.eKdBeWyrmPN}==0,1,0)
+>   ```
+>   Denominator: "1"
+>  - Name: **"0-1 months"**
+>   Short name: "0-1 months"
+>    Description: "Number of items with a coverage time of 0-1 months"
+>    Numerator description: "0-1 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>0 && Item 1.Stock on hand / Item 1.Stock.distributed<1]
+>   ```
+>   if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>0 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<1,1,0)+
+>   if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>0 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<1,1,0)+
+>   if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>0 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<1,1,0)+
+>   if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>0 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<1,1,0)+
+>   if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>0 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<1,1,0)+
+>   if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>0 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<1,1,0)
+>   ```
+>   Denominator: "1"
+>  - **Name**: "1-2 months"
+>   *Short name*: "1-2 months"
+>    *Description*: "Number of items with a coverage time of 1-2 months"
+>    *Numerator description*: "1-2 months - Numerator"
+>    *Numerator*: [Item 1.Stock on hand / Item 1.Stock.distributed>=1 && Item 1.Stock on hand / Item 1.Stock.distributed<2]
+>   ```
+>   if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=1 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<2,1,0)+
+>   if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=1 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<2,1,0)+
+>   if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=1 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<2,1,0)+
+>   if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=1 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<2,1,0)+
+>   if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=1 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<2,1,0)+
+>   if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=1 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<2,1,0)
+>   ```
+>   *Denominator*: "1"
+>  - Name: **"2-3 months"**
+>   Short name: "2-3 months"
+>    Description: "Number of items with a coverage time of 2-3 months"
+>    Numerator description: "2-3 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=2 && Item 1.Stock on hand / Item 1.Stock.distributed<3]
+>   ```
+>   if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=2 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<3,1,0)+
+>   if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=2 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<3,1,0)+
+>   if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=2 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<3,1,0)+
+>   if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=2 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<3,1,0)+
+>   if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=2 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<3,1,0)+
+>   if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=2 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<3,1,0)
+>   ```
+>   Denominator: "1"
+>  - Name: **"3-4 months"**
+>   Short name: "3-4 months"
+>    Description: "Number of items with a coverage time of 3-4 months"
+>    Numerator description: "3-4 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=3 && Item 1.Stock on hand / Item 1.Stock.distributed<4]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=3 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<4,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=3 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<4,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=3 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<4,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=3 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<4,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=3 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<4,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=3 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<4,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"4-5 months"**
+>   Short name: "4-5 months"
+>    Description: "Number of items with a coverage time of 4-5 months"
+>    Numerator description: "4-5 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=4 && Item 1.Stock on hand / Item 1.Stock.distributed<5]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=4 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<5,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=4 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<5,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=4 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<5,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=4 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<5,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=4 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<5,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=4 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<5,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"5-6 months"**
+>   Short name: "5-6 months"
+>    Description: "Number of items with a coverage time of 5-6 months"
+>    Numerator description: "5-6 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=5 && Item 1.Stock on hand / Item 1.Stock.distributed<6]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=5 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<6,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=5 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<6,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=5 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<6,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=5 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<6,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=5 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<6,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=5 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<6,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"6-7 months"**
+>   Short name: "6-7 months"
+>    Description: "Number of items with a coverage time of 6-7 months"
+>    Numerator description: "6-7 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=6 && Item 1.Stock on hand / Item 1.Stock.distributed<7]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=6 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<7,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=6 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<7,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=6 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<7,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=6 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<7,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=6 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<7,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=6 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<7,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"7-8 months"**
+>   Short name: "7-8 months"
+>    Description: "Number of items with a coverage time of 7-8 months"
+>    Numerator description: "7-8 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=7 && Item 1.Stock on hand / Item 1.Stock.distributed<8]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=7 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<8,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=7 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<8,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=7 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<8,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=7 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<8,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=7 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<8,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=7 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<8,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"8-9 months"**
+>   Short name: "8-9 months"
+>    Description: "Number of items with a coverage time of 8-9 months"
+>    Numerator description: "8-9 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=8 && Item 1.Stock on hand / Item 1.Stock.distributed<9]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=8 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<9,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=8 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<9,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=8 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<9,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=8 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<9,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=8 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<9,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=8 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<9,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"9-10 months"**
+>   Short name: "9-10 months"
+>    Description: "Number of items with a coverage time of 9-10 months"
+>    Numerator description: "9-10 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=9 && Item 1.Stock on hand / Item 1.Stock.distributed<10]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=9 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<10,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=9 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<10,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=9 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<10,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=9 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<10,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=9 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<10,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=9 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<10,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"10-11 months"**
+>   Short name: "10-11 months"
+>    Description: "Number of items with a coverage time of 10-11 months"
+>    Numerator description: "10-11 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=10 && Item 1.Stock on hand / Item 1.Stock.distributed<11]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=10 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<11,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=10 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<11,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=10 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<11,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=10 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<11,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=10 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<11,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=10 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<11,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"11-12 months"**
+>   Short name: "11-12 months"
+>    Description: "Number of items with a coverage time of 11-12 months"
+>    Numerator description: "11-12 months - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=11 && Item 1.Stock on hand / Item 1.Stock.distributed<12]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=11 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<12,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=11 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<12,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=11 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<12,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=11 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<12,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=11 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<12,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=11 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<12,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"1-2 years"**
+>   Short name: "1-2 years"
+>    Description: "Number of items with a coverage time of 1-2 years"
+>    Numerator description: "1-2 years - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=12 && Item 1.Stock on hand / Item 1.Stock.distributed<24]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=12 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<24,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=12 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<24,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=12 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<24,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=12 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<24,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=12 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<24,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=12 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<24,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"2-3 years"**
+>   Short name: "2-3 years"
+>    Description: "Number of items with a coverage time of 2-3 years"
+>    Numerator description: "2-3 years - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=24 && Item 1.Stock on hand / Item 1.Stock.distributed<36]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=24 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<36,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=24 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<36,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=24 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<36,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=24 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<36,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=24 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<36,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=24 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<36,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **">3 years"**
+>   Short name: ">3 years"
+>    Description: "Number of items with a coverage time of >3 years"
+>    Numerator description: ">3 years - Numerator"
+>    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=36]
+>
+>   ```
+>    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=36,1,0)+
+>    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=36,1,0)+
+>    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=36,1,0)+
+>    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=36,1,0)+
+>    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=36,1,0)+
+>    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=36,1,0)
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"CLOXACILLIN, 250 mg, caps. - CL / Coverage time"**
+>   Short name: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
+>    Description: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
+>    Numerator description: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
+>
+>   ```
+>    #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"FOLIC ACID, 5 mg, tab. - CL / Coverage time"**
+>   Short name: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
+>    Description: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
+>    Numerator description: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
+>
+>   ```
+>   #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"METRONIDAZOLE, 500 mg, tab. - CL / Coverage time"**
+>   Short name: "METRONIDAZOLE, 500 mg, tab. - CL / Coverage time"
+>    Description: "METRONIDAZOLE, 500 mg, tab. - CL / Coverage time"
+>    Numerator description: "METRONIDAZOLE, 500 mg, tab. - CL / Coverage time"
+>
+>   ```
+>    #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL / Coverage time"**
+>   Short name: "ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL / Coverage time"
+>    Description: "ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL / Coverage time"
+>    Numerator description: "ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL / Coverage time"
+>
+>   ```
+>   #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"PARACETAMOL (acetaminophen), 500 mg, tab. - CL / Coverage time"**
+>   Short name: "PARACETAMOL (acetaminophen), 500 mg, tab. - CL / Coverage time"
+>    Description: "PARACETAMOL (acetaminophen), 500 mg, tab. - CL / Coverage time"
+>    Numerator description: "PARACETAMOL (acetaminophen), 500 mg, tab. - CL / Coverage time"
+>
+>   ```
+>   #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}
+>   ```
+>   
+>    Denominator: "1"
+>  - Name: **"SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL / Coverage time"**
+>   Short name: "SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL / Coverage time"
+>    Description: "SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL / Coverage time"
+>    Numerator description: "SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL / Coverage time"
+>
+>   ```
+>   #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}
+>   ```
+>   
+>    Denominator: "1"
+
+
+
+
+
+#### 4.2 Indicator type
+The "Indicator type" is a precondition for configuring any "Indicator".
+>**1 Number (Factor 1)**  
+>>**Name \(*)**: "Number (Factor 1)"  
+>>**Factor \(*)**: "1"  
+
+
+### 5 Other
+
+#### 5.1 Legend
+Xx
+
+Legend
+
+Name: **"Stock discrepancy"**
+Code: "STOCK DISCREPANCY"
+Legend item "Negative"
+
+
+
+Name: "Negative"
+
+Start value: "-1000000"
+
+End value: "0"
+
+Colour: #8411D7
+Legend item "Correct stock"
+
+
+
+Name: "Correct stock"
+
+Start value: "0"
+
+End value: "1"
+
+Colour: #68FE4C
+Legend item "Positive"
+
+
+
+Name: "Positive"
+
+Start value: "1"
+
+End value: "1000000"
+
+Colour: #FF2000
+
+
+
+Name: **"Stock coverage time"**
+Code: "STOCK_COVERAGE_TIME"
+Legend item "Stockout"
+
+
+
+Name: "Stockout"
+
+Start value: "0"
+
+End value: "0.00001"
+
+Colour: #EE391E
+Legend item "Understock"
+
+
+
+Name: "Understock"
+
+Start value: "0.0001"
+
+End value: "2"
+
+Colour: #FEFB08
+Legend item "Adequate stock"
+
+
+
+Name: "Adequate stock"
+
+Start value: "2"
+
+End value: "3"
+
+Colour: #0BFF00
+Legend item "Overstock"
+
+
+
+Name: "Overstock"
+
+Start value: "3"
+
+End value: "12"
+
+Colour: #0011FF
+Legend item "Excessive stock"
+
+
+
+Name: "Excessive stock"
+
+Start value: "12"
+
+End value: "1000"
+
+Colour: #DC00FF
+
+#### 5.2 Predictor
+Xx
+
+#### 5.3 Predictor group
+Xx
+
+A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
+
+> Predictor
+>
+> The following 3 Predictors need to be created for each Data element separately:
+>
+> - Name: **CLOXACILLIN, 250 mg, caps. - CL / Closing balance**
+>   Output data element (*); CLOXACILLIN, 250 mg, caps. - CL
+>   Output category option combo: "Closing balance"
+>   Generator:
+>   #{uwQn42CZ5qI.DDi5WPwhtVZ}
+>   +#{uwQn42CZ5qI.FhxQW61lsG7}
+>   -#{uwQn42CZ5qI.VCzZmn4Xpjg}
+>   -#{uwQn42CZ5qI.gSTwuZJQ2sl}
+>   -#{uwQn42CZ5qI.NwUY4l4x6Gl}
+>   -#{uwQn42CZ5qI.fzhyKGI9Pa0}
+>   CLOXACILLIN, 250 mg, caps. - CL Opening balance +CLOXACILLIN, 250 mg, caps. - CL Stock received -CLOXACILLIN, 250 mg, caps. - CL Stock distributed -CLOXACILLIN, 250 mg, caps. - CL Stock redistributed -CLOXACILLIN, 250 mg, caps. - CL Stock discarded -CLOXACILLIN, 250 mg, caps. - CL Stock correction
+> - Name: **CLOXACILLIN, 250 mg, caps. - CL / Opening balance**
+>   Output data element (*); CLOXACILLIN, 250 mg, caps. - CL
+>   Output category option combo: "Opening balance"
+>   Generator: avg(#{uwQn42CZ5qI.eKdBeWyrmPN})
+>   avg(CLOXACILLIN, 250 mg, caps. - CL Stock on hand)
+> - Name: **CLOXACILLIN, 250 mg, caps. - CL / Stock discrepancy**
+>   Output data element (*); CLOXACILLIN, 250 mg, caps. - CL
+>   Output category option combo: "Stock discrepancy"
+>   Generator: #{uwQn42CZ5qI.eKdBeWyrmPN}-#{uwQn42CZ5qI.Q2LQDdGMNXm}
+>   CLOXACILLIN, 250 mg, caps. - CL Stock on hand-CLOXACILLIN, 250 mg, caps. - CL Closing balance
+>
+> - Period type (*): Monthly
+>   Organisation unit levels: "Facility"
+>   Organisation units providing data (*): "At selected level(s) only"
+>   Sequential skip count (*): "1"
+>   Annual sample count (*): "0"
+
+
+#### DHIS2 user interfaces
+
+**Web portal / Data Entry form**
+
+![](media/image29.png)
+
+**Web portal / Data Visualizer**
+
+![](media/image54.png)
+
+**Capture Android app**
+
+![](media/image15.png)
+
+
+
+
+
+Data visualizer
+
+Name: **"Monthly stock report - Recording and calculation"**
+Visualization type: "Pivot table"
+Columns: "Your dimensions" / "Monthly stock reporting - Data collection and calculation" (select all nine Category options)
+Rows:
+
+- Data: select the Data elements as required
+
+- Period: "Last 3 months"
+  Filter: Organisation Unit: select Organisation units as required
+
+  
+
+
+| > Data visualizer | Name: "DHIS2 end-user eLMIS - Stock<br>report / Last 3 months / Facility"<br>Visualization type: "Pivot table"<br>Columns<br>\- Period: "Last 3 months"<br>\- Your Dimensions: "Monthly stock report<br>- Data collection" (select all six<br>Category options)<br>Rows: Data: select Data elements as<br>required<br>Filter: Organisation Unit: select<br>Organisation units as required |
+
+
+
+The calculations are prompted by running the Predictors either separately or by configuring the "Scheduler" app to run all Predictors at the same time.
+
+
+
+
+#### 2b.3 DHIS2 user interfaces
+
+Web portal / Data Entry form
+
+![](media/image82.png)
+
+**Web portal / Data Visualizer**
+
+Monthly stock report - Data collection
+
+![](media/image62.png)
+
+Monthly stock report - Data collection and calculation
+
+![](media/image5.png)
+
+![](media/image46.png)
+
+![](media/image20.png)
+
+![](media/image1.png)
+
+![](media/image30.png)
+
+![](media/image67.png)
+
+**Capture Android app**
+
+![](media/image44.png)
