@@ -11,9 +11,14 @@ At the end of the month, storekeepers will count the quantity of all health care
 ### Monthly stock report - Data recording and calculation
 
 In addition to the above: at the end of the month after the physical stock count and all data has been entered, Predictors automatically calculate the following data:
+
 - Opening balance: identical with the "Stock on hand" from the end of the previous month
-- Closing balance: Opening balance + Stock received - Stock distributed - Stock redistributed - Stock discarded   
+
+- Closing balance: Opening balance + Stock received - Stock distributed 
+- Stock redistributed - Stock discarded   
+
 - Stock discrepancy: Stock on hand (as counted) - Closing balance
+
 - Stock on hand Yes/No: calculates whether a stockout occurred at the end of the month (at the time of the physical stock count)  
 
 ## Maintenance Web App - DHIS2 metadata configuration
@@ -761,46 +766,88 @@ The following legends are applied to some visualizations:
 >>>**Color code**: "#DC00FF" (purple)  
 
 #### 5.2 Predictor
-Xx
+
+The following 3 Predictors need to be created for each item (Data element) separately:
+
+- Opening balance: identical with the "Stock on hand" from the end of the previous month
+
+- Closing balance: Opening balance + Stock received - Stock distributed 
+- Stock redistributed - Stock discarded   
+
+- Stock discrepancy: Stock on hand (as counted) - Closing balance
+
+>**1 [Item] - Closing balance**  
+>>**Name \(*)**: "[Item] - Closing balance - MSR"  
+>>**Short name \(*)**: "[Item] - Closing balance"
+>>**Output data element \(*)**: "[Item] - MSR"  
+>>**Output category option combo** "Closing balance"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "CLOXACILLIN, 250 mg, caps. - Opening balance - MSR"  
+>>>**Expression**:  
+>>>#{uwQn42CZ5qI.DDi5WPwhtVZ}
++#{uwQn42CZ5qI.FhxQW61lsG7}
+-#{uwQn42CZ5qI.VCzZmn4Xpjg}
+-#{uwQn42CZ5qI.gSTwuZJQ2sl}
+-#{uwQn42CZ5qI.NwUY4l4x6Gl}
+-#{uwQn42CZ5qI.fzhyKGI9Pa0}
+"avg(#{uwQn42CZ5qI.eKdBeWyrmPN})"  
+>avg([Item - MSR] Stock on hand)*
+>>
+>>[Item - MSR] Opening balance + [Item - MSR] Stock received - [Item - MSR] Stock distributed - [Item - MSR] Stock redistributed - [Item - MSR] Stock discarded - [Item - MSR] Stock correction
+>>
+>>**Sequential sample count \(*)**: "1"  
+>>**Annual sample count \(*)**: "0"  
+>>
+>**2 [Item] - Opening balance**  
+>>**Name \(*)**: "[Item] - Opening balance - MSR"  
+>>**Short name \(*)**: "[Item] - Opening balance"
+>>**Output data element \(*)**: "[Item] - MSR"  
+>>**Output category option combo** "Opening balance"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "CLOXACILLIN, 250 mg, caps. - Opening balance - MSR"
+>>>**Expression**: "avg(#{uwQn42CZ5qI.eKdBeWyrmPN})"  
+>avg([Item] - MSR Stock on hand)*
+>>
+>>**Sequential sample count \(*)**: "1"  
+>>**Annual sample count \(*)**: "0"  
+>>
+>>*Note: the Predictor "copies" the "Stock on hand" from the previous month to the "Opening balance" field of the current month.*
+>
+>**3 [Item] - Stock discrepancy**  
+>>**Name \(*)**: "[Item] - Stock discrepancy - MSR"  
+>>**Short name \(*)**: "[Item] - Stock discrepancy"
+>>**Output data element \(*)**: "[Item] - MSR"  
+>>**Output category option combo** "Stock discrepancy"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "CLOXACILLIN, 250 mg, caps. - Stock discrepancy - MSR"
+>>>**Expression**: "#{uwQn42CZ5qI.eKdBeWyrmPN}-#{uwQn42CZ5qI.Q2LQDdGMNXm"  
+>[Item - MSR] Stock on hand - [Item - MSR] - Closing balance
+>>
+>>**Sequential sample count \(*)**: "1"  
+>>**Annual sample count \(*)**: "0"  
 
 #### 5.3 Predictor group
-Xx
-Use Group Predictors????
 
-A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
+The "Predictor group" is required in order to allow running all Predictors periodically and together by the "Scheduler" rather than having to prompt them one by one. All Predictors required for the DHIS2-RTS can be grouped together and be run together in the Scheduler App.
 
-> Predictor
->
-> The following 3 Predictors need to be created for each Data element separately:
->
-> - Name: **CLOXACILLIN, 250 mg, caps. - CL / Closing balance**
->   Output data element (*); CLOXACILLIN, 250 mg, caps. - CL
->   Output category option combo: "Closing balance"
->   Generator:
->   #{uwQn42CZ5qI.DDi5WPwhtVZ}
->   +#{uwQn42CZ5qI.FhxQW61lsG7}
->   -#{uwQn42CZ5qI.VCzZmn4Xpjg}
->   -#{uwQn42CZ5qI.gSTwuZJQ2sl}
->   -#{uwQn42CZ5qI.NwUY4l4x6Gl}
->   -#{uwQn42CZ5qI.fzhyKGI9Pa0}
->   CLOXACILLIN, 250 mg, caps. - CL Opening balance +CLOXACILLIN, 250 mg, caps. - CL Stock received -CLOXACILLIN, 250 mg, caps. - CL Stock distributed -CLOXACILLIN, 250 mg, caps. - CL Stock redistributed -CLOXACILLIN, 250 mg, caps. - CL Stock discarded -CLOXACILLIN, 250 mg, caps. - CL Stock correction
-> - Name: **CLOXACILLIN, 250 mg, caps. - CL / Opening balance**
->   Output data element (*); CLOXACILLIN, 250 mg, caps. - CL
->   Output category option combo: "Opening balance"
->   Generator: avg(#{uwQn42CZ5qI.eKdBeWyrmPN})
->   avg(CLOXACILLIN, 250 mg, caps. - CL Stock on hand)
-> - Name: **CLOXACILLIN, 250 mg, caps. - CL / Stock discrepancy**
->   Output data element (*); CLOXACILLIN, 250 mg, caps. - CL
->   Output category option combo: "Stock discrepancy"
->   Generator: #{uwQn42CZ5qI.eKdBeWyrmPN}-#{uwQn42CZ5qI.Q2LQDdGMNXm}
->   CLOXACILLIN, 250 mg, caps. - CL Stock on hand-CLOXACILLIN, 250 mg, caps. - CL Closing balance
->
-> - Period type (*): Monthly
->   Organisation unit levels: "Facility"
->   Organisation units providing data (*): "At selected level(s) only"
->   Sequential skip count (*): "1"
->   Annual sample count (*): "0"
-
+>**1 Monthly stock report - Stock calculations**  
+>**Name \(*)**: "Monthly stock report - Stock calculations - MSR"  
+>**Predictors**
+>>"[Item - MSR] - Closing balance"  
+>>"[Item - MSR] - Opening balance"  
+>>"[Item - MSR] - Stock discrepancy"  
 
 #### DHIS2 user interfaces
 
