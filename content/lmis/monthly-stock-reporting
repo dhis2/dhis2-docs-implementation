@@ -1,147 +1,277 @@
-### MONTHLY STOCK DATA RECORDING / "aggregate" data entry form
+# Monthly Stock Data Recording / "Aggregate" Data Entry Form
 
 This Default Data Entry Form ("aggregate") allows storekeepers at health care facilities to enter monthly data on demand ("consumption") as well as stock on hand digitally on a on- or off-line on a mobile device and synchronize the data with a central DHIS2 server for analysis, data sharing and integration with national eLMIS systems.
 
-#### Use case
+## Use case
+
+### Monthly stock report - Data recording
 
 At the end of the month, storekeepers will count the quantity of all health care products in the medical store and record the stock on hand. Furthermore, to obtain the total amount of each health care product issued from the medical store from the first to the last day of the month and record the total monthly demand ("consumption") directly on a mobile device. The list of stock items ("Data Elements") can be adapted to each health care facility as needed and user access can be given selectively to individual storekeepers as required.
 
-#### DHIS2 configuration guide
+### Monthly stock report - Data recording and calculation
 
-The configuration of this Default Data Entry form uses "Disaggregation categories" as this is technically the only way to display a table for recording data in the DHIS2 Capture app on a mobile device and relies only on basic, native DHIS2 functionality.
+In addition to the above: at the end of the month after the physical stock count and all data has been entered, Predictors automatically calculate the following data:
+- Opening balance: identical with the "Stock on hand" from the end of the previous month
+- Closing balance: Opening balance + Stock received - Stock distributed - Stock redistributed - Stock discarded   
+- Stock discrepancy: Stock on hand (as counted) - Closing balance
+- Stock on hand Yes/No: calculates whether a stockout occurred at the end of the month (at the time of the physical stock count)  
 
-| **CATEGORY** | **System default settings** |
-| --- | --- |
-| > Category option | Name:<br>\- "Stock correction"<br>\- "Stock discarded"<br>\- "Stock distributed"<br>\- "Stock on hand"<br>\- "Stock received"<br>\- "Stock redistributed"<br>(Not shared). |
-| > Category | Name: "Monthly stock report - Data<br>collection"<br>Data dimension type: "Disaggregation"<br>Assigned Category option in the following<br>order:<br>\- "Stock received"<br>\- "Stock distributed"<br>\- "Stock redistributed"<br>\- "Stock discarded"<br>\- "Stock on hand"<br>\- "Stock correction"<br>(Not shared). |
-| > Category combination | Name: "Monthly stock report - Data<br>collection"<br>Data dimension type: "Disaggregation"<br>Skip category total in reports: tag<br>Categories: "Monthly stock report - Data<br>collection"<br>(Not shared). |
-| > Data element | Name (examples only, configure according<br>to national drug list):<br>\- "CLOXACILLIN, 250 mg, caps."<br>\- "FOLIC ACID, 5 mg, tab."<br>\- "METRONIDAZOLE, 500 mg, tab."<br>\- "ORAL REHYDRATION SALTS (O.R.S.),<br>sachet 20.5 g/1 L"<br>\- "PARACETAMOL (acetaminophen), 500 mg,<br>tab."<br>\- "SALBUTAMOL, 0.1mg/puff, 200 puffs,<br>inhaler"<br>Domain type (\*): "Aggregate"<br>Value type (\*): "Integer"<br>Aggregation type (\*): "Sum"<br>Store zero data values: tag<br>Category combination (\*): "Monthly stock<br>report - Data collection"<br>(Not shared). |
-| > Data set | Name: "Monthly stock report - Data<br>recording"<br>Color:<br>"#00ACC1"![]<br>(media/image2.png)<br>Icon:<br>Expiry days: "5"<br>Open future periods for data entry: "1"<br>Days after period to qualify for timely<br>submission: "15"<br>Period type (\*): "Monthly"<br>Category combination (\*): "None"<br>Render sections as tabs: tag<br>Data elements: assign as required (see<br>above)<br>Organisation units: select as required<br>Sharing settings: share with users or user<br>groups as required<br>Sections: created a "Section" for each<br>group of health care products such as<br>disinfectants, oral drug products etc. as<br>required |
-| > Data visualizer | Name: "DHIS2 end-user eLMIS - Stock<br>report / Last 3 months / Facility"<br>Visualization type: "Pivot table"<br>Columns<br>\- Period: "Last 3 months"<br>\- Your Dimensions: "Monthly stock report<br>- Data collection" (select all six<br>Category options)<br>Rows: Data: select Data elements as<br>required<br>Filter: Organisation Unit: select<br>Organisation units as required |
+## Maintenance Web App - DHIS2 metadata configuration
 
-#### DHIS2 user interfaces
+The configuration of this Default Data Entry form uses "Disaggregation categories" as this is technically the only way to display a table for recording data in the DHIS2 Android Capture App on a mobile device and relies only on basic, native DHIS2 functionality.
 
-**Web portal / Data Entry form**
+### Metadata overview
+The required metadata settings seetings are presented in the order in which it is presented in the DHIS2 Maintenance Web App.
 
-![](media/image29.png)
+>**1 CATEGORY**  
+>>1.1 Category option  
+>>1.2 Category  
+>>1.3 Category combination 
+> 
+>**2 DATA ELEMENT**  
+>>2.1 Data element - "Aggregate"  
+>>2.3 Data element group  
+> 
+>**3 DATA SET**  
+>>3.1 Data set  
+>>3.1.1 Monthly stock report - Data recording  
+>>3.1.2 Monthly stock report - Data recording and calculation 
+> 
+>**4 INDICATOR**  
+>>4.1 Indicator  
+>>4.1.1 Indicator type
+> 
+>**5 OTHER**  
+>>5.1 Legend  
+>>5.2 Predictor  
+>>5.3 Predictor group
 
-**Web portal / Data Visualizer**
+### 1 CATEGORY
 
-![](media/image54.png)
+#### 1.1 Category option
+>**1 Stock correction**  
+>>**Name \(*)**: "Stock correction"  
+>>**Short name \(*)**: "Stock correction"  
+>>**Organisation units selected**: (select as required) 
+>
+>**2 Stock discarded**  
+>>**Name \(*)**: "Stock discarded"  
+>>**Short name \(*)**: "Stock discarded"  
+>>**Organisation units selected**: (select as required) 
+>
+>**3 Stock distributed**  
+>>**Name \(*)**: "Stock distributed"  
+>>**Short name \(*)**: "Stock distributed"  
+>>**Organisation units selected**: (select as required) 
+>
+>**4 Stock received**  
+>>**Name \(*)**: "Stock received"  
+>>**Short name \(*)**: "Stock received"  
+>>**Organisation units selected**: (select as required) 
+>
+>**5 Stock redistributed**  
+>>**Name \(*)**: "Stock redistributed"  
+>>**Short name \(*)**: "Stock redistributed"  
+>>**Organisation units selected**: (select as required) 
+>
+>**6 Stock correction**  
+>>**Name \(*)**: "Stock on hand"  
+>>**Short name \(*)**: "Stock on hand"  
+>>**Organisation units selected**: (select as required) 
 
-**Capture Android app**
+#### 1.2 Category
+>**1 MSR - Monthly stock report - Data recording**  
+>>**Name \(*)**: "MSR - Monthly stock report - Data recording"  
+>>**Short name \(*)**: "Monthly stock report - Data recording"  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Data dimension**: tag (appears as white tick in a blue square)  
+>>**Category options**: *note the order of "Category options"*:  
+>>>"Stock received"  
+>>>"Stock distributed"  
+>>>"Stock redistributed"  
+>>>"Stock discarded"  
+>>>"Stock on hand"  
+>>>"Stock correction"  
+>
+>**2 MSR - Monthly stock report - Data recording and calculation**  
+>>**Name \(*)**: "MSR - Monthly stock report - Data recording and calculation"  
+>>**Short name \(*)**: "Monthly stock report - Data recording and calculation"  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Data dimension**: tag (appears as white tick in a blue square)  
+>>**Category options**: *note the order of "Category options"*:  
+>>>"Opening balance"  
+>>>"Stock received"  
+>>>"Stock distributed"  
+>>>"Stock redistributed"  
+>>>"Stock discarded"
+>>>"Stock on hand"  
+>>>"Closing balance"  
+>>>"Stock discrepancy"  
+>>>"Stock correction"  
+>>>"Stock on hand Yes/No"  
 
-![](media/image15.png)
+#### 1.3 Category combination
+>**1 MSR Monthly stock report - Data recording**  
+>>**Name \(*)**: **Monthly stock report - Data recording**  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
+>>**Categories**: "Monthly stock report - Data recording"
+>
+>**2 Monthly stock report - Data recording and calculation**  
+>>**Name \(*)**: **Monthly stock report - Data recording and calculation**  
+>>**Data dimension type \(*)**: "Disaggregation"  
+>>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
+>>**Categories**: "Monthly stock report - Data recording and calculation"
 
-**MONTHLY STOCK DATA RECORDING AND CALCULATION / "aggregate" data entry form**
+### 2 DATA ELEMENT
+
+### 2.1 Data element
+Data elements represent the items (healthcare products) for which logistics data is recorded and managed. A separate and unique Data element needs to be configured for each item (healthcare product).
+
+>**1 ATROPINE SULFATE, 1mg/ml, 1ml, amp. - MSR**
+>>**Name \(*)**: "ATROPINE SULFATE, 1mg/ml, 1ml, amp. - MSR"  
+>>**Short name \(*)**: "DINJATRO1A"
+>>**Code \(*)**:  "DINJATRO1A"
+>>**Domain Type \(*)**: "Aggregate"  
+>>**Value type \(*)**: "Integer"  
+>>**Aggregation type (*)**: "Sum"  
+>>**Store zero data values**: tag (appears as white tick in a blue square) 
+>>**Category combination \(*)**: "Monthly stock report - Data collection"  
+>
+>**[Number] [Item] - MSR**
+>>**Name \(*)**: "X [Item] - MSR"  
+>>**Short name \(*)**: "[Item code]"
+>>**Code \(*)**:  "[Item code]"
+>>**Domain Type \(*)**: "Aggregate"  
+>>**Value type \(*)**: "Integer"  
+>>**Aggregation type (*)**: "Sum"  
+>>**Store zero data values**: tag (appears as white tick in a blue square) 
+>>**Category combination \(*)**: "Monthly stock report - Data collection"  
+
+### 2.2 Data element group
+
+The creation of Data element groups is a DHIS2 best practice but also a precondition for using the "Group Predictor" functionality which allows using a placeholder and the Data element group ID for creating a single Predictor which is automatically applied to all Data elements in the respective Data element group. For example for calculating the stock coverage time.
+
+>**1 Stock item list - MSR**  
+>**Name \(*)**: "Stock item list - MSR"  
+>**Short name \(*)**: "Stock item list - MSR"
+>**Data elements \(*)**: *select all Data elements with the "MSR" suffix"*    
+
+### 3 Data set
 
 This Default Data Entry Form ("aggregate") allows storekeepers at health care facilities to enter monthly data on demand ("consumption") as well as stock on hand digitally on a on- or off-line on a mobile device and synchronize the data with a central DHIS2 server for analysis, data sharing and integration with national eLMIS systems.
 
+#### 3.1 Data set
+Data sets for each Organisation unit are required for recording and storing monthly stock report data.
+The sections can be displayed in the Data Entry (beta) Web App as well as in the Capture Android App either in a single table or as separate tabs.
+The configuration for two Data sets are presented below, but either the one or the other should be used:
+- "MSR - Monthly stock report - Data recording"
+- "MSR - Monthly stock report - Data recording and calculation"
+
+>**1 MSR - Monthly stock report - Data recording**  
+>>**Name \(*)**: "MSR - Monthly stock report - Data recording"  
+>>**Short name \(*)**: "Monthly stock report - Data recording"
+>>**Color**: "#00ACC1"  
+>>**Expiry days**: "5"  
+>>**Open future periods for data entry**: "1"  
+>>**Days after period to qualify for timely submission**: "5"  
+>>**Period type**: "Monthly"  
+>>**Category combination**: "None"  
+>>**Render sections as tabs**: tag (appears as white tick in a blue square)  
+>>**Data elements**  
+>>>*Add all Data elements with the suffix "MSR" required for the respective health facility*.
+>>
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>>
+>>**Actions**
+>>>**Manage sections**
+>>>>**Name**
+>>>>>**1 DASD**
+>>>>>>**DASD**
+>>>>>>**Data elements**
+>>>>>>>**CHLORHEXIDINE DIGLUCONATE 5% , solution, 1L, btl. - MSR**
+>>>>>>>**IODINE POVIDONE, 10%, solution, 1L, btl. - MSR**
+>>>>>**2 [Section 2]**
+>>>>>>**[Section 2]**
+>>>>>>**Data elements**
+>>>>>>>**[Data element]**
+>
+>**2 MSR - Monthly stock report - Data recording and calculation**  
 In addition to the configuration presented above, this Default Data Entry Form automatically calculates the "Opening balance" (stock on hand from the end of the previous month), "Closing balance" (Opening balance plus all stock receipts minus all stock issues) as well as "Stock discrepancy" (difference between the Stock on hand as counted and the calculated Closing balance).
+>>**Name \(*)**: "MSR - Monthly stock report - Data recording and calculation"  
+>>**Short name \(*)**: "MSR - Monthly stock report - Data recording and calculation"
+>>**Color**: "#00838F"  
+>>**Expiry days**: "5"  
+>>**Open future periods for data entry**: "1"  
+>>**Days after period to qualify for timely submission**: "5"  
+>>**Period type**: "Monthly"  
+>>**Category combination**: "None"  
+>>**Render sections as tabs**: tag (appears as white tick in a blue square)  
+>>**Data elements**  
+>>>*Add all Data elements with the suffix "MSR" required for the respective health facility*.
+>>
+>>**Organisation units selected**: (select as for the Tracker Program) 
+>>
+>>**Actions**
+>>>**Manage sections**
+>>>>**Name**
+>>>>>**1 DORA**
+>>>>>>**DORA**
+>>>>>>**Data elements**
+>>>>>>>**CLOXACILLIN, 250 mg, caps. - MSR**
+>>>>>>>**FOLIC ACID, 5 mg, tab. - MSR**
+>>>>>**2 [Section 2]**
+>>>>>>**[Section 2**
+>>>>>>**Data elements**
+>>>>>>>**[Data element]**
 
-#### Use case
+### 4 Indicator
 
-At the end of the month, storekeepers will count the quantity of all health care products in the medical store and record the stock on hand. Furthermore, to obtain the total amount of each health care product issued from the medical store from the first to the last day of the month and record the total monthly demand ("consumption") directly on a mobile device. The list of stock items ("Data Elements") can be adapted to each health care facility as needed and user access can be given selectively to individual storekeepers as required.
+#### 4.1 Indicator
 
-The calculations are prompted by running the Predictors either separately or by configuring the "Scheduler" app to run all Predictors at the same time.
+Indicators are used for calculating the following logistics metrics:
 
-#### DHIS2 configuration guide
+- Number of items in stock coverage bins (0-1, 1-2, 2-3 months etc.) for visualizing the stock coverage time distribution 
 
-The configuration of this Default Data Entry form uses "Disaggregation categories" as this is technically the only way to display a table for recording data in the DHIS2 Capture app on a mobile device. The results of the Predictor calculations are "assigned" to the respective Category Options.
+- Stock coverage time (stock on hand / average monthly demand)
 
-| **CATEGORY** | **System default settings** |
+- Stock availability (percentage of items which are on hand)
 
-Category option
+- Stockout count (number of items which are out of stock)
 
-Name:
-- "Closing balance"
-- "Opening balance"
-- "Stock correction"
-- "Stock discarded"
-- "Stock discrepancy"
-- "Stock distributed"
-- "Stock on hand"
-- "Stock received"
-- "Stock redistributed"
-(Not shared).
+For the "Stock coverage time" indicator it would in principle be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings.
 
-
-
-Category
-
-Name: **"Monthly stock report - Data collection"**
-Data dimension type: "Disaggregation"
-Assigned Category option in the following order:
-- "Opening balance"
-- "Stock received"
-- "Stock distributed"
-- "Stock redistributed"
-- "Stock discarded"
-- "Stock on hand"
-- "Closing balance"
-- "Stock discrepancy"
-- "Stock correction"
-(Not shared).
-
-
-
-Category combination
-
-Name: **"Monthly stock report - Data collection and calculation"**
-Data dimension type: "Disaggregation"
-Skip category total in reports: tag
-Categories: "Monthly stock report - Data collection and calculation"
-(Not shared).
-
-
-
-Data element
-
-Name (examples only, configure according to national drug list):
-- "CLOXACILLIN, 250 mg, caps. - CL"
-- "FOLIC ACID, 5 mg, tab. - CL"
-- "METRONIDAZOLE, 500 mg, tab. - CL"
-- "ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL"
-- "PARACETAMOL (acetaminophen), 500 mg, tab. - CL"
-- "SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL"
-Domain type (*): "Aggregate"
-Value type (*): "Integer"
-Aggregation type (*): "Sum"
-Store zero data values: tag
-Category combination (*): "Monthly stock report - Data collection and calculation"
-(Not shared).
+>**1 0-1 months - MSR**  
+>This indicator counts the number of items with a stock coverage time greater than 0 but less than 1. For each item the Indicator returns "1" if the item has stock and stock coverage time is less than 1 and otherwise returns "0".
+>>**Name \(*)**: "0-1 months - MSR"  
+>>**Short Name \(*)**: "0-1 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 0-1 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "O-1 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>0 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<1,1,0)+
+f(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>0 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<1,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>0 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<1,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>0 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<1,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>0 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<1,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>0 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<1,1,0  
+>
+if([Item 1] Stock on hand/[Item 1] Stock distributed]>0 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<1,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>0 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<1,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "O-1 months - MSR - Denominator"
+>>>**Calculation**: "1"
 
 
 
-Data set
 
-Name: **"Monthly stock report - Data recording and calculation"**
-Color: "#00838F"
-Icon:
-Expiry days: "5"
-Open future periods for data entry: "1"
-Days after period to qualify for timely submission: "15"
-Period type (*): "Monthly"
-Category combination (*): "None"
-Render sections as tabs: tag
-Data elements, assign:
-- "CLOXACILLIN, 250 mg, caps. - CL"
-- "FOLIC ACID, 5 mg, tab. - CL"
-- "METRONIDAZOLE, 500 mg, tab. - CL"
-- "ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL"
-- "PARACETAMOL (acetaminophen), 500 mg, tab. - CL"
-- "SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL"
-Organisation units: select as required
-Sharing settings: share with users or user groups as required
-
-
-
-Indicator type
-
-Name: **"Number (Factor 1)"**
-Factor: "1"
-
-
+[Data element.Stock on hand] / [Data element.Stock distribution] /  
 
 >  **Indicator**
 >
@@ -456,6 +586,20 @@ Factor: "1"
 
 
 
+
+
+#### 4.2 Indicator type
+The "Indicator type" is a precondition for configuring any "Indicator".
+>**1 Number (Factor 1)**  
+>>**Name \(*)**: "Number (Factor 1)"  
+>>**Factor \(*)**: "1"  
+
+
+### 5 Other
+
+#### 5.1 Legend
+Xx
+
 Legend
 
 Name: **"Stock discrepancy"**
@@ -554,7 +698,13 @@ End value: "1000"
 
 Colour: #DC00FF
 
+#### 5.2 Predictor
+Xx
 
+#### 5.3 Predictor group
+Xx
+
+A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
 
 > Predictor
 >
@@ -589,6 +739,23 @@ Colour: #DC00FF
 >   Annual sample count (*): "0"
 
 
+#### DHIS2 user interfaces
+
+**Web portal / Data Entry form**
+
+![](media/image29.png)
+
+**Web portal / Data Visualizer**
+
+![](media/image54.png)
+
+**Capture Android app**
+
+![](media/image15.png)
+
+
+
+
 
 Data visualizer
 
@@ -603,6 +770,16 @@ Rows:
   Filter: Organisation Unit: select Organisation units as required
 
   
+
+
+| > Data visualizer | Name: "DHIS2 end-user eLMIS - Stock<br>report / Last 3 months / Facility"<br>Visualization type: "Pivot table"<br>Columns<br>\- Period: "Last 3 months"<br>\- Your Dimensions: "Monthly stock report<br>- Data collection" (select all six<br>Category options)<br>Rows: Data: select Data elements as<br>required<br>Filter: Organisation Unit: select<br>Organisation units as required |
+
+
+
+The calculations are prompted by running the Predictors either separately or by configuring the "Scheduler" app to run all Predictors at the same time.
+
+
+
 
 #### 2b.3 DHIS2 user interfaces
 
