@@ -705,61 +705,60 @@ The "Indicator type" is a precondition for configuring any "Indicator".
 ### 5 Other
 
 #### 5.1 Legend
-Xx
 
-Legend
+The following legends are applied to some visualizations:
 
-Name: **"Stock discrepancy"**
-Code: "STOCK DISCREPANCY"
-Legend item "Negative"
-Name: "Negative"
-Start value: "-1000000"
-End value: "0"
-Colour: #8411D7
-Legend item "Correct stock"
+- Stock coverage time: indicates stockouts, shortages, appropriate and overstocks
 
-Name: "Correct stock"
-Start value: "0"
-End value: "1"
-Colour: #68FE4C
-Legend item "Positive"
+- Stock discrepancy: indicates correct stocks, positive or negative discrepancies
 
-Name: "Positive"
-Start value: "1"
-End value: "1000000"
-Colour: #FF2000
-
-Name: **"Stock coverage time"**
-Code: "STOCK_COVERAGE_TIME"
-Legend item "Stockout"
-Name: "Stockout"
-Start value: "0"
-End value: "0.00001"
-Colour: #EE391E
-Legend item "Understock"
-
-Name: "Understock"
-Start value: "0.0001"
-End value: "2"
-Colour: #FEFB08
-Legend item "Adequate stock"
-
-Name: "Adequate stock"
-Start value: "2"
-End value: "3"
-Colour: #0BFF00
-Legend item "Overstock"
-
-Name: "Overstock"
-Start value: "3"
-End value: "12"
-Colour: #0011FF
-Legend item "Excessive stock"
-
-Name: "Excessive stock"
-Start value: "12"
-End value: "1000"
-Colour: #DC00FF
+>**1 Stock discrepancy**
+>>**Name \(*)**: 1 Stock discrepancy - MSR**
+>>**Code**: "STOCK_DISCREPANCY"
+>>**Name**
+>>>**Name**: "Negative"  
+>>>**Start value**: "-1000000"  
+>>>**End value**: "0"  
+>>>**Color code**: "#8411D7" (purple)  
+>>>
+>>>**Name**: "Correct stock"  
+>>>**Start value**: "0"  
+>>>**End value**: "1"  
+>>>**Color code**: "#68FE4C" (green)  
+>>>
+>>>**Name**: "Positive"  
+>>>**Start value**: "1"  
+>>>**End value**: "1000000"  
+>>>**Color code**: "#FF2000" (red)  
+>>>
+>**2 Stock coverage time**  
+>>**Name \(*)**: "Stock coverage time - MSR**  
+>>**Code**: "STOCK_COVERAGE_TIME"  
+>>**Name**
+>>>**Name**: "Stockout"  
+>>>**Start value**: "0  
+>>>**End value**: "0.0001"  
+>>>**Color code**: "#EE391E" (red)  
+>>
+>>>**Name**: "Understock"  
+>>>**Start value**: "0.0001"  
+>>>**End value**: "3"  
+>>>**Color code**: "#FEFB08" (yellow)  
+>>
+>>>**Name**: "Adequate stock"  
+>>>**Start value**: "3"  
+>>>**End value**: "4" 
+>>>**Color code**: "#0BFF00" (green)  
+>>
+>>>**Name**: "Overstock"  
+>>>**Start value**: "4"  
+>>>**End value**: "12"  
+>>>**Color code**: "#0011FF" (blue)  
+>>
+>>>**Name**: "Excessive stock"  
+>>>**Start value**: "12"  
+>>>**End value**: "1000" 
+>>>**Color code**: "#DC00FF" (purple)  
 
 #### 5.2 Predictor
 Xx
