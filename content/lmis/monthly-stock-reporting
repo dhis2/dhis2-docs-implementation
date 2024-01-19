@@ -189,12 +189,12 @@ The configuration for two Data sets are presented below, but either the one or t
 >>>>>**1 DASD**
 >>>>>>**DASD**
 >>>>>>**Data elements**
->>>>>>>**CHLORHEXIDINE DIGLUCONATE 5% , solution, 1L, btl. - MSR**
->>>>>>>**IODINE POVIDONE, 10%, solution, 1L, btl. - MSR**
->>>>>**2 [Section 2]**
->>>>>>**[Section 2]**
->>>>>>**Data elements**
->>>>>>>**[Data element]**
+>>>>>>>CHLORHEXIDINE DIGLUCONATE 5% , solution, 1L, btl. - MSR  
+>>>>>>>IODINE POVIDONE, 10%, solution, 1L, btl. - MSR  
+>>>>>**2 [Section 2]**  
+>>>>>>**[Section 2]**  
+>>>>>>**Data elements**  
+>>>>>>>[Data element]  
 >
 >**2 MSR - Monthly stock report - Data recording and calculation**  
 In addition to the configuration presented above, this Default Data Entry Form automatically calculates the "Opening balance" (stock on hand from the end of the previous month), "Closing balance" (Opening balance plus all stock receipts minus all stock issues) as well as "Stock discrepancy" (difference between the Stock on hand as counted and the calculated Closing balance).
@@ -239,12 +239,12 @@ Indicators are used for calculating the following logistics metrics:
 
 - Stockout count (number of items which are out of stock)
 
-For the "Stock coverage time" indicator it would in principle be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings.
+For the "Stock coverage time" indicator it would in principle be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings. Note that items will have to be added and removed individually if the stock item list is changed.
 
 >**1 0-1 months - MSR**  
->This indicator counts the number of items with a stock coverage time greater than 0 but less than 1. For each item the Indicator returns "1" if the item has stock and stock coverage time is less than 1 and otherwise returns "0".
+>For each item the Indicator returns "1" if the item has stock and stock coverage time is less than 1 and otherwise returns "0" and then adds up these results for calculating the number of items with a stock coverage time of 0-1 months. 
 >>**Name \(*)**: "0-1 months - MSR"  
->>**Short Name \(*)**: "0-1 months - MSR"  
+>>**Short Name \(*)**: "0-1 months"  
 >>**Description**: "Number of items with a coverage time of 0-1 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
@@ -257,343 +257,450 @@ if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>0 && #{irAGhTCJcO8.eKdB
 if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>0 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<1,1,0)+
 if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>0 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<1,1,0)+
 if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>0 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<1,1,0  
->
-if([Item 1] Stock on hand/[Item 1] Stock distributed]>0 &&
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>0 &&
 [Item 1] Stock on hand/[Item 1] Stock distributed]<1,1,0)+
 if([Item 2] Stock on hand/[Item 2] Stock distributed]>0 &&
 [Item 2] Stock on hand/[Item 2] Stock distributed]<1,1,0)+
 etc.
 >>
 >>**Edit denominator**:
->>>**Description**: "O-1 months - MSR - Denominator"
+>>>**Description**: "O-1 months - MSR - Denominator"  
 >>>**Calculation**: "1"
-
-
-
-
-[Data element.Stock on hand] / [Data element.Stock distribution] /  
-
->  **Indicator**
 >
->  - Name: **"Stockouts"**
->   Short name: "Stockouts"
->    Description: "Number of items with a stockout"
->    Numerator description: "Stockouts - Numerator"
->    Numerator: [Item 1.Stock on hand]
->   ```
->   if(#{uwQn42CZ5qI.eKdBeWyrmPN}==0,1,0)+
->   if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}==0,1,0)+
->   if(#{irAGhTCJcO8.eKdBeWyrmPN}==0,1,0)+
->   if(#{Z4bjHvGS6aH.iIC4YhgrxQY}==0,1,0)+
->   if(#{Csg4rTaIYDj.eKdBeWyrmPN}==0,1,0)+
->   if(#{mIYcOnLcqes.eKdBeWyrmPN}==0,1,0)
->   ```
->   Denominator: "1"
->  - Name: **"0-1 months"**
->   Short name: "0-1 months"
->    Description: "Number of items with a coverage time of 0-1 months"
->    Numerator description: "0-1 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>0 && Item 1.Stock on hand / Item 1.Stock.distributed<1]
->   ```
->   if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>0 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<1,1,0)+
->   if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>0 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<1,1,0)+
->   if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>0 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<1,1,0)+
->   if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>0 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<1,1,0)+
->   if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>0 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<1,1,0)+
->   if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>0 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<1,1,0)
->   ```
->   Denominator: "1"
->  - **Name**: "1-2 months"
->   *Short name*: "1-2 months"
->    *Description*: "Number of items with a coverage time of 1-2 months"
->    *Numerator description*: "1-2 months - Numerator"
->    *Numerator*: [Item 1.Stock on hand / Item 1.Stock.distributed>=1 && Item 1.Stock on hand / Item 1.Stock.distributed<2]
->   ```
->   if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=1 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<2,1,0)+
->   if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=1 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<2,1,0)+
->   if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=1 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<2,1,0)+
->   if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=1 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<2,1,0)+
->   if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=1 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<2,1,0)+
->   if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=1 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<2,1,0)
->   ```
->   *Denominator*: "1"
->  - Name: **"2-3 months"**
->   Short name: "2-3 months"
->    Description: "Number of items with a coverage time of 2-3 months"
->    Numerator description: "2-3 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=2 && Item 1.Stock on hand / Item 1.Stock.distributed<3]
->   ```
->   if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=2 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<3,1,0)+
->   if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=2 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<3,1,0)+
->   if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=2 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<3,1,0)+
->   if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=2 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<3,1,0)+
->   if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=2 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<3,1,0)+
->   if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=2 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<3,1,0)
->   ```
->   Denominator: "1"
->  - Name: **"3-4 months"**
->   Short name: "3-4 months"
->    Description: "Number of items with a coverage time of 3-4 months"
->    Numerator description: "3-4 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=3 && Item 1.Stock on hand / Item 1.Stock.distributed<4]
+>**2 1-2 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 1 but less than 2 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 1-2 months.
+>>**Name \(*)**: "1-2 months - MSR"  
+>>**Short Name \(*)**: "1-2 months"  
+>>**Description**: "Number of items with a coverage time of 1-2 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "1-2 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=1 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<2,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=1 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<2,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=1 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<2,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=1 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<2,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=1 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<2,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=1 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<2,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=1 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<2,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=1 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<2,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "1-2 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=3 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<4,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=3 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<4,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=3 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<4,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=3 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<4,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=3 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<4,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=3 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<4,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"4-5 months"**
->   Short name: "4-5 months"
->    Description: "Number of items with a coverage time of 4-5 months"
->    Numerator description: "4-5 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=4 && Item 1.Stock on hand / Item 1.Stock.distributed<5]
+>**3 2-3 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 2 but less than 3 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 2-3 months.
+>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=2 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<3,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=2 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<3,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=2 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<3,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=2 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<3,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=2 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<3,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=2 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<3,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=2 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<3,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=2 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<3,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "2-3 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=4 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<5,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=4 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<5,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=4 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<5,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=4 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<5,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=4 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<5,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=4 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<5,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"5-6 months"**
->   Short name: "5-6 months"
->    Description: "Number of items with a coverage time of 5-6 months"
->    Numerator description: "5-6 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=5 && Item 1.Stock on hand / Item 1.Stock.distributed<6]
+>**4 3-4 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 3 but less than 4 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 3-4 months. 
+>>**Name \(*)**: "3-4 months - MSR"  
+>>**Short Name \(*)**: "3-4 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 3-4 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "3-4 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=3 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<4,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=3 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<4,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=3 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<4,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=3 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<4,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=3 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<4,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=3 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<4,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=3 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<4,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=3 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<4,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "3-4 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=5 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<6,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=5 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<6,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=5 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<6,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=5 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<6,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=5 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<6,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=5 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<6,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"6-7 months"**
->   Short name: "6-7 months"
->    Description: "Number of items with a coverage time of 6-7 months"
->    Numerator description: "6-7 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=6 && Item 1.Stock on hand / Item 1.Stock.distributed<7]
+>**5 4-5 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 4 but less than 5 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 4-5 months.   
+>>**Name \(*)**: "4-5 months - MSR"  
+>>**Short Name \(*)**: "4-5 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 4-5 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "4-5 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=4 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<5,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=4 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<5,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=4 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<5,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=4 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<5,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=4 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<5,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=4 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<5,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=4 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<5,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=4 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<5,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "4-5 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=6 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<7,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=6 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<7,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=6 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<7,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=6 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<7,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=6 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<7,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=6 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<7,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"7-8 months"**
->   Short name: "7-8 months"
->    Description: "Number of items with a coverage time of 7-8 months"
->    Numerator description: "7-8 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=7 && Item 1.Stock on hand / Item 1.Stock.distributed<8]
+>**6 5-6 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 5 but less than 6 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage of 5-6 months. 
+>>**Name \(*)**: "0-1 months - MSR"  
+>>**Short Name \(*)**: "0-1 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 0-1 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "O-1 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=5 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<6,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=5 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<6,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=5 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<6,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=5 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<6,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=5 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<6,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=5 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<6,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=5 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<6,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=5 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<6,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "5-6 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=7 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<8,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=7 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<8,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=7 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<8,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=7 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<8,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=7 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<8,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=7 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<8,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"8-9 months"**
->   Short name: "8-9 months"
->    Description: "Number of items with a coverage time of 8-9 months"
->    Numerator description: "8-9 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=8 && Item 1.Stock on hand / Item 1.Stock.distributed<9]
+>**7 6-7 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 6 but less than 7 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 6-7 months. 
+>>**Name \(*)**: "6-7 months - MSR"  
+>>**Short Name \(*)**: "6-7 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 6-7 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "6-7 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=6 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<7,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=6 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<7,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=6 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<7,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=6 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<7,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=6 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<7,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=6 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<7,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=6 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<7,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=6 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<7,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "6-7 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=8 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<9,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=8 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<9,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=8 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<9,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=8 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<9,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=8 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<9,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=8 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<9,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"9-10 months"**
->   Short name: "9-10 months"
->    Description: "Number of items with a coverage time of 9-10 months"
->    Numerator description: "9-10 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=9 && Item 1.Stock on hand / Item 1.Stock.distributed<10]
+>**8 7-8 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 1 but less than 2 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 7-8 months. 
+>>**Name \(*)**: "7-8 months - MSR"  
+>>**Short Name \(*)**: "7-8 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 7-8 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "7-8 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=7 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<8,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=7 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<8,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=7 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<8,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=7 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<8,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=7 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<8,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=7 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<8,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=7 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<8,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=7 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<8,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "7-8 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=9 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<10,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=9 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<10,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=9 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<10,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=9 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<10,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=9 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<10,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=9 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<10,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"10-11 months"**
->   Short name: "10-11 months"
->    Description: "Number of items with a coverage time of 10-11 months"
->    Numerator description: "10-11 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=10 && Item 1.Stock on hand / Item 1.Stock.distributed<11]
+>**9 8-9 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 8 but less than 9 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 8-9 months. 
+>>**Name \(*)**: "8-9 months - MSR"  
+>>**Short Name \(*)**: "8-9 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 8-9 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "8-9 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=8 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<9,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=8 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<9,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=8 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<9,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=8 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<9,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=8 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<9,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=8 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<9,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=8 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<9,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=8 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<),1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "8-9 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=10 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<11,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=10 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<11,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=10 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<11,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=10 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<11,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=10 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<11,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=10 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<11,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"11-12 months"**
->   Short name: "11-12 months"
->    Description: "Number of items with a coverage time of 11-12 months"
->    Numerator description: "11-12 months - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=11 && Item 1.Stock on hand / Item 1.Stock.distributed<12]
+>**10 9-10 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 9 but less than 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 9-10 months. 
+>>**Name \(*)**: "9-10 months - MSR"  
+>>**Short Name \(*)**: "9-10 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 9-10 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "9-10 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=9 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<10,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=9 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<10,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=9 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<10,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=9 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<10,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=9 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<10,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=9 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<10,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=9 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<10,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=9 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<10,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "9-10 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=11 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<12,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=11 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<12,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=11 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<12,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=11 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<12,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=11 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<12,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=11 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<12,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"1-2 years"**
->   Short name: "1-2 years"
->    Description: "Number of items with a coverage time of 1-2 years"
->    Numerator description: "1-2 years - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=12 && Item 1.Stock on hand / Item 1.Stock.distributed<24]
+>**11 10-11 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater or equal to 10 but less than 11 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 10-11 months. 
+>>**Name \(*)**: "10-11 months - MSR"  
+>>**Short Name \(*)**: "10-11 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 10-11 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "1O-11 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=10 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<11,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=10 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<11,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=10 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<11,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=10 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<11,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=10 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<11,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=10 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<11,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=10 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<11,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=10 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<11,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "1O-11 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=12 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<24,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=12 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<24,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=12 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<24,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=12 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<24,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=12 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<24,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=12 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<24,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"2-3 years"**
->   Short name: "2-3 years"
->    Description: "Number of items with a coverage time of 2-3 years"
->    Numerator description: "2-3 years - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=24 && Item 1.Stock on hand / Item 1.Stock.distributed<36]
+>**12 11-12 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 11 but less than 12 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 11-12 months. 
+>>**Name \(*)**: "11-12 months - MSR"  
+>>**Short Name \(*)**: "11-12 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 11-12 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "11-12 months - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=11 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<12,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=11 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<12,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=11 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<12,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=11 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<12,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=11 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<12,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=11 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<12,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=11 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<12,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=11 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<12,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "11-12 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=24 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<36,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=24 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<36,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=24 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<36,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=24 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<36,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=24 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<36,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=24 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<36,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **">3 years"**
->   Short name: ">3 years"
->    Description: "Number of items with a coverage time of >3 years"
->    Numerator description: ">3 years - Numerator"
->    Numerator: [Item 1.Stock on hand / Item 1.Stock.distributed>=36]
+>**13 1-2 years - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater rhan or equal to 12 but less than 24 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 12-24 months. 
+>>**Name \(*)**: "1-2 years - MSR"  
+>>**Short Name \(*)**: "1-2 years - MSR"  
+>>**Description**: "Number of items with a coverage time of 1-2 years"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "1-2 years - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=12 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<24,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=12 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<24,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=12 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<24,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=12 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<24,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=12 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<24,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=12 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<24,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=12 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<24,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=12 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<24,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "12-24 months - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=36,1,0)+
->    if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=36,1,0)+
->    if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=36,1,0)+
->    if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=36,1,0)+
->    if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=36,1,0)+
->    if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=36,1,0)
->   ```
->   
->    Denominator: "1"
->  - Name: **"CLOXACILLIN, 250 mg, caps. - CL / Coverage time"**
->   Short name: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
->    Description: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
->    Numerator description: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
+>**14 2-3 years - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 24 but less than 36 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 24-36 months. 
+>>**Name \(*)**: "2-3 years - MSR"  
+>>**Short Name \(*)**: "2-3 years - MSR"  
+>>**Description**: "Number of items with a coverage time of 2-3 years"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "2-3 years - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=24 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<36,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=24 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<36,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=24 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<36,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=24 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<36,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=24 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<36,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=24 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<36,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=24 &&
+[Item 1] Stock on hand/[Item 1] Stock distributed]<36,1,0)+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>0=24 &&
+[Item 2] Stock on hand/[Item 2] Stock distributed]<36,1,0)+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "2-3 years - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->    #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}
->   ```
->   
->    Denominator: "1"
->  - Name: **"FOLIC ACID, 5 mg, tab. - CL / Coverage time"**
->   Short name: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
->    Description: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
->    Numerator description: "CLOXACILLIN, 250 mg, caps. - CL / Coverage time"
+>**15 >3 years - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than 36 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 36 months or greater. 
+>>**Name \(*)**: ">=3 years - MSR"  
+>>**Short Name \(*)**: ">=3 years - MSR"  
+>>**Description**: "Number of items with a coverage time greater than 3 years"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: ">03 years - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=36,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=36,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=36,1,0)+
+if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=36,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=36,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=36,1,0)
+>>>
+>>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=36+
+if([Item 2] Stock on hand/[Item 2] Stock distributed]>=36+
+etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: ">= 3 years - MSR - Denominator"
+>>>**Calculation**: "1"
 >
->   ```
->   #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}
->   ```
->   
->    Denominator: "1"
->  - Name: **"METRONIDAZOLE, 500 mg, tab. - CL / Coverage time"**
->   Short name: "METRONIDAZOLE, 500 mg, tab. - CL / Coverage time"
->    Description: "METRONIDAZOLE, 500 mg, tab. - CL / Coverage time"
->    Numerator description: "METRONIDAZOLE, 500 mg, tab. - CL / Coverage time"
+>**16 Stock coverage time - MSR**  
+>For each item, this indicator calculates the stock coverage by dividing the stock on hand by the stock distributed ("consumption"). A separate indicator needs to be configured for each item (Data element).
+>>**Name \(*)**: "[Item] - Coverage time - MSR"  
+>>**Short Name \(*)**: "Coverage time - MSR"    
+>>**Description**: "Stock on hand divided by the stock distributed"  
+>>**Decimals in data output**: "1"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "[Item] - Coverage time - MSR - Numerator"
+>>>**Calculation**: 
+>>>#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}
+>>>
+>>>[Item 1] - Stock on hand/[Item 1] Stock distributed
+>>
+>**17 Stock availability - MSR**  
+>This indicator counts the number of items with non-zero stock, divides them by the number of items and multiplies the result by 100 in order to present the result as percentage. Note that items have to be added and removed manually when the stock item list is changed and the denominator also has to be adjusted accordingly.
+>>**Name \(*)**: "Stock availability - MSR"  
+>>**Short Name \(*)**: "Stock availability - MSR"  
+>>**Description**: "Percentage of items with non-zero stock"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "Stock availability - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}==0,0,1)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}==0,0,1)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}==0,0,1)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}==0,0,1)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}==0,0,1)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}==0,0,1)
+>>>
+>>>if([Item 1]==0,0,1) + if([Item 2]==0,0,1) + etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "Stock availability - MSR - Denominator"
+>>>**Calculation**: "0.06"
 >
->   ```
->    #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}
->   ```
->   
->    Denominator: "1"
->  - Name: **"ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL / Coverage time"**
->   Short name: "ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL / Coverage time"
->    Description: "ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL / Coverage time"
->    Numerator description: "ORAL REHYDRATION SALTS (O.R.S.), sachet 20.5 g/1 L - CL / Coverage time"
->
->   ```
->   #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}
->   ```
->   
->    Denominator: "1"
->  - Name: **"PARACETAMOL (acetaminophen), 500 mg, tab. - CL / Coverage time"**
->   Short name: "PARACETAMOL (acetaminophen), 500 mg, tab. - CL / Coverage time"
->    Description: "PARACETAMOL (acetaminophen), 500 mg, tab. - CL / Coverage time"
->    Numerator description: "PARACETAMOL (acetaminophen), 500 mg, tab. - CL / Coverage time"
->
->   ```
->   #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}
->   ```
->   
->    Denominator: "1"
->  - Name: **"SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL / Coverage time"**
->   Short name: "SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL / Coverage time"
->    Description: "SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL / Coverage time"
->    Numerator description: "SALBUTAMOL, 0.1mg/puff, 200 puffs, inhaler - CL / Coverage time"
->
->   ```
->   #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}
->   ```
->   
->    Denominator: "1"
-
-
-
-
+>**18 Stockout count - MSR**  
+>This indicator counts the number of items with a stockout.
+>>**Name \(*)**: "Stockout count - MSR"  
+>>**Short Name \(*)**: "Stockout count - MSR"  
+>>**Description**: "Number of items with at stockout"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "Stockouts - MSR - Numerator"
+>>>**Calculation**: 
+>>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}==0,1,0)+
+if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}==0,1,0)+
+if(#{irAGhTCJcO8.eKdBeWyrmPN}==0,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}==0,1,0)+
+if(#{Csg4rTaIYDj.eKdBeWyrmPN}==0,1,0)+
+if(#{mIYcOnLcqes.eKdBeWyrmPN}==0,1,0)
+>>>
+>>>if([Item 1]==0,1,0) + if([Item 2]==0,1,0) + etc.
+>>
+>>**Edit denominator**:
+>>>**Description**: "Stockouts - MSR - Denominator"
+>>>**Calculation**: "1"
 
 #### 4.2 Indicator type
 The "Indicator type" is a precondition for configuring any "Indicator".
 >**1 Number (Factor 1)**  
 >>**Name \(*)**: "Number (Factor 1)"  
 >>**Factor \(*)**: "1"  
-
 
 ### 5 Other
 
@@ -605,97 +712,53 @@ Legend
 Name: **"Stock discrepancy"**
 Code: "STOCK DISCREPANCY"
 Legend item "Negative"
-
-
-
 Name: "Negative"
-
 Start value: "-1000000"
-
 End value: "0"
-
 Colour: #8411D7
 Legend item "Correct stock"
 
-
-
 Name: "Correct stock"
-
 Start value: "0"
-
 End value: "1"
-
 Colour: #68FE4C
 Legend item "Positive"
 
-
-
 Name: "Positive"
-
 Start value: "1"
-
 End value: "1000000"
-
 Colour: #FF2000
-
-
 
 Name: **"Stock coverage time"**
 Code: "STOCK_COVERAGE_TIME"
 Legend item "Stockout"
-
-
-
 Name: "Stockout"
-
 Start value: "0"
-
 End value: "0.00001"
-
 Colour: #EE391E
 Legend item "Understock"
 
-
-
 Name: "Understock"
-
 Start value: "0.0001"
-
 End value: "2"
-
 Colour: #FEFB08
 Legend item "Adequate stock"
 
-
-
 Name: "Adequate stock"
-
 Start value: "2"
-
 End value: "3"
-
 Colour: #0BFF00
 Legend item "Overstock"
 
-
-
 Name: "Overstock"
-
 Start value: "3"
-
 End value: "12"
-
 Colour: #0011FF
 Legend item "Excessive stock"
 
-
-
 Name: "Excessive stock"
-
 Start value: "12"
-
 End value: "1000"
-
 Colour: #DC00FF
 
 #### 5.2 Predictor
@@ -703,6 +766,7 @@ Xx
 
 #### 5.3 Predictor group
 Xx
+Use Group Predictors????
 
 A conventional legend for stockouts is applied to the "DHIS2-RTS Current Stock on hand" Line Listing report to indicate stockout occurrences with a red background:
 
