@@ -1,33 +1,222 @@
-**HEALTH CARE PRODUCT CATALOGUE / Tracker program**
+# HEALTH CARE PRODUCT CATALOGUE / Tracker program
 
-This simple Tracker program allows building and digitally sharing a simple product catalogue with a picture of the product as well as essential product information which health professionals can consult on a mobile device on- or offline.
+## Introduction
 
-#### Use case
+This simple Tracker program allows building and digitally sharing a simple product catalogue with an image of each health care product as well as essential product information which health professionals can consult on a mobile device on- or offline. A centrally managed standard catalogue can be available to healthcare facilities or customized catalogues can be configured, for example for different levels of care.
 
-A health worker who requires information on what health care products are available at the respective health or requires details on the product searches on- or offline in the product catalogue, views the image, consults the specifications and (where available) opens the link to more detailed information.
+## Use case
 
-#### DHIS2 configuration
+A health worker who requires information on what health care products are available at the respective healthcare facility in general or requires details on the product searches on- or offline in the product catalogue, views the image, consults the specifications and (where available) opens the link to more detailed information.
 
-The product catalogue is configured as a very simple "Tracker program" which uses only simple, native DHIS2 functionality but without any actual program "stages".
+## Maintenance Web App - DHIS2 metadata configuration
 
-| **CATEGORY** | **System default settings** |
-| --- | --- |
-| > Tracked entity attribute | Name:<br>\- "Electronic product<br>information" / "URL"<br>\- "Item barcode image" / "Text"<br>\- "Item code" / "Text"<br>\- "Item description" / "Text"<br>\- "Item group code" / "Text"<br>\- "Item group description" /<br>"Text"<br>\- "Product image" / "Image"<br>\- "Regulations" / "Text"<br>\- "Required storage temperature /<br>° Celsius" / "Text"<br>\- "Secondary packaging quantity"<br>/ "Text"<br>\- "WHO EML classification number"<br>/ "Text"<br>\- "WHO EML classification<br>description" / "Text"<br>Short Name (\*): (same as name)<br>Value type (8\*): (see above)<br>Aggregation type (\*): "None" |
-| > Tracked entity type | Name: "Health care product<br>specifications"<br>Minimum number of attributes<br>required to search: "1"<br>Feature type: "None"<br>Tracked entity type attributes,<br>assign in the following order:<br>\- "Product image" [ensures image<br>is visible]<br>\- "Item code"<br>\- "Item group code"<br>\- "Item group description"<br>\- "Item description"<br>\- "Secondary packaging quantity"<br>\- "WHO EML classification number"<br>\- "WHO EML classification<br>description"<br>\- "Required storage temperature /<br>° Celsius"<br>\- "Regulations"<br>\- "Electronic product<br>information" / URL<br>\- "Item barcode image"<br>Display in list: tag all<br>Mandatory: tag all<br>Searchable: tag all |
-| > Program |  |
-| > 1 Program details | Name (\*): "Health care product<br>catalogue"<br>Short name (\*): "Health care<br>product catalogue"<br>Color:<br>"#F50057"![](media/image41.png)<br>Icon:<br>Tracked entity type (\*): "Health<br>care product specifications"<br>Category combination (\*): "None"<br>Display front page list: tag<br>Access level: "Open"<br>Completed events expiry days: "0"<br>Expiry days: "0"<br>Minimum number of attributes<br>required to search: "1"<br>Maximum number of tracked entity<br>instance to return in search: "0" |
-| > 2 Enrollment details | Show incident date: tag |
-| > 3 Attributes | Assign attributes in the following |
-| > | order: |
-| > 1 Assign attributes | <br>\- "Item description" / <br>"Default"<br>\- "Item code" / "Bar code"<br>\- "WHO EML classification <br>description" / "Default"<br>\- "Item group code" / "Default"<br>\- "Item group description" / <br>"Default"<br>\- "WHO EML classification number" <br>/ "Default"<br>\- "Secondary packaging quantity" <br>/ "Default"<br>\- "Required storage temperature / <br>° Celsius" / "Default"<br>\- "Regulations" / "Default"<br>\- "Electronic product <br>information" / "Default"<br>\- "Item barcode image" / <br>"Default"<br>\- "Product image" / "Default"<br>Display in list: tag all<br>Mandatory: leave all untagged<br>Searchable: tag all<br>Mobile render type: (see above) |
-| > 3 Attributes | "SECTION" assign Tracked entity |
-| > | attributes in the following order: |
-| > 2 Create registration form | <br>\- "Item code"<br>\- "Item description"<br>\- "Item group code"<br>\- "Item group description"<br>\- "Secondary packaging quantity"<br>\- "WHO EML classification number"<br>\- "WHO EML classification <br>description"<br>\- "Required storage temperature / <br>° Celsius"<br>\- "Regulations"<br>\- "Electronic product <br>information"<br>\- "Item barcode image"<br>\- "Item barcode image"<br>\- "Product image |
-| > 4 Program stages | (none) |
-| > 5 Access | Organisation units: assign as<br>required |
-| > 6 Notifications | (none) |
+The product catalogue is configured as a very simple "Tracker program" which uses only simple, native DHIS2 functionality but without any actual program "stages" and without allowing users to record any events.
 
-#### DHIS2 user interfaces
+### Metadata overview
+The required metadata settings seetings are presented in the order in which it is presented in the DHIS2 Maintenance Web App.
+
+>**1 PROGRAM**  
+>>1.1 Program  
+>>1.2 Tracked entity attribute  
+>>1.3 Tracked entity type  
+
+### 1 Program
+
+#### 1.1 Program
+>**1 Program details**
+>>**Name \(*)**: "Health care product catalogue"  
+>>**Short name (*)**: "Health care product catalogue"  
+>>**Color**: "#F50057"  
+>>**Icon**: "alert circle outline"  
+>>**Version**: (automatically numbered by the system)
+>>**Tracked entity type \(*)**: select "Healthcare product"  
+>>**Category combination (*)**: select "None"  
+>>**Display front page list**: tag (appears as a white tick in a blue square) 
+>>**Access level**: "Open"  
+>>**Completed events expiry days**: "0"  
+>>**Expiry days**: "0"  
+>>**Minimum number of attributes required to search**: "1"  
+>>**Maximum number of treacked entity instances to return in search**: "0"  
+>
+>**2 Enrollment details**  
+>>**Allow future enrollment dates**: do not tag  
+>>**Allow future incident dates**: do not tag  
+>>**Only enrol once (per tracked entity instance lifetime)**: do not tag  
+>>**Show incident date**: tag (appears as a white tick in a blue square)   
+>>**Description of incident date**: (blank)
+>>**Ignore overdue events**: do not tag  
+>>**Feature type**: (blank)
+>>
+>**3 Attributes**
+>>**1 Assign attributes**
+>>>**Program tracked entity attributes**: select and arrange in the following order:
+>>>>"Item description"  
+>>>>"Item code"  
+>>>>"WHO EML classification description"  
+>>>>"Item group code"  
+>>>>"Item group description"  
+>>>>"WHO EML classification number"  
+>>>>"Secondary packaging quantity"  
+>>>>"Required storage temperature / ° Celsis"  
+>>>>"Electronic product information"  
+>>>>"Item barcode image"  
+>>>>"Product image"  
+>>>**Display in list**: tag all  
+>>>**Searchable**: tag all  
+>>>**Mobile render type**: "Default" except for "Bar code" for "Item code"
+>>>**Desktop render type**: "Default"
+![](media/image11.png)
+>>
+>>**2 Create registration form**
+>>>**Name**: "Healthcare product catalogue"
+>>>**ADD SECTION TO FORM**: assign the following Tracked entity attributes in the following order:
+>>>>"Item description"  
+>>>>"Item code"  
+>>>>"WHO EML classification description"  
+>>>>"Item group code"  
+>>>>"Item group description"  
+>>>>"WHO EML classification number"  
+>>>>"Secondary packaging quantity"  
+>>>>"Required storage temperature / ° Celsis"  
+>>>>"Regulations"  
+>>>>"Electronic product information"  
+>>>>"Item barcode image"  
+>>>>"Product image"  
+>
+>**4 Program stages**
+>>(leave blank)  
+>
+>**5 Access**
+>>**Organisation units**: tag the health care facilities where the Tracker Program is used  
+>>**Roles and access**: "Healthcare product catalogue" appears by default  
+>>**SELECT ALL**: tag (a white tick appears in the blue square)
+>
+>**6 Notifications**
+>(not applicable)
+
+#### 1.2 Tracked entity attribute
+
+>**1 Electronic product information**  
+>>**Name \(*)**: "Electronic product information"  
+>>**Short name (*)**: "Elctronic product information - HPC"  
+>>**Value type**: "URL"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**2 Item barcode image**  
+>>**Name \(*)**: "Item barcode image"  
+>>**Short name (*)**: "Item barcode image - HPC"  
+>>**Value type**: "Image"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**3 Item code**  
+>>**Name \(*)**: "Item code"  
+>>**Short name (*)**: "Item code - HPC"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**4 Item description**  
+>>**Name \(*)**: "Item description"  
+>>**Short name (*)**: "Item description - HPC"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**5 Item group code**  
+>>**Name \(*)**: "Item group code"  
+>>**Short name (*)**: "Item group code - HPC"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**6 Item group description**  
+>>**Name \(*)**: "Item group description"  
+>>**Short name (*)**: "Item group description - HPC"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**7 Product image**  
+>>**Name \(*)**: "Product image"  
+>>**Short name (*)**: "Product image - HPC"  
+>>**Value type**: "Image"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**8 Regulations**  
+>>**Name \(*)**: "Regulations"  
+>>**Short name (*)**: "Regulations - HPC"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**9 Required storage temperature / ° Celsius**  
+>>**Name \(*)**: "Required storage temperature / ° Celsius"  
+>>**Short name (*)**: "Required storage temperature / ° Celsius - HPC"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**10 Secondary packaging quantity**  
+>>**Name \(*)**: "Secondary packaging quantity"  
+>>**Short name (*)**: "Secondary packaging quantity - HPC"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**11 WHO EML classification description**  
+>>**Name \(*)**: "WHO EML classification description"  
+>>**Short name (*)**: "WHO EML classification description - HPC"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+>
+>**12 WHO EML classification number**  
+>>**Name \(*)**: "WHO EML classification number"  
+>>**Short name (*)**: "WHO EML classification number - HPC"  
+>>**Value type**: "Text"  
+>>**Aggregation type**: "None"  
+>>**Unique**: do not tag
+>>**Inherit**: do not tag
+
+#### 1.3 Tracked entity type
+>**1 Health care product**:  
+>>**Name \(*)**: "Health care product - HPB"  
+>>**Enable tracked entity instance audit log**: do not tag
+>>**Minimum number of attributes required to search**: 1  
+>>**Maximum number of tracked entity instances to return in search**: 0  
+>>**Feature type**: "None"  
+>>**Tracked entity type attributes**: assign the following Tracked entity attributes in this order
+>>>"Product image"  
+>>>"Item description"  
+>>>"Item code"  
+>>>"WHO EML classification description"  
+>>>"Item group code"  
+>>>"Item group description"  
+>>>"WHO EML classification number"  
+>>>"Secondary packaging quantity"  
+>>>"Required storage temperature / ° Celsis"  
+>>>"Regulations"  
+>>>"Electronic product information"  
+>>>"Item barcode image"  
+>>
+>>**Display in list**: tag all  
+>>**Searchable**: tag all
+
+## DHIS2 user interfaces
 
 **Web portal / Capture app**![](media/image73.png)
 
