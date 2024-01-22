@@ -17,70 +17,182 @@
 >>Data use for logistics performance management  
 >>Data use for analytics and reporting  
 >
->DHIS2 LMIS reporting
->>Item level metrics
->>>Stock on hand
->>>Customer demand ("consumption")
->>Health facility level aggregations
->>>Number of stock items
->>Real-Time stock reporting
+>LMIS logistics visualization framework
 
->DHIS2 LMIS logistics metrics (MSR and RTS)
+>DHIS2 LMIS logistics analytics (MSR and RTS)
+>
+>>LMIS Statistics  
+>>>Item level statistics  
+>>>>Monthly reporting  
+>>>>>Stock on hand  
+>>>>>Stock distribution ("consumption")  
+>>>>  
+>>>>Real-Time Stock management reporting   
+>>>>>Transaction report  
+>>>
+>>>Health facility level aggregations  
+>>>>Number of stock items  
+>>>>Number of monthly reports submitted  
+>>>
+>>>District level aggregations
+>>>>Stock on hand
+>>>>Stock distributions
+>>>>Number of health facilities  
+>>>>Number of stock items by health facility
+>>>>Number of monthly reports submitted  
+>>>
+>>>Provincial level aggregations  
+>>>>Stock on hand
+>>>>Stock distributions
+>>>>Number of health facilities  
+>>>>Number of stock items
+>>>>Number of monthly reports submitted  
+>>>LMIS Country level aggregations  
+>>>>Number of health facilities  
+>>>>Number of stock items
+>>>>Number of monthly reports submitted  
 >>
->>LMIS logistics metrics framework
->>
->>Health facility metrics
->>>Item level metrics
->>>>Stockout
->>>>Stock coverage time / absolute number
->>>>Stock coverage time / range/category
->>>>Stock discrepancy
->>>Health facility level aggregations
->>>>Stockout count / monthly
->>>>Stockout count / daily (RTS only)
->>>>Stock availability
->>>>Stock coverage time range/category distributions
->>>>Average monthly demand
->>>>Coefficient of variation of monthly demand
->>>>Stock discrepancy count
+>>LMIS Indicators  
+>>>Health facility level indicators  
+>>>>Item level indicators  
+>>>>>Stockout occurrence (by month)  
+>>>>>Stockout count / absolute(number of months with stockouts)  
+>>>>>Stockout count / monthly average  
+>>>>>Stock coverage time / absolute number  
+>>>>>Stock coverage time / range/category  
+>>>>>Stock discrepancy  
+>>>>>Average monthly demand  
+>>>>>Coefficient of variation of monthly demand  
+>>>>>Stock discrepancy count  
+>>>>Health facility level aggregations  
+>>>>>Number of items with complete reports  
+>>>>>Number of monthly reports submitted before due data  
+>>>
+>>>Health facility level aggregations (across items) - indicators
+>>>>Stockout count / monthly  
+>>>>Stockout duration distribution  
+>>>>Stock availability  
+>>>>Stock coverage time range/category distributions  
+>>>>Reporting rates  
+>>>>Stock discrepancy count  
+>>>
+>>>LMIS District level aggregations
+>>>>Stockout count / month  
+>>>>Stockout duration distribution  
+>>>>Stock availability distribution  
+>>>>Stock coverage time range/category distribution  
+>>>>Reporting rates distribution  
+>>>>Stock discrepancy count  
+>>>
+>>>LMIS Provincial level aggregations  
+>>>>Stockout count / month  
+>>>>Stockout duration distribution  
+>>>>Stock availability distribution  
+>>>>Stock coverage time range/category distribution  
+>>>>Reporting rates distribution  
+>>>>Stock discrepancy count  
+>>>
+>>>LMIS National level aggregations  
+>>>>Stockout count / month  
+>>>>Stockout duration distribution  
+>>>>Stock availability distribution  
+>>>>Stock coverage time range/category distribution  
+>>>>Reporting rates distribution  
+>>>>Stock discrepancy count  
 
 By default, all the visualizations above are shown as time series (by month/by day)
 
->>
->>Geographical aggregated metrics
->>>District level aggregations  
->>>>Number of health facilities  
->>>Provincial level aggregations  
->>>National level aggregations  
-xxx
-Stockout count - absolute
-Stockout count - average
-Stock coverage time bin count
-Stock discrepancy count
-Total stock
-Total demand
+| Visualization  | Abbr. | Pivot table | Column | Bar | Line | Pie | Gauge | Single value | Line Listing | Map |
+| :-------- | :---: | :---: | :---: | :---: | :---:| :---: | :---: | :---: | :---: | :---:|
+| **STATISTICS** | |  |  |  |  |  |  |  |  |  |
+| **Item level statistics** | |  |  |  |  |  |  |  |  |  |
+| Stock on hand | X | X | X | X | X | X | X | X | X | X |
+| Stock distribution | X | X | X | X | X | X | X | X | X | X |
+| Transaction report | X | X | X | X | X | X | X | X | X | X |
+| **Health facility level aggregation** |
+| Number of stock items | X | X | X | X | X | X | X | X | X | X |
+| Number of monthly reports submitted | X | X | X | X | X | X | X | X | X | X |
+| **District level aggregation** |
+| Stock on hand | X | X | X | X | X | X | X | X | X | X |
+| Stock distributions | X | X | X | X | X | X | X | X | X | X |
+| Number of health facilities | X | X | X | X | X | X | X | X | X | X |
+| Number of stock items by health facility | X | X | X | X | X | X | X | X | X | X |
+| Number of monthly reports submitted | X | X | X | X | X | X | X | X | X | X |
+| **Province level aggregation** |
+| Stockout count / month | X | X | X | X | X | X | X | X | X | X |
+| Stockout duration distribution | X | X | X | X | X | X | X | X | X | X |
+| Stock availability distribution | X | X | X | X | X | X | X | X | X | X |
+| Stock coverage time range/category distribution | X | X | X | X | X | X | X | X | X | X |
+| Reporting rates distribution | X | X | X | X | X | X | X | X | X | X |
+| Stock discrepancy count | X | X | X | X | X | X | X | X | X | X |
+| **National level aggregation** |
+| Stockout count / month | X | X | X | X | X | X | X | X | X | X |
+| Stockout duration distribution | X | X | X | X | X | X | X | X | X | X |
+| Stock availability distribution | X | X | X | X | X | X | X | X | X | X |
+| Stock coverage time range/category distribution | X | X | X | X | X | X | X | X | X | X |
+| Reporting rates distribution | X | X | X | X | X | X | X | X | X | X |
+| Stock discrepancy count | X | X | X | X | X | X | X | X | X | X |
+
+| Visualization  | Abbr. | Pivot table | Column | Bar | Line | Pie | Gauge | Single value | Line Listing | Map |
+| :--- | :---: | :---: | :---: | :---: | :---:| :---: | :---: | :---: | :---: | :---:|
+| **INDICATORS** | |  |  |  |  |  |  |  |  |  |
+| **Item level indicators** | |  |  |  |  |  |  |  |  |  |
+| Stockout occurrence (by month) | X | X | X | X | X | X | X | X | X | X |
+| Stockout count / absolute(number of months with stockouts) | X | X | X | X | X | X | X | X | X | X |
+| Stockout count / monthly average | X | X | X | X | X | X | X | X | X | X |
+| Stock coverage time / absolute number | X | X | X | X | X | X | X | X | X | X |
+| Stock coverage time / range/category | X | X | X | X | X | X | X | X | X | X |
+| Stock discrepancy | X | X | X | X | X | X | X | X | X | X |
+| Average monthly demand | X | X | X | X | X | X | X | X | X | X |
+| Coefficient of variation of monthly demand | X | X | X | X | X | X | X | X | X | X |
+| Stock discrepancy count | X | X | X | X | X | X | X | X | X | X |
+| Health facility level aggregations | X | X | X | X | X | X | X | X | X | X |
+| Number of items with complete reports | X | X | X | X | X | X | X | X | X | X |
+| **Health facility level aggregations (across items) - indicators** | |  |  |  |  |  |  |  |  |  |
+| Stockout count / monthly | |  |  |  |  |  |  |  |  |  |
+| Stockout duration distribution | |  |  |  |  |  |  |  |  |  |
+| Stock availability | |  |  |  |  |  |  |  |  |  |
+| Stock coverage time range/category distributions | |  |  |  |  |  |  |  |  |  |
+| Reporting rates | |  |  |  |  |  |  |  |  |  |
+| Stock discrepancy count | |  |  |  |  |  |  |  |  |  |
+| **District level  aggregations - indicators** | |  |  |  |  |  |  |  |  |  |
+| Stockout count / monthly | |  |  |  |  |  |  |  |  |  |
+| Stockout duration distribution | |  |  |  |  |  |  |  |  |  |
+| Stock availability | |  |  |  |  |  |  |  |  |  |
+| Stock coverage time range/category distributions | |  |  |  |  |  |  |  |  |  |
+| Reporting rates | |  |  |  |  |  |  |  |  |  |
+| Stock discrepancy count | |  |  |  |  |  |  |  |  |  |
+| **Provincial level  aggregations - indicators** | |  |  |  |  |  |  |  |  |  |
+| Stockout count / monthly | |  |  |  |  |  |  |  |  |  |
+| Stockout duration distribution | |  |  |  |  |  |  |  |  |  |
+| Stock availability | |  |  |  |  |  |  |  |  |  |
+| Stock coverage time range/category distributions | |  |  |  |  |  |  |  |  |  |
+| Reporting rates | |  |  |  |  |  |  |  |  |  |
+| Stock discrepancy count | |  |  |  |  |  |  |  |  |  |
+| **National level  aggregations - indicators** | |  |  |  |  |  |  |  |  |  |
+| Stockout count / monthly | |  |  |  |  |  |  |  |  |  |
+| Stockout duration distribution | |  |  |  |  |  |  |  |  |  |
+| Stock availability | |  |  |  |  |  |  |  |  |  |
+| Stock coverage time range/category distributions | |  |  |  |  |  |  |  |  |  |
+| Reporting rates | |  |  |  |  |  |  |  |  |  |
+| Stock discrepancy count | |  |  |  |  |  |  |  |  |  |
+
+  
+  
+  
 
 
-| Visualization | Bar chart | Line chart | Pivot table | Map|
-| :--- | --- | --- | --- | --- |
-| Stock coverage time | X |  |  | |
-
-
-
-| Visualization | Health facility | District level | Provincial level | National level|
-| :--- | --- | --- | --- | --- |
-| Stockout count | X | X | X | X |
 
 
 
 xxx
 For each metric:
 - Definition
-- How to calculate
+- Calculation
 - Target ranges
-- How to read the results (what do the measurements mean)
+- Interpretation
 - Corrective action (include details here and only a summary in the performance management chapter?)
-
+- Visualization options
 
 
 
