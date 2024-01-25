@@ -932,73 +932,62 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 
 - positive integer if the physical stock count is greater than the calculated value
 
->**1 Assign stock correction**  
+>**1 Assign Stock on hand**  
 >>**1 Enter program rule details**  
 >>>**Program \(*)**: "Real-Time Stock Management"  
->>>**Trigger rule only for program stage**: appears by default
->>>**Name \(*)**: "Assign Stock correction"  
+>>>**Trigger rule only for program stage**: "Stock on hand"  
+>>>**Name \(*)**: "RTS - Assign Stock on Hand"  
 >>>**Description**: "Xx"  
->>>**Priority**:  "Xx"
+>>>**Priority**:  "2"
 >>
 >>**2 Enter program rule expression**  
->>>**Condition**: "d2:hasValue(#{Stock count})"  
+>>>**Condition**: "!d2:hasValue(#{RTS - Stock count})"  
 >>
 >>**3 Define program rule actions**  
 >>>**Action details**   
->>>>**Action \(*)**: "Assign value"
->>>>**Data element to assign to**: "Stock correction"
->>>>**Expression to evaluate and assign**: "#{Stock count}-#{Previous stock balance}"
+>>>>**Action \(*)**: "Assign value"  
+>>>>**Data element to assign to**: "Stock on hand"  
+>>>>**Expression to evaluate and assign**: "#{RTS - Previous stock balance}+#{RTS - Stock received}-#{RTS - Stock distribution}-#{RTS - Stock discarded}"
 >
->**2 Assign Stock on Hand**  
+>**2 Assign Stock on hand correction and Stock correction**  
 >>**1 Enter program rule details**  
 >>>**Program \(*)**: "Real-Time Stock Management"  
->>>**Trigger rule only for program stage**: appears by default
->>>**Name \(*)**: "Assign Stock on Hand"  
+>>>**Trigger rule only for program stage**: "Stock on hand"  
+>>>**Name \(*)**: "RTS - Assign Stock on hand correction and Stock correction"  
 >>>**Description**: "Xx"  
->>>**Priority**:  "Xx"
+>>>**Priority**:  "3"
 >>
 >>**2 Enter program rule expression**  
->>>**Condition**: "true"  
+>>>**Condition**: "d2:hasValue(#{RTS - Stock count})"  
 >>
 >>**3 Define program rule actions**  
 >>>**Action details**   
->>>>**Action \(*)**: "Assign value"
->>>>**Data element to assign to**: "Stock on hand"
->>>>**Expression to evaluate and assign**: ""#{Previous stock balance} + #{Stock received} - #{Stock distributed} - #{Stock discarded} ""
+>>>>**1 Assign "Stock on hand"**   
+>>>>>**Action \(*)**: "Assign value"
+>>>>>**Data element to assign to**: "Stock on hand"
+>>>>>**Expression to evaluate and assign**: "#{RTS - Stock count}"
+>>>>
+>>>>**2 Assign "Stock correction"**   
+>>>>>**Action \(*)**: "Assign value"
+>>>>>**Data element to assign to**: "Stock correction"
+>>>>>**Expression to evaluate and assign**: "#{RTS - Stock count}-#{RTS - Previous stock balance}"
 >
->**3 Assign Stock on hand correction**  
+>**3 Assign previous stock balance**  
 >>**1 Enter program rule details**  
 >>>**Program \(*)**: "Real-Time Stock Management"  
->>>**Trigger rule only for program stage**: appears by default
->>>**Name \(*)**: "Assign Stock on hand correction"  
+>>>**Trigger rule only for program stage**: "Stock on hand"
+>>>**Name \(*)**: "RTS -Assign previous stock balance"  
 >>>**Description**: "Xx"  
->>>**Priority**:  "Xx"
+>>>**Priority**:  "1"
 >>
 >>**2 Enter program rule expression**  
->>>**Condition**: "d2:hasValue(#{Stock count})"  
->>
->>**3 Define program rule actions**  
->>>**Action details**   
->>>>**Action \(*)**: "Assign value"
->>>>**Data element to assign to**: "Stock on hand"
->>>>**Expression to evaluate and assign**: "#{Stock count}"
->
->**4 Assign previous stock balance**  
->>**1 Enter program rule details**  
->>>**Program \(*)**: "Real-Time Stock Management"  
->>>**Trigger rule only for program stage**: appears by default
->>>**Name \(*)**: "Assign Stock on hand correction"  
->>>**Description**: "Xx"  
->>>**Priority**:  "Xx"
->>
->>**2 Enter program rule expression**  
->>>**Condition**: "Condition: "d2:hasValue(#{Initial stock on hand - Previous event})"  
+>>>**Condition**: "Condition: "d2:hasValue(#{RTS - Initial stock on hand - Previous event})"  
 >>
 >>**3 Define program rule actions**  
 >>>**Action details**   
 >>>>**Action \(*)**: "Assign value"
 >>>>**Data element to assign to**: "Previous stock balance"
->>>>**Expression to evaluate and assign**: "#{Initial stock on hand - Previous event}"
+>>>>**Expression to evaluate and assign**: "#{RTS - Initial stock on hand - Previous event}"
 
 #### 6.5 Program rule variable
 >**1 Initial stock on hand - Previous event**
