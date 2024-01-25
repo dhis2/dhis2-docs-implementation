@@ -2288,28 +2288,44 @@ Note that, by design, the DHIS2 Capture Android app does not automatically synch
 The configuration of the DHIS2-RTS Tracker Program from scratch can be completed in less than an hour. However, several other settings, among others Data elements, Data sets, Program indicators, Predictors and Analytics which are required for using the system.
 The configuration of all these components can be greatly facilitated by exporting metadata from the DHIS2 sandbox which hosts the most up-to-date version and importing the metadata into another DHIS2 instance.  
 https://lmis.integration.dhis2.org/sandbox/dhis-web-commons/security/login.action  
-However, some important constraints should be considered:
-- Only a few Tracked Entity Instances and Data elements are configured which can server as templates for adding (or uploading) additional items
-- The coding and news of the sample TEIs/DEs will all have to be changed to national standards
-- Program indicators and Predictors need to be created for all of the added TEIs/DEs
-- Metadata needs to be adapted to any changes of the "Delivery to" options
-- Any additional items need to be added to the Visualizations
-- For the selected "Metadata export", all metadata from all sandbox tools will be exported, for example all legends and all user roles
+However, some important constraints should be considered:  
+- Only a few Tracked Entity Instances and Data elements are configured which can server as templates for adding (or uploading) additional items  
 
-In principle two sets of data are required for exportign and importing:
-- Metadata dependency export: Real-Time Stock Management Tracker program
-- Metadata export: selected metadata
+- The coding and news of the sample TEIs/DEs will all have to be changed to national standards  
+
+- Program indicators and Predictors need to be created for all of the added TEIs/DEs  
+
+- Metadata needs to be adapted to any changes of the "Delivery to" options  
+
+- Any additional items need to be added to the Visualizations  
+
+- For the selected "Metadata export", all metadata from all sandbox tools will be exported, for example all legends and all user roles  
+
+In principle two sets of data are required for exportign and importing:  
+
+- Metadata dependency export: Real-Time Stock Management Tracker program  
+
+- Metadata export: selected metadata  
 
 The exportation of the data:
-- Open the Import/Export Web App
-- Select "Metadata dependency export"
-- Object type: "Programs"
-- Object: "Real-Time Stock Management"
-- What format should the data be exported as?: "JSON"
-- Compression type: "Zip"
-- Select: "Export metadata dependencies"
-- Download the "metadata.json.zip" file
-- Select "Metadata export"
+- Open the Import/Export Web App  
+
+- Select "Metadata dependency export"  
+
+- Object type: "Programs"  
+
+- Object: "Real-Time Stock Management"  
+
+- What format should the data be exported as?: "JSON"  
+
+- Compression type: "Zip"  
+
+- Select: "Export metadata dependencies"  
+
+- Download the "metadata.json.zip" file  
+
+- Select "Metadata export"  
+
 - Tag the following metadata components:  
   * Category Option
   * Category
@@ -2332,10 +2348,15 @@ The exportation of the data:
   * Predictor Group
   * User Role
   * User Group
-- What format should the data be exported as?: "JSON"
-- Compression type: "Zip"
-- Select: "Export metadata"
-- Download the "metadata.json.zip" file
+
+- What format should the data be exported as?: "JSON"  
+
+- Compression type: "Zip"  
+
+- Select: "Export metadata"  
+
+- Download the "metadata.json.zip" file  
+
 - Upload both files to the DHIS2 instance where the DHIS2-RTS application will be hosted.
 
 ## MEDICAL STOCK MANAGEMENT WITH THE DHIS2-RTS APP
