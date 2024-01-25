@@ -40,6 +40,7 @@ The required metadata settings seetings are presented in the order in which it i
 >>6.3 Relationship type  
 >>6.4 Tracked entity type  
 
+### 1 CATEGORY
 #### 1.1 Category option
 >**1 Xx**  
 >>**Name \(*)**: "Xx "  
@@ -114,6 +115,7 @@ The creation of Data element groups is a DHIS2 best practice but also a precondi
 >**Short name \(*)**: "Xx"
 >**Data elements \(*)**: *select all Data elements with the "MTH" suffix"*    
  
+### 3 DATA SET
 #### 3.1 Data set
 Data sets for each Organisation unit are required both for recording daily and monthly "snapshots" of Tracker Program .
 
@@ -130,7 +132,7 @@ Data sets for each Organisation unit are required both for recording daily and m
 >>
 >>**Organisation units selected**: (select as for the Tracker Program) 
 
-## 4 Indicator
+### 4 INDICATOR
 
 The Indicator functionality is used to configure the "Stock coverage time". In principle it would be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings.
 
@@ -158,12 +160,12 @@ A separate Program indicator has to be created for every "pair" of item descript
 >>>
 >>>**Display in form**: tag (appears as white tick in blue square)  
 
-### 5 Organisation Unit
+### 5 ORGANISATION UNIT
 
-### 5.1 Organisation Unit
+#### 5.1 Organisation Unit
 The Organisation Unit, Organisation Unit group and Organisation Unit level are created and added according to national protocols and policies and/or existing DHIS2 configuration and there are no specific requirements for using the Biomedical EQuipment Life Cycle Management program.
 
-### 6 Program
+### 6 PROGRAUM
 The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, is very simple to configure, uses only native DHIS2 functionality and governs the customized user interface on the mobile device.
 
 #### 6.1 Program
