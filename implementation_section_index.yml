@@ -353,7 +353,13 @@ Health:
 #  - Downloads Section:
 #    - WHO Metadata Packages: https://dhis2.org/who-package-downloads/
 Logistics:
-  - Real Time Stock: '@github(dhis2/dhis2-docs-implementation, content/lmis/real-time-stock-management.md, lmis_init)'  
+  - Real-Time Stock (RTS): '@github(dhis2/dhis2-docs-implementation, content/lmis/real-time-stock-management.md, lmis_init)'  
+  - Biomedical Equipment Life Cycle (BLC): '@github(dhis2/dhis2-docs-implementation, content/lmis/biomedical-equipment-life-cycle-management.md, lmis_init)'  
+  - Cold Chain Equipment (CCE): '@github(dhis2/dhis2-docs-implementation, content/lmis/cold-chain-equipment-life-cycle-management.md, lmis_init)'  
+  - GS1-DataMatrix Code (GS1): '@github(dhis2/dhis2-docs-implementation, content/lmis/gs1-datamatrix-code-parsing.md, lmis_init)'  
+  - Health Care Product Catalogue (HPC): '@github(dhis2/dhis2-docs-implementation, content/lmis/health-care-product-catalogue.md, lmis_init)'  
+  - Monthly Stock Reporting (MSR): '@github(dhis2/dhis2-docs-implementation, content/lmis/monthly-stock-reporting.md, lmis_init)'  
+  - Temperature Monitoring Tool (TMT): '@github(dhis2/dhis2-docs-implementation, content/lmis/temperature-monitoring-tool.md, lmis_init)'
 Support and documentation:
   - DHIS2 Documentation Guide: '@github(dhis2/dhis2-docs-implementation, content/support_documentation/dhis2-documentation-guide.md, master)'
   - Submitting quick document fixes: '@github(dhis2/dhis2-docs, src/common/submitting-a-doc-fix.md, master)'
