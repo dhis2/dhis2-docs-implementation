@@ -19,18 +19,78 @@
 >
 >LMIS logistics visualization framework
 >
->DHIS2 LMIS logistics analytics (MSR and RTS)
+>DHIS2 LMIS logistics analytics
+>**1 Monthly Stock Reporting**  
+>>**1.1 Health facility level**  
+>>>**1.1.1 Statistics**  
+>>>>MSR DV 1 - Monthly Stock Reporting / Stock receipt / Last 12 months / Health facility / Pivot table
+>>>>MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 3 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 4 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 5 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Pivot table  
+>>>>MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Pivot table
+>>>>MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Column chart
 
+>>>
+>>>**1.1.2 Indicators**  
+>>>>MSR DV 8 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 9 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 10 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 11 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 12 - Monthly Stock Reporting / Stock coverage time / range / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 13 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table  
+>>>>MSR DV 14 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 15 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table  
+>>>>MSR DV 16 - Monthly Stock Reporting / Stock report complete / Last 12 months / Health facility / Pivot table  
+>>
+>>**1.2 District level**  
+>>>**1.2.1 Statistics**  
+>>>**1.2.2 Indicators**  
+>>
+>>**1.3 Provincial level**  
+>>>**1.3.1 Statistics**  
+>>>**1.3.2 Indicators**  
+>>
+>>**1.4 Country level**  
+>>>**1.4.1 Statistics**  
+>>>**1.4.2 Indicators**  
+>
+>**2 Real-Time Stock Management**  
+>>**2.1 Health facility level**  
+>>>**2.1.1 Statistics**  
+>>>**2.1.2 Indicators**  
+>>
+>>**2.2 District level**  
+>>>**2.2.1 Statistics**  
+>>>**2.2.2 Indicators**  
+>>
+>>**2.3 Provincial level**  
+>>>**2.3.1 Statistics**  
+>>>**2.3.2 Indicators**  
+>>
+>>**2.4 Country level**  
+>>>**2.4.1 Statistics**  
+>>>**2.4.2 Indicators**  
+
+<br>  
+<br>  
 
 | Visualization  | Item | Facility | District | Region | Country | Visualiations | Offline |
 | :-------- | :---: | :---: | :---: | :---:| :---: |:---: | :---:|
 | **STATISTICS / MONTHLY** |
-| Stock item| **List** | Count |  Count |Count | Count | Pivot |
-| Stock on hand | **Sum** | Sum | Sum | Sum | Sum | Pivot |  |
-| Stock distribution| **Sum**/Average | Sum | Sum | Sum | Sum | Pivot |  |
-| Transactions| List | Count | Count |Count | Count | Pivot |
-| Monthly report|  | Count | Count | Count | Count | Pivot |
-| Health facility|  | 1 | Count | Count | Count | Pivot |  
+| Stock receipt| Sum/Average | Sum | Sum | Sum | Sum | Pivot |
+| Stock distribution| Sum/Average | Sum | Sum | Sum | Sum | Pivot |
+| Stock redistribution| Sum/Average | Sum | Sum | Sum | Sum | Pivot |
+| Stock discard| Sum/Average | Sum | Sum | Sum | Sum | Pivot |
+| Stock on hand | Sum | Sum | Sum | Sum | Sum | Pivot |
+| Stock correction | Sum/Average | Sum | Sum | Sum | Sum | Pivot |
+| Stock report complete | Sum | Sum | Sum | Sum | Sum | Pivot |
+| Monthly report| - | Count | Count | Count | Count | Pivot |
+| Health facility| - | 1 | Count | Count | Count | Pivot |  
+
+Stacked bar chart + line chart: receipt, distribution, correction, stock on hand
 
 <br>  
 <br>  
@@ -45,15 +105,10 @@
 | Stock coverage time / range | List | Count | Count | Count | Count | Pivot |  |
 | Stock coverage time / distribution | List | Count | Count | Count | Count | Pivot |  |
 | Stock discrepancy | List | Count |  Count |Count | Count | Pivot |
-| Complete report |  | Count |  Count |Count | Count | Pivot |  
 
 By default, all the visualizations above are shown as time series (by month/by day)
-
-
 <br>  
 <br>  
-
-  
 Some visualizations needed for each type:
 Visualization
 Abbr.
@@ -67,8 +122,7 @@ Single value
 Line Listing
 Map
 Offline analytics!!!
-
-xxx
+<br>  
 For each metric:
 - Definition
 - Calculation
@@ -77,34 +131,12 @@ For each metric:
 - Corrective action (include details here and only a summary in the performance management chapter?)
 - Visualization options
 
-
 Naming conventions for visualizations:
 MSR - Monthly Stock Report / Distributions / Last 12 months
 
->**MSR DV 1 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / Pivot table**  
->This report provides the monthly Stock on hand as reported at the end of every month.
->**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / Pivot table"  
->>**Columns**  
->>>**Period**: "Relative periods"  
->>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 months"  
->>
->>**Rows**  
->>>**Data**  
->>>>**Data Type**: "Data elements"  
->>>>**Selected items**: select all Data elements of the respective Data set
-To study: select DE group instead? "[Stock item list] - MSR" / "Totals only"
->>>
->>>**Filter**: "Relative periods"  
->>>>**Organisation unit**: "User organisation unit"  
->>>>>**Selected Periods**: "Last 12 months"  
->>>>**YOUR DIMENIONS**
->>>>>**Name**: "Monthly stock report - Data recording"  
->>>>>**Selected Items**: "Stock on hand"  
-
-
->**MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / Pivot table**  
->This report provides the monthly Stock distribution as reported at the end of every month.
+>**MSR DV 1 - Monthly Stock Reporting / Stock receipt / Last 12 months / Health facility / Pivot table**  
+>This report provides the monthly stock receipts as reported at the end of every month.  
+>
 >**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / Pivot table"  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -114,8 +146,31 @@ To study: select DE group instead? "[Stock item list] - MSR" / "Totals only"
 >>**Rows**  
 >>>**Data**  
 >>>>**Data Type**: "Data elements"  
->>>>**Selected items**: select all Data elements of the respective Data set
-To study: select DE group instead? "[Stock item list] - MSR" / "Totals only"
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>
+>>>**Filter**: "Relative periods"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Selected Items**: "Stock receipt"  
+>
+>**MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / Pivot table**  
+>This report provides the monthly stock distributions as reported at the end of every month.  
+>
+>**Name \(*)**: "MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / Pivot table"  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
 >>>
 >>>**Filter**: "Relative periods"  
 >>>>**Organisation unit**: "User organisation unit"  
@@ -123,6 +178,177 @@ To study: select DE group instead? "[Stock item list] - MSR" / "Totals only"
 >>>>**YOUR DIMENIONS**
 >>>>>**Name**: "Monthly stock report - Data recording"  
 >>>>>**Selected Items**: "Stock distribution"  
+>
+>**MSR DV 3 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Health facility / Pivot table**  
+>This report provides the monthly stock distributions as reported at the end of every month.
+>
+>**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock redistributions / Last 12 months / Health facility / Pivot table"  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>
+>>>**Filter**: "Relative periods"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>>**Selected Periods**: "Last 12 months"  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Selected Items**: "Stock redistribution"  
+>
+>**MSR DV 4 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / Pivot table**  
+>This report provides the monthly stock discards as reported at the end of every month.
+>
+>**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / Pivot table"  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>
+>>>**Filter**: "Relative periods"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>>**Selected Periods**: "Last 12 months"  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Selected Items**: "Stock discard"  
+>
+>**MSR DV 5 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / Pivot table**  
+>This report provides the monthly stock on hand as reported at the end of every month.
+>
+>**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / Pivot table"  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>
+>>>**Filter**: "Relative periods"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>>**Selected Periods**: "Last 12 months"  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Selected Items**: "Stock on hand"  
+>
+>**MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / Pivot table**  
+>This report provides the monthly Stock correction as reported at the end of every month.
+>
+>**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / Pivot table"  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>
+>>>**Filter**: "Relative periods"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>>**Selected Periods**: "Last 12 months"  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Selected Items**: "Stock correction"  
+>
+>**MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Pivot table**  
+>This report provides the an overview of all stock data from the previous month.
+>
+>**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Pivot table"  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>
+>>>**Filter**: "Relative periods"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>>**Selected Periods**: "Last 12 months"  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Selected Items**: "Stock distribution"  
+>
+>**MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Pivot table**  
+>This report provides the an overview of all stock data from the previous 12 months for an individual item.
+>
+>**Name \(*)**: "MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Pivot table"  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Rows**  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Selected Items**:
+>>>>>- "Stock receipt"  
+>>>>>- "Stock distribution"  
+>>>>>- "Stock redistribution"  
+>>>>>- "Stock discard"  
+>>>>>- "Stock on hand"  
+>>>>>- "Stock correction"  
+>>>
+>>>**Filter**
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>**Data**  
+>>>>>**Data Type**: "Data elements"  
+>>>>>**Selected items**: select the item of interest
+>
+>**MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Column chart**  
+>This report provides the an overview of all stock data from the previous 12 months for an individual item as a column chart with every transaction type presented as a separate column.
+>
+>**Name \(*)**: "MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Column chart"  
+>>**Series**  
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>**Selected Items**:
+>>>>- "Stock receipt"  
+>>>>- "Stock distribution"  
+>>>>- "Stock redistribution"  
+>>>>- "Stock discard"  
+>>>>- "Stock on hand"  
+>>>>- "Stock correction"  
+>>>**Category**  
+>>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>>**Filter**
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>**Data**  
+>>>>>**Data Type**: "Data elements"  
+>>>>>**Selected items**: select the item of interest
+
+
+
+
+
 
 
 Naming convention for Visualizations:
@@ -130,9 +356,6 @@ Naming convention for Visualizations:
 - Acronym for visualization type (DV = Data Visualizer etc.)
 - Number of visualization
 - DHIS2-MSR 
-
-
-
 
 xxx to be deleted xxx
 >>LMIS Statistics  
