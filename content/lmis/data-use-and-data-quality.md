@@ -23,27 +23,26 @@
 >**1 Monthly Stock Reporting**  
 >>**1.1 Health facility level**  
 >>>**1.1.1 Statistics**  
->>>>MSR DV 1 - Monthly Stock Reporting / Stock receipt / Last 12 months / Health facility / Pivot table
->>>>MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 3 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 4 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 5 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Pivot table  
->>>>MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Pivot table
->>>>MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Column chart
-
+>>>>- MSR DV 1 - Monthly Stock Reporting / Stock receipt / Last 12 months / Health facility / Pivot table
+>>>>- MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 3 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 4 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 5 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Pivot table  
+>>>>- MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Pivot table
+>>>>- MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Column chart
 >>>
 >>>**1.1.2 Indicators**  
->>>>MSR DV 8 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 9 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 10 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 11 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 12 - Monthly Stock Reporting / Stock coverage time / range / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 13 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table  
->>>>MSR DV 14 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 15 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table  
->>>>MSR DV 16 - Monthly Stock Reporting / Stock report complete / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 11 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 12 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 13 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 14 - Monthly Stock Reporting / Stock coverage time / range / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 15 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table  
+>>>>- MSR DV 16 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 17 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 18 - Monthly Stock Reporting / Stock report complete / Last 12 months / Health facility / Pivot table  
 >>
 >>**1.2 District level**  
 >>>**1.2.1 Statistics**  
