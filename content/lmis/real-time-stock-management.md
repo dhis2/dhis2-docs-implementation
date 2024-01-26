@@ -937,7 +937,7 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 >>>**Program \(*)**: "Real-Time Stock Management"  
 >>>**Trigger rule only for program stage**: "Stock on hand"  
 >>>**Name \(*)**: "RTS - Assign Stock on Hand"  
->>>**Description**: "Xx"  
+>>>**Description**: "For all transactions other than "Stock correction" (therefore for "Distribution", "Discard" and "Receipt") this Program rule adds the transaction quantity to the previous stock balance to calculate the current stock on hand."  
 >>>**Priority**:  "2"
 >>
 >>**2 Enter program rule expression**  
@@ -947,14 +947,14 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 >>>**Action details**   
 >>>>**Action \(*)**: "Assign value"  
 >>>>**Data element to assign to**: "Stock on hand"  
->>>>**Expression to evaluate and assign**: "#{RTS - Previous stock balance}+#{RTS - Stock received}-#{RTS - Stock distribution}-#{RTS - Stock discarded}"
+>>>>**Expression to evaluate and assign**: "#{RTS - Previous stock balance}+#{RTS - Stock receiptd}-#{RTS - Stock distribution}-#{RTS - Stock discard}"
 >
 >**2 Assign Stock on hand correction and Stock correction**  
 >>**1 Enter program rule details**  
 >>>**Program \(*)**: "Real-Time Stock Management"  
 >>>**Trigger rule only for program stage**: "Stock on hand"  
 >>>**Name \(*)**: "RTS - Assign Stock on hand correction and Stock correction"  
->>>**Description**: "Xx"  
+>>>**Description**: "If a "Stock correction" is entered, the Program rule assigns the "Quantity" (actual stock count) to the "Stock on hand" and calculates and stores the difference of both values as "Correction"."  
 >>>**Priority**:  "3"
 >>
 >>**2 Enter program rule expression**  
@@ -975,9 +975,9 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 >**3 Assign previous stock balance**  
 >>**1 Enter program rule details**  
 >>>**Program \(*)**: "Real-Time Stock Management"  
->>>**Trigger rule only for program stage**: "Stock on hand"
+>>>**Trigger rule only for program stage**: "Stock on hand"  
 >>>**Name \(*)**: "RTS -Assign previous stock balance"  
->>>**Description**: "Xx"  
+>>>**Description**: "Whenever a new transaction is effected, the Program rule fetches the "Stock on hand" from the previous event and temporarily stores it in the "Previous stock balance" field."  
 >>>**Priority**:  "1"
 >>
 >>**2 Enter program rule expression**  
@@ -985,8 +985,8 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 >>
 >>**3 Define program rule actions**  
 >>>**Action details**   
->>>>**Action \(*)**: "Assign value"
->>>>**Data element to assign to**: "Previous stock balance"
+>>>>**Action \(*)**: "Assign value"  
+>>>>**Data element to assign to**: "Previous stock balance"  
 >>>>**Expression to evaluate and assign**: "#{RTS - Initial stock on hand - Previous event}"
 
 #### 6.5 Program rule variable
@@ -1014,9 +1014,9 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 >>**Source type \(*)**: "Data element in current event"  
 >>**Data element**: "Stock count"  
 >
->**5 Stock discarded**
+>**5 Stock discard**
 >>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Stock discarded"  
+>>**Name \(*)**: "Stock discard"  
 >>**Source type \(*)**: "Data element in current event"  
 >>**Data element**: "Stock discard"  
 >
@@ -1032,9 +1032,9 @@ Stock correction = "Count" - "Previous stock balance", replaces "Stock on hand"
 >>**Source type \(*)**: "Data element in current event"  
 >>**Data element**: "Stock on hand"  
 >
->**8 Stock received**
+>**8 Stock receipt**
 >>**Program \(*)**: "Real-Time Stock Management"  
->>**Name \(*)**: "Stock received"  
+>>**Name \(*)**: "Stock receipt"  
 >>**Source type \(*)**: "Data element in current event"  
 >>**Data element**: "Stock receipt"  
 
