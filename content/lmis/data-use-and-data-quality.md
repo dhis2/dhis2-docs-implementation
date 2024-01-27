@@ -35,14 +35,18 @@
 >>>
 >>>**1.1.2 Indicators**  
 >>>>- MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 11 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 12 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 13 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 14 - Monthly Stock Reporting / Stock coverage time / range / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 15 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table  
->>>>- MSR DV 16 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 17 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 18 - Monthly Stock Reporting / Stock report complete / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 11 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation / Last 12 months / Health facility / Column chart  
+>>>>- MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation / Last 12 months / Health facility / Stacked column chart
+
+XXXXXXXXXXXXXXXXXXX
+>>>>- MSR DV 13 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 14 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 15 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 16 - Monthly Stock Reporting / Stock coverage time / range / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 17 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table  
+>>>>- MSR DV 18 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 19 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 20 - Monthly Stock Reporting / Stock report complete / Last 12 months / Health facility / Pivot table  
 >>
 >>**1.2 District level**  
 >>>**1.2.1 Statistics**  
@@ -152,7 +156,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>**Filter**: "Relative periods"  
 >>>>**Organisation unit**: "User organisation unit"  
 >>>>**YOUR DIMENIONS**
->>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**: "Stock receipt"  
 >
 >**MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / Pivot table**  
@@ -175,7 +179,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>**Organisation unit**: "User organisation unit"  
 >>>>>**Selected Periods**: "Last 12 months"  
 >>>>**YOUR DIMENIONS**
->>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**: "Stock distribution"  
 >
 >**MSR DV 3 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Health facility / Pivot table**  
@@ -198,7 +202,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>**Organisation unit**: "User organisation unit"  
 >>>>>**Selected Periods**: "Last 12 months"  
 >>>>**YOUR DIMENIONS**
->>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**: "Stock redistribution"  
 >
 >**MSR DV 4 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / Pivot table**  
@@ -221,7 +225,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>**Organisation unit**: "User organisation unit"  
 >>>>>**Selected Periods**: "Last 12 months"  
 >>>>**YOUR DIMENIONS**
->>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**: "Stock discard"  
 >
 >**MSR DV 5 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / Pivot table**  
@@ -244,7 +248,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>**Organisation unit**: "User organisation unit"  
 >>>>>**Selected Periods**: "Last 12 months"  
 >>>>**YOUR DIMENIONS**
->>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**: "Stock on hand"  
 >
 >**MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / Pivot table**  
@@ -267,7 +271,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>**Organisation unit**: "User organisation unit"  
 >>>>>**Selected Periods**: "Last 12 months"  
 >>>>**YOUR DIMENIONS**
->>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**: "Stock correction"  
 >
 >**MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Pivot table**  
@@ -290,7 +294,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>**Organisation unit**: "User organisation unit"  
 >>>>>**Selected Periods**: "Last 12 months"  
 >>>>**YOUR DIMENIONS**
->>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**: "Stock distribution"  
 >
 >**MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Pivot table**  
@@ -304,7 +308,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>
 >>**Rows**  
 >>>>**YOUR DIMENIONS**
->>>>>**Name**: "Monthly stock report - Data recording"  
+>>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**:
 >>>>>- "Stock receipt"  
 >>>>>- "Stock distribution"  
@@ -325,7 +329,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >**Name \(*)**: "MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Column chart"  
 >>**Series**  
 >>>**YOUR DIMENIONS**
->>>>**Name**: "Monthly stock report - Data recording"  
+>>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**:
 >>>>- "Stock receipt"  
 >>>>- "Stock distribution"  
@@ -343,6 +347,129 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>**Data**  
 >>>>>**Data Type**: "Data elements"  
 >>>>>**Selected items**: select the item of interest
+>
+>**MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Pivot table**  
+>This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve month as a Pivot table.
+>
+>**Name \(*)**: "MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Pivot table"  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>
+>>>**Filter**: "Relative periods"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report"  
+>>>>>**Selected Items**: "Coefficient of variation"  
+>>>>
+>>>**Options**  
+>>>>**Legend**  
+>>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend type**
+>>>>>>>**Selecte a legend**: tag (appears as a white tick in a green field)  
+>>>>>>>**Legend**: "Coefficient of variation"
+>>>>>>**Show legend key** tag (appears as a white tick in a green field)  
+>
+>**MSR DV 11 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Pivot table**  
+>This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve months for each item as a group of bar charts.
+>
+>**Name \(*)**: "MSR DV 11 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Column chart"  
+>>**Series**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Category**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>
+>>>**Filter**: "Relative periods"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report"  
+>>>>>**Selected Items**: "Coefficient of variation"  
+>>>
+>>>**Options**    
+>>>>**Data**  
+>>>>>**Lines**  
+>>>>>>**Target line**  
+>>>>>>>**Value**: "10"
+>>>>>>>**Title**: "Medium variability"
+>>>>>>>**Size**: "Regular"
+>>>>>>>**Position**: "Left"
+>>>>>>>**Colour**: select red
+>>>>>>**Base line**  
+>>>>>>>**Value**: "5"
+>>>>>>>**Title**: "Low variability"
+>>>>>>>**Size**: "Regular"
+>>>>>>>**Position**: "Left"
+>>>>>>>**Colour**: select green
+>>>>
+>>>>**Legend**  
+>>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend type**
+>>>>>>>**Selecte a legend**: tag (appears as a white tick in a green field)  
+>>>>>>>**Legend**: "Coefficient of variation"
+>>>>>>**Show legend key** tag (appears as a white tick in a green field)  
+>
+>**MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Stacked column chart**  
+>This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve months for each item as a stacked column chart where each stacked column represents the values from the past 12 months.
+>
+>**Name \(*)**: "MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Stacked column chart"  
+>>**Series**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Category**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>
+>>>**Filter**: "Relative periods"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>**YOUR DIMENIONS**
+>>>>>**Name**: "Monthly stock report"  
+>>>>>**Selected Items**: "Coefficient of variation"  
+>>>
+>>>**Options**    
+>>>>**Data**  
+>>>>>**Lines**  
+>>>>>>**Target line**  
+>>>>>>>**Value**: "120"
+>>>>>>>**Title**: "Medium variability"
+>>>>>>>**Size**: "Regular"
+>>>>>>>**Position**: "Left"
+>>>>>>>**Colour**: select red
+>>>>>>**Base line**  
+>>>>>>>**Value**: "60"
+>>>>>>>**Title**: "Low variability"
+>>>>>>>**Size**: "Regular"
+>>>>>>>**Position**: "Left"
+>>>>>>>**Colour**: select green
+>>>>
+>>>>**Legend**  
+>>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend type**
+>>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>>**Legend**: "Coefficient of variation"
+>>>>>>**Show legend key** tag (appears as a white tick in a green field)  
+
+
+
 
 
 
