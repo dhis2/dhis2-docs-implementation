@@ -38,9 +38,7 @@ The required metadata settings seetings are presented in the order in which it i
 >>2.3 Data element group  
 > 
 >**3 DATA SET**  
->>3.1 Data set  
->>3.1.1 Monthly stock report - Data recording  
->>3.1.2 Monthly stock report - Data recording and calculation 
+>>3.1 Monthly stock reporting
 > 
 >**4 INDICATOR**  
 >>4.1 Indicator  
@@ -200,35 +198,6 @@ The configuration for two Data sets are presented below, but either the one or t
 >>>>>>**[Section 2]**  
 >>>>>>**Data elements**  
 >>>>>>>[Data element]  
->
->**2 MSR - Monthly stock report - Data recording and calculation**  
-In addition to the configuration presented above, this Default Data Entry Form automatically calculates the "Opening balance" (stock on hand from the end of the previous month), "Closing balance" (Opening balance plus all stock receipts minus all stock issues) as well as "Stock discrepancy" (difference between the Stock on hand as counted and the calculated Closing balance).
->>**Name \(*)**: "MSR - Monthly stock report - Data recording and calculation"  
->>**Short name \(*)**: "MSR - Monthly stock report - Data recording and calculation"
->>**Color**: "#00838F"  
->>**Expiry days**: "5"  
->>**Open future periods for data entry**: "1"  
->>**Days after period to qualify for timely submission**: "5"  
->>**Period type**: "Monthly"  
->>**Category combination**: "None"  
->>**Render sections as tabs**: tag (appears as white tick in a blue square)  
->>**Data elements**  
->>>*Add all Data elements with the suffix "MSR" required for the respective health facility*.
->>
->>**Organisation units selected**: (select as for the Tracker Program) 
->>
->>**Actions**
->>>**Manage sections**
->>>>**Name**
->>>>>**1 DORA**
->>>>>>**DORA**
->>>>>>**Data elements**
->>>>>>>**CLOXACILLIN, 250 mg, caps. - MSR**
->>>>>>>**FOLIC ACID, 5 mg, tab. - MSR**
->>>>>**2 [Section 2]**
->>>>>>**[Section 2**
->>>>>>**Data elements**
->>>>>>>**[Data element]**
 
 ### 4 Indicator
 
@@ -735,7 +704,7 @@ The following legends are applied to some visualizations:
 >>>**Start value**: "1"  
 >>>**End value**: "1000000"  
 >>>**Color code**: "#FF2000" (red)  
->>>
+>
 >**2 Stock coverage time**  
 >>**Name \(*)**: "Stock coverage time - MSR**  
 >>**Code**: "STOCK_COVERAGE_TIME"  
@@ -764,6 +733,25 @@ The following legends are applied to some visualizations:
 >>>**Start value**: "12"  
 >>>**End value**: "1000" 
 >>>**Color code**: "#DC00FF" (purple)  
+>
+>**3 Coefficient of variation**  
+>>**Name \(*)**: "Coefficient of variation - MSR**  
+>>**Code**: "COEFFICIENT_OF_VARIATIONS"  
+>>**Name**
+>>>**Name**: "Low variability"  
+>>>**Start value**: "0  
+>>>**End value**: "5"  
+>>>**Color code**: "#41F80E" (Green)  
+>>
+>>>**Name**: "Medium variability"  
+>>>**Start value**: "5"  
+>>>**End value**: "10"  
+>>>**Color code**: "#FEB24C" (yellow)  
+>>
+>>>**Name**: "Erratic variability"  
+>>>**Start value**: "10"  
+>>>**End value**: "100" 
+>>>**Color code**: "#F03B20" (red)  
 
 #### 5.2 Predictor
 
