@@ -29,30 +29,34 @@
 >>>>- MSR DV 4 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / Pivot table  
 >>>>- MSR DV 5 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / Pivot table  
 >>>>- MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Pivot table  
->>>>- MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Pivot table
->>>>- MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last month / Individual item / Health facility / Pivot table
->>>>- MSR DV 10 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Column chart
+>>>>- MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last 3 month / Health facility / Pivot table  
+>>>>- MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / Pivot table
+>>>>- MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Column chart
 >>>
 >>>**1.1.2 Indicators**  
->>>>- MSR DV 11 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x10 / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / Health facility / Column chart  
->>>>- MSR DV 13 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / Health facility / Stacked column chart
->>>>- MSR DV 14 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 15 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / Bar chart  
->>>>- MSR DV 16 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Single value chart  
->>>>- MSR DV 17 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Gauge chart  
->>>>- MSR DV 18 - Monthly Stock Reporting / Stockout by item / Last 12 months / Health facility / Stacked column chart table  
->>>>- MSR DV 19 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 20 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Column chart  
-<br>XXXXXXXXXXXXXXXXXXXXX
+>>>>- MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x10 / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 11 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / Health facility / Stacked bar chart  
+>>>>- MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / Health facility / Bar chart
+>>>>- MSR DV 13 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 14 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / Bar chart  
+>>>>- MSR DV 15 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Single value chart  
+>>>>- MSR DV 16 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Gauge chart  
+>>>>- MSR DV 17 - Monthly Stock Reporting / Stockout by item / Last 12 months / Health facility / Stacked column chart table  
+>>>>- MSR DV 18 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 19 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Column chart  
+>>>>- MSR DV 20 - Monthly Stock Reporting / Stockout count / Last month / Health facility / Single value chart  
+
+
 >>>>- MSR DV 21 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table  
 >>>>- MSR DV 22 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Bar chart?????  
->>>>- MSR DV 23 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 24 - Monthly Stock Reporting / Stock coverage time / range / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 25 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table  
->>>>- MSR DV 26 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 27 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table  
+
+<br>XXXXXXXXXXXXXXXXXXXXX
+
+>>>>- MSR DV 22 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 23 - Monthly Stock Reporting / Stock coverage time / range / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table  
+>>>>- MSR DV 25 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 26 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table  
 >>
 >>**1.2 District level**  
 >>>**1.2.1 Statistics**  
@@ -291,11 +295,11 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock correction"  
 >
->**MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Pivot table**  
+>**MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last 3 month / Health facility / Pivot table**  
 >This report provides the an overview of all stock data from the previous month.
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Pivot table"  
+>**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock report complete / Last 3 months / Health facility / Pivot table"  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -427,11 +431,11 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>>>**Legend**: "Coefficient of variation"
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Column chart**  
+>**MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Bar chart**  
 >This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve months for each item as a group of column charts. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer.
 >
->**Visualization type**: select "Column"
->**Name \(*)**: "MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Column chart"  
+>**Visualization type**: select "Bar"
+>**Name \(*)**: "MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Bar chart"  
 >>**Series**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -473,11 +477,11 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>>>**Legend**: "Coefficient of variation"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 13 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 month / Individual item / Health facility / Stacked column chart**  
->This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve months for each item as a stacked column chart where each stacked column represents the values from the past 12 months. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer.
+>**MSR DV 13 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 month / Individual item / Health facility / Stacked bar chart**  
+>This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve months for each item as a stacked bar chart where each stacked bar represents the values from the past 12 months. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer.
 >
->**Visualization type**: select "Stacked column"
->**Name \(*)**: "MSR DV 13 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Stacked column chart"  
+>**Visualization type**: select "Stacked bar"
+>**Name \(*)**: "MSR DV 13 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Individual item / Health facility / Stacked bar chart"  
 >>**Series**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -623,7 +627,7 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>>>**Legend**: "Stock availability / %"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 18 - Monthly Stock Reporting / Stockout by item / Last 12 months / Health facility / Stacked column chart table**  
+>**MSR DV 18 - Monthly Stock Reporting / Stockout by item / Last 12 months / Health facility / Stacked column chart**  
 >This report displays each item which had a stockout during the past 12 months as a separate Stacked column for each of the last 12 months.
 >
 >**Visualization type**: select "Stacked column"  
