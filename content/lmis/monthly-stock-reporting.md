@@ -764,66 +764,78 @@ The following 3 Predictors need to be created for each item (Data element) separ
 
 - Stock discrepancy: Stock on hand (as counted) - Closing balance
 
->**1 [Item] - Closing balance**  
->>**Name \(*)**: "[Item] - Closing balance - MSR"  
->>**Short name \(*)**: "[Item] - Closing balance"
->>**Output data element \(*)**: "[Item] - MSR"  
->>**Output category option combo** "Closing balance"  
->>**Period type \(*)**: "Monthly"  
->>**Organisation unit levels** "Facility"  
->>**Organisation units providing data \(*)** "At selected level(s) only"  
-*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
->>**Generator \(*)**
->>>**Description**: "CLOXACILLIN, 250 mg, caps. - Opening balance - MSR"  
->>>**Expression**:  
->>>#{uwQn42CZ5qI.DDi5WPwhtVZ}
-+#{uwQn42CZ5qI.FhxQW61lsG7}
--#{uwQn42CZ5qI.VCzZmn4Xpjg}
--#{uwQn42CZ5qI.gSTwuZJQ2sl}
--#{uwQn42CZ5qI.NwUY4l4x6Gl}
--#{uwQn42CZ5qI.fzhyKGI9Pa0}
-"avg(#{uwQn42CZ5qI.eKdBeWyrmPN})"  
->avg([Item - MSR] Stock on hand)*
->>
->>[Item - MSR] Opening balance + [Item - MSR] Stock received - [Item - MSR] Stock distributed - [Item - MSR] Stock redistributed - [Item - MSR] Stock discarded - [Item - MSR] Stock correction
->>
->>**Sequential sample count \(*)**: "1"  
->>**Annual sample count \(*)**: "0"  
->>
->**2 [Item] - Opening balance**  
->>**Name \(*)**: "[Item] - Opening balance - MSR"  
->>**Short name \(*)**: "[Item] - Opening balance"
->>**Output data element \(*)**: "[Item] - MSR"  
->>**Output category option combo** "Opening balance"  
->>**Period type \(*)**: "Monthly"  
->>**Organisation unit levels** "Facility"  
->>**Organisation units providing data \(*)** "At selected level(s) only"  
-*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
->>**Generator \(*)**
->>>**Description**: "CLOXACILLIN, 250 mg, caps. - Opening balance - MSR"
->>>**Expression**: "avg(#{uwQn42CZ5qI.eKdBeWyrmPN})"  
->avg([Item] - MSR Stock on hand)*
->>
->>**Sequential sample count \(*)**: "1"  
->>**Annual sample count \(*)**: "0"  
->>
->>*Note: the Predictor "copies" the "Stock on hand" from the previous month to the "Opening balance" field of the current month.*
->
->**3 [Item] - Stock discrepancy**  
+>**1 [Stock list] - Coefficient of variation - MSR**  
 >>**Name \(*)**: "[Item] - Stock discrepancy - MSR"  
 >>**Short name \(*)**: "[Item] - Stock discrepancy"
->>**Output data element \(*)**: "[Item] - MSR"  
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Coefficient of variation"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "[Stock list] - Coefficient of variation"
+>>>**Expression**: "forEach ?de in :DEG:nYcQWVqVsjx -->
+stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10"
+>>
+>>**Sequential sample count \(*)**: "6"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**2 [Stock list] - Stock coverage time - MSR**  
+>>**Name \(*)**: "[Stock list] - Stock coverage - MSR"  
+>>**Short name \(*)**: "[Stock list] - Stock coverage - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Stock coverage"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "[Stock list] - Stock coverage time"
+>>>**Expression**: "forEach ?de in :DEG:nYcQWVqVsjx -->
+#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs}"
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**3 [Stock list] - Stock discrepancy - MSR**  
+>>**Name \(*)**: "[Stock list] - Stock discrepancy - MSR"  
+>>**Short name \(*)**: "[Stock list] - Stock discrepancy - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
 >>**Output category option combo** "Stock discrepancy"  
 >>**Period type \(*)**: "Monthly"  
 >>**Organisation unit levels** "Facility"  
 >>**Organisation units providing data \(*)** "At selected level(s) only"  
 *THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
 >>**Generator \(*)**
->>>**Description**: "CLOXACILLIN, 250 mg, caps. - Stock discrepancy - MSR"
->>>**Expression**: "#{uwQn42CZ5qI.eKdBeWyrmPN}-#{uwQn42CZ5qI.Q2LQDdGMNXm"  
->[Item - MSR] Stock on hand - [Item - MSR] - Closing balance
+>>>**Description**: "[Stock list] - Stock discrepancy"
+>>>**Expression**: "forEach ?de in :DEG:nYcQWVqVsjx -->
+>>>avg(#{?de.iIC4YhgrxQY})
+>>>+#{?de.PnxWz4HI5V0}
+>>>-#{?de.zogrUrI7Crs}
+>>>-#{?de.Q1Wh1szjrkC}
+>>>-#{?de.CE1WL7cxNry}
+>>>-#{?de.ERgIsOh37NR}
+>>>-#{?de.iIC4YhgrxQY}"
 >>
 >>**Sequential sample count \(*)**: "1"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**4 [Stock list] - Stockout Yes/No - MSR**  
+>>**Name \(*)**: "[Stock list] - Stockout Yes/No - MSR"  
+>>**Short name \(*)**: "[Stock list] - Stockout Yes/No - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Stockout Yes/No"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**
+>>>**Description**: "[Stock list] - Stockout Yes/No"
+>>>**Expression**: "forEach ?de in :DEG:nYcQWVqVsjx -->
+if(#{?de.iIC4YhgrxQY}==0,1,0)"
+>>
+>>**Sequential sample count \(*)**: "0"  
 >>**Annual sample count \(*)**: "0"  
 
 #### 5.3 Predictor group
