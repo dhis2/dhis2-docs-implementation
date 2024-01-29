@@ -31,7 +31,7 @@
 >>>>- MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / By item / Pivot table  
 >>>>- MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last 3 month / Health facility / By item / Pivot table  
 >>>>- MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / By item / Pivot table
->>>>- MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Across items / Column chart
+>>>>- MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / Individual item / Column chart
 >>>
 >>>**1.1.2 Indicators**  
 >>>>- MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x10 / Last 12 months / Health facility / By item / Pivot table  
@@ -39,6 +39,7 @@
 >>>>- MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / Health facility / By item / Bar chart
 >>>>- MSR DV 13 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / By item / Pivot table  
 >>>>- MSR DV 14 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / Across items / Bar chart  
+<br>
 >>>>- MSR DV 15 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Across items/ Single value chart  
 >>>>- MSR DV 16 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Across items / Gauge chart  
 >>>>- MSR DV 17 - Monthly Stock Reporting / Stockout by item / Last 12 months / Health facility / By item / Stacked column chart  
@@ -342,11 +343,11 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>>**Data Type**: "Data elements"  
 >>>>**Selected items**: select the item of interest
 >
->**MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Individual item / Health facility / Across items / Column chart**  
+>**MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / Individual item / Column chart**  
 >This report provides an overview of all stock data from the past 12 months represented as a bar chart for each of the transactions only for a single item.
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: **MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last month / Health facility / Across items / Pivot table**  
+>**Name \(*)**: **MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / Individual item / Column chart**  
 >>**Series**  
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
