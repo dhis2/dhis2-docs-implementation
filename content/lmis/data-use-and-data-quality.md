@@ -47,14 +47,16 @@
 >>>>- MSR DV 20 - Monthly Stock Reporting / Stockout count / Last month / Health facility / Single value chart  
 >>>>- MSR DV 21 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table  
 >>>>- MSR DV 22 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Bar chart  
+>>>>- MSR DV 23 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 month / Health facility / Pivot table  
+>>>>- MSR DV 25 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 month / Health facility / Column chart  
+>>>>- MSR DV 26 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Column chart  
 
 <br>XXXXXXXXXXXXXXXXXXXXX
 
->>>>- MSR DV 22 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 23 - Monthly Stock Reporting / Stock coverage time / range / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table  
->>>>- MSR DV 25 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
->>>>- MSR DV 26 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table  
+
+>>>>- MSR DV 27 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
+>>>>- MSR DV 28 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table  
 >>
 >>**1.2 District level**  
 >>>**1.2.1 Statistics**  
@@ -718,8 +720,137 @@ MSR - Monthly Stock Report / Distributions / Last 12 months
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 month"  
-
-
+>
+>**MSR DV 23 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table**  
+>This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the past 12 months.
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR DV 23 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table"  
+>>**Columns** 
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stockout coverage"  
+>
+>**MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / Health facility / Pivot table**  
+>This report displays a Pivot table by item with the number of items for which the coverage time fell into the respective coverage time bins (stockout, 1 to 12 months, 1-2 and 2-3 years or greater than or equal to 3 years) for the past 12 months.
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table"  
+>>**Columns** 
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Data element group**: select "Stock coverage time"
+>>>>**Selected items**: select the following indicators in the following order:
+>>>>-  "Stockout count" 
+>>>>-  "0-1 months" 
+>>>>-  "1-2 months" 
+>>>>-  "2-3 months" 
+>>>>-  "3-4 months" 
+>>>>-  "4-5 months" 
+>>>>-  "5-6 months" 
+>>>>-  "6-7 months" 
+>>>>-  "7-8 months" 
+>>>>-  "8-9 months" 
+>>>>-  "9-10 months" 
+>>>>-  "10-11 months" 
+>>>>-  "11-12 months" 
+>>>>-  "1-2 years" 
+>>>>-  "2-3 years" 
+>>>>-  ">=3 years" 
+>>
+>>**Rows**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stockout coverage"  
+>
+>**MSR DV 25 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 month / Health facility / Column chart**  
+>This report displays a group of column charts representing the stock coverage time distribution (in months and years) for the past 12 months.
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR DV 25 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 month / Health facility / Column chart"  
+>>**Series** 
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Data element group**: select "Stock coverage time"
+>>>>**Selected items**: select the following indicators in the following order:
+>>>>-  "Stockout count" 
+>>>>-  "0-1 months" 
+>>>>-  "1-2 months" 
+>>>>-  "2-3 months" 
+>>>>-  "3-4 months" 
+>>>>-  "4-5 months" 
+>>>>-  "5-6 months" 
+>>>>-  "6-7 months" 
+>>>>-  "7-8 months" 
+>>>>-  "8-9 months" 
+>>>>-  "9-10 months" 
+>>>>-  "10-11 months" 
+>>>>-  "11-12 months" 
+>>>>-  "1-2 years" 
+>>>>-  "2-3 years" 
+>>>>-  ">=3 years" 
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>
+>>**MSR DV 26 - Monthly Stock Reporting / Stock coverage time / distribution / Last / Health facility / Column chart**  
+>This report displays a group of column charts representing the stock coverage time distribution (in months and years) for the last month.
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Pivot table"  
+>>**Series** 
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Data element group**: select "Stock coverage time"
+>>>>**Selected items**: select the following indicators in the following order:
+>>>>-  "Stockout count" 
+>>>>-  "0-1 months" 
+>>>>-  "1-2 months" 
+>>>>-  "2-3 months" 
+>>>>-  "3-4 months" 
+>>>>-  "4-5 months" 
+>>>>-  "5-6 months" 
+>>>>-  "6-7 months" 
+>>>>-  "7-8 months" 
+>>>>-  "8-9 months" 
+>>>>-  "9-10 months" 
+>>>>-  "10-11 months" 
+>>>>-  "11-12 months" 
+>>>>-  "1-2 years" 
+>>>>-  "2-3 years" 
+>>>>-  ">=3 years" 
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
 
 
 
