@@ -863,60 +863,56 @@ Xx
 
 ## Data Visualizer App - Analytics
 
->**1 Monthly Stock Reporting**  
->>**1.1 Health facility level**  
->>>**1.1.1 Statistics**  
->>>>- MSR - Stock receipt - Pivot table
->>>>- MSR - Stock distribution - Pivot table  
->>>>- MSR - Stock redistribution - Pivot table  
->>>>- MSR - Stock discard - Pivot table  
->>>>- MSR - Stock on hand - Pivot table  
->>>>- MSR - Stock correction - Pivot table  
->>>>- MSR - Stock report complete - Last 3 months - Pivot table  
->>>>- MSR - Stock report complete - Last 12 months - Pivot table  
->>>>- MSR - Stock report complete - Column chart
->>>
->>>**1.1.2 Indicators**  
->>>>- MSR - Coefficient of Variation x10 - Pivot table  
->>>>- MSR - Coefficient of Variation x 10 - Stacked bar chart  
->>>>- MSR - Coefficient of Variation x 10 - Bar chart
->>>>- MSR - Stock availability - Pivot table  
->>>>- MSR - Stock availability - Bar chart  
->>>>- MSR - Stock availability - Single value chart  
->>>>- MSR - Stock availability - Gauge chart  
->>>>- MSR - Stockouts - Stacked column chart  
->>>>- MSR - Stockout count - Pivot table  
->>>>- MSR - Stockout count - Column chart  
->>>>- MSR - Stockout count - Single value chart  
->>>>- MSR - Stockout length - Pivot table  
->>>>- MSR - Stockout length - Bar chart  
->>>>- MSR - Stock coverage time - Pivot table  
->>>>- MSR - Stock coverage time distribution - Pivot table  
->>>>- MSR - Stock coverage time distribution - Last 12 months - Column chart  
->>>>- MSR - Stock coverage time distribution - Last month - Column chart  
->>>>- MSR - Stock discrepancy - Pivot table  
->>>>- MSR - Stock discrepancy count - Column chart  
->>
->>**1.2 District level**  
->>>**1.2.1 Statistics**  
->>>**1.2.2 Indicators**  
-
-XXX
-For District / Regional / National (makes no sense for facility)
->>>>- MSR DV 21 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Map  
->>>>- MSR DV 17 - Monthly Stock Reporting / Stock availability / Last months / Health facility / Map
-
->>**1.3 Provincial level**  
->>>**1.3.1 Statistics**  
->>>**1.3.2 Indicators**  
->>
->>**1.4 Country level**  
->>>**1.4.1 Statistics**  
->>>**1.4.2 Indicators**  
+>**1 Health facility level**  
+>>**1.1 Statistics**  
+>>>- MSR - Stock receipt - Pivot table
+>>>- MSR - Stock distribution - Pivot table  
+>>>- MSR - Stock redistribution - Pivot table  
+>>>- MSR - Stock discard - Pivot table  
+>>>- MSR - Stock on hand - Pivot table  
+>>>- MSR - Stock correction - Pivot table  
+>>>- MSR - Stock report complete - Last 3 months - Pivot table  
+>>>- MSR - Stock report complete - Last 12 months - Pivot table  
+>>>- MSR - Stock report complete - Column chart
 >
-
+>>**1.2 Indicators**  
+>>>- MSR - Coefficient of Variation x10 - Pivot table  
+>>>- MSR - Coefficient of Variation x 10 - Stacked bar chart  
+>>>- MSR - Coefficient of Variation x 10 - Bar chart
+>>>- MSR - Stock availability - Pivot table  
+>>>- MSR - Stock availability - Bar chart  
+>>>- MSR - Stock availability - Single value chart  
+>>>- MSR - Stock availability - Gauge chart  
+>>>- MSR - Stockouts - Stacked column chart  
+>>>- MSR - Stockout count - Pivot table  
+>>>- MSR - Stockout count - Column chart  
+>>>- MSR - Stockout count - Single value chart  
+>>>- MSR - Stockout length - Pivot table  
+>>>- MSR - Stockout length - Bar chart  
+>>>- MSR - Stock coverage time - Pivot table  
+>>>- MSR - Stock coverage time distribution - Pivot table  
+>>>- MSR - Stock coverage time distribution - Last 12 months - Column chart  
+>>>- MSR - Stock coverage time distribution - Last month - Column chart  
+>>>- MSR - Stock discrepancy - Pivot table  
+>>>- MSR - Stock discrepancy count - Column chart  
+>
+>**2 District level**  
+>>**2.1 Statistics**  
+>>**2.2 Indicators**  
+>>>- MSR DV 21 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Map  
+>>>- MSR DV 17 - Monthly Stock Reporting / Stock availability / Last months / Health facility / Map
+>
+>**3 Provincial level**  
+>>**3.1 Statistics**  
+>>**3.2 Indicators**  
+>
+>**4 Country level**  
+>>**4.1 Statistics**  
+>>**4.2 Indicators**  
+>
+>**5 Visualization overview**  
+>
 <br>  
-
 | Visualization  | Item | Facility | District | Region | Country | Visualiations | Offline |
 | :-------- | :---: | :---: | :---: | :---:| :---: |:---: | :---:|
 | **STATISTICS / MONTHLY** |
@@ -929,7 +925,6 @@ For District / Regional / National (makes no sense for facility)
 | Stock report complete | Sum | Sum | Sum | Sum | Sum | Pivot |
 | Monthly report| - | Count | Count | Count | Count | Pivot |
 | Health facility| - | 1 | Count | Count | Count | Pivot |  
-
 Stacked bar chart + line chart: receipt, distribution, correction, stock on hand
 
 <br>  
@@ -948,11 +943,14 @@ Stacked bar chart + line chart: receipt, distribution, correction, stock on hand
 By default, all the visualizations above are shown as time series (by month/by day)
 <br>  
 
->**MSR DV 1 - Monthly Stock Reporting / Stock receipt / Last 12 months / Health facility / By item / Pivot table**  
->This report provides the monthly stock receipts as reported at the end of every month.  
+### Statistics
+
+>**MSR - Stock receipt - Pivot table**  
 >
->**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / By item / Pivot table"  
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock receipt - Pivot table"  
+>**Description**: "MSR DV 1 - Monthly Stock Reporting / Stock receipt / Last 12 months / Health facility / By item / Pivot table  
+This report provides the monthly stock receipts as reported at the end of every month."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -971,11 +969,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**: "Stock receipt"  
 >
->**MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / By item / Pivot table**  
->This report provides the monthly stock distributions as reported at the end of every month.  
+>**MSR - Stock distribution - Pivot table**  
 >
->**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / By item / Pivot table"  
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock distribution - Pivot table"  
+>**Description**: "MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / Health facility / By item / Pivot table  
+This report provides the monthly stock distributions as reported at the end of every month."
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -995,11 +994,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock distribution"  
 >
->**MSR DV 3 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Health facility / By item / Pivot table**  
->This report provides the monthly stock redistributions as reported at the end of every month.
+>**MSR - Stock redistribution - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock redistributions / Last 12 months / Health facility / By item / Pivot table"  
+>**Name \(*)**: "MSR - Stock redistribution - Pivot table"  
+>**Description**: "MSR DV 3 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Health facility / By item / Pivot table.    
+This report provides the monthly stock redistributions as reported at the end of every month."
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1019,11 +1019,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock redistribution"  
 >
->**MSR DV 4 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / By item / Pivot table**  
->This report provides the monthly stock discards as reported at the end of every month.
+>**MSR - Stock discard - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / By item / Pivot table"  
+>**Name \(*)**: "This report provides the monthly stock discards as reported at the end of every month."  
+>**Description**: "MSR DV 4 - Monthly Stock Reporting / Stock discard / Last 12 months / Health facility / By item / Pivot table  
+This report provides the monthly stock discards as reported at the end of every month."
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1043,11 +1044,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock discard"  
 >
->**MSR DV 5 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / By item / Pivot table**  
->This report provides the monthly stock on hand as reported at the end of every month.
+>**MSR DV 5 - MSR - Stock on hand - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / By item / Pivot table"  
+>**Name \(*)**: "MSR - Stock on hand - Pivot table"
+>**Description**: "MSR DV 5 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / By item / Pivot table  
+This report provides the monthly stock on hand as reported at the end of every month.
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1067,11 +1069,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock on hand"  
 >
->**MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / By item / Pivot table**  
->This report provides the monthly stock corrections as reported at the end of every month.
+>**MSR - Stock correction - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / By item / Pivot table"  
+>**Name \(*)**: "MSR - Stock correction - Pivot table"  
+>**Description**: "MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / By item / Pivot table
+This report provides the monthly stock corrections as reported at the end of every month."
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1091,11 +1094,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock correction"  
 >
->**MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last 3 month / Health facility / By item / Pivot table**  
->This report provides an overview of all stock data from the last month.
+>**MSR - Stock report complete - Last 3 months - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 1 - Monthly Stock Reporting / Stock report complete / Last 3 months / Health facility / By item / Pivot table"  
+>**Name \(*)**: "MSR - Stock report complete - Last 3 months - Pivot table"
+>**Description**: "MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last 3 month / Health facility / By item / Pivot table
+This report provides an overview of all stock data from the last month."
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1115,11 +1119,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock distribution"  
 >
->**MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / By item / Pivot table**  
->This report provides the an overview of all stock data from the previous 12 months.
+>**MSR - Stock report complete - Last 12 months - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / By item / Pivot table"  
+>**Name \(*)**: "MSR - Stock report complete - Last 12 months - Pivot table"  
+>**Description**: "MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / By item / Pivot table
+This report provides the an overview of all stock data from the previous 12 months."   
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1142,11 +1147,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Data Type**: "Data elements"  
 >>>>**Selected items**: select the item of interest
 >
->**MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / Individual item / Column chart**  
->This report provides an overview of all stock data from the past 12 months represented as a bar chart for each of the transactions only for a single item.
+>**MSR - Stock report complete - Column chart**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: **MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / Individual item / Column chart**  
+>**Name \(*)**: **MSR - Stock report complete - Column chart**
+>**Description**: "MSR DV 9 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / Individual item / Column chart
+This report provides an overview of all stock data from the past 12 months represented as a bar chart for each of the transactions only for a single item."  
 >>**Series**  
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
@@ -1169,11 +1175,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Data Type**: "Data elements"  
 >>>>**Selected items**: select one item of interest
 >
->**MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 month / Health facility / By item / Pivot table**  
->This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve month as a Pivot table. Since decimals cannot be displayed in this report, the result of the actual calculation is multiplied by 10 and rounded to the next integer.
+>**MSR - Coefficient of Variation x10 - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Health facility / By item / Pivot table"  
+>**Name \(*)**: "MSR - Coefficient of Variation x10 - Pivot table"  
+>**Description**: "MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x10 / Last 12 months / Health facility / By item / Pivot table
+This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve month as a Pivot table. Since decimals cannot be displayed in this report, the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1200,11 +1207,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>>>**Legend**: "Coefficient of variation"
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 11 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Health facility / By item / Stacked bar chart**  
->This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve months for each item as a stacked bar chart where each stacked bar represents the values from the past 12 months. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer.
+>**MSR - Coefficient of Variation x 10 - Stacked bar chart**  
 >
 >**Visualization type**: select "Stacked bar"
->**Name \(*)**: "MSR DV 11 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation report / Last 12 month / Health facility / By item / Stacked bar chart"  
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 - Stacked bar chart"  
+>**Description**: "MSR DV 11 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / Health facility / Across items / Stacked bar chart
+This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for each of the twelve months. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
 >>**Series**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1246,11 +1254,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>>>**Legend**: "Coefficient of variation"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 month / Health facility / By item / Column chart**  
->This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for each of the twelve months. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer.
+>**MSR - Coefficient of Variation x 10 - Bar chart**  
 >
 >**Visualization type**: select "Bar"
->**Name \(*)**: "MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 month / Health facility / By item / Column chart"  
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 - Bar chart"  
+>**Description** "MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / Health facility / By item / Bar chart
+This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for each of the twelve months. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
 >>**Series**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1292,11 +1301,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>>>**Legend**: "Coefficient of variation"
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 13 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / By item / Pivot table**  
->This report provides the stock availability across all stock items for an individual health facility over the last 12 months with a colour legend.
+>**MSR - Stock availability - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR DV 13 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / By item / Pivot table"
+>**Name \(*)**: "MSR - Stock availability - Pivot table"  
+>**Description**: "MSR DV 13 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / By item / Pivot table
+This report provides the stock availability across all stock items for an individual health facility over the last 12 months with a colour legend."
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1318,11 +1328,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>>>**Legend**: "Stock availability / %"
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 14 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / Across items / Bar chart**  
->This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the past 12 months as column charts with a legend.
+>**MSR - Stock availability - Bar chart**  
 >
 >**Visualization type**: select "Bar"
->**Name \(*)**: "MSR DV 14 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / Across items / Bar chart" 
+>**Name \(*)**: "MSR - Stock availability - Bar chart"  
+>**Description**: "MSR DV 14 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / Bar chart
+This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the past 12 months as column charts with a legend."  
 >>**Series**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -1344,11 +1355,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>>>**Legend**: "Stock availability / %"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 15 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Across items / Single value chart**  
->This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month as a singel value chart with a legend.
+>**MSR - Stock availability - Single value chart**  
 >
 >**Visualization type**: select "Single value"
->**Name \(*)**: "MSR DV 15 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Across items / Single value chart"  
+>**Name \(*)**: "MSR - Stock availability - Single value chart"  
+>**Description**: "MSR DV 15 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Single value chart
+This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month as a single value chart with a legend."
 >>**Series**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -1370,11 +1382,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>>>**Legend**: "Stock availability / %"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 16 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Across items / Gauge chart**  
->This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month as a gauge  chart with a legend.
+>**MSR - Stock availability - Gauge chart**  
 >
 >**Visualization type**: select "Gauge"
->**Name \(*)**: "MSR DV 16 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Across items / Gauge chart"  
+>**Name \(*)**: "MSR - Stock availability - Gauge chart"  
+>**Description**: "MSR DV 16 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Gauge chart
+This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month as a gauge  chart with a legend."
 >>**Series**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -1396,11 +1409,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>>>**Legend**: "Stock availability / %"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
->**MSR DV 17 - Monthly Stock Reporting / Stockout by item / Last 12 months / Health facility / By item / Stacked column chart**  
->For each of the last 12 months, this report displays a separate stacked column chart with all items which had a stockout.
+>**MSR - Stockouts - Stacked column chart**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR DV 17 - Monthly Stock Reporting / Stockout by item / Last 12 months / Health facility / By item / Stacked column chart"  
+>**Name \(*)**: "MSR - Stockouts - Stacked column chart"  
+>**Description**: "MSR DV 17 - Monthly Stock Reporting / Stockout by item / Last 12 months / Health facility / By item / Stacked column chart
+For each of the last 12 months, this report displays a separate stacked column chart with all items which had a stockout."  
 >>**Series** 
 >>>**Data**  
 >>>>**Data Type**: "Data elements"  
@@ -1419,11 +1433,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout Yes/No"  
 >
->**MSR DV 18 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Across items / Pivot table**  
->This report displays the number of stockouts for all items across a health facility for each of the past 12 months as a Pivot table.
+>**MSR - Stockout count - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR DV 18 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Across items / Pivot table"  
+>**Name \(*)**: "MSR - Stockout count - Pivot table"  
+>**Description**: "MSR DV 18 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Pivot table
+This report displays the number of stockouts for all items across a health facility for each of the past 12 months as a Pivot table."  
 >>**Columns** 
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1455,11 +1470,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
 >
->**MSR DV 20 - Monthly Stock Reporting / Stockout count / Last month / Health facility / Across items / Single value chart**  
->This report displays the number of stockouts during the last month as a single value chart.
+>**MSR - Stockout count - Single value chart**  
 >
 >**Visualization type**: select "Single value"
->**Name \(*)**: "MSR DV 15 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Across items / Single value chart"  
+>**Name \(*)**: "MSR - Stockout count - Single value chart"  
+>**Description**: "MSR DV 20 - Monthly Stock Reporting / Stockout count / Last month / Health facility / Single value chart
+This report displays the number of stockouts during the last month as a single value chart."  
 >>**Series**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -1471,11 +1487,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last month"  
 >
->**MSR DV 21 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table**  
->This report displays a Pivot table by item with a "1" indicating a stockout (and "0" indicating stock was available) with a total for the past 12 months.
+>**MSR - Stockout length - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR DV 21 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / By item / Pivot table"  
+>**Name \(*)**: "MSR - Stockout length - Pivot table"  
+>**Descriptions**: "MSR DV 21 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table 
+This report displays a Pivot table by item with a "1" indicating a stockout (and "0" indicating stock was available) with a total for the past 12 months."  
 >>**Columns** 
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
@@ -1494,11 +1511,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
 >
->**MSR DV 22 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / By item / Bar chart**  
->This report displays a bar chart with the number of stockouts for each item during the past 12 months.
+>**MSR - Stockout length - Bar chart**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR DV 22 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / By item / Bar chart"  
+>**Name \(*)**: "MSR - Stockout length - Bar chart"  
+>**Description**: "MSR DV 22 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Bar chart
+This report displays a bar chart with the number of stockouts for each item during the past 12 months."  
 >>**Series** 
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
@@ -1517,11 +1535,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 month"  
 >
->**MSR DV 23 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / By item / Pivot table**  
->This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the past 12 months. A blank field is shown, if either the stock on hand or the stock distribution for a month is zero.
+>**MSR - Stock coverage time - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR DV 23 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / By item / Pivot table"  
+>**Name \(*)**: "MSR - Stock coverage time - Pivot table"  
+>**Description**: "MSR DV 23 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
+This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the past 12 months. A blank field is shown, if either the stock on hand or the stock distribution for a month is zero."  
 >>**Columns** 
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1540,11 +1559,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout coverage"  
 >
->**MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / Health facility / Across items / Pivot table**  
->This report displays a Pivot table  with the number of items for which the coverage time fell into the respective coverage time bins (stockout, 1 to 12 months, 1-2 and 2-3 years or greater than or equal to 3 years) for each of the past 12 months.
+>**MSR - Stock coverage time distribution - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Across items / Pivot table"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Pivot table"  
+>**Description**: "MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / Health facility / Column chart
+This report displays a Pivot table  with the number of items for which the coverage time fell into the respective coverage time bins (stockout, 1 to 12 months, 1-2 and 2-3 years or greater than or equal to 3 years) for each of the past 12 months."  
 >>**Columns** 
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -1578,11 +1598,13 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout coverage"  
 >
->**MSR DV 25 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 month / Health facility / Across items / Column chart**  
->This report displays a group of column charts representing the number of items for each stock coverage time bin (in months and years) for the past 12 months.
+>**MSR - Stock coverage time distribution - Last 12 months - Column chart**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR DV 25 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 month / Health facility / Across items / Column chart"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Last 12 months - Column chart"  
+>**Description**: "MSR DV 25 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / Health facility / Column chart
+This report displays a group of column charts representing the number of items for 
+each stock coverage time bin (in months and years) for the past 12 months."  
 >>**Series** 
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -1613,11 +1635,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
 >
->>**MSR DV 26 - Monthly Stock Reporting / Stock coverage time / distribution / Last / Health facility / Across items / Column chart**  
->This report displays a group of column charts representing the stock coverage time distribution (in months and years) for the last month.
+>>**MSR - Stock coverage time distribution - Last month - Column chart**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR DV 24 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Across items / Pivot table"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Last month - Column chart"  
+>**Description**: "MSR DV 26 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Column chart
+This report displays a group of column charts representing the stock coverage time distribution (in months and years) for the last month."  
 >>**Series** 
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -1648,18 +1671,19 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"
 >
->**MSR DV 27 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / By item / Pivot table**  
->This report displays a list with the positive and negative stock discrepancy of the past 12 months. The stock discrepancy is calculated as follows
+>**MSR - Stock discrepancy - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock discrepancy - Pivot table"  
+>**Description**: ">MSR DV 27 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
+This report displays a list with the positive and negative stock discrepancy of the past 12 months. The stock discrepancy is calculated as follows
 > Stock on hand from the previous month (final stock on hand)  
 > + Stock receipt  
 > - Stock distributed  
 > - Stock redistributed  
 > - Stock discard  
 > - Stock correction  
-> - Stock on hand  
->
->**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR DV 27 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / By item / Pivot table"  
+> - Stock on hand"  
 >>**Columns** 
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1678,11 +1702,12 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock discrepancy count"  
 >  
->**MSR DV 28 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Across items / Column chart**  
->This report displays the number of stock discrepancies for the past 12 months.
+>**MSR - Stock discrepancy count - Column chart**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR DV 28 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Across items / Column chart"  
+>**Name \(*)**: "MSR - Stock discrepancy count - Column chart"  
+>**Visualization type**: "MSR DV 28 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table
+This report displays the number of stock discrepancies for the past 12 months."    
 >>**Series** 
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
@@ -1700,4 +1725,49 @@ By default, all the visualizations above are shown as time series (by month/by d
 >>>>**Data element group**: select "[Stock item list] - MSR
 >>>>**Disaggregation**: "Totals only"
 >>>>**Selected items**: select all (->>)
+
+## Map App - Analytics
+
+>**1 Health facility level**  
+>>- Library
+>>- Selection
+>
+>**2 District level**  
+>>- Library
+>>- Selection
+>
+>**3 Regional level**  
+>>- Library
+>>- Selection
+>
+>**4 National level**  
+>>- Library
+>>- Selection
+>
+>**5 Thematic dashboards**  
+>>- Essential LMIS KPIs
+>>- Xx
+
+## Dashboard App - Analytics
+
+>**1 Health facility level**  
+>>- Library
+>>- Selection
+>
+>**2 District level**  
+>>- Library
+>>- Selection
+>
+>**3 Regional level**  
+>>- Library
+>>- Selection
+>
+>**4 National level**  
+>>- Library
+>>- Selection
+>
+>**5 Thematic dashboards**  
+>>- Essential LMIS KPIs
+>>- Xx
+
 
