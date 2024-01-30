@@ -4,42 +4,6 @@ Tracker is the app within the DHIS2 platform that enables the capture and use of
 
 Many countries and programs are making use of increased network availability and the widespread presence of mobile devices and other hardware to push information systems closer to the level where primary data are generated. Individual-level data adds granularity and nuance to datasets captured in routine information systems, providing opportunities for ad hoc analysis, shifting indicators over time, and improving data quality. Beyond its usefulness for reporting and analysis, individual-level data can also be used to eliminate reporting redundancies, empower lower level staff with better decision-making tools, and place the client at the center of the information system. In short, individual-level data is the smallest data unit, and as such can be repurposed in many ways to satisfy the various competing needs in national information systems.
 
-The purpose of this guide is to help determine if Tracker is the right fit for a potential use case and provide practical guidance for planning successful implementations. The use of Tracker at scale introduces additional factors that should be planned for beyond what may already be in place for an existing aggregate DHIS2 instance. The opportunities and potential benefits from information systems increase as a system goes from aggregate data → tracked anonymous data → data from identifiable individuals → real-time patient data at the point of care. Those planning for a Tracker implementation should recognize that the challenges increase along with the benefits. 
-  
-This implementation guide will provide recommendations to help you:
-
--  determine if Tracker will address your needs
--  evaluate the readiness of your setting for the introduction of individual-level data collection
--  understand how implementing Tracker differs from DHIS2 aggregate
--  address concerns specific to individual-level data systems, including privacy and security
--  review lessons learned and best practices derived from real-world use cases
--  plan for the introduction of your Tracker program(s) at the desired scale
--  set in place the infrastructure that will maintain a Tracker program over time
-
-The guide is broken into two basic sections:
-
-- **Is My Project Ready For Tracker?** describes five important contextual factors that should be well understood for your setting before proceeding with planning a Tracker implementation
-
-    - Institutional buy-in and support
-    - Funding
-    - Legislation and policies
-    - Capacity and competency
-    - Infrastructure
-
-- **Building your Tracker Program(s)** provides specific guidance and recommendations for nine different aspects of a Tracker implementation
-
-    - Determining scale
-    - Design and configuration process
-    - Determining your M&E framework
-    - Real-time vs. secondary data entry
-    - Mobile vs web
-    - Building supporting HR infrastructure
-    - Hosting
-    - Training and rollout
-    - Relating Tracker to your aggregate system
-
-Links of specific planning tools are provided throughout the document, and in the appendix.
-
 ## What can Tracker be used for?
 
 As with the rest of the DHIS2 platform, Tracker has a generic data model that allows it to be configured by the user for many different purposes. At its most basic, Tracker allows the user to define a particular kind of thing (person, commodity, lab sample, catchment area, etc.) that they want to follow over time (a tracked entity), define the data that they want to collect about this entity (attributes, data elements), place the data elements in a specific order with accompanying conditions or logic (program stages, program rules), and determine the analytics that should be produced (program indicators, event reports, data visualizations, etc.)
@@ -66,6 +30,41 @@ As a core component of the DHIS2 platform, Tracker is updated twice annually alo
 - Digital provision of training and educational content for health workers
 
 Taking full advantage of such features requires that the data collected are systematic and adhere to normative standards. In health care, primary and public health services that are strongly driven by fixed guidelines and workflows are particularly suited for Tracker programs. For example in Antenatal Care (ANC), most countries have guidelines with algorithms for screening and patient management in response to test findings that can be incorporated in Tracker to follow a routine clinical workflow, supporting both the care provider and the reporting needs. In more complex areas of health care, with less documented and well-defined decision algorithms (such as in a referral hospital, for example) Tracker may be best used for simple data collection, allowing the clinician to determine the best use of the data for patient triage, and allowing the standardized data elements to be used for additional reporting or other purposes.
+
+## Key aspects of DHIS2 Tracker include:
+
+*Individual-Centric Data Management:*
+
+DHIS2 Tracker is specifically tailored for programs that need to capture and analyze data at the individual level. It allows for the systematic collection and management of information related to individuals, such as patients, clients, program beneficiaries or students. It can also be used to track information related to any defined entity about which you need to enter data over time, such as a shipment of health commodities moving from one level of the supply chain to the next, a lab sample as it is first requested and then completed, or the water quality levels of a given well over time.
+
+*Program-Oriented Approach:*
+
+The Tracker functionality revolves around the concept of programs, representing a structured framework for capturing data relevant to specific health or programmatic interventions. This allows organizations to customize data collection forms, rules, and workflows based on the unique requirements of each program.
+
+*Enrollment and Event Tracking:*
+
+DHIS2 Tracker relies on the concepts of enrollment and event tracking. Enrollments represent the registration of individuals into specific programs, while events capture the occurrences or interactions within those programs. This dynamic framework enables the monitoring of individual journeys through various stages of a program.
+
+*Flexible Data Elements and Attributes:*
+
+The system supports the definition of custom data elements and attributes, providing flexibility in capturing a wide range of information. This adaptability ensures that organizations can tailor their data collection forms to capture the precise details needed for informed decision-making.
+
+*Real-Time / Near real-time Data Capture:*
+
+DHIS2 Tracker facilitates data entry through user-friendly interfaces on the web and on mobile devices. This allows frontline users to efficiently record data directly into the system, ensuring the availability of up-to-date information for analysis and reporting. It can be configured to support real-time data entry with decision support, or for secondary entry of data from another source, such as a paper register.
+
+*Program Rules and Validation:*
+
+The system incorporates program rules and validations, empowering organizations to define logical relationships and data quality checks. This supports the accuracy and integrity of the data collected, minimizing errors and enhancing data quality.
+
+*Comprehensive Reporting and Analytics:*
+
+DHIS2 Tracker seamlessly integrates with the reporting and analytics components of DHIS2. This integration enables organizations to generate detailed reports, conduct trend analyses, and derive actionable insights from the individual-level data captured through Tracker.
+
+*Interoperability and Integration:*
+
+The system is designed with interoperability in mind, supporting data exchange through various formats. It integrates seamlessly with other DHIS2 modules and can be extended to interface with external systems through APIs, facilitating a cohesive health information ecosystem.
+
  
 
 ## Example Tracker Use Cases
@@ -74,7 +73,7 @@ Throughout this guide, we will refer to use cases to give real-world examples of
 
 ### Pre-configured Tracker Packages
 
-Under the [WHO’s Analysis and use of Health Facility Data toolkit](https://www.who.int/healthinfo/tools_data_analysis_routine_facility/en/), pre-configured Tracker programs have been created to cover a series of health topics. These packages are intended as the starting point for country programs, allowing for further configuration to match local context, while retaining global standards for indicators and practice. They can be added to existing DHIS2 systems, either together or individually. These packages can be accessed at the link above, as well as at who.dhis2.org. The current pre-configured packages cover the following topics:
+Under the [DHIS2 Health Data Toolkit](https://dhis2.org/health-data-toolkit/), pre-configured Tracker programs have been created to cover a series of health topics. These packages are intended as the starting point for country programs, allowing for further configuration to match local context, while retaining global standards for indicators and practice. They can be added to existing DHIS2 systems, either together or individually. These packages can be accessed at the link above, as well as at who.dhis2.org. The current pre-configured packages cover the following topics:
 
 - Adverse Events for Immunization
 - Birth, Stillbirth and Death Notification for CRVS
@@ -86,7 +85,7 @@ Under the [WHO’s Analysis and use of Health Facility Data toolkit](https://www
 - Routine Immunization Registry
 - TB Case Surveillance
 
-Additional packages that are still under development can be accessed at https://who.dhis2.org/documentation/work_in_progress.html.
+Additional packages are under development.
 
 ### Botswana: Nutrition and Immunization Program
 
