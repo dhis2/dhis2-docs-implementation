@@ -852,9 +852,9 @@ The "Predictor group" is required in order to allow running all Predictors perio
 
 ## Data Entry (Beta) App - Data entry
 
-Xx
-[Screenshot]
+[Explanation]
 
+![Alt text](image-3.png)
 
 ## Capture Android App - Data entry
 
@@ -876,7 +876,7 @@ Xx
 >>>- MSR - Stock report complete - Column chart
 >
 >>**1.2 Indicators**  
->>>- MSR - Coefficient of Variation x10 - Pivot table  
+>>>- MSR - Coefficient of Variation x 10 - Pivot table  
 >>>- MSR - Coefficient of Variation x 10 - Stacked bar chart  
 >>>- MSR - Coefficient of Variation x 10 - Bar chart
 >>>- MSR - Stock availability - Pivot table  
@@ -969,6 +969,8 @@ This report provides the monthly stock receipts as reported at the end of every 
 >>>>>**Name**: "Monthly stock report"  
 >>>>>**Selected Items**: "Stock receipt"  
 >
+![Alt text](image-5.png)
+
 >**MSR - Stock distribution - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
@@ -994,6 +996,8 @@ This report provides the monthly stock distributions as reported at the end of e
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock distribution"  
 >
+![Alt text](image-6.png)
+
 >**MSR - Stock redistribution - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
@@ -1019,6 +1023,8 @@ This report provides the monthly stock redistributions as reported at the end of
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock redistribution"  
 >
+![Alt text](image-7.png)
+
 >**MSR - Stock discard - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
@@ -1044,6 +1050,8 @@ This report provides the monthly stock discards as reported at the end of every 
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock discard"  
 >
+![Alt text](image-8.png)
+
 >**MSR DV 5 - MSR - Stock on hand - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
@@ -1069,6 +1077,8 @@ This report provides the monthly stock on hand as reported at the end of every m
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock on hand"  
 >
+![Alt text](image-9.png)
+
 >**MSR - Stock correction - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
@@ -1094,6 +1104,8 @@ This report provides the monthly stock corrections as reported at the end of eve
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock correction"  
 >
+![Alt text](image-10.png)
+
 >**MSR - Stock report complete - Last 3 months - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
@@ -1119,6 +1131,8 @@ This report provides an overview of all stock data from the last month."
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock distribution"  
 >
+![Alt text](image-12.png)
+
 >**MSR - Stock report complete - Last 12 months - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
@@ -1147,6 +1161,8 @@ This report provides the an overview of all stock data from the previous 12 mont
 >>>>**Data Type**: "Data elements"  
 >>>>**Selected items**: select the item of interest
 >
+![Alt text](image-13.png)
+
 >**MSR - Stock report complete - Column chart**  
 >
 >**Visualization type**: select "Pivot table"
@@ -1175,11 +1191,15 @@ This report provides an overview of all stock data from the past 12 months repre
 >>>>**Data Type**: "Data elements"  
 >>>>**Selected items**: select one item of interest
 >
->**MSR - Coefficient of Variation x10 - Pivot table**  
+![Alt text](image-16.png)
+
+### Indicators
+>
+>**MSR - Coefficient of Variation x 10 - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR - Coefficient of Variation x10 - Pivot table"  
->**Description**: "MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x10 / Last 12 months / Health facility / By item / Pivot table
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 - Pivot table"  
+>**Description**: "MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / Health facility / By item / Pivot table
 This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve month as a Pivot table. Since decimals cannot be displayed in this report, the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -1207,6 +1227,8 @@ This report provides the coefficient of variation (standard deviation of stock d
 >>>>>>**Legend**: "Coefficient of variation"
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
+![Alt text](image-17.png)
+
 >**MSR - Coefficient of Variation x 10 - Stacked bar chart**  
 >
 >**Visualization type**: select "Stacked bar"
@@ -1254,6 +1276,8 @@ This report provides the coefficient of variation (standard deviation of stock d
 >>>>>>**Legend**: "Coefficient of variation"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
+![Alt text](image-18.png)
+
 >**MSR - Coefficient of Variation x 10 - Bar chart**  
 >
 >**Visualization type**: select "Bar"
@@ -1301,6 +1325,8 @@ This report provides the coefficient of variation (standard deviation of stock d
 >>>>>>**Legend**: "Coefficient of variation"
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
+![Alt text](image-19.png)
+
 >**MSR - Stock availability - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
@@ -1328,6 +1354,8 @@ This report provides the stock availability across all stock items for an indivi
 >>>>>>**Legend**: "Stock availability / %"
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
+![Alt text](image-20.png)
+
 >**MSR - Stock availability - Bar chart**  
 >
 >**Visualization type**: select "Bar"
@@ -1355,6 +1383,8 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>>>**Legend**: "Stock availability / %"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
+![Alt text](image-22.png)
+
 >**MSR - Stock availability - Single value chart**  
 >
 >**Visualization type**: select "Single value"
@@ -1382,6 +1412,8 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>>>**Legend**: "Stock availability / %"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
+![Alt text](image-23.png)
+
 >**MSR - Stock availability - Gauge chart**  
 >
 >**Visualization type**: select "Gauge"
@@ -1409,6 +1441,8 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>>>**Legend**: "Stock availability / %"
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 >
+![Alt text](image-24.png)
+
 >**MSR - Stockouts - Stacked column chart**  
 >
 >**Visualization type**: select "Stacked column"  
@@ -1433,6 +1467,8 @@ For each of the last 12 months, this report displays a separate stacked column c
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout Yes/No"  
 >
+![Alt text](image-25.png)
+
 >**MSR - Stockout count - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
@@ -1451,11 +1487,13 @@ This report displays the number of stockouts for all items across a health facil
 >>>>**Indicator group**: select "Stockout count"
 >>>>**Selected items**: select "Stockout count"
 >
->**MSR DV 19 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Across items / Column chart**  
->This report displays the number of stockouts for each of the past 12 months as a column chart.
+![Alt text](image-26.png)
+
+>**MSR - Stockout count - Column chart**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR DV 20 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Across items / Column chart"  
+>**Name \(*)**: "MSR DV 19 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Column chart
+This report displays the number of stockouts for each of the past 12 months as a column chart."  
 >>**Series** 
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -1470,6 +1508,8 @@ This report displays the number of stockouts for all items across a health facil
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
 >
+![Alt text](image-27.png)
+
 >**MSR - Stockout count - Single value chart**  
 >
 >**Visualization type**: select "Single value"
@@ -1487,6 +1527,8 @@ This report displays the number of stockouts during the last month as a single v
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last month"  
 >
+![Alt text](image-29.png)
+
 >**MSR - Stockout length - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
@@ -1511,6 +1553,8 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
 >
+![Alt text](image-30.png)
+
 >**MSR - Stockout length - Bar chart**  
 >
 >**Visualization type**: select "Pivot table"  
@@ -1535,6 +1579,8 @@ This report displays a bar chart with the number of stockouts for each item duri
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 month"  
 >
+![Alt text](image-31.png)
+
 >**MSR - Stock coverage time - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
@@ -1559,6 +1605,8 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout coverage"  
 >
+![Alt text](image-32.png)
+
 >**MSR - Stock coverage time distribution - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
@@ -1598,6 +1646,8 @@ This report displays a Pivot table  with the number of items for which the cover
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout coverage"  
 >
+![Alt text](image-33.png)
+
 >**MSR - Stock coverage time distribution - Last 12 months - Column chart**  
 >
 >**Visualization type**: select "Column"  
@@ -1635,6 +1685,8 @@ each stock coverage time bin (in months and years) for the past 12 months."
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
 >
+![Alt text](image-34.png)
+
 >>**MSR - Stock coverage time distribution - Last month - Column chart**  
 >
 >**Visualization type**: select "Column"  
@@ -1671,6 +1723,8 @@ This report displays a group of column charts representing the stock coverage ti
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"
 >
+![Alt text](image-35.png)
+
 >**MSR - Stock discrepancy - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
@@ -1701,7 +1755,9 @@ This report displays a list with the positive and negative stock discrepancy of 
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock discrepancy count"  
->  
+>
+![Alt text](image-36.png)
+
 >**MSR - Stock discrepancy count - Column chart**  
 >
 >**Visualization type**: select "Column"  
@@ -1725,6 +1781,8 @@ This report displays the number of stock discrepancies for the past 12 months."
 >>>>**Data element group**: select "[Stock item list] - MSR
 >>>>**Disaggregation**: "Totals only"
 >>>>**Selected items**: select all (->>)
+>
+![Alt text](image-37.png)
 
 ## Map App - Analytics
 
@@ -1769,5 +1827,3 @@ This report displays the number of stock discrepancies for the past 12 months."
 >**5 Thematic dashboards**  
 >>- Essential LMIS KPIs
 >>- Xx
-
-
