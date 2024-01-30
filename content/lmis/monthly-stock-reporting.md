@@ -865,36 +865,36 @@ Xx
 
 >**1 Health facility level**  
 >>**1.1 Statistics**  
->>>- MSR - Stock receipt - Pivot table
->>>- MSR - Stock distribution - Pivot table  
->>>- MSR - Stock redistribution - Pivot table  
->>>- MSR - Stock discard - Pivot table  
->>>- MSR - Stock on hand - Pivot table  
->>>- MSR - Stock correction - Pivot table  
->>>- MSR - Stock report complete - Last 3 months - Pivot table  
->>>- MSR - Stock report complete - Last 12 months - Pivot table  
->>>- MSR - Stock report complete - Column chart
+>>>- 1 MSR - Stock receipt - Pivot table
+>>>- 2 MSR - Stock distribution - Pivot table  
+>>>- 3 MSR - Stock redistribution - Pivot table  
+>>>- 4 MSR - Stock discard - Pivot table  
+>>>- 5 MSR - Stock on hand - Pivot table  
+>>>- 6 MSR - Stock correction - Pivot table  
+>>>- 7 MSR - Stock report complete - Last 3 months - Pivot table  
+>>>- 8 MSR - Stock report complete - Last 12 months - Pivot table  
+>>>- 9 MSR - Stock report complete - Column chart
 >
 >>**1.2 Indicators**  
->>>- MSR - Coefficient of Variation x 10 - Pivot table  
->>>- MSR - Coefficient of Variation x 10 - Stacked bar chart  
->>>- MSR - Coefficient of Variation x 10 - Bar chart
->>>- MSR - Stock availability - Pivot table  
->>>- MSR - Stock availability - Bar chart  
->>>- MSR - Stock availability - Single value chart  
->>>- MSR - Stock availability - Gauge chart  
->>>- MSR - Stockouts - Stacked column chart  
->>>- MSR - Stockout count - Pivot table  
->>>- MSR - Stockout count - Column chart  
->>>- MSR - Stockout count - Single value chart  
->>>- MSR - Stockout length - Pivot table  
->>>- MSR - Stockout length - Bar chart  
->>>- MSR - Stock coverage time - Pivot table  
->>>- MSR - Stock coverage time distribution - Pivot table  
->>>- MSR - Stock coverage time distribution - Last 12 months - Column chart  
->>>- MSR - Stock coverage time distribution - Last month - Column chart  
->>>- MSR - Stock discrepancy - Pivot table  
->>>- MSR - Stock discrepancy count - Column chart  
+>>>- 10 MSR - Coefficient of Variation x 10 - Pivot table  
+>>>- 11 MSR - Coefficient of Variation x 10 - Stacked bar chart  
+>>>- 12 MSR - Coefficient of Variation x 10 - Bar chart
+>>>- 13 MSR - Stock availability - Pivot table  
+>>>- 14 MSR - Stock availability - Bar chart  
+>>>- 15 MSR - Stock availability - Single value chart  
+>>>- 16 MSR - Stock availability - Gauge chart  
+>>>- 17 MSR - Stockouts - Stacked column chart  
+>>>- 18 MSR - Stockout count - Pivot table  
+>>>- 19 MSR - Stockout count - Column chart  
+>>>- 20 MSR - Stockout count - Single value chart  
+>>>- 21 MSR - Stockout length - Pivot table  
+>>>- 22 MSR - Stockout length - Bar chart  
+>>>- 23 MSR - Stock coverage time - Pivot table  
+>>>- 24 MSR - Stock coverage time distribution - Pivot table  
+>>>- 25 MSR - Stock coverage time distribution - Last 12 months - Column chart  
+>>>- 26 MSR - Stock coverage time distribution - Last month - Column chart  
+>>>- 27 MSR - Stock discrepancy - Pivot table  
+>>>- 28 MSR - Stock discrepancy count - Column chart  
 >
 >**2 District level**  
 >>**2.1 Statistics**  
@@ -945,7 +945,7 @@ By default, all the visualizations above are shown as time series (by month/by d
 
 ### Statistics
 
->**MSR - Stock receipt - Pivot table**  
+>**1 MSR - Stock receipt - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock receipt - Pivot table"  
@@ -971,7 +971,7 @@ This report provides the monthly stock receipts as reported at the end of every 
 >
 ![Alt text](image-5.png)
 
->**MSR - Stock distribution - Pivot table**  
+>**2 MSR - Stock distribution - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock distribution - Pivot table"  
@@ -998,7 +998,7 @@ This report provides the monthly stock distributions as reported at the end of e
 >
 ![Alt text](image-6.png)
 
->**MSR - Stock redistribution - Pivot table**  
+>**3 MSR - Stock redistribution - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: "MSR - Stock redistribution - Pivot table"  
@@ -1025,7 +1025,7 @@ This report provides the monthly stock redistributions as reported at the end of
 >
 ![Alt text](image-7.png)
 
->**MSR - Stock discard - Pivot table**  
+>**4 MSR - Stock discard - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: "This report provides the monthly stock discards as reported at the end of every month."  
@@ -1052,7 +1052,7 @@ This report provides the monthly stock discards as reported at the end of every 
 >
 ![Alt text](image-8.png)
 
->**MSR DV 5 - MSR - Stock on hand - Pivot table**  
+>**5 MSR - Stock on hand - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: "MSR - Stock on hand - Pivot table"
@@ -1079,7 +1079,7 @@ This report provides the monthly stock on hand as reported at the end of every m
 >
 ![Alt text](image-9.png)
 
->**MSR - Stock correction - Pivot table**  
+>**6 MSR - Stock correction - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: "MSR - Stock correction - Pivot table"  
@@ -1106,7 +1106,7 @@ This report provides the monthly stock corrections as reported at the end of eve
 >
 ![Alt text](image-10.png)
 
->**MSR - Stock report complete - Last 3 months - Pivot table**  
+>**7 MSR - Stock report complete - Last 3 months - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: "MSR - Stock report complete - Last 3 months - Pivot table"
@@ -1133,7 +1133,7 @@ This report provides an overview of all stock data from the last month."
 >
 ![Alt text](image-12.png)
 
->**MSR - Stock report complete - Last 12 months - Pivot table**  
+>**8 MSR - Stock report complete - Last 12 months - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: "MSR - Stock report complete - Last 12 months - Pivot table"  
@@ -1163,7 +1163,7 @@ This report provides the an overview of all stock data from the previous 12 mont
 >
 ![Alt text](image-13.png)
 
->**MSR - Stock report complete - Column chart**  
+>**9 MSR - Stock report complete - Column chart**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: **MSR - Stock report complete - Column chart**
@@ -1195,7 +1195,7 @@ This report provides an overview of all stock data from the past 12 months repre
 
 ### Indicators
 >
->**MSR - Coefficient of Variation x 10 - Pivot table**  
+>**10 MSR - Coefficient of Variation x 10 - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: "MSR - Coefficient of Variation x 10 - Pivot table"  
@@ -1229,7 +1229,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 >
 ![Alt text](image-17.png)
 
->**MSR - Coefficient of Variation x 10 - Stacked bar chart**  
+>**11 MSR - Coefficient of Variation x 10 - Stacked bar chart**  
 >
 >**Visualization type**: select "Stacked bar"
 >**Name \(*)**: "MSR - Coefficient of Variation x 10 - Stacked bar chart"  
@@ -1278,7 +1278,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 >
 ![Alt text](image-18.png)
 
->**MSR - Coefficient of Variation x 10 - Bar chart**  
+>**12 MSR - Coefficient of Variation x 10 - Bar chart**  
 >
 >**Visualization type**: select "Bar"
 >**Name \(*)**: "MSR - Coefficient of Variation x 10 - Bar chart"  
@@ -1327,7 +1327,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 >
 ![Alt text](image-19.png)
 
->**MSR - Stock availability - Pivot table**  
+>**13 MSR - Stock availability - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: "MSR - Stock availability - Pivot table"  
@@ -1356,7 +1356,7 @@ This report provides the stock availability across all stock items for an indivi
 >
 ![Alt text](image-20.png)
 
->**MSR - Stock availability - Bar chart**  
+>**14 MSR - Stock availability - Bar chart**  
 >
 >**Visualization type**: select "Bar"
 >**Name \(*)**: "MSR - Stock availability - Bar chart"  
@@ -1385,7 +1385,7 @@ This report displays the stock availability (number of items with non-zero stock
 >
 ![Alt text](image-22.png)
 
->**MSR - Stock availability - Single value chart**  
+>**15 MSR - Stock availability - Single value chart**  
 >
 >**Visualization type**: select "Single value"
 >**Name \(*)**: "MSR - Stock availability - Single value chart"  
@@ -1414,7 +1414,7 @@ This report displays the stock availability (number of items with non-zero stock
 >
 ![Alt text](image-23.png)
 
->**MSR - Stock availability - Gauge chart**  
+>**16 MSR - Stock availability - Gauge chart**  
 >
 >**Visualization type**: select "Gauge"
 >**Name \(*)**: "MSR - Stock availability - Gauge chart"  
@@ -1443,7 +1443,7 @@ This report displays the stock availability (number of items with non-zero stock
 >
 ![Alt text](image-24.png)
 
->**MSR - Stockouts - Stacked column chart**  
+>**17 MSR - Stockouts - Stacked column chart**  
 >
 >**Visualization type**: select "Stacked column"  
 >**Name \(*)**: "MSR - Stockouts - Stacked column chart"  
@@ -1469,7 +1469,7 @@ For each of the last 12 months, this report displays a separate stacked column c
 >
 ![Alt text](image-25.png)
 
->**MSR - Stockout count - Pivot table**  
+>**18 MSR - Stockout count - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockout count - Pivot table"  
@@ -1489,7 +1489,7 @@ This report displays the number of stockouts for all items across a health facil
 >
 ![Alt text](image-26.png)
 
->**MSR - Stockout count - Column chart**  
+>**19 MSR - Stockout count - Column chart**  
 >
 >**Visualization type**: select "Column"  
 >**Name \(*)**: "MSR DV 19 - Monthly Stock Reporting / Stockout count / Last 12 months / Health facility / Column chart
@@ -1510,7 +1510,7 @@ This report displays the number of stockouts for each of the past 12 months as a
 >
 ![Alt text](image-27.png)
 
->**MSR - Stockout count - Single value chart**  
+>**20 MSR - Stockout count - Single value chart**  
 >
 >**Visualization type**: select "Single value"
 >**Name \(*)**: "MSR - Stockout count - Single value chart"  
@@ -1529,7 +1529,7 @@ This report displays the number of stockouts during the last month as a single v
 >
 ![Alt text](image-29.png)
 
->**MSR - Stockout length - Pivot table**  
+>**21 MSR - Stockout length - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockout length - Pivot table"  
@@ -1555,7 +1555,7 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 >
 ![Alt text](image-30.png)
 
->**MSR - Stockout length - Bar chart**  
+>**22 MSR - Stockout length - Bar chart**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockout length - Bar chart"  
@@ -1581,7 +1581,7 @@ This report displays a bar chart with the number of stockouts for each item duri
 >
 ![Alt text](image-31.png)
 
->**MSR - Stock coverage time - Pivot table**  
+>**23 MSR - Stock coverage time - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock coverage time - Pivot table"  
@@ -1607,7 +1607,7 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >
 ![Alt text](image-32.png)
 
->**MSR - Stock coverage time distribution - Pivot table**  
+>**24 MSR - Stock coverage time distribution - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock coverage time distribution - Pivot table"  
@@ -1648,7 +1648,7 @@ This report displays a Pivot table  with the number of items for which the cover
 >
 ![Alt text](image-33.png)
 
->**MSR - Stock coverage time distribution - Last 12 months - Column chart**  
+>**25 MSR - Stock coverage time distribution - Last 12 months - Column chart**  
 >
 >**Visualization type**: select "Column"  
 >**Name \(*)**: "MSR - Stock coverage time distribution - Last 12 months - Column chart"  
@@ -1687,7 +1687,7 @@ each stock coverage time bin (in months and years) for the past 12 months."
 >
 ![Alt text](image-34.png)
 
->>**MSR - Stock coverage time distribution - Last month - Column chart**  
+>>**26 MSR - Stock coverage time distribution - Last month - Column chart**  
 >
 >**Visualization type**: select "Column"  
 >**Name \(*)**: "MSR - Stock coverage time distribution - Last month - Column chart"  
@@ -1725,7 +1725,7 @@ This report displays a group of column charts representing the stock coverage ti
 >
 ![Alt text](image-35.png)
 
->**MSR - Stock discrepancy - Pivot table**  
+>**27 MSR - Stock discrepancy - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock discrepancy - Pivot table"  
@@ -1758,7 +1758,7 @@ This report displays a list with the positive and negative stock discrepancy of 
 >
 ![Alt text](image-36.png)
 
->**MSR - Stock discrepancy count - Column chart**  
+>**28 MSR - Stock discrepancy count - Column chart**  
 >
 >**Visualization type**: select "Column"  
 >**Name \(*)**: "MSR - Stock discrepancy count - Column chart"  
@@ -1804,14 +1804,13 @@ This report displays the number of stock discrepancies for the past 12 months."
 >
 >**5 Thematic dashboards**  
 >>- Essential LMIS KPIs
->>- Xx
+>>- MSR - Monthly Stock Reporting - Health facility level
 
 ## Dashboard App - Analytics
 
 >**1 Health facility level**  
->>- Library
->>- Selection
->
+>>- 1 MSR Visualization library - Health facility level
+>>- 2 Selection>
 >**2 District level**  
 >>- Library
 >>- Selection
@@ -1827,3 +1826,52 @@ This report displays the number of stock discrepancies for the past 12 months."
 >**5 Thematic dashboards**  
 >>- Essential LMIS KPIs
 >>- Xx
+
+>**1 MSR Visualization library - Health facility level**  
+>
+>**Dashboard title**: "MSR Visualization library - Health facility level"  
+>**Dashboard description**: "Library of all available LMIS visualizations for the health facility level in the order of their documentation. These are intended for immediate use or adapting to national policies and requirements."    
+>**Search for visualizations, reports and more** 
+>>- MSR - Stock receipt - Pivot table
+>>- MSR - Stock distribution - Pivot table  
+>>- MSR - Stock redistribution - Pivot table  
+>>- MSR - Stock discard - Pivot table  
+>>- MSR - Stock on hand - Pivot table  
+>>- MSR - Stock correction - Pivot table  
+>>- MSR - Stock report complete - Last 3 months - Pivot table  
+>>- MSR - Stock report complete - Last 12 months - Pivot table  
+>>- MSR - Stock report complete - Column chart
+>>- MSR - Coefficient of Variation x 10 - Pivot table  
+>>- MSR - Coefficient of Variation x 10 - Stacked bar chart  
+>>- MSR - Coefficient of Variation x 10 - Bar chart
+>>- MSR - Stock availability - Pivot table  
+>>- MSR - Stock availability - Bar chart  
+>>- MSR - Stock availability - Single value chart  
+>>- MSR - Stock availability - Gauge chart  
+>>- MSR - Stockouts - Stacked column chart  
+>>- MSR - Stockout count - Pivot table  
+>>- MSR - Stockout count - Column chart  
+>>- MSR - Stockout count - Single value chart  
+>>- MSR - Stockout length - Pivot table  
+>>- MSR - Stockout length - Bar chart  
+>>- MSR - Stock coverage time - Pivot table  
+>>- MSR - Stock coverage time distribution - Pivot table  
+>>- MSR - Stock coverage time distribution - Last 12 months - Column chart  
+>>- MSR - Stock coverage time distribution - Last month - Column chart  
+>>- MSR - Stock discrepancy - Pivot table  
+>>- MSR - Stock discrepancy count - Column chart  
+
+>**2 MSR - Monthly Stock Reporting - Health facility level**  
+>
+>**Dashboard title**: "MSR - Monthly Stock Reporting - Health facility level"  
+>**Dashboard description**: "This dashboard presents a selection of the DHIS2-LMIS Visualization library - MSR - Health facility level and is intended as a suggestion for customizing dashboards to national policies and requirements."    
+>**Search for visualizations, reports and more** 
+>>- MSR - Stock availability - Single value chart  
+>>- MSR - Stock availability - Bar chart  
+>>- MSR - Stockout count - Single value chart  
+>>- MSR - Stock discrepancy count - Column chart  
+>>- MSR - Stockouts - Stacked column chart  
+>>- MSR - Stockout length - Bar chart  
+>>- MSR - Stock coverage time distribution - Last month - Column chart  
+>>- MSR - Coefficient of Variation x 10 - Bar chart
+>>- MSR - Stock report complete - Last 3 months - Pivot table  
