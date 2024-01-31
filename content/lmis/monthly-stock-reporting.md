@@ -610,24 +610,193 @@ etc.
 >>>**Description**: ">= 3 years - MSR - Denominator"
 >>>**Calculation**: "1"
 >
->**16 Stock coverage time - MSR**  
->For each item, this indicator calculates the stock coverage by dividing the stock on hand by the stock distributed ("consumption"). A separate indicator needs to be configured for each item (Data element).
->>**Name \(*)**: "[Item] - Coverage time - MSR"  
->>**Short Name \(*)**: "Coverage time - MSR"    
->>**Description**: "Stock on hand divided by the stock distributed"  
->>**Decimals in data output**: "1"  
+>**16 High variability**  
+>For each item the Indicator returns "1" if the coefficient of variation is greater than 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a coefficient of variation of more than 10 (high variability). Note that the actual coefficient of variation is multiplied by 10.
+>>**Name \(*)**: "High variability"  
+>>**Short Name \(*)**: "High variability - MSR"    
+>>**Description**: "Number of items with a coefficient of variation between 0 and 5."  
+>>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
->>>**Description**: "[Item] - Coverage time - MSR - Numerator"  
+>>>**Description**: "HIgh variability - Numerator"  
 >>>**Calculation**:  
->>>#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}
->>>
->>>[Item 1] - Stock on hand/[Item 1] Stock distributed
->>
->**17 Stock availability - MSR**  
+>>>if(#{LNAkkMTxqEW.U2tBADVisKH}>10,1,0)+
+if(#{WyDZKSw82X6.U2tBADVisKH}>10,1,0)+
+if(#{JPccVwAGRq9.U2tBADVisKH}>10,1,0)+
+if(#{smxJz7Mt6ia.U2tBADVisKH}>10,1,0)+
+if(#{AaIApgGQM6t.U2tBADVisKH}>10,1,0)+
+if(#{vCTrmv52APd.U2tBADVisKH}>10,1,0)+
+if(#{SOw2TcuFFH2.U2tBADVisKH}>10,1,0)+
+if(#{RSIOx2u07Ln.U2tBADVisKH}>10,1,0)+
+if(#{JStiDyaPfqy.U2tBADVisKH}>10,1,0)+
+if(#{hZ1YvdcTDQM.U2tBADVisKH}>10,1,0)+
+if(#{tsi32D8HQd5.U2tBADVisKH}>10,1,0)+
+if(#{QWlPF8S0gCc.U2tBADVisKH}>10,1,0)+
+if(#{a5uLTDt12eT.U2tBADVisKH}>10,1,0)+
+if(#{U0AfOOyJMy2.U2tBADVisKH}>10,1,0)+
+if(#{cyf6UdScfFM.U2tBADVisKH}>10,1,0)+
+if(#{FeUTTNHpVzD.U2tBADVisKH}>10,1,0)+
+if(#{mKSICD1rxG4.U2tBADVisKH}>10,1,0)+
+if(#{mVNe1aS1pGl.U2tBADVisKH}>10,1,0)+
+if(#{oLAXTZY6ken.U2tBADVisKH}>10,1,0)+
+if(#{YYaRDUZyH9L.U2tBADVisKH}>10,1,0)+
+if(#{HVteopBt0jr.U2tBADVisKH}>10,1,0)+
+if(#{sWodd2tbjgZ.U2tBADVisKH}>10,1,0)+
+if(#{yVYajDDYUfX.U2tBADVisKH}>10,1,0)+
+if(#{eTJAr4sc83v.U2tBADVisKH}>10,1,0)+
+if(#{U4KSmanl4JP.U2tBADVisKH}>10,1,0)+
+if(#{FXsa5uG3IGn.U2tBADVisKH}>10,1,0)+
+if(#{L34T9YDtCor.U2tBADVisKH}>10,1,0)+
+if(#{W5mHXhSYFfQ.U2tBADVisKH}>10,1,0)+
+if(#{cmSUyJOZwyl.U2tBADVisKH}>10,1,0)+
+if(#{cT8sfosRXvU.U2tBADVisKH}>10,1,0)+
+if(#{OaWKnMS7say.U2tBADVisKH}>10,1,0)+
+if(#{Z4bjHvGS6aH.U2tBADVisKH}>10,1,0)+
+if(#{Nn1L7CNEtC8.U2tBADVisKH}>10,1,0)+
+if(#{RNYKSc3nAUg.U2tBADVisKH}>10,1,0)+
+if(#{PtmZ9XqpPKi.U2tBADVisKH}>10,1,0)+
+if(#{CohlLHi54B0.U2tBADVisKH}>10,1,0)+
+if(#{Gu6u82RD9OW.U2tBADVisKH}>10,1,0)+
+if(#{LiuYzxYr4Pt.U2tBADVisKH}>10,1,0)+
+if(#{Tje33nJAG55.U2tBADVisKH}>10,1,0)+
+if(#{euM2dlqleYH.U2tBADVisKH}>10,1,0)+
+if(#{dASLmBTEehF.U2tBADVisKH}>10,1,0)+
+if(#{qU2LvzoPn1z.U2tBADVisKH}>10,1,0)+
+if(#{OkWaFxdUQY2.U2tBADVisKH}>10,1,0)+
+if(#{YHIv7KQc2e7.U2tBADVisKH}>10,1,0)+
+if(#{rt9D47Inb49.U2tBADVisKH}>10,1,0)+
+if(#{i1iXbquZ5iv.U2tBADVisKH}>10,1,0)+
+if(#{RcE30WBKrXI.U2tBADVisKH}>10,1,0)+
+if(#{EAG0GfdSMAs.U2tBADVisKH}>10,1,0)+
+if(#{N2aXs7VlJdJ.U2tBADVisKH}>10,1,0)+
+if(#{xrjnOtFFTRC.U2tBADVisKH}>10,1,0)
+>
+>**17 Low variability**  
+>For each item the Indicator returns "1" if the coefficient of variation is less than 5 and otherwise returns 0 and then adds up these results for calculating the number of items with a coefficient of variation of less than 5 (low variability). Note that the actual coefficient of variation is multiplied by 10.
+>>**Name \(*)**: "Low variability"  
+>>**Short Name \(*)**: "Low variability - MSR"    
+>>**Description**: "Number of items with a coefficient of variation between 0 and 5."  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "High variability - Numerator"  
+>>>**Calculation**:  
+>>>if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
+if(#{WyDZKSw82X6.U2tBADVisKH}<5,1,0)+
+if(#{JPccVwAGRq9.U2tBADVisKH}<5,1,0)+
+if(#{smxJz7Mt6ia.U2tBADVisKH}<5,1,0)+
+if(#{AaIApgGQM6t.U2tBADVisKH}<5,1,0)+
+if(#{vCTrmv52APd.U2tBADVisKH}<5,1,0)+
+if(#{SOw2TcuFFH2.U2tBADVisKH}<5,1,0)+
+if(#{RSIOx2u07Ln.U2tBADVisKH}<5,1,0)+
+if(#{JStiDyaPfqy.U2tBADVisKH}<5,1,0)+
+if(#{hZ1YvdcTDQM.U2tBADVisKH}<5,1,0)+
+if(#{tsi32D8HQd5.U2tBADVisKH}<5,1,0)+
+if(#{QWlPF8S0gCc.U2tBADVisKH}<5,1,0)+
+if(#{a5uLTDt12eT.U2tBADVisKH}<5,1,0)+
+if(#{U0AfOOyJMy2.U2tBADVisKH}<5,1,0)+
+if(#{cyf6UdScfFM.U2tBADVisKH}<5,1,0)+
+if(#{FeUTTNHpVzD.U2tBADVisKH}<5,1,0)+
+if(#{mKSICD1rxG4.U2tBADVisKH}<5,1,0)+
+if(#{mVNe1aS1pGl.U2tBADVisKH}<5,1,0)+
+if(#{oLAXTZY6ken.U2tBADVisKH}<5,1,0)+
+if(#{YYaRDUZyH9L.U2tBADVisKH}<5,1,0)+
+if(#{HVteopBt0jr.U2tBADVisKH}<5,1,0)+
+if(#{sWodd2tbjgZ.U2tBADVisKH}<5,1,0)+
+if(#{yVYajDDYUfX.U2tBADVisKH}<5,1,0)+
+if(#{eTJAr4sc83v.U2tBADVisKH}<5,1,0)+
+if(#{U4KSmanl4JP.U2tBADVisKH}<5,1,0)+
+if(#{FXsa5uG3IGn.U2tBADVisKH}<5,1,0)+
+if(#{L34T9YDtCor.U2tBADVisKH}<5,1,0)+
+if(#{W5mHXhSYFfQ.U2tBADVisKH}<5,1,0)+
+if(#{cmSUyJOZwyl.U2tBADVisKH}<5,1,0)+
+if(#{cT8sfosRXvU.U2tBADVisKH}<5,1,0)+
+if(#{OaWKnMS7say.U2tBADVisKH}<5,1,0)+
+if(#{Z4bjHvGS6aH.U2tBADVisKH}<5,1,0)+
+if(#{Nn1L7CNEtC8.U2tBADVisKH}<5,1,0)+
+if(#{RNYKSc3nAUg.U2tBADVisKH}<5,1,0)+
+if(#{PtmZ9XqpPKi.U2tBADVisKH}<5,1,0)+
+if(#{CohlLHi54B0.U2tBADVisKH}<5,1,0)+
+if(#{Gu6u82RD9OW.U2tBADVisKH}<5,1,0)+
+if(#{LiuYzxYr4Pt.U2tBADVisKH}<5,1,0)+
+if(#{Tje33nJAG55.U2tBADVisKH}<5,1,0)+
+if(#{euM2dlqleYH.U2tBADVisKH}<5,1,0)+
+if(#{dASLmBTEehF.U2tBADVisKH}<5,1,0)+
+if(#{qU2LvzoPn1z.U2tBADVisKH}<5,1,0)+
+if(#{OkWaFxdUQY2.U2tBADVisKH}<5,1,0)+
+if(#{YHIv7KQc2e7.U2tBADVisKH}<5,1,0)+
+if(#{rt9D47Inb49.U2tBADVisKH}<5,1,0)+
+if(#{i1iXbquZ5iv.U2tBADVisKH}<5,1,0)+
+if(#{RcE30WBKrXI.U2tBADVisKH}<5,1,0)+
+if(#{EAG0GfdSMAs.U2tBADVisKH}<5,1,0)+
+if(#{N2aXs7VlJdJ.U2tBADVisKH}<5,1,0)+
+if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
+>
+>**18 Medium variability**  
+>For each item the Indicator returns "1" if the coefficient of variation is greater than 5 but less or equal to 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a coefficient of between 5 and 10 (medium variability). Note that the actual coefficient of variation is multiplied by 10.
+>>**Name \(*)**: "Medium variability"  
+>>**Short Name \(*)**: "Medium variability - MSR"    
+>>**Description**: "Number of items with a coefficient of variation between 5 and 10."  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "Medium variability - Numerator"  
+>>>**Calculation**:  
+>>>if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
+if(#{WyDZKSw82X6.U2tBADVisKH}<5,1,0)+
+if(#{JPccVwAGRq9.U2tBADVisKH}<5,1,0)+
+if(#{smxJz7Mt6ia.U2tBADVisKH}<5,1,0)+
+if(#{AaIApgGQM6t.U2tBADVisKH}<5,1,0)+
+if(#{vCTrmv52APd.U2tBADVisKH}<5,1,0)+
+if(#{SOw2TcuFFH2.U2tBADVisKH}<5,1,0)+
+if(#{RSIOx2u07Ln.U2tBADVisKH}<5,1,0)+
+if(#{JStiDyaPfqy.U2tBADVisKH}<5,1,0)+
+if(#{hZ1YvdcTDQM.U2tBADVisKH}<5,1,0)+
+if(#{tsi32D8HQd5.U2tBADVisKH}<5,1,0)+
+if(#{QWlPF8S0gCc.U2tBADVisKH}<5,1,0)+
+if(#{a5uLTDt12eT.U2tBADVisKH}<5,1,0)+
+if(#{U0AfOOyJMy2.U2tBADVisKH}<5,1,0)+
+if(#{cyf6UdScfFM.U2tBADVisKH}<5,1,0)+
+if(#{FeUTTNHpVzD.U2tBADVisKH}<5,1,0)+
+if(#{mKSICD1rxG4.U2tBADVisKH}<5,1,0)+
+if(#{mVNe1aS1pGl.U2tBADVisKH}<5,1,0)+
+if(#{oLAXTZY6ken.U2tBADVisKH}<5,1,0)+
+if(#{YYaRDUZyH9L.U2tBADVisKH}<5,1,0)+
+if(#{HVteopBt0jr.U2tBADVisKH}<5,1,0)+
+if(#{sWodd2tbjgZ.U2tBADVisKH}<5,1,0)+
+if(#{yVYajDDYUfX.U2tBADVisKH}<5,1,0)+
+if(#{eTJAr4sc83v.U2tBADVisKH}<5,1,0)+
+if(#{U4KSmanl4JP.U2tBADVisKH}<5,1,0)+
+if(#{FXsa5uG3IGn.U2tBADVisKH}<5,1,0)+
+if(#{L34T9YDtCor.U2tBADVisKH}<5,1,0)+
+if(#{W5mHXhSYFfQ.U2tBADVisKH}<5,1,0)+
+if(#{cmSUyJOZwyl.U2tBADVisKH}<5,1,0)+
+if(#{cT8sfosRXvU.U2tBADVisKH}<5,1,0)+
+if(#{OaWKnMS7say.U2tBADVisKH}<5,1,0)+
+if(#{Z4bjHvGS6aH.U2tBADVisKH}<5,1,0)+
+if(#{Nn1L7CNEtC8.U2tBADVisKH}<5,1,0)+
+if(#{RNYKSc3nAUg.U2tBADVisKH}<5,1,0)+
+if(#{PtmZ9XqpPKi.U2tBADVisKH}<5,1,0)+
+if(#{CohlLHi54B0.U2tBADVisKH}<5,1,0)+
+if(#{Gu6u82RD9OW.U2tBADVisKH}<5,1,0)+
+if(#{LiuYzxYr4Pt.U2tBADVisKH}<5,1,0)+
+if(#{Tje33nJAG55.U2tBADVisKH}<5,1,0)+
+if(#{euM2dlqleYH.U2tBADVisKH}<5,1,0)+
+if(#{dASLmBTEehF.U2tBADVisKH}<5,1,0)+
+if(#{qU2LvzoPn1z.U2tBADVisKH}<5,1,0)+
+if(#{OkWaFxdUQY2.U2tBADVisKH}<5,1,0)+
+if(#{YHIv7KQc2e7.U2tBADVisKH}<5,1,0)+
+if(#{rt9D47Inb49.U2tBADVisKH}<5,1,0)+
+if(#{i1iXbquZ5iv.U2tBADVisKH}<5,1,0)+
+if(#{RcE30WBKrXI.U2tBADVisKH}<5,1,0)+
+if(#{EAG0GfdSMAs.U2tBADVisKH}<5,1,0)+
+if(#{N2aXs7VlJdJ.U2tBADVisKH}<5,1,0)+
+if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
+>
+>**19 Stock availability / %**  
 >This indicator counts the number of items with non-zero stock, divides them by the number of items and multiplies the result by 100 in order to present the result as percentage. Note that items have to be added and removed manually when the stock item list is changed and the denominator also has to be adjusted accordingly.
->>**Name \(*)**: "Stock availability - MSR"  
->>**Short Name \(*)**: "Stock availability - MSR"  
+>>**Name \(*)**: "Stock availability / %"  
+>>**Short Name \(*)**: "Stock availability / % - MSR"  
 >>**Description**: "Percentage of items with non-zero stock"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
@@ -647,7 +816,7 @@ if(#{mIYcOnLcqes.eKdBeWyrmPN}==0,0,1)
 >>>**Description**: "Stock availability - MSR - Denominator"
 >>>**Calculation**: "0.06"
 >
->**18 Stockout count - MSR**  
+>**20 Stockout count - MSR**  
 >This indicator counts the number of items with a stockout.
 >>**Name \(*)**: "Stockout count - MSR"  
 >>**Short Name \(*)**: "Stockout count - MSR"  
@@ -860,6 +1029,10 @@ The "Predictor group" is required in order to allow running all Predictors perio
 >>"[Item - MSR] - Stock discrepancy"  
 
 
+## Android Settings Web App - Offline Analytics
+
+[To be completed]
+
 ## Data Entry (Beta) App - Data entry
 
 [Explanation]
@@ -889,22 +1062,26 @@ Xx
 >>>- 10 MSR - Coefficient of Variation x 10 - Pivot table  
 >>>- 11 MSR - Coefficient of Variation x 10 - Stacked bar chart  
 >>>- 12 MSR - Coefficient of Variation x 10 - Bar chart
->>>- 13 MSR - Stock availability - Pivot table  
->>>- 14 MSR - Stock availability - Bar chart  
->>>- 15 MSR - Stock availability - Single value chart  
->>>- 16 MSR - Stock availability - Gauge chart  
->>>- 17 MSR - Stockouts - Stacked column chart  
->>>- 18 MSR - Stockout count - Pivot table  
->>>- 19 MSR - Stockout count - Column chart  
->>>- 20 MSR - Stockout count - Single value chart  
->>>- 21 MSR - Stockout length - Pivot table  
->>>- 22 MSR - Stockout length - Bar chart  
->>>- 23 MSR - Stock coverage time - Pivot table  
->>>- 24 MSR - Stock coverage time distribution - Pivot table  
->>>- 25 MSR - Stock coverage time distribution - Last 12 months - Column chart  
->>>- 26 MSR - Stock coverage time distribution - Last month - Column chart  
->>>- 27 MSR - Stock discrepancy - Pivot table  
->>>- 28 MSR - Stock discrepancy count - Column chart  
+>>>- 13 MSR - Coefficient of Variation x 10 distribution - Pivot table
+>>>- 14 MSR - Coefficient of Variation x 10 distribution - Last 12 months - Stacked Column chart
+>>>- 15 MSR - Coefficient of Variation x 10 distribution - Last months - Column chart
+
+>>>- 13 16 MSR - Stock availability - Pivot table  
+>>>- 14 17 MSR - Stock availability - Bar chart  
+>>>- 15 18 MSR - Stock availability - Single value chart  
+>>>- 16 19 MSR - Stock availability - Gauge chart  
+>>>- 17 20 MSR - Stockouts - Stacked column chart  
+>>>- 18 21 MSR - Stockout count - Pivot table  
+>>>- 19 22 MSR - Stockout count - Column chart  
+>>>- 20 23 MSR - Stockout count - Single value chart  
+>>>- 21 24 MSR - Stockout length - Pivot table  
+>>>- 22 25 MSR - Stockout length - Bar chart  
+>>>- 23 26 MSR - Stock coverage time - Pivot table  
+>>>- 24 27 MSR - Stock coverage time distribution - Pivot table  
+>>>- 25 28 MSR - Stock coverage time distribution - Last 12 months - Column chart  
+>>>- 26 29 MSR - Stock coverage time distribution - Last month - Column chart  
+>>>- 27 30 MSR - Stock discrepancy - Pivot table  
+>>>- 28 31 MSR - Stock discrepancy count - Column chart  
 >
 >**2 District level**  
 >>**2.1 Statistics**  
@@ -923,32 +1100,33 @@ Xx
 >**5 Visualization overview**  
 >
 <br>  
-| Visualization  | Item | Facility | District | Region | Country | Visualiations | Offline |
-| :-------- | :---: | :---: | :---: | :---:| :---: |:---: | :---:|
+
+| Visualization  |  Facility | District | Region | Country | Visualiations | Offline |
+| :-------- | :---: | :---: | :---:| :---: |:---: | :---:|
 | **STATISTICS / MONTHLY** |
-| Stock receipt| Sum/Average | Sum | Sum | Sum | Sum | Pivot |
-| Stock distribution| Sum/Average | Sum | Sum | Sum | Sum | Pivot |
-| Stock redistribution| Sum/Average | Sum | Sum | Sum | Sum | Pivot |
-| Stock discard| Sum/Average | Sum | Sum | Sum | Sum | Pivot |
-| Stock on hand | Sum | Sum | Sum | Sum | Sum | Pivot |
-| Stock correction | Sum/Average | Sum | Sum | Sum | Sum | Pivot |
-| Stock report complete | Sum | Sum | Sum | Sum | Sum | Pivot |
-| Monthly report| - | Count | Count | Count | Count | Pivot |
-| Health facility| - | 1 | Count | Count | Count | Pivot |  
-Stacked bar chart + line chart: receipt, distribution, correction, stock on hand
+| Stock receipt| Sum | Sum | Sum | Sum | Pivot table, Column |
+| Stock distribution| Sum | Sum | Sum | Sum | Pivot table, Column |
+| Stock redistribution| Sum | Sum | Sum | Sum | Pivot table, Column |
+| Stock discard| Sum | Sum | Sum | Sum | Pivot table, Column |
+| Stock on hand | Sum | Sum | Sum | Sum | Pivot table, Column |
+| Stock correction | Sum | Sum | Sum | Sum | Pivot table, Column |
+| Stock report complete | Sum | Sum | Sum | Sum | Pivot table, Column |
+| Monthly report| Count | Count | Count | Count | Pivot |
+| Health facility| 1 | Count | Count | Count | Pivot |  
 
 <br>  
 
-| Visualization  | Item | Facility | District | Region | Country | Visualiations | Offline |
-| :-------- | :---: | :---: | :---: | :---:| :---: |:---: | :---:|
+| Visualization  | Facility | District | Region | Country | Visualiations | Offline |
+| :-------- |  :---: | :---: | :---:| :---: |:---: | :---:|
 | **INDICATORS** |
-| Stock distribution / Coefficient of Variation | List |  |   |  |  | Pivot |
-| Stockout count | List | Count |  Count |Count | Count | Pivot |
-| Stockout length | List | Count |  Count |Count | Count | Pivot |
-| Stock coverage time / absolute | List |  |  |  |  |  |  |  |  |  |
-| Stock coverage time / range | List | Count | Count | Count | Count | Pivot |  |
-| Stock coverage time / distribution | List | Count | Count | Count | Count | Pivot |  |
-| Stock discrepancy | List | Count |  Count |Count | Count | Pivot |
+| Stock distribution / Coefficient of Variation | Calculation | -  | - | - | Pivot, Bar, Stacked bar |
+| Stock distribution / Coefficient of Variation / distribution | Count | Count | Count | Count | Pivot Column |
+| Stockout count | Count |  Count |Count | Count | Pivot, Column, Single value |
+| Stockout length | Count |  Count |Count | Count | Pivot, Bar |
+| Stock coverage time | Calculation |  |  |  |  |  |  |  | Pivot |
+| Stock coverage time / Range | Calculation, Count | Count | Count | Count | Pivot |  |
+| Stock coverage time / distribution | Count | Count | Count | Count | Pivot, Column |  |
+| Stock discrepancy | Count |  Count |Count | Count | Pivot, Column |
 
 By default, all the visualizations above are shown as time series (by month/by day)
 <br>  
