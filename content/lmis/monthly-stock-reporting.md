@@ -1515,6 +1515,83 @@ This report provides the coefficient of variation (standard deviation of stock d
 >
 ![Alt text](image-19.png)
 
+>**13 MSR - Coefficient of Variation x 10 distribution - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"
+>**Name \(*)**: "13 MSR - Coefficient of Variation x 10 distribution - Pivot table"  
+>**Description**: "MSR DV 13 - Monthly Stock Reporting / Coefficient of Variation x 10 distribution / Last 12 months / Health facility / By item / Pivot table
+This report provides the coefficient of variation (standard deviation of stock distribution divided by average stock distribution) for each item at a health facility over the last 12 months with a colour legend."
+>>**Columns**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Coefficient of variation"  
+>>>>**Selected items**: select the following items in the following order:  
+>>>>- Low variability
+>>>>- Medium variability
+>>>>- High variability
+>>**Rows**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Filter**: "Relative periods"  
+>>>**Organisation unit**: "User organisation unit"  
+
+>
+![Alt text](image-38.png)
+
+>**14 MSR - Coefficient of Variation x 10 distribution - Last 12 months - Stacked column chart**  
+>
+>**Visualization type**: select "Pivot table"
+>**Name \(*)**: "14 MSR - Coefficient of Variation x 10 distribution - Last 12 months - Stacked column chart"  
+>**Description**: "MSR DV 14 - Monthly Stock Reporting / Coefficient of Variation x 10 distribution / Last 12 months / Health facility / By item / Stacked column chart
+This report provides the number of items which fall into the respective coefficient of variation (standard deviation of stock distribution divided by average stock distribution) ranges (low, medium and high) across all items at a health facility over the last 12 months."
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Coefficient of variation"  
+>>>>**Selected items**: select the following items in the following order:  
+>>>>- Low variability
+>>>>- Medium variability
+>>>>- High variability
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>
+![Alt text](image-39.png)
+
+>**15 MSR - MSR - Coefficient of Variation x 10 distribution - Last month - Column chart**  
+>
+>**Visualization type**: select "Pivot table"
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 distribution - Last month - Column chart"  
+>**Description**: "MSR DV 15 - Monthly Stock Reporting / Coefficient of Variation x 10 distribution / Last month / Health facility / By item / Column chart
+This report provides the number of items which fall into the respective coefficient of variation (standard deviation of stock distribution divided by average stock distribution) ranges (low, medium and high) across all items at a health facility for the last month."
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Coefficient of variation"  
+>>>>**Selected items**: select the following items in the following order:  
+>>>>- Low variability
+>>>>- Medium variability
+>>>>- High variability
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>
+![Alt text](image-40.png)
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 >**13 MSR - Stock availability - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
