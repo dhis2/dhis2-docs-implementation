@@ -618,8 +618,8 @@ etc.
 >>**Decimals in data output**: "1"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
->>>**Description**: "[Item] - Coverage time - MSR - Numerator"
->>>**Calculation**: 
+>>>**Description**: "[Item] - Coverage time - MSR - Numerator"  
+>>>**Calculation**:  
 >>>#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}
 >>>
 >>>[Item 1] - Stock on hand/[Item 1] Stock distributed
@@ -686,29 +686,29 @@ The following legends are applied to some visualizations:
 
 - Stock discrepancy: indicates correct stocks, positive or negative discrepancies
 
->**1 Stock discrepancy**
->>**Name \(*)**: 1 Stock discrepancy - MSR**
->>**Code**: "STOCK_DISCREPANCY"
->>**Name**
->>>**Name**: "Negative"  
->>>**Start value**: "-1000000"  
->>>**End value**: "0"  
->>>**Color code**: "#8411D7" (purple)  
->>>
->>>**Name**: "Correct stock"  
->>>**Start value**: "0"  
->>>**End value**: "1"  
->>>**Color code**: "#68FE4C" (green)  
->>>
->>>**Name**: "Positive"  
->>>**Start value**: "1"  
->>>**End value**: "1000000"  
->>>**Color code**: "#FF2000" (red)  
+>**1 Coefficient of variation**  
+>>**Name \(*)**: "Coefficient of variation**  
+>>**Code**: "COEFFICIENT_OF_VARIATIONS"  
+>>**Name**  
+>>>**Name**: "Low variability"  
+>>>**Start value**: "0  
+>>>**End value**: "5"  
+>>>**Color code**: "#41F80E" (Green)  
+>>
+>>>**Name**: "Medium variability"  
+>>>**Start value**: "5"  
+>>>**End value**: "10"  
+>>>**Color code**: "#FEB24C" (yellow)  
+>>
+>>>**Name**: "Erratic variability"  
+>>>**Start value**: "10"  
+>>>**End value**: "100"  
+>>>**Color code**: "#F03B20" (red)  
 >
 >**2 Stock coverage time**  
->>**Name \(*)**: "Stock coverage time - MSR**  
+>>**Name \(*)**: "Stock coverage time**  
 >>**Code**: "STOCK_COVERAGE_TIME"  
->>**Name**
+>>**Name**  
 >>>**Name**: "Stockout"  
 >>>**Start value**: "0  
 >>>**End value**: "0.0001"  
@@ -734,24 +734,34 @@ The following legends are applied to some visualizations:
 >>>**End value**: "1000" 
 >>>**Color code**: "#DC00FF" (purple)  
 >
->**3 Coefficient of variation**  
->>**Name \(*)**: "Coefficient of variation - MSR**  
->>**Code**: "COEFFICIENT_OF_VARIATIONS"  
->>**Name**
->>>**Name**: "Low variability"  
->>>**Start value**: "0  
->>>**End value**: "5"  
->>>**Color code**: "#41F80E" (Green)  
->>
->>>**Name**: "Medium variability"  
->>>**Start value**: "5"  
->>>**End value**: "10"  
->>>**Color code**: "#FEB24C" (yellow)  
->>
->>>**Name**: "Erratic variability"  
->>>**Start value**: "10"  
->>>**End value**: "100" 
->>>**Color code**: "#F03B20" (red)  
+>**3 Stock discrepancy**  
+>>**Name \(*)**:"Stock discrepancy"  
+>>**Code**: "STOCK_DISCREPANCY"  
+>>**Name**  
+>>>**Name**: "Negative"  
+>>>**Start value**: "-1000000"  
+>>>**End value**: "0"  
+>>>**Color code**: "#8411D7" (purple)  
+>>>
+>>>**Name**: "Correct stock"  
+>>>**Start value**: "0"  
+>>>**End value**: "1"  
+>>>**Color code**: "#68FE4C" (green)  
+>>>
+>>>**Name**: "Positive"  
+>>>**Start value**: "1"  
+>>>**End value**: "1000000"  
+>>>**Color code**: "#FF2000" (red)  
+>
+>**4 Stockout count**
+This "Legend" is created for selecting a specific colour for column charts instead of a colour scheme being automatically assigned by the system.
+>>**Name \(*)**: "Stockout count"  
+>>**Code**: "STOCKOUT_COUNT"  
+>>**Name**  
+>>>**Name**: "Stockout count"  
+>>>**Start value**: "0"  
+>>>**End value**: "1000000"  
+>>>**Color code**: "#F31812" (red)  
 
 #### 5.2 Predictor
 
@@ -790,10 +800,10 @@ stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10"
 >>**Organisation unit levels** "Facility"  
 >>**Organisation units providing data \(*)** "At selected level(s) only"  
 *THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
->>**Generator \(*)**
->>>**Description**: "[Stock list] - Stock coverage time"
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - Stock coverage time"  
 >>>**Expression**: "forEach ?de in :DEG:nYcQWVqVsjx -->
-#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs}"
+#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs}"  
 >>
 >>**Sequential sample count \(*)**: "0"  
 >>**Annual sample count \(*)**: "0"  
