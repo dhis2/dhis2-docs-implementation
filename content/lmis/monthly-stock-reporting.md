@@ -1066,22 +1066,22 @@ Xx
 >>>- 14 MSR - Coefficient of Variation x 10 distribution - Last 12 months - Stacked Column chart
 >>>- 15 MSR - Coefficient of Variation x 10 distribution - Last months - Column chart
 
->>>- 13 16 MSR - Stock availability - Pivot table  
->>>- 14 17 MSR - Stock availability - Bar chart  
->>>- 15 18 MSR - Stock availability - Single value chart  
->>>- 16 19 MSR - Stock availability - Gauge chart  
->>>- 17 20 MSR - Stockouts - Stacked column chart  
->>>- 18 21 MSR - Stockout count - Pivot table  
->>>- 19 22 MSR - Stockout count - Column chart  
->>>- 20 23 MSR - Stockout count - Single value chart  
->>>- 21 24 MSR - Stockout length - Pivot table  
->>>- 22 25 MSR - Stockout length - Bar chart  
->>>- 23 26 MSR - Stock coverage time - Pivot table  
->>>- 24 27 MSR - Stock coverage time distribution - Pivot table  
->>>- 25 28 MSR - Stock coverage time distribution - Last 12 months - Column chart  
->>>- 26 29 MSR - Stock coverage time distribution - Last month - Column chart  
->>>- 27 30 MSR - Stock discrepancy - Pivot table  
->>>- 28 31 MSR - Stock discrepancy count - Column chart  
+>>>- 16 MSR - Stock availability - Pivot table  
+>>>- 17 MSR - Stock availability - Bar chart  
+>>>- 18 MSR - Stock availability - Single value chart  
+>>>- 19 MSR - Stock availability - Gauge chart  
+>>>- 20 MSR - Stockouts - Stacked column chart  
+>>>- 21 MSR - Stockout count - Pivot table  
+>>>- 22 MSR - Stockout count - Column chart  
+>>>- 23 MSR - Stockout count - Single value chart  
+>>>- 24 MSR - Stockout length - Pivot table  
+>>>- 25 MSR - Stockout length - Bar chart  
+>>>- 26 MSR - Stock coverage time - Pivot table  
+>>>- 27 MSR - Stock coverage time distribution - Pivot table  
+>>>- 28 MSR - Stock coverage time distribution - Last 12 months - Column chart  
+>>>- 29 MSR - Stock coverage time distribution - Last month - Column chart  
+>>>- 30 MSR - Stock discrepancy - Pivot table  
+>>>- 31 MSR - Stock discrepancy count - Column chart  
 >
 >**2 District level**  
 >>**2.1 Statistics**  
