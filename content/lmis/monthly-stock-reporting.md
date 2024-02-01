@@ -1085,18 +1085,16 @@ Xx
 >**2 District level**  
 >>**2.1 Statistics**  
 >>>- 32 MSR - Stock receipt - Pivot table  
-
-xxxxxxxxxxxxx
-
 >>>- 33 MSR - Stock distribution - Pivot table  
 >>>- 34 MSR - Stock redistribution - Pivot table  
 >>>- 35 MSR - Stock discard - Pivot table  
 >>>- 36 MSR - Stock on hand - Pivot table  
 >>>- 37 MSR - Stock correction - Pivot table  
 >>>- 38 MSR - Stock report complete - Last 3 months - Pivot table  
->>>- 39 MSR - Stock report complete - Last 12 months - Pivot table  
->>>- 40 MSR - Stock report complete - Column chart  
->>>- 41 MSR - Facilities - Map  
+>>>- 39 MSR - Facilities - Map  
+
+xxxxxxxxxxxxx
+
 >>
 >>**2.2 Indicators**  
 >>>- 42 MSR - Coefficient of Variation x 10 - Pivot table  
@@ -2259,12 +2257,12 @@ This report provides the monthly stock on hand by health facility in a district 
 
 ![alt text](image-47.png)
 
->**6 MSR - Stock correction - Pivot table**  
+>**37 MSR - Stock correction - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
 >**Name \(*)**: "MSR - Stock correction - Pivot table"  
->**Description**: "MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / By item / Pivot table
-This report provides the monthly stock corrections as reported at the end of every month."
+>**Description**: "MSR DV 37 - Monthly Stock Reporting / Stock correction / Last 12 months / District / By item / Pivot table
+This report provides the monthly stock corrections by health facility in a district as reported at the end of every month."
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -2292,7 +2290,6 @@ This report provides the monthly stock corrections as reported at the end of eve
 >>>>>>**Row totals**: tag (appears as a white tick in a green 
 
 ![alt text](image-48.png)
-XXXXXXXXXXXXXXXXXXXXX
 
 >**7 MSR - Stock report complete - Last 3 months - Pivot table**  
 >
@@ -2320,7 +2317,7 @@ This report provides an overview of all stock data from the last month."
 >>>>**Selected Items**: "Stock distribution"  
 >
 ![Alt text](image-12.png)
-
+   
 >**8 MSR - Stock report complete - Last 12 months - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"
