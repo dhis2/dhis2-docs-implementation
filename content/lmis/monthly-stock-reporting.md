@@ -1091,15 +1091,15 @@ Xx
 >>>- 36 MSR - Stock on hand - Pivot table  
 >>>- 37 MSR - Stock correction - Pivot table  
 >>>- 38 MSR - Stock report complete - Last 3 months - Pivot table  
->>>- 39 MSR - Facilities - Map  
-
-xxxxxxxxxxxxx
-
+>>>- 39 MSR - Health facilities - Map  
 >>
 >>**2.2 Indicators**  
 >>>- 42 MSR - Coefficient of Variation x 10 - Pivot table  
 >>>- 43 MSR - Coefficient of Variation x 10 - Stacked bar chart  
 >>>- 44 MSR - Coefficient of Variation x 10 - Bar chart  
+
+xxxxxxxxxxxxx
+
 >>>- 45 MSR - Coefficient of Variation x 10 distribution - Pivot table  
 >>>- 46 MSR - Coefficient of Variation x 10 distribution - Last 12 months - Stacked Column chart  
 >>>- 47 MSR - Coefficient of Variation x 10 distribution - Last months - Column chart  
@@ -2186,7 +2186,7 @@ This report provides the monthly stock receipts by health facility in a district
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
-![alt text](image-43.png)
+![alt text](image-61.png)
 
 >**33 MSR - Stock distribution - District - Pivot table**  
 >
@@ -2219,7 +2219,7 @@ This report provides the monthly stock distributions by health facility in a dis
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
-![alt text](image-42.png)
+![alt text](image-57.png)
 
 >**34 MSR - Stock redistribution - District - Pivot table**  
 >
@@ -2252,7 +2252,7 @@ This report provides the monthly stock redistributions by health facility in a d
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
-![alt text](image-45.png)
+![alt text](image-62.png)
 
 >**35 MSR - Stock discard - District - Pivot table**  
 >
@@ -2285,7 +2285,7 @@ This report provides the monthly stock discards as reported at the end of every 
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
-![alt text](image-46.png)
+![alt text](image-56.png)
 
 >**36 MSR - Stock on hand - District - Pivot table**  
 >
@@ -2318,7 +2318,7 @@ This report provides the monthly stock on hand by health facility in a district 
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
-![alt text](image-47.png)
+![alt text](image-59.png)
 
 >**37 MSR - Stock correction - District - Pivot table**  
 >
@@ -2351,7 +2351,7 @@ This report provides the monthly stock corrections by health facility in a distr
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green 
 
-![alt text](image-48.png)
+![alt text](image-55.png)
 
 >**38 MSR - Stock report complete - Last 3 months - District - Pivot table**  
 >
@@ -2380,8 +2380,7 @@ This report provides an overview of all stock data by health facility in a distr
 >>>>**Totals**  
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 
-![alt text](image-51.png)
-   
+![alt text](image-63.png)
 
 #### Indicators
 
@@ -2402,12 +2401,32 @@ This report provides an overview of all stock data by health facility in a distr
 >>**1.2 Indicators**  
 >>>- xx MSR - Coefficient of Variation x 10 - Pivot table  
 
+### Health facility level
+
+#### Statistics
+
 >**1 MSR - Health facilities - District**  
 >
+>**Name \(*)**: "MSR - Health facilities - District"  
+>**Decription**: "This map displays the location of all health facilities in a district together with the administrative district boundary on a map."  
+>
+>**Add layer**  
+>>**1 Facilities**  
+>>>**Organisation Units**
+>>>>**Selection**: "User organisation unit"  
+>>>**Level**: "Facility"  
+>>>**Style**
+>>>>**Point color**: select preferred colour
+>>>>**Point radius**: "5"
+>>
+>>**2 Organisation units**  
+
+
+
 >**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR - Stock report complete - Last 3 months - District - Pivot table"
->**Description**: "MSR DV 38 - Monthly Stock Reporting / Stock report complete / Last 3 month / District / By item / Pivot table
-This report provides an overview of all stock data by health facility in a district from the last month."
+>**Name \(*)**: "MSR - Health facilities - District"
+>**Description**: "MSR DV 1 / Health facilities / District"  
+"This report displays the health facilities in a specific district on a map."
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
