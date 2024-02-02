@@ -1115,7 +1115,7 @@ Xx
 >>>- 54 MSR - Stock coverage time - District - Pivot table  
 >>>- 55 MSR - Stock coverage time distribution - District - Pivot table  
 >>>- 56 MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart  
->>>- 57 MSR - Stock coverage time distribution - Last month - District - Column chart  
+>>>- 57 MSR - Stock coverage time distribution - Last month - District - Stacked column chart  
 >>>- 58 MSR - Stock discrepancy - District - Pivot table  
 >>>- 59 MSR - Stock discrepancy count - District - Stacked column chart  
 
@@ -3136,16 +3136,15 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>>>**Colour**: select red
 >>>>**Boundary colour**: select preferred colour
 
-
-
 ## Dashboard App - Analytics
 
 >**1 Health facility level**  
->>- 1 MSR Visualization library - Health facility level
->>- 2 Selection>
+>>- 1 MSR - Visualization library - Health facility level
+>>- 2 MSR - Health facility level - Analytics
+>
 >**2 District level**  
->>- Library
->>- Selection
+>>- 3 MSR - Visualization library - District level
+>>- 4 MSR - District level - Analytics
 >
 >**3 Regional level**  
 >>- Library
@@ -3159,12 +3158,14 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>- Essential LMIS KPIs
 >>- Xx
 
->**1 MSR Visualization library - Health facility level**  
+### Health facility level
+
+>**1 MSR - Visualization library - Health facility level**  
 >
->**Dashboard title**: "MSR Visualization library - Health facility level"  
+>**Dashboard title**: "MSR - Visualization library - Health facility level"  
 >**Dashboard description**: "Library of all available LMIS visualizations for the health facility level in the order of their documentation. These are intended for immediate use or adapting to national policies and requirements."    
 >**Search for visualizations, reports and more** 
->>- MSR - Stock receipt - Pivot table
+>>- MSR - Stock receipt - District - Pivot table
 >>- MSR - Stock distribution - Pivot table  
 >>- MSR - Stock redistribution - Pivot table  
 >>- MSR - Stock discard - Pivot table  
@@ -3193,7 +3194,7 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>- MSR - Stock discrepancy - Pivot table  
 >>- MSR - Stock discrepancy count - Column chart  
 
->**2 MSR - Monthly Stock Reporting - Health facility level**  
+>**2 MSR - Health facility level - Analytics**  
 >
 >**Dashboard title**: "MSR - Monthly Stock Reporting - Health facility level"  
 >**Dashboard description**: "This dashboard presents a selection of the DHIS2-LMIS Visualization library - MSR - Health facility level and is intended as a suggestion for customizing dashboards to national policies and requirements."    
@@ -3207,3 +3208,57 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>- MSR - Stock coverage time distribution - Last month - Column chart  
 >>- MSR - Coefficient of Variation x 10 - Bar chart
 >>- MSR - Stock report complete - Last 3 months - Pivot table  
+
+### District level
+
+>**3 MSR - Visualization library - District level**  
+>
+>**Dashboard title**: "MSR - Visualization library - District level"  
+>**Dashboard description**: "Library of all available LMIS visualizations for the district in the order of their documentation. These are intended for immediate use or adapting to national policies and requirements."    
+>**Search for visualizations, reports and more** 
+>>>- MSR - Stock receipt - District - Pivot table  
+>>>- MSR - Stock distribution - District - Pivot table  
+>>>- MSR - Stock redistribution - District - Pivot table  
+>>>- MSR - Stock discard - District - Pivot table  
+>>>- MSR - Stock on hand - District - Pivot table  
+>>>- MSR - Stock correction - District - Pivot table  
+>>>- MSR - Stock report complete - Last 3 months - District - Pivot table  
+>>>- MSR - Coefficient of Variation x 10 - District - Pivot table  
+>>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
+>>>- MSR - Coefficient of Variation x 10 - District - Bar chart  
+>>>- MSR - Coefficient of Variation x 10 distribution - District - Pivot table  
+>>>- MSR - Coefficient of Variation x 10 distribution - Last 12 months - District - Stacked Column chart  
+>>>- MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart  
+>>>- MSR - Stock availability - District - Pivot table  
+>>>- MSR - Stock availability - District - Bar chart  
+>>>- MSR - Stock availability - District - Column chart  
+>>>- MSR - Stockouts - District - Pivot table  
+>>>- MSR - Stockout count - District - Pivot table  
+>>>- MSR - Stockout count - District - Column chart  
+>>>- MSR - Stockout count - District - Single value chart  
+>>>- MSR - Stockout length - District - Pivot table  
+>>>- MSR - Stockout length - District - Stacked bar chart  
+>>>- MSR - Stock coverage time - District - Pivot table  
+>>>- MSR - Stock coverage time distribution - District - Pivot table  
+>>>- MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart  
+>>>- MSR - Stock coverage time distribution - Last month - District - Stacked column chart  
+>>>- MSR - Stock discrepancy - District - Pivot table  
+>>>- MSR - Stock discrepancy count - District - Stacked column chart  
+
+>**4 MSR - District level - Analytics**  
+>
+>**Dashboard title**: "MSR - District level - Analytics"  
+>**Dashboard description**: "This dashboard presents a selection of the MSR - Visualization library - District level and is intended as a suggestion for customizing dashboards to national policies and requirements."    
+>**Search for visualizations, reports and more** 
+>>>- MSR - Stockout count - District - Single value chart  
+>>>- MSR - Stock availability - District - Column chart  
+>>>- MSR - Stock coverage time distribution - Last month - District - Stacked column chart  
+>>>- MSR - Health facilities - District
+>>>- MSR - Stock availability - District - Bar chart  
+>>>- MSR - Stockout count - District - Column chart  
+>>>- MSR - Stockout length - District - Stacked bar chart  
+>>>- MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart  
+>>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
+>>>- MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart  
+>>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
+>>>- MSR - Stock report complete - Last 3 months - District - Pivot table  
