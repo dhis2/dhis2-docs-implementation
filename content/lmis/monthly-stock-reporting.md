@@ -3098,12 +3098,33 @@ This report displays the number of stock discrepancies for the past 12 months se
 
 ## Map App - Analytics
 
->**1 Health facility level**  
+>**1 District level**  
 >>**1.1 Statistics**  
 >>>- 1 MSR - Health facilies - District
->>
+>
 >>**1.2 Indicators**  
->>>- xx MSR - Coefficient of Variation x 10 - Pivot table  
+>>>- 2 MSR - Stock availability- District
+>>>- 3 MSR - Stock discrepancy count - District
+>>>- 4 MSR - Stockout count - District
+
+xxxx
+Stock coverage time distribution by facility in a district: check with JM first
+Coefficient of variation distribution by facility in a district: check with JM first
+
+>**2 Province level**  
+>>**2.1 Statistics**  
+>>>- X 
+>
+>>**2.2 Indicators**  
+>>>- X 
+>>
+>**3 Country level**  
+>>**3.1 Statistics**  
+>>>- X 
+>
+>>**3.2 Indicators**  
+>>>- X 
+>>
 
 ### Health facility level
 
@@ -3193,7 +3214,7 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>- MSR - Stock coverage time distribution - Last month - Column chart  
 >>- MSR - Stock discrepancy - Pivot table  
 >>- MSR - Stock discrepancy count - Column chart  
-
+>
 >**2 MSR - Health facility level - Analytics**  
 >
 >**Dashboard title**: "MSR - Monthly Stock Reporting - Health facility level"  
@@ -3202,12 +3223,15 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>- MSR - Stock availability - Single value chart  
 >>- MSR - Stock availability - Bar chart  
 >>- MSR - Stockout count - Single value chart  
->>- MSR - Stock discrepancy count - Column chart  
+>>- MSR - Health facility
 >>- MSR - Stockouts - Stacked column chart  
 >>- MSR - Stockout length - Bar chart  
 >>- MSR - Stock coverage time distribution - Last month - Column chart  
 >>- MSR - Coefficient of Variation x 10 - Bar chart
 >>- MSR - Stock report complete - Last 3 months - Pivot table  
+>>- MSR - Stock discrepancy count - Column chart 
+
+![](image-89.png)
 
 ### District level
 
@@ -3244,6 +3268,10 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>- MSR - Stock coverage time distribution - Last month - District - Stacked column chart  
 >>>- MSR - Stock discrepancy - District - Pivot table  
 >>>- MSR - Stock discrepancy count - District - Stacked column chart  
+>>>- MSR - Health facilies - District
+>>>- MSR - Stock availability- District
+>>>- MSR - Stock discrepancy count - District
+>>>- MSR - Stockout count - District
 
 >**4 MSR - District level - Analytics**  
 >
@@ -3254,6 +3282,9 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>- MSR - Stock availability - District - Column chart  
 >>>- MSR - Stock coverage time distribution - Last month - District - Stacked column chart  
 >>>- MSR - Health facilities - District
+>>>- MSR - Stock availability- District
+>>>- MSR - Stock discrepancy count - District
+>>>- MSR - Stockout count - District
 >>>- MSR - Stock availability - District - Bar chart  
 >>>- MSR - Stockout count - District - Column chart  
 >>>- MSR - Stockout length - District - Stacked bar chart  
@@ -3262,3 +3293,6 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>- MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart  
 >>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
 >>>- MSR - Stock report complete - Last 3 months - District - Pivot table  
+
+![](image-90.png)
+![](image-91.png)
