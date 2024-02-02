@@ -1110,14 +1110,12 @@ Xx
 >>>- 49 MSR - Stockout count - District - Pivot table  
 >>>- 50 MSR - Stockout count - District - Column chart  
 >>>- 51 MSR - Stockout count - District - Single value chart  
-
 >>>- 52 MSR - Stockout length - District - Pivot table  
->>>- 53 MSR - Stockout length - District - Bar chart  
-
->>>- 54 MSR - Stock coverage time - Pivot table  
->>>- 55 MSR - Stock coverage time distribution - Pivot table  
->>>- 56 MSR - Stock coverage time distribution - Last 12 months - Column chart  
->>>- 57 MSR - Stock coverage time distribution - Last month - Column chart  
+>>>- 53 MSR - Stockout length - District - Stacked bar chart  
+>>>- 54 MSR - Stock coverage time - District - Pivot table  
+>>>- 55 MSR - Stock coverage time distribution - District - Pivot table  
+>>>- 56 MSR - Stock coverage time distribution - District - Last 12 months - Stacked column chart  
+>>>- 57 MSR - Stock coverage time distribution - Last month - Distribution - Column chart  
 
 >>>- 58 MSR - Stock discrepancy - Pivot table  
 >>>- 59 MSR - Stock discrepancy count - Column chart  
@@ -2021,13 +2019,11 @@ This report displays a Pivot table  with the number of items for which the cover
 >>
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**YOUR DIMENIONS**
->>>>**Name**: "Monthly stock report"  
->>>>**Selected Items**: "Stockout coverage"  
 >>
 >>**Options**    
 >>>**Data**  
 >>>>**Totals**  
+>>>>>**Columns totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
 ![](image-52.png)
@@ -2800,16 +2796,12 @@ This report displays the total number of stockouts in all health facilities of a
 
 ![](image-78.png)
 
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-
->**XX MSR - Stockout length - Pivot table**  
+>**52 MSR - Stockout length - District - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stockout length - Pivot table"  
->**Descriptions**: "MSR DV 24 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table 
-This report displays a Pivot table by item with a "1" indicating a stockout (and "0" indicating stock was available) with a total for the past 12 months."  
+>**Name \(*)**: "MSR - Stockout length - District - Pivot table"  
+>**Descriptions**: "MSR DV 24 - Monthly Stock Reporting / Stockout length / Last 12 months / District / Pivot table 
+This report displays a Pivot table by item with a "1" indicating a stockout (and "0" indicating stock was available) with a total for the past 12 months which represents the number of months during which a stockout occurred for all health facilities in the district."  
 >>**Columns** 
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
@@ -2824,23 +2816,30 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 >>>>**Data element group**: select "[Stock item list] - MSR
 >>>>**Disaggregation**: "Totals only"
 >>>>**Selected items**: select all (->>)
->>
->>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
 >>
 >>**Options**    
 >>>**Data**  
 >>>>**Totals**  
+>>>>>**Column totals**: tag (appears as a white tick in a green field)  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend style**
+>>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stockout count"
 
-![Alt text](image-30.png)
+![](image-82.png)
 
->**XX MSR - Stockout length - Bar chart**  
+>**53 MSR - Stockout length - District - Stacked bar chart**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockout length - Bar chart"  
->**Description**: "MSR DV 25 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Bar chart
-This report displays a bar chart with the number of stockouts for each item during the past 12 months."  
+>**Description**: "MSR DV 53 - Monthly Stock Reporting / Stockout length / Last 12 months / District / Stacked bar chart
+This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the district during the past 12 months."  
 >>**Series** 
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
@@ -2859,14 +2858,14 @@ This report displays a bar chart with the number of stockouts for each item duri
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 month"  
 
-![Alt text](image-31.png)
+![](image-83.png)
 
->**XX MSR - Stock coverage time - Pivot table**  
+>**54 MSR - Stock coverage time - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock coverage time - Pivot table"  
->**Description**: "MSR DV 26 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / Health facility / Pivot table  
-This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the past 12 months. A blank field is shown, if either the stock on hand or the stock distribution for a month is zero."  
+>**Description**: "MSR DV 54 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / District / Pivot table
+This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the past 12 months for each health facility in a distrct. A blank field is shown, if either the stock on hand or the stock distribution for a month is zero."  
 >>**Columns** 
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -2878,21 +2877,21 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>>**Data element group**: select "[Stock item list] - MSR
 >>>>**Disaggregation**: "Totals only"
 >>>>**Selected items**: select all (->>)
+>>>**Organisation unit**: "User organisation unit"  
 >>
 >>**Filter**  
->>>**Organisation unit**: "User organisation unit"  
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout coverage"  
 
-![Alt text](image-32.png)
+![](image-84.png)
 
->**XX MSR - Stock coverage time distribution - Pivot table**  
+>**55 MSR - Stock coverage time distribution - District - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock coverage time distribution - Pivot table"  
->**Description**: "MSR DV 27 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / Health facility / Column chart
-This report displays a Pivot table  with the number of items for which the coverage time fell into the respective coverage time bins (stockout, 1 to 12 months, 1-2 and 2-3 years or greater than or equal to 3 years) for each of the past 12 months."  
+>**Name \(*)**: "MSR - Stock coverage time distribution - District - Pivot table"  
+>**Description**: "MSR DV 55 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / District / Column chart
+This report displays a Pivot table  with the number of items for which the coverage time fell into the respective coverage time bins (stockout, 1 to 12 months, 1-2 and 2-3 years or greater than or equal to 3 years) for all health facilities in a district for each of the past 12 months."  
 >>**Columns** 
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -2919,66 +2918,63 @@ This report displays a Pivot table  with the number of items for which the cover
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 month"  
->>
->>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**YOUR DIMENIONS**
->>>>**Name**: "Monthly stock report"  
->>>>**Selected Items**: "Stockout coverage"  
 >>
 >>**Options**    
 >>>**Data**  
 >>>>**Totals**  
+>>>>>**Columns totals**: tag (appears as a white tick in a green field)  
+>>>>>**Columns sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
 ![alt text](image-52.png)
 
->**XX MSR - Stock coverage time distribution - Last 12 months - Column chart**  
+>**56 MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart**  
 >
->**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - Last 12 months - Column chart"  
->**Description**: "MSR DV 28 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / Health facility / Column chart
-This report displays a group of column charts representing the number of items for 
-each stock coverage time bin (in months and years) for the past 12 months."  
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Last 12 months - Stacked column chart"  
+>**Description**: "MSR DV 55 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / District / Stacked column chart
+For each of the 12 past months, this report displays a stacked column chart with the number of items for each stock coverage time bin (in months and years) separately for each health facility in the district."  
 >>**Series** 
->>>**Data**  
->>>>**Data Type**: "Indicators"  
->>>>**Data element group**: select "Stock coverage time"
->>>>**Selected items**: select the following indicators in the following order:
->>>>-  "Stockout count" 
->>>>-  "0-1 months" 
->>>>-  "1-2 months" 
->>>>-  "2-3 months" 
->>>>-  "3-4 months" 
->>>>-  "4-5 months" 
->>>>-  "5-6 months" 
->>>>-  "6-7 months" 
->>>>-  "7-8 months" 
->>>>-  "8-9 months" 
->>>>-  "9-10 months" 
->>>>-  "10-11 months" 
->>>>-  "11-12 months" 
->>>>-  "1-2 years" 
->>>>-  "2-3 years" 
->>>>-  ">=3 years" 
+>>>**Organisation unit**: "User organisation unit"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 month"  
->>
->>**Filter**  
->>>**Organisation unit**: "User organisation unit"  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Data element group**: select "Stock coverage time"
+>>>>**Selected items**: select the following indicators in the following order:
+>>>>-  "Stockout count" 
+>>>>-  "0-1 months" 
+>>>>-  "1-2 months" 
+>>>>-  "2-3 months" 
+>>>>-  "3-4 months" 
+>>>>-  "4-5 months" 
+>>>>-  "5-6 months" 
+>>>>-  "6-7 months" 
+>>>>-  "7-8 months" 
+>>>>-  "8-9 months" 
+>>>>-  "9-10 months" 
+>>>>-  "10-11 months" 
+>>>>-  "11-12 months" 
+>>>>-  "1-2 years" 
+>>>>-  "2-3 years" 
+>>>>-  ">=3 years" 
 
-![Alt text](image-34.png)
+![](image-85.png)
 
->>**XX MSR - Stock coverage time distribution - Last month - Column chart**  
+>>**57 MSR - Stock coverage time distribution - Last month - District - Stacked column chart**  
 >
->**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - Last month - Column chart"  
->**Description**: "MSR DV 29 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Column chart
-This report displays a group of column charts representing the stock coverage time distribution (in months and years) for the last month."  
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Last month - District - Stacked column chart"  
+>**Description**: "MSR DV 29 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / District / Stacked column chart
+For the last month, this report displays a stacked column chart with the number of items for each stock coverage time bin (in months and years) separately for each health facility in the district.
 >>**Series** 
+>>>**Organisation unit**: "User organisation unit"
+>>
+>>**Category**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
 >>>>**Data element group**: select "Stock coverage time"
@@ -3000,15 +2996,16 @@ This report displays a group of column charts representing the stock coverage ti
 >>>>-  "2-3 years" 
 >>>>-  ">=3 years" 
 >>
->>**Category**  
+>>**Filter**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last month"  
->>
->>**Filter**  
->>>**Organisation unit**: "User organisation unit"
 
-![Alt text](image-35.png)
+![](image-86.png)
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 
 >**XX MSR - Stock discrepancy - Pivot table**  
 >
