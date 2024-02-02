@@ -223,20 +223,58 @@ For the "Stock coverage time" indicator it would in principle be preferable to c
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
->>>**Description**: "O-1 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>0 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<1,1,0)+
-f(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>0 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<1,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>0 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<1,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>0 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<1,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>0 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<1,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>0 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<1,1,0  
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>0 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<1,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>0 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<1,1,0)+
-etc.
+>>>**Description**: "O-1 months - MSR - Numerator"  
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>0 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=1,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>0 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=1,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>0 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=1,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>0 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=1,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>0 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=1,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>0 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=1,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>0 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=1,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>0 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=1,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>0 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=1,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>0 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=1,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>0 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=1,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>0 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=1,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>0 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=1,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>0 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=1,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>0 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=1,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>0 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=1,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>0 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=1,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>0 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=1,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>0 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=1,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>0 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=1,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>0 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=1,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>0 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=1,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>0 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=1,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>0 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=1,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>0 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=1,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>0 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=1,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>0 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=1,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>0 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=1,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>0 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=1,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>0 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=1,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>0 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=1,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>0 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=1,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>0 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=1,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>0 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=1,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>0 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=1,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>0 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=1,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>0 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=1,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>0 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=1,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>0 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=1,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>0 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=1,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>0 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=1,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>0 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=1,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>0 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=1,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>0 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=1,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>0 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=1,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>0 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=1,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>0 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=1,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>0 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=1,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>0 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=1,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>0 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<1,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "O-1 months - MSR - Denominator"  
@@ -251,19 +289,57 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "1-2 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=1 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<2,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=1 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<2,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=1 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<2,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=1 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<2,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=1 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<2,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=1 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<2,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=1 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<2,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=1 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<2,1,0)+
-etc.
+>>>**Calculation**:  
+>>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>1 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=2,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>1 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=2,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>1 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=2,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>1 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=2,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>1 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=2,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>1 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=2,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>1 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=2,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>1 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=2,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>1 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=2,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>1 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=2,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>1 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=2,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>1 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=2,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>1 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=2,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>1 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=2,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>1 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=2,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>1 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=2,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>1 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=2,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>1 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=2,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>1 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=2,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>1 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=2,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>1 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=2,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>1 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=2,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>1 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=2,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>1 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=2,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>1 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=2,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>1 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=2,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>1 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=2,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>1 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=2,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>1 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=2,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>1 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=2,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>1 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=2,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>1 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=2,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>1 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=2,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>1 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=2,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>1 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=2,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>1 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=2,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>1 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=2,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>1 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=2,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>1 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=2,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>1 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=2,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>1 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=2,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>1 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=2,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>1 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=2,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>1 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=2,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>1 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=2,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>1 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=2,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>1 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=2,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>1 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=2,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>1 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=2,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>1 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=2,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "1-2 months - MSR - Denominator"
@@ -271,18 +347,64 @@ etc.
 >
 >**3 2-3 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 2 but less than 3 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 2-3 months.
->if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=2 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<3,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=2 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<3,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=2 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<3,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=2 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<3,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=2 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<3,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=2 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<3,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=2 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<3,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=2 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<3,1,0)+
-etc.
+>>**Name \(*)**: "2-3 months"  
+>>**Short Name \(*)**: "2-3 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 2-3 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "1-2 months - MSR - Numerator"
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>2 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=3,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>2 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=3,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>2 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=3,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>2 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=3,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>2 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=3,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>2 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=3,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>2 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=3,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>2 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=3,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>2 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=3,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>2 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=3,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>2 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=3,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>2 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=3,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>2 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=3,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>2 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=3,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>2 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=3,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>2 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=3,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>2 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=3,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>2 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=3,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>2 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=3,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>2 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=3,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>2 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=3,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>2 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=3,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>2 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=3,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>2 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=3,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>2 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=3,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>2 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=3,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>2 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=3,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>2 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=3,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>2 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=3,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>2 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=3,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>2 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=3,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>2 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=3,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>2 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=3,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>2 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=3,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>2 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=3,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>2 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=3,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>2 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=3,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>2 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=3,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>2 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=3,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>2 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=3,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>2 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=3,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>2 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=3,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>2 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=3,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>2 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=3,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>2 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=3,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>2 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=3,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>2 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=3,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>2 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=3,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>2 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=3,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>2 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=3,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "2-3 months - MSR - Denominator"
@@ -297,19 +419,57 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "3-4 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=3 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<4,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=3 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<4,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=3 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<4,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=3 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<4,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=3 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<4,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=3 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<4,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=3 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<4,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=3 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<4,1,0)+
-etc.
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>3 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=4,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>3 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=4,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>3 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=4,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>3 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=4,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>3 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=4,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>3 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=4,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>3 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=4,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>3 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=4,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>3 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=4,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>3 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=4,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>3 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=4,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>3 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=4,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>3 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=4,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>3 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=4,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>3 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=4,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>3 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=4,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>3 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=4,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>3 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=4,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>3 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=4,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>3 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=4,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>3 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=4,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>3 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=4,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>3 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=4,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>3 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=4,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>3 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=4,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>3 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=4,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>3 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=4,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>3 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=4,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>3 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=4,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>3 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=4,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>3 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=4,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>3 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=4,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>3 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=4,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>3 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=4,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>3 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=4,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>3 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=4,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>3 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=4,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>3 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=4,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>3 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=4,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>3 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=4,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>3 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=4,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>3 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=4,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>3 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=4,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>3 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=4,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>3 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=4,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>3 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=4,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>3 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=4,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>3 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=4,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>3 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=4,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>3 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=4,1,0)>>
 >>
 >>**Edit denominator**:
 >>>**Description**: "3-4 months - MSR - Denominator"
@@ -324,19 +484,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "4-5 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=4 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<5,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=4 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<5,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=4 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<5,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=4 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<5,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=4 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<5,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=4 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<5,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=4 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<5,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=4 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<5,1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>4 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=5,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>4 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=5,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>4 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=5,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>4 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=5,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>4 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=5,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>4 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=5,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>4 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=5,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>4 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=5,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>4 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=5,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>4 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=5,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>4 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=5,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>4 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=5,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>4 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=5,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>4 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=5,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>4 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=5,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>4 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=5,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>4 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=5,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>4 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=5,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>4 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=5,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>4 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=5,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>4 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=5,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>4 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=5,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>4 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=5,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>4 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=5,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>4 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=5,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>4 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=5,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>4 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=5,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>4 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=5,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>4 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=5,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>4 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=5,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>4 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=5,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>4 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=5,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>4 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=5,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>4 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=5,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>4 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=5,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>4 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=5,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>4 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=5,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>4 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=5,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>4 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=5,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>4 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=5,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>4 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=5,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>4 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=5,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>4 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=5,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>4 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=5,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>4 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=5,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>4 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=5,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>4 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=5,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>4 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=5,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>4 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=5,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>4 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=5,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "4-5 months - MSR - Denominator"
@@ -344,26 +541,63 @@ etc.
 >
 >**6 5-6 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 5 but less than 6 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage of 5-6 months. 
->>**Name \(*)**: "0-1 months - MSR"  
->>**Short Name \(*)**: "0-1 months - MSR"  
->>**Description**: "Number of items with a coverage time of 0-1 months"  
+>>**Name \(*)**: "5-6 months"  
+>>**Short Name \(*)**: "5-6 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 5-6 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "O-1 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=5 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<6,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=5 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<6,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=5 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<6,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=5 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<6,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=5 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<6,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=5 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<6,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=5 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<6,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=5 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<6,1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>5 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=6,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>5 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=6,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>5 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=6,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>5 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=6,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>5 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=6,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>5 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=6,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>5 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=6,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>5 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=6,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>5 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=6,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>5 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=6,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>5 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=6,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>5 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=6,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>5 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=6,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>5 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=6,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>5 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=6,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>5 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=6,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>5 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=6,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>5 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=6,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>5 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=6,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>5 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=6,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>5 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=6,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>5 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=6,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>5 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=6,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>5 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=6,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>5 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=6,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>5 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=6,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>5 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=6,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>5 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=6,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>5 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=6,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>5 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=6,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>5 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=6,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>5 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=6,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>5 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=6,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>5 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=6,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>5 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=6,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>5 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=6,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>5 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=6,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>5 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=6,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>5 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=6,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>5 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=6,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>5 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=6,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>5 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=6,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>5 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=6,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>5 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=6,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>5 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=6,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>5 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=6,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>5 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=6,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>5 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=6,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>5 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=6,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>5 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=6,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "5-6 months - MSR - Denominator"
@@ -378,19 +612,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "6-7 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=6 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<7,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=6 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<7,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=6 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<7,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=6 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<7,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=6 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<7,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=6 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<7,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=6 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<7,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=6 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<7,1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>6 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=7,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>6 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=7,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>6 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=7,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>6 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=7,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>6 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=7,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>6 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=7,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>6 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=7,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>6 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=7,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>6 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=7,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>6 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=7,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>6 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=7,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>6 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=7,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>6 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=7,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>6 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=7,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>6 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=7,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>6 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=7,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>6 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=7,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>6 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=7,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>6 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=7,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>6 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=7,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>6 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=7,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>6 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=7,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>6 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=7,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>6 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=7,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>6 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=7,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>6 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=7,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>6 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=7,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>6 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=7,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>6 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=7,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>6 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=7,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>6 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=7,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>6 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=7,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>6 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=7,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>6 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=7,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>6 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=7,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>6 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=7,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>6 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=7,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>6 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=7,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>6 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=7,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>6 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=7,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>6 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=7,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>6 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=7,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>6 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=7,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>6 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=7,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>6 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=7,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>6 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=7,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>6 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=7,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>6 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=7,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>6 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=7,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>6 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=7,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "6-7 months - MSR - Denominator"
@@ -405,19 +676,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "7-8 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=7 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<8,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=7 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<8,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=7 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<8,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=7 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<8,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=7 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<8,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=7 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<8,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=7 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<8,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=7 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<8,1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>7 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=8,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>7 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=8,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>7 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=8,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>7 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=8,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>7 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=8,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>7 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=8,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>7 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=8,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>7 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=8,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>7 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=8,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>7 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=8,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>7 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=8,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>7 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=8,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>7 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=8,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>7 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=8,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>7 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=8,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>7 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=8,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>7 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=8,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>7 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=8,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>7 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=8,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>7 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=8,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>7 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=8,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>7 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=8,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>7 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=8,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>7 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=8,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>7 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=8,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>7 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=8,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>7 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=8,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>7 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=8,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>7 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=8,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>7 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=8,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>7 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=8,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>7 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=8,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>7 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=8,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>7 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=8,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>7 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=8,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>7 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=8,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>7 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=8,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>7 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=8,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>7 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=8,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>7 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=8,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>7 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=8,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>7 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=8,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>7 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=8,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>7 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=8,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>7 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=8,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>7 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=8,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=8,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "7-8 months - MSR - Denominator"
@@ -432,19 +740,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "8-9 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=8 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<9,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=8 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<9,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=8 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<9,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=8 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<9,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=8 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<9,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=8 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<9,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=8 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<9,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=8 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<),1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>7 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=8,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>7 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=8,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>7 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=8,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>7 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=8,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>7 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=8,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>7 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=8,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>7 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=8,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>7 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=8,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>7 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=8,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>7 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=8,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>7 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=8,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>7 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=8,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>7 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=8,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>7 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=8,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>7 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=8,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>7 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=8,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>7 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=8,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>7 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=8,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>7 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=8,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>7 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=8,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>7 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=8,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>7 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=8,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>7 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=8,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>7 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=8,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>7 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=8,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>7 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=8,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>7 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=8,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>7 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=8,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>7 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=8,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>7 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=8,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>7 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=8,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>7 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=8,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>7 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=8,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>7 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=8,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>7 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=8,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>7 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=8,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>7 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=8,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>7 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=8,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>7 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=8,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>7 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=8,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>7 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=8,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>7 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=8,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>7 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=8,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>7 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=8,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>7 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=8,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>7 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=8,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=8,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "8-9 months - MSR - Denominator"
@@ -459,19 +804,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "9-10 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=9 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<10,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=9 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<10,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=9 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<10,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=9 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<10,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=9 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<10,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=9 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<10,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=9 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<10,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=9 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<10,1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>9 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=10,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>9 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=10,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>9 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=10,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>9 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=10,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>9 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=10,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>9 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=10,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>9 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=10,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>9 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=10,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>9 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=10,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>9 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=10,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>9 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=10,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>9 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=10,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>9 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=10,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>9 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=10,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>9 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=10,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>9 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=10,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>9 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=10,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>9 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=10,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>9 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=10,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>9 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=10,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>9 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=10,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>9 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=10,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>9 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=10,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>9 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=10,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>9 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=10,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>9 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=10,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>9 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=10,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>9 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=10,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>9 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=10,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>9 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=10,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>9 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=10,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>9 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=10,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>9 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=10,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>9 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=10,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>9 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=10,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>9 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=10,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>9 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=10,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>9 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=10,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>9 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=10,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>9 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=10,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>9 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=10,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>9 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=10,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>9 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=10,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>9 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=10,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>9 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=10,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>9 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=10,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>9 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=10,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>9 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=10,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>9 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=10,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>9 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=10,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "9-10 months - MSR - Denominator"
@@ -486,19 +868,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "1O-11 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=10 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<11,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=10 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<11,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=10 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<11,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=10 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<11,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=10 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<11,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=10 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<11,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=10 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<11,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=10 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<11,1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>10 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=11,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>10 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=11,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>10 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=11,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>10 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=11,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>10 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=11,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>10 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=11,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>10 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=11,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>10 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=11,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>10 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=11,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>10 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=11,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>10 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=11,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>10 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=11,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>10 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=11,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>10 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=11,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>10 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=11,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>10 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=11,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>10 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=11,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>10 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=11,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>10 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=11,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>10 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=11,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>10 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=11,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>10 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=11,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>10 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=11,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>10 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=11,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>10 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=11,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>10 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=11,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>10 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=11,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>10 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=11,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>10 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=11,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>10 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=11,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>10 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=11,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>10 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=11,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>10 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=11,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>10 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=11,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>10 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=11,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>10 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=11,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>10 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=11,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>10 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=11,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>10 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=11,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>10 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=11,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>10 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=11,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>10 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=11,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>10 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=11,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>10 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=11,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>10 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=11,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>10 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=11,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>10 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=11,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>10 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=11,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>10 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=11,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>10 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=11,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "1O-11 months - MSR - Denominator"
@@ -513,19 +932,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "11-12 months - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=11 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<12,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=11 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<12,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=11 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<12,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=11 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<12,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=11 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<12,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=11 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<12,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=11 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<12,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=11 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<12,1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>11 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=12,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>11 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=12,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>11 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=12,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>11 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=12,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>11 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=12,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>11 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=12,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>11 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=12,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>11 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=12,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>11 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=12,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>11 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=12,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>11 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=12,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>11 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=12,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>11 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=12,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>11 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=12,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>11 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=12,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>11 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=12,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>11 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=12,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>11 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=12,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>11 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=12,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>11 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=12,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>11 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=12,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>11 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=12,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>11 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=12,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>11 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=12,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>11 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=12,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>11 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=12,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>11 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=12,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>11 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=12,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>11 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=12,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>11 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=12,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>11 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=12,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>11 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=12,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>11 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=12,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>11 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=12,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>11 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=12,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>11 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=12,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>11 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=12,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>11 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=12,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>11 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=12,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>11 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=12,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>11 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=12,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>11 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=12,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>11 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=12,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>11 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=12,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>11 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=12,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>11 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=12,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>11 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=12,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>11 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=12,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>11 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=12,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>11 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=12,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "11-12 months - MSR - Denominator"
@@ -540,19 +996,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "1-2 years - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=12 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<24,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=12 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<24,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=12 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<24,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=12 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<24,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=12 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<24,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=12 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<24,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=12 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<24,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=12 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<24,1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>12 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=24,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>12 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=24,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>12 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=24,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>12 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=24,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>12 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=24,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>12 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=24,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>12 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=24,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>12 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=24,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>12 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=24,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>12 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=24,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>12 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=24,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>12 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=24,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>12 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=24,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>12 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=24,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>12 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=24,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>12 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=24,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>12 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=24,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>12 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=24,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>12 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=24,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>12 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=24,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>12 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=24,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>12 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=24,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>12 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=24,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>12 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=24,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>12 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=24,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>12 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=24,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>12 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=24,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>12 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=24,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>12 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=24,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>12 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=24,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>12 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=24,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>12 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=24,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>12 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=24,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>12 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=24,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>12 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=24,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>12 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=24,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>12 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=24,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>12 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=24,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>12 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=24,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>12 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=24,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>12 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=24,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>12 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=24,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>12 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=24,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>12 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=24,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>12 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=24,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>12 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=24,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>12 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=24,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>12 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=24,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>12 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=24,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>12 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=24,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "12-24 months - MSR - Denominator"
@@ -567,19 +1060,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "2-3 years - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=24 && #{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}<36,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=24 && #{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}<36,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=24 && #{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}<36,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=24 && #{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}<36,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=24 && #{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}<36,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=24 && #{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}<36,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=24 &&
-[Item 1] Stock on hand/[Item 1] Stock distributed]<36,1,0)+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>0=24 &&
-[Item 2] Stock on hand/[Item 2] Stock distributed]<36,1,0)+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>24 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=36,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>24 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=36,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>24 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=36,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>24 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=36,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>24 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=36,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>24 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=36,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>24 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=36,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>24 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=36,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>24 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=36,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>24 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=36,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>24 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=36,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>24 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=36,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>24 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=36,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>24 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=36,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>24 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=36,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>24 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=36,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>24 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=36,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>24 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=36,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>24 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=36,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>24 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=36,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>24 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=36,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>24 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=36,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>24 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=36,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>24 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=36,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>24 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=36,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>24 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=36,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>24 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=36,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>24 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=36,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>24 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=36,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>24 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=36,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>24 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=36,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>24 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=36,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>24 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=36,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>24 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=36,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>24 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=36,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>24 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=36,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>24 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=36,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>24 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=36,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>24 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=36,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>24 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=36,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>24 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=36,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>24 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=36,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>24 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=36,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>24 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=36,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>24 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=36,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>24 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=36,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>24 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=36,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>24 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=36,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>24 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=36,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>24 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=36,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "2-3 years - MSR - Denominator"
@@ -594,17 +1124,56 @@ etc.
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: ">03 years - MSR - Numerator"
->>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}/#{uwQn42CZ5qI.VCzZmn4Xpjg}>=36,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}/#{Ev8PDcJ9I5X.VCzZmn4Xpjg}>=36,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}/#{irAGhTCJcO8.VCzZmn4Xpjg}>=36,1,0)+
-if(#{VNT5TGE3uBQ.eKdBeWyrmPN}/#{VNT5TGE3uBQ.VCzZmn4Xpjg}>=36,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}/#{Csg4rTaIYDj.VCzZmn4Xpjg}>=36,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}/#{mIYcOnLcqes.VCzZmn4Xpjg}>=36,1,0)
->>>
->>>if([Item 1] Stock on hand/[Item 1] Stock distributed]>=36+
-if([Item 2] Stock on hand/[Item 2] Stock distributed]>=36+
-etc.
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>36,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>36,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>36,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>36,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>36,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>36,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>36,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>36,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>36,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>36,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>36,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>36,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>36,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>36,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>36,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>36,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>36,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>36,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>36,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>36,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>36,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>36,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>36,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>36,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>36,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>36,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>36,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>36,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>36,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>36,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>36,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>36,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>36,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>36,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>36,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>36,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>36,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>36,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>36,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>36,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>36,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>36,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>36,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>36,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>36,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>36,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>36,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>36,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>36,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>36,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: ">= 3 years - MSR - Denominator"
@@ -803,40 +1372,188 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Edit numerator**:
 >>>**Description**: "Stock availability - MSR - Numerator"
 >>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}==0,0,1)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}==0,0,1)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}==0,0,1)+
+>>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,0,1)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,0,1)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}==0,0,1)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}==0,0,1)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}==0,0,1)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}==0,0,1)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}==0,0,1)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}==0,0,1)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}==0,0,1)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}==0,0,1)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}==0,0,1)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}==0,0,1)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}==0,0,1)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}==0,0,1)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}==0,0,1)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}==0,0,1)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}==0,0,1)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}==0,0,1)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}==0,0,1)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}==0,0,1)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}==0,0,1)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}==0,0,1)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}==0,0,1)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}==0,0,1)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}==0,0,1)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}==0,0,1)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}==0,0,1)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}==0,0,1)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}==0,0,1)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}==0,0,1)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}==0,0,1)+
 if(#{Z4bjHvGS6aH.iIC4YhgrxQY}==0,0,1)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}==0,0,1)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}==0,0,1)
->>>
->>>if([Item 1]==0,0,1) + if([Item 2]==0,0,1) + etc.
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}==0,0,1)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}==0,0,1)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}==0,0,1)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}==0,0,1)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}==0,0,1)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}==0,0,1)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}==0,0,1)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}==0,0,1)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}==0,0,1)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}==0,0,1)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}==0,0,1)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}==0,0,1)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}==0,0,1)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}==0,0,1)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}==0,0,1)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}==0,0,1)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}==0,0,1)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,0,1)
 >>
 >>**Edit denominator**:
 >>>**Description**: "Stock availability - MSR - Denominator"
 >>>**Calculation**: "0.06"
 >
->**20 Stockout count - MSR**  
+>**20 Stockout count**  
 >This indicator counts the number of items with a stockout.
->>**Name \(*)**: "Stockout count - MSR"  
+>>**Name \(*)**: "Stockout count"  
 >>**Short Name \(*)**: "Stockout count - MSR"  
->>**Description**: "Number of items with at stockout"  
+>>**Description**: "Number of items with a stock discrepancy"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
->>>**Description**: "Stockouts - MSR - Numerator"
+>>>**Description**: "Stockout discrepancy count - Numerator"
 >>>**Calculation**: 
->>>if(#{uwQn42CZ5qI.eKdBeWyrmPN}==0,1,0)+
-if(#{Ev8PDcJ9I5X.eKdBeWyrmPN}==0,1,0)+
-if(#{irAGhTCJcO8.eKdBeWyrmPN}==0,1,0)+
+>>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}==0,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}==0,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}==0,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}==0,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}==0,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}==0,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}==0,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}==0,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}==0,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}==0,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}==0,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}==0,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}==0,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}==0,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}==0,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}==0,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}==0,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}==0,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}==0,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}==0,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}==0,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}==0,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}==0,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}==0,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}==0,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}==0,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}==0,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}==0,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}==0,1,0)+
 if(#{Z4bjHvGS6aH.iIC4YhgrxQY}==0,1,0)+
-if(#{Csg4rTaIYDj.eKdBeWyrmPN}==0,1,0)+
-if(#{mIYcOnLcqes.eKdBeWyrmPN}==0,1,0)
->>>
->>>if([Item 1]==0,1,0) + if([Item 2]==0,1,0) + etc.
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}==0,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}==0,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}==0,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}==0,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}==0,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}==0,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}==0,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}==0,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}==0,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}==0,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}==0,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}==0,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}==0,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}==0,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}==0,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}==0,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}==0,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>
 >>**Edit denominator**:
 >>>**Description**: "Stockouts - MSR - Denominator"
+>>>**Calculation**: "1"
+>
+>**21 Stockout discrepancy count**  
+>>**Name \(*)**: "Stockoutout discrepancy count"  
+>>**Short Name \(*)**: "Stockout discrepancy count - MSR"  
+>>**Description**: "Number of items with a stock discrepancy"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:
+>>>**Description**: "Stockout discrepancy count - Numerator"
+>>>**Calculation**: 
+>>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
+#{WyDZKSw82X6.cD8WZyjlq9C}+
+#{JPccVwAGRq9.cD8WZyjlq9C}+
+#{smxJz7Mt6ia.cD8WZyjlq9C}+
+#{AaIApgGQM6t.cD8WZyjlq9C}+
+#{vCTrmv52APd.cD8WZyjlq9C}+
+#{SOw2TcuFFH2.cD8WZyjlq9C}+
+#{RSIOx2u07Ln.cD8WZyjlq9C}+
+#{JStiDyaPfqy.cD8WZyjlq9C}+
+#{hZ1YvdcTDQM.cD8WZyjlq9C}+
+#{tsi32D8HQd5.cD8WZyjlq9C}+
+#{QWlPF8S0gCc.cD8WZyjlq9C}+
+#{a5uLTDt12eT.cD8WZyjlq9C}+
+#{U0AfOOyJMy2.cD8WZyjlq9C}+
+#{cyf6UdScfFM.cD8WZyjlq9C}+
+#{FeUTTNHpVzD.cD8WZyjlq9C}+
+#{mKSICD1rxG4.cD8WZyjlq9C}+
+#{mVNe1aS1pGl.cD8WZyjlq9C}+
+#{oLAXTZY6ken.cD8WZyjlq9C}+
+#{YYaRDUZyH9L.cD8WZyjlq9C}+
+#{HVteopBt0jr.cD8WZyjlq9C}+
+#{sWodd2tbjgZ.cD8WZyjlq9C}+
+#{yVYajDDYUfX.cD8WZyjlq9C}+
+#{eTJAr4sc83v.cD8WZyjlq9C}+
+#{U4KSmanl4JP.cD8WZyjlq9C}+
+#{FXsa5uG3IGn.cD8WZyjlq9C}+
+#{L34T9YDtCor.cD8WZyjlq9C}+
+#{W5mHXhSYFfQ.cD8WZyjlq9C}+
+#{cmSUyJOZwyl.cD8WZyjlq9C}+
+#{cT8sfosRXvU.cD8WZyjlq9C}+
+#{OaWKnMS7say.cD8WZyjlq9C}+
+#{Z4bjHvGS6aH.cD8WZyjlq9C}+
+#{Nn1L7CNEtC8.cD8WZyjlq9C}+
+#{RNYKSc3nAUg.cD8WZyjlq9C}+
+#{PtmZ9XqpPKi.cD8WZyjlq9C}+
+#{CohlLHi54B0.cD8WZyjlq9C}+
+#{Gu6u82RD9OW.cD8WZyjlq9C}+
+#{LiuYzxYr4Pt.cD8WZyjlq9C}+
+#{Tje33nJAG55.cD8WZyjlq9C}+
+#{euM2dlqleYH.cD8WZyjlq9C}+
+#{dASLmBTEehF.cD8WZyjlq9C}+
+#{qU2LvzoPn1z.cD8WZyjlq9C}+
+#{OkWaFxdUQY2.cD8WZyjlq9C}+
+#{YHIv7KQc2e7.cD8WZyjlq9C}+
+#{rt9D47Inb49.cD8WZyjlq9C}+
+#{i1iXbquZ5iv.cD8WZyjlq9C}+
+#{RcE30WBKrXI.cD8WZyjlq9C}+
+#{EAG0GfdSMAs.cD8WZyjlq9C}+
+#{N2aXs7VlJdJ.cD8WZyjlq9C}+
+#{xrjnOtFFTRC.cD8WZyjlq9C}
+>>
+>>**Edit denominator**:
+>>>**Description**: "Stockout discrepancy count - Denominator"
 >>>**Calculation**: "1"
 
 #### 4.2 Indicator type
