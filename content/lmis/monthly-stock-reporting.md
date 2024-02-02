@@ -3098,14 +3098,17 @@ This report displays the number of stock discrepancies for the past 12 months se
 
 ## Map App - Analytics
 
+>**1 Health facility**  
+>>>- 1 MSR - Health facility
+>
 >**1 District level**  
 >>**1.1 Statistics**  
->>>- 1 MSR - Health facilies - District
+>>>- 2 MSR - Health facilities - District
 >
 >>**1.2 Indicators**  
->>>- 2 MSR - Stock availability- District
->>>- 3 MSR - Stock discrepancy count - District
->>>- 4 MSR - Stockout count - District
+>>>- 3 MSR - Stock availability- District
+>>>- 4 MSR - Stock discrepancy count - District
+>>>- 5 MSR - Stockout count - District
 
 xxxx
 Stock coverage time distribution by facility in a district: check with JM first
@@ -3151,6 +3154,156 @@ Coefficient of variation distribution by facility in a district: check with JM f
 >>>**Organisation Units**
 >>>>**Selection**: "User organisation unit"  
 >>>>**Level**: "District"  
+>>>**Style**
+>>>>**Labels**: tag (appears as a white tick in a green square)
+>>>>>**Size**: "20"
+>>>>>**Colour**: select red
+>>>>**Boundary colour**: select preferred colour
+>
+>**2 MSR - Health facility**  
+>
+>**Name \(*)**: "MSR - Health facility"  
+>**Decription**: "This map displays the location of a health facility together with the administrative district boundary on a map."  
+>
+>**Add layer**  
+>>**1 Facilities**  
+>>>**Organisation Units**
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Facility" 
+>>> 
+>>>**Style**
+>>>>**Labels**
+>>>>>**Size**: "15"
+>>>>>**Colour**: select black
+>>>>**Point color**: select preferred colour
+>>>>**Point radius**: "10"
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**
+>>>>**Labels**: tag (appears as a white tick in a green square)
+>>>>>**Size**: "20"
+>>>>>**Colour**: select red
+>>>>**Boundary colour**: select preferred colour
+>
+>**3 MSR - Stock availability - District**  
+>
+>**Name \(*)**: "MSR - Health facility"  
+>**Decription**: "This map displays the stock availability for all health facilities in a district with the administrative district boundary as a timeline for the past 12 months on a map."  
+>
+>**Add layer**  
+>>**1 Stock availability / %**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stock availability / %"  
+>>>>**Indicator**: "Stock availability / %"  
+>>>>**Aggregation type**: "By data element"  
+>>>
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**
+>>>>**Labels**: tag (appears as a white tick in a green square)
+>>>>>**Size**: "20"
+>>>>>**Colour**: select red
+>>>>**Boundary colour**: select preferred colour
+>
+>**4 MSR - Stock discrepancy count - District**  
+>
+>**Name \(*)**: "MSR - Stock discrepancy count - District"  
+>**Decription**: "This map displays the stock discrepancy count for all health facilities in a district with the administrative district boundary as a timeline for the past 12 months on a map."  
+>
+>**Add layer**  
+>>**1 Stock discrepancy count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stock discrepancy count"  
+>>>>**Indicator**: "Stock discrepancy count"  
+>>>>**Aggregation type**: "By data element" 
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**
+>>>>**Labels**: tag (appears as a white tick in a green square)
+>>>>>**Size**: "20"
+>>>>>**Colour**: select red
+>>>>**Boundary colour**: select preferred colour
+>
+>**5 MSR - Stockout count - District**  
+>
+>**Name \(*)**: "MSR - Stockout count - District"  
+>**Decription**: "This map displays the stockout count for all health facilities in a district with the administrative district boundary on a map as a timeline for the past 12 months."  
+>
+>**Add layer**  
+>>**1 Stockout count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stockout count"  
+>>>>**Indicator**: "Stockout count"  
+>>>>**Aggregation type**: "By data element" 
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
 >>>**Style**
 >>>>**Labels**: tag (appears as a white tick in a green square)
 >>>>>**Size**: "20"
