@@ -1116,7 +1116,6 @@ Xx
 >>>- 55 MSR - Stock coverage time distribution - District - Pivot table  
 >>>- 56 MSR - Stock coverage time distribution - District - Last 12 months - Stacked column chart  
 >>>- 57 MSR - Stock coverage time distribution - Last month - Distribution - Column chart  
-
 >>>- 58 MSR - Stock discrepancy - Pivot table  
 >>>- 59 MSR - Stock discrepancy count - Column chart  
 
@@ -3003,23 +3002,20 @@ For the last month, this report displays a stacked column chart with the number 
 
 ![](image-86.png)
 
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-
->**XX MSR - Stock discrepancy - Pivot table**  
+>**58 MSR - Stock discrepancy - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock discrepancy - Pivot table"  
->**Description**: ">MSR DV 30 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
-This report displays a list with the positive and negative stock discrepancy of the past 12 months. The stock discrepancy is calculated as follows
-> Stock on hand from the previous month (final stock on hand)  
-> + Stock receipt  
-> - Stock distributed  
-> - Stock redistributed  
-> - Stock discard  
-> - Stock correction  
-> - Stock on hand"  
+>**Description**: ">MSR DV 58 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / District / Pivot table
+This report displays a list with the positive and negative stock discrepancy of the past 12 months by item for all health facilities in a district.
++ Stock on hand from the previous month (final stock on hand)  
++ Stock receipt  
+- Stock distributed  
+- Stock redistributed  
+- Stock discard  
+- Stock correction  
+- Stock on hand"
+>>  
 >>**Columns** 
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -3031,9 +3027,9 @@ This report displays a list with the positive and negative stock discrepancy of 
 >>>>**Data element group**: select "[Stock item list] - MSR
 >>>>**Disaggregation**: "Totals only"
 >>>>**Selected items**: select all (->>)
+>>>**Organisation unit**: "User organisation unit"  
 >>
 >>**Filter**  
->>>**Organisation unit**: "User organisation unit"  
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock discrepancy count"  
@@ -3045,12 +3041,12 @@ This report displays a list with the positive and negative stock discrepancy of 
 
 ![alt text](image-54.png)
 
->**XX MSR - Stock discrepancy count - Column chart**  
+>**59 MSR - Stock discrepancy count - Column chart**  
 >
 >**Visualization type**: select "Column"  
 >**Name \(*)**: "MSR - Stock discrepancy count - Column chart"  
->**Visualization type**: "MSR DV 31 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / Health facility / Pivot table
-This report displays the number of stock discrepancies for the past 12 months."    
+>**Visualization type**: "MSR DV 31 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / District / Pivot table
+This report displays the number of stock discrepancies for the past 12 months separately for each health facility in a district."  
 >>**Series** 
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
@@ -3068,13 +3064,8 @@ This report displays the number of stock discrepancies for the past 12 months."
 >>>>**Data element group**: select "[Stock item list] - MSR
 >>>>**Disaggregation**: "Totals only"
 >>>>**Selected items**: select all (->>)
->
-![Alt text](image-37.png)
 
-
-
-
-
+![](image-87.png)
 
 ## Map App - Analytics
 
