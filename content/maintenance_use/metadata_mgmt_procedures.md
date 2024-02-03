@@ -13,8 +13,7 @@ Procedural issues that can result in complications when managing metadata includ
 
 When working on your DHIS2 configuration, it is recommended that you have at least 1 development instance available for you to use. If you have more then 1 production instance, then you should consider having a copy of each of these instances for the purposes of creating new metadata or otherwise modifying your configuration (Figure 1).
 
-![dev_vs_production](resources/images/dev_vs_production.png)
-**Figure 1**
+![Figure 1: Development vs. Production](resources/images/dev_vs_production.png)
 
 Many metadata challenges result from users adding metadata directly on a production system. This metadata is either not configured correctly, or not used in the system resulting in changes that need to be cleaned up when discovered later on.
 
@@ -42,7 +41,8 @@ As a general rule, when importing a standards based package, try to re-use as mu
 
 For the dashboards, the duplicate indicators may not be problematic, particularly if they are grouped together correctly. This should be judged on a case-by-case basis to determine their impact on the system prior to importing the package.
 
-**Note : Importing packages should always be attempted in a development system first. Only when all issues have been sorted out should they be imported to a production system**
+> **Caution**
+> Note Importing packages should always be attempted in a development system first. Only when all issues have been sorted out should they be imported to a production system**
 
 ## Revisions of data collection tools over time
 
@@ -56,25 +56,23 @@ There should be no hesitation in reusing metadata between different event and tr
 
 For aggregate data sets, re-use of metadata may be less clear. A common problem is when disaggregations are modified from one form to the next. Let us take the example outlined in Figure 2.
 
-![aggregate_form_comparison.png](resources/images/aggregate_form_comparison.png)
-**Figure 2**
+![Figure 2: Aggregate form comparison](resources/images/aggregate_form_comparison.png)
 
 From this form we can see that the disaggregations for each of the data elements have been changed. Rather then create new data elements in which to apply these new disaggregations to; you can use a function called "Category combination over ride." This feature allows a data element to be associated with multiple category combinations over time.
 
 To override the category combination, open up your data set from maintenance. Where you add your data elements, you will see a small wrench icon. When you hover over it it will say “Over ride the data element category combination” (Figure 3).
 
-![catcombo_override](resources/images/catcombo_override.png)
-**Figure 3**
+![Figure 3: Category combination override](resources/images/catcombo_override.png)
 
 From here you will open a menu which lists your data elements on the left side and allows you to over ride the category combinations on the right side (Figure 4)
 
-![catcombo_override_selection](resources/images/catcombo_override_selection.png)
+![Figure 4: Category combination override selection](resources/images/catcombo_override_selection.png)
 
-**Figure 4**
 
 Just select the category combination for the data element you want to over ride using this menu.
 
-**Note : You may need to create new category options, categories and category combinations. If you do, please review the example [aggregate metadata procedure.](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing)**
+> **Note**
+> You may need to create new category options, categories and category combinations. If you do, please review the example [aggregate metadata procedure.](https://docs.google.com/document/d/1VXnF5KPfiD45h6wH04kUNShQVno--TmckMHMyLqZm5I/edit?usp=sharing)
 
 This has the distinct advantage of allowing you to review the data within these re-used data elements over longer periods of time. Any data entered into these data elements using the old form can still be reviewed and compared with periods in which the the new form (and disaggregations) are being used. 
 
@@ -88,7 +86,8 @@ In order to retrieve the existing reporting rates, you can interact with the /co
 api/completeDataSetRegistrations?dataSet=XA8e9AVn8Vo&startDate=2000-01-01&endDate=2017-07-01&orgUnit=mPlB2jqKNP0&children=true
 ```
 
-**NB:** note that you should replace the dataset ID in this example with the dataset ID in your own system, the dates with your dates that you require and the organisation unit ID's with your own IDs. In this example we are selecting the reporting rate from all child orgunits, so you replace the organisation unit ID with the parent ID.
+> **Note**
+> Note that you should replace the dataset ID in this example with the dataset ID in your own system, the dates with your dates that you require and the organisation unit ID's with your own IDs. In this example we are selecting the reporting rate from all child orgunits, so you replace the organisation unit ID with the parent ID.
 
 This will return a result consisting of the following parameters for each period that is covered in your query.
 
@@ -102,7 +101,8 @@ Once you have retrieved the reporting rates, you can push them to the new data s
 api/completeDataSetRegistrations
 ```
 
-**NB:** note that you should replace the dataset IDs returned in the initial query with the dataset ID of the new dataset you are importing these reporting rates to. Do this prior to posting the information to the completeDataSetRegistrations resource.
+> **Note**
+> Note note that you should replace the dataset IDs returned in the initial query with the dataset ID of the new dataset you are importing these reporting rates to. Do this prior to posting the information to the completeDataSetRegistrations resource.
 
 ### Linking historical data using indicators
 
