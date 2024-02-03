@@ -1371,7 +1371,7 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "Stock availability - MSR - Numerator"
->>>**Calculation**: 
+>>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,0,1)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,0,1)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}==0,0,1)+
@@ -1436,7 +1436,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,0,1)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "Stockout discrepancy count - Numerator"
->>>**Calculation**: 
+>>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}==0,1,0)+
@@ -1500,7 +1500,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
 >>>**Description**: "Stockout discrepancy count - Numerator"
->>>**Calculation**: 
+>>>**Calculation**:  
 >>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
 #{WyDZKSw82X6.cD8WZyjlq9C}+
 #{JPccVwAGRq9.cD8WZyjlq9C}+
@@ -1693,7 +1693,7 @@ stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10"
 >>**Generator \(*)**  
 >>>**Description**: "[Stock list] - Stock coverage time"  
 >>>**Expression**: "forEach ?de in :DEG:nYcQWVqVsjx -->
-#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs}"  
+\#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs}"  
 >>
 >>**Sequential sample count \(*)**: "0"  
 >>**Annual sample count \(*)**: "0"  
