@@ -1838,34 +1838,40 @@ Xx
 
 >**3 Province level**  
 >>**3.1 Statistics**  
->>>- 6x MSR - Stock receipt - Province - Pivot table  
->>>- 6x MSR - Stock distribution - Province - Pivot table  
->>>- 6x MSR - Stock redistribution - Province - Pivot table  
->>>- 6x MSR - Stock discard - Province - Pivot table  
->>>- 6x MSR - Stock on hand - Province - Pivot table  
->>>- 6x MSR - Stock correction - Province - Pivot table  
->>>- 6x MSR - Stock report complete - Last 3 months - Province - Pivot table  
+>>>- 60 MSR - Stock receipt - Province - Pivot table  
+>>>- 61 MSR - Stock distribution - Province - Pivot table  
+>>>- 62 MSR - Stock redistribution - Province - Pivot table  
+>>>- 63 MSR - Stock discard - Province - Pivot table  
+>>>- 64 MSR - Stock on hand - Province - Pivot table  
+>>>- 65 MSR - Stock correction - Province - Pivot table  
+>>>- 66 MSR - Stock report complete - Last 3 months - Province - Pivot table  
 >>
 >>**3.2 Indicators**  
->>>- 7x MSR - Coefficient of Variation x 10 - Province - Pivot table  
->>>- 7x MSR - Coefficient of Variation x 10 - Province - Stacked bar chart  
->>>- 7x MSR - Coefficient of Variation x 10 - Province - Bar chart  
->>>- 7x MSR - Coefficient of Variation x 10 distribution - Province - Pivot table  
+>>>- 70 MSR - Coefficient of Variation x 10 distribution - Province - Pivot table  
 >>>- 7x MSR - Coefficient of Variation x 10 distribution - Last 12 months - Province - Stacked Column chart  
 >>>- 7x MSR - Coefficient of Variation x 10 distribution - Last month - District - Province chart  
+xxxxxxxx **UNABLE TO AGGREGATE FACILITY LEVEL DATA**
+
 >>>- 7x MSR - Stock availability - Province - Pivot table  
 >>>- 7x MSR - Stock availability - Province - Bar chart  
 >>>- 7x MSR - Stock availability - Province - Column chart  
+xxxxxxxx **UNABLE TO AGGREGATE FACILITY LEVEL DATA**
+
 >>>- 7x MSR - Stockouts - Province - Pivot table  
 >>>- 7x MSR - Stockout count - Province - Pivot table  
 >>>- 7x MSR - Stockout count - Province - Column chart  
 >>>- 7x MSR - Stockout count - Province - Single value chart  
 >>>- 7x MSR - Stockout length - Province - Pivot table  
 >>>- 7x MSR - Stockout length - Province - Stacked bar chart  
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 >>>- 7x MSR - Stock coverage time - Province - Pivot table  
 >>>- 7x MSR - Stock coverage time distribution - Province - Pivot table  
 >>>- 7x MSR - Stock coverage time distribution - Last 12 months - Province - Stacked column chart  
 >>>- 7x MSR - Stock coverage time distribution - Last month - Province - Stacked column chart  
+
+
 >>>- 7x MSR - Stock discrepancy - Province - Pivot table  
 >>>- 7x MSR - Stock discrepancy count - Province - Stacked column chart  
 
@@ -4046,12 +4052,676 @@ This report provides an overview of all stock data by district in a province fro
 #### Indicators
 
 
-
-
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
+>**39 MSR - Coefficient of Variation x 10 - District - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 - District - Pivot table"  
+>**Description**: "MSR DV 10 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / District / By item / Pivot table
+This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months for each of the twelve month as a Pivot table for each item and by health facilities in a district. Since decimals cannot be displayed in this report, the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Filter**: "Relative periods"  
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Coefficient of variation"  
+>>
+>>**Options**  
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Coefficient of variation"
+>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
+![](image-64.png)
+
+>**40 MSR - Coefficient of Variation x 10 - District - Stacked bar chart**  
+>
+>**Visualization type**: select "Stacked bar"
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 - District - Stacked bar chart"  
+>**Description**: "MSR DV 40 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last month / District / Across items / Stacked bar chart
+This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for the last month and by health facilities in a district. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
+>>**Series**  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Category**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>
+>>**Filter**: "Relative periods"  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>>
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Coefficient of variation"  
+>>>
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Coefficient of variation"
+>>>>>>**Show legend key** tag (appears as a white tick in a green field)  
+
+![](image-65.png)
+
+>**41 MSR - Coefficient of Variation x 10 - Distric - Bar chart**  
+>
+>**Visualization type**: select "Bar"
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 - Bar chart"  
+>**Description** "MSR DV 41 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last month / District / By item / Bar chart
+This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for each of the twelve months by healt facility in the district. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
+>>**Series**  
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Coefficient of variation"  
+>>
+>>**Category**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Filter**: "Relative periods"  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last months"  
+>>
+>>**Options**    
+>>>**Data**  
+>>>>**Lines**  
+>>>>>**Target line**  
+>>>>>>**Value**: "10"
+>>>>>>**Title**: "Medium variability"
+>>>>>>**Size**: "Regular"
+>>>>>>**Position**: "Left"
+>>>>>>**Colour**: select red
+>>>>>**Base line**  
+>>>>>>**Value**: "5"
+>>>>>>**Title**: "Low variability"
+>>>>>>**Size**: "Regular"
+>>>>>>**Position**: "Left"
+>>>>>>**Colour**: select green
+>>>
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Coefficient of variation"
+>>>>>**Show legend key** tag (appears as a white tick in a green field)  
+
+![](image-66.png)
+
+>**42 MSR - Coefficient of Variation x 10 distribution - District - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"
+>**Name \(*)**: "42 MSR - Coefficient of Variation x 10 distribution - District - Pivot table"  
+>**Description**: "MSR DV 13 - Monthly Stock Reporting / Coefficient of Variation x 10 distribution / Last 12 months / Health facility / By item / Pivot table
+This report provides the coefficient of variation (standard deviation of stock distribution divided by average stock distribution) by health facilities in the district over the last 12 months with a colour legend."
+>>**Columns**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Coefficient of variation"  
+>>>>**Selected items**: select the following items in the following order:  
+>>>>- Low variability
+>>>>- Medium variability
+>>>>- High variability
+>>**Rows**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Options**    
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+
+![](image-67.png)
+
+>**43 MSR - Coefficient of Variation x 10 distribution - Last 12 months - District - Stacked column chart**  
+>
+>**Visualization type**: select "Pivot table"
+>**Name \(*)**: "43 MSR - Coefficient of Variation x 10 distribution - Last 12 months - District - Stacked column chart"  
+>**Description**: "MSR DV 14 - Monthly Stock Reporting / Coefficient of Variation x 10 distribution / Last 12 months / District / By item / Stacked column chart
+This report provides the number of items which fall into the respective coefficient of variation (standard deviation of stock distribution divided by average stock distribution) ranges (low, medium and high) across all items at a health facility for all health facilities in a district over the last 12 months."
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Coefficient of variation"  
+>>>>**Selected items**: select the following items in the following order:  
+>>>>- Low variability
+>>>>- Medium variability
+>>>>- High variability
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>>**Organisation unit**: "User organisation unit"  
+
+![](image-69.png)
+
+>**44 MSR - MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart**  
+>
+>**Visualization type**: select "Pivot table"
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart"  
+>**Description**: "MSR DV 15 - Monthly Stock Reporting / Coefficient of Variation x 10 distribution / Last month / Health facility / By item / Column chart
+This report provides the number of items which fall into the respective coefficient of variation (standard deviation of stock distribution divided by average stock distribution) ranges (low, medium and high) across all items at a health facility for the last month by health facilities in the district."
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Coefficient of variation"  
+>>>>**Selected items**: select the following items in the following order:  
+>>>>- Low variability
+>>>>- Medium variability
+>>>>- High variability
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>>**Organisation unit**: "User organisation unit"  
+
+![](image-70.png)
+
+>**45 MSR - Stock availability - District - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"
+>**Name \(*)**: "MSR - Stock availability - District - Pivot table"  
+>**Description**: "MSR DV 45 - Monthly Stock Reporting / Stock availability / Last 12 months / District / By item / Pivot table
+This report provides the stock availability across all stock items for all health facilities in a district over the last 12 months with a colour legend."
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Filter**: "Relative periods"  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Selected items**: select "Stock availability / %"
+>>>>
+>>**Options**  
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stock availability / %"
+>>>>>**Show legend key** tag (appears as a white tick in a green field)  
+
+![](image-71.png)
+
+>**46 MSR - Stock availability - District - Bar chart**  
+>
+>**Visualization type**: select "Bar"
+>**Name \(*)**: "MSR - Stock availability - District - Bar chart"  
+>**Description**: "MSR DV 46 - Monthly Stock Reporting / Stock availability / Last 12 months / District / Bar chart
+This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the past 12 months for all health facilities in a district as column charts with a legend."  
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Selected items**: select "Stock availability / %"
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Filter**: "Relative periods"  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Options**    
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stock availability / %"
+>>>>>>**Show legend key** tag (appears as a white tick in a green field)  
+
+![](image-72.png)
+
+>**47 MSR - Stock availability - District - Column chart**  
+>
+>**Visualization type**: select "Single value"
+>**Name \(*)**: "MSR - Stock availability - District - Column chart"  
+>**Description**: "MSR DV 47 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Column chart
+This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month for all health facilities in a district as a Column chart with a legend."
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Selected items**: select "Stock availability / %"
+>>
+>>**Filter**: "Relative periods"  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>
+>>**Options**    
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend style**
+>>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stock availability / %"
+>>>>>>**Show legend key** tag (appears as a white tick in a green field)  
+
+![](image-74.png)
+
+>**48 MSR - Stockouts - District - Pivot table**  
+>
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stockouts - District - Pivot table"  
+>**Description**: "MSR DV 48 - Monthly Stock Reporting / Stockout by item / Last 12 months / District / By item / Pivot table
+This report displays a Pivot table with all items and indicating for each item whether it was out of stock for all health facilities in a district for the last 12 months".  
+>>**Columns** 
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Filter**: "Relative periods"  
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stockout Yes/No"  
+
+![alt text](image-75.png)
+
+>**49 MSR - Stockout count - District - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stockout count - District - Pivot table"  
+>**Description**: "MSR DV 49 - Monthly Stock Reporting / Stockout count / Last 12 months / District / Pivot table
+This report displays the number of stockouts for all items across a health facility for each of the past 12 months for all health facilities in a district as a Pivot table."  
+>>**Columns** 
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Filter**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stockout Yes/No" 
+>>
+>>**Options**    
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend style**
+>>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stockout count"
+
+![alt text](image-79.png)
+
+>**50 MSR - Stockout count - District - Column chart**  
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR - Stockout count - District - Column chart"
+>**Description**: "MSR DV 50 - Monthly Stock Reporting / Stockout count / Last 12 months / District / Stacked column chart
+This report displays the number of stockouts for each of the past 12 months for all health facilities in a district as a column chart."  
+>>**Series** 
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stockout Yes/No"  
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>>**Filter**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+
+![](image-77.png)
+
+>**51 MSR - Stockout count - District - Single value chart**  
+>
+>**Visualization type**: select "Single value"
+>**Name \(*)**: "MSR - Stockout count - District - Single value chart"  
+>**Description**: "MSR DV 51 - Monthly Stock Reporting / Stockout count / Last month / District / Single value chart
+This report displays the total number of stockouts in all health facilities of a district during the last month as a single value chart."  
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Selected items**: select "Stockout count"
+>>
+>>**Filter**: "Relative periods"  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>
+>>**Options**    
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend style**
+>>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stockout count"
+
+![](image-78.png)
+
+>**52 MSR - Stockout length - District - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stockout length - District - Pivot table"  
+>**Descriptions**: "MSR DV 24 - Monthly Stock Reporting / Stockout length / Last 12 months / District / Pivot table 
+This report displays a Pivot table by item with a "1" indicating a stockout (and "0" indicating stock was available) with a total for the past 12 months which represents the number of months during which a stockout occurred for all health facilities in the district."  
+>>**Columns** 
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stockout Yes/No"  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Options**    
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column totals**: tag (appears as a white tick in a green field)  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend style**
+>>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stockout count"
+
+![](image-82.png)
+
+>**53 MSR - Stockout length - District - Stacked bar chart**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stockout length - District - Bar chart"  
+>**Description**: "MSR DV 53 - Monthly Stock Reporting / Stockout length / Last 12 months / District / Stacked bar chart
+This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the district during the past 12 months."  
+>>**Series** 
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stockout Yes/No"  
+>>
+>>**Category**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+
+![](image-83.png)
+
+>**54 MSR - Stock coverage time - District - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock coverage time - District - Pivot table"  
+>**Description**: "MSR DV 54 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / District / Pivot table
+This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the past 12 months for each health facility in a distrct. A blank field is shown, if either the stock on hand or the stock distribution for a month is zero."  
+>>**Columns** 
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Filter**  
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stockout coverage"  
+
+![](image-84.png)
+
+>**55 MSR - Stock coverage time distribution - District - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - District - Pivot table"  
+>**Description**: "MSR DV 55 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / District / Column chart
+This report displays a Pivot table  with the number of items for which the coverage time fell into the respective coverage time bins (stockout, 1 to 12 months, 1-2 and 2-3 years or greater than or equal to 3 years) for all health facilities in a district for each of the past 12 months."  
+>>**Columns** 
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Data element group**: select "Stock coverage time"
+>>>>**Selected items**: select the following indicators in the following order:
+>>>>-  "Stockout count" 
+>>>>-  "0-1 months" 
+>>>>-  "1-2 months" 
+>>>>-  "2-3 months" 
+>>>>-  "3-4 months" 
+>>>>-  "4-5 months" 
+>>>>-  "5-6 months" 
+>>>>-  "6-7 months" 
+>>>>-  "7-8 months" 
+>>>>-  "8-9 months" 
+>>>>-  "9-10 months" 
+>>>>-  "10-11 months" 
+>>>>-  "11-12 months" 
+>>>>-  "1-2 years" 
+>>>>-  "2-3 years" 
+>>>>-  ">=3 years" 
+>>
+>>**Rows**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Options**    
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Columns totals**: tag (appears as a white tick in a green field)  
+>>>>>**Columns sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+
+![alt text](image-52.png)
+
+>**56 MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart**  
+>
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart"  
+>**Description**: "MSR DV 56 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / District / Stacked column chart
+For each of the 12 past months, this report displays a stacked column chart with the number of items for each stock coverage time bin (in months and years) separately for each health facility in the district."  
+>>**Series** 
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Data element group**: select "Stock coverage time"
+>>>>**Selected items**: select the following indicators in the following order:
+>>>>-  "Stockout count" 
+>>>>-  "0-1 months" 
+>>>>-  "1-2 months" 
+>>>>-  "2-3 months" 
+>>>>-  "3-4 months" 
+>>>>-  "4-5 months" 
+>>>>-  "5-6 months" 
+>>>>-  "6-7 months" 
+>>>>-  "7-8 months" 
+>>>>-  "8-9 months" 
+>>>>-  "9-10 months" 
+>>>>-  "10-11 months" 
+>>>>-  "11-12 months" 
+>>>>-  "1-2 years" 
+>>>>-  "2-3 years" 
+>>>>-  ">=3 years" 
+
+![](image-85.png)
+
+>>**57 MSR - Stock coverage time distribution - Last month - District - Stacked column chart**  
+>
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Last month - District - Stacked column chart"  
+>**Description**: "MSR DV 29 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / District / Stacked column chart
+For the last month, this report displays a stacked column chart with the number of items for each stock coverage time bin (in months and years) separately for each health facility in the district.
+>>**Series** 
+>>>**Organisation unit**: "User organisation unit"
+>>
+>>**Category**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Data element group**: select "Stock coverage time"
+>>>>**Selected items**: select the following indicators in the following order:
+>>>>-  "Stockout count" 
+>>>>-  "0-1 months" 
+>>>>-  "1-2 months" 
+>>>>-  "2-3 months" 
+>>>>-  "3-4 months" 
+>>>>-  "4-5 months" 
+>>>>-  "5-6 months" 
+>>>>-  "6-7 months" 
+>>>>-  "7-8 months" 
+>>>>-  "8-9 months" 
+>>>>-  "9-10 months" 
+>>>>-  "10-11 months" 
+>>>>-  "11-12 months" 
+>>>>-  "1-2 years" 
+>>>>-  "2-3 years" 
+>>>>-  ">=3 years" 
+>>
+>>**Filter**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+
+![](image-88.png)
+
+>**58 MSR - Stock discrepancy - District - Pivot table**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock discrepancy - District - Pivot table"  
+>**Description**: ">MSR DV 58 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / District / Pivot table
+This report displays a list with the positive and negative stock discrepancy of the past 12 months by item for all health facilities in a district.
++ Stock on hand from the previous month (final stock on hand)  
++ Stock receipt  
+- Stock distributed  
+- Stock redistributed  
+- Stock discard  
+- Stock correction  
+- Stock on hand"
+>>  
+>>**Columns** 
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Rows** 
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Filter**  
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock discrepancy count"  
+>>  
+>>**Options**    
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+
+![alt text](image-54.png)
+
+>**59 MSR - Stock discrepancy count - District - Stacked column chart**  
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR - Stock discrepancy count - District - Stacked column chart"  
+>**Visualization type**: "MSR DV 31 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / District / Stacked column chart
+This report displays the number of stock discrepancies for the past 12 months separately for each health facility in a district."  
+>>**Series** 
+>>>**YOUR DIMENIONS**
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock discrepancy count"  
+>>  
+>>**Category** 
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Disaggregation**: "Totals only"
+>>>>**Selected items**: select all (->>)
+
+![](image-87.png)
 
 ## Map App - Analytics
 
@@ -4278,7 +4948,7 @@ Coefficient of variation distribution by facility in a district: check with JM f
 >>- 4 MSR - District level - Analytics
 >
 >**3 Regional level**  
->>- Library
+>>- 5 MSR - Visualization library - Province level  
 >>- Selection
 >
 >**4 National level**  
@@ -4406,3 +5076,19 @@ Coefficient of variation distribution by facility in a district: check with JM f
 
 ![](image-90.png)
 ![](image-91.png)
+
+### Province level
+
+>**5 MSR - Visualization library - Province level**  
+>
+>**Dashboard title**: "MSR - Visualization library - Province level"  
+>**Dashboard description**: "Library of all available LMIS visualizations for the province in the order of their documentation. These are intended for immediate use or adapting to national policies and requirements."    
+>**Search for visualizations, reports and more** 
+>>>- MSR - Stock receipt - Province - Pivot table  
+>>>- MSR - Stock distribution - Province - Pivot table  
+>>>- MSR - Stock redistribution - Province - Pivot table  
+>>>- MSR - Stock discard - Province - Pivot table  
+>>>- MSR - Stock on hand - Province - Pivot table  
+>>>- MSR - Stock correction - Province - Pivot table  
+>>>- MSR - Stock report complete - Last 3 months - Province - Pivot table  
+
