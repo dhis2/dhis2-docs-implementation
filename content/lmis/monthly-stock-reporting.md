@@ -1786,7 +1786,7 @@ Xx
 >>>- 14 MSR - Coefficient of Variation x 10 distribution - Last 12 months - Stacked Column chart  
 >>>- 15 MSR - Coefficient of Variation x 10 distribution - Last months - Column chart  
 >>>- 16 MSR - Stock availability - Pivot table  
->>>- 17 MSR - Stock availability - Bar chart  
+>>>- 17 MSR - Stock availability - Column chart  
 >>>- 18 MSR - Stock availability - Single value chart  
 >>>- 19 MSR - Stock availability - Gauge chart  
 >>>- 20 MSR - Stockouts - Stacked column chart  
@@ -2438,10 +2438,10 @@ This report provides the stock availability across all stock items for an indivi
 
 ![](image-20.png)
 
->**17 MSR - Stock availability - Bar chart**  
+>**17 MSR - Stock availability - Column chart**  
 >
 >**Visualization type**: select "Bar"
->**Name \(*)**: "MSR - Stock availability - Bar chart"  
+>**Name \(*)**: "MSR - Stock availability - Column chart"  
 >**Description**: "MSR DV 17 - Monthly Stock Reporting / Stock availability / Last 12 months / Health facility / Bar chart
 This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the past 12 months as column charts with a legend."  
 >>**Series**  
@@ -3235,8 +3235,8 @@ This report provides the coefficient of variation (standard deviation of stock d
 >**41 MSR - Coefficient of Variation x 10 - Distric - Bar chart**  
 >
 >**Visualization type**: select "Bar"
->**Name \(*)**: "MSR - Coefficient of Variation x 10 - Bar chart"  
->**Description** "MSR DV 41 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last month / District / By item / Bar chart
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 - Column chart"  
+>**Description** "MSR DV 41 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last month / District / By item / Column chart
 This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for each of the twelve months by healt facility in the district. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
 >>**Series**  
 >>>**YOUR DIMENIONS**
