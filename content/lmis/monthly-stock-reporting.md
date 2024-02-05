@@ -2731,6 +2731,16 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout coverage"  
+>>
+>>**Options**    
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend style**
+>>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stock coverage time"
+>>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
 ![](image-32.png)
 
@@ -3634,6 +3644,16 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout coverage"  
+>>
+>>**Options**    
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend style**
+>>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stock coverage time"
+>>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
 ![](image-84.png)
 
