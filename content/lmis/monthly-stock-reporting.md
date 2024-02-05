@@ -49,7 +49,7 @@ The required metadata settings seetings are presented in the order in which it i
 >>5.2 Predictor  
 >>5.3 Predictor group
 
-### 1 CATEGORY
+### 1 Category
 
 #### 1.1 Category option
 >**1 Stock correction**  
@@ -126,7 +126,7 @@ The required metadata settings seetings are presented in the order in which it i
 >>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
 >>**Categories**: "Monthly stock report - Data recording and calculation"
 
-### 2 DATA ELEMENT
+### 2 Data element
 
 ### 2.1 Data element
 Data elements represent the items (healthcare products) for which logistics data is recorded and managed. A separate and unique Data element needs to be configured for each item (healthcare product).
@@ -1748,7 +1748,6 @@ The "Predictor group" is required in order to allow running all Predictors perio
 >>"[Item - MSR] - Closing balance"  
 >>"[Item - MSR] - Opening balance"  
 >>"[Item - MSR] - Stock discrepancy"  
-
 
 ## Android Settings Web App - Offline Analytics
 
