@@ -1777,7 +1777,7 @@ Xx
 >>>- 7 MSR - Stock report complete - Last 3 months - Pivot table  
 >>>- 8 MSR - Stock report complete - Last 12 months - Pivot table  
 >>>- 9 MSR - Stock report complete - Column chart
->
+>>
 >>**1.2 Indicators**  
 >>>- 10 MSR - Coefficient of Variation x 10 - Pivot table  
 >>>- 11 MSR - Coefficient of Variation x 10 - Stacked bar chart  
@@ -1789,6 +1789,8 @@ Xx
 >>>- 17 MSR - Stock availability - Column chart  
 >>>- 18 MSR - Stock availability - Single value chart  
 >>>- 19 MSR - Stock availability - Gauge chart  
+>>>- **xx** MSR - Stockout percentage - Bar chart
+>>>- **xx** MSR - Stock availability and stockout percentage - Bar chart
 >>>- 20 MSR - Stockouts - Stacked column chart  
 >>>- 21 MSR - Stockout count - Pivot table  
 >>>- 22 MSR - Stockout count - Column chart  
@@ -1797,10 +1799,16 @@ Xx
 >>>- 25 MSR - Stockout length - Bar chart  
 >>>- 26 MSR - Stock coverage time - Pivot table  
 >>>- 27 MSR - Stock coverage time distribution - Pivot table  
->>>- 28 MSR - Stock coverage time distribution - Last 12 months - Column chart  
+>>>- 28 MSR - Stock coverage time distribution - Last 12 months - Stacked Column chart  
 >>>- 29 MSR - Stock coverage time distribution - Last month - Column chart  
+>>>- **xx** MSR - Stock coverage time ranges - Last month
+>>>- **xx** MSR - Stock coverage time ranges - Last 12 months
 >>>- 30 MSR - Stock discrepancy - Pivot table  
 >>>- 31 MSR - Stock discrepancy count - Column chart  
+>>>- **xx** MSR - Stock discrepancy count - Percentage - Column chart  
+>>
+>>**1.3 Maps**  
+>>>- 1 MSR - Health facility
 >
 >**2 District level**  
 >>**2.1 Statistics**  
@@ -1820,8 +1828,12 @@ Xx
 >>>- 43 MSR - Coefficient of Variation x 10 distribution - Last 12 months - District - Stacked Column chart  
 >>>- 44 MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart  
 >>>- 45 MSR - Stock availability - District - Pivot table  
->>>- 46 MSR - Stock availability - District - Bar chart  
+>>>- 46 MSR - Stock availability - District - Column chart  
 >>>- 47 MSR - Stock availability - District - Column chart  
+
+>>>- **xx** MSR - Stockout percentage - District - Column chart
+>>>- **xx** MSR - Stock availability and stockout percentage - District - Stacked column chart
+
 >>>- 48 MSR - Stockouts - District - Pivot table  
 >>>- 49 MSR - Stockout count - District - Pivot table  
 >>>- 50 MSR - Stockout count - District - Column chart  
@@ -1830,10 +1842,23 @@ Xx
 >>>- 53 MSR - Stockout length - District - Stacked bar chart  
 >>>- 54 MSR - Stock coverage time - District - Pivot table  
 >>>- 55 MSR - Stock coverage time distribution - District - Pivot table  
->>>- 56 MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart  
->>>- 57 MSR - Stock coverage time distribution - Last month - District - Stacked column chart  
+>>>- 56 MSR - Stock coverage time distribution - District - Stacked column chart  
+>>>- 57 MSR - Stock coverage time distribution - District - Stacked column chart  
+
+>>>- **xx** MSR - Stock coverage time ranges - Last month - District
+>>>- **xx** MSR - Stock coverage time ranges - Last 12 months -  District
+
 >>>- 58 MSR - Stock discrepancy - District - Pivot table  
 >>>- 59 MSR - Stock discrepancy count - District - Stacked column chart  
+
+>>>- **xx** MSR - Stock discrepancy count - Percentage - District - Column chart  
+>
+>>**2.3 Maps**  
+>>>- MSR - Health facilities - District
+>>>- MSR - Stock availability - District
+>>>- MSR - Stock discrepancy count - District
+>>>- MSR - Stockout count - District
+
 
 >**3 Province level**  
 >>**3.1 Statistics**  
@@ -2286,10 +2311,10 @@ This report provides the coefficient of variation (standard deviation of stock d
 >
 ![](image-18.png)
 
->**12 MSR - Coefficient of Variation x 10 - Bar chart**  
+>**12 MSR - Coefficient of Variation x 10 - Column chart**  
 >
->**Visualization type**: select "Bar"  
->**Name \(*)**: "MSR - Coefficient of Variation x 10 - Bar chart"  
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 - Column chart"  
 >**Description** "MSR DV 12 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last 12 months / Health facility / By item / Bar chart
 This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for each of the twelve months. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
 >>**Series**  
@@ -2787,13 +2812,12 @@ This report displays a Pivot table  with the number of items for which the cover
 
 ![](image-52.png)
 
->**28 MSR - Stock coverage time distribution - Last 12 months - Column chart**  
+>**28 MSR - Stock coverage time distribution - Last 12 months - Stacked Column chart**  
 >
->**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - Last 12 months - Column chart"  
->**Description**: "MSR DV 28 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / Health facility / Column chart
-This report displays a group of column charts representing the number of items for 
-each stock coverage time bin (in months and years) for the past 12 months."  
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Last 12 months - Stacked column chart"  
+>**Description**: "MSR DV 28 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / Health facility / Stocked column chart
+This report displays a group of column charts representing the number of items for each stock coverage time bin (in months and years) for the past 12 months."  
 >>**Series**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -2967,8 +2991,8 @@ This report provides the monthly stock receipts by health facility in a district
 >**33 MSR - Stock distribution - District - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock distribution - Pivot table"  
->**Description**: "MSR DV 2 - Monthly Stock Reporting / Stock distribution / Last 12 months / District / By item / Pivot table  
+>**Name \(*)**: "MSR - Stock distribution - District - Pivot table"  
+>**Description**: "MSR DV 33 - Monthly Stock Reporting / Stock distribution / Last 12 months / District / By item / Pivot table  
 This report provides the monthly stock distributions by health facility in a district as reported at the end of every month."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -4985,7 +5009,7 @@ Coefficient of variation distribution by facility in a district: check with JM f
 >**Dashboard title**: "MSR - Visualization library - Health facility level"  
 >**Dashboard description**: "Library of all available LMIS visualizations for the health facility level in the order of their documentation. These are intended for immediate use or adapting to national policies and requirements."  
 >**Search for visualizations, reports and more**  
->>- MSR - Stock receipt - District - Pivot table  
+>>- MSR - Stock receipt - Pivot table  
 >>- MSR - Stock distribution - Pivot table  
 >>- MSR - Stock redistribution - Pivot table  
 >>- MSR - Stock discard - Pivot table  
@@ -4996,11 +5020,15 @@ Coefficient of variation distribution by facility in a district: check with JM f
 >>- MSR - Stock report complete - Column chart  
 >>- MSR - Coefficient of Variation x 10 - Pivot table  
 >>- MSR - Coefficient of Variation x 10 - Stacked bar chart  
->>- MSR - Coefficient of Variation x 10 - Bar chart  
+>>- MSR - Coefficient of Variation x 10 - Column chart  
 >>- MSR - Stock availability - Pivot table  
 >>- MSR - Stock availability - Bar chart  
 >>- MSR - Stock availability - Single value chart  
 >>- MSR - Stock availability - Gauge chart  
+
+>>- xx MSR - Stockout percentage - Bar chart
+>>- xx MSR - Stock availability and stockout percentage - Bar chart
+
 >>- MSR - Stockouts - Stacked column chart  
 >>- MSR - Stockout count - Pivot table  
 >>- MSR - Stockout count - Column chart  
@@ -5011,8 +5039,15 @@ Coefficient of variation distribution by facility in a district: check with JM f
 >>- MSR - Stock coverage time distribution - Pivot table  
 >>- MSR - Stock coverage time distribution - Last 12 months - Column chart  
 >>- MSR - Stock coverage time distribution - Last month - Column chart  
+
+>>>- xx MSR - Stock coverage time ranges - Last month
+>>>- xx MSR - Stock coverage time ranges - Last 12 months
+
 >>- MSR - Stock discrepancy - Pivot table  
 >>- MSR - Stock discrepancy count - Column chart  
+
+>>>- xx MSR - Stock discrepancy count - Perecentage - Column chart  
+
 >
 >**2 MSR - Health facility level - Analytics**  
 >
@@ -5048,12 +5083,12 @@ Coefficient of variation distribution by facility in a district: check with JM f
 >>>- MSR - Stock report complete - Last 3 months - District - Pivot table  
 >>>- MSR - Coefficient of Variation x 10 - District - Pivot table  
 >>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
->>>- MSR - Coefficient of Variation x 10 - District - Bar chart  
+>>>- MSR - Coefficient of Variation x 10 - District - Column chart  
 >>>- MSR - Coefficient of Variation x 10 distribution - District - Pivot table  
 >>>- MSR - Coefficient of Variation x 10 distribution - Last 12 months - District - Stacked Column chart  
 >>>- MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart  
 >>>- MSR - Stock availability - District - Pivot table  
->>>- MSR - Stock availability - District - Bar chart  
+>>>- MSR - Stock availability - District - Column chart  
 >>>- MSR - Stock availability - District - Column chart  
 >>>- MSR - Stockouts - District - Pivot table  
 >>>- MSR - Stockout count - District - Pivot table  
