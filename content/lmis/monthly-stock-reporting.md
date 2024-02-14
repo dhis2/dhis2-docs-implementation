@@ -276,9 +276,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>0 && #{EAG0GfdSMAs.iIC4
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>0 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=1,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>0 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<1,1,0)
 >>
->>**Edit denominator**:
+>>**Edit denominator**:  
 >>>**Description**: "O-1 months - MSR - Denominator"  
->>>**Calculation**: "1"
+>>>**Calculation**: "1"  
 >
 >**2 1-2 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 1 but less than 2 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 1-2 months.
@@ -288,7 +288,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>0 && #{xrjnOtFFTRC.iIC4
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:
->>>**Description**: "1-2 months - MSR - Numerator"
+>>>**Description**: "1-2 months - MSR - Numerator"  
 >>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>1 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=2,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>1 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=2,1,0)+
@@ -341,9 +341,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>1 && #{EAG0GfdSMAs.iIC4
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>1 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=2,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>1 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=2,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "1-2 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "1-2 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**3 2-3 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 2 but less than 3 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 2-3 months.
@@ -352,8 +352,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>1 && #{xrjnOtFFTRC.iIC4
 >>**Description**: "Number of items with a coverage time of 2-3 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "1-2 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "1-2 months - MSR - Numerator"  
 >>>**Calculation**:  
 if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>2 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=3,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>2 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=3,1,0)+
@@ -406,9 +406,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>2 && #{EAG0GfdSMAs.iIC4
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>2 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=3,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>2 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=3,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "2-3 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "2-3 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**4 3-4 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 3 but less than 4 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 3-4 months. 
@@ -417,8 +417,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>2 && #{xrjnOtFFTRC.iIC4
 >>**Description**: "Number of items with a coverage time of 3-4 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "3-4 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "3-4 months - MSR - Numerator"  
 >>>**Calculation**:  
 if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>3 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=4,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>3 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=4,1,0)+
@@ -471,9 +471,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>3 && #{EAG0GfdSMAs.iIC4
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>3 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=4,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>3 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=4,1,0)>>
 >>
->>**Edit denominator**:
->>>**Description**: "3-4 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "3-4 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**5 4-5 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 4 but less than 5 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 4-5 months.   
@@ -482,8 +482,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>3 && #{xrjnOtFFTRC.iIC4
 >>**Description**: "Number of items with a coverage time of 4-5 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "4-5 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "4-5 months - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>4 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=5,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>4 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=5,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>4 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=5,1,0)+
@@ -546,8 +546,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>4 && #{xrjnOtFFTRC.iIC4
 >>**Description**: "Number of items with a coverage time of 5-6 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "O-1 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "O-1 months - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>5 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=6,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>5 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=6,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>5 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=6,1,0)+
@@ -599,9 +599,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>5 && #{EAG0GfdSMAs.iIC4
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>5 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=6,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>5 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=6,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "5-6 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "5-6 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**7 6-7 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 6 but less than 7 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 6-7 months. 
@@ -610,8 +610,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>5 && #{xrjnOtFFTRC.iIC4
 >>**Description**: "Number of items with a coverage time of 6-7 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "6-7 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "6-7 months - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>6 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=7,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>6 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=7,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>6 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=7,1,0)+
@@ -663,9 +663,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>6 && #{EAG0GfdSMAs.iIC4
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>6 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=7,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>6 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=7,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "6-7 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "6-7 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**8 7-8 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 1 but less than 2 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 7-8 months. 
@@ -674,8 +674,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>6 && #{xrjnOtFFTRC.iIC4
 >>**Description**: "Number of items with a coverage time of 7-8 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "7-8 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "7-8 months - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
@@ -727,9 +727,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>7 && #{EAG0GfdSMAs.iIC4
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>7 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=8,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=8,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "7-8 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "7-8 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**9 8-9 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 8 but less than 9 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 8-9 months. 
@@ -738,8 +738,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4
 >>**Description**: "Number of items with a coverage time of 8-9 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "8-9 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "8-9 months - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
@@ -791,9 +791,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>7 && #{EAG0GfdSMAs.iIC4
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>7 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=8,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=8,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "8-9 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "8-9 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**10 9-10 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 9 but less than 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 9-10 months. 
@@ -802,8 +802,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4
 >>**Description**: "Number of items with a coverage time of 9-10 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "9-10 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "9-10 months - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>9 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=10,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>9 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=10,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>9 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=10,1,0)+
@@ -855,9 +855,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>9 && #{EAG0GfdSMAs.iIC4
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>9 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=10,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>9 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=10,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "9-10 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "9-10 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**11 10-11 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater or equal to 10 but less than 11 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 10-11 months. 
@@ -866,8 +866,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>9 && #{xrjnOtFFTRC.iIC4
 >>**Description**: "Number of items with a coverage time of 10-11 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "1O-11 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "1O-11 months - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>10 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=11,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>10 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=11,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>10 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=11,1,0)+
@@ -919,9 +919,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>10 && #{EAG0GfdSMAs.iIC
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>10 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=11,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>10 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=11,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "1O-11 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "1O-11 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**12 11-12 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 11 but less than 12 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 11-12 months. 
@@ -930,8 +930,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>10 && #{xrjnOtFFTRC.iIC
 >>**Description**: "Number of items with a coverage time of 11-12 months"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "11-12 months - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "11-12 months - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>11 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=12,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>11 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=12,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>11 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=12,1,0)+
@@ -983,9 +983,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>11 && #{EAG0GfdSMAs.iIC
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>11 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=12,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>11 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=12,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "11-12 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "11-12 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**13 1-2 years - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater rhan or equal to 12 but less than 24 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 12-24 months. 
@@ -994,8 +994,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>11 && #{xrjnOtFFTRC.iIC
 >>**Description**: "Number of items with a coverage time of 1-2 years"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "1-2 years - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "1-2 years - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>12 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=24,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>12 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=24,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>12 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=24,1,0)+
@@ -1047,9 +1047,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>12 && #{EAG0GfdSMAs.iIC
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>12 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=24,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>12 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=24,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "12-24 months - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "12-24 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**14 2-3 years - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 24 but less than 36 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 24-36 months. 
@@ -1058,9 +1058,10 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>12 && #{xrjnOtFFTRC.iIC
 >>**Description**: "Number of items with a coverage time of 2-3 years"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "2-3 years - MSR - Numerator"
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>24 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=36,1,0)+
+>>**Edit numerator**:  
+>>>**Description**: "2-3 years - MSR - Numerator"  
+>>>**Calculation**:
+>>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>24 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=36,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>24 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=36,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>24 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=36,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>24 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=36,1,0)+
@@ -1111,9 +1112,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>24 && #{EAG0GfdSMAs.iIC
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>24 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=36,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>24 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=36,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "2-3 years - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "2-3 years - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**15 >3 years - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than 36 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 36 months or greater. 
@@ -1122,8 +1123,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>24 && #{xrjnOtFFTRC.iIC
 >>**Description**: "Number of items with a coverage time greater than 3 years"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: ">03 years - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: ">03 years - MSR - Numerator"  
 >>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>36,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>36,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>36,1,0)+
@@ -1175,9 +1176,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>36,1,0)+
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>36,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>36,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: ">= 3 years - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: ">= 3 years - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**16 High variability**  
 >For each item the Indicator returns "1" if the coefficient of variation is greater than 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a coefficient of variation of more than 10 (high variability). Note that the actual coefficient of variation is multiplied by 10.
@@ -1186,7 +1187,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>36,1,0)
 >>**Description**: "Number of items with a coefficient of variation between 0 and 5."  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
+>>**Edit numerator**:  
 >>>**Description**: "HIgh variability - Numerator"  
 >>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.U2tBADVisKH}>10,1,0)+
@@ -1247,7 +1248,7 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}>10,1,0)
 >>**Description**: "Number of items with a coefficient of variation between 0 and 5."  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
+>>**Edit numerator**:  
 >>>**Description**: "High variability - Numerator"  
 >>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
@@ -1308,7 +1309,7 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Description**: "Number of items with a coefficient of variation between 5 and 10."  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
+>>**Edit numerator**:  
 >>>**Description**: "Medium variability - Numerator"  
 >>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
@@ -1369,8 +1370,8 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Description**: "Percentage of items with non-zero stock"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "Stock availability - MSR - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "Stock availability - MSR - Numerator"  
 >>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,0,1)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,0,1)+
@@ -1423,9 +1424,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}==0,0,1)+
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}==0,0,1)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,0,1)
 >>
->>**Edit denominator**:
->>>**Description**: "Stock availability - MSR - Denominator"
->>>**Calculation**: "0.06"
+>>**Edit denominator**:  
+>>>**Description**: "Stock availability - MSR - Denominator"  
+>>>**Calculation**: "0.06"  
 >
 >**20 Stockout count**  
 >This indicator counts the number of items with a stockout.
@@ -1434,8 +1435,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,0,1)
 >>**Description**: "Number of items with a stock discrepancy"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
->>>**Description**: "Stockout discrepancy count - Numerator"
+>>**Edit numerator**:  
+>>>**Description**: "Stockout discrepancy count - Numerator"  
 >>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,1,0)+
@@ -1488,9 +1489,9 @@ if(#{EAG0GfdSMAs.iIC4YhgrxQY}==0,1,0)+
 if(#{N2aXs7VlJdJ.iIC4YhgrxQY}==0,1,0)+
 if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>
->>**Edit denominator**:
->>>**Description**: "Stockouts - MSR - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "Stockouts - MSR - Denominator"  
+>>>**Calculation**: "1"  
 >
 >**21 Stockout discrepancy count**  
 >>**Name \(*)**: "Stockoutout discrepancy count"  
@@ -1498,7 +1499,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Description**: "Number of items with a stock discrepancy"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:
+>>**Edit numerator**:  
 >>>**Description**: "Stockout discrepancy count - Numerator"  
 >>>**Calculation**:  
 >>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
@@ -1552,9 +1553,9 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 #{N2aXs7VlJdJ.cD8WZyjlq9C}+
 #{xrjnOtFFTRC.cD8WZyjlq9C}
 >>
->>**Edit denominator**:
->>>**Description**: "Stockout discrepancy count - Denominator"
->>>**Calculation**: "1"
+>>**Edit denominator**:  
+>>>**Description**: "Stockout discrepancy count - Denominator"  
+>>>**Calculation**: "1"  
 
 #### 4.2 Indicator type
 The "Indicator type" is a precondition for configuring any "Indicator".
