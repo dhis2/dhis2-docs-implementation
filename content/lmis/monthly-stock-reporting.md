@@ -1807,9 +1807,6 @@ Xx
 >>>- 30 MSR - Stock discrepancy - Pivot table  
 >>>- 31 MSR - Stock discrepancy count - Column chart  
 >>>- **xx** MSR - Stock discrepancy count - Percentage - Column chart  
->>
->>**1.3 Maps**  
->>>- 1 MSR - Health facility
 >
 >**2 District level**  
 >>**2.1 Statistics**  
@@ -1849,12 +1846,6 @@ Xx
 >>>- 59 MSR - Stock discrepancy count - District - Stacked column chart  
 >>>- **xx** MSR - Stock discrepancy count - Percentage - District - Column chart  
 >
->>**2.3 Maps**  
->>>- MSR - Health facilities - District
->>>- MSR - Stock availability - District
->>>- MSR - Stock discrepancy count - District
->>>- MSR - Stockout count - District
->
 >**3 Province level**  
 >>**3.1 Statistics**  
 >>>- 60 MSR - Stock receipt - Province - Pivot table  
@@ -1866,33 +1857,24 @@ Xx
 >>>- 66 MSR - Stock report complete - Province - Pivot table  
 >>
 >>**3.2 Indicators**  
->>>- 70 MSR - Coefficient of Variation x 10 distribution - Province - Pivot table  
+>>>- 7x MSR - Coefficient of Variation x 10 distribution - Province - Stacked Column chart - Last month: ok  
+>>>- 7x MSR - Coefficient of Variation x 10 distribution - District - Column chart  - ??
+>>>- 7x MSR - Stock availability - Province - Pivot table: ok  
+>>>- 7x MSR - Stock availability - Province - Column chart: ok  
+>>>- **xx** MSR - Stockout percentage - Province - Column chart: ok  
+>>>- **xx** MSR - Stock availability and stockout percentage - Province - Bar chart: ok  
+>>>- 7x MSR - Stockouts - Province - Pivot table - Item - Last month: ok  
+>>>- 7x MSR - Stockout count - Province - Pivot table: ok  
+>>>- 7x MSR - Stockout count - Province - Column chart: ok  
+>>>- 7x MSR - Stockout count - Province - Single value chart - ?? 
+>>>- 7x MSR - Stock coverage time distribution - Province - Pivot table ??
+>>>- 7x MSR - Stock coverage time distribution- Province - Stacked column chart - Last month: ok   
+>>>- **xx** MSR - Stock coverage time ranges - Province - Last month: ok
+>>>- **xx** MSR - Stock coverage time ranges - Province - Last 12 months: ok
+>>>- 7x MSR - Stock discrepancy count - Province - Stacked column chart: ok  
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
->>>- 7x MSR - Coefficient of Variation x 10 distribution - Province - Stacked Column chart  
->>>- 7x MSR - Coefficient of Variation x 10 distribution - District - ????? chart  
->>>- 7x MSR - Stock availability - Province - Pivot table  
->>>- 7x MSR - Stock availability - Province - Bar chart  
->>>- 7x MSR - Stock availability - Province - Column chart  
->>>- **xx** MSR - Stockout percentage - Province - Bar chart
->>>- **xx** MSR - Stock availability and stockout percentage - Province - Bar chart
->>>- 7x MSR - Stockouts - Province - Pivot table  
->>>- 7x MSR - Stockout count - Province - Pivot table  
->>>- 7x MSR - Stockout count - Province - Column chart  
->>>- 7x MSR - Stockout count - Province - Single value chart  
->>>- 7x MSR - Stockout length - Province - Pivot table  
->>>- 7x MSR - Stockout length - Province - Stacked bar chart  
->>>- 7x MSR - Stock coverage time - Province - Pivot table  
->>>- 7x MSR - Stock coverage time distribution - Province - Pivot table  
->>>- 7x MSR - Stock coverage time distribution - Province - Stacked column chart - Last 12 months - 
->>>- 7x MSR - Stock coverage time distribution- Province - Stacked column chart - Last month   
->>>- **xx** MSR - Stock coverage time ranges - Province - Last month
->>>- **xx** MSR - Stock coverage time ranges - Province - Last 12 months
->>>- 7x MSR - Stock discrepancy - Province - Pivot table  
->>>- 7x MSR - Stock discrepancy count - Province - Stacked column chart  
->>>- **xx** MSR - Stock discrepancy count - Percentage - Province - Column chart  
->
 >>**3.3 Maps**  
 >>>- MSR - Health facilities - District
 >>>- MSR - Stock availability - District
@@ -4342,11 +4324,9 @@ This report provides an overview of all stock data by district in a province fro
 
 #### Indicators
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
->**39 MSR - Coefficient of Variation x 10 - District - Pivot table**  
+>**xx MSR - Coefficient of Variation x 10 - Province - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Coefficient of Variation x 10 - District - Pivot table"  
@@ -4384,7 +4364,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 
 ![](image-64.png)
 
->**40 MSR - Coefficient of Variation x 10 - District - Stacked bar chart**  
+>**7x MSR - Coefficient of Variation x 10 - Province - Stacked bar chart**  
 >
 >**Visualization type**: select "Stacked bar"  
 >**Name \(*)**: "MSR - Coefficient of Variation x 10 - District - Stacked bar chart"  
@@ -4418,7 +4398,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 
 ![](image-65.png)
 
->**41 MSR - Coefficient of Variation x 10 - Distric - Bar chart**  
+>**7x MSR - Coefficient of Variation x 10 - Province - Bar chart**  
 >
 >**Visualization type**: select "Bar"  
 >**Name \(*)**: "MSR - Coefficient of Variation x 10 - Bar chart"  
@@ -4467,7 +4447,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 
 ![](image-66.png)
 
->**42 MSR - Coefficient of Variation x 10 distribution - District - Pivot table**  
+>**7x MSR - Coefficient of Variation x 10 distribution - Province - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "42 MSR - Coefficient of Variation x 10 distribution - District - Pivot table"  
@@ -4495,7 +4475,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 
 ![](image-67.png)
 
->**43 MSR - Coefficient of Variation x 10 distribution - Last 12 months - District - Stacked column chart**  
+>**7x MSR - Coefficient of Variation x 10 distribution - Last 12 months - Province - Stacked column chart**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "43 MSR - Coefficient of Variation x 10 distribution - Last 12 months - District - Stacked column chart"  
@@ -4518,7 +4498,7 @@ This report provides the number of items which fall into the respective coeffici
 
 ![](image-69.png)
 
->**44 MSR - MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart**  
+>**7x MSR - MSR - Coefficient of Variation x 10 distribution - Province - Column chart - Last month**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart"  
@@ -4541,7 +4521,7 @@ This report provides the number of items which fall into the respective coeffici
 
 ![](image-70.png)
 
->**45 MSR - Stock availability - District - Pivot table**  
+>**7x MSR - Stock availability - Province - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock availability - District - Pivot table"  
@@ -4570,7 +4550,7 @@ This report provides the stock availability across all stock items for all healt
 
 ![](image-71.png)
 
->**46 MSR - Stock availability - District - Bar chart**  
+>**7x MSR - Stock availability - Province - Bar chart**  
 >
 >**Visualization type**: select "Bar"  
 >**Name \(*)**: "MSR - Stock availability - District - Bar chart"  
@@ -4599,7 +4579,7 @@ This report displays the stock availability (number of items with non-zero stock
 
 ![](image-72.png)
 
->**47 MSR - Stock availability - District - Column chart**  
+>**7x MSR - Stock availability - Province - Column chart**  
 >
 >**Visualization type**: select "Single value"  
 >**Name \(*)**: "MSR - Stock availability - District - Column chart"  
@@ -4628,7 +4608,7 @@ This report displays the stock availability (number of items with non-zero stock
 
 ![](image-74.png)
 
->**48 MSR - Stockouts - District - Pivot table**  
+>**7x MSR - Stockouts - Province - Pivot table**  
 >
 >**Visualization type**: select "Stacked column"  
 >**Name \(*)**: "MSR - Stockouts - District - Pivot table"  
@@ -4654,7 +4634,7 @@ This report displays a Pivot table with all items and indicating for each item w
 
 ![alt text](image-75.png)
 
->**49 MSR - Stockout count - District - Pivot table**  
+>**7x MSR - Stockout count - Province - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockout count - District - Pivot table"  
@@ -4689,7 +4669,7 @@ This report displays the number of stockouts for all items across a health facil
 
 ![alt text](image-79.png)
 
->**50 MSR - Stockout count - District - Column chart**  
+>**7x MSR - Stockout count - Province - Column chart**  
 >
 >**Visualization type**: select "Column"  
 >**Name \(*)**: "MSR - Stockout count - District - Column chart"  
@@ -4714,7 +4694,7 @@ This report displays the number of stockouts for each of the past 12 months for 
 
 ![](image-77.png)
 
->**51 MSR - Stockout count - District - Single value chart**  
+>**7x MSR - Stockout count - Province - Single value chart**  
 >
 >**Visualization type**: select "Single value"  
 >**Name \(*)**: "MSR - Stockout count - District - Single value chart"  
@@ -4742,7 +4722,7 @@ This report displays the total number of stockouts in all health facilities of a
 
 ![](image-78.png)
 
->**52 MSR - Stockout length - District - Pivot table**  
+>**7x MSR - Stockout length - Province - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockout length - District - Pivot table"  
@@ -4780,7 +4760,7 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 
 ![](image-82.png)
 
->**53 MSR - Stockout length - District - Stacked bar chart**  
+>**7x MSR - Stockout length - Province - Stacked bar chart**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockout length - District - Bar chart"  
@@ -4806,7 +4786,7 @@ This report displays a stacked bar chart with the number of stockouts for each i
 
 ![](image-83.png)
 
->**54 MSR - Stock coverage time - District - Pivot table**  
+>**7x MSR - Stock coverage time - Province - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock coverage time - District - Pivot table"  
@@ -4832,7 +4812,7 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 
 ![](image-84.png)
 
->**55 MSR - Stock coverage time distribution - District - Pivot table**  
+>**7x MSR - Stock coverage time distribution - Province - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock coverage time distribution - District - Pivot table"  
@@ -4875,7 +4855,7 @@ This report displays a Pivot table  with the number of items for which the cover
 
 ![alt text](image-52.png)
 
->**56 MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart**  
+>**7x MSR - Stock coverage time distribution - Province - Stacked column chart - Last 12 months**  
 >
 >**Visualization type**: select "Stacked column"  
 >**Name \(*)**: "MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart"  
@@ -4911,7 +4891,7 @@ For each of the 12 past months, this report displays a stacked column chart with
 
 ![](image-85.png)
 
->>**57 MSR - Stock coverage time distribution - Last month - District - Stacked column chart**  
+>>**7x MSR - Stock coverage time distribution - Province - Stacked column chart - Last month**  
 >
 >**Visualization type**: select "Stacked column"  
 >**Name \(*)**: "MSR - Stock coverage time distribution - Last month - District - Stacked column chart"  
@@ -4949,7 +4929,7 @@ For the last month, this report displays a stacked column chart with the number 
 
 ![](image-88.png)
 
->**58 MSR - Stock discrepancy - District - Pivot table**  
+>**7x MSR - Stock discrepancy - Province - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock discrepancy - District - Pivot table"  
@@ -4988,7 +4968,7 @@ This report displays a list with the positive and negative stock discrepancy of 
 
 ![alt text](image-54.png)
 
->**59 MSR - Stock discrepancy count - District - Stacked column chart**  
+>**7x MSR - Stock discrepancy count - Province - Stacked column chart**  
 >
 >**Visualization type**: select "Column"  
 >**Name \(*)**: "MSR - Stock discrepancy count - District - Stacked column chart"  
@@ -5019,33 +4999,32 @@ This report displays the number of stock discrepancies for the past 12 months se
 >**1 Health facility**  
 >>>- 1 MSR - Health facility  
 >
->**1 District level**  
->>**1.1 Statistics**  
+>**2 District level**  
+>>**2.1 Statistics**  
 >>>- 2 MSR - Health facilities - District  
 >
->>**1.2 Indicators**  
+>>**2.2 Indicators**  
 >>>- 3 MSR - Stock availability- District  
 >>>- 4 MSR - Stock discrepancy count - District  
 >>>- 5 MSR - Stockout count - District  
-
-xxxx
-Stock coverage time distribution by facility in a district: check with JM first
-Coefficient of variation distribution by facility in a district: check with JM first
-
->**2 Province level**  
->>**2.1 Statistics**  
->>>- X 
 >
->>**2.2 Indicators**  
->>>- X 
->>
->**3 Country level**  
+>**3 Province level**  
 >>**3.1 Statistics**  
->>>- X 
+>>>- 6 MSR - Health facilities - Province  
 >
 >>**3.2 Indicators**  
->>>- X 
->>
+>>>- 7 MSR - Stock availability- Province  
+>>>- 8 MSR - Stock discrepancy count - Province  
+>>>- 9 MSR - Stockout count - Province
+>
+>**4 Country**  
+>>**4.1 Statistics**  
+>>>- 10 MSR - Health facilities - Country  
+>
+>>**4.2 Indicators**  
+>>>- 11 MSR - Stock availability- Country  
+>>>- 12 MSR - Stock discrepancy count - Country  
+>>>- 13 MSR - Stockout count - Country
 
 ### Health facility level
 
