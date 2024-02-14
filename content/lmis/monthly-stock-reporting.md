@@ -1436,7 +1436,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,0,1)
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
->>>**Description**: "Stockout discrepancy count - Numerator"  
+>>>**Description**: "Stock discrepancy count - Numerator"  
 >>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,1,0)+
@@ -1493,14 +1493,14 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>>**Description**: "Stockouts - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**21 Stockout discrepancy count**  
->>**Name \(*)**: "Stockoutout discrepancy count"  
->>**Short Name \(*)**: "Stockout discrepancy count - MSR"  
+>**21 Stock discrepancy count**  
+>>**Name \(*)**: "Stock discrepancy count"  
+>>**Short Name \(*)**: "Stock discrepancy count - MSR"  
 >>**Description**: "Number of items with a stock discrepancy"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
->>>**Description**: "Stockout discrepancy count - Numerator"  
+>>>**Description**: "Stock discrepancy count - Numerator"  
 >>>**Calculation**:  
 >>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
 #{WyDZKSw82X6.cD8WZyjlq9C}+
@@ -1554,7 +1554,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 #{xrjnOtFFTRC.cD8WZyjlq9C}
 >>
 >>**Edit denominator**:  
->>>**Description**: "Stockout discrepancy count - Denominator"  
+>>>**Description**: "Stock discrepancy count - Denominator"  
 >>>**Calculation**: "1"  
 
 #### 4.2 Indicator type
@@ -1874,12 +1874,6 @@ Xx
 >>>- 7x MSR - Stock discrepancy count - Province - Stacked column chart: ok  
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
->>**3.3 Maps**  
->>>- MSR - Health facilities - District
->>>- MSR - Stock availability - District
->>>- MSR - Stock discrepancy count - District
->>>- MSR - Stockout count - District
 >
 >**4 Country level**  
 >>**4.1 Statistics**  
@@ -5010,12 +5004,12 @@ This report displays the number of stock discrepancies for the past 12 months se
 >
 >**3 Province level**  
 >>**3.1 Statistics**  
->>>- 6 MSR - Health facilities - Province  
+>>>- 6 MSR - Health facilities - Province: ok  
 >
 >>**3.2 Indicators**  
->>>- 7 MSR - Stock availability- Province  
->>>- 8 MSR - Stock discrepancy count - Province  
->>>- 9 MSR - Stockout count - Province
+>>>- 7 MSR - Stock availability- Province: ok  
+>>>- 8 MSR - Stock discrepancy count - Province: ok  
+>>>- 9 MSR - Stockout count - Province: ok
 >
 >**4 Country**  
 >>**4.1 Statistics**  
