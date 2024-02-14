@@ -1831,10 +1831,8 @@ Xx
 >>>- 45 MSR - Stock availability - District - Pivot table  
 >>>- 46 MSR - Stock availability - District - Column chart  
 >>>- 47 MSR - Stock availability - District - Column chart  
-
 >>>- **xx** MSR - Stockout percentage - District - Column chart
 >>>- **xx** MSR - Stock availability and stockout percentage - District - Stacked column chart
-
 >>>- 48 MSR - Stockouts - District - Pivot table  
 >>>- 49 MSR - Stockout count - District - Pivot table  
 >>>- 50 MSR - Stockout count - District - Column chart  
@@ -1845,13 +1843,10 @@ Xx
 >>>- 55 MSR - Stock coverage time distribution - District - Pivot table  
 >>>- 56 MSR - Stock coverage time distribution - District - Stacked column chart  
 >>>- 57 MSR - Stock coverage time distribution - District - Stacked column chart  
-
 >>>- **xx** MSR - Stock coverage time ranges - Last month - District
 >>>- **xx** MSR - Stock coverage time ranges - Last 12 months -  District
-
 >>>- 58 MSR - Stock discrepancy - District - Pivot table  
 >>>- 59 MSR - Stock discrepancy count - District - Stacked column chart  
-
 >>>- **xx** MSR - Stock discrepancy count - Percentage - District - Column chart  
 >
 >>**2.3 Maps**  
@@ -1859,8 +1854,7 @@ Xx
 >>>- MSR - Stock availability - District
 >>>- MSR - Stock discrepancy count - District
 >>>- MSR - Stockout count - District
-
-
+>
 >**3 Province level**  
 >>**3.1 Statistics**  
 >>>- 60 MSR - Stock receipt - Province - Pivot table  
@@ -2551,6 +2545,50 @@ This report displays the stock availability (number of items with non-zero stock
 
 ![](image-24.png)
 
+>**xx MSR - Stockout percentage - Column chart**  
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR - Stockout percentage - Column chart"  
+>**Description**: "MSR DV xx - Monthly Stock Reporting / Stockout percentage / Last 12 months / Health facility / Column chart
+This report displays a bar chart with the percentage of items with a stockout for the past 12 months."  
+>>**Series**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Stockout count"  
+>>>>**Selected items**: "Stockout percentage"
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+
+![](image-101.png)
+
+>**xx MSR - Stock availability and stockout percentage - Stacked column chart**  
+>
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock availability and stockout percentage - Stacked column chart"  
+>**Description**: "MSR DV xx - Monthly Stock Reporting / Stock availability and stockout percentage / Last 12 months / Health facility / Stacked column chart
+This report displays the stock availability (as percentage) and the stockout percentage (which by definition must add up to 100%) as a Stacked column chart."  
+>>**Series**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Stockout count"  
+>>>>**Selected items**:
+>>>>>- "Stock availability / %"  
+>>>>>- "Stockout percentage"  
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+
+![](image-102.png)
+
 >**20 MSR - Stockouts - Stacked column chart**  
 >
 >**Visualization type**: select "Stacked column"    
@@ -2675,6 +2713,7 @@ This report displays the number of stockouts during the last month as a single v
 >**Name \(*)**: "MSR - Stockout length - Pivot table"  
 >**Descriptions**: "MSR DV 24 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table 
 This report displays a Pivot table by item with a "1" indicating a stockout (and "0" indicating stock was available) with a total for the past 12 months."  
+>>
 >>**Columns**  
 >>>**YOUR DIMENIONS**  
 >>>>**Name**: "Monthly stock report"  
@@ -2778,7 +2817,7 @@ This report displays a Pivot table  with the number of items for which the cover
 >>**Columns**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
->>>>**Data element group**: select "Stock coverage time"  
+>>>>**Indicator group**: select "Stock coverage time"  
 >>>>**Selected items**: select the following indicators in the following order:  
 >>>>-  "Stockout count"  
 >>>>-  "0-1 months"  
@@ -2822,7 +2861,7 @@ This report displays a group of column charts representing the number of items f
 >>**Series**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
->>>>**Data element group**: select "Stock coverage time"  
+>>>>**Indicator group**: select "Stock coverage time"  
 >>>>**Selected items**: select the following indicators in the following order:  
 >>>>-  "Stockout count"  
 >>>>-  "0-1 months"  
@@ -2860,7 +2899,7 @@ This report displays a group of column charts representing the stock coverage ti
 >>**Series**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
->>>>**Data element group**: select "Stock coverage time"  
+>>>>**Indicator group**: select "Stock coverage time"  
 >>>>**Selected items**: select the following indicators in the following order:  
 >>>>-  "Stockout count"  
 >>>>-  "0-1 months"  
@@ -2888,6 +2927,63 @@ This report displays a group of column charts representing the stock coverage ti
 >>>**Organisation unit**: "User organisation unit"  
 
 ![](image-35.png)
+
+>>**xx MSR - Stock coverage time ranges - Last month - Column chart**  
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR DV xx - Monthly Stock Reporting / Stock coverage time ranges / Last month / Health facility / Stacked column chart
+For each of the last month, this report displays a stacked column chart with the number of items for each stock coverage time range (stockout, understock, appropriate stock, overstock and excessive stock) for the health facility."  
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: select "Stock coverage time"  
+>>>>**Selected items**: select the following indicators in the following order:  
+>>>>- "Stockout count"  
+>>>>- "Understock (0-3 months)"  
+>>>>- "Appropriate stock (3-6 months)"  
+>>>>- "Overstock (6-12 months)"  
+>>>>- "Excessive stock (> 12 months)"  
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+
+![](image-103.png)
+
+>>**xx MSR - Stock coverage time ranges - Last 12 months - Stacked column chart**  
+>
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR DV xx - Monthly Stock Reporting / Stock coverage time ranges / Last 12 months / Health facility / Stacked column chart
+For each of the 12 past months, this report displays a stacked column chart with the number of items for each stock coverage time range (stockout, understock, appropriate stock, overstock and excessive stock) for the health facility."  
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: select "Stock coverage time"  
+>>>>**Selected items**: select the following indicators in the following order:  
+>>>>- "Stockout count"  
+>>>>- "Understock (0-3 months)"  
+>>>>- "Appropriate stock (3-6 months)"  
+>>>>- "Overstock (6-12 months)"  
+>>>>- "Excessive stock (> 12 months)"  
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Options**  
+>>>**Data**  
+>>>>**Display**  
+>>>>>**Stacked values add up to 100%**  
+
+![](image-104.png)
 
 >**30 MSR - Stock discrepancy - Pivot table**  
 >
@@ -2952,6 +3048,39 @@ This report displays the number of stock discrepancies for the past 12 months."
 >>>>**Selected items**: select all (->>)  
 >
 ![](image-37.png)
+
+>**31 MSR - Stock discrepancy count - Percentage - Column chart**  
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR - Stock discrepancy count - Percentage - Column chart"  
+>**Visualization type**: "MSR DV xx - Monthly Stock Reporting / Stock discrepancy / Percentage / Last 12 months / Health facility / Column chart
+This report displays the percentage of all items with a stock discrepancies for the past 12 months."  
+>>
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: select "Stockout discrepancy"  
+>>>>**Selected items**: "Stock discrepancy percentage"
+>>  
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>>  
+>>**Options**  
+>>>**Axes**  
+>>>>**Axis ranges**  
+>>>>>**Max**: "100"
+>>  
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>**Legend**: "Stockout count"  
+
+![](image-106.png)
 
 ### District level
 
@@ -3409,11 +3538,11 @@ This report provides the stock availability across all stock items for all healt
 
 ![](image-71.png)
 
->**46 MSR - Stock availability - District - Bar chart**  
+>**46 MSR - Stock availability - District - Column chart - Last 12 months**  
 >
 >**Visualization type**: select "Bar"  
->**Name \(*)**: "MSR - Stock availability - District - Bar chart"  
->**Description**: "MSR DV 46 - Monthly Stock Reporting / Stock availability / Last 12 months / District / Bar chart
+>**Name \(*)**: "MSR - Stock availability - District - Column chart - Last 12 months"  
+>**Description**: "MSR DV 46 - Monthly Stock Reporting / Stock availability / Last 12 months / District / Column chart
 This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the past 12 months for all health facilities in a district as column charts with a legend."  
 >>**Series**  
 >>>**Data**  
@@ -3438,10 +3567,10 @@ This report displays the stock availability (number of items with non-zero stock
 
 ![](image-72.png)
 
->**47 MSR - Stock availability - District - Column chart**  
+>**47 MSR - Stock availability - District - Column chart - Last month**  
 >
 >**Visualization type**: select "Single value"  
->**Name \(*)**: "MSR - Stock availability - District - Column chart"  
+>**Name \(*)**: "MSR - Stock availability - District - Column chart - Last month"  
 >**Description**: "MSR DV 47 - Monthly Stock Reporting / Stock availability / Last month / Health facility / Column chart
 This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month for all health facilities in a district as a Column chart with a legend."  
 >>**Series**  
@@ -3466,6 +3595,46 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
 ![](image-74.png)
+
+>**xx MSR - Stockout percentage - District - Column chart**  
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR - Stockout percentage - District - Column chart"  
+>**Description**: "MSR DV xx - Monthly Stock Reporting / Stockout percentage / Last 12 months / Health facility / Column chart
+This report displays a bar chart with the percentage of items with a stockout for the past 12 months."  
+>>**Series**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Stockout count"  
+>>>>**Selected items**: "Stockout percentage"
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>>**Organisation unit**: "User organisation unit"  
+
+![](image-108.png)
+
+>**xx MSR - Stock availability and stockout percentage - District - Stacked column chart**  
+>
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock availability and stockout percentage - District - Stacked column chart"  
+>**Description**: "MSR DV xx - Monthly Stock Reporting / Stock availability and stockout percentage / Last 12 months / District  / Stacked column chart
+This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the past 12 months for all health facilities in a district as column charts with a legend."  
+>>**Series**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: "Stockout count"  
+>>>>**Selected items**:
+>>>>>- "Stock availability / %"  
+>>>>>- "Stockout percentage"  
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>>**Organisation unit**: "User organisation unit"  
+
+![](image-109.png)
 
 >**48 MSR - Stockouts - District - Pivot table**  
 >
@@ -3690,7 +3859,7 @@ This report displays a Pivot table  with the number of items for which the cover
 >>**Columns**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
->>>>**Data element group**: select "Stock coverage time"  
+>>>>**Indicator group**: select "Stock coverage time"  
 >>>>**Selected items**: select the following indicators in the following order:  
 >>>>-  "Stockout count"  
 >>>>-  "0-1 months"  
@@ -3739,7 +3908,7 @@ For each of the 12 past months, this report displays a stacked column chart with
 >>>>**Selected Periods**: "Last 12 month"  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
->>>>**Data element group**: select "Stock coverage time"  
+>>>>**Indicator group**: select "Stock coverage time"  
 >>>>**Selected items**: select the following indicators in the following order:  
 >>>>-  "Stockout count"  
 >>>>-  "0-1 months"  
@@ -3772,7 +3941,7 @@ For the last month, this report displays a stacked column chart with the number 
 >>**Category**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
->>>>**Data element group**: select "Stock coverage time"  
+>>>>**Indicator group**: select "Stock coverage time"  
 >>>>**Selected items**: select the following indicators in the following order:  
 >>>>-  "Stockout count"  
 >>>>-  "0-1 months"  
@@ -3797,6 +3966,58 @@ For the last month, this report displays a stacked column chart with the number 
 >>>>**Selected Periods**: "Last month"  
 
 ![](image-88.png)
+
+>>**xx MSR - Stock coverage time ranges - District  - Stacked column chart- Last month**  
+>
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Last month - District - Stacked column chart"  
+>**Description**: "MSR DV xx - Monthly Stock Reporting / Stock coverage time / Ranges / District / Stacked column chart / Last month
+For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
+>>**Series**  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Category**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: select "Stock coverage time"  
+>>>>**Selected items**: select the following indicators in the following order:  
+>>>>- "Stockout count"  
+>>>>- "Understock (0-3 months)"  
+>>>>- "Appropriate stock (3-6 months)"  
+>>>>- "Overstock (6-12 months)"  
+>>>>- "Excessive stock (> 12 months)"  
+>>
+>>**Filter**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+
+![](image-110.png)
+
+>>**xx MSR - Stock coverage time ranges - District  - Stacked column chart - Last 12 months**  
+>
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Last month - District - Stacked column chart"  
+>**Description**: "MSR DV xx - Monthly Stock Reporting / Stock coverage time / Ranges / District / Stacked column chart / Last month
+For the 12 last months, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
+>>**Series**  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: select "Stock coverage time"  
+>>>>**Selected items**: select the following indicators in the following order:  
+>>>>- "Stockout count"  
+>>>>- "Understock (0-3 months)"  
+>>>>- "Appropriate stock (3-6 months)"  
+>>>>- "Overstock (6-12 months)"  
+>>>>- "Excessive stock (> 12 months)"  
+
+![](image-111.png)
 
 >**58 MSR - Stock discrepancy - District - Pivot table**  
 >
@@ -3862,6 +4083,28 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>>**Selected items**: select all (->>)  
 
 ![](image-87.png)
+
+>**xx MSR - Stock discrepancy count - Percentage - District - Column chart**  
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR - Stock discrepancy count - Percentage - Column chart"  
+>**Visualization type**: "MSR DV xx - Monthly Stock Reporting / Stock discrepancy / Percentage / Last 12 months / District / Health facility / Column chart
+This report displays the percentage of all items with a stock discrepancies for the past 12 months by health facilities in the district."  
+>>
+>>**Series**  
+>>>**Organisation unit**: "User organisation unit"  
+>>  
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: select "Stockout discrepancy"  
+>>>>**Selected items**: "Stock discrepancy percentage"
+
+![](image-112.png)
 
 ### Province level
 
@@ -4594,7 +4837,7 @@ This report displays a Pivot table  with the number of items for which the cover
 >>**Columns**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
->>>>**Data element group**: select "Stock coverage time"  
+>>>>**Indicator group**: select "Stock coverage time"  
 >>>>**Selected items**: select the following indicators in the following order:  
 >>>>-  "Stockout count"  
 >>>>-  "0-1 months"  
@@ -4643,7 +4886,7 @@ For each of the 12 past months, this report displays a stacked column chart with
 >>>>**Selected Periods**: "Last 12 month"  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
->>>>**Data element group**: select "Stock coverage time"  
+>>>>**Indicator group**: select "Stock coverage time"  
 >>>>**Selected items**: select the following indicators in the following order:  
 >>>>-  "Stockout count"  
 >>>>-  "0-1 months"  
