@@ -1875,11 +1875,11 @@ Xx
 
 xxxxxxxxxxxxxxxxxxxxxxxxx
 
->>>- 7x MSR - Stock coverage time distribution - Province - Pivot table ??
->>>- 7x MSR - Stock coverage time distribution- Province - Stacked column chart - Last month: ok   
->>>- **xx** MSR - Stock coverage time ranges - Province - Last month: ok
->>>- **xx** MSR - Stock coverage time ranges - Province - Last 12 months: ok
->>>- 7x MSR - Stock discrepancy count - Province - Stacked column chart: ok  
+>>>- 7x MSR - Stock coverage time distribution - Province - Pivot table
+>>>- 7x MSR - Stock coverage time distribution- Province - Stacked column chart - Last month:  
+>>>- **xx** MSR - Stock coverage time ranges - Province - Last month:  
+>>>- **xx** MSR - Stock coverage time ranges - Province - Last 12 months: 
+>>>- 7x MSR - Stock discrepancy count - Province - Stacked column chart:  
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 >
@@ -1943,7 +1943,7 @@ This report provides the monthly stock receipts as reported at the end of every 
 >>>>**Disaggregation**: "Totals only"
 >>>>**Selected items**: select all (->>)
 >>
->>**Filter**: "Relative periods"  
+>>**Filter**:  
 >>>**Organisation unit**: "User organisation unit"  
 >>>**YOUR DIMENIONS**
 >>>>**Name**: "Monthly stock report"  
@@ -4655,7 +4655,7 @@ This report displays the number of stockouts for each of the past 12 months for 
 >
 >**Visualization type**: select "Column chart"  
 >**Name \(*)**: "MSR - Stockout count - Province - Column chart"  
->**Description**: "MSR DV xx - Monthly Stock Reporting / Stockout count / Last month / Province / Bar chart
+>**Description**: "MSR DV xx - Monthly Stock Reporting / Stockout count / Last month / Province / Column chart
 This report displays the number of stockouts for all items across districts in a province for the last month as a Column chart."  
 >>**Series**  
 >>>**Period**: "Relative periods"  
@@ -4667,7 +4667,7 @@ This report displays the number of stockouts for all items across districts in a
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout Yes/No"
 >>
->>**Filter**: "Relative periods"  
+>>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
 >>>**Data**  
 >>>>**Data Type**: "Data elements"  
@@ -4687,21 +4687,17 @@ This report displays the number of stockouts for all items across districts in a
 
 ![](image-133.png)
 
-xxxxxxxx
-
 >**7x MSR - Stockout length - Province - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockout length - District - Pivot table"  
->**Descriptions**: "MSR DV 24 - Monthly Stock Reporting / Stockout length / Last 12 months / District / Pivot table 
-This report displays a Pivot table by item with a "1" indicating a stockout (and "0" indicating stock was available) with a total for the past 12 months which represents the number of months during which a stockout occurred for all health facilities in the district."  
+>**Descriptions**: "MSR DV xx - Monthly Stock Reporting / Stockout length / Last 12 months / Province / Pivot table 
+This report displays a Pivot table with a count of the number of months (during the past 12 months) during which and item was out of stock at each of the health facilities in a province."  
 >>**Columns**  
 >>>**YOUR DIMENIONS**  
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout Yes/No"  
->>>**Period**: "Relative periods"  
->>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>**Organisation unit**: "User organisation unit"  
 >>
 >>**Rows**  
 >>>**Data**  
@@ -4709,7 +4705,11 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Filter**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
 >>
 >>**Options**  
 >>>**Data**  
@@ -4726,7 +4726,7 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
 
-![](image-82.png)
+![](image-135.png)
 
 >**7x MSR - Stockout length - Province - Stacked bar chart**  
 >
@@ -4753,6 +4753,8 @@ This report displays a stacked bar chart with the number of stockouts for each i
 >>>>**Selected Periods**: "Last 12 month"  
 
 ![](image-83.png)
+
+xxxxxx
 
 >**7x MSR - Stock coverage time - Province - Pivot table**  
 >
