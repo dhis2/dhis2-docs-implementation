@@ -133,22 +133,22 @@ Data elements represent the items (healthcare products) for which logistics data
 
 >**1 ATROPINE SULFATE, 1mg/ml, 1ml, amp. - MSR**
 >>**Name \(*)**: "ATROPINE SULFATE, 1mg/ml, 1ml, amp. - MSR"  
->>**Short name \(*)**: "DINJATRO1A"
->>**Code \(*)**:  "DINJATRO1A"
+>>**Short name \(*)**: "DINJATRO1A"  
+>>**Code \(*)**:  "DINJATRO1A"  
 >>**Domain Type \(*)**: "Aggregate"  
 >>**Value type \(*)**: "Integer"  
 >>**Aggregation type (*)**: "Sum"  
->>**Store zero data values**: tag (appears as white tick in a blue square) 
+>>**Store zero data values**: tag (appears as white tick in a blue square)  
 >>**Category combination \(*)**: "Monthly stock report - Data collection"  
 >
->**[Number] [Item] - MSR**
+>**[Number] [Item] - MSR**  
 >>**Name \(*)**: "X [Item] - MSR"  
->>**Short name \(*)**: "[Item code]"
->>**Code \(*)**:  "[Item code]"
+>>**Short name \(*)**: "[Item code]"  
+>>**Code \(*)**:  "[Item code]"  
 >>**Domain Type \(*)**: "Aggregate"  
 >>**Value type \(*)**: "Integer"  
 >>**Aggregation type (*)**: "Sum"  
->>**Store zero data values**: tag (appears as white tick in a blue square) 
+>>**Store zero data values**: tag (appears as white tick in a blue square)  
 >>**Category combination \(*)**: "Monthly stock report - Data collection"  
 
 ### 2.2 Data element group
@@ -157,8 +157,8 @@ The creation of Data element groups is a DHIS2 best practice but also a precondi
 
 >**1 Stock item list - MSR**  
 >**Name \(*)**: "Stock item list - MSR"  
->**Short name \(*)**: "Stock item list - MSR"
->**Data elements \(*)**: *select all Data elements with the "MSR" suffix"*    
+>**Short name \(*)**: "Stock item list - MSR"  
+>**Data elements \(*)**: *select all Data elements with the "MSR" suffix"*  
 
 ### 3 Data set
 
@@ -173,7 +173,7 @@ The configuration for two Data sets are presented below, but either the one or t
 
 >**1 MSR - Monthly stock report - Data recording**  
 >>**Name \(*)**: "MSR - Monthly stock report - Data recording"  
->>**Short name \(*)**: "Monthly stock report - Data recording"
+>>**Short name \(*)**: "Monthly stock report - Data recording"  
 >>**Color**: "#00ACC1"  
 >>**Expiry days**: "5"  
 >>**Open future periods for data entry**: "1"  
@@ -1501,7 +1501,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stock discrepancy count - Numerator"  
->>>**Calculation**:  
+>>>**Calculation**:
 >>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
 #{WyDZKSw82X6.cD8WZyjlq9C}+
 #{JPccVwAGRq9.cD8WZyjlq9C}+
@@ -1684,7 +1684,7 @@ stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10"
 >
 >**2 [Stock list] - Stock coverage time - MSR**  
 >>**Name \(*)**: "[Stock list] - Stock coverage - MSR"  
->>**Short name \(*)**: "[Stock list] - Stock coverage - MSR"
+>>**Short name \(*)**: "[Stock list] - Stock coverage - MSR"  
 >>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
 >>**Output category option combo** "Stock coverage"  
 >>**Period type \(*)**: "Monthly"  
@@ -1982,7 +1982,7 @@ This report provides the monthly stock distributions as reported at the end of e
 
 >**3 MSR - Stock redistribution - Pivot table**  
 >
->**Visualization type**: select "Pivot table"
+>**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock redistribution - Pivot table"  
 >**Description**: "MSR DV 3 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Health facility / By item / Pivot table.    
 This report provides the monthly stock redistributions as reported at the end of every month."
@@ -1994,7 +1994,7 @@ This report provides the monthly stock redistributions as reported at the end of
 >>**Rows**  
 >>>**Data**  
 >>>>**Data Type**: "Data elements"  
->>>>**Data element group**: select "[Stock item list] - MSR
+>>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"
 >>>>**Selected items**: select all (->>)
 >>
@@ -2027,9 +2027,9 @@ This report provides the monthly stock discards as reported at the end of every 
 >>**Rows**  
 >>>**Data**  
 >>>>**Data Type**: "Data elements"  
->>>>**Data element group**: select "[Stock item list] - MSR
->>>>**Disaggregation**: "Totals only"
->>>>**Selected items**: select all (->>)
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
 >>
 >>**Filter**: "Relative periods"  
 >>>**Organisation unit**: "User organisation unit"  
@@ -2047,10 +2047,10 @@ This report provides the monthly stock discards as reported at the end of every 
 
 >**5 MSR - Stock on hand - Pivot table**  
 >
->**Visualization type**: select "Pivot table"
->**Name \(*)**: "MSR - Stock on hand - Pivot table"
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock on hand - Pivot table"  
 >**Description**: "MSR DV 5 - Monthly Stock Reporting / Stock on hand / Last 12 months / Health facility / By item / Pivot table  
-This report provides the monthly stock on hand as reported at the end of every month.
+This report provides the monthly stock on hand as reported at the end of every month.  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -2058,10 +2058,10 @@ This report provides the monthly stock on hand as reported at the end of every m
 >>
 >>**Rows**  
 >>>**Data**  
->>>>**Data Type**: "Data elements"  
->>>>**Data element group**: select "[Stock item list] - MSR
->>>>**Disaggregation**: "Totals only"
->>>>**Selected items**: select all (->>)
+>>>>**Data Type**: "Data elements"    
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
 >>
 >>**Filter**: "Relative periods"  
 >>>**Organisation unit**: "User organisation unit"  
@@ -2080,10 +2080,10 @@ This report provides the monthly stock on hand as reported at the end of every m
 
 >**6 MSR - Stock correction - Pivot table**  
 >
->**Visualization type**: select "Pivot table"
+>**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock correction - Pivot table"  
 >**Description**: "MSR DV 6 - Monthly Stock Reporting / Stock correction / Last 12 months / Health facility / By item / Pivot table
-This report provides the monthly stock corrections as reported at the end of every month."
+This report provides the monthly stock corrections as reported at the end of every month."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -2092,9 +2092,9 @@ This report provides the monthly stock corrections as reported at the end of eve
 >>**Rows**  
 >>>**Data**  
 >>>>**Data Type**: "Data elements"  
->>>>**Data element group**: select "[Stock item list] - MSR
->>>>**Disaggregation**: "Totals only"
->>>>**Selected items**: select all (->>)
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
 >>
 >>**Filter**: "Relative periods"  
 >>>**Organisation unit**: "User organisation unit"  
@@ -2103,7 +2103,7 @@ This report provides the monthly stock corrections as reported at the end of eve
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock correction"  
 >>
->>**Options**    
+>>**Options**  
 >>>**Data**  
 >>>>**Totals**  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
@@ -2427,7 +2427,7 @@ This report provides the stock availability across all stock items for an indivi
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
 >>>>**Selected items**: select "Stock availability / %"  
->>>>
+>>
 >>**Options**  
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
@@ -2623,6 +2623,7 @@ This report displays the number of stockouts for all items across a health facil
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
@@ -2681,6 +2682,7 @@ This report displays the number of stockouts during the last month as a single v
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
@@ -2716,10 +2718,12 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 >>>**Data**  
 >>>>**Totals**  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
@@ -2781,6 +2785,7 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stock coverage time"  
@@ -3323,6 +3328,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 >>>>**Totals**  
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend type**  
@@ -3569,6 +3575,7 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)   
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stock availability / %"  
@@ -3671,6 +3678,7 @@ This report displays the number of stockouts for all items across a health facil
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)   
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
@@ -3723,7 +3731,8 @@ This report displays the total number of stockouts in all health facilities of a
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
->>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)   
+>>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>> 
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
@@ -3758,10 +3767,12 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 >>>>>**Column totals**: tag (appears as a white tick in a green field)  
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
@@ -3823,6 +3834,7 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)   
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stock coverage time"  
@@ -3987,6 +3999,7 @@ For the 12 last months, this report displays a stacked column chart with the num
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 months"  
+>>>
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
 >>>>**Indicator group**: select "Stock coverage time"  
@@ -4349,6 +4362,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 >>>>**Totals**  
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend type**  
@@ -4533,13 +4547,14 @@ This report provides the stock availability across all stock items for all healt
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
 >>>>**Selected items**: select "Stock availability / %"  
->>>>
+>>
 >>**Options**  
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stock availability / %"  
+>>>>>
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
 ![](image-71.png)
@@ -4595,6 +4610,7 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stock availability / %"  
@@ -4657,6 +4673,7 @@ This report displays the number of stockouts for all items across a health facil
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
@@ -4710,6 +4727,7 @@ This report displays the total number of stockouts in all health facilities of a
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)   
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
@@ -4748,6 +4766,7 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
