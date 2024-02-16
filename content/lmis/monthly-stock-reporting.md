@@ -1770,6 +1770,9 @@ Xx
 >**1 Health facility level**  
 >>**1.1 Statistics**  
 >>>- 1 MSR - Stock receipt - Pivot table
+
+xxx
+
 >>>- 2 MSR - Stock distribution - Pivot table  
 >>>- 3 MSR - Stock redistribution - Pivot table  
 >>>- 4 MSR - Stock discard - Pivot table  
