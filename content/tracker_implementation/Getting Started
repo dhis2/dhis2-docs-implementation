@@ -1,0 +1,70 @@
+#Getting Started
+
+##Understanding DHIS2 Components: Aggregate, Events, and Tracker
+Before proceeding, it's essential to grasp the distinctions between DHIS2's Aggregate, Events, and Tracker functionalities:
+
+*DHIS2 Aggregate:*
+
+Aggregate is suitable for scenarios where data is collected and analyzed at an aggregated level, such as district or facility level. It is typically used for routine reporting and monitoring of aggregated indicators, and is typically used for HMIS reporting.
+
+*DHIS2 Events:*
+
+Events are employed when organizations need to capture discrete occurrences, such as patient visits or disease outbreaks, and maintain a chronological record. Events are versatile but may not provide the level of individual tracking offered by Tracker. Events are often used for one-off interventions, such as mass campaigns.
+
+*DHIS2 Tracker:*
+
+Tracker is chosen for in-depth individual-level data management and tracking. It is ideal when organizations require a detailed understanding of the journey of each individual through various stages of a program or intervention.
+
+##Choosing Tracker: Context and Considerations
+The choice to use DHIS2 Tracker is driven by specific organizational needs and use cases. Consider Tracker when:
+
+**Individual-Level Monitoring is Essential:**
+
+When granular tracking of individual interactions, services, or interventions is critical for program success.
+
+**Dynamic Program Requirements Exist:**
+
+When the organization's programs necessitate flexibility in data collection forms, rules, and workflows, Tracker offers customizable solutions.
+
+**Real-Time / Near Real-Time Decision-Making is a Priority:**
+
+For situations where timely responses to emerging trends and events are vital, Tracker's real-time data capture capabilities are advantageous.
+
+**The data collected may be useful for future analysis or posthoc analysis:**
+
+Having the granular source data for indicators and statistics allows you to answer new questions in the future with the same dataset, by simply developing new analytics. Tracker level data also allows updates to key indicator definitions without losing the history of a given indicator.
+
+##Is Tracker an EMR?
+DHIS2 tracker is not a traditional Electronic Medical Record (EMR) system. The design philosophy for the overall DHIS2 platform is to make generic functionality that can be configured and made purposeful for many different use cases, and one of the key ways that Tracker is implemented is as a longitudinal health record for a given health domain. For example, it is often used to create vaccine records for childhood vaccines that will be used by the clinician to record the provision of new vaccines, maintain a patient history, generate reminders for the next vaccine, and may include decision support about which vaccine to provide during the current or upcoming visits. 
+
+When used in this way, the DHIS2 Tracker could be considered a component of the child’s overall health record, if combined with other data sources regarding nutrition, HIV, etc. Some countries have begun to combine multiple Tracker programs in a single instance, effectively covering all health services that a patient receives, resulting in a complete electronic medical record for primary care services below the hospital or in-patient level. In this way, DHIS2 Tracker is being used to maintain both the clinical records, as well as satisfy the analytics and reporting requirements for the specified health programs.
+
+There are many functionalities of a traditional EMR that are not optimized in DHIS2 Tracker. Tracker is not designed for hospital-level point of care. It does not have dedicated tooling for insurance portals; bed management; in-patient transfer; diagnostic equipment; and more.
+
+
+
+DHIS2 as a platform is a comprehensive health information system that goes beyond the scope of a typical EMR. It is designed to support the collection, management, analysis, and presentation of a wide range of health data, not only individual patient records. By using DHIS2 Tracker, your program can support both the needs of the individual level data, without sacrificing the analytical and programmatic data needs.
+
+Here are some key points regarding DHIS2 Tracker and its potential use in the context of electronic medical records:
+
+**Programmatic Data Management:** DHIS2 Tracker is particularly well-suited for managing programmatic data, where the focus is on tracking individuals through various stages of health programs or interventions. It may not provide the same level of clinical detail found in specialized EMR systems.
+
+**Customizable for Health Programs:** Organizations can configure DHIS2 Tracker to capture specific data elements, attributes, and program rules tailored to their health programs. This customization is valuable for organizations implementing disease-specific interventions or public health programs.
+
+**Integration with Health Information Systems:** DHIS2, including Tracker, is designed to integrate with other health information systems. This interoperability allows organizations to connect DHIS2 with EMR systems, laboratory information systems, and other health-related databases to create a more comprehensive health information ecosystem.
+
+**Data Analysis and Reporting:** DHIS2 provides robust tools for data analysis and reporting, enabling users to generate various reports, charts, and dashboards based on the data collected through Tracker. This is valuable for monitoring program performance and making informed decisions.
+
+**Support for Aggregate Data:** While Tracker is designed for individual-level data, DHIS2 as a whole can also handle aggregate data. This makes it versatile for managing both detailed individual records and broader population-level health indicators.
+
+In summary, while DHIS2 Tracker may not replace a dedicated EMR for clinical details and patient-specific records, it can play a significant role in managing programmatic data, monitoring health interventions, and contributing to an integrated health information system. Organizations often use DHIS2 in conjunction with specialized EMRs to create a comprehensive health data management infrastructure.
+
+
+##Tracker Capture vs. Capture App
+DHIS2 currently provides two main interfaces for data entry using Tracker – the original Tracker Capture app, which will be phased out in coming years, and the new Capture app, which is a rewrite from the ground up that combines both Event and Tracker programs in a single interface.
+
+In addition to providing an updated look and feel, the Capture app includes new functionality that will not be available in the old Tracker Capture app, such as the TEI enrollment dashboard; configurable and saved working lists; relationship cards; and many more. As of the 41 release of DHIS2, Capture app has feature parity with the old Tracker Capture app, as well as new functionality. All new implementations of DHIS2 Tracker after May 2024 are recommended to use the new Capture app. All existing implementations of DHIS2 Tracker are recommended to plan for an upgrade to the Capture app when circumstances permit, before the Tracker Capture app is removed from service.
+
+
+
+Now that you have a solid overview, head to the DHIS2 documentation for detailed instructions on installation, database setup, server configuration, and login processes.
