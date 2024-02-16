@@ -211,6 +211,8 @@ Indicators are used for calculating the following logistics metrics:
 
 - Stock availability (percentage of items which are on hand)
 
+- Stockout percentage (percentage of items which are out of stock)
+
 - Stockout count (number of items which are out of stock)
 
 For the "Stock coverage time" indicator it would in principle be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings. Note that items will have to be added and removed individually if the stock item list is changed.
@@ -345,7 +347,199 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>1 && #{xrjnOtFFTRC.iIC4
 >>>**Description**: "1-2 months - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**3 2-3 months - MSR**  
+>**3 1-2 years - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater rhan or equal to 12 but less than 24 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 12-24 months. 
+>>**Name \(*)**: "1-2 years - MSR"  
+>>**Short Name \(*)**: "1-2 years - MSR"  
+>>**Description**: "Number of items with a coverage time of 1-2 years"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "1-2 years - MSR - Numerator"  
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>12 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=24,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>12 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=24,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>12 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=24,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>12 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=24,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>12 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=24,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>12 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=24,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>12 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=24,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>12 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=24,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>12 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=24,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>12 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=24,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>12 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=24,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>12 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=24,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>12 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=24,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>12 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=24,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>12 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=24,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>12 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=24,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>12 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=24,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>12 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=24,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>12 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=24,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>12 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=24,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>12 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=24,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>12 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=24,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>12 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=24,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>12 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=24,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>12 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=24,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>12 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=24,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>12 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=24,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>12 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=24,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>12 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=24,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>12 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=24,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>12 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=24,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>12 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=24,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>12 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=24,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>12 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=24,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>12 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=24,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>12 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=24,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>12 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=24,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>12 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=24,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>12 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=24,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>12 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=24,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>12 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=24,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>12 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=24,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>12 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=24,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>12 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=24,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>12 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=24,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>12 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=24,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>12 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=24,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>12 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=24,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>12 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=24,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>12 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=24,1,0)
+>>
+>>**Edit denominator**:  
+>>>**Description**: "12-24 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**4 10-11 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater or equal to 10 but less than 11 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 10-11 months. 
+>>**Name \(*)**: "10-11 months - MSR"  
+>>**Short Name \(*)**: "10-11 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 10-11 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "1O-11 months - MSR - Numerator"  
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>10 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=11,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>10 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=11,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>10 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=11,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>10 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=11,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>10 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=11,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>10 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=11,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>10 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=11,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>10 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=11,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>10 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=11,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>10 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=11,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>10 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=11,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>10 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=11,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>10 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=11,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>10 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=11,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>10 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=11,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>10 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=11,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>10 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=11,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>10 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=11,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>10 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=11,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>10 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=11,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>10 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=11,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>10 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=11,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>10 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=11,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>10 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=11,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>10 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=11,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>10 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=11,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>10 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=11,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>10 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=11,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>10 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=11,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>10 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=11,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>10 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=11,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>10 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=11,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>10 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=11,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>10 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=11,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>10 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=11,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>10 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=11,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>10 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=11,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>10 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=11,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>10 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=11,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>10 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=11,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>10 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=11,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>10 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=11,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>10 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=11,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>10 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=11,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>10 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=11,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>10 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=11,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>10 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=11,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>10 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=11,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>10 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=11,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>10 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=11,1,0)
+>>
+>>**Edit denominator**:  
+>>>**Description**: "1O-11 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**5 11-12 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 11 but less than 12 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 11-12 months. 
+>>**Name \(*)**: "11-12 months - MSR"  
+>>**Short Name \(*)**: "11-12 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 11-12 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "11-12 months - MSR - Numerator"  
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>11 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=12,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>11 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=12,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>11 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=12,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>11 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=12,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>11 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=12,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>11 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=12,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>11 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=12,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>11 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=12,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>11 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=12,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>11 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=12,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>11 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=12,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>11 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=12,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>11 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=12,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>11 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=12,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>11 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=12,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>11 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=12,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>11 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=12,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>11 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=12,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>11 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=12,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>11 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=12,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>11 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=12,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>11 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=12,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>11 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=12,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>11 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=12,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>11 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=12,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>11 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=12,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>11 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=12,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>11 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=12,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>11 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=12,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>11 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=12,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>11 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=12,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>11 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=12,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>11 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=12,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>11 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=12,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>11 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=12,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>11 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=12,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>11 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=12,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>11 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=12,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>11 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=12,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>11 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=12,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>11 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=12,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>11 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=12,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>11 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=12,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>11 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=12,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>11 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=12,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>11 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=12,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>11 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=12,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>11 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=12,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>11 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=12,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>11 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=12,1,0)
+>>
+>>**Edit denominator**:  
+>>>**Description**: "11-12 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**6 2-3 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 2 but less than 3 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 2-3 months.
 >>**Name \(*)**: "2-3 months"  
 >>**Short Name \(*)**: "2-3 months - MSR"  
@@ -410,648 +604,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>2 && #{xrjnOtFFTRC.iIC4
 >>>**Description**: "2-3 months - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**4 3-4 months - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 3 but less than 4 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 3-4 months. 
->>**Name \(*)**: "3-4 months - MSR"  
->>**Short Name \(*)**: "3-4 months - MSR"  
->>**Description**: "Number of items with a coverage time of 3-4 months"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "3-4 months - MSR - Numerator"  
->>>**Calculation**:  
-if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>3 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=4,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>3 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=4,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>3 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=4,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>3 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=4,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>3 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=4,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>3 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=4,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>3 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=4,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>3 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=4,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>3 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=4,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>3 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=4,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>3 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=4,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>3 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=4,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>3 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=4,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>3 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=4,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>3 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=4,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>3 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=4,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>3 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=4,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>3 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=4,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>3 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=4,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>3 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=4,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>3 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=4,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>3 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=4,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>3 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=4,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>3 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=4,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>3 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=4,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>3 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=4,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>3 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=4,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>3 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=4,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>3 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=4,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>3 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=4,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>3 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=4,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>3 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=4,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>3 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=4,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>3 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=4,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>3 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=4,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>3 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=4,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>3 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=4,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>3 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=4,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>3 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=4,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>3 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=4,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>3 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=4,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>3 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=4,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>3 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=4,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>3 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=4,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>3 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=4,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>3 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=4,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>3 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=4,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>3 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=4,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>3 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=4,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>3 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=4,1,0)>>
->>
->>**Edit denominator**:  
->>>**Description**: "3-4 months - MSR - Denominator"  
->>>**Calculation**: "1"  
->
->**5 4-5 months - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 4 but less than 5 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 4-5 months.   
->>**Name \(*)**: "4-5 months - MSR"  
->>**Short Name \(*)**: "4-5 months - MSR"  
->>**Description**: "Number of items with a coverage time of 4-5 months"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "4-5 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>4 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=5,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>4 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=5,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>4 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=5,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>4 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=5,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>4 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=5,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>4 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=5,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>4 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=5,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>4 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=5,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>4 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=5,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>4 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=5,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>4 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=5,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>4 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=5,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>4 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=5,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>4 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=5,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>4 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=5,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>4 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=5,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>4 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=5,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>4 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=5,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>4 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=5,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>4 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=5,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>4 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=5,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>4 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=5,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>4 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=5,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>4 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=5,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>4 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=5,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>4 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=5,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>4 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=5,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>4 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=5,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>4 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=5,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>4 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=5,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>4 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=5,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>4 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=5,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>4 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=5,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>4 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=5,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>4 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=5,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>4 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=5,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>4 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=5,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>4 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=5,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>4 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=5,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>4 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=5,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>4 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=5,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>4 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=5,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>4 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=5,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>4 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=5,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>4 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=5,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>4 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=5,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>4 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=5,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>4 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=5,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>4 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=5,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>4 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=5,1,0)
->>
->>**Edit denominator**:
->>>**Description**: "4-5 months - MSR - Denominator"
->>>**Calculation**: "1"
->
->**6 5-6 months - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 5 but less than 6 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage of 5-6 months. 
->>**Name \(*)**: "5-6 months"  
->>**Short Name \(*)**: "5-6 months - MSR"  
->>**Description**: "Number of items with a coverage time of 5-6 months"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "O-1 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>5 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=6,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>5 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=6,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>5 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=6,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>5 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=6,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>5 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=6,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>5 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=6,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>5 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=6,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>5 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=6,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>5 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=6,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>5 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=6,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>5 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=6,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>5 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=6,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>5 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=6,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>5 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=6,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>5 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=6,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>5 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=6,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>5 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=6,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>5 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=6,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>5 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=6,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>5 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=6,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>5 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=6,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>5 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=6,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>5 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=6,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>5 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=6,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>5 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=6,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>5 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=6,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>5 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=6,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>5 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=6,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>5 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=6,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>5 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=6,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>5 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=6,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>5 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=6,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>5 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=6,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>5 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=6,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>5 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=6,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>5 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=6,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>5 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=6,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>5 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=6,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>5 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=6,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>5 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=6,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>5 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=6,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>5 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=6,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>5 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=6,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>5 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=6,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>5 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=6,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>5 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=6,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>5 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=6,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>5 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=6,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>5 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=6,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>5 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=6,1,0)
->>
->>**Edit denominator**:  
->>>**Description**: "5-6 months - MSR - Denominator"  
->>>**Calculation**: "1"  
->
->**7 6-7 months - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 6 but less than 7 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 6-7 months. 
->>**Name \(*)**: "6-7 months - MSR"  
->>**Short Name \(*)**: "6-7 months - MSR"  
->>**Description**: "Number of items with a coverage time of 6-7 months"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "6-7 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>6 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=7,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>6 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=7,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>6 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=7,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>6 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=7,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>6 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=7,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>6 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=7,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>6 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=7,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>6 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=7,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>6 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=7,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>6 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=7,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>6 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=7,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>6 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=7,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>6 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=7,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>6 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=7,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>6 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=7,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>6 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=7,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>6 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=7,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>6 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=7,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>6 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=7,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>6 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=7,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>6 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=7,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>6 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=7,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>6 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=7,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>6 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=7,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>6 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=7,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>6 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=7,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>6 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=7,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>6 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=7,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>6 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=7,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>6 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=7,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>6 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=7,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>6 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=7,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>6 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=7,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>6 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=7,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>6 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=7,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>6 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=7,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>6 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=7,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>6 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=7,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>6 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=7,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>6 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=7,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>6 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=7,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>6 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=7,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>6 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=7,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>6 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=7,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>6 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=7,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>6 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=7,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>6 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=7,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>6 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=7,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>6 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=7,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>6 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=7,1,0)
->>
->>**Edit denominator**:  
->>>**Description**: "6-7 months - MSR - Denominator"  
->>>**Calculation**: "1"  
->
->**8 7-8 months - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 1 but less than 2 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 7-8 months. 
->>**Name \(*)**: "7-8 months - MSR"  
->>**Short Name \(*)**: "7-8 months - MSR"  
->>**Description**: "Number of items with a coverage time of 7-8 months"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "7-8 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>7 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=8,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>7 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=8,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>7 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=8,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>7 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=8,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>7 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=8,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>7 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=8,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>7 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=8,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>7 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=8,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>7 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=8,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>7 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=8,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>7 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=8,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>7 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=8,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>7 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=8,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>7 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=8,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>7 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=8,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>7 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=8,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>7 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=8,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>7 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=8,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>7 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=8,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>7 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=8,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>7 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=8,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>7 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=8,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>7 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=8,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>7 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=8,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>7 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=8,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>7 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=8,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>7 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=8,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>7 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=8,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>7 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=8,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>7 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=8,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>7 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=8,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>7 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=8,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>7 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=8,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>7 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=8,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>7 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=8,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>7 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=8,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>7 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=8,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>7 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=8,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>7 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=8,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>7 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=8,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>7 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=8,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>7 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=8,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>7 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=8,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>7 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=8,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>7 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=8,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>7 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=8,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=8,1,0)
->>
->>**Edit denominator**:  
->>>**Description**: "7-8 months - MSR - Denominator"  
->>>**Calculation**: "1"  
->
->**9 8-9 months - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 8 but less than 9 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 8-9 months. 
->>**Name \(*)**: "8-9 months - MSR"  
->>**Short Name \(*)**: "8-9 months - MSR"  
->>**Description**: "Number of items with a coverage time of 8-9 months"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "8-9 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>7 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=8,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>7 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=8,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>7 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=8,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>7 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=8,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>7 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=8,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>7 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=8,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>7 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=8,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>7 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=8,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>7 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=8,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>7 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=8,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>7 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=8,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>7 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=8,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>7 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=8,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>7 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=8,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>7 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=8,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>7 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=8,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>7 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=8,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>7 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=8,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>7 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=8,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>7 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=8,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>7 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=8,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>7 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=8,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>7 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=8,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>7 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=8,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>7 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=8,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>7 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=8,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>7 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=8,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>7 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=8,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>7 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=8,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>7 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=8,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>7 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=8,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>7 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=8,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>7 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=8,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>7 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=8,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>7 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=8,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>7 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=8,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>7 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=8,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>7 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=8,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>7 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=8,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>7 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=8,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>7 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=8,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>7 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=8,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>7 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=8,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>7 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=8,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>7 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=8,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>7 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=8,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=8,1,0)
->>
->>**Edit denominator**:  
->>>**Description**: "8-9 months - MSR - Denominator"  
->>>**Calculation**: "1"  
->
->**10 9-10 months - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 9 but less than 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 9-10 months. 
->>**Name \(*)**: "9-10 months - MSR"  
->>**Short Name \(*)**: "9-10 months - MSR"  
->>**Description**: "Number of items with a coverage time of 9-10 months"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "9-10 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>9 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=10,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>9 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=10,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>9 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=10,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>9 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=10,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>9 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=10,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>9 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=10,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>9 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=10,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>9 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=10,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>9 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=10,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>9 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=10,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>9 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=10,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>9 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=10,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>9 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=10,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>9 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=10,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>9 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=10,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>9 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=10,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>9 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=10,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>9 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=10,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>9 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=10,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>9 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=10,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>9 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=10,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>9 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=10,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>9 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=10,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>9 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=10,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>9 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=10,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>9 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=10,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>9 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=10,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>9 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=10,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>9 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=10,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>9 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=10,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>9 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=10,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>9 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=10,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>9 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=10,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>9 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=10,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>9 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=10,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>9 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=10,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>9 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=10,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>9 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=10,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>9 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=10,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>9 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=10,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>9 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=10,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>9 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=10,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>9 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=10,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>9 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=10,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>9 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=10,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>9 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=10,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>9 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=10,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>9 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=10,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>9 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=10,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>9 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=10,1,0)
->>
->>**Edit denominator**:  
->>>**Description**: "9-10 months - MSR - Denominator"  
->>>**Calculation**: "1"  
->
->**11 10-11 months - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater or equal to 10 but less than 11 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 10-11 months. 
->>**Name \(*)**: "10-11 months - MSR"  
->>**Short Name \(*)**: "10-11 months - MSR"  
->>**Description**: "Number of items with a coverage time of 10-11 months"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "1O-11 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>10 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=11,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>10 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=11,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>10 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=11,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>10 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=11,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>10 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=11,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>10 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=11,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>10 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=11,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>10 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=11,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>10 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=11,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>10 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=11,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>10 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=11,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>10 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=11,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>10 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=11,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>10 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=11,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>10 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=11,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>10 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=11,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>10 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=11,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>10 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=11,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>10 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=11,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>10 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=11,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>10 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=11,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>10 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=11,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>10 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=11,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>10 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=11,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>10 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=11,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>10 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=11,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>10 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=11,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>10 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=11,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>10 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=11,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>10 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=11,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>10 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=11,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>10 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=11,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>10 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=11,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>10 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=11,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>10 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=11,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>10 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=11,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>10 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=11,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>10 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=11,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>10 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=11,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>10 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=11,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>10 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=11,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>10 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=11,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>10 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=11,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>10 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=11,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>10 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=11,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>10 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=11,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>10 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=11,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>10 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=11,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>10 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=11,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>10 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=11,1,0)
->>
->>**Edit denominator**:  
->>>**Description**: "1O-11 months - MSR - Denominator"  
->>>**Calculation**: "1"  
->
->**12 11-12 months - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 11 but less than 12 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 11-12 months. 
->>**Name \(*)**: "11-12 months - MSR"  
->>**Short Name \(*)**: "11-12 months - MSR"  
->>**Description**: "Number of items with a coverage time of 11-12 months"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "11-12 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>11 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=12,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>11 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=12,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>11 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=12,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>11 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=12,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>11 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=12,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>11 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=12,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>11 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=12,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>11 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=12,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>11 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=12,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>11 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=12,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>11 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=12,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>11 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=12,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>11 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=12,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>11 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=12,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>11 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=12,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>11 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=12,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>11 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=12,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>11 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=12,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>11 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=12,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>11 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=12,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>11 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=12,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>11 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=12,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>11 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=12,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>11 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=12,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>11 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=12,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>11 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=12,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>11 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=12,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>11 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=12,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>11 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=12,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>11 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=12,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>11 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=12,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>11 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=12,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>11 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=12,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>11 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=12,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>11 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=12,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>11 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=12,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>11 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=12,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>11 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=12,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>11 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=12,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>11 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=12,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>11 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=12,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>11 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=12,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>11 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=12,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>11 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=12,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>11 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=12,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>11 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=12,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>11 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=12,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>11 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=12,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>11 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=12,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>11 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=12,1,0)
->>
->>**Edit denominator**:  
->>>**Description**: "11-12 months - MSR - Denominator"  
->>>**Calculation**: "1"  
->
->**13 1-2 years - MSR**  
->For each item the Indicator returns "1" if the stock coverage time is greater rhan or equal to 12 but less than 24 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 12-24 months. 
->>**Name \(*)**: "1-2 years - MSR"  
->>**Short Name \(*)**: "1-2 years - MSR"  
->>**Description**: "Number of items with a coverage time of 1-2 years"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "1-2 years - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>12 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=24,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>12 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=24,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>12 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=24,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>12 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=24,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>12 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=24,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>12 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=24,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>12 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=24,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>12 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=24,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>12 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=24,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>12 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=24,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>12 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=24,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>12 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=24,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>12 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=24,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>12 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=24,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>12 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=24,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>12 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=24,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>12 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=24,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>12 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=24,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>12 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=24,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>12 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=24,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>12 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=24,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>12 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=24,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>12 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=24,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>12 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=24,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>12 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=24,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>12 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=24,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>12 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=24,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>12 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=24,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>12 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=24,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>12 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=24,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>12 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=24,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>12 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=24,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>12 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=24,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>12 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=24,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>12 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=24,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>12 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=24,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>12 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=24,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>12 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=24,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>12 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=24,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>12 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=24,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>12 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=24,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>12 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=24,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>12 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=24,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>12 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=24,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>12 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=24,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>12 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=24,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>12 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=24,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>12 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=24,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>12 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=24,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>12 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=24,1,0)
->>
->>**Edit denominator**:  
->>>**Description**: "12-24 months - MSR - Denominator"  
->>>**Calculation**: "1"  
->
->**14 2-3 years - MSR**  
+>**7 2-3 years - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 24 but less than 36 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 24-36 months. 
 >>**Name \(*)**: "2-3 years - MSR"  
 >>**Short Name \(*)**: "2-3 years - MSR"  
@@ -1116,9 +669,458 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>24 && #{xrjnOtFFTRC.iIC
 >>>**Description**: "2-3 years - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**15 >3 years - MSR**  
+>**7 3-4 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 3 but less than 4 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 3-4 months. 
+>>**Name \(*)**: "3-4 months - MSR"  
+>>**Short Name \(*)**: "3-4 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 3-4 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "3-4 months - MSR - Numerator"  
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>3 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=4,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>3 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=4,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>3 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=4,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>3 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=4,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>3 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=4,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>3 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=4,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>3 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=4,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>3 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=4,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>3 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=4,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>3 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=4,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>3 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=4,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>3 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=4,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>3 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=4,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>3 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=4,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>3 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=4,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>3 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=4,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>3 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=4,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>3 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=4,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>3 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=4,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>3 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=4,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>3 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=4,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>3 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=4,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>3 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=4,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>3 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=4,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>3 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=4,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>3 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=4,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>3 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=4,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>3 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=4,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>3 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=4,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>3 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=4,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>3 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=4,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>3 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=4,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>3 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=4,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>3 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=4,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>3 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=4,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>3 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=4,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>3 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=4,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>3 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=4,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>3 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=4,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>3 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=4,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>3 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=4,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>3 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=4,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>3 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=4,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>3 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=4,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>3 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=4,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>3 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=4,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>3 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=4,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>3 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=4,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>3 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=4,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>3 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=4,1,0)>>
+>>
+>>**Edit denominator**:  
+>>>**Description**: "3-4 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**8 4-5 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 4 but less than 5 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 4-5 months.   
+>>**Name \(*)**: "4-5 months - MSR"  
+>>**Short Name \(*)**: "4-5 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 4-5 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "4-5 months - MSR - Numerator"  
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>4 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=5,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>4 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=5,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>4 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=5,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>4 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=5,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>4 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=5,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>4 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=5,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>4 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=5,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>4 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=5,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>4 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=5,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>4 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=5,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>4 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=5,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>4 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=5,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>4 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=5,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>4 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=5,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>4 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=5,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>4 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=5,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>4 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=5,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>4 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=5,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>4 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=5,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>4 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=5,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>4 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=5,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>4 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=5,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>4 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=5,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>4 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=5,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>4 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=5,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>4 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=5,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>4 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=5,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>4 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=5,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>4 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=5,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>4 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=5,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>4 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=5,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>4 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=5,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>4 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=5,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>4 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=5,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>4 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=5,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>4 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=5,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>4 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=5,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>4 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=5,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>4 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=5,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>4 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=5,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>4 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=5,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>4 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=5,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>4 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=5,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>4 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=5,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>4 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=5,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>4 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=5,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>4 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=5,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>4 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=5,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>4 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=5,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>4 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=5,1,0)
+>>
+>>**Edit denominator**:
+>>>**Description**: "4-5 months - MSR - Denominator"
+>>>**Calculation**: "1"
+>
+>**9 5-6 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 5 but less than 6 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage of 5-6 months. 
+>>**Name \(*)**: "5-6 months"  
+>>**Short Name \(*)**: "5-6 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 5-6 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "O-1 months - MSR - Numerator"  
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>5 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=6,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>5 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=6,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>5 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=6,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>5 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=6,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>5 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=6,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>5 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=6,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>5 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=6,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>5 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=6,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>5 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=6,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>5 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=6,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>5 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=6,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>5 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=6,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>5 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=6,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>5 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=6,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>5 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=6,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>5 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=6,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>5 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=6,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>5 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=6,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>5 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=6,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>5 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=6,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>5 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=6,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>5 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=6,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>5 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=6,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>5 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=6,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>5 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=6,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>5 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=6,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>5 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=6,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>5 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=6,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>5 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=6,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>5 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=6,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>5 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=6,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>5 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=6,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>5 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=6,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>5 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=6,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>5 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=6,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>5 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=6,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>5 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=6,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>5 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=6,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>5 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=6,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>5 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=6,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>5 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=6,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>5 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=6,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>5 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=6,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>5 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=6,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>5 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=6,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>5 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=6,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>5 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=6,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>5 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=6,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>5 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=6,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>5 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=6,1,0)
+>>
+>>**Edit denominator**:  
+>>>**Description**: "5-6 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**10 6-7 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 6 but less than 7 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 6-7 months. 
+>>**Name \(*)**: "6-7 months - MSR"  
+>>**Short Name \(*)**: "6-7 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 6-7 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "6-7 months - MSR - Numerator"  
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>6 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=7,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>6 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=7,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>6 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=7,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>6 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=7,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>6 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=7,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>6 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=7,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>6 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=7,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>6 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=7,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>6 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=7,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>6 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=7,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>6 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=7,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>6 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=7,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>6 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=7,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>6 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=7,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>6 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=7,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>6 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=7,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>6 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=7,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>6 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=7,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>6 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=7,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>6 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=7,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>6 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=7,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>6 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=7,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>6 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=7,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>6 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=7,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>6 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=7,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>6 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=7,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>6 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=7,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>6 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=7,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>6 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=7,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>6 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=7,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>6 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=7,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>6 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=7,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>6 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=7,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>6 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=7,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>6 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=7,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>6 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=7,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>6 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=7,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>6 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=7,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>6 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=7,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>6 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=7,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>6 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=7,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>6 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=7,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>6 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=7,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>6 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=7,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>6 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=7,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>6 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=7,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>6 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=7,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>6 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=7,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>6 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=7,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>6 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=7,1,0)
+>>
+>>**Edit denominator**:  
+>>>**Description**: "6-7 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**11 7-8 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 1 but less than 2 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 7-8 months. 
+>>**Name \(*)**: "7-8 months - MSR"  
+>>**Short Name \(*)**: "7-8 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 7-8 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "7-8 months - MSR - Numerator"  
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>7 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=8,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>7 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=8,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>7 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=8,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>7 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=8,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>7 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=8,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>7 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=8,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>7 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=8,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>7 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=8,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>7 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=8,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>7 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=8,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>7 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=8,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>7 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=8,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>7 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=8,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>7 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=8,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>7 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=8,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>7 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=8,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>7 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=8,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>7 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=8,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>7 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=8,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>7 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=8,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>7 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=8,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>7 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=8,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>7 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=8,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>7 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=8,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>7 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=8,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>7 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=8,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>7 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=8,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>7 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=8,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>7 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=8,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>7 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=8,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>7 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=8,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>7 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=8,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>7 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=8,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>7 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=8,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>7 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=8,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>7 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=8,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>7 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=8,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>7 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=8,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>7 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=8,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>7 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=8,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>7 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=8,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>7 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=8,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>7 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=8,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>7 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=8,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>7 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=8,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>7 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=8,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=8,1,0)
+>>
+>>**Edit denominator**:  
+>>>**Description**: "7-8 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**12 8-9 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 8 but less than 9 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 8-9 months. 
+>>**Name \(*)**: "8-9 months - MSR"  
+>>**Short Name \(*)**: "8-9 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 8-9 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "8-9 months - MSR - Numerator"  
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>7 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=8,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>7 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=8,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>7 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=8,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>7 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=8,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>7 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=8,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>7 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=8,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>7 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=8,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>7 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=8,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>7 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=8,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>7 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=8,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>7 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=8,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>7 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=8,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>7 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=8,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>7 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=8,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>7 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=8,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>7 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=8,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>7 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=8,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>7 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=8,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>7 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=8,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>7 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=8,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>7 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=8,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>7 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=8,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>7 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=8,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>7 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=8,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>7 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=8,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>7 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=8,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>7 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=8,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>7 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=8,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>7 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=8,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>7 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=8,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>7 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=8,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>7 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=8,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>7 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=8,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>7 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=8,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>7 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=8,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>7 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=8,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>7 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=8,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>7 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=8,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>7 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=8,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>7 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=8,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>7 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=8,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>7 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=8,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>7 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=8,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>7 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=8,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>7 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=8,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>7 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=8,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=8,1,0)
+>>
+>>**Edit denominator**:  
+>>>**Description**: "8-9 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**13 9-10 months - MSR**  
+>For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 9 but less than 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 9-10 months. 
+>>**Name \(*)**: "9-10 months - MSR"  
+>>**Short Name \(*)**: "9-10 months - MSR"  
+>>**Description**: "Number of items with a coverage time of 9-10 months"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "9-10 months - MSR - Numerator"  
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>9 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=10,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>9 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=10,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>9 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=10,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>9 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=10,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}>9 && #{AaIApgGQM6t.iIC4YhgrxQY}/#{AaIApgGQM6t.zogrUrI7Crs}<=10,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}>9 && #{vCTrmv52APd.iIC4YhgrxQY}/#{vCTrmv52APd.zogrUrI7Crs}<=10,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}>9 && #{SOw2TcuFFH2.iIC4YhgrxQY}/#{SOw2TcuFFH2.zogrUrI7Crs}<=10,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}>9 && #{RSIOx2u07Ln.iIC4YhgrxQY}/#{RSIOx2u07Ln.zogrUrI7Crs}<=10,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}>9 && #{JStiDyaPfqy.iIC4YhgrxQY}/#{JStiDyaPfqy.zogrUrI7Crs}<=10,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}>9 && #{hZ1YvdcTDQM.iIC4YhgrxQY}/#{hZ1YvdcTDQM.zogrUrI7Crs}<=10,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}>9 && #{tsi32D8HQd5.iIC4YhgrxQY}/#{tsi32D8HQd5.zogrUrI7Crs}<=10,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}>9 && #{QWlPF8S0gCc.iIC4YhgrxQY}/#{QWlPF8S0gCc.zogrUrI7Crs}<=10,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}>9 && #{a5uLTDt12eT.iIC4YhgrxQY}/#{a5uLTDt12eT.zogrUrI7Crs}<=10,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}>9 && #{U0AfOOyJMy2.iIC4YhgrxQY}/#{U0AfOOyJMy2.zogrUrI7Crs}<=10,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}>9 && #{cyf6UdScfFM.iIC4YhgrxQY}/#{cyf6UdScfFM.zogrUrI7Crs}<=10,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}>9 && #{FeUTTNHpVzD.iIC4YhgrxQY}/#{FeUTTNHpVzD.zogrUrI7Crs}<=10,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}>9 && #{mKSICD1rxG4.iIC4YhgrxQY}/#{mKSICD1rxG4.zogrUrI7Crs}<=10,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}>9 && #{mVNe1aS1pGl.iIC4YhgrxQY}/#{mVNe1aS1pGl.zogrUrI7Crs}<=10,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}>9 && #{oLAXTZY6ken.iIC4YhgrxQY}/#{oLAXTZY6ken.zogrUrI7Crs}<=10,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}>9 && #{YYaRDUZyH9L.iIC4YhgrxQY}/#{YYaRDUZyH9L.zogrUrI7Crs}<=10,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}>9 && #{HVteopBt0jr.iIC4YhgrxQY}/#{HVteopBt0jr.zogrUrI7Crs}<=10,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}>9 && #{sWodd2tbjgZ.iIC4YhgrxQY}/#{sWodd2tbjgZ.zogrUrI7Crs}<=10,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}>9 && #{yVYajDDYUfX.iIC4YhgrxQY}/#{yVYajDDYUfX.zogrUrI7Crs}<=10,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}>9 && #{eTJAr4sc83v.iIC4YhgrxQY}/#{eTJAr4sc83v.zogrUrI7Crs}<=10,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}>9 && #{U4KSmanl4JP.iIC4YhgrxQY}/#{U4KSmanl4JP.zogrUrI7Crs}<=10,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}>9 && #{FXsa5uG3IGn.iIC4YhgrxQY}/#{FXsa5uG3IGn.zogrUrI7Crs}<=10,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}>9 && #{L34T9YDtCor.iIC4YhgrxQY}/#{L34T9YDtCor.zogrUrI7Crs}<=10,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}>9 && #{W5mHXhSYFfQ.iIC4YhgrxQY}/#{W5mHXhSYFfQ.zogrUrI7Crs}<=10,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}>9 && #{cmSUyJOZwyl.iIC4YhgrxQY}/#{cmSUyJOZwyl.zogrUrI7Crs}<=10,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}>9 && #{cT8sfosRXvU.iIC4YhgrxQY}/#{cT8sfosRXvU.zogrUrI7Crs}<=10,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}>9 && #{OaWKnMS7say.iIC4YhgrxQY}/#{OaWKnMS7say.zogrUrI7Crs}<=10,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}>9 && #{Z4bjHvGS6aH.iIC4YhgrxQY}/#{Z4bjHvGS6aH.zogrUrI7Crs}<=10,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}>9 && #{Nn1L7CNEtC8.iIC4YhgrxQY}/#{Nn1L7CNEtC8.zogrUrI7Crs}<=10,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}>9 && #{RNYKSc3nAUg.iIC4YhgrxQY}/#{RNYKSc3nAUg.zogrUrI7Crs}<=10,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}>9 && #{PtmZ9XqpPKi.iIC4YhgrxQY}/#{PtmZ9XqpPKi.zogrUrI7Crs}<=10,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}>9 && #{CohlLHi54B0.iIC4YhgrxQY}/#{CohlLHi54B0.zogrUrI7Crs}<=10,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}>9 && #{Gu6u82RD9OW.iIC4YhgrxQY}/#{Gu6u82RD9OW.zogrUrI7Crs}<=10,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}>9 && #{LiuYzxYr4Pt.iIC4YhgrxQY}/#{LiuYzxYr4Pt.zogrUrI7Crs}<=10,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}>9 && #{Tje33nJAG55.iIC4YhgrxQY}/#{Tje33nJAG55.zogrUrI7Crs}<=10,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}>9 && #{euM2dlqleYH.iIC4YhgrxQY}/#{euM2dlqleYH.zogrUrI7Crs}<=10,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}>9 && #{dASLmBTEehF.iIC4YhgrxQY}/#{dASLmBTEehF.zogrUrI7Crs}<=10,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}>9 && #{qU2LvzoPn1z.iIC4YhgrxQY}/#{qU2LvzoPn1z.zogrUrI7Crs}<=10,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}>9 && #{OkWaFxdUQY2.iIC4YhgrxQY}/#{OkWaFxdUQY2.zogrUrI7Crs}<=10,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}>9 && #{YHIv7KQc2e7.iIC4YhgrxQY}/#{YHIv7KQc2e7.zogrUrI7Crs}<=10,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}>9 && #{rt9D47Inb49.iIC4YhgrxQY}/#{rt9D47Inb49.zogrUrI7Crs}<=10,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}>9 && #{i1iXbquZ5iv.iIC4YhgrxQY}/#{i1iXbquZ5iv.zogrUrI7Crs}<=10,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}>9 && #{RcE30WBKrXI.iIC4YhgrxQY}/#{RcE30WBKrXI.zogrUrI7Crs}<=10,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}>9 && #{EAG0GfdSMAs.iIC4YhgrxQY}/#{EAG0GfdSMAs.zogrUrI7Crs}<=10,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}>9 && #{N2aXs7VlJdJ.iIC4YhgrxQY}/#{N2aXs7VlJdJ.zogrUrI7Crs}<=10,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>9 && #{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}<=10,1,0)
+>>
+>>**Edit denominator**:  
+>>>**Description**: "9-10 months - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**14 >=3 years**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than 36 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 36 months or greater. 
->>**Name \(*)**: ">=3 years - MSR"  
+>>**Name \(*)**: ">=3 years"  
 >>**Short Name \(*)**: ">=3 years - MSR"  
 >>**Description**: "Number of items with a coverage time greater than 3 years"  
 >>**Decimals in data output**: "0"  
@@ -1556,6 +1558,71 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Edit denominator**:  
 >>>**Description**: "Stock discrepancy count - Denominator"  
 >>>**Calculation**: "1"  
+>
+>**22 Stockout percentage**  
+>This indicator counts the number of items with stockouts (zero stock), divides them by the number of items and multiplies the result by 100 in order to present the result as percentage. Note that items have to be added and removed manually when the stock item list is changed and the denominator also has to be adjusted accordingly.
+>>**Name \(*)**: "Stock percentage"  
+>>**Short Name \(*)**: "Stock percentage - MSR"  
+>>**Description**: "Percentage of items with zero stock"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "Stockout percentage - MSR - Numerator"  
+>>>**Calculation**:  
+>>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
+if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,1,0)+
+if(#{JPccVwAGRq9.iIC4YhgrxQY}==0,1,0)+
+if(#{smxJz7Mt6ia.iIC4YhgrxQY}==0,1,0)+
+if(#{AaIApgGQM6t.iIC4YhgrxQY}==0,1,0)+
+if(#{vCTrmv52APd.iIC4YhgrxQY}==0,1,0)+
+if(#{SOw2TcuFFH2.iIC4YhgrxQY}==0,1,0)+
+if(#{RSIOx2u07Ln.iIC4YhgrxQY}==0,1,0)+
+if(#{JStiDyaPfqy.iIC4YhgrxQY}==0,1,0)+
+if(#{hZ1YvdcTDQM.iIC4YhgrxQY}==0,1,0)+
+if(#{tsi32D8HQd5.iIC4YhgrxQY}==0,1,0)+
+if(#{QWlPF8S0gCc.iIC4YhgrxQY}==0,1,0)+
+if(#{a5uLTDt12eT.iIC4YhgrxQY}==0,1,0)+
+if(#{U0AfOOyJMy2.iIC4YhgrxQY}==0,1,0)+
+if(#{cyf6UdScfFM.iIC4YhgrxQY}==0,1,0)+
+if(#{FeUTTNHpVzD.iIC4YhgrxQY}==0,1,0)+
+if(#{mKSICD1rxG4.iIC4YhgrxQY}==0,1,0)+
+if(#{mVNe1aS1pGl.iIC4YhgrxQY}==0,1,0)+
+if(#{oLAXTZY6ken.iIC4YhgrxQY}==0,1,0)+
+if(#{YYaRDUZyH9L.iIC4YhgrxQY}==0,1,0)+
+if(#{HVteopBt0jr.iIC4YhgrxQY}==0,1,0)+
+if(#{sWodd2tbjgZ.iIC4YhgrxQY}==0,1,0)+
+if(#{yVYajDDYUfX.iIC4YhgrxQY}==0,1,0)+
+if(#{eTJAr4sc83v.iIC4YhgrxQY}==0,1,0)+
+if(#{U4KSmanl4JP.iIC4YhgrxQY}==0,1,0)+
+if(#{FXsa5uG3IGn.iIC4YhgrxQY}==0,1,0)+
+if(#{L34T9YDtCor.iIC4YhgrxQY}==0,1,0)+
+if(#{W5mHXhSYFfQ.iIC4YhgrxQY}==0,1,0)+
+if(#{cmSUyJOZwyl.iIC4YhgrxQY}==0,1,0)+
+if(#{cT8sfosRXvU.iIC4YhgrxQY}==0,1,0)+
+if(#{OaWKnMS7say.iIC4YhgrxQY}==0,1,0)+
+if(#{Z4bjHvGS6aH.iIC4YhgrxQY}==0,1,0)+
+if(#{Nn1L7CNEtC8.iIC4YhgrxQY}==0,1,0)+
+if(#{RNYKSc3nAUg.iIC4YhgrxQY}==0,1,0)+
+if(#{PtmZ9XqpPKi.iIC4YhgrxQY}==0,1,0)+
+if(#{CohlLHi54B0.iIC4YhgrxQY}==0,1,0)+
+if(#{Gu6u82RD9OW.iIC4YhgrxQY}==0,1,0)+
+if(#{LiuYzxYr4Pt.iIC4YhgrxQY}==0,1,0)+
+if(#{Tje33nJAG55.iIC4YhgrxQY}==0,1,0)+
+if(#{euM2dlqleYH.iIC4YhgrxQY}==0,1,0)+
+if(#{dASLmBTEehF.iIC4YhgrxQY}==0,1,0)+
+if(#{qU2LvzoPn1z.iIC4YhgrxQY}==0,1,0)+
+if(#{OkWaFxdUQY2.iIC4YhgrxQY}==0,1,0)+
+if(#{YHIv7KQc2e7.iIC4YhgrxQY}==0,1,0)+
+if(#{rt9D47Inb49.iIC4YhgrxQY}==0,1,0)+
+if(#{i1iXbquZ5iv.iIC4YhgrxQY}==0,1,0)+
+if(#{RcE30WBKrXI.iIC4YhgrxQY}==0,1,0)+
+if(#{EAG0GfdSMAs.iIC4YhgrxQY}==0,1,0)+
+if(#{N2aXs7VlJdJ.iIC4YhgrxQY}==0,1,0)+
+if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
+>>
+>>**Edit denominator**:  
+>>>**Description**: "Stockout percentage - MSR - Denominator"  
+>>>**Calculation**: "0.5"  
 
 #### 4.2 Indicator type
 The "Indicator type" is a precondition for configuring any "Indicator".
@@ -1769,17 +1836,14 @@ Xx
 
 >**1 Health facility level**  
 >>**1.1 Statistics**  
->>>- 1 MSR - Stock receipt - Pivot table
-
-xxx
-
+>>>- 1 MSR - Stock receipt - Pivot table  
 >>>- 2 MSR - Stock distribution - Pivot table  
 >>>- 3 MSR - Stock redistribution - Pivot table  
 >>>- 4 MSR - Stock discard - Pivot table  
 >>>- 5 MSR - Stock on hand - Pivot table  
 >>>- 6 MSR - Stock correction - Pivot table  
->>>- 7 MSR - Stock report complete - Last 3 months - Pivot table  
->>>- 8 MSR - Stock report complete - Last 12 months - Pivot table  
+>>>- 7 MSR - Stock report complete - Pivot table - Last 3 months  
+>>>- 8 MSR - Stock report complete - Pivot table - Last 12 months  
 >>>- 9 MSR - Stock report complete - Column chart
 >>
 >>**1.2 Indicators**  
@@ -1793,8 +1857,11 @@ xxx
 >>>- 17 MSR - Stock availability - Column chart  
 >>>- 18 MSR - Stock availability - Single value chart  
 >>>- 19 MSR - Stock availability - Gauge chart  
->>>- 20 MSR - Stockout percentage - Bar chart
->>>- 21 MSR - Stock availability and stockout percentage - Bar chart
+>>>- 20 MSR - Stockout percentage - Column chart  
+
+**xxxReviewxxx**
+
+>>>- 21 MSR - Stock availability and stockout percentage - Bar chart  
 >>>- 22 MSR - Stockouts - Stacked column chart  
 >>>- 23 MSR - Stockout count - Pivot table  
 >>>- 24 MSR - Stockout count - Column chart  
@@ -1805,8 +1872,8 @@ xxx
 >>>- 29 MSR - Stock coverage time distribution - Pivot table  
 >>>- 30 MSR - Stock coverage time distribution - Stacked Column chart  
 >>>- 31 MSR - Stock coverage time distribution - Column chart  
->>>- 32 MSR - Stock coverage time ranges - Column chart
->>>- 33 MSR - Stock coverage time ranges - Stacked column chart
+>>>- 32 MSR - Stock coverage time ranges - Column chart  
+>>>- 33 MSR - Stock coverage time ranges - Stacked column chart  
 >>>- 34 MSR - Stock discrepancy - Pivot table  
 >>>- 35 MSR - Stock discrepancy count - Column chart  
 >>>- 36 MSR - Stock discrepancy count - Percentage - Column chart  
@@ -2411,7 +2478,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 
 ![](image-38.png)
 
->**14 MSR - Coefficient of Variation x 10 distribution - Last 12 months - Stacked column chart**  
+>**14 MSR - Coefficient of Variation x 10 distribution - Stacked column chart**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "14 MSR - Coefficient of Variation x 10 distribution - Last 12 months - Stacked column chart"  
@@ -2517,7 +2584,7 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>>>**Legend**: "Stock availability / %"  
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
-![](image-22.png)
+![](image-136.png)
 
 >**18 MSR - Stock availability - Single value chart**  
 >
@@ -2587,7 +2654,8 @@ This report displays the stock availability (number of items with non-zero stock
 This report displays a bar chart with the percentage of items with a stockout for the past 12 months."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
->>>>**Selected items**: "Stockout percentage"
+>>>>>**Indicator group**: "Stock availability"  
+>>>>>>**Selected items**: "Stockout percentage"
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
