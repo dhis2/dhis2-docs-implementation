@@ -1501,7 +1501,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stock discrepancy count - Numerator"  
->>>**Calculation**:
+>>>**Calculation**:  
 >>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
 #{WyDZKSw82X6.cD8WZyjlq9C}+
 #{JPccVwAGRq9.cD8WZyjlq9C}+
