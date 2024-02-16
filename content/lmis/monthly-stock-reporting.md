@@ -1807,6 +1807,10 @@ Xx
 >>>- 34 MSR - Stock discrepancy - Pivot table  
 >>>- 35 MSR - Stock discrepancy count - Column chart  
 >>>- 36 MSR - Stock discrepancy count - Percentage - Column chart  
+>>>- xx MSR - Report completeness - Pivot table chart  
+>>>- xx MSR - Report completeness - Column chart ???  
+>>>- xx MSR - Report timeliness - Pivot table chart  
+>>>- xx MSR - Report timeliness - Column chart ???  
 >
 >**2 District level**  
 >>**2.1 Statistics**  
@@ -1845,6 +1849,10 @@ Xx
 >>>- 67 MSR - Stock discrepancy - District - Pivot table  
 >>>- 68 MSR - Stock discrepancy count - District - Stacked column chart  
 >>>- 69 MSR - Stock discrepancy count - Percentage - District - Column chart  
+>>>- xx MSR - Report completeness - District - Pivot table chart  
+>>>- xx MSR - Report completeness - District - Column chart ???  
+>>>- xx MSR - Report timeliness - District - Pivot table chart  
+>>>- xx MSR - Report timeliness - District - Column chart ???  
 >
 >**3 Province level**  
 >>**3.1 Statistics**  
@@ -1874,42 +1882,51 @@ Xx
 
 xxxxxxxxxxxxxxxxxxxxxxxxx
 
->>>- 91 MSR - Stock coverage time distribution - Province - Pivot table
->>>- 92 MSR - Stock coverage time distribution- Province - Stacked column chart - Last month:  
->>>- 93 MSR - Stock coverage time ranges - Province - Last month:  
->>>- 94 MSR - Stock coverage time ranges - Province - Last 12 months: 
->>>- 95 MSR - Stock discrepancy count - Province - Stacked column chart:  
+>>>- 91 MSR - Stock coverage time - Province - Pivot table
+>>>- 92 MSR - Stock coverage time distribution- Province - Pivot table  
+>>>- 93 MSR - Stock coverage time ranges - Province - Column chart  
+>>>- 94 MSR - Stock coverage time ranges - Province - Stacked column chart  
+>>>- 95 MSR - Stock discrepancy - Province - Pivot table  
+>>>- 96 MSR - Stock discrepancy count - Province - Stacked column chart  
+>>>- xx MSR - Report completeness - Province - Pivot table chart  
+>>>- xx MSR - Report completeness - Province - Column chart ???  
+>>>- xx MSR - Report timeliness - Province - Pivot table chart  
+>>>- xx MSR - Report timeliness - Province - Column chart ???  
 >
 >**4 Country level**  
 >>**4.1 Statistics**  
->>>- 96 MSR - Stock receipt - Province - Pivot table  
->>>- 97 MSR - Stock distribution - Province - Pivot table  
->>>- 98 MSR - Stock redistribution - Province - Pivot table  
->>>- 99 MSR - Stock discard - Province - Pivot table  
->>>- 100 MSR - Stock on hand - Province - Pivot table  
->>>- 101 MSR - Stock correction - Province - Pivot table  
->>>- 102 MSR - Stock report complete - Province - Pivot table  
+>>>- 97 MSR - Stock receipt - Province - Pivot table  
+>>>- 98 MSR - Stock distribution - Province - Pivot table  
+>>>- 99 MSR - Stock redistribution - Province - Pivot table  
+>>>- 100 MSR - Stock discard - Province - Pivot table  
+>>>- 101 MSR - Stock on hand - Province - Pivot table  
+>>>- 102 MSR - Stock correction - Province - Pivot table  
+>>>- 103 MSR - Stock report complete - Province - Pivot table  
 >>
 >>**4.2 Indicators**  
->>>- 103 MSR - Coefficient of Variation x 10 - Province - Stacked bar chart
->>>- 104 MSR - Coefficient of Variation x 10 distribution - Province - Pivot table: requires additional Predictor  
->>>- 105 MSR - Coefficient of Variation x 10 distribution - Province - Stacked Column chart: requires additional Predictor  
->>>- 106 MSR - Coefficient of Variation x 10 distribution - Province - Column chart: requires additional Predictor  
->>>- 107 MSR - Stock availability - Province - Pivot table  
->>>- 108 MSR - Stock availability - Province - Column chart  
->>>- 109 MSR - Stockout percentage - Province - Column chart
->>>- 110 MSR - Stock availability and stockout percentage - Province - Stacked column chart
->>>- 111 MSR - Stockouts - Province - Pivot table - Item - Last month  
->>>- 112 MSR - Stockout count - Province - Pivot table  
->>>- 113 MSR - Stockout count - Province - Stacked column chart  
->>>- 114 MSR - Stockout count - Province - Column chart  
->>>- 115 MSR - Stockout length - Province - Pivot table  
->>>- 116 MSR - Stockout length - Province - Stacked bar chart  
->>>- 117 MSR - Stock coverage time distribution - Province - Pivot table
->>>- 118 MSR - Stock coverage time distribution- Province - Stacked column chart - Last month:  
->>>- 119 MSR - Stock coverage time ranges - Province - Last month:  
->>>- 120 MSR - Stock coverage time ranges - Province - Last 12 months: 
->>>- 121 MSR - Stock discrepancy count - Province - Stacked column char
+>>>- 104 MSR - Coefficient of Variation x 10 - Province - Stacked bar chart
+>>>- 105 MSR - Coefficient of Variation x 10 distribution - Province - Pivot table: requires additional Predictor  
+>>>- 106 MSR - Coefficient of Variation x 10 distribution - Province - Stacked Column chart: requires additional Predictor  
+>>>- 107 MSR - Coefficient of Variation x 10 distribution - Province - Column chart: requires additional Predictor  
+>>>- 108 MSR - Stock availability - Province - Pivot table  
+>>>- 109 MSR - Stock availability - Province - Column chart  
+>>>- 110 MSR - Stockout percentage - Province - Column chart
+>>>- 111 MSR - Stock availability and stockout percentage - Province - Stacked column chart
+>>>- 112 MSR - Stockouts - Province - Pivot table - Item - Last month  
+>>>- 113 MSR - Stockout count - Province - Pivot table  
+>>>- 114 MSR - Stockout count - Province - Stacked column chart  
+>>>- 115 MSR - Stockout count - Province - Column chart  
+>>>- 116 MSR - Stockout length - Province - Pivot table  
+>>>- 117 MSR - Stockout length - Province - Stacked bar chart  
+>>>- 118 MSR - Stock coverage time distribution - Province - Pivot table
+>>>- 119 MSR - Stock coverage time distribution- Province - Stacked column chart - Last month:  
+>>>- 120 MSR - Stock coverage time ranges - Province - Last month:  
+>>>- 121 MSR - Stock coverage time ranges - Province - Last 12 months: 
+>>>- 122 MSR - Stock discrepancy count - Province - Stacked column char
+>>>- xx MSR - Report completeness - Country - Pivot table chart  
+>>>- xx MSR - Report completeness - Country - Column chart ???  
+>>>- xx MSR - Report timeliness - Country - Pivot table chart  
+>>>- xx MSR - Report timeliness - Country - Column chart ???  
 >
 >**5 Visualization overview**  
 >
