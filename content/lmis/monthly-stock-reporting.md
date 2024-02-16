@@ -2251,6 +2251,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 >>>**Data**  
 >>>>**Totals**  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend type**  
@@ -2497,6 +2498,7 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stock availability / %"  
@@ -2526,6 +2528,7 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stock availability / %"  
@@ -2661,6 +2664,7 @@ This report displays the number of stockouts for each of the past 12 months as a
 >>**Options**  
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>
 >>>>>**Legend type**  
 >>>>>>**Legend changes background color**: tag (appears as a white tick in a green field)  
 >>>>>>**Select a legend**: "Stockout count"  
@@ -4369,6 +4373,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 >>>
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Coefficient of variation"  
@@ -4473,6 +4478,7 @@ This report provides the stock availability across all stock items for all healt
 >>**Options**  
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stock availability / %"  
@@ -4504,6 +4510,7 @@ This report provides the stock availability across all stock items for all healt
 >>**Options**  
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>
 >>>>>**Legend type**  
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stock availability / %"  
