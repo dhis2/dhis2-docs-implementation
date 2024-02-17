@@ -2229,10 +2229,10 @@ This report provides the monthly stock corrections as reported at the end of eve
 
 ![](image-10.png)
 
->**7 MSR - Stock report complete - Last 3 months - Pivot table**  
+>**7 MSR - Stock report complete - Pivot table - Last 3 months**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock report complete - Last 3 months - Pivot table"  
+>**Name \(*)**: "MSR - Stock report complete - Pivot table - Last 3 months"  
 >**Description**: "MSR DV 7 - Monthly Stock Reporting / Stock report complete / Last 3 month / Health facility / By item / Pivot table
 This report provides an overview of all stock data from the last month."  
 >>**Columns**  
@@ -3520,10 +3520,10 @@ This report provides the monthly stock corrections by health facility in a distr
 
 ![](image-55.png)
 
->**43 MSR - Stock report complete - Last 3 months - District - Pivot table**  
+>**43 MSR - Stock report complete- District - Pivot table - Last 3 month**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock report complete - Last 3 months - District - Pivot table"  
+>**Name \(*)**: "MSR - Stock report complete - District - Pivot table - Last 3 months  "  
 >**Description**: "MSR DV 43 - Monthly Stock Reporting / Stock report complete / Last 3 month / District / By item / Pivot table
 This report provides an overview of all stock data by health facility in a district from the last 3 months."  
 >>**Columns**  
@@ -4556,10 +4556,10 @@ This report provides the monthly stock corrections by district in a province as 
 
 ![](image-119.png)
 
->**76 MSR - Stock report complete - Last 3 months - Province - Pivot table**  
+>**76 MSR - Stock report complete - Province - Pivot table - Last 3 months**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock report complete - Last 3 months - Province - Pivot table"  
+>**Name \(*)**: "MSR - Stock report complete - Province - Pivot table - Last 3 months"  
 >**Description**: "MSR DV 66 - Monthly Stock Reporting / Stock report complete / Last 3 months / Province / By item / Pivot table
 This report provides an overview of all stock data by district in a province from the last 3 months."  
 >>**Columns**  
@@ -5458,18 +5458,21 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>- MSR - Stock discard - Pivot table  
 >>- MSR - Stock on hand - Pivot table  
 >>- MSR - Stock correction - Pivot table  
->>- MSR - Stock report complete - Last 3 months - Pivot table  
->>- MSR - Stock report complete - Last 12 months - Pivot table  
+>>- MSR - Stock report complete - Pivot table - Last 3 months  
+>>- MSR - Stock report complete - Pivot table - Last 12 months  
 >>- MSR - Stock report complete - Column chart  
 >>- MSR - Coefficient of Variation x 10 - Pivot table  
 >>- MSR - Coefficient of Variation x 10 - Stacked bar chart  
 >>- MSR - Coefficient of Variation x 10 - Column chart  
+>>- MSR - Coefficient of Variation x 10 distribution - Pivot table  
+>>- MSR - Coefficient of Variation x 10 distribution - Stacked Column chart  
+>>- MSR - Coefficient of Variation x 10 distribution - Column chart  
 >>- MSR - Stock availability - Pivot table  
->>- MSR - Stock availability - Bar chart  
+>>- MSR - Stock availability - Column chart  
 >>- MSR - Stock availability - Single value chart  
 >>- MSR - Stock availability - Gauge chart  
->>- xx MSR - Stockout percentage - Bar chart
->>- xx MSR - Stock availability and stockout percentage - Bar chart
+>>- MSR - Stockout percentage - Column chart
+>>- MSR - Stock availability and stockout percentage - Stacked column chart
 >>- MSR - Stockouts - Stacked column chart  
 >>- MSR - Stockout count - Pivot table  
 >>- MSR - Stockout count - Column chart  
@@ -5478,13 +5481,18 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>- MSR - Stockout length - Bar chart  
 >>- MSR - Stock coverage time - Pivot table  
 >>- MSR - Stock coverage time distribution - Pivot table  
->>- MSR - Stock coverage time distribution - Last 12 months - Column chart  
->>- MSR - Stock coverage time distribution - Last month - Column chart  
->>>- xx MSR - Stock coverage time ranges - Last month
->>>- xx MSR - Stock coverage time ranges - Last 12 months
+>>- MSR - Stock coverage time distribution - Column chart - Last 12 months  
+>>- MSR - Stock coverage time distribution - Column chart - Last month  
+>>- MSR - Stock coverage time ranges - Column chart  
+>>- MSR - Stock coverage time ranges - Stacked column chart  
 >>- MSR - Stock discrepancy - Pivot table  
 >>- MSR - Stock discrepancy count - Column chart  
->>>- xx MSR - Stock discrepancy count - Perecentage - Column chart  
+>>- MSR - Stock discrepancy count - Single value chart  
+>>- MSR - Stock discrepancy count - Percentage - Column chart  
+>>- MSR - Report completeness - Pivot table chart  
+>>- MSR - Report completeness - Line chart  
+>>- MSR - Reporting rate - Single value chart  
+>>- MSR - Reporting rate on time - Single value chart  
 >
 >**2 MSR - Health facility level - Analytics**  
 >
@@ -5517,7 +5525,7 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>- MSR - Stock discard - District - Pivot table  
 >>>- MSR - Stock on hand - District - Pivot table  
 >>>- MSR - Stock correction - District - Pivot table  
->>>- MSR - Stock report complete - Last 3 months - District - Pivot table  
+>>>- MSR - Stock report complete - District - Pivot table - Last 3 months  
 >>>- MSR - Coefficient of Variation x 10 - District - Pivot table  
 >>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
 >>>- MSR - Coefficient of Variation x 10 - District - Column chart  
@@ -5568,7 +5576,7 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
 >>>- MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart  
 >>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
->>>- MSR - Stock report complete - Last 3 months - District - Pivot table  
+>>>- MSR - Stock report complete - District - Pivot table - Last 3 months  
 
 ![](image-90.png)
 ![](image-91.png)
