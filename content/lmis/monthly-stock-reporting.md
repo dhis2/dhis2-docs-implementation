@@ -1918,7 +1918,7 @@ Xx
 >>>- 73 MSR - Stock discrepancy count - District - Stacked column chart  
 >>>- 74 MSR - Stock discrepancy count - District - Single value chart  
 >>>- 75 MSR - Report completeness - District - Pivot table chart  
->>>- 76 MSR - Report completeness - District - Line chart  
+>>>- 76 MSR - Reporting rate - District - Column chart  
 >>>- 77 MSR - Reporting rate - District - Single value chart  
 >>>- 78 MSR - Reporting rate on time - District - Single value chart  
 >
@@ -4387,14 +4387,12 @@ This report displays the number of stock discrepancies for the last month as a s
 
 ![Alt text](image-152.png)
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
 >**75 MSR - Report completeness - District - Pivot table chart**  
 >
 >**Visualization type**: select "Pivot"  
 >**Name \(*)**: "MSR - Stock reporting complete - District - Pivot table"  
->**Visualization type**: "MSR DV 76 - Monthly Stock Reporting / Stock reporting complete / Last 12 months / District / Pivot table
-This report provides the "Reporting rate", "Reporting rate on time", "Actual reports", "Actual reports on time" as well as the "Expected reports" for the last 12 months as a Pivot table."
+>**Visualization type**: "MSR DV 75 - Monthly Stock Reporting / Stock reporting complete / Last 12 months / District / Pivot table
+This report provides the "Reporting rate", "Reporting rate on time", "Actual reports", "Actual reports on time" as well as the "Expected reports" for the last 12 months for all health facilities in the district as a Pivot table."
 >>
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -4411,29 +4409,20 @@ This report provides the "Reporting rate", "Reporting rate on time", "Actual rep
 >>>>>- "Monthly stock report - Actual reports"  
 >>>>>- "Monthly stock report - Actual reports on time"  
 >>>>>- "Monthly stock report - Expected reports"  
->>
->>**Filter**  
+>>>
 >>>**Organisation unit**: "User organisation unit"  
 
-![](image-140.png)
+![Alt text](image-153.png)
 
->**76 MSR - Report completeness - District - Line chart**  
+>**76 MSR - Reporting rate - District - Column chart**  
 >
->**Visualization type**: select "Pivot"  
->**Name \(*)**: "MSR - Stock reporting complete - District - Pivot table"  
->**Visualization type**: "MSR DV 77 - Monthly Stock Reporting / Report completeness / Last 12 months / District / Line chart
-This report provides the "Reporting rate", "Reporting rate on time", "Actual reports", "Actual reports on time" as well as the "Expected reports" for the last 12 months as a line chart."
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR - Reporting rate - District - Pivot table"  
+>**Description**: "MSR DV 76 - Monthly Stock Reporting / Reporting rate / Last 12 months / District / Column chart
+This report provides the "Reporting rate" for the last 12 months for all health facilities in a district as a Column chart."
 >>
 >>**Series**  
->>>**Data**  
->>>>**Data Type**: "Data sets"  
->>>>**Data set**: select "Monthly stock report"  
->>>>**Metric type**: 
->>>>>- "Monthly stock report - Reporting rate"  
->>>>>- "Monthly stock report - Reporting rate on time"  
->>>>>- "Monthly stock report - Actual reports"  
->>>>>- "Monthly stock report - Actual reports on time"  
->>>>>- "Monthly stock report - Expected reports"  
+>>>**Organisation unit**: "User organisation unit"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -4441,32 +4430,20 @@ This report provides the "Reporting rate", "Reporting rate on time", "Actual rep
 >>>>**Selected Periods**: "Last 12 month"  
 >>
 >>**Filter**  
->>>**Organisation unit**: "User organisation unit"  
->>
->>**Options**  
->>>**Axes**  
->>>>**Vertical (y) axis 1**  
->>>>>**Axis title**: select "Custom" and "Report count"
->>>>>**Axis range**:  
->>>>>**Min**:  0  
->>>>>**Max**:  1  
->>>>>**Steps**:  "5"  
->>>>
->>>>**Vertical (y) axis 1**  
->>>>>**Axis title**: select "Custom" and "Report rate / %"
->>>>>**Axis range**:  
->>>>>**Min**:  0  
->>>>>**Max**:  100  
->>>>>**Steps**:  "5"  
+>>>**Data**  
+>>>>**Data Type**: "Data sets"  
+>>>>**Data set**: select "Monthly stock report"  
+>>>>**Metric type**: 
+>>>>>- "Monthly stock report - Reporting rate"  
 
-![](image-141.png)
+![](image-154.png)
 
 >**77 MSR - Reporting rate - District - Single value chart**  
 >
 >**Visualization type**: select "Single value"  
 >**Name \(*)**: "MSR - Reporting rate - District - Single value chart"  
->**Visualization type**: "MSR DV 78 - Monthly Stock Reporting / Reporting rate / Last 12 months / District / Single value chart
-This report provides the "Reporting rate" for the last 12 months for the health facility as single value chart."
+>**Visualization type**: "MSR DV 77 - Monthly Stock Reporting / Reporting rate / Last month / District / Single value chart
+This report provides the "Reporting rate" for the last month across all the health facilities in a district as single value chart."
 >>
 >>**Series**  
 >>>**Data**  
@@ -4479,7 +4456,7 @@ This report provides the "Reporting rate" for the last 12 months for the health 
 >>>**Organisation unit**: "User organisation unit"  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 months"  
+>>>>**Selected Periods**: "Last month"  
 >>
 >>>*Options**  
 >>>**Legend**  
@@ -4489,14 +4466,14 @@ This report provides the "Reporting rate" for the last 12 months for the health 
 >>>>>>**Legend**: "Stock availability / %"  
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
-![](image-142.png)
+![](image-155.png)
 
 >**78 MSR - Reporting rate on time - District - Single value chart**  
 >
 >**Visualization type**: select "Single value"  
->**Name \(*)**: "79 MSR - Reporting rate on time - District - Single value chart"  
->**Visualization type**: "MSR DV 41 - Monthly Stock Reporting / Reporting rate on time / Last 12 months / District / Single value chart
-This report provides the "Reporting rate" for the last 12 months for the health facility as single value chart."
+>**Name \(*)**: "78 MSR - Reporting rate on time - District - Single value chart"  
+>**Visualization type**: "MSR DV 78 - Monthly Stock Reporting / Reporting rate on time / Last month / District / Single value chart
+This report provides the "Reporting rate on time" for the last month across all health facilities in a district as single value chart."
 >>
 >>**Series**  
 >>>**Data**  
@@ -4519,7 +4496,7 @@ This report provides the "Reporting rate" for the last 12 months for the health 
 >>>>>>**Legend**: "Stock availability / %"  
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
-![](image-112.png)
+![](image-156.png)
 
 ### Province level
 
