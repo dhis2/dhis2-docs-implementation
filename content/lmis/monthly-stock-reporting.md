@@ -52,79 +52,134 @@ The required metadata settings seetings are presented in the order in which it i
 ### 1 Category
 
 #### 1.1 Category option
->**1 Stock correction**  
+>**1 Appropriate stock**  
+>>**Name \(*)**: "Appropriate stock"  
+>>**Short name \(*)**: "Appropriate stock"  
+>>**Organisation units selected**: (select as required) 
+>
+>**2 Coefficient of variation**  
+>>**Name \(*)**: "Coefficient of variation"  
+>>**Short name \(*)**: "Coefficient of variation"  
+>>**Organisation units selected**: (select as required) 
+>
+>**3 Excessive stock**  
+>>**Name \(*)**: "Excessive stock"  
+>>**Short name \(*)**: "Excessive stock"  
+>>**Organisation units selected**: (select as required) 
+>
+>**4 High variability**  
+>>**Name \(*)**: "High variability"  
+>>**Short name \(*)**: "High variability"  
+>>**Organisation units selected**: (select as required) 
+>
+>**5 Low variability**  
+>>**Name \(*)**: "Low variability"  
+>>**Short name \(*)**: "Low variability"  
+>>**Organisation units selected**: (select as required) 
+>
+>**6 Medium variability**  
+>>**Name \(*)**: "Medium variability"  
+>>**Short name \(*)**: "Medium variability"  
+>>**Organisation units selected**: (select as required) 
+>
+>**7 Overstock**  
+>>**Name \(*)**: "Overstock"  
+>>**Short name \(*)**: "Overstock"  
+>>**Organisation units selected**: (select as required) 
+>
+>**8 Stock correction**  
 >>**Name \(*)**: "Stock correction"  
 >>**Short name \(*)**: "Stock correction"  
 >>**Organisation units selected**: (select as required) 
 >
->**2 Stock discarded**  
->>**Name \(*)**: "Stock discarded"  
->>**Short name \(*)**: "Stock discarded"  
+>**9 Stock coverage**  
+>>**Name \(*)**: "Stock coverage"  
+>>**Short name \(*)**: "Stock coverage"  
 >>**Organisation units selected**: (select as required) 
 >
->**3 Stock distributed**  
->>**Name \(*)**: "Stock distributed"  
->>**Short name \(*)**: "Stock distributed"  
+>**10 Stock discard**  
+>>**Name \(*)**: "Stock discard"  
+>>**Short name \(*)**: "Stock discard"  
 >>**Organisation units selected**: (select as required) 
 >
->**4 Stock received**  
->>**Name \(*)**: "Stock received"  
->>**Short name \(*)**: "Stock received"  
+>**11 Stock discrepancy**  
+>>**Name \(*)**: "Stock discrepancy"  
+>>**Short name \(*)**: "Stock discrepancy"  
 >>**Organisation units selected**: (select as required) 
 >
->**5 Stock redistributed**  
->>**Name \(*)**: "Stock redistributed"  
->>**Short name \(*)**: "Stock redistributed"  
+>**12 Stock discrepancy count**  
+>>**Name \(*)**: "Stock discrepancy count"  
+>>**Short name \(*)**: "Stock discrepancy count"  
 >>**Organisation units selected**: (select as required) 
 >
->**6 Stock correction**  
+>**13 Stock distribution**  
+>>**Name \(*)**: "Stock distribution"  
+>>**Short name \(*)**: "Stock distribution"  
+>>**Organisation units selected**: (select as required) 
+>
+>**14 Stock on hand**  
 >>**Name \(*)**: "Stock on hand"  
 >>**Short name \(*)**: "Stock on hand"  
 >>**Organisation units selected**: (select as required) 
+>
+>**15 Stock on hand Yes/No**  
+>>**Name \(*)**: "Stock on hand Yes/No"  
+>>**Short name \(*)**: "Stock on hand Yes/No"  
+>>**Organisation units selected**: (select as required) 
+>
+>**16 Stock receipt**  
+>>**Name \(*)**: "Stock receipt"  
+>>**Short name \(*)**: "Stock receipt"  
+>>**Organisation units selected**: (select as required) 
+>
+>**17 Stock redistribution**  
+>>**Name \(*)**: "Stock redistribution"  
+>>**Short name \(*)**: "Stock redistribution"  
+>>**Organisation units selected**: (select as required) 
+>
+>**18 Stockout Yes/No**  
+>>**Name \(*)**: "Stockout Yes/No"  
+>>**Short name \(*)**: "Stockout Yes/No"  
+>>**Organisation units selected**: (select as required) 
+>
+>**19 Understock**  
+>>**Name \(*)**: "Understock"  
+>>**Short name \(*)**: "Understock"  
+>>**Organisation units selected**: (select as required) 
 
 #### 1.2 Category
->**1 MSR - Monthly stock report - Data recording**  
+>**1 MSR - Monthly stock report**  
 >>**Name \(*)**: "MSR - Monthly stock report - Data recording"  
 >>**Short name \(*)**: "Monthly stock report - Data recording"  
 >>**Data dimension type \(*)**: "Disaggregation"  
 >>**Data dimension**: tag (appears as white tick in a blue square)  
 >>**Category options**: *note the order of "Category options"*:  
->>>"Stock received"  
+>>>"Stock receipt"  
 >>>"Stock distributed"  
->>>"Stock redistributed"  
->>>"Stock discarded"  
+>>>"Stock distribution"  
+>>>"Stock redistribution"  
+>>>"Stock discard"  
 >>>"Stock on hand"  
 >>>"Stock correction"  
->
->**2 MSR - Monthly stock report - Data recording and calculation**  
->>**Name \(*)**: "MSR - Monthly stock report - Data recording and calculation"  
->>**Short name \(*)**: "Monthly stock report - Data recording and calculation"  
->>**Data dimension type \(*)**: "Disaggregation"  
->>**Data dimension**: tag (appears as white tick in a blue square)  
->>**Category options**: *note the order of "Category options"*:  
->>>"Opening balance"  
->>>"Stock received"  
->>>"Stock distributed"  
->>>"Stock redistributed"  
->>>"Stock discarded"
->>>"Stock on hand"  
->>>"Closing balance"  
 >>>"Stock discrepancy"  
->>>"Stock correction"  
+>>>"Stock discrepancy count"  
 >>>"Stock on hand Yes/No"  
+>>>"Stock coverage"  
+>>>"Stockout Yes/No"  
+>>>"Understock"  
+>>>"Appropriate stock"  
+>>>"Overstock"  
+>>>"Excessive stock"  
+>>>"Coefficient of variation"  
+>>>"Low variability"  
+>>>"Medium variability"  
+>>>"High variability"  
 
 #### 1.3 Category combination
 >**1 MSR Monthly stock report - Data recording**  
 >>**Name \(*)**: **Monthly stock report - Data recording**  
 >>**Data dimension type \(*)**: "Disaggregation"  
->>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
->>**Categories**: "Monthly stock report - Data recording"
->
->**2 Monthly stock report - Data recording and calculation**  
->>**Name \(*)**: **Monthly stock report - Data recording and calculation**  
->>**Data dimension type \(*)**: "Disaggregation"  
->>**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
->>**Categories**: "Monthly stock report - Data recording and calculation"
+>>**Categories**: "Monthly stock report"
 
 ### 2 Data element
 
@@ -211,9 +266,15 @@ Indicators are used for calculating the following logistics metrics:
 
 - Stock availability (percentage of items which are on hand)
 
+- Stock discrepancy (count and percentage)
+
 - Stockout percentage (percentage of items which are out of stock)
 
-- Stockout count (number of items which are out of stock)
+- Stockouts (number of items which are out of stock and stockout rate in percent)
+
+- Stock coverage time ranges (stockout, Understock, Appropriate stock, Overstock and Excessive stock)
+
+- Coefficient of variation ranges (Low variability, Medium variability, High variability)
 
 For the "Stock coverage time" indicator it would in principle be preferable to configure the "Stock coverage time" as Predictor (as it would allow using the "Group predictor" function) but because the "Stock coverage time" requires displaying decimals and the Data Entry form only allows a single number format for all Category Options, an indicator is used instead. This approach allows freely setting the number of decimals in the Indicator settings. Note that items will have to be added and removed individually if the stock item list is changed.
 
@@ -669,7 +730,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>24 && #{xrjnOtFFTRC.iIC
 >>>**Description**: "2-3 years - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**7 3-4 months - MSR**  
+>**8 3-4 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 3 but less than 4 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 3-4 months. 
 >>**Name \(*)**: "3-4 months - MSR"  
 >>**Short Name \(*)**: "3-4 months - MSR"  
@@ -734,7 +795,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>3 && #{xrjnOtFFTRC.iIC4
 >>>**Description**: "3-4 months - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**8 4-5 months - MSR**  
+>**9 4-5 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 4 but less than 5 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time greater of 4-5 months.   
 >>**Name \(*)**: "4-5 months - MSR"  
 >>**Short Name \(*)**: "4-5 months - MSR"  
@@ -798,7 +859,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>4 && #{xrjnOtFFTRC.iIC4
 >>>**Description**: "4-5 months - MSR - Denominator"
 >>>**Calculation**: "1"
 >
->**9 5-6 months - MSR**  
+>**10 5-6 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 5 but less than 6 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage of 5-6 months. 
 >>**Name \(*)**: "5-6 months"  
 >>**Short Name \(*)**: "5-6 months - MSR"  
@@ -862,7 +923,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>5 && #{xrjnOtFFTRC.iIC4
 >>>**Description**: "5-6 months - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**10 6-7 months - MSR**  
+>**11 6-7 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 6 but less than 7 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 6-7 months. 
 >>**Name \(*)**: "6-7 months - MSR"  
 >>**Short Name \(*)**: "6-7 months - MSR"  
@@ -926,7 +987,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>6 && #{xrjnOtFFTRC.iIC4
 >>>**Description**: "6-7 months - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**11 7-8 months - MSR**  
+>**12 7-8 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 1 but less than 2 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 7-8 months. 
 >>**Name \(*)**: "7-8 months - MSR"  
 >>**Short Name \(*)**: "7-8 months - MSR"  
@@ -990,7 +1051,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4
 >>>**Description**: "7-8 months - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**12 8-9 months - MSR**  
+>**13 8-9 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 8 but less than 9 and otherwise returns 0and then adds up these results for calculating the number of items with a stock coverage time of 8-9 months. 
 >>**Name \(*)**: "8-9 months - MSR"  
 >>**Short Name \(*)**: "8-9 months - MSR"  
@@ -1054,7 +1115,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4
 >>>**Description**: "8-9 months - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**13 9-10 months - MSR**  
+>**14 9-10 months - MSR**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than or equal to 9 but less than 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 9-10 months. 
 >>**Name \(*)**: "9-10 months - MSR"  
 >>**Short Name \(*)**: "9-10 months - MSR"  
@@ -1118,7 +1179,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>9 && #{xrjnOtFFTRC.iIC4
 >>>**Description**: "9-10 months - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**14 >=3 years**  
+>**15 >=3 years**  
 >For each item the Indicator returns "1" if the stock coverage time is greater than 36 and otherwise returns 0 and then adds up these results for calculating the number of items with a stock coverage time of 36 months or greater. 
 >>**Name \(*)**: ">=3 years"  
 >>**Short Name \(*)**: ">=3 years - MSR"  
@@ -1182,7 +1243,137 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>36,1,0)
 >>>**Description**: ">= 3 years - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**16 High variability**  
+>**16 Appropriate stock**  
+>The Indicator adds up the values in the data field "Appropriate stock" for calculating the number of items with appropriate stock coverage times.
+>>**Name \(*)**: "Appropriate stock"  
+>>**Short Name \(*)**: "Appropriate stock - MSR"    
+>>**Description**: "Number of items with an appropriate stock"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "Appropriate stock - MSR - Numerator"  
+>>>**Calculation**:  
+>>>#{LNAkkMTxqEW.pXfWqU8b96D}+
+#{WyDZKSw82X6.pXfWqU8b96D}+
+#{JPccVwAGRq9.pXfWqU8b96D}+
+#{smxJz7Mt6ia.pXfWqU8b96D}+
+#{AaIApgGQM6t.pXfWqU8b96D}+
+#{vCTrmv52APd.pXfWqU8b96D}+
+#{SOw2TcuFFH2.pXfWqU8b96D}+
+#{RSIOx2u07Ln.pXfWqU8b96D}+
+#{JStiDyaPfqy.pXfWqU8b96D}+
+#{hZ1YvdcTDQM.pXfWqU8b96D}+
+#{tsi32D8HQd5.pXfWqU8b96D}+
+#{QWlPF8S0gCc.pXfWqU8b96D}+
+#{a5uLTDt12eT.pXfWqU8b96D}+
+#{U0AfOOyJMy2.pXfWqU8b96D}+
+#{cyf6UdScfFM.pXfWqU8b96D}+
+#{FeUTTNHpVzD.pXfWqU8b96D}+
+#{mKSICD1rxG4.pXfWqU8b96D}+
+#{mVNe1aS1pGl.pXfWqU8b96D}+
+#{oLAXTZY6ken.pXfWqU8b96D}+
+#{YYaRDUZyH9L.pXfWqU8b96D}+
+#{HVteopBt0jr.pXfWqU8b96D}+
+#{sWodd2tbjgZ.pXfWqU8b96D}+
+#{yVYajDDYUfX.pXfWqU8b96D}+
+#{eTJAr4sc83v.pXfWqU8b96D}+
+#{U4KSmanl4JP.pXfWqU8b96D}+
+#{FXsa5uG3IGn.pXfWqU8b96D}+
+#{L34T9YDtCor.pXfWqU8b96D}+
+#{W5mHXhSYFfQ.pXfWqU8b96D}+
+#{cmSUyJOZwyl.pXfWqU8b96D}+
+#{cT8sfosRXvU.pXfWqU8b96D}+
+#{OaWKnMS7say.pXfWqU8b96D}+
+#{Z4bjHvGS6aH.pXfWqU8b96D}+
+#{Nn1L7CNEtC8.pXfWqU8b96D}+
+#{RNYKSc3nAUg.pXfWqU8b96D}+
+#{PtmZ9XqpPKi.pXfWqU8b96D}+
+#{CohlLHi54B0.pXfWqU8b96D}+
+#{Gu6u82RD9OW.pXfWqU8b96D}+
+#{LiuYzxYr4Pt.pXfWqU8b96D}+
+#{Tje33nJAG55.pXfWqU8b96D}+
+#{euM2dlqleYH.pXfWqU8b96D}+
+#{dASLmBTEehF.pXfWqU8b96D}+
+#{qU2LvzoPn1z.pXfWqU8b96D}+
+#{OkWaFxdUQY2.pXfWqU8b96D}+
+#{YHIv7KQc2e7.pXfWqU8b96D}+
+#{rt9D47Inb49.pXfWqU8b96D}+
+#{i1iXbquZ5iv.pXfWqU8b96D}+
+#{RcE30WBKrXI.pXfWqU8b96D}+
+#{EAG0GfdSMAs.pXfWqU8b96D}+
+#{N2aXs7VlJdJ.pXfWqU8b96D}+
+#{xrjnOtFFTRC.pXfWqU8b96D}
+>>
+>>**Edit denominator**:  
+>>>**Description**: "Appropriate stock - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**17 Excessive stock**  
+>The Indicator adds up the values in the data field "Appropriate stock" for calculating the number of items with excesssive stock coverage times.
+>>**Name \(*)**: "Excessive stock"  
+>>**Short Name \(*)**: "Excessive stock - MSR"  
+>>**Description**: "Number of items with excessive stock"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "Excessive stock - MSR - Numerator"  
+>>>**Calculation**:  
+>>>#{LNAkkMTxqEW.CVWVNV7y93Q}+
+#{WyDZKSw82X6.CVWVNV7y93Q}+
+#{JPccVwAGRq9.CVWVNV7y93Q}+
+#{smxJz7Mt6ia.CVWVNV7y93Q}+
+#{AaIApgGQM6t.CVWVNV7y93Q}+
+#{vCTrmv52APd.CVWVNV7y93Q}+
+#{SOw2TcuFFH2.CVWVNV7y93Q}+
+#{RSIOx2u07Ln.CVWVNV7y93Q}+
+#{JStiDyaPfqy.CVWVNV7y93Q}+
+#{hZ1YvdcTDQM.CVWVNV7y93Q}+
+#{tsi32D8HQd5.CVWVNV7y93Q}+
+#{QWlPF8S0gCc.CVWVNV7y93Q}+
+#{a5uLTDt12eT.CVWVNV7y93Q}+
+#{U0AfOOyJMy2.CVWVNV7y93Q}+
+#{cyf6UdScfFM.CVWVNV7y93Q}+
+#{FeUTTNHpVzD.CVWVNV7y93Q}+
+#{mKSICD1rxG4.CVWVNV7y93Q}+
+#{mVNe1aS1pGl.CVWVNV7y93Q}+
+#{oLAXTZY6ken.CVWVNV7y93Q}+
+#{YYaRDUZyH9L.CVWVNV7y93Q}+
+#{HVteopBt0jr.CVWVNV7y93Q}+
+#{sWodd2tbjgZ.CVWVNV7y93Q}+
+#{yVYajDDYUfX.CVWVNV7y93Q}+
+#{eTJAr4sc83v.CVWVNV7y93Q}+
+#{U4KSmanl4JP.CVWVNV7y93Q}+
+#{FXsa5uG3IGn.CVWVNV7y93Q}+
+#{L34T9YDtCor.CVWVNV7y93Q}+
+#{W5mHXhSYFfQ.CVWVNV7y93Q}+
+#{cmSUyJOZwyl.CVWVNV7y93Q}+
+#{cT8sfosRXvU.CVWVNV7y93Q}+
+#{OaWKnMS7say.CVWVNV7y93Q}+
+#{Z4bjHvGS6aH.CVWVNV7y93Q}+
+#{Nn1L7CNEtC8.CVWVNV7y93Q}+
+#{RNYKSc3nAUg.CVWVNV7y93Q}+
+#{PtmZ9XqpPKi.CVWVNV7y93Q}+
+#{CohlLHi54B0.CVWVNV7y93Q}+
+#{Gu6u82RD9OW.CVWVNV7y93Q}+
+#{LiuYzxYr4Pt.CVWVNV7y93Q}+
+#{Tje33nJAG55.CVWVNV7y93Q}+
+#{euM2dlqleYH.CVWVNV7y93Q}+
+#{dASLmBTEehF.CVWVNV7y93Q}+
+#{qU2LvzoPn1z.CVWVNV7y93Q}+
+#{OkWaFxdUQY2.CVWVNV7y93Q}+
+#{YHIv7KQc2e7.CVWVNV7y93Q}+
+#{rt9D47Inb49.CVWVNV7y93Q}+
+#{i1iXbquZ5iv.CVWVNV7y93Q}+
+#{RcE30WBKrXI.CVWVNV7y93Q}+
+#{EAG0GfdSMAs.CVWVNV7y93Q}+
+#{N2aXs7VlJdJ.CVWVNV7y93Q}+
+#{xrjnOtFFTRC.CVWVNV7y93Q}
+>>
+>>**Edit denominator**:  
+>>>**Description**: "Excessive stock - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**18 High variability**  
 >For each item the Indicator returns "1" if the coefficient of variation is greater than 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a coefficient of variation of more than 10 (high variability). Note that the actual coefficient of variation is multiplied by 10.
 >>**Name \(*)**: "High variability"  
 >>**Short Name \(*)**: "High variability - MSR"    
@@ -1243,7 +1434,7 @@ if(#{EAG0GfdSMAs.U2tBADVisKH}>10,1,0)+
 if(#{N2aXs7VlJdJ.U2tBADVisKH}>10,1,0)+
 if(#{xrjnOtFFTRC.U2tBADVisKH}>10,1,0)
 >
->**17 Low variability**  
+>**19 Low variability**  
 >For each item the Indicator returns "1" if the coefficient of variation is less than 5 and otherwise returns 0 and then adds up these results for calculating the number of items with a coefficient of variation of less than 5 (low variability). Note that the actual coefficient of variation is multiplied by 10.
 >>**Name \(*)**: "Low variability"  
 >>**Short Name \(*)**: "Low variability - MSR"    
@@ -1304,7 +1495,7 @@ if(#{EAG0GfdSMAs.U2tBADVisKH}<5,1,0)+
 if(#{N2aXs7VlJdJ.U2tBADVisKH}<5,1,0)+
 if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >
->**18 Medium variability**  
+>**20 Medium variability**  
 >For each item the Indicator returns "1" if the coefficient of variation is greater than 5 but less or equal to 10 and otherwise returns 0 and then adds up these results for calculating the number of items with a coefficient of between 5 and 10 (medium variability). Note that the actual coefficient of variation is multiplied by 10.
 >>**Name \(*)**: "Medium variability"  
 >>**Short Name \(*)**: "Medium variability - MSR"    
@@ -1365,7 +1556,72 @@ if(#{EAG0GfdSMAs.U2tBADVisKH}<5,1,0)+
 if(#{N2aXs7VlJdJ.U2tBADVisKH}<5,1,0)+
 if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >
->**19 Stock availability / %**  
+>**21 Overstock**  
+>The Indicator adds up the values in the data field "Overstock" for calculating the number of items with overstocks.
+>>**Name \(*)**: "Overstock"  
+>>**Short Name \(*)**: "Overstock - MSR"    
+>>**Description**: "Number of items with overstock"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "Overstock - MSR - Numerator"  
+>>>**Calculation**:  
+>>>#{LNAkkMTxqEW.EnrDpXZVNq2}+
+#{WyDZKSw82X6.EnrDpXZVNq2}+
+#{JPccVwAGRq9.EnrDpXZVNq2}+
+#{smxJz7Mt6ia.EnrDpXZVNq2}+
+#{AaIApgGQM6t.EnrDpXZVNq2}+
+#{vCTrmv52APd.EnrDpXZVNq2}+
+#{SOw2TcuFFH2.EnrDpXZVNq2}+
+#{RSIOx2u07Ln.EnrDpXZVNq2}+
+#{JStiDyaPfqy.EnrDpXZVNq2}+
+#{hZ1YvdcTDQM.EnrDpXZVNq2}+
+#{tsi32D8HQd5.EnrDpXZVNq2}+
+#{QWlPF8S0gCc.EnrDpXZVNq2}+
+#{a5uLTDt12eT.EnrDpXZVNq2}+
+#{U0AfOOyJMy2.EnrDpXZVNq2}+
+#{cyf6UdScfFM.EnrDpXZVNq2}+
+#{FeUTTNHpVzD.EnrDpXZVNq2}+
+#{mKSICD1rxG4.EnrDpXZVNq2}+
+#{mVNe1aS1pGl.EnrDpXZVNq2}+
+#{oLAXTZY6ken.EnrDpXZVNq2}+
+#{YYaRDUZyH9L.EnrDpXZVNq2}+
+#{HVteopBt0jr.EnrDpXZVNq2}+
+#{sWodd2tbjgZ.EnrDpXZVNq2}+
+#{yVYajDDYUfX.EnrDpXZVNq2}+
+#{eTJAr4sc83v.EnrDpXZVNq2}+
+#{U4KSmanl4JP.EnrDpXZVNq2}+
+#{FXsa5uG3IGn.EnrDpXZVNq2}+
+#{L34T9YDtCor.EnrDpXZVNq2}+
+#{W5mHXhSYFfQ.EnrDpXZVNq2}+
+#{cmSUyJOZwyl.EnrDpXZVNq2}+
+#{cT8sfosRXvU.EnrDpXZVNq2}+
+#{OaWKnMS7say.EnrDpXZVNq2}+
+#{Z4bjHvGS6aH.EnrDpXZVNq2}+
+#{Nn1L7CNEtC8.EnrDpXZVNq2}+
+#{RNYKSc3nAUg.EnrDpXZVNq2}+
+#{PtmZ9XqpPKi.EnrDpXZVNq2}+
+#{CohlLHi54B0.EnrDpXZVNq2}+
+#{Gu6u82RD9OW.EnrDpXZVNq2}+
+#{LiuYzxYr4Pt.EnrDpXZVNq2}+
+#{Tje33nJAG55.EnrDpXZVNq2}+
+#{euM2dlqleYH.EnrDpXZVNq2}+
+#{dASLmBTEehF.EnrDpXZVNq2}+
+#{qU2LvzoPn1z.EnrDpXZVNq2}+
+#{OkWaFxdUQY2.EnrDpXZVNq2}+
+#{YHIv7KQc2e7.EnrDpXZVNq2}+
+#{rt9D47Inb49.EnrDpXZVNq2}+
+#{i1iXbquZ5iv.EnrDpXZVNq2}+
+#{RcE30WBKrXI.EnrDpXZVNq2}+
+#{EAG0GfdSMAs.EnrDpXZVNq2}+
+#{N2aXs7VlJdJ.EnrDpXZVNq2}+
+#{xrjnOtFFTRC.EnrDpXZVNq2}
+>>
+>>**Edit denominator**:  
+>>>**Description**: "Overstock - MSR - Denominator"  
+>>>**Calculation**: "1"  
+>
+>**22 Stock availability / %**  
 >This indicator counts the number of items with non-zero stock, divides them by the number of items and multiplies the result by 100 in order to present the result as percentage. Note that items have to be added and removed manually when the stock item list is changed and the denominator also has to be adjusted accordingly.
 >>**Name \(*)**: "Stock availability / %"  
 >>**Short Name \(*)**: "Stock availability / % - MSR"  
@@ -1375,70 +1631,192 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Edit numerator**:  
 >>>**Description**: "Stock availability - MSR - Numerator"  
 >>>**Calculation**:  
->>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,0,1)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,0,1)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}==0,0,1)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}==0,0,1)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}==0,0,1)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}==0,0,1)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}==0,0,1)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}==0,0,1)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}==0,0,1)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}==0,0,1)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}==0,0,1)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}==0,0,1)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}==0,0,1)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}==0,0,1)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}==0,0,1)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}==0,0,1)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}==0,0,1)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}==0,0,1)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}==0,0,1)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}==0,0,1)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}==0,0,1)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}==0,0,1)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}==0,0,1)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}==0,0,1)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}==0,0,1)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}==0,0,1)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}==0,0,1)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}==0,0,1)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}==0,0,1)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}==0,0,1)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}==0,0,1)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}==0,0,1)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}==0,0,1)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}==0,0,1)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}==0,0,1)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}==0,0,1)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}==0,0,1)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}==0,0,1)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}==0,0,1)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}==0,0,1)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}==0,0,1)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}==0,0,1)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}==0,0,1)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}==0,0,1)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}==0,0,1)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}==0,0,1)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}==0,0,1)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}==0,0,1)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}==0,0,1)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,0,1)
+>>>#{LNAkkMTxqEW.vRsIAIjzyfn}+
+#{WyDZKSw82X6.vRsIAIjzyfn}+
+#{JPccVwAGRq9.vRsIAIjzyfn}+
+#{smxJz7Mt6ia.vRsIAIjzyfn}+
+#{AaIApgGQM6t.vRsIAIjzyfn}+
+#{vCTrmv52APd.vRsIAIjzyfn}+
+#{SOw2TcuFFH2.vRsIAIjzyfn}+
+#{RSIOx2u07Ln.vRsIAIjzyfn}+
+#{JStiDyaPfqy.vRsIAIjzyfn}+
+#{hZ1YvdcTDQM.vRsIAIjzyfn}+
+#{tsi32D8HQd5.vRsIAIjzyfn}+
+#{QWlPF8S0gCc.vRsIAIjzyfn}+
+#{a5uLTDt12eT.vRsIAIjzyfn}+
+#{U0AfOOyJMy2.vRsIAIjzyfn}+
+#{cyf6UdScfFM.vRsIAIjzyfn}+
+#{FeUTTNHpVzD.vRsIAIjzyfn}+
+#{mKSICD1rxG4.vRsIAIjzyfn}+
+#{mVNe1aS1pGl.vRsIAIjzyfn}+
+#{oLAXTZY6ken.vRsIAIjzyfn}+
+#{YYaRDUZyH9L.vRsIAIjzyfn}+
+#{HVteopBt0jr.vRsIAIjzyfn}+
+#{sWodd2tbjgZ.vRsIAIjzyfn}+
+#{yVYajDDYUfX.vRsIAIjzyfn}+
+#{eTJAr4sc83v.vRsIAIjzyfn}+
+#{U4KSmanl4JP.vRsIAIjzyfn}+
+#{FXsa5uG3IGn.vRsIAIjzyfn}+
+#{L34T9YDtCor.vRsIAIjzyfn}+
+#{W5mHXhSYFfQ.vRsIAIjzyfn}+
+#{cmSUyJOZwyl.vRsIAIjzyfn}+
+#{cT8sfosRXvU.vRsIAIjzyfn}+
+#{OaWKnMS7say.vRsIAIjzyfn}+
+#{Z4bjHvGS6aH.vRsIAIjzyfn}+
+#{Nn1L7CNEtC8.vRsIAIjzyfn}+
+#{RNYKSc3nAUg.vRsIAIjzyfn}+
+#{PtmZ9XqpPKi.vRsIAIjzyfn}+
+#{CohlLHi54B0.vRsIAIjzyfn}+
+#{Gu6u82RD9OW.vRsIAIjzyfn}+
+#{LiuYzxYr4Pt.vRsIAIjzyfn}+
+#{Tje33nJAG55.vRsIAIjzyfn}+
+#{euM2dlqleYH.vRsIAIjzyfn}+
+#{dASLmBTEehF.vRsIAIjzyfn}+
+#{qU2LvzoPn1z.vRsIAIjzyfn}+
+#{OkWaFxdUQY2.vRsIAIjzyfn}+
+#{YHIv7KQc2e7.vRsIAIjzyfn}+
+#{rt9D47Inb49.vRsIAIjzyfn}+
+#{i1iXbquZ5iv.vRsIAIjzyfn}+
+#{RcE30WBKrXI.vRsIAIjzyfn}+
+#{EAG0GfdSMAs.vRsIAIjzyfn}+
+#{N2aXs7VlJdJ.vRsIAIjzyfn}+
+#{xrjnOtFFTRC.vRsIAIjzyfn}
 >>
 >>**Edit denominator**:  
 >>>**Description**: "Stock availability - MSR - Denominator"  
->>>**Calculation**: "0.06"  
+>>>**Calculation**: "0.5"  
 >
->**20 Stockout count**  
->This indicator counts the number of items with a stockout.
->>**Name \(*)**: "Stockout count"  
->>**Short Name \(*)**: "Stockout count - MSR"  
+>**23 Stock discrepancy count**  
+>This indicator counts the number of items which have a stock discrepancy which is not zero.
+>>**Name \(*)**: "Stock discrepancy count"  
+>>**Short Name \(*)**: "Stock discrepancy count - MSR"  
 >>**Description**: "Number of items with a stock discrepancy"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
->>>**Description**: "Stock discrepancy count - Numerator"  
+>>>**Description**: "Stock discrepancy count - MSR - Numerator"  
+>>>**Calculation**:  
+>>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
+#{WyDZKSw82X6.cD8WZyjlq9C}+
+#{JPccVwAGRq9.cD8WZyjlq9C}+
+#{smxJz7Mt6ia.cD8WZyjlq9C}+
+#{AaIApgGQM6t.cD8WZyjlq9C}+
+#{vCTrmv52APd.cD8WZyjlq9C}+
+#{SOw2TcuFFH2.cD8WZyjlq9C}+
+#{RSIOx2u07Ln.cD8WZyjlq9C}+
+#{JStiDyaPfqy.cD8WZyjlq9C}+
+#{hZ1YvdcTDQM.cD8WZyjlq9C}+
+#{tsi32D8HQd5.cD8WZyjlq9C}+
+#{QWlPF8S0gCc.cD8WZyjlq9C}+
+#{a5uLTDt12eT.cD8WZyjlq9C}+
+#{U0AfOOyJMy2.cD8WZyjlq9C}+
+#{cyf6UdScfFM.cD8WZyjlq9C}+
+#{FeUTTNHpVzD.cD8WZyjlq9C}+
+#{mKSICD1rxG4.cD8WZyjlq9C}+
+#{mVNe1aS1pGl.cD8WZyjlq9C}+
+#{oLAXTZY6ken.cD8WZyjlq9C}+
+#{YYaRDUZyH9L.cD8WZyjlq9C}+
+#{HVteopBt0jr.cD8WZyjlq9C}+
+#{sWodd2tbjgZ.cD8WZyjlq9C}+
+#{yVYajDDYUfX.cD8WZyjlq9C}+
+#{eTJAr4sc83v.cD8WZyjlq9C}+
+#{U4KSmanl4JP.cD8WZyjlq9C}+
+#{FXsa5uG3IGn.cD8WZyjlq9C}+
+#{L34T9YDtCor.cD8WZyjlq9C}+
+#{W5mHXhSYFfQ.cD8WZyjlq9C}+
+#{cmSUyJOZwyl.cD8WZyjlq9C}+
+#{cT8sfosRXvU.cD8WZyjlq9C}+
+#{OaWKnMS7say.cD8WZyjlq9C}+
+#{Z4bjHvGS6aH.cD8WZyjlq9C}+
+#{Nn1L7CNEtC8.cD8WZyjlq9C}+
+#{RNYKSc3nAUg.cD8WZyjlq9C}+
+#{PtmZ9XqpPKi.cD8WZyjlq9C}+
+#{CohlLHi54B0.cD8WZyjlq9C}+
+#{Gu6u82RD9OW.cD8WZyjlq9C}+
+#{LiuYzxYr4Pt.cD8WZyjlq9C}+
+#{Tje33nJAG55.cD8WZyjlq9C}+
+#{euM2dlqleYH.cD8WZyjlq9C}+
+#{dASLmBTEehF.cD8WZyjlq9C}+
+#{qU2LvzoPn1z.cD8WZyjlq9C}+
+#{OkWaFxdUQY2.cD8WZyjlq9C}+
+#{YHIv7KQc2e7.cD8WZyjlq9C}+
+#{rt9D47Inb49.cD8WZyjlq9C}+
+#{i1iXbquZ5iv.cD8WZyjlq9C}+
+#{RcE30WBKrXI.cD8WZyjlq9C}+
+#{EAG0GfdSMAs.cD8WZyjlq9C}+
+#{N2aXs7VlJdJ.cD8WZyjlq9C}+
+#{xrjnOtFFTRC.cD8WZyjlq9C}
+>
+>**24 Stock discrepancy percentage**  
+>This indicator divides the number of items which have a stock discrepancy which is not zero by the total number of items.
+>>**Name \(*)**: "Stock discrepancy percentage"  
+>>**Short Name \(*)**: "Stock discrepancy percentage - MSR"  
+>>**Description**: "Percentage of items with a stock discrepancy"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "Stock discrepancy percentage - MSR - Numerator"  
+>>>**Calculation**:  
+>>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
+#{WyDZKSw82X6.cD8WZyjlq9C}+
+#{JPccVwAGRq9.cD8WZyjlq9C}+
+#{smxJz7Mt6ia.cD8WZyjlq9C}+
+#{AaIApgGQM6t.cD8WZyjlq9C}+
+#{vCTrmv52APd.cD8WZyjlq9C}+
+#{SOw2TcuFFH2.cD8WZyjlq9C}+
+#{RSIOx2u07Ln.cD8WZyjlq9C}+
+#{JStiDyaPfqy.cD8WZyjlq9C}+
+#{hZ1YvdcTDQM.cD8WZyjlq9C}+
+#{tsi32D8HQd5.cD8WZyjlq9C}+
+#{QWlPF8S0gCc.cD8WZyjlq9C}+
+#{a5uLTDt12eT.cD8WZyjlq9C}+
+#{U0AfOOyJMy2.cD8WZyjlq9C}+
+#{cyf6UdScfFM.cD8WZyjlq9C}+
+#{FeUTTNHpVzD.cD8WZyjlq9C}+
+#{mKSICD1rxG4.cD8WZyjlq9C}+
+#{mVNe1aS1pGl.cD8WZyjlq9C}+
+#{oLAXTZY6ken.cD8WZyjlq9C}+
+#{YYaRDUZyH9L.cD8WZyjlq9C}+
+#{HVteopBt0jr.cD8WZyjlq9C}+
+#{sWodd2tbjgZ.cD8WZyjlq9C}+
+#{yVYajDDYUfX.cD8WZyjlq9C}+
+#{eTJAr4sc83v.cD8WZyjlq9C}+
+#{U4KSmanl4JP.cD8WZyjlq9C}+
+#{FXsa5uG3IGn.cD8WZyjlq9C}+
+#{L34T9YDtCor.cD8WZyjlq9C}+
+#{W5mHXhSYFfQ.cD8WZyjlq9C}+
+#{cmSUyJOZwyl.cD8WZyjlq9C}+
+#{cT8sfosRXvU.cD8WZyjlq9C}+
+#{OaWKnMS7say.cD8WZyjlq9C}+
+#{Z4bjHvGS6aH.cD8WZyjlq9C}+
+#{Nn1L7CNEtC8.cD8WZyjlq9C}+
+#{RNYKSc3nAUg.cD8WZyjlq9C}+
+#{PtmZ9XqpPKi.cD8WZyjlq9C}+
+#{CohlLHi54B0.cD8WZyjlq9C}+
+#{Gu6u82RD9OW.cD8WZyjlq9C}+
+#{LiuYzxYr4Pt.cD8WZyjlq9C}+
+#{Tje33nJAG55.cD8WZyjlq9C}+
+#{euM2dlqleYH.cD8WZyjlq9C}+
+#{dASLmBTEehF.cD8WZyjlq9C}+
+#{qU2LvzoPn1z.cD8WZyjlq9C}+
+#{OkWaFxdUQY2.cD8WZyjlq9C}+
+#{YHIv7KQc2e7.cD8WZyjlq9C}+
+#{rt9D47Inb49.cD8WZyjlq9C}+
+#{i1iXbquZ5iv.cD8WZyjlq9C}+
+#{RcE30WBKrXI.cD8WZyjlq9C}+
+#{EAG0GfdSMAs.cD8WZyjlq9C}+
+#{N2aXs7VlJdJ.cD8WZyjlq9C}+
+#{xrjnOtFFTRC.cD8WZyjlq9C}
+>
+>**25 Stockout count**  
+>This indicator counts the number of items with a stockout.
+>>**Name \(*)**: "Stockout count"  
+>>**Short Name \(*)**: "Stockout count - MSR"  
+>>**Description**: "Number of items with at stockout"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "Stockout count - MSR"  
 >>>**Calculation**:  
 >>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,1,0)+
@@ -1495,134 +1873,135 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>>**Description**: "Stockouts - MSR - Denominator"  
 >>>**Calculation**: "1"  
 >
->**21 Stock discrepancy count**  
->>**Name \(*)**: "Stock discrepancy count"  
->>**Short Name \(*)**: "Stock discrepancy count - MSR"  
->>**Description**: "Number of items with a stock discrepancy"  
->>**Decimals in data output**: "0"  
->>**Indicator type \(*)**: "Number (Factor 1)"  
->>**Edit numerator**:  
->>>**Description**: "Stock discrepancy count - Numerator"  
->>>**Calculation**:  
->>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
-#{WyDZKSw82X6.cD8WZyjlq9C}+
-#{JPccVwAGRq9.cD8WZyjlq9C}+
-#{smxJz7Mt6ia.cD8WZyjlq9C}+
-#{AaIApgGQM6t.cD8WZyjlq9C}+
-#{vCTrmv52APd.cD8WZyjlq9C}+
-#{SOw2TcuFFH2.cD8WZyjlq9C}+
-#{RSIOx2u07Ln.cD8WZyjlq9C}+
-#{JStiDyaPfqy.cD8WZyjlq9C}+
-#{hZ1YvdcTDQM.cD8WZyjlq9C}+
-#{tsi32D8HQd5.cD8WZyjlq9C}+
-#{QWlPF8S0gCc.cD8WZyjlq9C}+
-#{a5uLTDt12eT.cD8WZyjlq9C}+
-#{U0AfOOyJMy2.cD8WZyjlq9C}+
-#{cyf6UdScfFM.cD8WZyjlq9C}+
-#{FeUTTNHpVzD.cD8WZyjlq9C}+
-#{mKSICD1rxG4.cD8WZyjlq9C}+
-#{mVNe1aS1pGl.cD8WZyjlq9C}+
-#{oLAXTZY6ken.cD8WZyjlq9C}+
-#{YYaRDUZyH9L.cD8WZyjlq9C}+
-#{HVteopBt0jr.cD8WZyjlq9C}+
-#{sWodd2tbjgZ.cD8WZyjlq9C}+
-#{yVYajDDYUfX.cD8WZyjlq9C}+
-#{eTJAr4sc83v.cD8WZyjlq9C}+
-#{U4KSmanl4JP.cD8WZyjlq9C}+
-#{FXsa5uG3IGn.cD8WZyjlq9C}+
-#{L34T9YDtCor.cD8WZyjlq9C}+
-#{W5mHXhSYFfQ.cD8WZyjlq9C}+
-#{cmSUyJOZwyl.cD8WZyjlq9C}+
-#{cT8sfosRXvU.cD8WZyjlq9C}+
-#{OaWKnMS7say.cD8WZyjlq9C}+
-#{Z4bjHvGS6aH.cD8WZyjlq9C}+
-#{Nn1L7CNEtC8.cD8WZyjlq9C}+
-#{RNYKSc3nAUg.cD8WZyjlq9C}+
-#{PtmZ9XqpPKi.cD8WZyjlq9C}+
-#{CohlLHi54B0.cD8WZyjlq9C}+
-#{Gu6u82RD9OW.cD8WZyjlq9C}+
-#{LiuYzxYr4Pt.cD8WZyjlq9C}+
-#{Tje33nJAG55.cD8WZyjlq9C}+
-#{euM2dlqleYH.cD8WZyjlq9C}+
-#{dASLmBTEehF.cD8WZyjlq9C}+
-#{qU2LvzoPn1z.cD8WZyjlq9C}+
-#{OkWaFxdUQY2.cD8WZyjlq9C}+
-#{YHIv7KQc2e7.cD8WZyjlq9C}+
-#{rt9D47Inb49.cD8WZyjlq9C}+
-#{i1iXbquZ5iv.cD8WZyjlq9C}+
-#{RcE30WBKrXI.cD8WZyjlq9C}+
-#{EAG0GfdSMAs.cD8WZyjlq9C}+
-#{N2aXs7VlJdJ.cD8WZyjlq9C}+
-#{xrjnOtFFTRC.cD8WZyjlq9C}
->>
->>**Edit denominator**:  
->>>**Description**: "Stock discrepancy count - Denominator"  
->>>**Calculation**: "1"  
->
->**22 Stockout percentage**  
+>**26 Stockout rate / %**  
 >This indicator counts the number of items with stockouts (zero stock), divides them by the number of items and multiplies the result by 100 in order to present the result as percentage. Note that items have to be added and removed manually when the stock item list is changed and the denominator also has to be adjusted accordingly.
->>**Name \(*)**: "Stock percentage"  
->>**Short Name \(*)**: "Stock percentage - MSR"  
+>>**Name \(*)**: "Stockout rate / %"  
+>>**Short Name \(*)**: "Stockout rate / % - MSR"  
 >>**Description**: "Percentage of items with zero stock"  
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stockout percentage - MSR - Numerator"  
 >>>**Calculation**:  
->>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
-if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,1,0)+
-if(#{JPccVwAGRq9.iIC4YhgrxQY}==0,1,0)+
-if(#{smxJz7Mt6ia.iIC4YhgrxQY}==0,1,0)+
-if(#{AaIApgGQM6t.iIC4YhgrxQY}==0,1,0)+
-if(#{vCTrmv52APd.iIC4YhgrxQY}==0,1,0)+
-if(#{SOw2TcuFFH2.iIC4YhgrxQY}==0,1,0)+
-if(#{RSIOx2u07Ln.iIC4YhgrxQY}==0,1,0)+
-if(#{JStiDyaPfqy.iIC4YhgrxQY}==0,1,0)+
-if(#{hZ1YvdcTDQM.iIC4YhgrxQY}==0,1,0)+
-if(#{tsi32D8HQd5.iIC4YhgrxQY}==0,1,0)+
-if(#{QWlPF8S0gCc.iIC4YhgrxQY}==0,1,0)+
-if(#{a5uLTDt12eT.iIC4YhgrxQY}==0,1,0)+
-if(#{U0AfOOyJMy2.iIC4YhgrxQY}==0,1,0)+
-if(#{cyf6UdScfFM.iIC4YhgrxQY}==0,1,0)+
-if(#{FeUTTNHpVzD.iIC4YhgrxQY}==0,1,0)+
-if(#{mKSICD1rxG4.iIC4YhgrxQY}==0,1,0)+
-if(#{mVNe1aS1pGl.iIC4YhgrxQY}==0,1,0)+
-if(#{oLAXTZY6ken.iIC4YhgrxQY}==0,1,0)+
-if(#{YYaRDUZyH9L.iIC4YhgrxQY}==0,1,0)+
-if(#{HVteopBt0jr.iIC4YhgrxQY}==0,1,0)+
-if(#{sWodd2tbjgZ.iIC4YhgrxQY}==0,1,0)+
-if(#{yVYajDDYUfX.iIC4YhgrxQY}==0,1,0)+
-if(#{eTJAr4sc83v.iIC4YhgrxQY}==0,1,0)+
-if(#{U4KSmanl4JP.iIC4YhgrxQY}==0,1,0)+
-if(#{FXsa5uG3IGn.iIC4YhgrxQY}==0,1,0)+
-if(#{L34T9YDtCor.iIC4YhgrxQY}==0,1,0)+
-if(#{W5mHXhSYFfQ.iIC4YhgrxQY}==0,1,0)+
-if(#{cmSUyJOZwyl.iIC4YhgrxQY}==0,1,0)+
-if(#{cT8sfosRXvU.iIC4YhgrxQY}==0,1,0)+
-if(#{OaWKnMS7say.iIC4YhgrxQY}==0,1,0)+
-if(#{Z4bjHvGS6aH.iIC4YhgrxQY}==0,1,0)+
-if(#{Nn1L7CNEtC8.iIC4YhgrxQY}==0,1,0)+
-if(#{RNYKSc3nAUg.iIC4YhgrxQY}==0,1,0)+
-if(#{PtmZ9XqpPKi.iIC4YhgrxQY}==0,1,0)+
-if(#{CohlLHi54B0.iIC4YhgrxQY}==0,1,0)+
-if(#{Gu6u82RD9OW.iIC4YhgrxQY}==0,1,0)+
-if(#{LiuYzxYr4Pt.iIC4YhgrxQY}==0,1,0)+
-if(#{Tje33nJAG55.iIC4YhgrxQY}==0,1,0)+
-if(#{euM2dlqleYH.iIC4YhgrxQY}==0,1,0)+
-if(#{dASLmBTEehF.iIC4YhgrxQY}==0,1,0)+
-if(#{qU2LvzoPn1z.iIC4YhgrxQY}==0,1,0)+
-if(#{OkWaFxdUQY2.iIC4YhgrxQY}==0,1,0)+
-if(#{YHIv7KQc2e7.iIC4YhgrxQY}==0,1,0)+
-if(#{rt9D47Inb49.iIC4YhgrxQY}==0,1,0)+
-if(#{i1iXbquZ5iv.iIC4YhgrxQY}==0,1,0)+
-if(#{RcE30WBKrXI.iIC4YhgrxQY}==0,1,0)+
-if(#{EAG0GfdSMAs.iIC4YhgrxQY}==0,1,0)+
-if(#{N2aXs7VlJdJ.iIC4YhgrxQY}==0,1,0)+
-if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
+>>>#{LNAkkMTxqEW.e7d6Th5WLEM}+
+#{WyDZKSw82X6.e7d6Th5WLEM}+
+#{JPccVwAGRq9.e7d6Th5WLEM}+
+#{smxJz7Mt6ia.e7d6Th5WLEM}+
+#{AaIApgGQM6t.e7d6Th5WLEM}+
+#{vCTrmv52APd.e7d6Th5WLEM}+
+#{SOw2TcuFFH2.e7d6Th5WLEM}+
+#{RSIOx2u07Ln.e7d6Th5WLEM}+
+#{JStiDyaPfqy.e7d6Th5WLEM}+
+#{hZ1YvdcTDQM.e7d6Th5WLEM}+
+#{tsi32D8HQd5.e7d6Th5WLEM}+
+#{QWlPF8S0gCc.e7d6Th5WLEM}+
+#{a5uLTDt12eT.e7d6Th5WLEM}+
+#{U0AfOOyJMy2.e7d6Th5WLEM}+
+#{cyf6UdScfFM.e7d6Th5WLEM}+
+#{FeUTTNHpVzD.e7d6Th5WLEM}+
+#{mKSICD1rxG4.e7d6Th5WLEM}+
+#{mVNe1aS1pGl.e7d6Th5WLEM}+
+#{oLAXTZY6ken.e7d6Th5WLEM}+
+#{YYaRDUZyH9L.e7d6Th5WLEM}+
+#{HVteopBt0jr.e7d6Th5WLEM}+
+#{sWodd2tbjgZ.e7d6Th5WLEM}+
+#{yVYajDDYUfX.e7d6Th5WLEM}+
+#{eTJAr4sc83v.e7d6Th5WLEM}+
+#{U4KSmanl4JP.e7d6Th5WLEM}+
+#{FXsa5uG3IGn.e7d6Th5WLEM}+
+#{L34T9YDtCor.e7d6Th5WLEM}+
+#{W5mHXhSYFfQ.e7d6Th5WLEM}+
+#{cmSUyJOZwyl.e7d6Th5WLEM}+
+#{cT8sfosRXvU.e7d6Th5WLEM}+
+#{OaWKnMS7say.e7d6Th5WLEM}+
+#{Z4bjHvGS6aH.e7d6Th5WLEM}+
+#{Nn1L7CNEtC8.e7d6Th5WLEM}+
+#{RNYKSc3nAUg.e7d6Th5WLEM}+
+#{PtmZ9XqpPKi.e7d6Th5WLEM}+
+#{CohlLHi54B0.e7d6Th5WLEM}+
+#{Gu6u82RD9OW.e7d6Th5WLEM}+
+#{LiuYzxYr4Pt.e7d6Th5WLEM}+
+#{Tje33nJAG55.e7d6Th5WLEM}+
+#{euM2dlqleYH.e7d6Th5WLEM}+
+#{dASLmBTEehF.e7d6Th5WLEM}+
+#{qU2LvzoPn1z.e7d6Th5WLEM}+
+#{OkWaFxdUQY2.e7d6Th5WLEM}+
+#{YHIv7KQc2e7.e7d6Th5WLEM}+
+#{rt9D47Inb49.e7d6Th5WLEM}+
+#{i1iXbquZ5iv.e7d6Th5WLEM}+
+#{RcE30WBKrXI.e7d6Th5WLEM}+
+#{EAG0GfdSMAs.e7d6Th5WLEM}+
+#{N2aXs7VlJdJ.e7d6Th5WLEM}+
+#{xrjnOtFFTRC.e7d6Th5WLEM}
 >>
 >>**Edit denominator**:  
->>>**Description**: "Stockout percentage - MSR - Denominator"  
+>>>**Description**: "Stockout rate / % - MSR"  
 >>>**Calculation**: "0.5"  
+>
+>**27 Understock**  
+>The Indicator adds up the values in the data field "Understock" for calculating the number of items with understocks.
+>>**Name \(*)**: "Understock"  
+>>**Short Name \(*)**: "Understock - MSR"    
+>>**Description**: "Number of items with overstock"  
+>>**Decimals in data output**: "0"  
+>>**Indicator type \(*)**: "Number (Factor 1)"  
+>>**Edit numerator**:  
+>>>**Description**: "Understock - MSR - Numerator"  
+>>>**Calculation**:  
+>>>#{LNAkkMTxqEW.jJeAB3Dcibl}+
+#{WyDZKSw82X6.jJeAB3Dcibl}+
+#{JPccVwAGRq9.jJeAB3Dcibl}+
+#{smxJz7Mt6ia.jJeAB3Dcibl}+
+#{AaIApgGQM6t.jJeAB3Dcibl}+
+#{vCTrmv52APd.jJeAB3Dcibl}+
+#{SOw2TcuFFH2.jJeAB3Dcibl}+
+#{RSIOx2u07Ln.jJeAB3Dcibl}+
+#{JStiDyaPfqy.jJeAB3Dcibl}+
+#{hZ1YvdcTDQM.jJeAB3Dcibl}+
+#{tsi32D8HQd5.jJeAB3Dcibl}+
+#{QWlPF8S0gCc.jJeAB3Dcibl}+
+#{a5uLTDt12eT.jJeAB3Dcibl}+
+#{U0AfOOyJMy2.jJeAB3Dcibl}+
+#{cyf6UdScfFM.jJeAB3Dcibl}+
+#{FeUTTNHpVzD.jJeAB3Dcibl}+
+#{mKSICD1rxG4.jJeAB3Dcibl}+
+#{mVNe1aS1pGl.jJeAB3Dcibl}+
+#{oLAXTZY6ken.jJeAB3Dcibl}+
+#{YYaRDUZyH9L.jJeAB3Dcibl}+
+#{HVteopBt0jr.jJeAB3Dcibl}+
+#{sWodd2tbjgZ.jJeAB3Dcibl}+
+#{yVYajDDYUfX.jJeAB3Dcibl}+
+#{eTJAr4sc83v.jJeAB3Dcibl}+
+#{U4KSmanl4JP.jJeAB3Dcibl}+
+#{FXsa5uG3IGn.jJeAB3Dcibl}+
+#{L34T9YDtCor.jJeAB3Dcibl}+
+#{W5mHXhSYFfQ.jJeAB3Dcibl}+
+#{cmSUyJOZwyl.jJeAB3Dcibl}+
+#{cT8sfosRXvU.jJeAB3Dcibl}+
+#{OaWKnMS7say.jJeAB3Dcibl}+
+#{Z4bjHvGS6aH.jJeAB3Dcibl}+
+#{Nn1L7CNEtC8.jJeAB3Dcibl}+
+#{RNYKSc3nAUg.jJeAB3Dcibl}+
+#{PtmZ9XqpPKi.jJeAB3Dcibl}+
+#{CohlLHi54B0.jJeAB3Dcibl}+
+#{Gu6u82RD9OW.jJeAB3Dcibl}+
+#{LiuYzxYr4Pt.jJeAB3Dcibl}+
+#{Tje33nJAG55.jJeAB3Dcibl}+
+#{euM2dlqleYH.jJeAB3Dcibl}+
+#{dASLmBTEehF.jJeAB3Dcibl}+
+#{qU2LvzoPn1z.jJeAB3Dcibl}+
+#{OkWaFxdUQY2.jJeAB3Dcibl}+
+#{YHIv7KQc2e7.jJeAB3Dcibl}+
+#{rt9D47Inb49.jJeAB3Dcibl}+
+#{i1iXbquZ5iv.jJeAB3Dcibl}+
+#{RcE30WBKrXI.jJeAB3Dcibl}+
+#{EAG0GfdSMAs.jJeAB3Dcibl}+
+#{N2aXs7VlJdJ.jJeAB3Dcibl}+
+#{xrjnOtFFTRC.jJeAB3Dcibl}
+>>
+>>**Edit denominator**:  
+>>>**Description**: "Understock - MSR - Denominator"  
+>>>**Calculation**: "1"  
 
 #### 4.2 Indicator type
 The "Indicator type" is a precondition for configuring any "Indicator".
@@ -1723,18 +2102,27 @@ This "Legend" is created for selecting a specific colour for column charts inste
 
 #### 5.2 Predictor
 
-The following 3 Predictors need to be created for each item (Data element) separately:
-
-- Opening balance: identical with the "Stock on hand" from the end of the previous month
-
-- Closing balance: Opening balance + Stock received - Stock distributed 
-- Stock redistributed - Stock discarded   
-
-- Stock discrepancy: Stock on hand (as counted) - Closing balance
-
->**1 [Stock list] - Coefficient of variation - MSR**  
->>**Name \(*)**: "[Item] - Stock discrepancy - MSR"  
->>**Short name \(*)**: "[Item] - Stock discrepancy"
+>**1 [Stock list] - Appropriate stock - MSR**  
+>This Group Predictor assigns a "1" to the data field "Appropriate stock" if the stock coverage time lies between 3 and 6 months.
+>>**Name \(*)**: "[Stock list] - Appropriate stock - MSR"  
+>>**Short name \(*)**: "[Stock list] - Appropriate stock - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Apprpriate stock"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - Appropriate stock - MSR"  
+>>>**Expression**: ""
+>>
+>>**Sequential sample count \(*)**: "6"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**2 [Stock list] - Coefficient of variation - MSR**  
+This Group Predictor assigns the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) calculated from the past 6 months of data to the data field "Coefficient of variation.
+>>**Name \(*)**: "[Stock list] - Coefficient of variation - MSR"  
+>>**Short name \(*)**: "[Stock list] - Coefficient of variation - MSR"
 >>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
 >>**Output category option combo** "Coefficient of variation"  
 >>**Period type \(*)**: "Monthly"  
@@ -1742,14 +2130,105 @@ The following 3 Predictors need to be created for each item (Data element) separ
 >>**Organisation units providing data \(*)** "At selected level(s) only"  
 *THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
 >>**Generator \(*)**  
->>>**Description**: "[Stock list] - Coefficient of variation"  
->>>**Expression**: "forEach ?de in :DEG:nYcQWVqVsjx -->
+>>>**Description**: "[Stock list] - Coefficient of variation - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
 stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10"
 >>
 >>**Sequential sample count \(*)**: "6"  
 >>**Annual sample count \(*)**: "0"  
 >
->**2 [Stock list] - Stock coverage time - MSR**  
+>**3 [Stock list] - Excessive stock - MSR**  
+>This Group Predictor assigns a "1" to the data field "Excessive stock" if the stock coverage time is greater than 12 months.
+>>**Name \(*)**: "[Stock list] - Excessive stock - MSR"  
+>>**Short name \(*)**: "[Stock list] - Excessive stock - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Excessive stock"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - Excessive stock - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+if((#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs})>12,1,0)"
+>>
+>>**Sequential sample count \(*)**: "6"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**4 [Stock list] - High variability - MSR**  
+This Group Predictor assigns a "1" to the data field "High variability" if the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) calculated from the past 6 months is greater than 10.
+>>**Name \(*)**: "[Stock list] - High variability - MSR"  
+>>**Short name \(*)**: "[Stock list] - High variability - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "High variability"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - High variability - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+if(stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10>10,1,0)"
+>>
+>>**Sequential sample count \(*)**: "6"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**5 [Stock list] - Low variability - MSR**  
+This Group Predictor assigns a "1" to the data field "Low variability" if the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) calculated from the past 6 months is less than or equal to 5.
+>>**Name \(*)**: "[Stock list] - Low variability - MSR"  
+>>**Short name \(*)**: "[Stock list] - Low variability - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Low variability"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - Low variability - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+if(stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10<=5,1,0)"
+>>
+>>**Sequential sample count \(*)**: "6"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**6 [Stock list] - Medium variability - MSR**  
+This Group Predictor assigns a "1" to the data field "Low variability" if the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) calculated from the past 6 months is grater than 5 and less than or equal to 10.
+>>**Name \(*)**: "[Stock list] - Medium variability - MSR"  
+>>**Short name \(*)**: "[Stock list] - Medium variability - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Medium variability"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - Medium variability - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+if(stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10>5 && 
+stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10<=10,1,0)"
+>>
+>>**Sequential sample count \(*)**: "6"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**7 [Stock list] - Overstock - MSR**  
+>This Group Predictor assigns a "1" to the data field "Overstock" if the stock is greater than 6 but less than or equal to 12 months.
+>>**Name \(*)**: "[Stock list] - Excessive stock - MSR"  
+>>**Short name \(*)**: "[Stock list] - Excessive stock - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Apprpriate stock"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - Excessive stock - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+if((#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs})>12,1,0)"
+>>
+>>**Sequential sample count \(*)**: "6"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**8 [Stock list] - Stock coverage time - MSR**  
 >>**Name \(*)**: "[Stock list] - Stock coverage - MSR"  
 >>**Short name \(*)**: "[Stock list] - Stock coverage - MSR"  
 >>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
@@ -1759,14 +2238,15 @@ stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10"
 >>**Organisation units providing data \(*)** "At selected level(s) only"  
 *THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
 >>**Generator \(*)**  
->>>**Description**: "[Stock list] - Stock coverage time"  
->>>**Expression**: "forEach ?de in :DEG:nYcQWVqVsjx -->
-\#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs}"  
+>>>**Description**: "[Stock list] - Stock coverage time - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs}"  
 >>
 >>**Sequential sample count \(*)**: "0"  
 >>**Annual sample count \(*)**: "0"  
 >
->**3 [Stock list] - Stock discrepancy - MSR**  
+>**9 [Stock list] - Stock discrepancy - MSR**  
+This Group Predictor assigns the result of the following calculation to the data field "Stock discrepancy": Stock on hand from the previous month + Stock receipt - Stock distribution - Stock redistribution - Stock discard - Stock correction - Stock on hand.
 >>**Name \(*)**: "[Stock list] - Stock discrepancy - MSR"  
 >>**Short name \(*)**: "[Stock list] - Stock discrepancy - MSR"  
 >>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
@@ -1776,20 +2256,63 @@ stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10"
 >>**Organisation units providing data \(*)** "At selected level(s) only"  
 *THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
 >>**Generator \(*)**  
->>>**Description**: "[Stock list] - Stock discrepancy"  
->>>**Expression**: "forEach ?de in :DEG:nYcQWVqVsjx -->
->>>avg(#{?de.iIC4YhgrxQY})
->>>+#{?de.PnxWz4HI5V0}
->>>-#{?de.zogrUrI7Crs}
->>>-#{?de.Q1Wh1szjrkC}
->>>-#{?de.CE1WL7cxNry}
->>>-#{?de.ERgIsOh37NR}
->>>-#{?de.iIC4YhgrxQY}"
+>>>**Description**: "[Stock list] - Stock discrepancy - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+avg(#{?de.iIC4YhgrxQY})
++#{?de.PnxWz4HI5V0}
+-#{?de.zogrUrI7Crs}
+-#{?de.Q1Wh1szjrkC}
+-#{?de.CE1WL7cxNry}
+-#{?de.ERgIsOh37NR}
+-#{?de.iIC4YhgrxQY}"
 >>
 >>**Sequential sample count \(*)**: "1"  
 >>**Annual sample count \(*)**: "0"  
 >
->**4 [Stock list] - Stockout Yes/No - MSR**  
+>**10 [Stock list] - Stock discrepancy count - MSR**  
+This Group Predictor assigns "1" to the "Stock discrepancy count" if the stock discrepancy is greater than zero and otherwise assigns a zero..
+>>**Name \(*)**: "[Stock list] - Stock discrepancy count - MSR"  
+>>**Short name \(*)**: "[Stock list] - Stock discrepancy count - MSR"  
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Stock discrepancy count"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - Stock discrepancy count - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+if((avg(#{?de.iIC4YhgrxQY})
++#{?de.PnxWz4HI5V0}
+-#{?de.zogrUrI7Crs}
+-#{?de.Q1Wh1szjrkC}
+-#{?de.CE1WL7cxNry}
+-#{?de.ERgIsOh37NR}
+-#{?de.iIC4YhgrxQY})==0,0,1)"
+>>
+>>**Sequential sample count \(*)**: "1"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**11 [Stock list] - Stock on hand Yes/No - MSR**  
+This Group Predictor assigns "1" to the "Stock on hand Yes/No" data field if the stock on hand is greater than zero and otherwise assigns a zero.
+>>**Name \(*)**: "[Stock list] - Stock on hand Yes/No - MSR"  
+>>**Short name \(*)**: "[Stock list] - Stock on hand Yes/No - MSR"  
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Stock on hand Yes/No"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - Stock on hand Yes/No - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+if(#{?de.iIC4YhgrxQY}==0,0,1)"
+>>
+>>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**12 [Stock list] - Stockout Yes/No - MSR**  
+This Group Predictor assigns "1" to the "Stockout Yes/No" data field if the stock on hand is zero and otherwise assigns a zero.
 >>**Name \(*)**: "[Stock list] - Stockout Yes/No - MSR"  
 >>**Short name \(*)**: "[Stock list] - Stockout Yes/No - MSR"  
 >>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
@@ -1804,6 +2327,24 @@ stddevSamp(#{?de.zogrUrI7Crs})/avg(#{?de.zogrUrI7Crs})*10"
 if(#{?de.iIC4YhgrxQY}==0,1,0)"
 >>
 >>**Sequential sample count \(*)**: "0"  
+>>**Annual sample count \(*)**: "0"  
+>
+>**13 [Stock list] - Understock - MSR**  
+>This Group Predictor assigns a "1" to the data field "Understock" if the stock is greater than 0 but less than or equal to 3 months.
+>>**Name \(*)**: "[Stock list] - Understock - MSR"  
+>>**Short name \(*)**: "[Stock list] - Understock - MSR"
+>>**Output data element \(*)**: "[Item]" (select any item from the Data set)  
+>>**Output category option combo** "Apprpriate stock"  
+>>**Period type \(*)**: "Monthly"  
+>>**Organisation unit levels** "Facility"  
+>>**Organisation units providing data \(*)** "At selected level(s) only"  
+*THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
+>>**Generator \(*)**  
+>>>**Description**: "[Stock list] - Understock - MSR"  
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+if((#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs})>0 && (#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs})<=3,1,0)"
+>>
+>>**Sequential sample count \(*)**: "6"  
 >>**Annual sample count \(*)**: "0"  
 
 #### 5.3 Predictor group
@@ -2506,7 +3047,7 @@ This report provides the number of items which fall into the respective coeffici
 
 ![](image-39.png)
 
->**15 MSR - MSR - Coefficient of Variation x 10 distribution - Last month - Column chart**  
+>**15 MSR - Coefficient of Variation x 10 distribution - Column chart**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Coefficient of Variation x 10 distribution - Last month - Column chart"  
