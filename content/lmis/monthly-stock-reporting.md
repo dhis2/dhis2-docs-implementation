@@ -1890,6 +1890,9 @@ Xx
 >>>- 47 MSR - Stock correction - District - Pivot table  
 >>>- 48 MSR - Stock report complete - District - Pivot table  
 >>
+
+**XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX**
+
 >>**2.2 Indicators**  
 >>>- 49 MSR - Coefficient of Variation x 10 - District - Pivot table  
 >>>- 50 MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
@@ -2651,11 +2654,11 @@ This report displays the stock availability (number of items with non-zero stock
 >**Visualization type**: select "Column"  
 >**Name \(*)**: "MSR - Stockout percentage - Column chart"  
 >**Description**: "MSR DV 20 - Monthly Stock Reporting / Stockout percentage / Last 12 months / Health facility / Column chart
-This report displays a bar chart with the percentage of items with a stockout for the past 12 months."  
+This report displays a column chart with the percentage of items with a stockout for the past 12 months."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
 >>>>>**Indicator group**: "Stock availability"  
->>>>>>**Selected items**: "Stockout percentage"
+>>>>>>**Selected items**: "Stockout rate / %"
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -2678,7 +2681,7 @@ This report displays the stock availability (as percentage) and the stockout per
 >>>>**Indicator group**: "Stockout count"  
 >>>>**Selected items**:
 >>>>>- "Stock availability / %"  
->>>>>- "Stockout percentage"  
+>>>>>- "Stockout rate / %"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -2876,7 +2879,12 @@ This report displays a bar chart with the number of stockouts for each item duri
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 month"  
 >>
->>**Options**  
+>>**Options** 
+>>>**Legend** 
+>>>>>**Legend type**  
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stockout count"  
+>>>
 >>>**Data**  
 >>>>**Hide empty categories**: "All"  
 >>>**Limit values**  
@@ -2919,7 +2927,7 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>>>>**Legend**: "Stock coverage time"  
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
-![](image-32.png)
+![](image-160.png)
 
 >**29 MSR - Stock coverage time distribution - Pivot table**  
 >
@@ -2965,10 +2973,10 @@ This report displays a Pivot table  with the number of items for which the cover
 
 ![](image-52.png)
 
->**30 MSR - Stock coverage time distribution - Column chart**  
+>**30 MSR - Stock coverage time distribution - Column chart - Last 12 months**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - Column chart"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Column chart - Last 12 months"  
 >**Description**: "MSR DV 30 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / Health facility / Column chart
 This report displays a group of column charts representing the number of items for each stock coverage time bin (in months and years) for the past 12 months."  
 >>**Series**  
@@ -3003,10 +3011,10 @@ This report displays a group of column charts representing the number of items f
 
 ![](image-138.png)
 
->>**31 MSR - Stock coverage time distribution - Column chart**  
+>>**31 MSR - Stock coverage time distribution - Column chart - Last month**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - Column chart"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Column chart - Last month"  
 >**Description**: "MSR DV 31 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / Health facility / Column chart
 This report displays a group of column charts representing the stock coverage time distribution (in months and years) for the last month."  
 >>**Series**  
@@ -3104,7 +3112,7 @@ For each of the 12 past months, this report displays a stacked column chart with
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock discrepancy - Pivot table"  
->**Description**: ">MSR DV 34 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
+>**Description**: "MSR DV 34 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / Health facility / Pivot table  
 This report displays a list with the positive and negative stock discrepancy of the past 12 months. The stock discrepancy is calculated as follows  
 > Stock on hand from the previous month (final stock on hand)  
 > + Stock receipt  
@@ -3112,7 +3120,7 @@ This report displays a list with the positive and negative stock discrepancy of 
 > - Stock redistributed  
 > - Stock discard  
 > - Stock correction  
-> - Stock on hand"  
+> - Stock on hand."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -3181,7 +3189,6 @@ This report displays the number of stock discrepancies for the last month as a s
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last month"  
->
 
 ![](image-139.png)
 
@@ -3221,8 +3228,8 @@ This report displays the percentage of all items with a stock discrepancies for 
 >**38 MSR - Report completeness - Pivot table chart**  
 >
 >**Visualization type**: select "Pivot"  
->**Name \(*)**: "MSR - Stock reporting complete - Pivot table"  
->**Visualization type**: "MSR DV 38 - Monthly Stock Reporting / Stock reporting complete / Last 12 months / Health facility / Pivot table
+>**Name \(*)**: "MSR - Report completeness - Pivot table"  
+>**Visualization type**: "MSR DV 38 - Monthly Stock Reporting / Report completeness / Last 12 months / Health facility / Pivot table
 This report provides the "Reporting rate", "Reporting rate on time", "Actual reports", "Actual reports on time" as well as the "Expected reports" for the last 12 months as a Pivot table."
 >>
 >>**Columns**  
@@ -3248,8 +3255,8 @@ This report provides the "Reporting rate", "Reporting rate on time", "Actual rep
 
 >**39 MSR - Report completeness - Line chart**  
 >
->**Visualization type**: select "Pivot"  
->**Name \(*)**: "MSR - Stock reporting complete - Pivot table"  
+>**Visualization type**: select "Line"  
+>**Name \(*)**: "MSR - Report completeness - Line chart"  
 >**Visualization type**: "MSR DV 39 - Monthly Stock Reporting / Report completeness / Last 12 months / Health facility / Line chart
 This report provides the "Reporting rate", "Reporting rate on time", "Actual reports", "Actual reports on time" as well as the "Expected reports" for the last 12 months as a line chart."
 >>
@@ -3281,12 +3288,30 @@ This report provides the "Reporting rate", "Reporting rate on time", "Actual rep
 >>>>>**Max**:  1  
 >>>>>**Steps**:  "5"  
 >>>>
->>>>**Vertical (y) axis 1**  
+>>>>**Vertical (y) axis 2**  
 >>>>>**Axis title**: select "Custom" and "Report rate / %"
 >>>>>**Axis range**:  
 >>>>>**Min**:  0  
 >>>>>**Max**:  100  
 >>>>>**Steps**:  "5"  
+>>>
+>>>**Series**  
+>>>>**Data item**: select
+>>>>>- "Monthly stock report - Reporting rate"
+>>>>>- "Monthly stock report - Reporting rate on time"
+>>>>**Visualization type**: Column chart icon  
+>>>>**Axis 2**: select
+>>>>>- "Monthly stock report - Reporting rate"
+>>>>>- "Monthly stock report - Reporting rate on time"
+>>>>**Data item**: select
+>>>>>- "Monthly stock report - Actual reports"
+>>>>>- "Monthly stock report - Actual reports on time"
+>>>>>- "Monthly stock report - Expected reports"
+>>>>**Visualization type**: Line chart icon  
+>>>>**Axis 1**: select
+>>>>>- "Monthly stock report - Actual reports"
+>>>>>- "Monthly stock report - Actual reports on time"
+>>>>>- "Monthly stock report - Expected reports"
 
 ![](image-141.png)
 
@@ -3323,7 +3348,7 @@ This report provides the "Reporting rate" for the last 12 months for the health 
 >**41 MSR - Reporting rate on time - Single value chart**  
 >
 >**Visualization type**: select "Single value"  
->**Name \(*)**: "41 MSR - Reporting rate on time - Single value chart"  
+>**Name \(*)**: "MSR - Reporting rate on time - Single value chart"  
 >**Visualization type**: "MSR DV 41 - Monthly Stock Reporting / Reporting rate on time / Last 12 months / Health facility / Single value chart
 This report provides the "Reporting rate" for the last 12 months for the health facility as single value chart."
 >>
