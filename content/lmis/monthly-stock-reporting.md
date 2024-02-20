@@ -2431,9 +2431,6 @@ Xx
 >>>- 47 MSR - Stock correction - District - Pivot table  
 >>>- 48 MSR - Stock report complete - District - Pivot table  
 >>
-
-**XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX**
-
 >>**2.2 Indicators**  
 >>>- 49 MSR - Coefficient of Variation x 10 - District - Pivot table  
 >>>- 50 MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
@@ -2444,8 +2441,8 @@ Xx
 >>>- 55 MSR - Stock availability - District - Pivot table  
 >>>- 56 MSR - Stock availability - District - Column chart - Last 12 months  
 >>>- 57 MSR - Stock availability - District - Column chart - Last month  
->>>- 58 MSR - Stockout percentage - District - Column chart
->>>- 59 MSR - Stock availability and stockout percentage - District - Stacked column chart
+>>>- 58 MSR - Stockout rate / % - District - Column chart
+>>>- 59 MSR - Stock availability and stockout rate - District - Stacked column chart
 >>>- 60 MSR - Stockouts - District - Pivot table  
 >>>- 61 MSR - Stockout count - District - Pivot table  
 >>>- 62 MSR - Stockout count - District - Column chart  
@@ -4842,7 +4839,7 @@ For the last month, this report displays a stacked column chart with the number 
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last month"  
 
-![](image-150.png)
+![](image-177.png)
 
 >>**71 MSR - Stock coverage time ranges - District  - Stacked column chart**  
 >
@@ -4958,7 +4955,7 @@ This report displays the number of stock discrepancies for the last month as a s
 >**75 MSR - Report completeness - District - Pivot table chart**  
 >
 >**Visualization type**: select "Pivot"  
->**Name \(*)**: "MSR - Stock reporting complete - District - Pivot table"  
+>**Name \(*)**: "MSR - Report completeness - District - Pivot table chart"  
 >**Visualization type**: "MSR DV 75 - Monthly Stock Reporting / Stock reporting complete / Last 12 months / District / Pivot table
 This report provides the "Reporting rate", "Reporting rate on time", "Actual reports", "Actual reports on time" as well as the "Expected reports" for the last 12 months for all health facilities in the district as a Pivot table."
 >>
@@ -6174,18 +6171,18 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>- MSR - Stock discard - District - Pivot table  
 >>>- MSR - Stock on hand - District - Pivot table  
 >>>- MSR - Stock correction - District - Pivot table  
->>>- MSR - Stock report complete - District - Pivot table - Last 3 months  
+>>>- MSR - Stock report complete - District - Pivot table  
 >>>- MSR - Coefficient of Variation x 10 - District - Pivot table  
 >>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
 >>>- MSR - Coefficient of Variation x 10 - District - Column chart  
 >>>- MSR - Coefficient of Variation x 10 distribution - District - Pivot table  
->>>- MSR - Coefficient of Variation x 10 distribution - District - Stacked Column chart- Last 12 months  
->>>- MSR - Coefficient of Variation x 10 distribution - District - Column chart  - Last month  
+>>>- MSR - Coefficient of Variation x 10 distribution - District - Stacked Column chart  
+>>>- MSR - Coefficient of Variation x 10 distribution - District - Column chart  
 >>>- MSR - Stock availability - District - Pivot table  
->>>- MSR - Stock availability - District - Column chart  
->>>- MSR - Stock availability - District - Column chart  
->>>- **xx** MSR - Stockout percentage - District - Column chart
->>>- **xx** MSR - Stock availability and stockout percentage - District - Stacked column chart
+>>>- MSR - Stock availability - District - Column chart - Last 12 months 
+>>>- MSR - Stock availability - District - Column chart - Last month  
+>>>- MSR - Stockout percentage - District - Column chart
+>>>- MSR - Stock availability and stockout rate - District - Stacked column chart
 >>>- MSR - Stockouts - District - Pivot table  
 >>>- MSR - Stockout count - District - Pivot table  
 >>>- MSR - Stockout count - District - Column chart  
@@ -6196,11 +6193,11 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>- MSR - Stock coverage time distribution - District - Pivot table  
 >>>- MSR - Stock coverage time distribution - District - Stacked column chart- Last 12 months   
 >>>- MSR - Stock coverage time distribution - District - Stacked column chart - Last month  
->>>- **xx** MSR - Stock coverage time ranges - District - Last month
->>>- **xx** MSR - Stock coverage time ranges - District - Last 12 months
+>>>- MSR - Stock coverage time ranges - District - Last month
+>>>- MSR - Stock coverage time ranges - District - Last 12 months
 >>>- MSR - Stock discrepancy - District - Pivot table  
 >>>- MSR - Stock discrepancy count - District - Stacked column chart  
->>>- **xx** MSR - Stock discrepancy count - Percentage - District - Column chart  
+>>>- MSR - Stock discrepancy count - Percentage - District - Column chart  
 >>>- MSR - Health facilies - District - Map  
 >>>- MSR - Stock availability - District - Map  
 >>>- MSR - Stock discrepancy count - District - Map  
