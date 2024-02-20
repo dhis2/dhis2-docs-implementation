@@ -2399,7 +2399,7 @@ Xx
 >>>- 18 MSR - Stock availability - Single value chart  
 >>>- 19 MSR - Stock availability - Gauge chart  
 >>>- 20 MSR - Stockout percentage - Column chart  
->>>- 21 MSR - Stock availability and stockout percentage - Stacked column chart  
+>>>- 21 MSR - Stock availability and stockout rate - Stacked column chart  
 >>>- 22 MSR - Stockouts - Stacked column chart  
 >>>- 23 MSR - Stockout count - Pivot table  
 >>>- 24 MSR - Stockout count - Column chart  
@@ -6118,7 +6118,7 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>- MSR - Stock availability - Single value chart  
 >>- MSR - Stock availability - Gauge chart  
 >>- MSR - Stockout percentage - Column chart
->>- MSR - Stock availability and stockout percentage - Stacked column chart
+>>- MSR - Stock availability and stockout rate - Stacked column chart
 >>- MSR - Stockouts - Stacked column chart  
 >>- MSR - Stockout count - Pivot table  
 >>- MSR - Stockout count - Column chart  
@@ -6181,7 +6181,7 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>- MSR - Stock availability - District - Pivot table  
 >>>- MSR - Stock availability - District - Column chart - Last 12 months 
 >>>- MSR - Stock availability - District - Column chart - Last month  
->>>- MSR - Stockout percentage - District - Column chart
+>>>- MSR - Stockout rate / % - District - Column chart
 >>>- MSR - Stock availability and stockout rate - District - Stacked column chart
 >>>- MSR - Stockouts - District - Pivot table  
 >>>- MSR - Stockout count - District - Pivot table  
@@ -6197,7 +6197,11 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>- MSR - Stock coverage time ranges - District - Last 12 months
 >>>- MSR - Stock discrepancy - District - Pivot table  
 >>>- MSR - Stock discrepancy count - District - Stacked column chart  
->>>- MSR - Stock discrepancy count - Percentage - District - Column chart  
+>>>- MSR - Stock discrepancy count - District - Single value chart
+>>>- MSR - Report completeness - District - Pivot table chart  
+>>>- MSR - Reporting rate - District - Column chart  
+>>>- MSR - Reporting rate - District - Single value chart  
+>>>- MSR - Reporting rate on time - District - Single value chart  
 >>>- MSR - Health facilies - District - Map  
 >>>- MSR - Stock availability - District - Map  
 >>>- MSR - Stock discrepancy count - District - Map  
