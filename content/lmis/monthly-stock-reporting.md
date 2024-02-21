@@ -2377,101 +2377,101 @@ Xx
 
 >**1 Health facility level**  
 >>**1.1 Statistics**  
->>>- 1 MSR - Stock receipt - Pivot table  
->>>- 2 MSR - Stock distribution - Pivot table  
->>>- 3 MSR - Stock redistribution - Pivot table  
->>>- 4 MSR - Stock discard - Pivot table  
->>>- 5 MSR - Stock on hand - Pivot table  
->>>- 6 MSR - Stock correction - Pivot table  
->>>- 7 MSR - Stock report complete - Pivot table - Last 3 months  
->>>- 8 MSR - Stock report complete - Pivot table - Last 12 months  
->>>- 9 MSR - Stock report complete - Column chart
+>>>- 1 MSR - Stock receipt  
+>>>- 2 MSR - Stock distribution  
+>>>- 3 MSR - Stock redistribution  
+>>>- 4 MSR - Stock discard  
+>>>- 5 MSR - Stock on hand  
+>>>- 6 MSR - Stock correction  
+>>>- 7 MSR - Stock report complete - Last 3 months  
+>>>- 8 MSR - Stock report complete - Last 12 months  
+>>>- 9 MSR - Stock report complete
 >>
 >>**1.2 Indicators**  
->>>- 10 MSR - Coefficient of Variation x 10 - Pivot table  
->>>- 11 MSR - Coefficient of Variation x 10 - Stacked bar chart  
->>>- 12 MSR - Coefficient of Variation x 10 - Column chart  
->>>- 13 MSR - Coefficient of Variation x 10 distribution - Pivot table  
->>>- 14 MSR - Coefficient of Variation x 10 distribution - Stacked Column chart  
->>>- 15 MSR - Coefficient of Variation x 10 distribution - Column chart  
->>>- 16 MSR - Stock availability - Pivot table  
->>>- 17 MSR - Stock availability - Column chart  
->>>- 18 MSR - Stock availability - Single value chart  
->>>- 19 MSR - Stock availability - Gauge chart  
->>>- 20 MSR - Stockout percentage - Column chart  
->>>- 21 MSR - Stock availability and stockout rate - Stacked column chart  
->>>- 22 MSR - Stockouts - Stacked column chart  
->>>- 23 MSR - Stockout count - Pivot table  
->>>- 24 MSR - Stockout count - Column chart  
->>>- 25 MSR - Stockout count - Single value chart  
->>>- 26 MSR - Stockout length - Pivot table  
->>>- 27 MSR - Stockout length - Bar chart  
->>>- 28 MSR - Stock coverage time - Pivot table  
->>>- 29 MSR - Stock coverage time distribution - Pivot table  
->>>- 30 MSR - Stock coverage time distribution - Column chart - Last 12 months  
->>>- 31 MSR - Stock coverage time distribution - Column chart - Last month  
->>>- 32 MSR - Stock coverage time ranges - Column chart  
->>>- 33 MSR - Stock coverage time ranges - Stacked column chart  
->>>- 34 MSR - Stock discrepancy - Pivot table  
->>>- 35 MSR - Stock discrepancy count - Column chart  
->>>- 36 MSR - Stock discrepancy count - Single value chart  
->>>- 37 MSR - Stock discrepancy count - Percentage - Column chart  
->>>- 38 MSR - Report completeness - Pivot table chart  
->>>- 39 MSR - Report completeness - Line chart  
->>>- 40 MSR - Reporting rate - Single value chart  
->>>- 41 MSR - Reporting rate on time - Single value chart  
+>>>- 10 MSR - Coefficient of Variation x 10  
+>>>- 11 MSR - Coefficient of Variation x 10  
+>>>- 12 MSR - Coefficient of Variation x 10  
+>>>- 13 MSR - Coefficient of Variation x 10 distribution  
+>>>- 14 MSR - Coefficient of Variation x 10 distribution  
+>>>- 15 MSR - Coefficient of Variation x 10 distribution  
+>>>- 16 MSR - Stock availability  
+>>>- 17 MSR - Stock availability  
+>>>- 18 MSR - Stock availability  
+>>>- 19 MSR - Stock availability  
+>>>- 20 MSR - Stockout percentage  
+>>>- 21 MSR - Stock availability and stockout rate  
+>>>- 22 MSR - Stockouts  
+>>>- 23 MSR - Stockout count  
+>>>- 24 MSR - Stockout count  
+>>>- 25 MSR - Stockout count  
+>>>- 26 MSR - Stockout length  
+>>>- 27 MSR - Stockout length  
+>>>- 28 MSR - Stock coverage time  
+>>>- 29 MSR - Stock coverage time distribution  
+>>>- 30 MSR - Stock coverage time distribution - Last 12 months  
+>>>- 31 MSR - Stock coverage time distribution - Last month  
+>>>- 32 MSR - Stock coverage time ranges   
+>>>- 33 MSR - Stock coverage time ranges  
+>>>- 34 MSR - Stock discrepancy  
+>>>- 35 MSR - Stock discrepancy count  
+>>>- 36 MSR - Stock discrepancy count  
+>>>- 37 MSR - Stock discrepancy count - Percentage  
+>>>- 38 MSR - Report completeness  
+>>>- 39 MSR - Report completeness  
+>>>- 40 MSR - Reporting rate  
+>>>- 41 MSR - Reporting rate on time  
 >
 >**2 District level**  
 >>**2.1 Statistics**  
->>>- 42 MSR - Stock receipt - District - Pivot table  
->>>- 43 MSR - Stock distribution - District - Pivot table  
->>>- 44 MSR - Stock redistribution - District - Pivot table  
->>>- 45 MSR - Stock discard - District - Pivot table  
->>>- 46 MSR - Stock on hand - District - Pivot table  
->>>- 47 MSR - Stock correction - District - Pivot table  
->>>- 48 MSR - Stock report complete - District - Pivot table  
+>>>- 42 MSR - Stock receipt - District  
+>>>- 43 MSR - Stock distribution - District  
+>>>- 44 MSR - Stock redistribution - District  
+>>>- 45 MSR - Stock discard - District  
+>>>- 46 MSR - Stock on hand - District  
+>>>- 47 MSR - Stock correction - District  
+>>>- 48 MSR - Stock report complete - District  
 >>
 >>**2.2 Indicators**  
->>>- 49 MSR - Coefficient of Variation x 10 - District - Pivot table  
->>>- 50 MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
->>>- 51 MSR - Coefficient of Variation x 10 - District - Column chart  
->>>- 52 MSR - Coefficient of Variation x 10 distribution - District - Pivot table  
->>>- 53 MSR - Coefficient of Variation x 10 distribution - District - Stacked Column chart  
->>>- 54 MSR - Coefficient of Variation x 10 distribution - District - Column chart  
->>>- 55 MSR - Stock availability - District - Pivot table  
->>>- 56 MSR - Stock availability - District - Column chart - Last 12 months  
->>>- 57 MSR - Stock availability - District - Column chart - Last month  
->>>- 58 MSR - Stockout rate / % - District - Column chart
->>>- 59 MSR - Stock availability and stockout rate - District - Stacked column chart
->>>- 60 MSR - Stockouts - District - Pivot table  
->>>- 61 MSR - Stockout count - District - Pivot table  
->>>- 62 MSR - Stockout count - District - Column chart  
->>>- 63 MSR - Stockout count - District - Single value chart  
->>>- 64 MSR - Stockout length - District - Pivot table  
->>>- 65 MSR - Stockout length - District - Stacked bar chart  
->>>- 66 MSR - Stock coverage time - District - Pivot table  
->>>- 67 MSR - Stock coverage time distribution - District - Pivot table  
->>>- 68 MSR - Stock coverage time distribution - District - Stacked column chart- Last 12 months  
->>>- 69 MSR - Stock coverage time distribution - District - Stacked column chart - Last month  
->>>- 70 MSR - Stock coverage time ranges - District - Column chart  
->>>- 71 MSR - Stock coverage time ranges - District - Stacked column chart  
->>>- 72 MSR - Stock discrepancy - District - Pivot table  
->>>- 73 MSR - Stock discrepancy count - District - Stacked column chart  
->>>- 74 MSR - Stock discrepancy count - District - Single value chart  
->>>- 75 MSR - Report completeness - District - Pivot table chart  
->>>- 76 MSR - Reporting rate - District - Column chart  
->>>- 77 MSR - Reporting rate - District - Single value chart  
->>>- 78 MSR - Reporting rate on time - District - Single value chart  
+>>>- 49 MSR - Coefficient of Variation x 10 - District  
+>>>- 50 MSR - Coefficient of Variation x 10 - District  
+>>>- 51 MSR - Coefficient of Variation x 10 - District  
+>>>- 52 MSR - Coefficient of Variation x 10 distribution - District  
+>>>- 53 MSR - Coefficient of Variation x 10 distribution - District  
+>>>- 54 MSR - Coefficient of Variation x 10 distribution - District  
+>>>- 55 MSR - Stock availability - District  
+>>>- 56 MSR - Stock availability - District - Last 12 months  
+>>>- 57 MSR - Stock availability - District - Last month  
+>>>- 58 MSR - Stockout rate / % - District  
+>>>- 59 MSR - Stock availability and stockout rate - District  
+>>>- 60 MSR - Stockouts - District  
+>>>- 61 MSR - Stockout count - District  
+>>>- 62 MSR - Stockout count - District  
+>>>- 63 MSR - Stockout count - District  
+>>>- 64 MSR - Stockout length - District  
+>>>- 65 MSR - Stockout length - District  
+>>>- 66 MSR - Stock coverage time - District  
+>>>- 67 MSR - Stock coverage time distribution - District  
+>>>- 68 MSR - Stock coverage time distribution - District - Last 12 months  
+>>>- 69 MSR - Stock coverage time distribution - District - Last month  
+>>>- 70 MSR - Stock coverage time ranges - District  
+>>>- 71 MSR - Stock coverage time ranges - District  
+>>>- 72 MSR - Stock discrepancy - District  
+>>>- 73 MSR - Stock discrepancy count - District  
+>>>- 74 MSR - Stock discrepancy count - District  
+>>>- 75 MSR - Report completeness - District  
+>>>- 76 MSR - Reporting rate - District  
+>>>- 77 MSR - Reporting rate - District  
+>>>- 78 MSR - Reporting rate on time - District  
 >
 >**3 Province level**  
 >>**3.1 Statistics**  
->>>- 79 MSR - Stock receipt - Province - Pivot table  
->>>- 80 MSR - Stock distribution - Province - Pivot table  
->>>- 81 MSR - Stock redistribution - Province - Pivot table  
->>>- 82 MSR - Stock discard - Province - Pivot table  
->>>- 83 MSR - Stock on hand - Province - Pivot table  
->>>- 84 MSR - Stock correction - Province - Pivot table  
->>>- 85 MSR - Stock report complete - Province - Pivot table  
+>>>- 79 MSR - Stock receipt - Province  
+>>>- 80 MSR - Stock distribution - Province  
+>>>- 81 MSR - Stock redistribution - Province  
+>>>- 82 MSR - Stock discard - Province  
+>>>- 83 MSR - Stock on hand - Province  
+>>>- 84 MSR - Stock correction - Province  
+>>>- 85 MSR - Stock report complete - Province  
 >>
 >>**3.2 Indicators**  
 >>>- 86 MSR - Coefficient of Variation x 10 - Province  
