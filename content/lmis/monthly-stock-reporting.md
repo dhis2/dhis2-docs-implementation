@@ -2482,7 +2482,7 @@ Xx
 >>>- 91 MSR - Stock availability - Province  
 >>>- 92 MSR - Stockout percentage - Province  
 >>>- 93 MSR - Stock availability and stockout percentage - Province  
->>>- 94 MSR - Stockouts - Province - Item  
+>>>- 94 MSR - Stockouts - Province
 >>>- 95 MSR - Stockout count - Province  
 >>>- 96 MSR - Stockout count - Province  
 >>>- 97 MSR - Stockout count - Province  
@@ -2495,9 +2495,6 @@ Xx
 >>>- 104 MSR - Stock discrepancy - Province  
 >>>- 105 MSR - Stock discrepancy count - Province  
 >>>- 106 MSR - Stock discrepancy count - Province  
-
-**xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
-Build
 >>>- 107 MSR - Report completeness - Province  
 >>>- 108 MSR - Reporting rate - Province  
 >>>- 109 MSR - Reporting rate on time - Province  
@@ -2511,6 +2508,9 @@ Build
 >>>- 115 MSR - Stock on hand - Province - Pivot table  
 >>>- 116 MSR - Stock correction - Province - Pivot table  
 >>>- 117 MSR - Stock report complete - Province - Pivot table  
+
+**xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
+
 >>
 >>**4.2 Indicators**  
 >>>- 118 MSR - Coefficient of Variation x 10 - Province - Stacked bar chart
@@ -5545,7 +5545,7 @@ This report displays a Pivot table with all items and indicating for each item w
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
 
-![](image-128.png)
+![](image-205.png)
 
 >**95 MSR - Stockout count - Province**  
 >
@@ -5613,7 +5613,7 @@ This report displays the number of stockouts for each of the past 12 months for 
 
 >**97 MSR - Stockout count - Province**  
 >
->**Visualization type**: select "Column chart"  
+>**Visualization type**: select "Single value"  
 >**Name \(*)**: "MSR - Stockout count - Province"  
 >**Description**: "MSR DV 97 - Monthly Stock Reporting / Stockout count / Last month / Province / Single value chart
 This report displays the number of stockouts for all items across districts in a province for the last month as a Single value chart."  
@@ -5789,9 +5789,9 @@ This report displays a Pivot table  with the number of items for which the cover
 
 >>**102 MSR - Stock coverage time ranges - Province**  
 >
->**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - Province"  
->**Description**: "MSR DV 102 - Monthly Stock Reporting / Stock coverage time / Ranges / Province / Column chart / Last month
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock coverage time  ranges - Province"  
+>**Description**: "MSR DV 102 - Monthly Stock Reporting / Stock coverage time / Ranges / Province / Stacked column chart / Last month
 For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
@@ -5814,7 +5814,7 @@ For the last month, this report displays a stacked column chart with the number 
 
 ![](image-188.png)
 
->>**103 MSR - Stock coverage time ranges - Province  - Stacked column chart**  
+>>**103 MSR - Stock coverage time ranges - Province**  
 >
 >**Visualization type**: select "Stacked column"  
 >**Name \(*)**: "MSR - Stock coverage time distribution - Province"  
@@ -5826,7 +5826,7 @@ For the last month, this report displays a stacked column chart with the number 
 >>**Category**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 months"  
+>>>>**Selected Periods**: "Last month"  
 >>>
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -5926,10 +5926,10 @@ This report displays the number of stock discrepancies across the province for t
 
 ![](image-191.png)
 
->**107 MSR - Report completeness - District - Pivot table chart**  
+>**107 MSR - Report completeness - District**  
 >
 >**Visualization type**: select "Pivot"  
->**Name \(*)**: "MSR - Report completeness - District - Pivot table chart"  
+>**Name \(*)**: "MSR - Report completeness - District"  
 >**Visualization type**: "MSR DV 107 - Monthly Stock Reporting / Stock reporting complete / Last month / District / Pivot table
 This report provides the "Reporting rate", "Reporting rate on time", "Actual reports", "Actual reports on time" as well as the "Expected reports" for the last month for all health facilities in the province as a Pivot table."
 >>
@@ -5953,7 +5953,7 @@ This report provides the "Reporting rate", "Reporting rate on time", "Actual rep
 
 ![](image-192.png)
 
->**108 MSR - Reporting rate - District - Single value chart**  
+>**108 MSR - Reporting rate - Province**  
 >
 >**Visualization type**: select "Single value"  
 >**Name \(*)**: "MSR - Reporting rate - Province"  
@@ -6013,7 +6013,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 
 ![](image-156.png)
 
-## Map App - Analytics
+## Maps App - Analytics
 
 >**1 Health facility**  
 >>>- 1 MSR - Health facility  
@@ -6049,34 +6049,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 
 #### Statistics
 
->**1 MSR - Health facilities - District**  
->
->**Name \(*)**: "MSR - Health facilities - District"  
->**Decription**: "This map displays the location of all health facilities in a district together with the administrative district boundary on a map."  
->
->**Add layer**  
->>**1 Facilities**  
->>>**Organisation Units**  
->>>>**Selection**: "User organisation unit"  
->>>>**Level**: "Facility"  
->>>**Style**  
->>>>**Labels**  
->>>>>**Size**: "15"  
->>>>>**Colour**: select black  
->>>>**Point color**: select preferred colour  
->>>>**Point radius**: "10"  
->>
->>**2 Organisation units**  
->>>**Organisation Units**  
->>>>**Selection**: "User organisation unit"  
->>>>**Level**: "District"  
->>>**Style**  
->>>>**Labels**: tag (appears as a white tick in a green square)  
->>>>>**Size**: "20"  
->>>>>**Colour**: select red  
->>>>**Boundary colour**: select preferred colour  
->
->**2 MSR - Health facility**  
+>**1 MSR - Health facility**  
 >
 >**Name \(*)**: "MSR - Health facility"  
 >**Decription**: "This map displays the location of a health facility together with the administrative district boundary on a map."  
@@ -6104,7 +6077,44 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Size**: "20"  
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
+
+![](image-193.png)
+
+### District level
+
+#### Statistics
+
+>**2 MSR - Health facilities - District**  
 >
+>**Name \(*)**: "MSR - Health facilities - District"  
+>**Decription**: "This map displays the location of all health facilities in a district together with the administrative district boundary on a map."  
+>
+>**Add layer**  
+>>**1 Facilities**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Facility"  
+>>>**Style**  
+>>>>**Labels**  
+>>>>>**Size**: "15"  
+>>>>>**Colour**: select black  
+>>>>**Point color**: select preferred colour  
+>>>>**Point radius**: "10"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+
+![](image-194.png)
+
+#### Indicators
+
 >**3 MSR - Stock availability - District**  
 >
 >**Name \(*)**: "MSR - Health facility"  
@@ -6143,7 +6153,9 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Size**: "20"  
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
->
+
+![](image-195.png)
+
 >**4 MSR - Stock discrepancy count - District**  
 >
 >**Name \(*)**: "MSR - Stock discrepancy count - District"  
@@ -6184,8 +6196,367 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Size**: "20"  
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
->
+
+![](image-196.png)
+
 >**5 MSR - Stockout count - District**  
+>
+>**Name \(*)**: "MSR - Stockout count - District"  
+>**Decription**: "This map displays the stockout count for all health facilities in a district with the administrative district boundary on a map as a timeline for the past 12 months."  
+>
+>**Add layer**  
+>>**1 Stockout count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stockout count"  
+>>>>**Indicator**: "Stockout count"  
+>>>>**Aggregation type**: "By data element"  
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+
+![](image-197.png)
+
+### Province level
+
+#### Statistics
+
+>**6 MSR - Health facilities - Province**  
+>
+>**Name \(*)**: "MSR - Health facilities - Province"  
+>**Decription**: "This map displays the location of all health facilities in a province together with the administrative district boundary on a map."  
+>
+>**Add layer**  
+>>**1 Facilities**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Facility"  
+>>>**Style**  
+>>>>**Labels**  
+>>>>>**Size**: "15"  
+>>>>>**Colour**: select black  
+>>>>**Point color**: select preferred colour  
+>>>>**Point radius**: "10"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+>>
+>>**3 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Province"  
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select blue  
+>>>>**Boundary colour**: select preferred colour  
+
+![](image-198.png)
+
+#### Indicators
+
+>**7 MSR - Stock availability - Province**  
+>
+>**Name \(*)**: "MSR - Health facilities - Province"  
+>**Decription**: "This map displays the stock availability for all health facilities in a province with the administrative district and province boundaries as a timeline for the past 12 months on a map."  
+>
+>**Add layer**  
+>>**1 Stock availability / %**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stock availability / %"  
+>>>>**Indicator**: "Stock availability / %"  
+>>>>**Aggregation type**: "By data element"  
+>>>
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+>>
+>>**3 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Province"  
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select blue  
+>>>>**Boundary colour**: select preferred colour  
+
+![](image-202.png)
+
+>**8 MSR - Stock discrepancy count - Province**  
+>
+>**Name \(*)**: "MSR - Stock discrepancy count - Province"  
+>**Decription**: "This map displays the stock discrepancy count for all health facilities in a province with the administrative district and province boundaries as a timeline for the past 12 months on a map."  
+>
+>**Add layer**  
+>>**1 Stock discrepancy count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stock discrepancy count"  
+>>>>**Indicator**: "Stock discrepancy count"  
+>>>>**Aggregation type**: "By data element"  
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+>>
+>>**3 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Province"  
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select blue  
+>>>>**Boundary colour**: select preferred colour  
+
+![](image-203.png)
+
+>**9 MSR - Stockout count - Province**  
+>
+>**Name \(*)**: "MSR - Stockout count - Province"  
+>**Decription**: "This map displays the stockout count for all health facilities in a province with the administrative district and province boundaries on a map as a timeline for the past 12 months."  
+>**Add layer**  
+>>**1 Stockout count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stockout count"  
+>>>>**Indicator**: "Stockout count"  
+>>>>**Aggregation type**: "By data element"  
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+>>
+>>**3 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Province"  
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select blue  
+>>>>**Boundary colour**: select preferred colour  
+
+![](image-204.png)
+
+### Country level
+
+#### Statistics
+
+>**10 MSR - Health facilities - District**  
+>
+>**Name \(*)**: "MSR - Health facilities - District"  
+>**Decription**: "This map displays the location of all health facilities in a district together with the administrative district boundary on a map."  
+>
+>**Add layer**  
+>>**1 Facilities**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Facility"  
+>>>**Style**  
+>>>>**Labels**  
+>>>>>**Size**: "15"  
+>>>>>**Colour**: select black  
+>>>>**Point color**: select preferred colour  
+>>>>**Point radius**: "10"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+
+#### Indicators
+
+>**11 MSR - Stock availability - District**  
+>
+>**Name \(*)**: "MSR - Health facility"  
+>**Decription**: "This map displays the stock availability for all health facilities in a district with the administrative district boundary as a timeline for the past 12 months on a map."  
+>
+>**Add layer**  
+>>**1 Stock availability / %**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stock availability / %"  
+>>>>**Indicator**: "Stock availability / %"  
+>>>>**Aggregation type**: "By data element"  
+>>>
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+>
+>**12 MSR - Stock discrepancy count - District**  
+>
+>**Name \(*)**: "MSR - Stock discrepancy count - District"  
+>**Decription**: "This map displays the stock discrepancy count for all health facilities in a district with the administrative district boundary as a timeline for the past 12 months on a map."  
+>
+>**Add layer**  
+>>**1 Stock discrepancy count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stock discrepancy count"  
+>>>>**Indicator**: "Stock discrepancy count"  
+>>>>**Aggregation type**: "By data element"  
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+>
+>**13 MSR - Stockout count - District**  
 >
 >**Name \(*)**: "MSR - Stockout count - District"  
 >**Decription**: "This map displays the stockout count for all health facilities in a district with the administrative district boundary on a map as a timeline for the past 12 months."  
@@ -6359,10 +6730,10 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Reporting rate - District - Column chart  
 >>>- MSR - Reporting rate - District - Single value chart  
 >>>- MSR - Reporting rate on time - District - Single value chart  
->>>- MSR - Health facilies - District - Map  
->>>- MSR - Stock availability - District - Map  
->>>- MSR - Stock discrepancy count - District - Map  
->>>- MSR - Stockout count - District - Map  
+>>>- MSR - Health facilities - District  
+>>>- MSR - Stock availability - District  
+>>>- MSR - Stock discrepancy count - District  
+>>>- MSR - Stockout count - District  
 >
 >**4 MSR - District level - Analytics**  
 >
@@ -6395,11 +6766,39 @@ This report provides the "Reporting rate on time" for the last month across all 
 >**Dashboard title**: "MSR - Visualization library - Province level"  
 >**Dashboard description**: "Library of all available LMIS visualizations for the province in the order of their documentation. These are intended for immediate use or adapting to national policies and requirements."  
 >**Search for visualizations, reports and more**  
->>>- MSR - Stock receipt - Province - Pivot table  
->>>- MSR - Stock distribution - Province - Pivot table  
->>>- MSR - Stock redistribution - Province - Pivot table  
->>>- MSR - Stock discard - Province - Pivot table  
->>>- MSR - Stock on hand - Province - Pivot table  
->>>- MSR - Stock correction - Province - Pivot table  
->>>- MSR - Stock report complete - Last 3 months - Province - Pivot table  
+>>>- MSR - Stock receipt - Province  
+>>>- MSR - Stock distribution - Province  
+>>>- MSR - Stock redistribution - Province  
+>>>- MSR - Stock discard - Province  
+>>>- MSR - Stock on hand - Province  
+>>>- MSR - Stock correction - Province  
+>>>- MSR - Stock report complete - Province  
+>>>- MSR - Coefficient of Variation x 10 - Province  
+>>>- MSR - Coefficient of Variation x 10 distribution - Province  
+>>>- MSR - Coefficient of Variation x 10 distribution - Province  
+>>>- MSR - Coefficient of Variation x 10 distribution - Province  
+>>>- MSR - Stock availability - Province  
+>>>- MSR - Stock availability - Province  
+>>>- MSR - Stockout rate / % - Province  
+>>>- MSR - Stock availability and stockout rate - Province  
+>>>- MSR - Stockouts - Province
+>>>- MSR - Stockout count - Province  
+>>>- MSR - Stockout count - Province  
+>>>- MSR - Stockout count - Province  
+>>>- MSR - Stockout length - Province  
+>>>- MSR - Stockout length - Province  
+>>>- MSR - Stock coverage time - Province  
+>>>- MSR - Stock coverage time distribution- Province  
+>>>- MSR - Stock coverage time ranges - Province  
+>>>- MSR - Stock coverage time ranges - Province  
+>>>- MSR - Stock discrepancy - Province  
+>>>- MSR - Stock discrepancy count - Province  
+>>>- MSR - Stock discrepancy count - Province  
+>>>- MSR - Report completeness - Province  
+>>>- MSR - Reporting rate - Province  
+>>>- MSR - Reporting rate on time - Province  
+>>>- MSR - Health facilities - Province  
+>>>- MSR - Stock availability- Province  
+>>>- MSR - Stock discrepancy count - Province  
+>>>- MSR - Stockout count - Province  
 
