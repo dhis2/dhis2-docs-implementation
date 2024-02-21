@@ -2488,9 +2488,6 @@ Xx
 >>>- 97 MSR - Stockout count - Province  
 >>>- 98 MSR - Stockout length - Province  
 >>>- 99 MSR - Stockout length - Province  
-
-**xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
-
 >>>- 100 MSR - Stock coverage time - Province  
 >>>- 101 MSR - Stock coverage time distribution- Province  
 >>>- 102 MSR - Stock coverage time ranges - Province  
@@ -2498,10 +2495,12 @@ Xx
 >>>- 104 MSR - Stock discrepancy - Province  
 >>>- 105 MSR - Stock discrepancy count - Province  
 >>>- 106 MSR - Stock discrepancy count - Province  
+
+**xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
+Build
 >>>- 107 MSR - Report completeness - Province  
->>>- 108 MSR - Report completeness - Province  
->>>- 109 MSR - Reporting rate - Province  
->>>- 110 MSR - Reporting rate on time - Province  
+>>>- 108 MSR - Reporting rate - Province  
+>>>- 109 MSR - Reporting rate on time - Province  
 >
 >**4 Country level**  
 >>**4.1 Statistics**  
@@ -2806,12 +2805,12 @@ This report provides an overview of all stock data from the last month."
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock report complete - Last 12 months - Pivot table"  
->**Description**: "MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 month / Health facility / By item / Pivot table
+>**Description**: "MSR DV 8 - Monthly Stock Reporting / Stock report complete / Last 12 months / Health facility / By item / Pivot table
 This report provides the an overview of all stock data from the previous 12 months."   
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>>**Selected Periods**: "Last 12 months"  
 >>
 >>**Rows**  
 >>>**Data**  
@@ -2860,7 +2859,7 @@ This report provides an overview of all stock data from the past 12 months repre
 >>**Category**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>>**Selected Periods**: "Last 12 months"  
 >>
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
@@ -4662,7 +4661,7 @@ This report displays a stacked bar chart with the number of stockouts for each i
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock coverage time - District - Pivot table"  
 >**Description**: "MSR DV 66 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / District / Pivot table
-This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the past 12 months for each health facility in a distrct. A blank field is shown, if either the stock on hand or the stock distribution for a month is zero."  
+This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the past 12 months for each health facility in a district. A blank field is shown, if either the stock on hand or the stock distribution for a month is zero."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -5697,7 +5696,7 @@ This report displays a Pivot table with a count of the number of months (during 
 >
 >**Visualization type**: select "Stacked bar chart table"  
 >**Name \(*)**: "MSR - Stockout length - Province"  
->**Description**: "MSR DV 90 - Monthly Stock Reporting / Stockout length / Last 12 months / Province / Stacked bar chart
+>**Description**: "MSR DV 99 - Monthly Stock Reporting / Stockout length / Last 12 months / Province / Stacked bar chart
 This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the province during the past 12 months."  
 >>**Series**  
 >>>**YOUR DIMENIONS**  
@@ -5719,16 +5718,16 @@ This report displays a stacked bar chart with the number of stockouts for each i
 
 ![](image-183.png)
 
->**100 MSR - Stock coverage time - Province - Pivot table**  
+>**100 MSR - Stock coverage time - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock coverage time - District - Pivot table"  
->**Description**: "MSR DV 54 - Monthly Stock Reporting / Stock coverage time / absolute / Last 12 months / District / Pivot table
-This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the past 12 months for each health facility in a distrct. A blank field is shown, if either the stock on hand or the stock distribution for a month is zero."  
+>**Name \(*)**: "MSR - Stock coverage time - Province"  
+>**Description**: "MSR DV 100 - Monthly Stock Reporting / Stock coverage time / absolute / Last month / Province / Pivot table
+This report displays a Pivot table by item with the coverage time (stock on hand divided by stock distributed during the last month) for the last month for each health facility in a province. A blank field is shown, if either the stock on hand or the stock distribution for a month is zero."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>>**Selected Periods**: "Last month"  
 >>
 >>**Rows**  
 >>>**Data**  
@@ -5743,14 +5742,14 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout coverage"  
 
-![](image-84.png)
+![](image-184.png)
 
->**101 MSR - Stock coverage time distribution - Province - Pivot table**  
+>**101 MSR - Stock coverage time distribution - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock coverage time distribution - District - Pivot table"  
->**Description**: "MSR DV 55 - Monthly Stock Reporting / Stock coverage time / distribution / Last 12 months / District / Column chart
-This report displays a Pivot table  with the number of items for which the coverage time fell into the respective coverage time bins (stockout, 1 to 12 months, 1-2 and 2-3 years or greater than or equal to 3 years) for all health facilities in a district for each of the past 12 months."  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Province"  
+>**Description**: "MSR DV 101 - Monthly Stock Reporting / Stock coverage time / distribution / Last month / District / Column chart
+This report displays a Pivot table  with the number of items for which the coverage time fell into the respective coverage time bins (stockout, 1 to 12 months, 1-2 and 2-3 years or greater than or equal to 3 years) for all health facilities in a district for the last months."  
 >>**Columns**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -5776,7 +5775,7 @@ This report displays a Pivot table  with the number of items for which the cover
 >>**Rows**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>>**Selected Periods**: "Last 12 months"  
 >>>**Organisation unit**: "User organisation unit"  
 >>
 >>**Options**  
@@ -5786,26 +5785,77 @@ This report displays a Pivot table  with the number of items for which the cover
 >>>>>**Columns sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
-![alt text](image-52.png)
+![](image-185.png)
 
->**104 MSR - Stock discrepancy - Province - Pivot table**  
+>>**102 MSR - Stock coverage time ranges - Province**  
+>
+>**Visualization type**: select "Column"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Province"  
+>**Description**: "MSR DV 102 - Monthly Stock Reporting / Stock coverage time / Ranges / Province / Column chart / Last month
+For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
+>>**Series**  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Category**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: select "Stock coverage time"  
+>>>>**Selected items**: select the following indicators in the following order:  
+>>>>- "Stockout count"  
+>>>>- "Understock (0-3 months)"  
+>>>>- "Appropriate stock (3-6 months)"  
+>>>>- "Overstock (6-12 months)"  
+>>>>- "Excessive stock (> 12 months)"  
+>>
+>>**Filter**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+
+![](image-188.png)
+
+>>**103 MSR - Stock coverage time ranges - Province  - Stacked column chart**  
+>
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock coverage time distribution - Province"  
+>**Description**: "MSR DV 103 - Monthly Stock Reporting / Stock coverage time / Ranges / Province / Stacked column chart / Last month
+For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the province."  
+>>**Series**  
+>>>**Organisation unit**: "User organisation unit"  
+>>
+>>**Category**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>>
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: select "Stock coverage time"  
+>>>>**Selected items**: select the following indicators in the following order:  
+>>>>- "Stockout count"  
+>>>>- "Understock (0-3 months)"  
+>>>>- "Appropriate stock (3-6 months)"  
+>>>>- "Overstock (6-12 months)"  
+>>>>- "Excessive stock (> 12 months)"  
+
+![](image-189.png)
+
+>**104 MSR - Stock discrepancy - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock discrepancy - District - Pivot table"  
->**Description**: ">MSR DV 58 - Monthly Stock Reporting / Stock discrepancy / list / Last 12 months / District / Pivot table
-This report displays a list with the positive and negative stock discrepancy of the past 12 months by item for all health facilities in a district.  
+>**Name \(*)**: "MSR - Stock discrepancy - Province"  
+>**Description**: "MSR DV 104 - Monthly Stock Reporting / Stock discrepancy / list / Last month / Province / Pivot table
+This report displays a list with the positive and negative stock discrepancy of the last month by item for all health facilities in a district.  
 + Stock on hand from the previous month (final stock on hand)  
 + Stock receipt  
 - Stock distributed  
 - Stock redistributed  
 - Stock discard  
 - Stock correction  
-- Stock on hand"  
+- Stock on hand."  
 >>  
 >>**Columns**  
->>>**Period**: "Relative periods"  
->>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>**Organisation unit**: "User organisation unit"  
 >>
 >>**Rows**  
 >>>**Data**  
@@ -5813,9 +5863,12 @@ This report displays a list with the positive and negative stock discrepancy of 
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit"  
 >>
 >>**Filter**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>>
 >>>**YOUR DIMENIONS**  
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock discrepancy count"  
@@ -5825,13 +5878,13 @@ This report displays a list with the positive and negative stock discrepancy of 
 >>>>**Totals**  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
-![alt text](image-54.png)
+![](image-186.png)
 
->**105 MSR - Stock discrepancy count - Province - Stacked column chart**  
+>**105 MSR - Stock discrepancy count - Province**  
 >
->**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock discrepancy count - District - Stacked column chart"  
->**Visualization type**: "MSR DV 31 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / District / Stacked column chart
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Stock discrepancy count - Province"  
+>**Visualization type**: "MSR DV 105 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / District / Stacked column chart
 This report displays the number of stock discrepancies for the past 12 months separately for each health facility in a district."  
 >>**Series**  
 >>>**YOUR DIMENIONS**  
@@ -5841,7 +5894,7 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>**Category**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>>**Selected Periods**: "Last 12 months"  
 >>
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
@@ -5851,18 +5904,114 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 
-![](image-87.png)
+![](image-190.png)
 
->>>- 106 MSR - Stock discrepancy count - Province - Single value chart  
+>**106 MSR - Stock discrepancy count - Province**  
+>
+>**Visualization type**: select "Single value"  
+>**Name \(*)**: "MSR - Stock discrepancy count - Province"  
+>**Visualization type**: "MSR DV 106 - Monthly Stock Reporting / Stock discrepancy / count / Last month / Province / Single value chart
+This report displays the number of stock discrepancies across the province for the last month as a single value chart."  
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Indicator group**: select "Stockout discrepancy"  
+>>>>**Selected items**: "Stock discrepancy count"
+>>  
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
 
->>>- 107 MSR - Report completeness - Province - Pivot table chart  
+![](image-191.png)
 
->>>- 108 MSR - Report completeness - Province - Line chart  
+>**107 MSR - Report completeness - District - Pivot table chart**  
+>
+>**Visualization type**: select "Pivot"  
+>**Name \(*)**: "MSR - Report completeness - District - Pivot table chart"  
+>**Visualization type**: "MSR DV 107 - Monthly Stock Reporting / Stock reporting complete / Last month / District / Pivot table
+This report provides the "Reporting rate", "Reporting rate on time", "Actual reports", "Actual reports on time" as well as the "Expected reports" for the last month for all health facilities in the province as a Pivot table."
+>>
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 month"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data sets"  
+>>>>**Data set**: select "Monthly stock report"  
+>>>>**Metric type**: 
+>>>>>- "Monthly stock report - Reporting rate"  
+>>>>>- "Monthly stock report - Reporting rate on time"  
+>>>>>- "Monthly stock report - Actual reports"  
+>>>>>- "Monthly stock report - Actual reports on time"  
+>>>>>- "Monthly stock report - Expected reports"  
+>>>
+>>>**Organisation unit**: "User organisation unit"  
 
->>>- 109 MSR - Reporting rate - Province - Single value chart  
+![](image-192.png)
 
->>>- 110 MSR - Reporting rate on time - Province - Single value chart  
+>**108 MSR - Reporting rate - District - Single value chart**  
+>
+>**Visualization type**: select "Single value"  
+>**Name \(*)**: "MSR - Reporting rate - Province"  
+>**Visualization type**: "MSR DV 108 - Monthly Stock Reporting / Reporting rate / Last month / Province / Single value chart
+This report provides the "Reporting rate" for the last month across all the health facilities in a province as single value chart."
+>>
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Data set**: select "Monthly stock report"  
+>>>>**Metric type**: "Reporting rate"
+>>>>**Selected Items**: "Monthly stock report - Reporting rate"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>
+>>>*Options**  
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**  
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stock availability / %"  
+>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
+![](image-155.png)
+
+>**109 MSR - Reporting rate on time - Province**  
+>
+>**Visualization type**: select "Single value"  
+>**Name \(*)**: "MSR - Reporting rate on time - Province"  
+>**Visualization type**: "MSR DV 109 - Monthly Stock Reporting / Reporting rate on time / Last month / Province / Single value chart
+This report provides the "Reporting rate on time" for the last month across all health facilities in a province as single value chart."
+>>
+>>**Series**  
+>>>**Data**  
+>>>>**Data Type**: "Indicators"  
+>>>>**Data set**: select "Monthly stock report"  
+>>>>**Metric type**: "Reporting rate"
+>>>>**Selected Items**: "Monthly stock report - Reporting rate on time"  
+>>
+>>**Filter**  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>>*Options**  
+>>>**Legend**  
+>>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
+>>>>>**Legend type**  
+>>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
+>>>>>>**Legend**: "Stock availability / %"  
+>>>>>**Show legend key** tag (appears as a white tick in a green field)  
+
+![](image-156.png)
 
 ## Map App - Analytics
 
@@ -5880,12 +6029,12 @@ This report displays the number of stock discrepancies for the past 12 months se
 >
 >**3 Province level**  
 >>**3.1 Statistics**  
->>>- 6 MSR - Health facilities - Province: ok  
+>>>- 6 MSR - Health facilities - Province  
 >
 >>**3.2 Indicators**  
->>>- 7 MSR - Stock availability- Province: ok  
->>>- 8 MSR - Stock discrepancy count - Province: ok  
->>>- 9 MSR - Stockout count - Province: ok
+>>>- 7 MSR - Stock availability- Province  
+>>>- 8 MSR - Stock discrepancy count - Province  
+>>>- 9 MSR - Stockout count - Province  
 >
 >**4 Country**  
 >>**4.1 Statistics**  
@@ -5894,7 +6043,7 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>**4.2 Indicators**  
 >>>- 11 MSR - Stock availability- Country  
 >>>- 12 MSR - Stock discrepancy count - Country  
->>>- 13 MSR - Stockout count - Country
+>>>- 13 MSR - Stockout count - Country  
 
 ### Health facility level
 
