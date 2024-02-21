@@ -2501,13 +2501,13 @@ Xx
 >
 >**4 Country level**  
 >>**4.1 Statistics**  
->>>- 111 MSR - Stock receipt - Province - Pivot table  
->>>- 112 MSR - Stock distribution - Province - Pivot table  
->>>- 113 MSR - Stock redistribution - Province - Pivot table  
->>>- 114 MSR - Stock discard - Province - Pivot table  
->>>- 115 MSR - Stock on hand - Province - Pivot table  
->>>- 116 MSR - Stock correction - Province - Pivot table  
->>>- 117 MSR - Stock report complete - Province - Pivot table  
+>>>- 110 MSR - Stock receipt - Province - Pivot table  
+>>>- 111 MSR - Stock distribution - Province - Pivot table  
+>>>- 112 MSR - Stock redistribution - Province - Pivot table  
+>>>- 113 MSR - Stock discard - Province - Pivot table  
+>>>- 114 MSR - Stock on hand - Province - Pivot table  
+>>>- 115 MSR - Stock correction - Province - Pivot table  
+>>>- 116 MSR - Stock report complete - Province - Pivot table  
 
 **xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
 
@@ -5926,11 +5926,11 @@ This report displays the number of stock discrepancies across the province for t
 
 ![](image-191.png)
 
->**107 MSR - Report completeness - District**  
+>**107 MSR - Report completeness - Province**  
 >
 >**Visualization type**: select "Pivot"  
->**Name \(*)**: "MSR - Report completeness - District"  
->**Visualization type**: "MSR DV 107 - Monthly Stock Reporting / Stock reporting complete / Last month / District / Pivot table
+>**Name \(*)**: "MSR - Report completeness - Province"  
+>**Visualization type**: "MSR DV 107 - Monthly Stock Reporting / Stock reporting complete / Last month / Province / Pivot table."
 This report provides the "Reporting rate", "Reporting rate on time", "Actual reports", "Actual reports on time" as well as the "Expected reports" for the last month for all health facilities in the province as a Pivot table."
 >>
 >>**Columns**  
