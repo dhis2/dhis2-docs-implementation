@@ -2462,10 +2462,7 @@ Xx
 >>>- 76 MSR - Reporting rate - District - Column chart  
 >>>- 77 MSR - Reporting rate - District - Single value chart  
 >>>- 78 MSR - Reporting rate on time - District - Single value chart  
-
-
-**xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
-
+>
 >**3 Province level**  
 >>**3.1 Statistics**  
 >>>- 79 MSR - Stock receipt - Province - Pivot table  
@@ -2477,34 +2474,34 @@ Xx
 >>>- 85 MSR - Stock report complete - Province - Pivot table  
 >>
 >>**3.2 Indicators**  
->>>- 86 MSR - Coefficient of Variation x 10 - Province - Stacked bar chart
->>>- 87 MSR - Coefficient of Variation x 10 distribution - Province - Pivot table  
->>>- 88 MSR - Coefficient of Variation x 10 distribution - Province - Stacked Column chart  
->>>- 89 MSR - Coefficient of Variation x 10 distribution - Province - Column chart  
->>>- 90 MSR - Stock availability - Province - Pivot table  
->>>- 91 MSR - Stock availability - Province - Column chart  
->>>- 92 MSR - Stockout percentage - Province - Column chart
->>>- 93 MSR - Stock availability and stockout percentage - Province - Stacked column chart
->>>- 94 MSR - Stockouts - Province - Pivot table - Item - Last month  
->>>- 95 MSR - Stockout count - Province - Pivot table  
->>>- 96 MSR - Stockout count - Province - Stacked column chart  
->>>- 97 MSR - Stockout count - Province - Column chart  
->>>- 98 MSR - Stockout length - Province - Pivot table  
->>>- 99 MSR - Stockout length - Province - Stacked bar chart  
+>>>- 86 MSR - Coefficient of Variation x 10 - Province  
+>>>- 87 MSR - Coefficient of Variation x 10 distribution - Province  
+>>>- 88 MSR - Coefficient of Variation x 10 distribution - Province  
+>>>- 89 MSR - Coefficient of Variation x 10 distribution - Province  
+>>>- 90 MSR - Stock availability - Province  
+>>>- 91 MSR - Stock availability - Province  
+>>>- 92 MSR - Stockout percentage - Province  
+>>>- 93 MSR - Stock availability and stockout percentage - Province  
+>>>- 94 MSR - Stockouts - Province - Item  
+>>>- 95 MSR - Stockout count - Province  
+>>>- 96 MSR - Stockout count - Province  
+>>>- 97 MSR - Stockout count - Province  
+>>>- 98 MSR - Stockout length - Province  
+>>>- 99 MSR - Stockout length - Province  
 
-xxxxxxxxxxxxxxxxxxxxxxxxx
+**xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
 
->>>- 100 MSR - Stock coverage time - Province - Pivot table
->>>- 101 MSR - Stock coverage time distribution- Province - Pivot table  
->>>- 102 MSR - Stock coverage time ranges - Province - Column chart  
->>>- 103 MSR - Stock coverage time ranges - Province - Stacked column chart  
->>>- 104 MSR - Stock discrepancy - Province - Pivot table  
->>>- 105 MSR - Stock discrepancy count - Province - Stacked column chart  
->>>- 106 MSR - Stock discrepancy count - Province - Single value chart  
->>>- 107 MSR - Report completeness - Province - Pivot table chart  
->>>- 108 MSR - Report completeness - Province - Line chart  
->>>- 109 MSR - Reporting rate - Province - Single value chart  
->>>- 110 MSR - Reporting rate on time - Province - Single value chart  
+>>>- 100 MSR - Stock coverage time - Province  
+>>>- 101 MSR - Stock coverage time distribution- Province  
+>>>- 102 MSR - Stock coverage time ranges - Province  
+>>>- 103 MSR - Stock coverage time ranges - Province  
+>>>- 104 MSR - Stock discrepancy - Province  
+>>>- 105 MSR - Stock discrepancy count - Province  
+>>>- 106 MSR - Stock discrepancy count - Province  
+>>>- 107 MSR - Report completeness - Province  
+>>>- 108 MSR - Report completeness - Province  
+>>>- 109 MSR - Reporting rate - Province  
+>>>- 110 MSR - Reporting rate on time - Province  
 >
 >**4 Country level**  
 >>**4.1 Statistics**  
@@ -5067,10 +5064,10 @@ This report provides the "Reporting rate on time" for the last month across all 
 
 #### Statistics
 
->**79 MSR - Stock receipt - Province - Pivot table**  
+>**79 MSR - Stock receipt - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock receipt - Province - Pivot table"  
+>**Name \(*)**: "MSR - Stock receipt - Province"  
 >**Description**: "MSR DV 79 - Monthly Stock Reporting / Stock receipt / Last 12 months / Province / By item / Pivot table
 This report provides the monthly stock receipts by district in a province as reported at the end of every month."  
 >>**Columns**  
@@ -5099,10 +5096,10 @@ This report provides the monthly stock receipts by district in a province as rep
 
 ![](image-115.png)
 
->**80 MSR - Stock distribution - Province - Pivot table**  
+>**80 MSR - Stock distribution - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock distribution - Province - Pivot table"  
+>**Name \(*)**: "MSR - Stock distribution - Province"  
 >**Description**: "MSR DV 80 - Monthly Stock Reporting / Stock distribution / Last 12 months / Province / By item / Pivot table  
 This report provides the monthly stock distributions by district in a province as reported at the end of every month."  
 >>**Columns**  
@@ -5132,10 +5129,10 @@ This report provides the monthly stock distributions by district in a province a
 
 ![](image-114.png)
 
->**81 MSR - Stock redistribution - Province - Pivot table**  
+>**81 MSR - Stock redistribution - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock redistribution - Province - Pivot table"  
+>**Name \(*)**: "MSR - Stock redistribution - Province"  
 >**Description**: "MSR DV 81 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Province / By item / Pivot table.    
 This report provides the monthly stock redistributions by districts in a province as reported at the end of every month."  
 >>**Columns**  
@@ -5165,10 +5162,10 @@ This report provides the monthly stock redistributions by districts in a provinc
 
 ![](image-116.png)
 
->**82 MSR - Stock discard - Province - Pivot table**  
+>**82 MSR - Stock discard - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock discard - Province - Pivot table"  
+>**Name \(*)**: "MSR - Stock discard - Province"  
 >**Description**: "MSR DV 82 - Monthly Stock Reporting / Stock discard / Last 12 months / Province / By item / Pivot table  
 This report provides the monthly stock discards by districts in a province as reported at the end of every month."  
 >>**Columns**  
@@ -5198,7 +5195,7 @@ This report provides the monthly stock discards by districts in a province as re
 
 ![](image-117.png)
 
->**83 MSR - Stock on hand - Province - Pivot table**  
+>**83 MSR - Stock on hand - Province**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock on hand - Province - Pivot table"  
@@ -5231,7 +5228,7 @@ This report provides the monthly stock on hand by district in a province as repo
 
 ![](image-118.png)
 
->**84 MSR - Stock correction - Province - Pivot table**  
+>**84 MSR - Stock correction - Province**  
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock correction - Province - Pivot table"  
@@ -5264,10 +5261,10 @@ This report provides the monthly stock corrections by district in a province as 
 
 ![](image-119.png)
 
->**85 MSR - Stock report complete - Province - Pivot table - Last 3 months**  
+>**85 MSR - Stock report complete - Province - Last 3 months**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock report complete - Province - Pivot table - Last 3 months"  
+>**Name \(*)**: "MSR - Stock report complete - Province - Last 3 months"  
 >**Description**: "MSR DV 85 - Monthly Stock Reporting / Stock report complete / Last 3 months / Province / By item / Pivot table
 This report provides an overview of all stock data by district in a province from the last 3 months."  
 >>**Columns**  
@@ -5295,10 +5292,10 @@ This report provides an overview of all stock data by district in a province fro
 
 #### Indicators
 
->**86 MSR - Coefficient of Variation x 10 - Province - Stacked bar chart**  
+>**86 MSR - Coefficient of Variation x 10 - Province**  
 >
 >**Visualization type**: select "Stacked bar"  
->**Name \(*)**: "MSR - Coefficient of Variation x 10 - Province - Stacked bar chart"  
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 - Province"  
 >**Description**: "MSR DV 86 - Monthly Stock Reporting / Stock distribution / Coefficient of Variation x 10 / Last month / Province / By item / Stacked bar chart
 This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for the last month and by health facilities in a province. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
 >>**Series**  
@@ -5330,16 +5327,16 @@ This report provides the coefficient of variation (standard deviation of stock d
 
 ![](image-121.png)
 
->**87 MSR - Coefficient of Variation x 10 distribution - Province - Pivot table**  
+>**87 MSR - Coefficient of Variation x 10 distribution - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "87 MSR - Coefficient of Variation x 10 distribution - Province - Pivot table"  
+>**Name \(*)**: "87 MSR - Coefficient of Variation x 10 distribution - Province"  
 >**Description**: "MSR DV 87 - Monthly Stock Reporting / Coefficient of Variation x 10 distribution / Last 12 months / Province / Across items / Pivot table
 This report provides the coefficient of variation (standard deviation of stock distribution divided by average stock distribution) distribution by health facilities in the province over the last 12 months with a colour legend."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 months"  
+>>>>**Selected Periods**: "Last months"  
 >>>
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -5359,10 +5356,10 @@ This report provides the coefficient of variation (standard deviation of stock d
 
 ![](image-157.png)
 
->**88 MSR - Coefficient of Variation x 10 distribution - Province - Stacked column chart**  
+>**88 MSR - Coefficient of Variation x 10 distribution - Province**  
 >
->**Visualization type**: select "Pivot table"  
->**Name \(*)**: "43 MSR - Coefficient of Variation x 10 distribution - Province - Stacked column chart"  
+>**Visualization type**: select "Stacked column"  
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 distribution - Province"  
 >**Description**: "MSR DV 88 - Monthly Stock Reporting / Coefficient of Variation x 10 distribution / Last 12 months / District / By item / Stacked column chart
 This report provides the number of items which fall into the respective coefficient of variation (standard deviation of stock distribution divided by average stock distribution) ranges (low, medium and high) across all items at a health facility for all health facilities in a province for the last month."  
 >>**Series**  
@@ -5382,10 +5379,10 @@ This report provides the number of items which fall into the respective coeffici
 
 ![](image-158.png)
 
->**89 MSR - Coefficient of Variation x 10 distribution - Province - Column chart**  
+>**89 MSR - Coefficient of Variation x 10 distribution - Province**  
 >
->**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Coefficient of Variation x 10 distribution - Province - Column chart"  
+>**Visualization type**: select "Column chart"  
+>**Name \(*)**: "MSR - Coefficient of Variation x 10 distribution - Province"  
 >**Description**: "MSR DV 89 - Monthly Stock Reporting / Coefficient of Variation x 10 distribution / Last 3 months / Province / Column chart
 This report provides the number of items which fall into the respective coefficient of variation (standard deviation of stock distribution divided by average stock distribution) ranges (low, medium and high) across all items at a health facility for the last 3 months for all health facilities in the province."  
 >>**Series**  
@@ -5405,10 +5402,10 @@ This report provides the number of items which fall into the respective coeffici
 
 ![](image-159.png)
 
->**90 MSR - Stock availability - Province - Pivot table**  
+>**90 MSR - Stock availability - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock availability - Province - Pivot table"  
+>**Name \(*)**: "MSR - Stock availability - Province"  
 >**Description**: "MSR DV 90 - Monthly Stock Reporting / Stock availability / Last 12 months / Province / By health facility / Pivot table
 This report provides the stock availability across all stock items for all health facilities in a province over the last 12 months with a colour legend."
 >>  
@@ -5435,12 +5432,12 @@ This report provides the stock availability across all stock items for all healt
 >>>>>
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
-![](image-122.png)
+![](image-178.png)
 
->**91 MSR - Stock availability - Province - Column chart**  
+>**91 MSR - Stock availability - Province**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock availability - Province - Column chart"  
+>**Name \(*)**: "MSR - Stock availability - Provincet"  
 >**Description**: "MSR DV 91 - Monthly Stock Reporting / Stock availability / Last 12 months / Province / Across items / Column chart
 This report provides the stock availability across all stock items for all health facilities in a province for the last month with a colour legend." 
 >> 
@@ -5466,51 +5463,51 @@ This report provides the stock availability across all stock items for all healt
 >>>>>>**Legend**: "Stock availability / %"  
 >>>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
-![](image-125.png)
+![](image-179.png)
 
->**92 MSR - Stockout percentage - Province - Column chart**  
+>**92 MSR - Stockout rate / % - Province**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR DV 92 - Monthly Stock Reporting / Stockout percentage / Last month / Province / Column chart
+>**Name \(*)**: "MSR DV 92 - Monthly Stock Reporting / Stockout rate / % / Last month / Province / Column chart
 This report displays a column chart with the percentage of items with a stockout for the last month across health facilities in a province."
 >>  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
->>>>**Selected items**: "Stockout percentage"
+>>>>**Selected items**: "Stockout rate / %"
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>>**Selected Periods**: "Last month"  
 >>>**Organisation unit**: "User organisation unit"  
 
 ![](image-126.png)
 
->**93 MSR - Stock availability and stockout percentage - Province - Stacked column chart**  
+>**93 MSR - Stock availability and stockout rate - Province**  
 >
 >**Visualization type**: select "Stacked column"  
 >**Name \(*)**: "MSR - Stock availability and stockout percentage - District - Stacked column chart"  
->**Description**: "MSR DV 84 - Monthly Stock Reporting / Stock availability and stockout percentage / Last 12 months / Province  / Stacked column chart
-This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the past 12 months for all health facilities in a province as stacked column chart with a legend."  
+>**Description**: "MSR DV 84 - Monthly Stock Reporting / Stock availability and stockout percentage / Last month / Province  / Stacked column chart
+This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month for all health facilities in a province as stacked column chart with a legend."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
 >>>>**Indicator group**: "Stockout count"  
 >>>>**Selected items**:
 >>>>>- "Stock availability / %"  
->>>>>- "Stockout percentage"  
+>>>>>- "Stockout rate / %"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>>**Selected Periods**: "Last Month"  
 >>>**Organisation unit**: "User organisation unit"  
 
 ![](image-124.png)
 
->**94 MSR - Stockouts - Province - Pivot table**  
+>**94 MSR - Stockouts - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stockouts - Province - Pivot table"  
+>**Name \(*)**: "MSR - Stockouts - Province"  
 >**Description**: "MSR DV 85 - Monthly Stock Reporting / Stockout by item / Last 12 months / Province / By item / Pivot table
 This report displays a Pivot table with all items and indicating for each item whether it was out of stock for each of the health facilities in a province for the last 12 months".
 >>  
@@ -5533,6 +5530,13 @@ This report displays a Pivot table with all items and indicating for each item w
 >>>>**Selected Items**: "Stockout Yes/No"  
 >>
 >>**Options**  
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column totals**: tag (appears as a white tick in a green field)  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>>**Empty data**  
+>>>>>**Hide empty rows**: tag (appears as a white tick in a green field)  
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
@@ -5544,11 +5548,11 @@ This report displays a Pivot table with all items and indicating for each item w
 
 ![](image-128.png)
 
->**95 MSR - Stockout count - Province - Pivot table**  
+>**95 MSR - Stockout count - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stockout count - District - Pivot table"  
->**Description**: "MSR DV 86 - Monthly Stock Reporting / Stockout count / Last 12 months / District / Pivot table
+>**Name \(*)**: "MSR - Stockout count - Province"  
+>**Description**: "MSR DV 95 - Monthly Stock Reporting / Stockout count / Last 12 months / Province / Pivot table
 This report displays the number of stockouts for all items across a health facility for each of the past 12 months for all health facilities in a district as a Pivot table."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -5578,13 +5582,13 @@ This report displays the number of stockouts for all items across a health facil
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
 
-![](image-129.png)
+![](image-180.png)
 
->**96 MSR - Stockout count - Province - Stacked column chart**  
+>**96 MSR - Stockout count - Province**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR - Stockout count - Province - Stacked column chart"  
->**Description**: "MSR DV 87 - Monthly Stock Reporting / Stockout count / Last 12 months / Province / Stacked column chart
+>**Name \(*)**: "MSR - Stockout count - Province"  
+>**Description**: "MSR DV 96 - Monthly Stock Reporting / Stockout count / Last 12 months / Province / Stacked column chart
 This report displays the number of stockouts for each of the past 12 months for each facility in a province as a Stacked column chart."  
 >>
 >>**Series** 
@@ -5608,12 +5612,12 @@ This report displays the number of stockouts for each of the past 12 months for 
 
 ![](image-132.png)
 
->**97 MSR - Stockout count - Province - Column chart**  
+>**97 MSR - Stockout count - Province**  
 >
 >**Visualization type**: select "Column chart"  
->**Name \(*)**: "MSR - Stockout count - Province - Column chart"  
->**Description**: "MSR DV 88 - Monthly Stock Reporting / Stockout count / Last month / Province / Column chart
-This report displays the number of stockouts for all items across districts in a province for the last month as a Column chart."  
+>**Name \(*)**: "MSR - Stockout count - Province"  
+>**Description**: "MSR DV 97 - Monthly Stock Reporting / Stockout count / Last month / Province / Single value chart
+This report displays the number of stockouts for all items across districts in a province for the last month as a Single value chart."  
 >>**Series**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -5642,13 +5646,13 @@ This report displays the number of stockouts for all items across districts in a
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
 
-![](image-133.png)
+![](image-181.png)
 
->**98 MSR - Stockout length - Province - Pivot table**  
+>**98 MSR - Stockout length - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stockout length - District - Pivot table"  
->**Descriptions**: "MSR DV 89 - Monthly Stock Reporting / Stockout length / Last 12 months / Province / Pivot table 
+>**Name \(*)**: "MSR - Stockout length - Province"  
+>**Descriptions**: "MSR DV 98 - Monthly Stock Reporting / Stockout length / Last 12 months / Province / Pivot table 
 This report displays a Pivot table with a count of the number of months (during the past 12 months) during which and item was out of stock at each of the health facilities in a province."  
 >>**Columns**  
 >>>**YOUR DIMENIONS**  
@@ -5674,6 +5678,10 @@ This report displays a Pivot table with a count of the number of months (during 
 >>>>>**Column totals**: tag (appears as a white tick in a green field)  
 >>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
+>>>>**Empty data**  
+>>>>>**Hide empty columns**: tag (appears as a white tick in a green field)  
+>>>>>**Hide empty rows**: tag (appears as a white tick in a green field)  
+>>>
 >>>**Legend**  
 >>>>**Use legend for chart colors**: tag (appears as a white tick in a green field)  
 >>>>>**Legend style**  
@@ -5683,14 +5691,14 @@ This report displays a Pivot table with a count of the number of months (during 
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
 
-![](image-135.png)
+![](image-182.png)
 
->**99 MSR - Stockout length - Province - Stacked bar chart**  
+>**99 MSR - Stockout length - Province**  
 >
->**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stockout length - District - Bar chart"  
->**Description**: "MSR DV 90 - Monthly Stock Reporting / Stockout length / Last 12 months / District / Stacked bar chart
-This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the district during the past 12 months."  
+>**Visualization type**: select "Stacked bar chart table"  
+>**Name \(*)**: "MSR - Stockout length - Province"  
+>**Description**: "MSR DV 90 - Monthly Stock Reporting / Stockout length / Last 12 months / Province / Stacked bar chart
+This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the province during the past 12 months."  
 >>**Series**  
 >>>**YOUR DIMENIONS**  
 >>>>**Name**: "Monthly stock report"  
@@ -5709,7 +5717,7 @@ This report displays a stacked bar chart with the number of stockouts for each i
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 month"  
 
-![](image-83.png)
+![](image-183.png)
 
 >**100 MSR - Stock coverage time - Province - Pivot table**  
 >
