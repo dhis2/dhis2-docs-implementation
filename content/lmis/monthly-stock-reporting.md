@@ -5250,10 +5250,10 @@ This report provides the monthly stock corrections by district in a province as 
 
 ![](image-119.png)
 
->**85 MSR - Stock report complete - Province - Last 3 months**  
+>**85 MSR - Stock report complete - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock report complete - Province - Last 3 months"  
+>**Name \(*)**: "MSR - Stock report complete - Province"  
 >**Description**: "MSR DV 85 - Monthly Stock Reporting / Stock report complete / Last 3 months / Province / By item / Pivot table
 This report provides an overview of all stock data by district in a province from the last 3 months."  
 >>**Columns**  
@@ -6002,6 +6002,240 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
 ![](image-156.png)
+
+### Country level
+
+#### Statistics
+
+>**110 MSR - Stock receipt - Country**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock receipt - Country"  
+>**Description**: "MSR DV 110 - Monthly Stock Reporting / Stock receipt / Last 12 months / District / By item / Pivot table
+This report provides the monthly stock receipts by provinces in a country as reported at the end of every month."  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Province"  
+>>
+>>**Filter**: "Relative periods"  
+>>>**YOUR DIMENIONS**  
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock receipt"  
+>>
+>>**Options**  
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+
+![](image-115.png)
+
+>**111 MSR - Stock distribution - Country**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock distribution - Province"  
+>**Description**: "MSR DV 80 - Monthly Stock Reporting / Stock distribution / Last 12 months / Province / By item / Pivot table  
+This report provides the monthly stock distributions by district in a province as reported at the end of every month."  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
+>>
+>>**Filter**: "Relative periods"  
+>>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Level**: "Country"  
+>>>**YOUR DIMENIONS**  
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock distribution"  
+>>
+>>**Options**  
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+
+![](image-208.png)
+
+>**112 MSR - Stock redistribution - Country**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock redistribution - Province"  
+>**Description**: "MSR DV 81 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Province / By item / Pivot table.    
+This report provides the monthly stock redistributions by districts in a province as reported at the end of every month."  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
+>>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>
+>>**Filter**: "Relative periods"  
+>>>**YOUR DIMENIONS**  
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock redistribution"  
+>>
+>>**Options**  
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+
+![](image-116.png)
+
+>**113 MSR - Stock discard - Country**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock discard - Province"  
+>**Description**: "MSR DV 113 - Monthly Stock Reporting / Stock discard / Last 12 months / Country / By item / Pivot table  
+This report provides the monthly stock discards by provinces in a country as reported at the end of every month."  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
+>>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Level**: "Province" 
+>>>
+>>**Filter**: "Relative periods"  
+>>>**YOUR DIMENIONS**  
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock discard"  
+>>
+>>**Options**  
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+
+![](image-209.png)
+
+>**114 MSR - Stock on hand - Country**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock on hand - Province - Pivot table"  
+>**Description**: "MSR DV 83 - Monthly Stock Reporting / Stock on hand / Last 12 months / Province / By item / Pivot table  
+This report provides the monthly stock on hand by district in a province as reported at the end of every month."  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
+>>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>
+>>**Filter**: "Relative periods"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>>**YOUR DIMENIONS**  
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock on hand"  
+>>
+>>**Options**  
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green field)  
+
+![](image-210.png)
+
+>**115 MSR - Stock correction - Country**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock correction - Country"  
+>**Description**: "MSR DV 84 - Monthly Stock Reporting / Stock correction / Last 12 months / Country / By item / Pivot table
+This report provides the monthly stock corrections by provinces in a country as reported at the end of every month."  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last 12 months"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
+>>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Level**: "Province"  
+>>
+>>**Filter**
+>>>**YOUR DIMENIONS**  
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock correction"  
+>>
+>>**Options**  
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+>>>>>**Row totals**: tag (appears as a white tick in a green  
+
+![](image-211.png)
+
+>**116 MSR - Stock report complete - Country**  
+>
+>**Visualization type**: select "Pivot table"  
+>**Name \(*)**: "MSR - Stock report complete - Country - Last 3 months"  
+>**Description**: "MSR DV 85 - Monthly Stock Reporting / Stock report complete / Last 3 months / Province / By item / Pivot table
+This report provides an overview of all stock data by provinces in a country from the last 3 months."  
+>>**Columns**  
+>>>**Period**: "Relative periods"  
+>>>>**Period type**: "Months"  
+>>>>**Selected Periods**: "Last month"  
+>>>**YOUR DIMENIONS**  
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock distribution"  
+>>
+>>**Rows**  
+>>>**Data**  
+>>>>**Data Type**: "Data elements"  
+>>>>**Data element group**: select "[Stock item list] - MSR  
+>>>>**Disaggregation**: "Totals only"  
+>>>>**Selected items**: select all (->>)  
+>>>**Organisation unit**: "User organisation unit"   (Level set to "District")  
+>>
+>>**Options**  
+>>>**Data**  
+>>>>**Totals**  
+>>>>>**Column sub-totals**: tag (appears as a white tick in a green field)  
+
+![](image-213.png)
+
+#### Indicators
+
+xxxxxxxxxxxxxCountry level indicators - to be completed
 
 ## Maps App - Analytics
 
