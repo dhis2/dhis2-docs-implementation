@@ -2471,7 +2471,7 @@ Xx
 >>>- 90 MSR - Stock availability - Province  
 >>>- 91 MSR - Stock availability - Province  
 >>>- 92 MSR - Stockout percentage - Province  
->>>- 93 MSR - Stock availability and stockout percentage - Province  
+>>>- 93 MSR - Stock availability and stockout rate - Province  
 >>>- 94 MSR - Stockouts - Province
 >>>- 95 MSR - Stockout count - Province  
 >>>- 96 MSR - Stockout count - Province  
@@ -4478,7 +4478,7 @@ This report displays a Pivot table with all items and indicating for each item w
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout Yes/No"  
 
-![alt text](image-75.png)
+![](image-242.png)
 
 >**61 MSR - Stockout count - District - Pivot table**  
 >
@@ -5494,7 +5494,7 @@ This report displays the stock availability (number of items with non-zero stock
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockouts - Province"  
 >**Description**: "MSR DV 85 - Monthly Stock Reporting / Stockout by item / Last 12 months / Province / By item / Pivot table
-This report displays a Pivot table with all items and indicating for each item whether it was out of stock for each of the health facilities in a province for the last 12 months".
+This report displays a Pivot table with all items and indicating for each item whether it was out of stock for each of the health facilities in a province for the last 12 months."
 >>  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -6419,7 +6419,7 @@ This report displays the stock availability (number of items with non-zero stock
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockouts - Country"  
 >**Description**: "MSR DV 124 - Monthly Stock Reporting / Stockout by item / Last 12 months / Country / By item / Pivot table
-This report displays a Pivot table with all items and indicating for each item whether it was out of stock for each of the health facilities in a country for the last 12 months".
+This report displays a Pivot table with all items and indicating for each item whether it was out of stock for each of the health facilities in a country for the last 12 months."
 >>  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -7268,9 +7268,6 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>**Classification**: "Equal intervals"  
 >>>>**Classes**: "5"  
 >>
-
-
-
 >>**3 Organisation units**  
 >>>**Organisation Units**  
 >>>>**Selection**: "User organisation unit"  
@@ -7350,10 +7347,10 @@ This report provides the "Reporting rate on time" for the last month across all 
 
 #### Statistics
 
->**10 MSR - Health facilities - District**  
+>**10 MSR - Health facilities - Country**  
 >
->**Name \(*)**: "MSR - Health facilities - District"  
->**Decription**: "This map displays the location of all health facilities in a district together with the administrative district boundary on a map."  
+>**Name \(*)**: "MSR - Health facilities - Country"  
+>**Decription**: "This map displays the location of all health facilities in a country together with the administrative, district, provincial and national boundaries on a map."  
 >
 >**Add layer**  
 >>**1 Facilities**  
@@ -7365,7 +7362,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Size**: "15"  
 >>>>>**Colour**: select black  
 >>>>**Point color**: select preferred colour  
->>>>**Point radius**: "10"  
+>>>>**Point radius**: "4"  
 >>
 >>**2 Organisation units**  
 >>>**Organisation Units**  
@@ -7376,6 +7373,18 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Size**: "20"  
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
+>>
+>>**2 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Region"  
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Boundary color**: select blue  
+>>>>>**Point radius**: "6"  
+
+![](image-243.png)
 
 #### Indicators
 
@@ -7418,10 +7427,10 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
 >
->**12 MSR - Stock discrepancy count - District**  
+>**12 MSR - Stock discrepancy count - Country**  
 >
->**Name \(*)**: "MSR - Stock discrepancy count - District"  
->**Decription**: "This map displays the stock discrepancy count for all health facilities in a district with the administrative district boundary as a timeline for the past 12 months on a map."  
+>**Name \(*)**: "MSR - Stock discrepancy count - Country"  
+>**Decription**: "This map displays the stock discrepancy count for all health facilities in a district with the administrative district and province boundaries as a timeline for the past 12 months on a map."  
 >
 >**Add layer**  
 >>**1 Stock discrepancy count**  
@@ -7435,20 +7444,29 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>**Period type**: "Relative"  
 >>>>**Period**: "Last 12 months"  
 >>>>**Display periods**: "Timeline"  
->>>
+>>
+>>**2 Stock discrepancy count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stock discrepancy count"  
+>>>>**Indicator**: "Stock discrepancy count"  
+>>>>**Aggregation type**: "By data element"  
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>
+>>**3 Organisation units**  
 >>>**Organisation Units**  
 >>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Region"  
 >>>
 >>>**Style**  
->>>>**Bubble map**  
->>>>>**High radius**: "15"  
->>>>>**Colour**: select black  
->>>>
->>>>**Automatic color legend**: tag  
->>>>**Classification**: "Equal intervals"  
->>>>**Classes**: "5"  
+>>>>**Boundary colour**: select blue  
+>>>>**Point radius**: "6"  
 >>
->>**2 Organisation units**  
+>>**4 Organisation units**  
 >>>**Organisation Units**  
 >>>>**Selection**: "User organisation unit"  
 >>>>**Level**: "District"  
@@ -7458,17 +7476,20 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Size**: "20"  
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
+>>>>**Point radius**: "6"  
+
+![](image-244.png)
+
+>**13 MSR - Stockout count - Country**  
 >
->**13 MSR - Stockout count - District**  
->
->**Name \(*)**: "MSR - Stockout count - District"  
->**Decription**: "This map displays the stockout count for all health facilities in a district with the administrative district boundary on a map as a timeline for the past 12 months."  
+>**Name \(*)**: "MSR - Stockout count - Country"  
+>**Decription**: "This map displays the stockout count for all health facilities and by provinces in a country with the administrative district and province boundaries on a map as a timeline for the past 12 months."  
 >
 >**Add layer**  
 >>**1 Stockout count**  
 >>>**Data**  
 >>>>**Item type**: "Indicator"  
->>>>**Indicator group**: "Stockout count"  
+>>>>**Indicator group**: "Stockout count - MSR"  
 >>>>**Indicator**: "Stockout count"  
 >>>>**Aggregation type**: "By data element"  
 >>> 
@@ -7479,17 +7500,42 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>
 >>>**Organisation Units**  
 >>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Facility"  
 >>>
 >>>**Style**  
 >>>>**Bubble map**  
->>>>>**High radius**: "15"  
->>>>>**Colour**: select black  
+>>>>>**High radius**: "5"  
 >>>>
 >>>>**Automatic color legend**: tag  
 >>>>**Classification**: "Equal intervals"  
 >>>>**Classes**: "5"  
 >>
->>**2 Organisation units**  
+>>
+>>**2 Stockout count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stockout discrepancy - MSR"  
+>>>>**Indicator**: "Stockout discrepancy count"  
+>>>>**Aggregation type**: "By data element"  
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Region"  
+>>>
+>>>**Style**  
+>>>>**Choropletz map**  
+>>>>>**Low radius**: "5"  
+>>>>
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**3 Organisation units**  
 >>>**Organisation Units**  
 >>>>**Selection**: "User organisation unit"  
 >>>>**Level**: "District"  
@@ -7499,6 +7545,19 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Size**: "20"  
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
+>>
+>>**4 Organisation units**  
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "Province"  
+>>>
+>>>**Style**  
+>>>>**Labels**: tag (appears as a white tick in a green square)  
+>>>>>**Size**: "20"  
+>>>>>**Colour**: select red  
+>>>>**Boundary colour**: select preferred colour  
+
+![](image-245.png)
 
 ## Dashboard App - Analytics
 
