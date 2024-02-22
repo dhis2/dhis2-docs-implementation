@@ -1252,8 +1252,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>36,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Appropriate stock - MSR - Numerator"  
->>>**Calculation**:  
->>>#{LNAkkMTxqEW.pXfWqU8b96D}+
+>>>**Calculation**:  #{LNAkkMTxqEW.pXfWqU8b96D}+
 #{WyDZKSw82X6.pXfWqU8b96D}+
 #{JPccVwAGRq9.pXfWqU8b96D}+
 #{smxJz7Mt6ia.pXfWqU8b96D}+
@@ -1317,8 +1316,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>36,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Excessive stock - MSR - Numerator"  
->>>**Calculation**:  
->>>#{LNAkkMTxqEW.CVWVNV7y93Q}+
+>>>**Calculation**:  #{LNAkkMTxqEW.CVWVNV7y93Q}+
 #{WyDZKSw82X6.CVWVNV7y93Q}+
 #{JPccVwAGRq9.CVWVNV7y93Q}+
 #{smxJz7Mt6ia.CVWVNV7y93Q}+
@@ -1504,8 +1502,7 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Medium variability - Numerator"  
->>>**Calculation**:  
->>>if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
+>>>**Calculation**:  if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
 if(#{WyDZKSw82X6.U2tBADVisKH}<5,1,0)+
 if(#{JPccVwAGRq9.U2tBADVisKH}<5,1,0)+
 if(#{smxJz7Mt6ia.U2tBADVisKH}<5,1,0)+
@@ -1565,8 +1562,7 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Overstock - MSR - Numerator"  
->>>**Calculation**:  
->>>#{LNAkkMTxqEW.EnrDpXZVNq2}+
+>>>**Calculation**:  >#{LNAkkMTxqEW.EnrDpXZVNq2}+
 #{WyDZKSw82X6.EnrDpXZVNq2}+
 #{JPccVwAGRq9.EnrDpXZVNq2}+
 #{smxJz7Mt6ia.EnrDpXZVNq2}+
@@ -1630,8 +1626,7 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stock availability - MSR - Numerator"  
->>>**Calculation**:  
->>>#{LNAkkMTxqEW.vRsIAIjzyfn}+
+>>>**Calculation**:  #{LNAkkMTxqEW.vRsIAIjzyfn}+
 #{WyDZKSw82X6.vRsIAIjzyfn}+
 #{JPccVwAGRq9.vRsIAIjzyfn}+
 #{smxJz7Mt6ia.vRsIAIjzyfn}+
@@ -1695,8 +1690,7 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stock discrepancy count - MSR - Numerator"  
->>>**Calculation**:  
->>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
+>>>**Calculation**:  #{LNAkkMTxqEW.cD8WZyjlq9C}+
 #{WyDZKSw82X6.cD8WZyjlq9C}+
 #{JPccVwAGRq9.cD8WZyjlq9C}+
 #{smxJz7Mt6ia.cD8WZyjlq9C}+
@@ -1756,8 +1750,7 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stock discrepancy percentage - MSR - Numerator"  
->>>**Calculation**:  
->>>#{LNAkkMTxqEW.cD8WZyjlq9C}+
+>>>**Calculation**:  #{LNAkkMTxqEW.cD8WZyjlq9C}+
 #{WyDZKSw82X6.cD8WZyjlq9C}+
 #{JPccVwAGRq9.cD8WZyjlq9C}+
 #{smxJz7Mt6ia.cD8WZyjlq9C}+
@@ -1817,8 +1810,7 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stockout count - MSR"  
->>>**Calculation**:  
->>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
+>>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}==0,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}==0,1,0)+
@@ -1882,8 +1874,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stockout percentage - MSR - Numerator"  
->>>**Calculation**:  
->>>#{LNAkkMTxqEW.e7d6Th5WLEM}+
+>>>**Calculation**:  #{LNAkkMTxqEW.e7d6Th5WLEM}+
 #{WyDZKSw82X6.e7d6Th5WLEM}+
 #{JPccVwAGRq9.e7d6Th5WLEM}+
 #{smxJz7Mt6ia.e7d6Th5WLEM}+
@@ -1947,8 +1938,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Understock - MSR - Numerator"  
->>>**Calculation**:  
->>>#{LNAkkMTxqEW.jJeAB3Dcibl}+
+>>>**Calculation**:  #{LNAkkMTxqEW.jJeAB3Dcibl}+
 #{WyDZKSw82X6.jJeAB3Dcibl}+
 #{JPccVwAGRq9.jJeAB3Dcibl}+
 #{smxJz7Mt6ia.jJeAB3Dcibl}+
@@ -6023,7 +6013,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- 2 MSR - Health facilities - District  
 >
 >>**2.2 Indicators**  
->>>- 3 MSR - Stock availability- District  
+>>>- 3 MSR - Stock availability - District  
 >>>- 4 MSR - Stock discrepancy count - District  
 >>>- 5 MSR - Stockout count - District  
 >
@@ -6186,7 +6176,32 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>**Classification**: "Equal intervals"  
 >>>>**Classes**: "5"  
 >>
->>**2 Organisation units**  
+>>**2 Stock discrepancy count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stock discrepancy count"  
+>>>>**Indicator**: "Stock discrepancy count"  
+>>>>**Aggregation type**: "By data element"  
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+>>**3 Organisation units**  
 >>>**Organisation Units**  
 >>>>**Selection**: "User organisation unit"  
 >>>>**Level**: "District"  
@@ -6197,7 +6212,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
 
-![](image-196.png)
+![](image-206.png)
 
 >**5 MSR - Stockout count - District**  
 >
@@ -6368,7 +6383,35 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>**Classification**: "Equal intervals"  
 >>>>**Classes**: "5"  
 >>
->>**2 Organisation units**  
+>>**2 Stock discrepancy count**  
+>>>**Data**  
+>>>>**Item type**: "Indicator"  
+>>>>**Indicator group**: "Stock discrepancy count"  
+>>>>**Indicator**: "Stock discrepancy count"  
+>>>>**Aggregation type**: "By data element"  
+>>> 
+>>>**Period**  
+>>>>**Period type**: "Relative"  
+>>>>**Period**: "Last 12 months"  
+>>>>**Display periods**: "Timeline"  
+>>>
+>>>**Organisation Units**  
+>>>>**Selection**: "User organisation unit"  
+>>>>**Level**: "District"  
+>>>
+>>>**Style**  
+>>>>**Bubble map**  
+>>>>>**High radius**: "15"  
+>>>>>**Colour**: select black  
+>>>>
+>>>>**Automatic color legend**: tag  
+>>>>**Classification**: "Equal intervals"  
+>>>>**Classes**: "5"  
+>>
+
+
+
+>>**3 Organisation units**  
 >>>**Organisation Units**  
 >>>>**Selection**: "User organisation unit"  
 >>>>**Level**: "District"  
@@ -6379,7 +6422,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
 >>
->>**3 Organisation units**  
+>>**4 Organisation units**  
 >>>**Organisation Units**  
 >>>>**Selection**: "User organisation unit"  
 >>>>**Level**: "Province"  
