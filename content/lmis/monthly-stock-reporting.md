@@ -2491,13 +2491,13 @@ Xx
 >
 >**4 Country level**  
 >>**4.1 Statistics**  
->>>- 110 MSR - Stock receipt - Country - Pivot table  
->>>- 111 MSR - Stock distribution - Country - Pivot table  
->>>- 112 MSR - Stock redistribution - Country - Pivot table  
->>>- 113 MSR - Stock discard - Country - Pivot table  
->>>- 114 MSR - Stock on hand - Country - Pivot table  
->>>- 115 MSR - Stock correction - Country - Pivot table  
->>>- 116 MSR - Stock report complete - Country - Pivot table  
+>>>- 110 MSR - Stock receipt - Country  
+>>>- 111 MSR - Stock distribution - Country  
+>>>- 112 MSR - Stock redistribution - Country  
+>>>- 113 MSR - Stock discard - Country  
+>>>- 114 MSR - Stock on hand - Country  
+>>>- 115 MSR - Stock correction - Country  
+>>>- 116 MSR - Stock report complete - Country  
 >>
 >>**4.2 Indicators**  
 >>>- 117 MSR - Coefficient of Variation x 10 distribution - Country  
@@ -6040,7 +6040,7 @@ This report provides the monthly stock receipts by provinces in a country as rep
 >**111 MSR - Stock distribution - Country**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock distribution - Province"  
+>**Name \(*)**: "MSR - Stock distribution - Country"  
 >**Description**: "MSR DV 80 - Monthly Stock Reporting / Stock distribution / Last 12 months / Province / By item / Pivot table  
 This report provides the monthly stock distributions by district in a province as reported at the end of every month."  
 >>**Columns**  
@@ -6073,9 +6073,9 @@ This report provides the monthly stock distributions by district in a province a
 >**112 MSR - Stock redistribution - Country**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stock redistribution - Province"  
->**Description**: "MSR DV 81 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Province / By item / Pivot table.    
-This report provides the monthly stock redistributions by districts in a province as reported at the end of every month."  
+>**Name \(*)**: "MSR - Stock redistribution - Country"  
+>**Description**: "MSR DV 81 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Country / By item / Pivot table.    
+This report provides the monthly stock redistributions by provinces in a country as reported at the end of every month."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
@@ -6967,7 +6967,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 
 >**3 MSR - Stock availability - District**  
 >
->**Name \(*)**: "MSR - Health facility"  
+>**Name \(*)**: "MSR - Stock availability - District"  
 >**Decription**: "This map displays the stock availability for all health facilities in a district with the administrative district boundary as a timeline for the past 12 months on a map."  
 >
 >**Add layer**  
@@ -7004,7 +7004,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
 
-![](image-195.png)
+![](image-247.png)
 
 >**4 MSR - Stock discrepancy count - District**  
 >
@@ -7211,7 +7211,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Colour**: select blue  
 >>>>**Boundary colour**: select preferred colour  
 
-![](image-202.png)
+![Alt text](image-246.png)
 
 >**8 MSR - Stock discrepancy count - Province**  
 >
@@ -7388,10 +7388,10 @@ This report provides the "Reporting rate on time" for the last month across all 
 
 #### Indicators
 
->**11 MSR - Stock availability - District**  
+>**11 MSR - Stock availability - Country**  
 >
 >**Name \(*)**: "MSR - Health facility"  
->**Decription**: "This map displays the stock availability for all health facilities in a district with the administrative district boundary as a timeline for the past 12 months on a map."  
+>**Decription**: "This map displays the stock availability for all health facilities in a country with the administrative district and province boundaries as a timeline for the past 12 months on a map."  
 >
 >**Add layer**  
 >>**1 Stock availability / %**  
@@ -7426,7 +7426,9 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>>>**Size**: "20"  
 >>>>>**Colour**: select red  
 >>>>**Boundary colour**: select preferred colour  
->
+
+![](image-248.png)
+
 >**12 MSR - Stock discrepancy count - Country**  
 >
 >**Name \(*)**: "MSR - Stock discrepancy count - Country"  
@@ -7571,11 +7573,11 @@ This report provides the "Reporting rate on time" for the last month across all 
 >
 >**3 Regional level**  
 >>- 5 MSR - Visualization library - Province level  
->>- Selection  
+>>- 6 MSR - Regional level - Analytics  
 >
 >**4 National level**  
->>- Library  
->>- Selection  
+>>- 7 MSR - Visualization library - Country level  
+>>- 8 MSR - Country level - Analytics  
 >
 >**5 Thematic dashboards**  
 >>- Essential LMIS KPIs  
@@ -7763,4 +7765,42 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Stock availability- Province  
 >>>- MSR - Stock discrepancy count - Province  
 >>>- MSR - Stockout count - Province  
+>
+>**6 MSR - Regional level Analytics**  
 
+### National level
+
+>**7 MSR - Visualization library - Country level**  
+>
+>**Dashboard title**: "MSR - Visualization library - Country level"  
+>**Dashboard description**: "Library of all available LMIS visualizations for the country in the order of their documentation. These are intended for immediate use or adapting to national policies and requirements."  
+>**Search for visualizations, reports and more**  
+>>>- MSR - Stock receipt - Country  
+>>>- MSR - Stock distribution - Country  
+>>>- MSR - Stock redistribution - Country  
+>>>- MSR - Stock discard - Country  
+>>>- MSR - Stock on hand - Country  
+>>>- MSR - Stock correction - Country  
+>>>- MSR - Stock report complete - Country  
+>>>- MSR - Coefficient of Variation x 10 distribution - Country  
+>>>- MSR - Coefficient of Variation x 10 distribution - Country  
+>>>- MSR - Coefficient of Variation x 10 distribution - Country  
+>>>- MSR - Stock availability - Country  
+>>>- MSR - Stock availability - Country  
+>>>- MSR - Stockout rate / % - Country  
+>>>- MSR - Stock availability and stockout percentage - Country  
+>>>- MSR - Stockouts - Country  
+>>>- MSR - Stockout count - Country  
+>>>- MSR - Stockout count - Country  
+>>>- MSR - Stockout count - Country  
+>>>- MSR - Stockout length - Country  
+>>>- MSR - Stockout length - Country  
+>>>- MSR - Stock coverage time distribution - Country  
+>>>- MSR - Stock coverage time distribution- Country  
+>>>- MSR - Stock coverage time ranges - Country  
+>>>- MSR - Stock coverage time ranges - Country  
+>>>- MSR - Stock discrepancy count - Country  
+>>>- MSR - Stock discrepancy count - Country  
+>>>- MSR - Report completeness - Country  
+>>>- MSR - Reporting rate - Country  
+>>>- MSR - Reporting rate on time - Country  
