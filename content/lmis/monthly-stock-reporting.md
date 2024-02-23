@@ -2512,14 +2512,13 @@ Xx
 >>>- 128 MSR - Stockout length - Country  
 >>>- 129 MSR - Stockout length - Country  
 >>>- 130 MSR - Stock coverage time distribution - Country  
->>>- 131 MSR - Stock coverage time distribution- Country  
+>>>- 131 MSR - Stock coverage time ranges - Country  
 >>>- 132 MSR - Stock coverage time ranges - Country  
->>>- 133 MSR - Stock coverage time ranges - Country  
+>>>- 133 MSR - Stock discrepancy count - Country  
 >>>- 134 MSR - Stock discrepancy count - Country  
->>>- 135 MSR - Stock discrepancy count - Country  
->>>- 136 MSR - Report completeness - Country  
->>>- 137 MSR - Reporting rate - Country  
->>>- 139 MSR - Reporting rate on time - Country  
+>>>- 135 MSR - Report completeness - Country  
+>>>- 136 MSR - Reporting rate - Country  
+>>>- 137 MSR - Reporting rate on time - Country  
 >
 >**5 Visualization overview**  
 >
@@ -3432,6 +3431,7 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>>**Level**: "Facility"  
 >>>**YOUR DIMENIONS**  
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout coverage"  
@@ -4657,6 +4657,7 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"  
+>>>>**Level**: "Facility"  
 >>
 >>**Filter**  
 >>>**YOUR DIMENIONS**  
@@ -5097,7 +5098,7 @@ This report provides the monthly stock distributions by district in a province a
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"
->>>**Level**: "District"
+>>>>**Level**: "District"
 >>>>**Selected Periods**: "Last 12 months"    
 >>
 >>**Filter**: "Relative periods"  
@@ -5131,7 +5132,7 @@ This report provides the monthly stock redistributions by districts in a provinc
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"
->>>**Level**: "District"
+>>>>**Level**: "District"
 >>
 >>**Filter**: "Relative periods"  
 >>>>**Selected Periods**: "Last 12 months"  
@@ -5198,7 +5199,7 @@ This report provides the monthly stock on hand by district in a province as repo
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"
->>>**Level**: "District"
+>>>>**Level**: "District"
 >>
 >>**Filter**: "Relative periods"  
 >>>>**Selected Periods**: "Last 12 months"  
@@ -5268,7 +5269,7 @@ This report provides an overview of all stock data by district in a province fro
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Options**  
 >>>**Data**  
@@ -5287,7 +5288,7 @@ This report provides an overview of all stock data by district in a province fro
 This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for the last month and by health facilities in a province. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "Province"  
+>>>>**Level**: "Province"  
 >>
 >>**Category**  
 >>>**Data**  
@@ -5336,7 +5337,7 @@ This report provides the coefficient of variation (standard deviation of stock d
 >>
 >>**Rows**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Options**  
 >>>**Data**  
@@ -5365,7 +5366,7 @@ This report provides the number of items which fall into the respective coeffici
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 months"  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 
 ![](image-158.png)
 
@@ -5389,7 +5390,7 @@ This report provides the number of items which fall into the respective coeffici
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 3 months"  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 
 ![](image-159.png)
 
@@ -5439,7 +5440,7 @@ This report provides the stock availability across all stock items for all healt
 >>
 >>**Category**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Filter**  
 >>>**Data**  
@@ -5469,7 +5470,7 @@ This report displays a column chart with the percentage of items with a stockout
 >>
 >>**Category**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Filter**  
 >>>**Period**: "Relative periods"  
@@ -5518,7 +5519,7 @@ This report displays a Pivot table with all items and indicating for each item w
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "Facility"  
+>>>>**Level**: "Facility"  
 >>
 >>**Filter**: "Relative periods"  
 >>>**YOUR DIMENIONS**  
@@ -5557,7 +5558,7 @@ This report displays the number of stockouts for all items across a health facil
 >>
 >>**Rows**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Filter**  
 >>>**Data**  
@@ -5590,7 +5591,7 @@ This report displays the number of stockouts for each of the past 12 months for 
 >>
 >>**Series** 
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -5657,7 +5658,7 @@ This report displays a Pivot table with a count of the number of months (during 
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout Yes/No"  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Rows**  
 >>>**Data**  
@@ -5700,7 +5701,7 @@ This report displays a Pivot table with a count of the number of months (during 
 This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the province during the past 12 months."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Category**  
 >>>**Data**  
@@ -5737,7 +5738,7 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "Facility"  
+>>>>**Level**: "Facility"  
 >>
 >>**Filter**  
 >>>**YOUR DIMENIONS**  
@@ -5779,7 +5780,7 @@ This report displays a Pivot table  with the number of items for which the cover
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 months"  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Options**  
 >>>**Data**  
@@ -5798,7 +5799,7 @@ This report displays a Pivot table  with the number of items for which the cover
 For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Category**  
 >>>**Data**  
@@ -5826,7 +5827,7 @@ For the last month, this report displays a stacked column chart with the number 
 For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the province."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "District"  
+>>>>**Level**: "District"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -5861,7 +5862,7 @@ This report displays a list with the positive and negative stock discrepancy of 
 >>  
 >>**Columns**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "Facility"  
+>>>>**Level**: "Facility"  
 >>
 >>**Rows**  
 >>>**Data**  
@@ -6076,7 +6077,8 @@ This report provides the monthly stock distributions by district in a province a
 >>>>**Selected items**: select all (->>)  
 >>
 >>**Filter**: "Relative periods"  
->>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Organisation unit**: "User organisation unit"
+>>>**Level**: "Province"  
 >>>**Level**: "Country"  
 >>>**YOUR DIMENIONS**  
 >>>>**Name**: "Monthly stock report"  
@@ -6107,7 +6109,8 @@ This report provides the monthly stock redistributions by provinces in a country
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Organisation unit**: "User organisation unit"
+>>>**Level**: "Province"  
 >>
 >>**Filter**: "Relative periods"  
 >>>**YOUR DIMENIONS**  
@@ -6139,7 +6142,8 @@ This report provides the monthly stock discards by provinces in a country as rep
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Organisation unit**: "User organisation unit"
+>>>**Level**: "Province"  
 >>>**Level**: "Province" 
 >>>
 >>**Filter**: "Relative periods"  
@@ -6172,7 +6176,8 @@ This report provides the monthly stock on hand by district in a province as repo
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Organisation unit**: "User organisation unit"
+>>>**Level**: "Province"  
 >>
 >>**Filter**: "Relative periods"  
 >>>>**Selected Periods**: "Last 12 months"  
@@ -6205,7 +6210,7 @@ This report provides the monthly stock corrections by provinces in a country as 
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Organisation unit**: "User organisation unit"
 >>>**Level**: "Province"  
 >>
 >>**Filter**
@@ -6241,7 +6246,8 @@ This report provides an overview of all stock data by provinces in a country fro
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit"   (Level set to "District")  
+>>>**Organisation unit**: "User organisation unit"
+>>>**Level**: "Province"  
 >>
 >>**Options**  
 >>>**Data**  
@@ -6302,6 +6308,7 @@ This report provides the number of items which fall into the respective coeffici
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 months"  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Province"  
 
 ![](image-215.png)
 
@@ -6325,6 +6332,7 @@ This report provides the number of items which fall into the respective coeffici
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 3 months"  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Province"  
 
 ![Alt text](image-219.png)
 
@@ -6453,6 +6461,7 @@ This report displays a Pivot table with all items and indicating for each item w
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Province"  
 >>
 >>**Filter**: "Relative periods"  
 >>>**YOUR DIMENIONS**  
@@ -6524,6 +6533,7 @@ This report displays the number of stockouts for each of the past 12 months for 
 >>
 >>**Series** 
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Province"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -6561,6 +6571,7 @@ This report displays the number of stockouts for all items across provinces in a
 >>
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Province"  
 >>>**Data**  
 >>>>**Data Type**: "Data elements"  
 >>>>**Data element group**: select "[Stock item list] - MSR  
@@ -6644,10 +6655,11 @@ This report displays a stacked bar chart with the number of stockouts for each i
 >>>>**Selected items**: select all (->>)  
 >>
 >>**Filter**  
->>>**Organisation unit**: "User organisation unit"  
->>>**Period**: "Relative periods"  
->>>>**Period type**: "Months"  
->>>>**Selected Periods**: "Last 12 month"  
+>>>>**Organisation unit**: "User organisation unit"  
+>>>>**Level**: "Province"  
+>>>>**Period**: "Relative periods"  
+>>>>>**Period type**: "Months"  
+>>>>>**Selected Periods**: "Last 12 month"  
 
 ![](image-233.png)
 
@@ -6684,7 +6696,7 @@ This report displays a Pivot table  with the number of items for which the cover
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 months"  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "Province"  
+>>>>**Level**: "Province"  
 >>
 >>**Options**  
 >>>**Data**  
@@ -6703,7 +6715,7 @@ This report displays a Pivot table  with the number of items for which the cover
 For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) across provinces in the district."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "Province"  
+>>>>**Level**: "Province"  
 >>
 >>**Category**  
 >>>**Data**  
@@ -6731,6 +6743,7 @@ For the last month, this report displays a stacked column chart with the number 
 For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the province."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>>**Level**: "Province"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -6767,6 +6780,7 @@ This report displays the number of stock discrepancies for the past 12 months ac
 >>
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>>**Level**: "Province"  
 >>>**Data**  
 >>>>**Data Type**: "Data elements"  
 >>>>**Data element group**: select "[Stock item list] - MSR  
@@ -6789,6 +6803,7 @@ This report displays the number of stock discrepancies across the country for th
 >>  
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>>**Level**: "Province"  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last month"  
@@ -6819,7 +6834,7 @@ This report provides the "Reporting rate", "Reporting rate on time", "Actual rep
 >>>>>- "Monthly stock report - Expected reports"  
 >>>
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "Province"  
+>>>>**Level**: "Province"  
 
 ![](image-239.png)
 
@@ -6839,6 +6854,7 @@ This report provides the "Reporting rate" for the last month across all the heal
 >>
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>>**Level**: "Province"  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last month"  
@@ -6869,6 +6885,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>>**Level**: "Province"  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 months"  
