@@ -5064,6 +5064,7 @@ This report provides the monthly stock receipts by district in a province as rep
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Legend**: "District"  
 >>
 >>**Filter**: "Relative periods"  
 >>>**YOUR DIMENIONS**  
@@ -5095,10 +5096,11 @@ This report provides the monthly stock distributions by district in a province a
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
+>>>**Organisation unit**: "User organisation unit"
+>>>**Level**: "District"
+>>>>**Selected Periods**: "Last 12 months"    
 >>
 >>**Filter**: "Relative periods"  
->>>**Organisation unit**: "User organisation unit" (Level set to "District")  
->>>>**Selected Periods**: "Last 12 months"    
 >>>**YOUR DIMENIONS**  
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stock distribution"  
@@ -5128,7 +5130,8 @@ This report provides the monthly stock redistributions by districts in a provinc
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Organisation unit**: "User organisation unit"
+>>>**Level**: "District"
 >>
 >>**Filter**: "Relative periods"  
 >>>>**Selected Periods**: "Last 12 months"  
@@ -5194,7 +5197,8 @@ This report provides the monthly stock on hand by district in a province as repo
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit" (Level set to "District")  
+>>>**Organisation unit**: "User organisation unit"
+>>>**Level**: "District"
 >>
 >>**Filter**: "Relative periods"  
 >>>>**Selected Periods**: "Last 12 months"  
@@ -5263,7 +5267,8 @@ This report provides an overview of all stock data by district in a province fro
 >>>>**Data element group**: select "[Stock item list] - MSR  
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
->>>**Organisation unit**: "User organisation unit"   (Level set to "District")  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 >>
 >>**Options**  
 >>>**Data**  
@@ -5282,6 +5287,7 @@ This report provides an overview of all stock data by district in a province fro
 This report provides the coefficient of variation (standard deviation of stock distribution divided by the average stock distribution) which is based on the previous six months as a group of column charts for the last month and by health facilities in a province. Since decimals cannot be displayed in this report the result of the actual calculation is multiplied by 10 and rounded to the next integer."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Province"  
 >>
 >>**Category**  
 >>>**Data**  
@@ -5330,13 +5336,14 @@ This report provides the coefficient of variation (standard deviation of stock d
 >>
 >>**Rows**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 >>
 >>**Options**  
 >>>**Data**  
 >>>>**Totals**  
 >>>>>**Row totals**: tag (appears as a white tick in a green field)  
 
-![](image-157.png)
+![](image-249.png)
 
 >**88 MSR - Coefficient of Variation x 10 distribution - Province**  
 >
@@ -5358,6 +5365,7 @@ This report provides the number of items which fall into the respective coeffici
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 months"  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 
 ![](image-158.png)
 
@@ -5381,6 +5389,7 @@ This report provides the number of items which fall into the respective coeffici
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 3 months"  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 
 ![](image-159.png)
 
@@ -5459,10 +5468,13 @@ This report displays a column chart with the percentage of items with a stockout
 >>>>**Selected items**: "Stockout rate / %"
 >>
 >>**Category**  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
+>>
+>>**Filter**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last month"  
->>>**Organisation unit**: "User organisation unit"  
 
 ![](image-126.png)
 
@@ -5470,7 +5482,7 @@ This report displays a column chart with the percentage of items with a stockout
 >
 >**Visualization type**: select "Stacked column"  
 >**Name \(*)**: "MSR - Stock availability and stockout percentage - District - Stacked column chart"  
->**Description**: "MSR DV 84 - Monthly Stock Reporting / Stock availability and stockout percentage / Last month / Province  / Stacked column chart
+>**Description**: "MSR DV 93 - Monthly Stock Reporting / Stock availability and stockout percentage / Last month / Province  / Stacked column chart
 This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month for all health facilities in a province as stacked column chart with a legend."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
@@ -5485,7 +5497,7 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>**Selected Periods**: "Last Month"  
 >>>**Organisation unit**: "User organisation unit"  
 
-![](image-124.png)
+![](image-251.png)
 
 >**94 MSR - Stockouts - Province**  
 >
@@ -5506,6 +5518,7 @@ This report displays a Pivot table with all items and indicating for each item w
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Facility"  
 >>
 >>**Filter**: "Relative periods"  
 >>>**YOUR DIMENIONS**  
@@ -5544,6 +5557,7 @@ This report displays the number of stockouts for all items across a health facil
 >>
 >>**Rows**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 >>
 >>**Filter**  
 >>>**Data**  
@@ -5565,7 +5579,7 @@ This report displays the number of stockouts for all items across a health facil
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
 
-![](image-180.png)
+![](image-254.png)
 
 >**96 MSR - Stockout count - Province**  
 >
@@ -5643,6 +5657,7 @@ This report displays a Pivot table with a count of the number of months (during 
 >>>>**Name**: "Monthly stock report"  
 >>>>**Selected Items**: "Stockout Yes/No"  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 >>
 >>**Rows**  
 >>>**Data**  
@@ -5675,7 +5690,7 @@ This report displays a Pivot table with a count of the number of months (during 
 >>>>>>**Select a legend**: tag (appears as a white tick in a green field)  
 >>>>>>**Legend**: "Stockout count"  
 
-![](image-182.png)
+![](image-255.png)
 
 >**99 MSR - Stockout length - Province**  
 >
@@ -5684,9 +5699,8 @@ This report displays a Pivot table with a count of the number of months (during 
 >**Description**: "MSR DV 99 - Monthly Stock Reporting / Stockout length / Last 12 months / Province / Stacked bar chart
 This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the province during the past 12 months."  
 >>**Series**  
->>>**YOUR DIMENIONS**  
->>>>**Name**: "Monthly stock report"  
->>>>**Selected Items**: "Stockout Yes/No"  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 >>
 >>**Category**  
 >>>**Data**  
@@ -5696,10 +5710,12 @@ This report displays a stacked bar chart with the number of stockouts for each i
 >>>>**Selected items**: select all (->>)  
 >>
 >>**Filter**  
->>>**Organisation unit**: "User organisation unit"  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 month"  
+>>>**YOUR DIMENIONS**  
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stockout Yes/No"  
 
 ![](image-183.png)
 
@@ -5721,6 +5737,7 @@ This report displays a Pivot table by item with the coverage time (stock on hand
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Facility"  
 >>
 >>**Filter**  
 >>>**YOUR DIMENIONS**  
@@ -5762,6 +5779,7 @@ This report displays a Pivot table  with the number of items for which the cover
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 months"  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 >>
 >>**Options**  
 >>>**Data**  
@@ -5780,6 +5798,7 @@ This report displays a Pivot table  with the number of items for which the cover
 For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 >>
 >>**Category**  
 >>>**Data**  
@@ -5797,7 +5816,7 @@ For the last month, this report displays a stacked column chart with the number 
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last month"  
 
-![](image-188.png)
+![](image-253.png)
 
 >>**103 MSR - Stock coverage time ranges - Province**  
 >
@@ -5807,6 +5826,7 @@ For the last month, this report displays a stacked column chart with the number 
 For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the province."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -5823,7 +5843,7 @@ For the last month, this report displays a stacked column chart with the number 
 >>>>- "Overstock (6-12 months)"  
 >>>>- "Excessive stock (> 12 months)"  
 
-![](image-189.png)
+![](image-252.png)
 
 >**104 MSR - Stock discrepancy - Province**  
 >
@@ -5841,6 +5861,7 @@ This report displays a list with the positive and negative stock discrepancy of 
 >>  
 >>**Columns**  
 >>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "Facility"  
 >>
 >>**Rows**  
 >>>**Data**  
@@ -5872,17 +5893,18 @@ This report displays a list with the positive and negative stock discrepancy of 
 >**Visualization type**: "MSR DV 105 - Monthly Stock Reporting / Stock discrepancy / count / Last 12 months / District / Stacked column chart
 This report displays the number of stock discrepancies for the past 12 months separately for each health facility in a district."  
 >>**Series**  
->>>**YOUR DIMENIONS**  
->>>>**Name**: "Monthly stock report"  
->>>>**Selected Items**: "Stock discrepancy count"  
+>>>**Organisation unit**: "User organisation unit"  
+>>>**Level**: "District"  
 >>  
 >>**Category**  
 >>>**Period**: "Relative periods"  
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last 12 months"  
+>>>**YOUR DIMENIONS**  
+>>>>**Name**: "Monthly stock report"  
+>>>>**Selected Items**: "Stock discrepancy count"  
 >>
 >>**Filter**  
->>>**Organisation unit**: "User organisation unit"  
 >>>**Data**  
 >>>>**Data Type**: "Data elements"  
 >>>>**Data element group**: select "[Stock item list] - MSR  
@@ -5936,7 +5958,7 @@ This report provides the "Reporting rate", "Reporting rate on time", "Actual rep
 >>>
 >>>**Organisation unit**: "User organisation unit"  
 
-![](image-192.png)
+![](image-250.png)
 
 >**108 MSR - Reporting rate - Province**  
 >
@@ -6390,7 +6412,7 @@ This report displays a column chart with the percentage of items with a stockout
 
 ![](image-225.png)
 
->**123 MSR - Stock availability and stockout rate - Province**  
+>**123 MSR - Stock availability and stockout rate - Country**  
 >
 >**Visualization type**: select "Stacked column"  
 >**Name \(*)**: "MSR - Stock availability and stockout percentage - Country"  
@@ -6408,7 +6430,7 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>**Period type**: "Months"  
 >>>>**Selected Periods**: "Last Month"  
 >>>**Organisation unit**: "User organisation unit"  
->>>**Level**: "Province"  
+>>>**Level**: "DistrictProvince"  
 
 ![](image-226.png)
 
