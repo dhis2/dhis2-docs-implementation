@@ -2228,7 +2228,7 @@ if((#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs})>12,1,0)"
 >>**Generator \(*)**  
 >>>**Description**: "[Stock list] - Stock coverage time - MSR"  
 >>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
-#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs}"  
+\#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs}"  
 >>
 >>**Sequential sample count \(*)**: "0"  
 >>**Annual sample count \(*)**: "0"  
