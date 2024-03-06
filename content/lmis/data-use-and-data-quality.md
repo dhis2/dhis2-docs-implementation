@@ -169,16 +169,42 @@ DHIS2 natively allows to set a "Days after period end to qualify for timely data
 This data and time stamp then allows to generate a range of default reports for the completeness of reports in terms of data recordings for each data field as well as the timeliness (on-time) of reported data values.
 
 ## 3 LMIS data use
-Xx
+Although logistics and supply chain management is often associated with and perceived as handling (storing and transporting) physical goods and stocks, in reality logistics and main, and difficult, issues in logistics supply chain management is obtaining and processing timely and accurate data. The most difficult tasks in supply chain management of ensuring the availability of stocks in the place they are required and at the time they are required is entirely determined by data. Provided that stocks are available, the material handling (storage and transportation) is by far the easiest task.
+Therefore data in general, and data from the last mile (first data mile) in particular, is absolutely essential, critical and indispensable. Only supply networks driven by first mile demand data can be effective as well as efficient and ensure that all goods required for providing high quality health care services are available at the service delivery point when they are needed.
+Far too often, any logistics data is lumped together as "indicators" or even "Key Performance Indicators" (KPI) while actually logistics data serves different and distinct purposes.
 
 ###	Data use for inventory control
-Xx
+Inventory control (science, policies and systems for replenishing medical stocks at healthcare facilities and other medical stocks) lies at the heart of all supply chains and depends on the accurate and timely data from the healthcare facility as well as upstream levels. Therefore it is accurate and timely data together with rational and professional inventory control policies with make or break supply chains. Although the use of logistics data usually focuses on "reporting", the use for inventory control is by far the most important purpose.
+Without stock data from healthcare facilities, supply managers have to resort to surrogate data such as shipments to healthcare facilities which inevitably causes demand distortion and reduces stock availability at all levels of the supply network.
+Fortunately stock replenishment calculations require very little data but that data must be timely and absolutely correct:
+- Stock on hand (the result of a physical stock count at the end of every month): indispensable for calculating stock replenishment quantities
+- Aggregate, monthly stock issues ("consumption") are indispensable for demand analysis and forecasting future demand
+If accurate and reliable data on stock receipts at healthcare facilities is available, then the stock on hand can be calculated from the stock on hand at the beginning and the end of the month.
+Unfortunately, public health systems tend to collect too much logistics data which is not used for decision making and the key for reducing shortages and stockouts is collecting as little data but as accurately, timely and efficiently as possible.
 
 ###	Data use for logistics performance management
-Xx
+In an ideal world with perfectly functioning supply networks, where neither stockouts nor overstocking occur, monitoring and measuring the quality of logistics services would not be needed. In practice, measuring and monitoring logistics performance is critical and indispensable. Not for generating "reports" and dashboards which may or not be used but rather for informing corrective action which changes and eventually optimises all inventory control parameters in order to increase and maximise stock availability while minimising stock wastage at health care facilities.
+Despite a plethora of statistics, indicators and key performance indicators, a comprehensive and complete performance management system only requires the collection of a handful of data fields at the healthcare facility level:
+- Number of stock items managed (and changes over time)
+- Monthly demand quantities (monthly aggregates or transaction quantities)
+- Stock on hand quantities (at the end of the month or ideally in real-time)
+- Stock discards quantities
+- Stock correction quantities
+- Date and time of completion of monthly stock data reports
+- Date and time of stock transactions (where real-time systems are used)
+In addition to the above, the following data fields need to be recorded and stored in the national eLMIS system for all medical stores at all levels:
+ - Batch number (serial number) and expiry dates of all healthcare products
+ - Inventory control parameters (and any changes over time)
+ - Customer order details (customer name, date, items, quantities etc.)
+ - Customer order fulfilment dates and lead times (for all of its components)
+ - Consignment details (items, quantities, recipient, shipment and arrival date etc.)
+ - Cost of healthcare products (at the batch level)
+
 
 ###	Data use for analytics and reporting
-Xx
+Finally, data is also needed for various analytics (other than performance management) and routine reporting. However, it should be stressed, that reports which have the sole purpose of complying with reporting requirements and do not inform or initiate any (corrective) action are just a waste of valuable resources.
+Data, such as on available stocks, are useful for health workers and various managerial staff even if they are not responsible for taking corrective action and other data, such as monthly demand aggregated at facility, district, regional and national level, are required for (long-term) planning by various managers.
+Typically, (monthly) stock data is reported in Pivot tables by healthcare product and reporting period (months) or line charts for time series analyses, such as determining trends.
 
 ## Logistics metrics
 Xx
