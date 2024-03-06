@@ -571,6 +571,29 @@ Xx
 
 ## National eLMIS metrics
 Xx
+mSupply provides a wide range of analytics, reports and dashboards and should be the primary reference for any logistics data for supply managers, in particular for order fulfilment.
+- Items (item catalogue, prices, item categories)
+- Purchasing reports (purchase orders, goods received, open purchase orders, tenders)
+- Stock reports (stock on hand, stock value, stockouts, stockout days, customer demand, remaining shelf life, stock coverage time, stock corrections)
+- Transaction reports (stock receipts, stock issues)
+- Customer orders (requisitions)
+- Customer invoices
+- Customer order shortfall reports (stock on order?)
+- Backorder report
+- Consignment and shipment reports
+- Custom reports
+
+On-Time In-Full (OTIF)
+Order Cycle Time (CT)
+Forecast Accuracy (FA) / Forecasted demand
+Quality Test Rate
+Product Quality Adherence
+Inventory Turns
+
+xxx
+- On-time delivery
+- Appropriateness of order-up-to-level
+- Regularity of (monthly) orders
 
 ## LMIS performance management framework
 Xx
