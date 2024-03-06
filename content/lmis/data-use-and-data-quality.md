@@ -207,19 +207,183 @@ Data, such as on available stocks, are useful for health workers and various man
 Typically, (monthly) stock data is reported in Pivot tables by healthcare product and reporting period (months) or line charts for time series analyses, such as determining trends.
 
 ## Logistics metrics
-Xx
+The overall objective of analysing logistics data and calculating metrics is improving the stock availability of healthcare goods for health seekers as well as health professionals and minimising shortages and stockouts while producing reports is of secondary importance.
+Pure statistics such as stock on hand or aggregate monthly demand do not allow any inference of the quality of logistics services and are therefore not indicators for anything. Nevertheless, these statistics are indispensable for managing stocks and are absolutely indispensable for inventory control. On the other hand, performance metrics have clearly defined ranges for poor and excellent performance and can therefore guide management decisions. Statistics and performance metrics serve very different purposes and should be distinguished conceptually but both are essential and indispensable.
+The performance management builds on first determining what factors influence logistics performance and (at the same time) allow taking corrective action ("actionable"). Then the best metrics for measuring those factors are determined, measured and visualised in DHIS2. Any metrics or other calculations which do not result in any corrective action are considered of very limited value.
 
 ###	Benchmarks
-Xx
+The table below provides an overview comparison of authoritative standards for logistics metrics from the Target Software Standards (TSS, Gavi), Data for Immunization Supply Chain (DISC, approved by Gavi Alliance Partners), Immunization Agenda 2030 (IA2030, IA2030 Coordination Group)  and The Global Fund.
+
+| **Metric**  | **TSS** | **DISC** | **IA2030S** | **TGF** | **PEPFAR** |
+| :--- |  :---: |  :---: |  :---: |  :---: |  :---: |
+| On-Shelf Availability (OSA) / Full stock availability | x | x | - | x | x |
+| On-Time In-Full (OTIF) | x | x | - | x | - |
+| Order Cycle-Time (CT) | x | - | - | - | - |
+| Forecast Accuracy (FA) / Forecasted demand ratio | x | x | - | - | - |
+| Product loss | x | - | - | - | - |
+| Quality Test Rate | x | - | - | - | - |
+| Product Quality Adherence | x | - | - | - | - |
+| Stocked According to Plan (SATP) | x | x | - | x | x |
+| Inventory Turns | x | - | - | - | - |
+| Total SC Cost as & of Distributed Product Value | x | - | - | - | - |
+| LMIS Order Reporting Rate | x | - | - | - | - |
+| Closed vial wastage | x | x | x | - | - |
+| Functional status of cold chain equipment | x | x | x | - | - |
+| Temperature alarm rates | x | x | - | - | - |
+| Timeliness of facility reporting | - | - | - | x | - |
+| % districts reporting stock availability (vaccines and supplies) at a service delivery level | - | - | x | - | - |
+| % districts having electronic vaccine and supply stock management system to monitor vaccine stock down to service delivery | - | - | x | - | - |
+| Stock out events of DTP or MCV at national level | - | - | x | - | - |
+| Stock out days at national level | - | - | x | - | - |
+| Stock out events of DTP or MCV at sub-national level | - | - | x | - | - |
+| Effective Vaccine Management Assessment (EVMA) conducted | - | - | x | - | - |
+| Percentage of sites with functional PQS equipment | - | - | x | - | - |
+| EVM score (not just whether it has been conducted) | - | - | x | - | - |
+
+xxx
+Monitoring, Evaluation, and Reporting Indicator Reference Guide. PEPFAR. MER 2.0 (Version 2.7), September 2023.
+![Alt text](image-256.png)
+
+**USAID**
+Stockout rates (at warehouses and SDPs).
+Order Fill Rate
+Inventory Accuracy Rate
+Stocked According to Plan
+Adequate Shelf Life (upon delivery)
+Stock Wastage due to Expiration or Damage
+Very professional and precise but indicators are for warehouses and not explicitly specified for SDP.
+
+**The Global Fund**
+https://www.theglobalfund.org/media/11402/fundingmodel_supply-chain-health-services-spot-checks-information-session_presentation_en.pdf
+
+![Alt text](image-257.png)
+
+These four are found in various documents and audit reports but not in the final document only mentioned as a foot note. But I cannot imagine TGF just abandoned them.
+
+See also:
+https://docs.google.com/spreadsheets/d/1QTLVKoWZ-hJXSa0QNICcETFhoQQOMDMCpXnusjgTyUs/edit#gid=1538656318
+
+xxx
+
+KPI’s
+
+Relevant KPI’s are:
+    • KPI’s which are immediately useful for managing the supply chain
+    • KPI’s demanded by The Global Fund
+    • KPI’s demanded by PEPFAR [His "decision" that PEPFAR is relevant]
+[What about TSS, DISC  and IA2030
+
+
+Data available in DHIS2 for especially HIV and Malaria, but depending upon the country also for Reproductive Health, Essential Medicines and vaccines.:
+    1. Frequency is monthly data collection  [except for RTS]
+    2. Data per Service Delivery Point [and by item]
+    3. Stock on hand beginning of period [redundant data]
+    4. Stock on hand end of period [must be result of a physical stock count]
+    5. Qty issued
+    6. Qty received [redundant data]
+    7. Qty lost [what does "lost" mean?, unaccounted for discrepancy, "stock correction"]
+
+KPI’s useful for managing the supply chain at SDP level & possible to form based on the data available.
+As indicators calculated only monthly, and seen at district level and above. [Difference between KPI and Indicator?]
+
+![Alt text](image-258.png)
+
+![Alt text](image-259.png)
+
+KPI’s demanded by PEPFAR
+
+![Alt text](image-260.png)
+
+The indicators #1 for The Global Fund and # 1-3 for PEPFAR can be calculated based on the DHIS2 data in these countries.
+The indicators # 4-6 for PEPFAR are anyway not calculated based directly on information from SDP level. Meaning that reporting to both TGF and PEPFAR can be managed via these DHIS2 indicators.
 
 ###	Required logistics data
-Xx
+If logistics data is only collected at the health care facility, then some data (such as stock receipts) which is already recorded at the upstream levels has to be duplicated while in an integrated system the data points collected at the healthcare facility level can be minimised. In the best case where a real-time transactional system at the healthcare facility level is integrated with a national eLMIS, only stock transactions have to be recorded at the healthcare facility while all other data points can be either calculated or are already available in the national eLMIS. The table below provides an overview of the data points which need to be collected depending on the level of integration.
+
+| **Metric**  | **Stock on hand** | **Stock receipt** | **Stock distribution** | **Stock loss** | **Stock correction** |
+| :--- |  :---: |  :---: |  :---: |  :---: |  :---: |
+| Monthly reporting without integration | x | x | x | x | - |
+| Monthly reporting within integration | x | - | x | x | - |
+| Real-time system with integration | - | - | x | x | x |
+
+The table below indicates the data points which are required for calculating the metrics reference above and available in DHIS2 but excludes the IA2030 metrics because the latter do not include any facility level metrics. All other metrics can only be calculated in the national eLMIS. Metrics concerning cold chain appliances could be recorded in DHIS2 but are not included in the DHIS2 LMIS module and require using an additional and separate DHIS2 Tracker program.
+
+| **Metric**  | **Stock on hand** | **Stock receipt** | **Stock distribution** | **Stock loss** | **Stock correction** |
+| :--- |  :---: |  :---: |  :---: |  :---: |  :---: |
+| On-Shelf Availability (OSA) / Full stock availability | x | - | - | - | - |
+| On-Time In-Full (OTIF) | x | - | - | - | - |
+| Order Cycle-Time (CT) | - | - | - | - | - |
+| Forecast Accuracy (FA) / Forecasted demand ratio | - | - | - | - | - |
+| Product loss | - | - | - | x | - |
+| Quality Test Rate | - | - | - | - | - |
+| Product Quality Adherence | - | - | - | - | - |
+| Stocked According to Plan (SATP) | x | - | x | - | - |
+| Inventory Turns | x | - | x | - | - |
+| Total SC Cost as & of Distributed Product Value | - | - | - | - | - |
+| LMIS Order Reporting Rate | - | - | - | - | - |
+| Closed vial wastage | - | - | x | x | - |
+| Functional status of cold chain equipment | - | - | - | - | - |
+| Temperature alarm rates | - | - | - | - | - |
+| Timeliness of facility reporting | x | x | x | x | x |
 
 ###	Source of data and calculations
-Xx
+As DHIS2 provides some simple analytics based on healthcare facility level data and mSupply provides comprehensive analytics on all aspects of logistics and supply chain management, duplication of data, calculations, analytics and visualisations needs to be avoided.
+DHIS2 only calculates essential stock data which cannot be collected in mSupply directly and only provides some basic analytics based on data collected in DHIS2.
+DHIS2 synchronises this essential healthcare facility level data (stock on hand, stock issues, stock corrections and stock losses) with mSupply but mSupply does not synchronise data with DHIS2 which would be replicated. However, mSupply data such as order status information may be shared with DHIS2 as preconfigured pdf-reports which can be shared through the DHIS2 notification system.
+By default, the main calculations, analytics and visualisations on all aspects of logistics and supply chain management are provided by and in mSupply as a dedicated national eLMIS system. As all essential DHIS2 data is also available in mSupply, supply managers use mSupply analytics and visualisations as their only resource for managing all aspects of their work. Any other managers (other than supply managers) which require detailed logistics reports from mSupply, are provided (read) access to mSupply for consulting mSupply reports reports.
+Unless mandated by national policies and protocols and inevitable, mSupply data is not "pushed" to and stored in DHIS2 for visualisations as this would require managing and maintaining redundant data sets.
 
 ###	Overview of DHIS2 logistics metrics
-Xx
+Given the extensive analytics functionality in DHIS2, users are tempted to configure a wide range of analytics and visualisations, often duplicating measurements for specific metrics, without a clear objectives and an overall concept.
+As DHIS2 analytics strive to be specific and of practical day to day use for healthcare facility staff, DHIS2 data collection and analytics have the following objectives:
+- collect as little data as possible (but as much as necessary)
+- only analyse data collected at the healthcare facility level in DHIS2 (and not in other upstream systems)
+- only provide analytics which are meaningful to and "actionable" by healthcare facility staff
+- avoid representing the same logistics metric in different ways
+DHIS2 recommends and provides the following, intentionally limited, list of logistics data statistics and logistics metrics:
+Logistics data statistics
+- Stock receipt
+- Stock distribution
+- Stock redistribution
+- Stock discard
+- Stock on hand
+- Stock correction
+Logistics indicators
+- Coefficient of variation / absolute values
+- Coefficient of variation / distribution
+- Stockout / list of items with stockouts
+- Stock availability
+- Stockout percentage
+- Number of stockouts (count)
+- Stockout duration by item / months with stockouts
+- Stockout duration by item / days with stockouts
+- Stockout duration / distribution
+- Stock coverage time by item / months of stock [inverse "Stock turns"]
+- Stock coverage time / months of stock / distribution
+- Stock coverage time / category
+- Stock coverage time / category / distribution
+- Stock discrepancy by item / absolute values
+- Stock discrepancy / count
+- Stock discrepancy / percentage
+- Report completeness
+- Reporting rate
+- Reporting rate on time
+
+**Categories: only 3!!!!!**
+Coefficient of variation [demand]
+Stock coverage time (including stockouts) [stock on hand]
+Stock discrepancy [logistics data consistency, data quality]
+Report completeness
+Report timeliness
+
+These indicators can be evaluated in different ways:
+    • Measuring absolute (daily/monthly) values
+    • Measuring changes over time (improvements and deterioration)
+    • Measuring averages
+    • Comparing measurements against clearly defined targets (thresholds)
+
+Confirm whether all DHIS2 metrics are "Manifestation" indicators?
+and whether all root cause indicators are only available in national eLMISs?
 
 ## DHIS2 logistics data statistics
 Xx
