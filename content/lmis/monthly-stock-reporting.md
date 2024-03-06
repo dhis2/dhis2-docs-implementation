@@ -417,7 +417,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>1 && #{xrjnOtFFTRC.iIC4
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "1-2 years - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>12 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=24,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>12 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=24,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>12 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=24,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>12 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=24,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>12 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=24,1,0)+
@@ -481,7 +482,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>12 && #{xrjnOtFFTRC.iIC
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "1O-11 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>10 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=11,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>10 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=11,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>10 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=11,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>10 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=11,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>10 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=11,1,0)+
@@ -545,7 +547,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>10 && #{xrjnOtFFTRC.iIC
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "11-12 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>11 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=12,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>11 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=12,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>11 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=12,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>11 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=12,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>11 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=12,1,0)+
@@ -674,8 +677,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>2 && #{xrjnOtFFTRC.iIC4
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "2-3 years - MSR - Numerator"  
->>>**Calculation**:
->>>if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>24 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=36,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>24 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=36,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>24 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=36,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>24 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=36,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>24 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=36,1,0)+
@@ -804,7 +807,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>3 && #{xrjnOtFFTRC.iIC4
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "4-5 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>4 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=5,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>4 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=5,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>4 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=5,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>4 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=5,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>4 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=5,1,0)+
@@ -868,7 +872,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>4 && #{xrjnOtFFTRC.iIC4
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "O-1 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>5 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=6,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>5 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=6,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>5 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=6,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>5 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=6,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>5 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=6,1,0)+
@@ -932,7 +937,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>5 && #{xrjnOtFFTRC.iIC4
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "6-7 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>6 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=7,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>6 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=7,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>6 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=7,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>6 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=7,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>6 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=7,1,0)+
@@ -996,7 +1002,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>6 && #{xrjnOtFFTRC.iIC4
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "7-8 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>7 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=8,1,0)+
@@ -1060,7 +1067,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "8-9 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>7 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=8,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>7 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=8,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>7 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=8,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>7 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=8,1,0)+
@@ -1124,7 +1132,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>7 && #{xrjnOtFFTRC.iIC4
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "9-10 months - MSR - Numerator"  
->>>**Calculation**:  if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>9 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=10,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>9 && #{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}<=10,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>9 && #{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}<=10,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>9 && #{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}<=10,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>9 && #{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}<=10,1,0)+
@@ -1188,7 +1197,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>9 && #{xrjnOtFFTRC.iIC4
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: ">03 years - MSR - Numerator"  
->>>**Calculation**: if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>36,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}/#{LNAkkMTxqEW.zogrUrI7Crs}>36,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}/#{WyDZKSw82X6.zogrUrI7Crs}>36,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}/#{JPccVwAGRq9.zogrUrI7Crs}>36,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}/#{smxJz7Mt6ia.zogrUrI7Crs}>36,1,0)+
@@ -1252,7 +1262,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>36,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Appropriate stock - MSR - Numerator"  
->>>**Calculation**: #{LNAkkMTxqEW.pXfWqU8b96D}+
+>>>**Calculation**:  
+\#{LNAkkMTxqEW.pXfWqU8b96D}+
 \#{WyDZKSw82X6.pXfWqU8b96D}+
 \#{JPccVwAGRq9.pXfWqU8b96D}+
 \#{smxJz7Mt6ia.pXfWqU8b96D}+
@@ -1316,7 +1327,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>36,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Excessive stock - MSR - Numerator"  
->>>**Calculation**: #{LNAkkMTxqEW.CVWVNV7y93Q}+
+>>>**Calculation**:  
+\#{LNAkkMTxqEW.CVWVNV7y93Q}+
 \#{WyDZKSw82X6.CVWVNV7y93Q}+
 \#{JPccVwAGRq9.CVWVNV7y93Q}+
 \#{smxJz7Mt6ia.CVWVNV7y93Q}+
@@ -1380,7 +1392,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}/#{xrjnOtFFTRC.zogrUrI7Crs}>36,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "High variability - Numerator"  
->>>**Calculation**: if(#{LNAkkMTxqEW.U2tBADVisKH}>10,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.U2tBADVisKH}>10,1,0)+
 if(#{WyDZKSw82X6.U2tBADVisKH}>10,1,0)+
 if(#{JPccVwAGRq9.U2tBADVisKH}>10,1,0)+
 if(#{smxJz7Mt6ia.U2tBADVisKH}>10,1,0)+
@@ -1440,7 +1453,8 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}>10,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "High variability - Numerator"  
->>>**Calculation**: if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
 if(#{WyDZKSw82X6.U2tBADVisKH}<5,1,0)+
 if(#{JPccVwAGRq9.U2tBADVisKH}<5,1,0)+
 if(#{smxJz7Mt6ia.U2tBADVisKH}<5,1,0)+
@@ -1500,7 +1514,8 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Medium variability - Numerator"  
->>>**Calculation**: if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.U2tBADVisKH}<5,1,0)+
 if(#{WyDZKSw82X6.U2tBADVisKH}<5,1,0)+
 if(#{JPccVwAGRq9.U2tBADVisKH}<5,1,0)+
 if(#{smxJz7Mt6ia.U2tBADVisKH}<5,1,0)+
@@ -1560,7 +1575,8 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Overstock - MSR - Numerator"  
->>>**Calculation**: #{LNAkkMTxqEW.EnrDpXZVNq2}+
+>>>**Calculation**:  
+\#{LNAkkMTxqEW.EnrDpXZVNq2}+
 \#{WyDZKSw82X6.EnrDpXZVNq2}+
 \#{JPccVwAGRq9.EnrDpXZVNq2}+
 \#{smxJz7Mt6ia.EnrDpXZVNq2}+
@@ -1624,7 +1640,8 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stock availability - MSR - Numerator"  
->>>**Calculation**: #{LNAkkMTxqEW.vRsIAIjzyfn}+
+>>>**Calculation**:  
+\#{LNAkkMTxqEW.vRsIAIjzyfn}+
 \#{WyDZKSw82X6.vRsIAIjzyfn}+
 \#{JPccVwAGRq9.vRsIAIjzyfn}+
 \#{smxJz7Mt6ia.vRsIAIjzyfn}+
@@ -1688,7 +1705,8 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stock discrepancy count - MSR - Numerator"  
->>>**Calculation**: #{LNAkkMTxqEW.cD8WZyjlq9C}+
+>>>**Calculation**:  
+\#{LNAkkMTxqEW.cD8WZyjlq9C}+
 \#{WyDZKSw82X6.cD8WZyjlq9C}+
 \#{JPccVwAGRq9.cD8WZyjlq9C}+
 \#{smxJz7Mt6ia.cD8WZyjlq9C}+
@@ -1748,7 +1766,8 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stock discrepancy percentage - MSR - Numerator"  
->>>**Calculation**: #{LNAkkMTxqEW.cD8WZyjlq9C}+
+>>>**Calculation**:  
+\#{LNAkkMTxqEW.cD8WZyjlq9C}+
 \#{WyDZKSw82X6.cD8WZyjlq9C}+
 \#{JPccVwAGRq9.cD8WZyjlq9C}+
 \#{smxJz7Mt6ia.cD8WZyjlq9C}+
@@ -1808,7 +1827,8 @@ if(#{xrjnOtFFTRC.U2tBADVisKH}<5,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stockout count - MSR"  
->>>**Calculation**: if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
+>>>**Calculation**:  
+if(#{LNAkkMTxqEW.iIC4YhgrxQY}==0,1,0)+
 if(#{WyDZKSw82X6.iIC4YhgrxQY}==0,1,0)+
 if(#{JPccVwAGRq9.iIC4YhgrxQY}==0,1,0)+
 if(#{smxJz7Mt6ia.iIC4YhgrxQY}==0,1,0)+
@@ -1872,7 +1892,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Stockout percentage - MSR - Numerator"  
->>>**Calculation**: #{LNAkkMTxqEW.e7d6Th5WLEM}+
+>>>**Calculation**:  
+\#{LNAkkMTxqEW.e7d6Th5WLEM}+
 \#{WyDZKSw82X6.e7d6Th5WLEM}+
 \#{JPccVwAGRq9.e7d6Th5WLEM}+
 \#{smxJz7Mt6ia.e7d6Th5WLEM}+
@@ -1936,7 +1957,8 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
 >>>**Description**: "Understock - MSR - Numerator"  
->>>**Calculation**: #{LNAkkMTxqEW.jJeAB3Dcibl}+
+>>>**Calculation**:  
+\#{LNAkkMTxqEW.jJeAB3Dcibl}+
 \#{WyDZKSw82X6.jJeAB3Dcibl}+
 \#{JPccVwAGRq9.jJeAB3Dcibl}+
 \#{smxJz7Mt6ia.jJeAB3Dcibl}+
@@ -2102,7 +2124,8 @@ This "Legend" is created for selecting a specific colour for column charts inste
 *THIS IS ABSOLUTELY CRITICAL and the lowest level in the hierarchy must be selected (and not "Country") otherwise Predictors are generated but the values are blank*  
 >>**Generator \(*)**  
 >>>**Description**: "[Stock list] - Appropriate stock - MSR"  
->>>**Expression**: ""
+>>>**Expression**: "forEach ?de in :DEG:rDRgmw0sBWn -->
+if((#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs})>3 && (#{?de.iIC4YhgrxQY}/#{?de.zogrUrI7Crs})<=6,1,0)"
 >>
 >>**Sequential sample count \(*)**: "6"  
 >>**Annual sample count \(*)**: "0"  

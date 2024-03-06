@@ -1,6 +1,6 @@
 # DATA USE AND DATA QUALITY
 
->*Table of contents for planning purposes, will be deleted in actual document*  
+>**Table of contents for planning purposes, will be deleted in actual document**  
 >LMIS data quality  
 >>Data accessibility  
 >>Data output quality  
