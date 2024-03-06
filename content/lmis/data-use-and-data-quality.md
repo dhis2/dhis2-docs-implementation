@@ -402,6 +402,7 @@ xxx
 - Meaning/Interpretation?
 - Corrective action
 - Aggregation options: items / time / geography
+- Visualization options (only those which are meaningful)
 
 
 ###	Stock receipt
@@ -416,6 +417,10 @@ Calculation
 Aggregation of individual distribution transactions at different times and two different services and wards.
 Meaning
 Xx
+
+xxx
+- Aggregations: aggregate, monthly customer demand can be aggregated across time periods and presented as a sum, for example the total annual quantity, but is not very meaningful. The quantities of different items for the same period of time cannot be meaningfully aggregated.
+xxx
 
 ###	Stock redistribution
 Xx
@@ -434,6 +439,13 @@ Xx
 Limitations
 Xx
 - need to count at regular intervals
+
+xxx
+The pivot table displays a list of items vertically as rows and the time periods (months) horizontally as columns. The individual values of the stock on hand for the respective item and respective time period are shown in the field where the column and row intersect.
+The line chart displays each item as a separate graph over the time periods (months, horizontal axis) and the stock on hand for each item on the vertical axis.
+xxx
+- Aggregations: stock on hand cannot be meaningfully aggregated as sum and averages over time are not very meaningful.
+xxx
 
 ###	Stock correction
 Xx
@@ -597,27 +609,189 @@ xxx
 
 ## LMIS performance management framework
 Xx
+Ideally, performance is managed by upstream (national) logistics services with performance indicators being made available to end-users in real time in the end-user eLMIS. Therefore, ideally, upstream logistics services continuously improve logistics services without the need for any further involvement by end-users.
+However, some activities and processes which are controlled by health professionals and mainly out of control by logistics services, need to be measured and monitored by end-users who also need to initiate and complete some corrective action. Moreover, all performance indicators managed by upstream logistics services but which are relevant to end-users must be shared with and readily accessible to end-users.
+Performance indicators are measured and represented by different means:
+- Pivot Tables
+- Data Visualizer
+- Maps
+- Preconfigured dashboards
+- Customised dashboards
+Reports may be configured according to national policies, standards and requirements according to the applied stock management system:
+"Basic" mode: (mainly) monthly reports
+"Advanced" mode: real time analysis and reports (at least daily updates)
+While in most cases users and managers start out designing dashboards and visualisations, the sole objective of the DHIS2 LMIS performance management concept is to improve the quality of logistics services provided to services delivery points by increasing stock availability and minimising stockouts. Therefore the entire concept is "purpose-driven" and conceived "in reverse" (compared to conventional approaches):
+ - the overall objective of health systems is preventing, treating diseases and alleviating suffering (reducing morbidity and mortality) which (among many others) requires availability of high quality health care goods
+ - the overall logistics objective is reducing shortages and stockouts
+ - what metrics are suitable for measuring and monitoring shortages and stockouts
+ - what corrective action (for reducing shortages and stockouts) is possible and effective, who has the possibility of taking corrective action, how and when
+ - what metric is suitable to determine what corrective action(s) is/are most appropriate
+ - what data is needed for their calculation
+ - collect the data (reliably, accurately and timely, ideally in real-time)
+ - what representation of the data and metrics is most suitable for analytics and visualizations
+ - only after all of the above, visualizations and dashboards are developed
 
 ###	General principles
 Xx
+As for the entire concept, the ultimate objective of performance management is improving health services for end-users, patients and health professionals rather than (only) complying with national and donor reporting requirements.
+One fundamental principle is that all actors, end-users (health professionals) as well as logistics staff impact logistics services and must closely collaborate for continuously improving these services. However, rather than being responsible “collectively”, distinct accountabilities and responsibilities must be assigned to and assumed by all actors in order to avoid endless finger pointing without any effective, corrective action being taken.
+Other principles are:
+- The ultimate objective is improving services (not only "reporting")
+- All performance metrics must "actionable" in associated with specific corrective actions
+- All required data must actually be available and must be collected regularly
+- All data is entered directly into DHIS2 at the healthcare facility (end-user level)
+- All metrics are measured directly in DHIS2 or in the upstream eLMIS
+- Clear distinction between logistics data and performance metrics
+- Facilities only measure metrics at healthcare facility level (not for upstream levels)
+- Single metric for any specific measurement (no redundancy)
+- Comprehensive and complete set of metrics measuring all relevant aspects of logistics and supply chain management
+- The system should be as simple and precise as possible
+- All logistics and health actors impact logistics services performance
+- Standard set of indicators across all programmes and health facilities
+- Indicators are measured for all stock items (and not only "tracer" items)
+- "Programme specific" indicators only if/when needed (occasionally)
+- Only a single indicator for measuring any "manifestation" indicator
+- 5 "manifestation" indicators (not more)
+- Clearly defined targets for every performance indicator
+- "Manifestation" indicator = determining "symptom"
+- "Root cause" indicator = "diagnosis" and identifying problem
+- Corrective action = "therapy"
+- Clearly defined responsibilities and accountabilities for measuring and corrective action
+- Clearly defined corrective action for any deviations
 
 ###	"Manifestation" indicators ("symptoms")
 Xx
+“Manifestation” indicators primarily serve for detecting “symptoms” and establishing the presence, extent and scope of any logistics performance problem.
+- Purpose: monitoring
+- Question to be answered: what is the quality of services?
+- Clearly defined target range of the indicator
+- Question: is there a problem and if so what is the extent and scope?
+- If the problem is confirmed: analyse root cause(s)
+Only two “manifestation” indicators are sufficient for covering logistics services at end-user level: 
+- Stock shortages and stockouts measured as stock coverage time
+- Inappropriate utilization / stock losses
+- Health programme specific indicators
+The stock availability is commonly aggregated across the stock item list at a healthcare facility or across several healthcare facilities and measured as stock availability or "On Shelf Availability" (OSA).
+In fact, the multitude of metrics which are in use are simply variation or combination of the key performance indicators above and therefore redundant. As long as a different measurement does not result in identifying an additional root cause or a different corrective action, it is superfluous.
 
 ###	Root cause indicators ("diagnosis")
 Xx
+But measuring in itself is (nearly) useless and if there is no ability or willingness to improve logistics services then there is no point in measuring them in the first place. Therefore, if a “symptom” is detected, the “root cause” indicators serve to “diagnose” the underlying problem which allows taking appropriate corrective action.
+- Purpose: determining problem causes
+- Manifestation indicators have several root causes, but
+- One indicator per root cause
+- Only measure what can be changed
+- Defined threshold for taking action
+- Every indicator measured by one actor
+- Specific actor takes corrective action
+- Fix the problem!
+Root cause indicators for stock shortages and stockouts
+- Adding new items
+- Buffer stocks too low
+- Imprest System not used
+- Orders made irregularly
+Root cause indicators for inappropriate utilization and losses
+- Poor/inappropriate prescription
+- Overstocking (for any reason)
+- Not respecting First-expiry-first-out
+- Damage by poor storage conditions
+While manifestation indicators (such as a shortage or stockout) may have more than one root cause, a single indicator is sufficient for determining the presence of any of the root causes and redundancy of indicators is avoided.
+Only root causes which can be addressed and corrected are measured since identifying a root cause which cannot be changed is (nearly) useless.
+For both the “manifestation” and “root cause” indicators, thresholds for corrective action need to be clearly defined and possibly different thresholds which define different corrective actions or different levels of urgency of implementing corrective action.
+Every indicator should be clearly assigned to a specific actor who is in charge of measuring, monitoring as well as initiating and implementing corrective action.
+While a large number of different metrics have been used for measuring shortages and stockouts, in fact there are only a small number of root causes.
+
+![Alt text](image-261.png)
+
+The table below shows the details of all possible root causes for shortages and stockouts, the responsible actor, how they can be measured as well as the required corrective action.
+
+![Alt text](image-262.png)
+
+Likewise, at the end-user level, losses have only very few root causes:
+
+![Alt text](image-263.png)
+
+The details of all possible root causes for losses and wastage, the responsible actor, how they can be measured as well as the required corrective action are given in the table below.
+
+![Alt text](image-264.png)
 
 ###	Programme specific indicators
 Xx
+While the framework presented above covers all indicators required for measuring and monitoring the quality of logistics services, some health programmes and national health systems may require measuring additional metrics for the sake of complying with donor reporting or national requirements. For example:
+- EPI: open/closed vial wastage
+- AIDS: multi-month dispensing (patients receiving three months’ supply of ARVs)
+- TB: use of GeneXpert tests
 
 ###	Corrective action ("therapy")
 Xx
+Determining, initiating and implementing corrective action is the key step for giving any meaning to performance management. The process is as follows:
+- Measure and monitor “manifestation” indicators (stockouts and losses)
+- Compare measurement with target
+- If within target range: continuous improvement
+- If outside target range: analyse root cause indicator(s)
+- Identify root cause(s)
+- Determine staff who can implement corrective action
+- Implement corrective action
+- Measure impact of correct action
+- Repeat from step 1
+The implementation of a real time stock management system in combination with a well-developed national eLMIS system would allow developing an “expert system” which continuously measures and monitors a comprehensive set of performance metrics and displays the root cause analysis as well as the required corrective actions on a dashboard without the need for any further (human) analysis.
 
 ###	Summary with flow chart
 Xx
 
+![Alt text](image-265.png)
+
+xxx
+**Analysis and (corrective) action - Stock distribution**
+
+| **Analysis (Observation)**  | **Potential reason** | **(Corrective) action** |
+| :--- |  :--- |  :--- |
+| Demand data incomplete (missing data points) | Lack of compliance by staff or technical fault of data collection | Train staff, Remedy faults in the information system |
+| Aggregate, monthly customer demand per item | (only valid in comparison with other values) | Compare values with previous time periods and against available benchmarks |
+| No (low) demand | Stockouts (shortages) of items | Take immediate measures for resupply of items |
+| Stable demand | Population and vaccination seeking stable | (None) |
+| Demand increasing | Temporary fluctuation, compensation for earlier shortages, increase of vaccination seeking, population increase | If demand increase is stable and expected to last, review and adjust inventory control parameters |
+| Demand decreasing | Population decrease, shortage of vaccines, decrease of vaccine seeking | Analyse potential reasons for demand decrease and only review and adjust inventory control parameters if the decrease is confirmed to be permanent |
+| Demand intermittent [include erratic here?] | Shortage of vaccines, (intermittent) problems of access to vaccination services
+ | Analyse potential reasons for intermittent demand and review and adjust inventory control parameters if caused by shortages and stockouts |
+| Demand erratic | ?? | ??Stabilize demand? |
+| Demand patterns of different items correlated | More likely to be a supply problem? | ?? |
+
+**Analysis and (corrective) action - Stock on hand**
+The value of analysing stock on hand levels (which make no indication of customer demand) and their fluctuations are of much less importance than the analysis of stock coverage times.
+
+
+
+
+
 ## HMIS/LMIS triangulation
 Xx
+xxx
+Data triangulation, improving health outcomes
+Xxx
+https://drive.google.com/drive/u/0/folders/1PqZzM65TU0Z5zLwe9fyZdvweSEZIf1ZT
+xxx
 
 ### Data triangulation
 Xx
+
+### References
+Xx
+
+xxx
+HISP Centre University of Oslo: Data Quality and Use, DHIS2 Documentation. Accessed 11.11.2023. https://docs.dhis2.org/en/implement/chis-implementation/data-quality-and-use.html
+The DICE consortium: "Stepwise Toolkit for Planning & Budgeting Interoperability of Digital Health Solutions". Digital Health Center of Excellence, not dated. Accessed 26.10.2023. https://a78da35e-056b-4420-8e4f-41e3283327e3.usrfiles.com/ugd/55ae33_5af35824932c48d89287928244b60a8d.pdf
+The Global Fund: "Adjustments to the KPI Framework". The Global Fund, 44th Board meeting, GF/B44/15B, 11-12 November 2020, Virtual. Accessed 26.10.2023. https://www.theglobalfund.org/media/8d89221958393a7/bm44_15b-adjustmentskpiframework_report_en.pdf
+The Global Fund: "Key Performance Indicators (KPIs) Handbook for the 2023-2028 Strategy. PowerPoint presentation. The Global Fund, May 2023. Accessed 26.10.2023. https://www.theglobalfund.org/media/12681/strategy_globalfund2023-2028-kpi_handbook_en.pdf
+The Global Fund: "Information Session: Supply Chain and Health Services Spot Checks". The Global Fund, Monitoring & Oversight Workstream, 23 September 2021. Accessed 26.10.2023. https://www.theglobalfund.org/media/11402/fundingmodel_supply-chain-health-services-spot-checks-information-session_presentation_en.pdf
+UNICEF: "Data quality Framework". United Nations Childre's Fund (UNICEF), Division of Data, Analytics, Planning and Monitoring. New York: December 2021. Accessed 26.10.2023. file:///home/user/Downloads/Data-Quality-Framework-1.pdf
+
+https://docs.dhis2.org/en/implement/chis-implementation/data-quality-and-use.html?h=data+quality
+(Breno) Overlapping or related work with the following publications? To be confirmed and eventually cited:
+
+    8. Recommendations on digital interventions for health system strengthening 2019 https://www.who.int/publications/i/item/9789241550505 
+    9. Digital Implementation Investment Guide (DIIG): Integrating Digital Interventions into Health Programmes 2020
+https://www.who.int/publications/i/item/9789240010567 
+    10. Stepwise Toolkit for Planning & Budgeting Interoperability of Digital Health Solutions
+https://a78da35e-056b-4420-8e4f-41e3283327e3.usrfiles.com/ugd/55ae33_5af35824932c48d89287928244b60a8d.pdf 
+xxx
