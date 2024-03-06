@@ -388,10 +388,33 @@ and whether all root cause indicators are only available in national eLMISs?
 ## DHIS2 logistics data statistics
 Xx
 
+xxx
+- explain limitations for every metric!: what if data is incomplete, under what condition is the metric not meaningful
+- Got each of the statistics and indicators explain if and at what level they can be aggregated
+xxx
+Interpretation?
+Corrective action?
+xxx
+
+- Definition
+- Measurement period
+- Calculation
+- Meaning/Interpretation?
+- Corrective action
+- Aggregation options: items / time / geography
+
+
 ###	Stock receipt
 Xx
 
 ###	Stock distribution
+Xx
+monthly/daily?
+Definition
+Total quantity of each item distributed from the medical store (central pharmacy, distribution centre etc.) to users (patients and health professionals) or the next lower level in the supply network.
+Calculation
+Aggregation of individual distribution transactions at different times and two different services and wards.
+Meaning
 Xx
 
 ###	Stock redistribution
@@ -402,6 +425,15 @@ Xx
 
 ###	Stock on hand
 Xx
+Definition
+Result of the physical stock count of each item at the medical store on the last day of the month.
+Calculation
+None (count)
+Meaning
+Xx
+Limitations
+Xx
+- need to count at regular intervals
 
 ###	Stock correction
 Xx
@@ -414,6 +446,119 @@ Xx
 
 ###	Stock coverage time
 Xx
+
+x.3 Stockout
+Xx
+Definition
+Stock on hand of zero (no stock) at the time of the physical stock count.
+Calculation
+Calculated for each item separately.
+Stock on hand = 0.
+Meaning
+A stockout always requires urgent action to resupply the facility.
+The definition of a stockout is somewhat arbitrary as a stock of one tablet is nearly as useless as a stockout but it is still useful to measure these "worst" cases while low stock levels and "near stockouts" are accurately capture by the stock coverage time.
+x.4 Stockout count
+Xx
+Definition
+Count of the number of stockouts across all stock items at the end of the month.
+Stock items are all those items which the respective medical stores intends and is supposed to keep in stock at all times.
+Calculation
+Calculated for each item separately.
+Determine for each item whether it is out of stock and then count all items with a stockout.
+Meaning
+Xx
+x.5 Stock availability
+Xx
+Definition
+Percentage of items on the stock item list which are not out of stock.
+Calculation
+Calculated for all stock items of the stock item list.
+- Determine the number stock items on the stock item list
+- Determine for each item whether it is out of stock 
+- Count all items which are in stock
+- Divide the number of items which are in stock by the number of items on the stock item list
+- Calculate as percentage
+Meaning
+This metric allows to quickly assess the service level provided to customer for a large number of stock items with a single metric in a very meaningful way.
+Stock availability = 0%: all items are out of stock
+Stock availability = 100%: all items are in stock (no items are out of stock)
+x.6 Stockout duration
+Xx
+Definition
+During a period of 12 months (for example), the number of months during which a stockout occurred during the time of the physical stock count.
+Calculation
+Calculated for each item separately.
+For each item, determine whether it was out of stock during the physical stock count at the end of each month.
+Count the number of months during which a stockout was reported.
+Meaning
+In most cases, stock counts are only carried out at the end of the month and considering only stockouts which occurred at the end of the month is somewhat arbitrary as stockouts can occur right after a physical stock count and stocks can be replenished just be the physical stock count or (as the other extreme) stockouts can occur just before the physical stock count and stocks can be replenished right after the stock count.
+But, statistically, such exceptions will even out. For example, an item which is out of stock during 10 days of every month is likely to cause 1 stockout every 3 months.
+In practice data is available only from stock counts once a month and in these cases there is no other way of determination.
+x.7 Stockout duration distribution
+Xx
+Definition
+The possible stockout duration between 0 and 12 months (x-axis) is plotted against the number of items (y-axis) with the respective stockout duration during the past 12 months.
+Calculation
+Calculated for all items in the stock item list.
+- Calculate the stockout duration for each item
+- Count the number of items for which the respective stockout duration was determine
+- Present as absolute count or as percentage of all items
+Meaning
+This metric allows to quickly assess the service level and quality of stock management across a large number of stock items (even several hundred) with a single visualization in a very meaningful way.
+Ideally no stockouts should occur.
+If stockouts do occur, the shorter the stockout duration the better.
+Stockout duration distributions skewed to the left indicate that, on average, stockout durations are short which is better than a stockout duration skewed to the right which indicates long stockouts.
+x.9 Stock coverage time
+Xx
+Definition
+Stock on hand divided by the monthly distribution quantity of the most recent month(s) expressed as a fraction.
+Calculation
+- Determine the stock on hand of each item
+- Determine the monthly distribution quantity of the same item
+- Divide the stock on hand by the monthly distribution quantity for the same item
+- Express calculation result as a fraction
+Meaning
+The stock coverage time corresponds to the number of months the medical store can continue delivering items provided that (!) demand does not change (does not differ from the demand used for the calculation) and (!) that for the entire stock coverage time period no resupplies are received.
+To some degree the stock coverage, which can only be measured once a month after the physical stock count, as a monthly "snapshot" is arbitrary as the physical stock count might be taken just before the stock replenishment (where stock levels and therefore stock coverage times are low) or just after the stock replenishment (where stock levels and therefore stock coverage times are high).
+If monthly demand is zero, this metric cannot be calculated and has no meaning although one could argue that it is infinite as long as no stockout has occurred.
+A stock coverage time of zero corresponds to a stockout (as the stock on hand must be zero)
+If stock coverage times are "low", shortages and stockouts are likely.
+If stock coverage times are "high", shortages and stockouts are unlikely but the likelihood of expiry of stock before it can be used is high.
+Quantifying stock coverage times as "low" or "high" is highly arbitrary.
+Actual stock coverage times should always be related to target stock levels.
+x.10 Stock coverage time ranges
+Xx
+Definition
+Stock coverage time ranges divide the stock coverage times from o to (in theory) infinity into distinct "bins" as this allows to simplify visualizations. These ranges are often defined arbitrarily in terms of the number of months which is not meaningful. Rather, the actual stock coverage times need to be related to inventory control policy and the target stock level. Note that, even in an ideally managed store, stock levels must fluctuate between stock replenishments.
+For the sake of simplicity, because it is common practice and in order to be comparable, safety stock levels and working stock levels are also measured in multiples of monthly demand rather than absolute numbers.
+The following stock levels (only) are relevant for setting stock coverage time ranges
+- Safety stock level: ideally stocks should never drop below the safety stock level
+- Working stock: difference between the stock on hand right after replenishment and right before the next replenishment which usually corresponds to the demand of one month
+Regardless of the inventory control policy, by definition, stock levels must always fluctuate only between the safety stock level and the safety stock level + working stock. This leads to four clearly and unambiguously defined stock coverage time ranges:
+- Stockout: stock coverage on hand zero
+- Under-stocked: stocks non-zero but below safety stock level
+- Appropriate stocks: stocks between safety stock level and safety stock level + working stock
+- Overstocked: stocks above safety stock level + working stock
+Calculation
+This metric is calculated for each item separately.
+- Calculate the stock coverage time as months of demand
+- Determine the range ("bin") which the stock coverage time falls into
+- Assign the respective category to each item.
+Meaning
+While stock coverage times give an indication of whether an item is "rather" under- or overstocked it does not allow an objective assessment. A stock coverage time of 3.5 is "appropriate" if the safety stock level is 3 months but under-stocked if the safety stock level is 6 months.
+This metric allows objectively assessing whether stock levels are too low, appropriate or too high using the inventory control parameters as objective criteria.
+x.11 Stock coverage time range count
+Xx
+Definition
+The number of items in each of the stock coverage time ranges are counted and represented as a bar chart.
+Calculation
+This metric is calculated for all stock items in the stock item list.
+- Determine the stock coverage time range for each item
+- Count the number of items in each of the stock coverage time ranges
+The result can be represented as absolute number or as a percentage of all items in the stock item list.
+Meaning
+Ideally, all items should fall in the "appropriate" range and there should be no (or very few) items which are under- or overstocked.
+This metric allows to objectively and quickly assess the service level as well as the quality of stock management with a single bar chart for a large number of items.
 
 ###	Stock discrepancy
 Xx
