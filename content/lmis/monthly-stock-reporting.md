@@ -273,7 +273,7 @@ Indicators are used for calculating the following logistics metrics:
 
 - Stockouts (number of items which are out of stock and stockout rate in percent)
 
-- Stock coverage time ranges (stockout, Understock, Appropriate stock, Overstock and Excessive stock)
+- Stock coverage time categories (stockout, Understock, Appropriate stock, Overstock and Excessive stock)
 
 - Coefficient of variation ranges (Low variability, Medium variability, High variability)
 
@@ -2422,8 +2422,8 @@ Xx
 >>>- 29 MSR - Stock coverage time distribution  
 >>>- 30 MSR - Stock coverage time distribution - Last 12 months  
 >>>- 31 MSR - Stock coverage time distribution - Last month  
->>>- 32 MSR - Stock coverage time ranges   
->>>- 33 MSR - Stock coverage time ranges  
+>>>- 32 MSR - Stock coverage categories   
+>>>- 33 MSR - Stock coverage time categories  
 >>>- 34 MSR - Stock discrepancy  
 >>>- 35 MSR - Stock discrepancy count  
 >>>- 36 MSR - Stock discrepancy count  
@@ -2465,8 +2465,8 @@ Xx
 >>>- 67 MSR - Stock coverage time distribution - District  
 >>>- 68 MSR - Stock coverage time distribution - District - Last 12 months  
 >>>- 69 MSR - Stock coverage time distribution - District - Last month  
->>>- 70 MSR - Stock coverage time ranges - District  
->>>- 71 MSR - Stock coverage time ranges - District  
+>>>- 70 MSR - Stock coverage time categories - District  
+>>>- 71 MSR - Stock coverage time categories - District  
 >>>- 72 MSR - Stock discrepancy - District  
 >>>- 73 MSR - Stock discrepancy count - District  
 >>>- 74 MSR - Stock discrepancy count - District  
@@ -2502,8 +2502,8 @@ Xx
 >>>- 99 MSR - Stockout length - Province  
 >>>- 100 MSR - Stock coverage time - Province  
 >>>- 101 MSR - Stock coverage time distribution- Province  
->>>- 102 MSR - Stock coverage time ranges - Province  
->>>- 103 MSR - Stock coverage time ranges - Province  
+>>>- 102 MSR - Stock coverage time categories - Province  
+>>>- 103 MSR - Stock coverage time categories - Province  
 >>>- 104 MSR - Stock discrepancy - Province  
 >>>- 105 MSR - Stock discrepancy count - Province  
 >>>- 106 MSR - Stock discrepancy count - Province  
@@ -2536,8 +2536,8 @@ Xx
 >>>- 128 MSR - Stockout length - Country  
 >>>- 129 MSR - Stockout length - Country  
 >>>- 130 MSR - Stock coverage time distribution - Country  
->>>- 131 MSR - Stock coverage time ranges - Country  
->>>- 132 MSR - Stock coverage time ranges - Country  
+>>>- 131 MSR - Stock coverage time categories - Country  
+>>>- 132 MSR - Stock coverage time categories - Country  
 >>>- 133 MSR - Stock discrepancy count - Country  
 >>>- 134 MSR - Stock discrepancy count - Country  
 >>>- 135 MSR - Report completeness - Country  
@@ -3577,12 +3577,12 @@ This report displays a group of column charts representing the stock coverage ti
 
 ![](image-35.png)
 
->>**32 MSR - Stock coverage time ranges - Column chart**  
+>>**32 MSR - Stock coverage time categories**  
 >
 >**Visualization type**: select "Column"  
->**Description**: "MSR - Stock coverage time ranges - Column chart"  
->**Name \(*)**: "MSR DV 32 - Monthly Stock Reporting / Stock coverage time ranges / Last month / Health facility / Stacked column chart  
-For the last month, this report displays a stacked column chart with the number of items for each stock coverage time range (stockout, understock, appropriate stock, overstock and excessive stock) for the health facility."  
+>**Description**: "MSR - Stock coverage time categories"  
+>**Name \(*)**: "MSR DV 32 - Monthly Stock Reporting / Stock coverage time categories / Last month / Health facility / Stacked column chart  
+For the last month, this report displays a stacked column chart with the number of items for each stock coverage time category (stockout, understock, appropriate stock, overstock and excessive stock) for the health facility."  
 >>**Series**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -3604,12 +3604,12 @@ For the last month, this report displays a stacked column chart with the number 
 
 ![](image-103.png)
 
->>**33 MSR - Stock coverage time ranges - Stacked column chart**  
+>>**33 MSR - Stock coverage time categories**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR - Stock coverage time ranges - Stacked column chart"  
->**Description**: "MSR DV 33 - Monthly Stock Reporting / Stock coverage time ranges / Last 12 months / Health facility / Stacked column chart
-For each of the 12 past months, this report displays a stacked column chart with the number of items for each stock coverage time range (stockout, understock, appropriate stock, overstock and excessive stock) for the health facility."  
+>**Name \(*)**: "MSR - Stock coverage time categories"  
+>**Description**: "MSR DV 33 - Monthly Stock Reporting / Stock coverage time categories / Last 12 months / Health facility / Stacked column chart
+For each of the 12 past months, this report displays a stacked column chart with the number of items for each stock coverage time category (stockout, understock, appropriate stock, overstock and excessive stock) for the health facility."  
 >>**Series**  
 >>>**Data**  
 >>>>**Data Type**: "Indicators"  
@@ -4810,12 +4810,12 @@ For the last month, this report displays a stacked column chart with the number 
 
 ![](image-149.png)
 
->>**70 MSR - Stock coverage time ranges - District**  
+>>**70 MSR - Stock coverage time categories - District**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - District"  
->**Description**: "MSR DV 70 - Monthly Stock Reporting / Stock coverage time / Ranges / District / Column chart / Last month
-For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
+>**Name \(*)**: "MSR - Stock coverage time categories - District"  
+>**Description**: "MSR DV 70 - Monthly Stock Reporting / Stock coverage time / Categories / District / Column chart / Last month
+For the last month, this report displays a stacked column chart with the number of items for each coverage category (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
 >>
@@ -4837,12 +4837,12 @@ For the last month, this report displays a stacked column chart with the number 
 
 ![](image-177.png)
 
->>**71 MSR - Stock coverage time ranges - District**  
+>>**71 MSR - Stock coverage time categories - District**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - District"  
->**Description**: "MSR DV 71 - Monthly Stock Reporting / Stock coverage time / Ranges / District / Stacked column chart / Last 12 months
-For the 12 last months, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
+>**Name \(*)**: "MSR - Stock coverage time categories - District"  
+>**Description**: "MSR DV 71 - Monthly Stock Reporting / Stock coverage time / Categories / District / Stacked column chart / Last 12 months
+For the 12 last months, this report displays a stacked column chart with the number of items for each stock coverage category (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
 >>
@@ -5815,12 +5815,12 @@ This report displays a Pivot table  with the number of items for which the cover
 
 ![](image-185.png)
 
->>**102 MSR - Stock coverage time ranges - Province**  
+>>**102 MSR - Stock coverage time categories - Province**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock coverage time  ranges - Province"  
->**Description**: "MSR DV 102 - Monthly Stock Reporting / Stock coverage time / Ranges / Province / Column chart / Last month
-For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
+>**Name \(*)**: "MSR - Stock coverage time categories - Province"  
+>**Description**: "MSR DV 102 - Monthly Stock Reporting / Stock coverage time / Categories / Province / Column chart / Last month
+For the last month, this report displays a stacked column chart with the number of items for each stock coverage category (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the district."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
 >>>>**Level**: "District"  
@@ -5843,12 +5843,12 @@ For the last month, this report displays a stacked column chart with the number 
 
 ![](image-253.png)
 
->>**103 MSR - Stock coverage time ranges - Province**  
+>>**103 MSR - Stock coverage time categories - Province**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - Province"  
->**Description**: "MSR DV 103 - Monthly Stock Reporting / Stock coverage time / Ranges / Province / Stacked column chart / Last month
-For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the province."  
+>**Name \(*)**: "MSR - Stock coverage time categories - Province"  
+>**Description**: "MSR DV 103 - Monthly Stock Reporting / Stock coverage time / Categories / Province / Stacked column chart / Last month
+For the last month, this report displays a stacked column chart with the number of items for each stock coverage category (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the province."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
 >>>>**Level**: "District"  
@@ -6736,12 +6736,12 @@ This report displays a Pivot table  with the number of items for which the cover
 
 ![](image-234.png)
 
->>**131 MSR - Stock coverage time ranges - Country**  
+>>**131 MSR - Stock coverage time categories - Country**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stock coverage time  ranges - Country"  
->**Description**: "MSR DV 102 - Monthly Stock Reporting / Stock coverage time / Ranges / Country / Column chart / Last month
-For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) across provinces in the district."  
+>**Name \(*)**: "MSR - Stock coverage time categories - Country"  
+>**Description**: "MSR DV 131 - Monthly Stock Reporting / Stock coverage time / Categories / Country / Column chart / Last month
+For the last month, this report displays a stacked column chart with the number of items for each stock coverage time category (stockout, understock, appropriate stock, overstock and excessive stock) across provinces in the district."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
 >>>>**Level**: "Province"  
@@ -6764,12 +6764,12 @@ For the last month, this report displays a stacked column chart with the number 
 
 ![](image-236.png)
 
->>**132 MSR - Stock coverage time ranges - Country**  
+>>**132 MSR - Stock coverage time categories - Country**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR - Stock coverage time distribution - Country"  
->**Description**: "MSR DV 132 - Monthly Stock Reporting / Stock coverage time / Ranges / Province / Stacked column chart / Last month
-For the last month, this report displays a stacked column chart with the number of items for each coverage range (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the province."  
+>**Name \(*)**: "MSR - Stock coverage time categories - Country"  
+>**Description**: "MSR DV 132 - Monthly Stock Reporting / Stock coverage time / Categories / Province / Stacked column chart / Last month
+For the last month, this report displays a stacked column chart with the number of items for each stock coverage time category (stockout, understock, appropriate stock, overstock and excessive stock) for each health facility in the province."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
 >>>>**Level**: "Province"  
@@ -7708,8 +7708,8 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>- MSR - Stock coverage time distribution - Pivot table  
 >>- MSR - Stock coverage time distribution - Column chart - Last 12 months  
 >>- MSR - Stock coverage time distribution - Column chart - Last month  
->>- MSR - Stock coverage time ranges - Column chart  
->>- MSR - Stock coverage time ranges - Stacked column chart  
+>>- MSR - Stock coverage time categories - Column chart  
+>>- MSR - Stock coverage time categories - Stacked column chart  
 >>- MSR - Stock discrepancy - Pivot table  
 >>- MSR - Stock discrepancy count - Column chart  
 >>- MSR - Stock discrepancy count - Single value chart  
@@ -7772,8 +7772,8 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Stock coverage time distribution - District - Pivot table  
 >>>- MSR - Stock coverage time distribution - District - Stacked column chart- Last 12 months   
 >>>- MSR - Stock coverage time distribution - District - Stacked column chart - Last month  
->>>- MSR - Stock coverage time ranges - District - Last month
->>>- MSR - Stock coverage time ranges - District - Last 12 months
+>>>- MSR - Stock coverage time categories - District - Last month
+>>>- MSR - Stock coverage time categories - District - Last 12 months
 >>>- MSR - Stock discrepancy - District - Pivot table  
 >>>- MSR - Stock discrepancy count - District - Stacked column chart  
 >>>- MSR - Stock discrepancy count - District - Single value chart
@@ -7840,8 +7840,8 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Stockout length - Province  
 >>>- MSR - Stock coverage time - Province  
 >>>- MSR - Stock coverage time distribution- Province  
->>>- MSR - Stock coverage time ranges - Province  
->>>- MSR - Stock coverage time ranges - Province  
+>>>- MSR - Stock coverage time categories - Province  
+>>>- MSR - Stock coverage time categories - Province  
 >>>- MSR - Stock discrepancy - Province  
 >>>- MSR - Stock discrepancy count - Province  
 >>>- MSR - Stock discrepancy count - Province  
@@ -7884,8 +7884,8 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Stockout length - Country  
 >>>- MSR - Stock coverage time distribution - Country  
 >>>- MSR - Stock coverage time distribution- Country  
->>>- MSR - Stock coverage time ranges - Country  
->>>- MSR - Stock coverage time ranges - Country  
+>>>- MSR - Stock coverage time categories - Country  
+>>>- MSR - Stock coverage time categories - Country  
 >>>- MSR - Stock discrepancy count - Country  
 >>>- MSR - Stock discrepancy count - Country  
 >>>- MSR - Report completeness - Country  
