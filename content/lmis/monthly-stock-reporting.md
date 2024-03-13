@@ -6087,7 +6087,7 @@ This report provides the monthly stock receipts by provinces in a country as rep
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock distribution - Country"  
->**Description**: "MSR DV 80 - Monthly Stock Reporting / Stock distribution / Last 12 months / Province / By item / Pivot table  
+>**Description**: "MSR DV 111 - Monthly Stock Reporting / Stock distribution / Last 12 months / Province / By item / Pivot table  
 This report provides the monthly stock distributions by district in a province as reported at the end of every month."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -6121,7 +6121,7 @@ This report provides the monthly stock distributions by district in a province a
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock redistribution - Country"  
->**Description**: "MSR DV 81 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Country / By item / Pivot table.    
+>**Description**: "MSR DV 112 - Monthly Stock Reporting / Stock redistribution / Last 12 months / Country / By item / Pivot table.    
 This report provides the monthly stock redistributions by provinces in a country as reported at the end of every month."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -6222,7 +6222,7 @@ This report provides the monthly stock on hand by district in a province as repo
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stock correction - Country"  
->**Description**: "MSR DV 84 - Monthly Stock Reporting / Stock correction / Last 12 months / Country / By item / Pivot table
+>**Description**: "MSR DV 115 - Monthly Stock Reporting / Stock correction / Last 12 months / Country / By item / Pivot table
 This report provides the monthly stock corrections by provinces in a country as reported at the end of every month."  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
@@ -6398,7 +6398,7 @@ This report provides the stock availability across all stock items for all healt
 >
 >**Visualization type**: select "Column"  
 >**Name \(*)**: "MSR - Stock availability - Country"  
->**Description**: "MSR DV 122 - Monthly Stock Reporting / Stock availability / Last 12 months / Country / Across items / Column chart
+>**Description**: "MSR DV 121 - Monthly Stock Reporting / Stock availability / Last 12 months / Country / Across items / Column chart
 This report provides the stock availability across all stock items for all health facilities in a Country for the last month with a colour legend." 
 >> 
 >>**Series**  
