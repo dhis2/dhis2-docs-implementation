@@ -3268,7 +3268,7 @@ This report displays the stock availability (as percentage) and the stockout rat
 >>**Filter**  
 >>>**Organisation unit**: "User organisation unit"  
 
-![](image-102.png)
+![](image-270.png)
 
 >**22 MSR - Stockouts - Stacked column chart**  
 >
@@ -4516,7 +4516,7 @@ This report displays the stock availability (as percentage) and the stockout rat
 >>>>**Selected Periods**: "Last 12 month"  
 >>>**Organisation unit**: "User organisation unit"  
 
-![](image-169.png)
+![](image-272.png)
 
 >**60 MSR - Stockouts - District**  
 >
@@ -5566,7 +5566,7 @@ This report displays the stock availability (number of items with non-zero stock
 >>>>**Selected Periods**: "Last Month"  
 >>>**Organisation unit**: "User organisation unit"  
 
-![](image-251.png)
+![](image-273.png)
 
 >**94 MSR - Stockouts - Province**  
 >
@@ -6516,7 +6516,7 @@ This report displays the stock availability (number of items with non-zero stock
 >>>**Organisation unit**: "User organisation unit"  
 >>>**Level**: "DistrictProvince"  
 
-![](image-226.png)
+![](image-271.png)
 
 >**124 MSR - Stockouts - Country**  
 >
