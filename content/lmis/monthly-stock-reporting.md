@@ -4626,7 +4626,7 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 
 >**65 MSR - Stockout length - District**  
 >
->**Visualization type**: select "Pivot table"  
+>**Visualization type**: select "Stacked bar chart"  
 >**Name \(*)**: "MSR - Stockout length - District"  
 >**Description**: "MSR DV 65 - Monthly Stock Reporting / Stockout length / Last 12 months / District / Stacked bar chart
 This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the district during the past 12 months."  
@@ -5027,7 +5027,7 @@ This report provides the "Reporting rate" for the last month across all the heal
 >>>>>>**Legend**: "Stock availability / %"  
 >>>>>**Show legend key** tag (appears as a white tick in a green field)  
 
-![](image-155.png)
+![](image-267.png)
 
 >**78 MSR - Reporting rate on time - District**  
 >
@@ -5521,8 +5521,8 @@ This report displays the stock availability (number of items with non-zero stock
 >
 >**Visualization type**: select "Pivot table"  
 >**Name \(*)**: "MSR - Stockouts - Province"  
->**Description**: "MSR DV 85 - Monthly Stock Reporting / Stockout by item / Last 12 months / Province / By item / Pivot table
-This report displays a Pivot table with all items and indicating for each item whether it was out of stock for each of the health facilities in a province for the last 12 months."
+>**Description**: "MSR DV 94 - Monthly Stock Reporting / Stockout by item / Last 12 months / Province / By item / Pivot table
+This report displays a Pivot table with all items and indicating for each item whether it was out of stock for all health facilities in a province for the last 12 months."
 >>  
 >>**Columns**  
 >>>**Period**: "Relative periods"  
