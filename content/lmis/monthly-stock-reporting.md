@@ -2049,41 +2049,69 @@ The following legends are applied to some visualizations:
 >>>**End value**: "25"  
 >>>**Color code**: "#F03B20" (red)  
 >
->**2 Stock coverage time**  
+>**2 Stock availability - default colour green**  
+>>**Name \(*)**: "Stock availability - default colour green**  
+>>**Code**: "STOCK_AVAILABILITY_DEFAULT"  
+>>**Name**  
+>>>**Name**: "Stock available"  
+>>>**Start value**: "0  
+>>>**End value**: "999999"  
+>>>**Color code**: "#19GG00" (Green)  
+>
+>**3 Stock availability / %**  
+>>**Name \(*)**: "Stock availability / %**  
+>>**Code**: "STOCK_AVAILABILITY"  
+>>**Name**  
+>>>**Name**: "Low"  
+>>>**Start value**: "0  
+>>>**End value**: "90"  
+>>>**Color code**: "#FF2700" (Red)  
+>>
+>>>**Name**: "Medium"  
+>>>**Start value**: "90"  
+>>>**End value**: "95"  
+>>>**Color code**: "#FFA500" (Orange)  
+>>
+>>>**Name**: "High"  
+>>>**Start value**: "95"  
+>>>**End value**: "101"  
+>>>**Color code**: "#00FF0E" (Green)  
+>
+>**4 Stock coverage time**  
 >>**Name \(*)**: "Stock coverage time**  
 >>**Code**: "STOCK_COVERAGE_TIME"  
 >>**Name**  
 >>>**Name**: "Stockout"  
 >>>**Start value**: "0  
 >>>**End value**: "0.0001"  
->>>**Color code**: "#EE391E" (red)  
+>>>**Color code**: "#EE391E" (Red)  
 >>
 >>>**Name**: "Understock"  
 >>>**Start value**: "0.0001"  
 >>>**End value**: "3"  
->>>**Color code**: "#FEFB08" (yellow)  
+>>>**Color code**: "#FEFB08" (Yellow)  
 >>
 >>>**Name**: "Adequate stock"  
 >>>**Start value**: "3"  
 >>>**End value**: "4" 
->>>**Color code**: "#0BFF00" (green)  
+>>>**Color code**: "#0BFF00" (Green)  
 >>
 >>>**Name**: "Overstock"  
 >>>**Start value**: "4"  
 >>>**End value**: "12"  
->>>**Color code**: "#0011FF" (blue)  
+>>>**Color code**: "#0011FF" (Blue)  
 >>
 >>>**Name**: "Excessive stock"  
 >>>**Start value**: "12"  
 >>>**End value**: "1000" 
 >>>**Color code**: "#DC00FF" (purple)  
 >
->**3 Stock discrepancy**  
+>**5 Stock discrepancy**  
 >>**Name \(*)**:"Stock discrepancy"  
 >>**Code**: "STOCK_DISCREPANCY"  
 >>**Name**  
 >>>**Name**: "Negative"  
->>>**Start value**: "-1000000"  
+>>>**Start value**: "-999999"  
 >>>**End value**: "0"  
 >>>**Color code**: "#8411D7" (purple)  
 >>>
@@ -2094,10 +2122,33 @@ The following legends are applied to some visualizations:
 >>>
 >>>**Name**: "Positive"  
 >>>**Start value**: "1"  
->>>**End value**: "1000000"  
+>>>**End value**: "999999"  
 >>>**Color code**: "#FF2000" (red)  
 >
->**4 Stockout count**
+>**6 Stockout**  
+>>**Name \(*)**:"Stockout"  
+>>**Code**: "STOCKOUT"  
+>>**Name**  
+>>>**Name**: "Stockout"  
+>>>**Start value**: "0"  
+>>>**End value**: "1"  
+>>>**Color code**: "#F74432" (Red)  
+>>>
+>>>**Name**: "Stock"  
+>>>**Start value**: "1"  
+>>>**End value**: "999999"  
+>>>**Color code**: "#F9E6BB" (Light yellow)  
+>
+>**7 Stockout - default colour red**  
+>>**Name \(*)**: "Stockout - default colour red**  
+>>**Code**: "STOCK_DEFAULT"  
+>>**Name**  
+>>>**Name**: "Stockout"  
+>>>**Start value**: "0  
+>>>**End value**: "999999"  
+>>>**Color code**: "#FF1D00" (Red)  
+>
+>**8 Stockout count**
 This "Legend" is created for selecting a specific colour for column charts instead of a colour scheme being automatically assigned by the system.
 >>**Name \(*)**: "Stockout count"  
 >>**Code**: "STOCKOUT_COUNT"  
@@ -2108,7 +2159,7 @@ This "Legend" is created for selecting a specific colour for column charts inste
 >>>**Color code**: "#2CFF00" (green)  
 >>>**Name**: "Stockouts"  
 >>>**Start value**: "0.5"  
->>>**End value**: "1000000"  
+>>>**End value**: "999999"  
 >>>**Color code**: "#F31812" (red)  
 
 #### 5.2 Predictor
