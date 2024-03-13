@@ -5937,7 +5937,7 @@ This report displays the number of stock discrepancies for the past 12 months se
 >>>>**Disaggregation**: "Totals only"  
 >>>>**Selected items**: select all (->>)  
 
-![](image-190.png)
+![](image-269.png)
 
 >**106 MSR - Stock discrepancy count - Province**  
 >
