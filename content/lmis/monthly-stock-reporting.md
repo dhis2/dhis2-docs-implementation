@@ -269,7 +269,7 @@ Indicators are used for calculating the following logistics metrics:
 
 - Stock discrepancy (count and percentage)
 
-- Stockout percentage (percentage of items which are out of stock)
+- Stockout rate (percentage of items which are out of stock)
 
 - Stockouts (number of items which are out of stock and stockout rate in percent)
 
@@ -1892,7 +1892,7 @@ if(#{xrjnOtFFTRC.iIC4YhgrxQY}==0,1,0)
 >>**Decimals in data output**: "0"  
 >>**Indicator type \(*)**: "Number (Factor 1)"  
 >>**Edit numerator**:  
->>>**Description**: "Stockout percentage - MSR - Numerator"  
+>>>**Description**: "Stockout rate - MSR - Numerator"  
 >>>**Calculation**:  
 \#{LNAkkMTxqEW.e7d6Th5WLEM}+
 \#{WyDZKSw82X6.e7d6Th5WLEM}+
@@ -2410,7 +2410,7 @@ Xx
 >>>- 17 MSR - Stock availability  
 >>>- 18 MSR - Stock availability  
 >>>- 19 MSR - Stock availability  
->>>- 20 MSR - Stockout percentage  
+>>>- 20 MSR - Stockout rate  
 >>>- 21 MSR - Stock availability and stockout rate  
 >>>- 22 MSR - Stockouts  
 >>>- 23 MSR - Stockout count  
@@ -2422,7 +2422,7 @@ Xx
 >>>- 29 MSR - Stock coverage time distribution  
 >>>- 30 MSR - Stock coverage time distribution - Last 12 months  
 >>>- 31 MSR - Stock coverage time distribution - Last month  
->>>- 32 MSR - Stock coverage categories   
+>>>- 32 MSR - Stock coverage time categories   
 >>>- 33 MSR - Stock coverage time categories  
 >>>- 34 MSR - Stock discrepancy  
 >>>- 35 MSR - Stock discrepancy count  
@@ -2492,7 +2492,7 @@ Xx
 >>>- 89 MSR - Coefficient of Variation x 10 distribution - Province  
 >>>- 90 MSR - Stock availability - Province  
 >>>- 91 MSR - Stock availability - Province  
->>>- 92 MSR - Stockout percentage - Province  
+>>>- 92 MSR - Stockout rate - Province  
 >>>- 93 MSR - Stock availability and stockout rate - Province  
 >>>- 94 MSR - Stockouts - Province
 >>>- 95 MSR - Stockout count - Province  
@@ -2528,7 +2528,7 @@ Xx
 >>>- 120 MSR - Stock availability - Country  
 >>>- 121 MSR - Stock availability - Country  
 >>>- 122 MSR - Stockout rate / % - Country  
->>>- 123 MSR - Stock availability and stockout percentage - Country  
+>>>- 123 MSR - Stock availability and stockout rate - Country  
 >>>- 124 MSR - Stockouts - Country  
 >>>- 125 MSR - Stockout count - Country  
 >>>- 126 MSR - Stockout count - Country  
@@ -3175,11 +3175,11 @@ This report displays the stock availability (number of items with non-zero stock
 
 ![](image-24.png)
 
->**20 MSR - Stockout percentage - Column chart**  
+>**20 MSR - Stockout rate - Column chart**  
 >
 >**Visualization type**: select "Column"  
->**Name \(*)**: "MSR - Stockout percentage - Column chart"  
->**Description**: "MSR DV 20 - Monthly Stock Reporting / Stockout percentage / Last 12 months / Health facility / Column chart
+>**Name \(*)**: "MSR - Stockout rate - Column chart"  
+>**Description**: "MSR DV 20 - Monthly Stock Reporting / Stockout rate / Last 12 months / Health facility / Column chart
 This report displays a column chart with the percentage of items with a stockout for the past 12 months."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
@@ -3196,12 +3196,12 @@ This report displays a column chart with the percentage of items with a stockout
 
 ![](image-101.png)
 
->**21 MSR - Stock availability and stockout percentage - Stacked column chart**  
+>**21 MSR - Stock availability and stockout rate - Stacked column chart**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR - Stock availability and stockout percentage - Stacked column chart"  
->**Description**: "MSR DV 21 - Monthly Stock Reporting / Stock availability and stockout percentage / Last 12 months / Health facility / Stacked column chart
-This report displays the stock availability (as percentage) and the stockout percentage (which by definition must add up to 100%) as a Stacked column chart."  
+>**Name \(*)**: "MSR - Stock availability and stockout rate - Stacked column chart"  
+>**Description**: "MSR DV 21 - Monthly Stock Reporting / Stock availability and stockout rate / Last 12 months / Health facility / Stacked column chart
+This report displays the stock availability (as percentage) and the stockout rate (which by definition must add up to 100%) as a Stacked column chart."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
 >>>>**Indicator group**: "Stockout count"  
@@ -4436,7 +4436,7 @@ This report displays the stock availability (number of items with non-zero stock
 This report displays a column chart with the percentage of items with a stockout for the last month by health facility."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
->>>>**Selected items**: "Stockout percentage"
+>>>>**Selected items**: "Stockout rate"
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -4449,15 +4449,15 @@ This report displays a column chart with the percentage of items with a stockout
 >**59 MSR - Stock availability and stockout rate - District**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR - Stock availability and stockout percentage - District"  
->**Description**: "MSR DV 59 - Monthly Stock Reporting / Stock availability and stockout percentage / Last 12 months / Health facility / Stacked column chart
-This report displays the stock availability (as percentage) and the stockout percentage (which by definition must add up to 100%) as a Stacked column chart for all health facilities in a district for the past month."  
+>**Name \(*)**: "MSR - Stock availability and stockout rate - District"  
+>**Description**: "MSR DV 59 - Monthly Stock Reporting / Stock availability and stockout rate / Last 12 months / Health facility / Stacked column chart
+This report displays the stock availability (as percentage) and the stockout rate (which by definition must add up to 100%) as a Stacked column chart for all health facilities in a district for the past month."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
 >>>>**Indicator group**: "Stockout count"  
 >>>>**Selected items**:
 >>>>>- "Stock availability / %"  
->>>>>- "Stockout percentage"  
+>>>>>- "Stockout rate"  
 >>
 >>**Category**  
 >>>**Period**: "Relative periods"  
@@ -5499,8 +5499,8 @@ This report displays a column chart with the percentage of items with a stockout
 >**93 MSR - Stock availability and stockout rate - Province**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR - Stock availability and stockout percentage - District - Stacked column chart"  
->**Description**: "MSR DV 93 - Monthly Stock Reporting / Stock availability and stockout percentage / Last month / Province  / Stacked column chart
+>**Name \(*)**: "MSR - Stock availability and stockout rate - District - Stacked column chart"  
+>**Description**: "MSR DV 93 - Monthly Stock Reporting / Stock availability and stockout rate / Last month / Province  / Stacked column chart
 This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month for all health facilities in a province as stacked column chart with a legend."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
@@ -6448,8 +6448,8 @@ This report displays a column chart with the percentage of items with a stockout
 >**123 MSR - Stock availability and stockout rate - Country**  
 >
 >**Visualization type**: select "Stacked column"  
->**Name \(*)**: "MSR - Stock availability and stockout percentage - Country"  
->**Description**: "MSR DV 123 - Monthly Stock Reporting / Stock availability and stockout percentage / Last month / Province  / Stacked column chart
+>**Name \(*)**: "MSR - Stock availability and stockout rate - Country"  
+>**Description**: "MSR DV 123 - Monthly Stock Reporting / Stock availability and stockout rate / Last month / Province  / Stacked column chart
 This report displays the stock availability (number of items with non-zero stock on hand divided by the total number of stock items) as percentage for the last month for all provinces in a country as stacked column chart with a legend."  
 >>**Series**  
 >>>>**Data Type**: "Indicators"  
@@ -7696,7 +7696,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>- MSR - Stock availability - Column chart  
 >>- MSR - Stock availability - Single value chart  
 >>- MSR - Stock availability - Gauge chart  
->>- MSR - Stockout percentage - Column chart
+>>- MSR - Stockout rate - Column chart
 >>- MSR - Stock availability and stockout rate - Stacked column chart
 >>- MSR - Stockouts - Stacked column chart  
 >>- MSR - Stockout count - Pivot table  
@@ -7875,7 +7875,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Stock availability - Country  
 >>>- MSR - Stock availability - Country  
 >>>- MSR - Stockout rate / % - Country  
->>>- MSR - Stock availability and stockout percentage - Country  
+>>>- MSR - Stock availability and stockout rate - Country  
 >>>- MSR - Stockouts - Country  
 >>>- MSR - Stockout count - Country  
 >>>- MSR - Stockout count - Country  

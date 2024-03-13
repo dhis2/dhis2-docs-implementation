@@ -17,9 +17,11 @@ xxx
 While logistics and supply chain management is usually associated with the production, storage and distribution of (commercial) products, the associated data is far more important but usually as invisible as the roots of a tree. The physical flow (storage and distribution) of goods and consignments is by far the easiest task in logistics and supply chain management while the real, albeit less obvious, challenges are managing the complex flows of associated data: obtaining accurate as well as up-to-date logistics data in a timely way and sharing them throughout the supply network in real-time in order to allow decision-making which ensures that the required quantities of required healthcare products are in the places where they are required for providing healthcare services at the time the are required.
 Trust between all actors and stakeholders are critical and indispensable for any effective and efficient supply network and the data is only as good as the trust the stakeholders have in it. Healthcare facility staff who do not trust supply managers will "inflate" order quantities hoping that this behaviour will increase supplies to them ("ration gaming"). On the other hand, if supply managers do not trust the facility level data they will resort to their own "estimates" for calculating replenishment orders which are always inferior to the systematic use of accurate and timely end-user data. Apart from continuously improving services, trust in data can be enhanced by freely and openly sharing data across supply networks, ideally in real-time.
 
-The large number of different data quality dimensions are structured by UNICEF into the following four categories:
+The large number of different data quality dimensions are structured by UNICEF into the following four categories:  
+
 Access to data  
 - Data accessibility  
+
 Output quality dimensions  
 - Relevance  
 - Correctness  
@@ -31,13 +33,16 @@ Output quality dimensions
 - Frequency  
 - Interpretability  
 - Comparability  
+
 Process quality dimensions  
 - Burden for data collectors  
 - Appropriateness of data sources  
 - Data collection process  
 - Transparency and documentation of data sources  
+
 Institutional quality  
 - Transparency and credibility  
+
 While conventional, paper-based LMIS data management systems require balancing various tradeoffs, such as the amount of data fields or data accuracy and timeliness, the use of digital data collection and management systems improve accuracy, timeliness, accessibility, consistency etc. at the same time.
 
 ###	Data accessibility
