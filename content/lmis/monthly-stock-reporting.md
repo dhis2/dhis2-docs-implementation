@@ -5385,7 +5385,7 @@ This report provides the number of items which fall into the respective coeffici
 >>>**Organisation unit**: "User organisation unit"  
 >>>>**Level**: "District"  
 
-![](image-158.png)
+![](image-268.png)
 
 >**89 MSR - Coefficient of Variation x 10 distribution - Province**  
 >
