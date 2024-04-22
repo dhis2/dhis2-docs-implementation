@@ -71,7 +71,7 @@ As a minimum, the following documents should be created as first step of any sec
 - Incident Response plan
 - Identity and Access Management plan
 
-To help implementers to kick-start their security programs, we have developed a set of templates anyone can use and adapt to their own needs, called [Security Starter Kit](https://drive.google.com/drive/folders/17sPX4aWSQvfKSJVbRBPfjNJvPS16OmF4). You can read more [here](https://docs.google.com/document/d/1bEzUB-xh8Bmd4JNWOFMKi5IzpcJVfpJldRs-sAqQcXM/).
+To help implementers to kick-start their security programs, we have developed a set of templates anyone can use and adapt to their own needs, called [Security Starter Kit](https://drive.google.com/drive/folders/1B2li8W4pAIF4OP8lSDT_WjN4TOZ0uzSH).
 
 ### System Configuration measures
 There are also a number of measures which can be taken to improve security at the level of DHIS2 configuration, for example related to ensuring appropriate system and data access. A proposed high priority (top 10) list of system configuration measures are included here:
