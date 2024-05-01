@@ -30,14 +30,18 @@ In order to successfully introduce the line listing app, we recommend that imple
 
 In order to start a review of the features within the line listing app, first have a look at the [user documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/line-listing.html). This document discusses some of the key features and outlines the interface within the line listing app. 
 
-To further supplement the documentation, a series of videos that demonstrates the line listing app functionality is available. These videos are located on YouTube. A playlist has been created [here](https://www.youtube.com/playlist?list=PLo6Seh-066Rx5BXFCBKs6pRtuRnJTpXEN), while links to each video are located below.
+To further supplement the documentation, a series of videos that demonstrates the line listing app functionality is available. These videos are located on YouTube. A playlist has been created [here](https://www.youtube.com/playlist?list=PLo6Seh-066Rx5BXFCBKs6pRtuRnJTpXEN), while each of these videos can be found below.
 
 
-1. ![A review of the line listing interface](https://www.youtube.com/embed/AwqLT35fjCg?si=cOSeEzLDRvfF4VW3)
-2. [Creating a new line list and reviewing the the menu options within the line listing app](https://www.youtube.com/watch?v=hxgDyBXj7a8&list=PLo6Seh-066Rx5BXFCBKs6pRtuRnJTpXEN&index=2)
-3. [Reviewing how the line listing app handles repeated event data (enrollments and events)](https://www.youtube.com/watch?v=urgF6Np7RDk&list=PLo6Seh-066Rx5BXFCBKs6pRtuRnJTpXEN&index=3)
-4. [Creating a line list using data from multiple stages](https://www.youtube.com/watch?v=juOy38ZNLbA&list=PLo6Seh-066Rx5BXFCBKs6pRtuRnJTpXEN&index=4)
-5. [Creating a line list with numeric data and adding a legend to the line list](https://www.youtube.com/watch?v=9-G_4qcNT3o&list=PLo6Seh-066Rx5BXFCBKs6pRtuRnJTpXEN&index=5)
+![A review of the line listing interface](https://www.youtube.com/embed/AwqLT35fjCg)
+
+![Creating a new line list and reviewing the the menu options within the line listing app](https://www.youtube.com/embed/hxgDyBXj7a8)
+
+![Reviewing how the line listing app handles repeated event data (enrollments and events)](https://www.youtube.com/embed/urgF6Np7RDk)
+
+![Creating a line list using data from multiple stages](https://www.youtube.com/embed/juOy38ZNLbA)
+
+![Creating a line list with numeric data and adding a legend to the line list](https://www.youtube.com/embed/9-G_4qcNT3o)
 
 ### Feature comparison of event reports line listing and the line listing app
 
