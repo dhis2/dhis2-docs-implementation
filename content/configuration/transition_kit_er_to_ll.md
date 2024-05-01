@@ -32,7 +32,6 @@ In order to start a review of the features within the line listing app, first ha
 
 To further supplement the documentation, a series of videos that demonstrates the line listing app functionality is available. These videos are located on YouTube. A playlist has been created [here](https://www.youtube.com/playlist?list=PLo6Seh-066Rx5BXFCBKs6pRtuRnJTpXEN), while each of these videos can be found below.
 
-
 ![A review of the line listing interface](https://www.youtube.com/embed/AwqLT35fjCg)
 
 ![Creating a new line list and reviewing the the menu options within the line listing app](https://www.youtube.com/embed/hxgDyBXj7a8)
