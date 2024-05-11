@@ -173,6 +173,108 @@ The DHIS2 "Data Quality" app allows defining a z-score, identifying any data val
 DHIS2 natively allows to set a "Days after period end to qualify for timely data submission" which allows to then determine whether reports were submitted on time. At the end of the monthly data recording users confirm completion by selecting the "Complete" button on the data entry screen. 
 This data and time stamp then allows to generate a range of default reports for the completeness of reports in terms of data recordings for each data field as well as the timeliness (on-time) of reported data values.
 
+###Text to integrate (add methodology chapter?)
+# 1 RESEARCH METHODOLOGY
+For the analyses of the stock data the following methodology is used:
+- Determine the country for which the data should be analysed
+- Confirm the DHIS2 instance hosting the "production" data and that all LMIS data is hosted in this instance
+- Obtain credentials for accessing DHIS2 instance
+- Download DHIS2 data (Import/Export app or through the "Visualisation" app) as Excel files
+- Store data on a hard disc for further analysis
+- Carry out the analysis as described below
+- Document statistical analyses as well as specific (unusual) observations
+In principle, the analysis of data directly in DHIS2 would be preferable but would require configuring various Indicators and Predictors which would require very good knowledge of the metadata configuration, be quite time consuming and "pollute" the DHIS2 instance.
+
+## 1.1 Data documentation
+The first step is documenting the data source and the downloaded data:
+- DHIS2 instance
+- Data set name
+- Data set contents
+and to document the details for each downloaded data set:
+- Type and number of Organisation Units
+- List and number of Data elements
+- List and number of data fields (category options)
+- Type of time period
+- First and last time periods (for example month and year)
+
+## 1.2 Data completeness
+Before studying data completeness and downloading data there are three important settings which need to be checked:
+
+Completion of all data fields compulsory
+- Maintenance > Data set > "All fields for data elements required"
+If the Data set is tagged as "All fields for data elements required" then the user must complete (enter values for) all data fields in the Data entry form. If this setting is selected and has been selected from the onset of data collection, then the system will ensure that all data has been recorded if the respective completeness report indicates 100% completion. In this case, the data completeness analysis can be limited to only two cases:
+- time periods when that setting was not (yet) selected
+- time periods for which the completeness report is not 100%
+
+Storing zero values
+Maintenance > Data element > "Store zero data values"
+For logistics data collection this setting must be always selected. Otherwise zero values will appear as blank fields and it will be impossible to distinguish whether the user entered a zero or left the field blank. If "Store zero data values" is not selected, then zero values will neither appear in the Data entry forms nor in the analytics. Apart from making data completeness analyses impossible, it is also not possible to analyse any zero values such as stockouts.
+
+- System Settings > Analytics > "Include zero data values in analytics tables"
+If the setting "Store zero data values" is set, zero values are recorded in the Data entry form. However, those zero values are only shown in the analytics if in the "System Settings" app the setting "Include zero data values in analytics tables" is set in the "Analytics".
+
+The objective of the data completeness analysis is to determine how consistently data is actually being collected. Data completeness can be determined across the following dimensions:
+- Across all data fields
+- By healthcare facility (Organisation Unit)
+- By reporting period (month/year)
+- By item (health care product)
+- By LMIS data fields (stock on hand, stock distribution etc.)
+- By Data set and reporting period
+- DHIS2 reporting rates
+Data completeness is determined by simply counting the number of data fields for which values were reported without verifying the correctness of those values and then presenting those counts as percentages as well as histograms.
+
+Across all data fields
+Allows determining the data fields reported across all data dimensions which provides a general overview of data completeness.
+
+By healthcare facility (Organisation Unit)
+Allows determining healthcare facilities (districts, provinces) etc. which are (not) reporting data or not reporting consistently and completely.
+
+By reporting period (month/year)
+Allows determining when reporting commenced and how consistent reporting is over time.
+
+By item (health care product)
+Allows determining how consistently and completely data is reported by item.
+
+By LMIS data fields
+Allows determining LMIS data fields (stock on hand, stock distribution etc.) for which data is not reported consistently and completely.
+
+By Data set and reporting period
+This binary native DHIS2 reporting functionality allows users to confirm completeness of an entire Data set. The collected data depends on whether "All fields for data elements required" is configured in the Data set or not. If "All fields for data elements required" is not selected, the user can report the Data set as "Complete" even without entering a single value. If "All fields for data elements required" is collected the user will be prevented from selecting "Complete" unless all data fields are filled. However, if the user is forced to complete all data fields before selecting "Complete" for a Data set, the user may be tempted to record random values which will impair data quality.
+
+## 1.3 Data timeliness
+The objective of the data timeliness analysis is to determine how timely (or late) data is being reported, regardless of the data completeness. Whether the data submission is considered on time (or late) is determined by the "Days after period to qualify for timely submission" setting configured in the Data set.
+
+## 1.4 Data verification
+In principle, the actually correct data values can never be determined and be known retrospectively. Even if paper (or digital) records are maintained, their accuracy cannot be verified retrospectively with certainty. However, there are certain measurements which allow determining with certainty or with a certain probability that data values are incorrect.
+
+Negative values
+Except for stock corrections, stock data values (stock on hand as well as any transactions) can, by definition, not be negative. For example, a negative value for stock on hand must, by definition, be wrong even if the actual value is (and will never) be known.
+
+Variability
+It is possible, but very unlikely, that data values in a time series will be identical over several periods. For example, distribution quantities and stock on hand are likely to vary month by month. If data values are identical (or have a very low variability) it is possible that data is simply being "copy/pasted" without actually being measured (counted etc.).
+
+Correlation
+Data values which are highly correlated are also suspicious for being accurate. For example, if, over several time periods, stock receipts and stock distributions are identical this could only be explained by continuous shortages (whatever is received is being distributed immediately) or by "copy/pasting" data without measuring (counting etc.).
+
+## 1.5 Demand variability
+The basic measure for the variability of (monthly) demand is the standard deviation of the time series. However, in order to compare the standard deviations across different items with different means, the standard deviation is normalised by division by the average to calculate the coefficient of variation:
+CoV = standard deviation / average
+Note that the maximum ranges of the coefficient of variation (CoV) depends on the number of time periods in a data series (the longer the time series the higher the CoV can be).
+By definition, a CoV of 1 or greater is considered as erratic demand which cannot be forecasted with any reasonable certainty.
+
+## 1.6 Stock availability
+The stock availability is calculated by dividing the stock on hand by the monthly demand of the same month. Alternatively, stock availability can be calculated using the average demand of a number of past periods but this requires more complex calculations.
+Stock availability also captures stockouts as, by definition, a stock availability of 0 corresponds to a stockout.
+
+## 1.7 Stock on hand variability
+The stock on hand variability is measured by its standard deviation and its coefficient of variation and is an excellent, compound measure for the overall quality of supply network management. While fluctuations (variability) of demand is inevitable to some degree, ideally, a well designed inventory control system should compensate for those fluctuations and stock levels should remain stable at all times.
+1.8 Stock discrepancy
+The stock discrepancy is calculated by adding all stock transactions to the stock on hand at the end of the previous month and comparing the value with the stock on hand of the current month. As these values should match any, positive or negative, discrepancies indicate some kind of error.
+
+#####
+
+
+
 ## 3 LMIS data use
 Although logistics and supply chain management is often associated with and perceived as handling (storing and transporting) physical goods and stocks, in reality logistics and main, and difficult, issues in logistics supply chain management is obtaining and processing timely and accurate data. The most difficult tasks in supply chain management of ensuring the availability of stocks in the place they are required and at the time they are required is entirely determined by data. Provided that stocks are available, the material handling (storage and transportation) is by far the easiest task.
 Therefore data in general, and data from the last mile (first data mile) in particular, is absolutely essential, critical and indispensable. Only supply networks driven by first mile demand data can be effective as well as efficient and ensure that all goods required for providing high quality health care services are available at the service delivery point when they are needed.
