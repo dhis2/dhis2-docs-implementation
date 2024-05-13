@@ -165,7 +165,7 @@ A separate Program indicator has to be created for every "pair" of item descript
 #### 5.1 Organisation Unit
 The Organisation Unit, Organisation Unit group and Organisation Unit level are created and added according to national protocols and policies and/or existing DHIS2 configuration and there are no specific requirements for using the Biomedical EQuipment Life Cycle Management program.
 
-### 6 PROGRAUM
+### 6 PROGRAM
 The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, is very simple to configure, uses only native DHIS2 functionality and governs the customized user interface on the mobile device.
 
 #### 6.1 Program
