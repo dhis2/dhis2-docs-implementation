@@ -393,8 +393,7 @@ The DHIS2 Tracker Program, which lies at the core of the DHIS2-RTS application, 
 >>(not applicable)
 
 #### 6.2 Tracked entity attribute
-The DHIS2-RTS uses the "Item code" and "Item descriptions" as the two Tracked entity attributes of the Trached entity type "Item".
-Note that the "Item code" is unique only for any specific Organisation Unit but the same "Item code" can be used in any number of different Organisation Units.
+The DHIS2-BLM uses the "Biomedical equipment" as the Trached entity type with various attributes.
 
 >**1 Brand name**  
 >>**Name \(*)**: "Brand name"  
