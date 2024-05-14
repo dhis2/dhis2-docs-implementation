@@ -125,7 +125,7 @@ Select “Install” in order to install the app to your system.
 
 You should receive a notification that the app has been installed successfully at the bottom of the screen. The blue install button will also now change to an “uninstall” button.
 
-## User Access
+### User Access
 
 After the line listing app is installed, a user needs to be granted access to the app. In addition, the user may need to be given specific permissions to create and save the line lists they make in different ways. This can be achieved in two ways:
 
