@@ -811,8 +811,8 @@ While in most cases users and managers start out designing dashboards and visual
 
 ###	General principles
 Xx
-As for the entire concept, the ultimate objective of performance management is improving health services for end-users, patients and health professionals rather than (only) complying with national and donor reporting requirements.
-One fundamental principle is that all actors, end-users (health professionals) as well as logistics staff impact logistics services and must closely collaborate for continuously improving these services. However, rather than being responsible “collectively”, distinct accountabilities and responsibilities must be assigned to and assumed by all actors in order to avoid endless finger pointing without any effective, corrective action being taken.
+As for the entire concept, the ultimate objective of performance management is improving health services for end-users, patients and health professionals rather than (only) complying with national and donor reporting requirements.  
+One fundamental principle is that all actors, end-users (health professionals) as well as logistics staff impact logistics services and must closely collaborate for continuously improving these services. However, rather than being responsible “collectively”, distinct accountabilities and responsibilities must be assigned to and assumed by all actors in order to avoid endless finger pointing without any effective, corrective action being taken.  
 Other principles are:
 - The ultimate objective is improving services (not only "reporting")
 - All performance metrics must "actionable" in associated with specific corrective actions
@@ -838,8 +838,7 @@ Other principles are:
 - Clearly defined corrective action for any deviations
 
 ###	"Manifestation" indicators ("symptoms")
-Xx
-“Manifestation” indicators primarily serve for detecting “symptoms” and establishing the presence, extent and scope of any logistics performance problem.
+Manifestation” indicators primarily serve for detecting “symptoms” and establishing the presence, extent and scope of any logistics performance problem.
 - Purpose: monitoring
 - Question to be answered: what is the quality of services?
 - Clearly defined target range of the indicator
@@ -849,7 +848,7 @@ Only two “manifestation” indicators are sufficient for covering logistics se
 - Stock shortages and stockouts measured as stock coverage time
 - Inappropriate utilization / stock losses
 - Health programme specific indicators
-The stock availability is commonly aggregated across the stock item list at a healthcare facility or across several healthcare facilities and measured as stock availability or "On Shelf Availability" (OSA).
+The stock availability is commonly aggregated across the stock item list at a healthcare facility or across several healthcare facilities and measured as stock availability or "On Shelf Availability" (OSA).  
 In fact, the multitude of metrics which are in use are simply variation or combination of the key performance indicators above and therefore redundant. As long as a different measurement does not result in identifying an additional root cause or a different corrective action, it is superfluous.
 
 ###	Root cause indicators ("diagnosis")
@@ -873,11 +872,11 @@ Root cause indicators for inappropriate utilization and losses
 - Overstocking (for any reason)
 - Not respecting First-expiry-first-out
 - Damage by poor storage conditions
-While manifestation indicators (such as a shortage or stockout) may have more than one root cause, a single indicator is sufficient for determining the presence of any of the root causes and redundancy of indicators is avoided.
-Only root causes which can be addressed and corrected are measured since identifying a root cause which cannot be changed is (nearly) useless.
-For both the “manifestation” and “root cause” indicators, thresholds for corrective action need to be clearly defined and possibly different thresholds which define different corrective actions or different levels of urgency of implementing corrective action.
-Every indicator should be clearly assigned to a specific actor who is in charge of measuring, monitoring as well as initiating and implementing corrective action.
-While a large number of different metrics have been used for measuring shortages and stockouts, in fact there are only a small number of root causes.
+While manifestation indicators (such as a shortage or stockout) may have more than one root cause, a single indicator is sufficient for determining the presence of any of the root causes and redundancy of indicators is avoided.  
+Only root causes which can be addressed and corrected are measured since identifying a root cause which cannot be changed is (nearly) useless.  
+For both the “manifestation” and “root cause” indicators, thresholds for corrective action need to be clearly defined and possibly different thresholds which define different corrective actions or different levels of urgency of implementing corrective action.  
+Every indicator should be clearly assigned to a specific actor who is in charge of measuring, monitoring as well as initiating and implementing corrective action.  
+While a large number of different metrics have been used for measuring shortages and stockouts, in fact there are only a small number of root causes.  
 
 ![Alt text](image-261.png)
 
@@ -938,8 +937,8 @@ xxx
 **Analysis and (corrective) action - Stock on hand**
 The value of analysing stock on hand levels (which make no indication of customer demand) and their fluctuations are of much less importance than the analysis of stock coverage times.
 
-
-
+## Add explanations for each visualisation: 
+DHIS2-LMIS Data quality and data use Web structure 29-05-2024.odt
 
 
 ## HMIS/LMIS triangulation
