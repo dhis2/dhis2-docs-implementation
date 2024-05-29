@@ -274,25 +274,23 @@ The stock discrepancy is calculated by adding all stock transactions to the stoc
 
 #####
 
-
-
 ## 3 LMIS data use
-Although logistics and supply chain management is often associated with and perceived as handling (storing and transporting) physical goods and stocks, in reality logistics and main, and difficult, issues in logistics supply chain management is obtaining and processing timely and accurate data. The most difficult tasks in supply chain management of ensuring the availability of stocks in the place they are required and at the time they are required is entirely determined by data. Provided that stocks are available, the material handling (storage and transportation) is by far the easiest task.
-Therefore data in general, and data from the last mile (first data mile) in particular, is absolutely essential, critical and indispensable. Only supply networks driven by first mile demand data can be effective as well as efficient and ensure that all goods required for providing high quality health care services are available at the service delivery point when they are needed.
+Although logistics and supply chain management is often associated with and perceived as handling (storing and transporting) physical goods and stocks, in reality logistics and main, and difficult, issues in logistics supply chain management is obtaining and processing timely and accurate data. The most difficult tasks in supply chain management of ensuring the availability of stocks in the place they are required and at the time they are required is entirely determined by data. Provided that stocks are available, the material handling (storage and transportation) is by far the easiest task.  
+Therefore data in general, and data from the last mile (first data mile) in particular, is absolutely essential, critical and indispensable. Only supply networks driven by first mile demand data can be effective as well as efficient and ensure that all goods required for providing high quality health care services are available at the service delivery point when they are needed.  
 Far too often, any logistics data is lumped together as "indicators" or even "Key Performance Indicators" (KPI) while actually logistics data serves different and distinct purposes.
 
 ###	Data use for inventory control
-Inventory control (science, policies and systems for replenishing medical stocks at healthcare facilities and other medical stocks) lies at the heart of all supply chains and depends on the accurate and timely data from the healthcare facility as well as upstream levels. Therefore it is accurate and timely data together with rational and professional inventory control policies with make or break supply chains. Although the use of logistics data usually focuses on "reporting", the use for inventory control is by far the most important purpose.
-Without stock data from healthcare facilities, supply managers have to resort to surrogate data such as shipments to healthcare facilities which inevitably causes demand distortion and reduces stock availability at all levels of the supply network.
+Inventory control (science, policies and systems for replenishing medical stocks at healthcare facilities and other medical stocks) lies at the heart of all supply chains and depends on the accurate and timely data from the healthcare facility as well as upstream levels. Therefore it is accurate and timely data together with rational and professional inventory control policies with make or break supply chains. Although the use of logistics data usually focuses on "reporting", the use for inventory control is by far the most important purpose.  
+Without stock data from healthcare facilities, supply managers have to resort to surrogate data such as shipments to healthcare facilities which inevitably causes demand distortion and reduces stock availability at all levels of the supply network.  
 Fortunately stock replenishment calculations require very little data but that data must be timely and absolutely correct:
 - Stock on hand (the result of a physical stock count at the end of every month): indispensable for calculating stock replenishment quantities
 - Aggregate, monthly stock issues ("consumption") are indispensable for demand analysis and forecasting future demand
-If accurate and reliable data on stock receipts at healthcare facilities is available, then the stock on hand can be calculated from the stock on hand at the beginning and the end of the month.
+If accurate and reliable data on stock receipts at healthcare facilities is available, then the stock on hand can be calculated from the stock on hand at the beginning and the end of the month.  
 Unfortunately, public health systems tend to collect too much logistics data which is not used for decision making and the key for reducing shortages and stockouts is collecting as little data but as accurately, timely and efficiently as possible.
 
 ###	Data use for logistics performance management
-In an ideal world with perfectly functioning supply networks, where neither stockouts nor overstocking occur, monitoring and measuring the quality of logistics services would not be needed. In practice, measuring and monitoring logistics performance is critical and indispensable. Not for generating "reports" and dashboards which may or not be used but rather for informing corrective action which changes and eventually optimises all inventory control parameters in order to increase and maximise stock availability while minimising stock wastage at health care facilities.
-Despite a plethora of statistics, indicators and key performance indicators, a comprehensive and complete performance management system only requires the collection of a handful of data fields at the healthcare facility level:
+In an ideal world with perfectly functioning supply networks, where neither stockouts nor overstocking occur, monitoring and measuring the quality of logistics services would not be needed. In practice, measuring and monitoring logistics performance is critical and indispensable. Not for generating "reports" and dashboards which may or not be used but rather for informing corrective action which changes and eventually optimises all inventory control parameters in order to increase and maximise stock availability while minimising stock wastage at health care facilities.  
+Despite a plethora of statistics, indicators and key performance indicators, a comprehensive and complete performance management system only requires the collection of a handful of data fields at the healthcare facility level:  
 - Number of stock items managed (and changes over time)
 - Monthly demand quantities (monthly aggregates or transaction quantities)
 - Stock on hand quantities (at the end of the month or ideally in real-time)
@@ -310,17 +308,17 @@ In addition to the above, the following data fields need to be recorded and stor
 
 
 ###	Data use for analytics and reporting
-Finally, data is also needed for various analytics (other than performance management) and routine reporting. However, it should be stressed, that reports which have the sole purpose of complying with reporting requirements and do not inform or initiate any (corrective) action are just a waste of valuable resources.
-Data, such as on available stocks, are useful for health workers and various managerial staff even if they are not responsible for taking corrective action and other data, such as monthly demand aggregated at facility, district, regional and national level, are required for (long-term) planning by various managers.
+Finally, data is also needed for various analytics (other than performance management) and routine reporting. However, it should be stressed, that reports which have the sole purpose of complying with reporting requirements and do not inform or initiate any (corrective) action are just a waste of valuable resources.  
+Data, such as on available stocks, are useful for health workers and various managerial staff even if they are not responsible for taking corrective action and other data, such as monthly demand aggregated at facility, district, regional and national level, are required for (long-term) planning by various managers.  
 Typically, (monthly) stock data is reported in Pivot tables by healthcare product and reporting period (months) or line charts for time series analyses, such as determining trends.
 
 ## Logistics metrics
-The overall objective of analysing logistics data and calculating metrics is improving the stock availability of healthcare goods for health seekers as well as health professionals and minimising shortages and stockouts while producing reports is of secondary importance.
-Pure statistics such as stock on hand or aggregate monthly demand do not allow any inference of the quality of logistics services and are therefore not indicators for anything. Nevertheless, these statistics are indispensable for managing stocks and are absolutely indispensable for inventory control. On the other hand, performance metrics have clearly defined ranges for poor and excellent performance and can therefore guide management decisions. Statistics and performance metrics serve very different purposes and should be distinguished conceptually but both are essential and indispensable.
+The overall objective of analysing logistics data and calculating metrics is improving the stock availability of healthcare goods for health seekers as well as health professionals and minimising shortages and stockouts while producing reports is of secondary importance.  
+Pure statistics such as stock on hand or aggregate monthly demand do not allow any inference of the quality of logistics services and are therefore not indicators for anything. Nevertheless, these statistics are indispensable for managing stocks and are absolutely indispensable for inventory control. On the other hand, performance metrics have clearly defined ranges for poor and excellent performance and can therefore guide management decisions. Statistics and performance metrics serve very different purposes and should be distinguished conceptually but both are essential and indispensable.  
 The performance management builds on first determining what factors influence logistics performance and (at the same time) allow taking corrective action ("actionable"). Then the best metrics for measuring those factors are determined, measured and visualised in DHIS2. Any metrics or other calculations which do not result in any corrective action are considered of very limited value.
 
 ###	Benchmarks
-The table below provides an overview comparison of authoritative standards for logistics metrics from the Target Software Standards (TSS, Gavi), Data for Immunization Supply Chain (DISC, approved by Gavi Alliance Partners), Immunization Agenda 2030 (IA2030, IA2030 Coordination Group)  and The Global Fund.
+The table below provides an overview comparison of authoritative standards for logistics metrics from the Target Software Standards (TSS, Gavi), Data for Immunization Supply Chain (DISC, approved by Gavi Alliance Partners), Immunization Agenda 2030 (IA2030, IA2030 Coordination Group)  and The Global Fund.  
 
 | **Metric**  | **TSS** | **DISC** | **IA2030S** | **TGF** | **PEPFAR** |
 | :--- |  :---: |  :---: |  :---: |  :---: |  :---: |
@@ -435,20 +433,20 @@ The table below indicates the data points which are required for calculating the
 | Timeliness of facility reporting | x | x | x | x | x |
 
 ###	Source of data and calculations
-As DHIS2 provides some simple analytics based on healthcare facility level data and mSupply provides comprehensive analytics on all aspects of logistics and supply chain management, duplication of data, calculations, analytics and visualisations needs to be avoided.
-DHIS2 only calculates essential stock data which cannot be collected in mSupply directly and only provides some basic analytics based on data collected in DHIS2.
-DHIS2 synchronises this essential healthcare facility level data (stock on hand, stock issues, stock corrections and stock losses) with mSupply but mSupply does not synchronise data with DHIS2 which would be replicated. However, mSupply data such as order status information may be shared with DHIS2 as preconfigured pdf-reports which can be shared through the DHIS2 notification system.
-By default, the main calculations, analytics and visualisations on all aspects of logistics and supply chain management are provided by and in mSupply as a dedicated national eLMIS system. As all essential DHIS2 data is also available in mSupply, supply managers use mSupply analytics and visualisations as their only resource for managing all aspects of their work. Any other managers (other than supply managers) which require detailed logistics reports from mSupply, are provided (read) access to mSupply for consulting mSupply reports reports.
+As DHIS2 provides some simple analytics based on healthcare facility level data and mSupply provides comprehensive analytics on all aspects of logistics and supply chain management, duplication of data, calculations, analytics and visualisations needs to be avoided.  
+DHIS2 only calculates essential stock data which cannot be collected in mSupply directly and only provides some basic analytics based on data collected in DHIS2.  
+DHIS2 synchronises this essential healthcare facility level data (stock on hand, stock issues, stock corrections and stock losses) with mSupply but mSupply does not synchronise data with DHIS2 which would be replicated. However, mSupply data such as order status information may be shared with DHIS2 as preconfigured pdf-reports which can be shared through the DHIS2 notification system.  
+By default, the main calculations, analytics and visualisations on all aspects of logistics and supply chain management are provided by and in mSupply as a dedicated national eLMIS system. As all essential DHIS2 data is also available in mSupply, supply managers use mSupply analytics and visualisations as their only resource for managing all aspects of their work. Any other managers (other than supply managers) which require detailed logistics reports from mSupply, are provided (read) access to mSupply for consulting mSupply reports reports.  
 Unless mandated by national policies and protocols and inevitable, mSupply data is not "pushed" to and stored in DHIS2 for visualisations as this would require managing and maintaining redundant data sets.
 
 ###	Overview of DHIS2 logistics metrics
-Given the extensive analytics functionality in DHIS2, users are tempted to configure a wide range of analytics and visualisations, often duplicating measurements for specific metrics, without a clear objectives and an overall concept.
-As DHIS2 analytics strive to be specific and of practical day to day use for healthcare facility staff, DHIS2 data collection and analytics have the following objectives:
+Given the extensive analytics functionality in DHIS2, users are tempted to configure a wide range of analytics and visualisations, often duplicating measurements for specific metrics, without a clear objectives and an overall concept.  
+As DHIS2 analytics strive to be specific and of practical day to day use for healthcare facility staff, DHIS2 data collection and analytics have the following objectives:  
 - collect as little data as possible (but as much as necessary)
 - only analyse data collected at the healthcare facility level in DHIS2 (and not in other upstream systems)
 - only provide analytics which are meaningful to and "actionable" by healthcare facility staff
 - avoid representing the same logistics metric in different ways
-DHIS2 recommends and provides the following, intentionally limited, list of logistics data statistics and logistics metrics:
+DHIS2 recommends and provides the following, intentionally limited, list of logistics data statistics and logistics metrics:  
 Logistics data statistics
 - Stock receipt
 - Stock distribution
@@ -762,7 +760,8 @@ Xx
 
 ## National eLMIS metrics
 Xx
-mSupply provides a wide range of analytics, reports and dashboards and should be the primary reference for any logistics data for supply managers, in particular for order fulfilment.
+## list metrics which are not available in DHIS2 but should be available from national eLMIS, study TSS indicators! study the GF etc. metrics above which can be calculated by national eLMIS.
+ provides a wide range of analytics, reports and dashboards and should be the primary reference for any logistics data for supply managers, in particular for order fulfilment.
 - Items (item catalogue, prices, item categories)
 - Purchasing reports (purchase orders, goods received, open purchase orders, tenders)
 - Stock reports (stock on hand, stock value, stockouts, stockout days, customer demand, remaining shelf life, stock coverage time, stock corrections)
@@ -788,7 +787,7 @@ xxx
 
 ## Logistics performance management framework
 Xx
-Ideally, performance is managed by upstream (national) logistics services with performance indicators being made available to end-users in real time in the end-user eLMIS. Therefore, ideally, upstream logistics services continuously improve logistics services without the need for any further involvement by end-users.
+Ideally, performance is managed by upstream (national) logistics services with performance indicators being made available to end-users in real time in the end-user eLMIS. Therefore, ideally, upstream logistics services continuously improve logistics services without the need for any further involvement by end-users.  
 However, some activities and processes which are controlled by health professionals and mainly out of control by logistics services, need to be measured and monitored by end-users who also need to initiate and complete some corrective action. Moreover, all performance indicators managed by upstream logistics services but which are relevant to end-users must be shared with and readily accessible to end-users.
 Performance indicators are measured and represented by different means:
 - Pivot Tables
