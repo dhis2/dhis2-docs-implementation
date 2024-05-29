@@ -159,7 +159,7 @@ The table below summarises how DHIS2 contributes to high data quality standards 
 ## DHIS2 LMIS data quality analysis
 DHIS2 natively features a range of tools and applications for preventing the entry of erroneous data, real-time validation of already entered data and (retro-active) analysis of entered data for identifying (potentially) false data values as well as data which was not recorded on time.
 
-### DHIS2 data validation of individual data values
+### DHIS2 data validation
 The native DHIS2 data validation features allow validating data values during data entry entry and thereby minimizing data handling errors. Data validation means ensuring that entered data values are within predefined ranges.  
 The DHIS2 "Value type" setting, which is natively available for all "Data elements", allows restricting the entry of data values to certain number sets such as natural numbers ("Positive Integer") or positive integers (which includes zero). This setting also prevents "accidental" data entry such as mistakenly entering text into a numeric data field.  
 During data entry, DHIS2 will indicate any data values which are outside the defined data range by highlighting the data field with a red background and displaying an additional error message on the screen. For example, DHIS2 will prevent users from entering non-integer or any negative values in a stock on hand field and prevent the user from saving any report until the error is corrected.  
@@ -169,13 +169,13 @@ The DHIS2-RTS system prevents negative stock on hand values, prevents entry of a
 A dedicated DHIS2 "Validation rule" application allows configuring complex validation rules based on data values from different data fields such as entering any data values which would lead to negative stock on hand values. When users execute the validation, DHIS2 will display a list of alerts in a dedicated sidebar.  
 The DHIS2 "Data Quality" app allows defining a z-score, identifying any data values which lie outside of the set range and are therefore likely to be outliers.
 
-###	Completeness and timeliness of reports
+###	Data completeness
 DHIS2 natively allows to set a "Days after period end to qualify for timely data submission" which allows to then determine whether reports were submitted on time. At the end of the monthly data recording users confirm completion by selecting the "Complete" button on the data entry screen.  
 This data and time stamp then allows to generate a range of default reports for the completeness of reports in terms of data recordings for each data field as well as the timeliness (on-time) of reported data values.
 
 
-### Text to integrate (add methodology chapter?)
-# 1 RESEARCH METHODOLOGY
+xxx Text to integrate (add methodology chapter?)
+#### 1 RESEARCH METHODOLOGY
 For the analyses of the stock data the following methodology is used:
 - Determine the country for which the data should be analysed
 - Confirm the DHIS2 instance hosting the "production" data and that all LMIS data is hosted in this instance
@@ -186,7 +186,7 @@ For the analyses of the stock data the following methodology is used:
 - Document statistical analyses as well as specific (unusual) observations
 In principle, the analysis of data directly in DHIS2 would be preferable but would require configuring various Indicators and Predictors which would require very good knowledge of the metadata configuration, be quite time consuming and "pollute" the DHIS2 instance.
 
-## 1.1 Data documentation
+##### 1.1 Data documentation
 The first step is documenting the data source and the downloaded data:
 - DHIS2 instance
 - Data set name
@@ -198,7 +198,7 @@ and to document the details for each downloaded data set:
 - Type of time period
 - First and last time periods (for example month and year)
 
-## 1.2 Data completeness
+##### 1.2 Data completeness
 Before studying data completeness and downloading data there are three important settings which need to be checked:
 
 Completion of all data fields compulsory
@@ -242,10 +242,10 @@ Allows determining LMIS data fields (stock on hand, stock distribution etc.) for
 By Data set and reporting period
 This binary native DHIS2 reporting functionality allows users to confirm completeness of an entire Data set. The collected data depends on whether "All fields for data elements required" is configured in the Data set or not. If "All fields for data elements required" is not selected, the user can report the Data set as "Complete" even without entering a single value. If "All fields for data elements required" is collected the user will be prevented from selecting "Complete" unless all data fields are filled. However, if the user is forced to complete all data fields before selecting "Complete" for a Data set, the user may be tempted to record random values which will impair data quality.
 
-## 1.3 Data timeliness
+##### 1.3 Data timeliness
 The objective of the data timeliness analysis is to determine how timely (or late) data is being reported, regardless of the data completeness. Whether the data submission is considered on time (or late) is determined by the "Days after period to qualify for timely submission" setting configured in the Data set.
 
-## 1.4 Data verification
+##### 1.4 Data verification
 In principle, the actually correct data values can never be determined and be known retrospectively. Even if paper (or digital) records are maintained, their accuracy cannot be verified retrospectively with certainty. However, there are certain measurements which allow determining with certainty or with a certain probability that data values are incorrect.
 
 Negative values
@@ -257,24 +257,28 @@ It is possible, but very unlikely, that data values in a time series will be ide
 Correlation
 Data values which are highly correlated are also suspicious for being accurate. For example, if, over several time periods, stock receipts and stock distributions are identical this could only be explained by continuous shortages (whatever is received is being distributed immediately) or by "copy/pasting" data without measuring (counting etc.).
 
-## 1.5 Demand variability
+##### 1.5 Demand variability
 The basic measure for the variability of (monthly) demand is the standard deviation of the time series. However, in order to compare the standard deviations across different items with different means, the standard deviation is normalised by division by the average to calculate the coefficient of variation:
 CoV = standard deviation / average
 Note that the maximum ranges of the coefficient of variation (CoV) depends on the number of time periods in a data series (the longer the time series the higher the CoV can be).
 By definition, a CoV of 1 or greater is considered as erratic demand which cannot be forecasted with any reasonable certainty.
 
-## 1.6 Stock availability
+##### 1.6 Stock availability
 The stock availability is calculated by dividing the stock on hand by the monthly demand of the same month. Alternatively, stock availability can be calculated using the average demand of a number of past periods but this requires more complex calculations.
 Stock availability also captures stockouts as, by definition, a stock availability of 0 corresponds to a stockout.
 
-## 1.7 Stock on hand variability
+##### 1.7 Stock on hand variability
 The stock on hand variability is measured by its standard deviation and its coefficient of variation and is an excellent, compound measure for the overall quality of supply network management. While fluctuations (variability) of demand is inevitable to some degree, ideally, a well designed inventory control system should compensate for those fluctuations and stock levels should remain stable at all times.
 1.8 Stock discrepancy
 The stock discrepancy is calculated by adding all stock transactions to the stock on hand at the end of the previous month and comparing the value with the stock on hand of the current month. As these values should match any, positive or negative, discrepancies indicate some kind of error.
 
-#####
 
-## 3 LMIS data use
+###	Data timeliness
+(to complete)
+
+
+
+## LMIS data use
 Although logistics and supply chain management is often associated with and perceived as handling (storing and transporting) physical goods and stocks, in reality logistics and main, and difficult, issues in logistics supply chain management is obtaining and processing timely and accurate data. The most difficult tasks in supply chain management of ensuring the availability of stocks in the place they are required and at the time they are required is entirely determined by data. Provided that stocks are available, the material handling (storage and transportation) is by far the easiest task.  
 Therefore data in general, and data from the last mile (first data mile) in particular, is absolutely essential, critical and indispensable. Only supply networks driven by first mile demand data can be effective as well as efficient and ensure that all goods required for providing high quality health care services are available at the service delivery point when they are needed.  
 Far too often, any logistics data is lumped together as "indicators" or even "Key Performance Indicators" (KPI) while actually logistics data serves different and distinct purposes.
@@ -491,7 +495,7 @@ These indicators can be evaluated in different ways:
 Confirm whether all DHIS2 metrics are "Manifestation" indicators?
 and whether all root cause indicators are only available in national eLMISs?
 
-## DHIS2 logistics data statistics
+### DHIS2 logistics data statistics
 
 For each of the logistics data statistics, this section will provide the:
 - Definition
@@ -504,7 +508,7 @@ For each of the logistics data statistics, this section will provide the:
 A detailed interpretation and the recommended action are explained in the section "Logistics performance management framework".
 Except for the rare case of fully digitized stock management systems, manual records such as batch cards, stock cards and various ledgers are used for recording all stock transactions (such as stock receipts and distributions). At the end of every reporting period those records are reviewed, the required data values are tallied up with a calculator which are then reported.
 
-### General principles
+#### General principles
 - all logistics data needs to be collected with the same periodicity (for example, if stock on hand is recorded and reported monthly, distributions also need to be recorded and reported monthly)
 - real-time data collection, such as with the DHIS2-RTS (Real-Time Stock management system) allows generating daily, monthly and annual reports automatically by the system
 - daily reporing periods are not advisable as they are associated with a very high workload on (health) staff for daily reporting
@@ -512,7 +516,7 @@ Except for the rare case of fully digitized stock management systems, manual rec
 - in terms of logistics, logistics data should be recorded and reported for all healthcare goods which are (regularly) managed by a health facility (and not only for "tracer" products)
 - collected logistics data is only meaningful if it is regularly and systematically collected for all items and all transactions
 
-###	Stock receipt
+####	Stock receipt
 
 Ideally, collection of stock receipt data should not be necessary if a national eLMIS system is implemented which keeps accurate record of the shipments to each health facility which, with some delay, correspond to the stock receipts. For each consignment, national eLMIS systems should track the shipment date as well as the date on which the health facility confirmed actual receipt, separately.
 Therefore recording stock receipts at health facilities (again) means that redundant data is collected which poses un unnecessary burden on facility staff. Instead, stock receipt data should be made available to facility staff through dashboards which automatically visualize data from the national eLMIS.  
@@ -526,7 +530,7 @@ Therefore recording stock receipts at health facilities (again) means that redun
 **Aggregation options**: aggregating stock receipt quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.  
 **Visualization options**:  pivot table, column chart, bar chart, line chart or single value chart.  
 
-###	Stock distribution
+####	Stock distribution
 
 The logistics term "distribution" is often referred to as "consumption" or "issues" but means the same data.
 
@@ -539,7 +543,7 @@ The logistics term "distribution" is often referred to as "consumption" or "issu
 **Aggregation options**: aggregating stock distribution quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. The average demand across several reporting periods may be used for evening out fluctuations or for comparing distribution quantities between (similar) health facilities.
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
-###	Stock redistribution
+####	Stock redistribution
 Redistributions between health facilities is in principle a good way to avoid shortages and stockouts and avoid that patients are not being (sufficiently) treated. However, stock redistributions should be an exception. If stock redistributions are frequent, an assessment of the reasons leading to this "damage control" measure should be made. Ideally, stock redistributions should be managed in the national eLMIS by issuing a virtual return from the respective halth facility and a virtual shipment to another health facility while physically shipping the goods directly between the two health care facilities. Otherwise the distribution quantities for both health care facilities will be distorted and vicious cycle will perpetuate the shortage and stockouts (the health facility with the shortage or stockout continuous to receive too little stock because demand is false low and the health facility redistributing stock continuous to be overstocked as their demand includes part of the demand of another health facility).
 
 **Definition**: total quantity of each item (re)distributed from the (central) pharmacy to another health facility. When loans are returned from the health facility to which stock was redistributed, those quantity need to be recorded as "negative" redistributions in order to balance stocks. If they are instead recorded as any other receipt, those will not match the stock shipped from the supplying medical warehouse.
@@ -550,7 +554,7 @@ Redistributions between health facilities is in principle a good way to avoid sh
 **Aggregation options**: aggregating stock redistribution quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
-###	Stock discard
+####	Stock discard
 
 Terms such as "wastage", "expired" or "losses" are often used as synonyms. However, in terms of logistics processes and workflows, any healthcare product which has expired, is damaged or unusable for another reason still needs to be removed from stock and be placed in a locked quarantine area until safe disposal. Moreover, expired and damaged stock needs to be identified and recorded as such as stock expired stock may not be noticed.  
 Note that "losses" caused by theft (shrinkage) are never known and can only be detected indirectly when stock discrepancies are noted. However, stock discrepancies can also be caused by miscounting, miscalculations or mislaying stock and therefore stolen quantities can only be suspected but cannot be known.
@@ -563,7 +567,7 @@ Note that "losses" caused by theft (shrinkage) are never known and can only be d
 **Aggregation options**: aggregating discarded quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
-###	Stock on hand
+#### Stock on hand
 
 **Definition**: Stock on hand is defined as the quantity of each item which is physically present in the (central) pharmacy. It must be determined by a physical stock count which should be carried out at the end of every reporting period, usually the end of the month. This stock count corresponds to the "closing stock" which means the stock at the end of the reporting period. In order to avoid confusion, stock balances which are the result of calculations such as adding and subtracting stock transactions from the "opening stock" should not be referred to as "Stock on hand". If stocks of the same item are held in different locations, those quantities need to be counted separately but then be added up for calculating the total.
 **Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. 
@@ -573,7 +577,7 @@ Note that "losses" caused by theft (shrinkage) are never known and can only be d
 **Aggregation options**: aggregating stock on hand across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. The average stock on ahd across several reporting periods may be used for evening out fluctuations or for comparing stock on hand between (similar) health facilities.
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
-###	Stock correction
+#### Stock correction
 
 The term "stock correction" is distinct and different from "stock discards" (losses, wastage, expiry etc.)
 
@@ -592,10 +596,10 @@ Stock correction =
 **Aggregation options**: aggregating stock discrepancies quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. Note that if stock discrepancies "cancel each other out" over several reporting periods and result in zero, this is better than not. However, two mistakes which "cancel each other out" still means that two mistakes were made which should be followed up.
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
-##	DHIS2 logistics data indicators
+###	DHIS2 logistics performance indicators
 Xx
 
-###	Coefficient of variation (CoV)
+####	Coefficient of variation (CoV)
 Xx
 **Definition**:   
 **Reporting period**:   
@@ -605,7 +609,7 @@ Xx
 **Aggregation options**:    
 **Visualization options**:  
 
-###	Stock coverage time
+####	Stock coverage time
 Xx
 **Definition**:   
 **Reporting period**:   
@@ -728,7 +732,7 @@ Meaning
 Ideally, all items should fall in the "appropriate" range and there should be no (or very few) items which are under- or overstocked.
 This metric allows to objectively and quickly assess the service level as well as the quality of stock management with a single bar chart for a large number of items.
 
-###	Stock discrepancy
+####	Stock discrepancy
 Xx
 **Definition**:   
 **Reporting period**:   
@@ -738,7 +742,7 @@ Xx
 **Aggregation options**:    
 **Visualization options**:  
 
-###	Report completeness
+####	Report completeness
 Xx
 **Definition**:   
 **Reporting period**:   
@@ -748,7 +752,7 @@ Xx
 **Aggregation options**:    
 **Visualization options**:  
 
-###	Report timeliness
+####	Report timeliness
 Xx
 **Definition**:   
 **Reporting period**:   
@@ -758,9 +762,9 @@ Xx
 **Aggregation options**:    
 **Visualization options**:  
 
-## National eLMIS metrics
+### National eLMIS metrics
 Xx
-## list metrics which are not available in DHIS2 but should be available from national eLMIS, study TSS indicators! study the GF etc. metrics above which can be calculated by national eLMIS.
+list metrics which are not available in DHIS2 but should be available from national eLMIS, study TSS indicators! study the GF etc. metrics above which can be calculated by national eLMIS.
  provides a wide range of analytics, reports and dashboards and should be the primary reference for any logistics data for supply managers, in particular for order fulfilment.
 - Items (item catalogue, prices, item categories)
 - Purchasing reports (purchase orders, goods received, open purchase orders, tenders)
@@ -937,7 +941,7 @@ xxx
 **Analysis and (corrective) action - Stock on hand**
 The value of analysing stock on hand levels (which make no indication of customer demand) and their fluctuations are of much less importance than the analysis of stock coverage times.
 
-## Add explanations for each visualisation: 
+xxx Add explanations for each visualisation: 
 DHIS2-LMIS Data quality and data use Web structure 29-05-2024.odt
 
 
