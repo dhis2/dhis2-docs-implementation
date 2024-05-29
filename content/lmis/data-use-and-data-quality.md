@@ -592,7 +592,7 @@ Stock correction =
 **Aggregation options**: aggregating stock discrepancies quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. Note that if stock discrepancies "cancel each other out" over several reporting periods and result in zero, this is better than not. However, two mistakes which "cancel each other out" still means that two mistakes were made which should be followed up.
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
-##	DHIS2 logistics indicators
+##	DHIS2 logistics data indicators
 Xx
 
 ###	Coefficient of variation (CoV)
@@ -949,13 +949,8 @@ Xxx
 https://drive.google.com/drive/u/0/folders/1PqZzM65TU0Z5zLwe9fyZdvweSEZIf1ZT
 xxx
 
-### Data triangulation
+## References
 Xx
-
-### References
-Xx
-
-xxx
 HISP Centre University of Oslo: Data Quality and Use, DHIS2 Documentation. Accessed 11.11.2023. https://docs.dhis2.org/en/implement/chis-implementation/data-quality-and-use.html
 The DICE consortium: "Stepwise Toolkit for Planning & Budgeting Interoperability of Digital Health Solutions". Digital Health Center of Excellence, not dated. Accessed 26.10.2023. https://a78da35e-056b-4420-8e4f-41e3283327e3.usrfiles.com/ugd/55ae33_5af35824932c48d89287928244b60a8d.pdf
 The Global Fund: "Adjustments to the KPI Framework". The Global Fund, 44th Board meeting, GF/B44/15B, 11-12 November 2020, Virtual. Accessed 26.10.2023. https://www.theglobalfund.org/media/8d89221958393a7/bm44_15b-adjustmentskpiframework_report_en.pdf
