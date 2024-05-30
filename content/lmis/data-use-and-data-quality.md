@@ -3,12 +3,6 @@
 
 ##	LMIS data quality
 
-xxx - To review
-https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/collecting-data/data-quality.html
-https://www.who.int/data/data-collection-tools
-Manual for the DHIS2 quality tool
-Improving Data Quality in Mobile Community-Based Health Information Systems
-xxx
 Text box:
 The entities of all metrics is the quantity of an item (health care product) which are always measured in units of "Each" (single tablet, ampoule, compress) and never in unit packs.
 xxx
@@ -17,7 +11,7 @@ xxx
 While logistics and supply chain management is usually associated with the production, storage and distribution of (commercial) products, the associated data is far more important but usually as invisible as the roots of a tree. The physical flow (storage and distribution) of goods and consignments is by far the easiest task in logistics and supply chain management while the real, albeit less obvious, challenges are managing the complex flows of associated data: obtaining accurate as well as up-to-date logistics data in a timely way and sharing them throughout the supply network in real-time in order to allow decision-making which ensures that the required quantities of required healthcare products are in the places where they are required for providing healthcare services at the time the are required.  
 Trust between all actors and stakeholders are critical and indispensable for any effective and efficient supply network and the data is only as good as the trust the stakeholders have in it. Healthcare facility staff who do not trust supply managers will "inflate" order quantities hoping that this behaviour will increase supplies to them ("ration gaming"). On the other hand, if supply managers do not trust the facility level data they will resort to their own "estimates" for calculating replenishment orders which are always inferior to the systematic use of accurate and timely end-user data. Apart from continuously improving services, trust in data can be enhanced by freely and openly sharing data across supply networks, ideally in real-time.
 
-The large number of different data quality dimensions are structured by UNICEF into the following four categories:  
+The large number of different data quality dimensions are structured by UNICEF (Data quality Framework, 2021) into the following four categories:  
 
 Access to data  
 - Data accessibility  
@@ -156,10 +150,10 @@ The table below summarises how DHIS2 contributes to high data quality standards 
 | Transparency and documentation | Transparency of data collection through log files |
 | Transparency and credibility | Transparency and auditability of all data and log files |
 
-## DHIS2 LMIS data quality analysis
+## LMIS data quality analysis
 DHIS2 natively features a range of tools and applications for preventing the entry of erroneous data, real-time validation of already entered data and (retro-active) analysis of entered data for identifying (potentially) false data values as well as data which was not recorded on time.
 
-### DHIS2 data validation
+### LMIS data validation
 The native DHIS2 data validation features allow validating data values during data entry entry and thereby minimizing data handling errors. Data validation means ensuring that entered data values are within predefined ranges.  
 The DHIS2 "Value type" setting, which is natively available for all "Data elements", allows restricting the entry of data values to certain number sets such as natural numbers ("Positive Integer") or positive integers (which includes zero). This setting also prevents "accidental" data entry such as mistakenly entering text into a numeric data field.  
 During data entry, DHIS2 will indicate any data values which are outside the defined data range by highlighting the data field with a red background and displaying an additional error message on the screen. For example, DHIS2 will prevent users from entering non-integer or any negative values in a stock on hand field and prevent the user from saving any report until the error is corrected.  
@@ -172,7 +166,6 @@ The DHIS2 "Data Quality" app allows defining a z-score, identifying any data val
 ###	Data completeness
 DHIS2 natively allows to set a "Days after period end to qualify for timely data submission" which allows to then determine whether reports were submitted on time. At the end of the monthly data recording users confirm completion by selecting the "Complete" button on the data entry screen.  
 This data and time stamp then allows to generate a range of default reports for the completeness of reports in terms of data recordings for each data field as well as the timeliness (on-time) of reported data values.
-
 
 xxx Text to integrate (add methodology chapter?)
 #### 1 RESEARCH METHODOLOGY
