@@ -361,6 +361,7 @@ DHIS2 recommends and provides the following, intentionally limited, list of logi
 >>**Demand (Distribution quantity) indicators**
 >>>- Coefficient of variation / absolute values  
 >>>- Coefficient of variation / distribution  
+>>
 >>**Stock quantity indicators**
 >>>- Stockout / list of items with stockouts  
 >>>- Stock availability  
@@ -373,10 +374,12 @@ DHIS2 recommends and provides the following, intentionally limited, list of logi
 >>>- Stock coverage time / months of stock / distribution  
 >>>- Stock coverage time / category  
 >>>- Stock coverage time / category / distribution  
+>>
 >>**Stock accuracy indicators**
 >>>- Stock discrepancy by item / absolute values  
 >>>- Stock discrepancy / count  
 >>>- Stock discrepancy / percentage  
+>>
 >>**Report indicators**
 >>>- Report completeness  
 >>>- Reporting rate  
