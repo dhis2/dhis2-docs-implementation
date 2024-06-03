@@ -283,6 +283,7 @@ The table below provides an overview comparison of authoritative standards for l
 | On-Time In-Full (OTIF) | x | x | - | x | - | x |
 | Forecast Accuracy (FA) / Forecasted demand ratio | x | x | - | - | - | - |
 | Order Cycle-Time (CT) | x | - | - | - | - | - |
+| Timeliness of facility reporting | - | - | - | x | x | x |
 | Product loss | x | - | - | - | - | x |
 | Stock record accuracy | - | - | - | - | - | x |
 | Quality Test Rate | x | - | - | - | - | - |
@@ -294,7 +295,6 @@ The table below provides an overview comparison of authoritative standards for l
 | Closed vial wastage | x | x | x | - | - | - |
 | Functional status of cold chain equipment | x | x | x | - | - | - |
 | Temperature alarm rates | x | x | - | - | - | - |
-| Timeliness of facility reporting | - | - | - | x | x | x |
 | % districts reporting stock availability (vaccines and supplies) at a service delivery level | - | - | x | - | - | - |
 | % districts having electronic vaccine and supply stock management system to monitor vaccine stock down to service delivery | - | - | x | - | - | - |
 | Stock out events of DTP or MCV at national level | - | - | x | - | - | - |
@@ -349,47 +349,44 @@ As DHIS2 analytics strive to be specific and of practical day to day use for hea
 - avoid representing the same logistics metric in different ways  
 DHIS2 recommends and provides the following, intentionally limited, list of logistics data statistics and logistics metrics:  
 
-**Logistics data statistics**
-- Stock receipt  
-- Stock distribution  
-- Stock redistribution  
-- Stock discard  
-- Stock on hand  
-- Stock correction  
-
-**Logistics performance indicators**  
-**Demand (Distribution quantity) indicators**
-- Coefficient of variation / absolute values  
-- Coefficient of variation / distribution  
-**Stock quantity indicators**
-- Stockout / list of items with stockouts  
-- Stock availability  
-- Stockout percentage  
-- Number of stockouts (count)  
-- Stockout duration by item / months with stockouts  
-- Stockout duration by item / days with stockouts  
-- Stockout duration / distribution  
-- Stock coverage time by item / months of stock [inverse "Stock turns"]  
-- Stock coverage time / months of stock / distribution  
-- Stock coverage time / category  
-- Stock coverage time / category / distribution  
-**Stock accuracy indicators**
-- Stock discrepancy by item / absolute values  
-- Stock discrepancy / count  
-- Stock discrepancy / percentage  
-**Report indicators**
-- Report completeness  
-- Reporting rate  
-- Reporting rate on time  
+>**Logistics data statistics**
+>>- Stock receipt  
+>>- Stock distribution  
+>>- Stock redistribution  
+>>- Stock discard  
+>>- Stock on hand  
+>>- Stock correction  
+>
+>**Logistics performance indicators**  
+>>**Demand (Distribution quantity) indicators**
+>>>- Coefficient of variation / absolute values  
+>>>- Coefficient of variation / distribution  
+>>**Stock quantity indicators**
+>>>- Stockout / list of items with stockouts  
+>>>- Stock availability  
+>>>- Stockout percentage  
+>>>- Number of stockouts (count)  
+>>>- Stockout duration by item / months with stockouts  
+>>>- Stockout duration by item / days with stockouts  
+>>>- Stockout duration / distribution  
+>>>- Stock coverage time by item / months of stock [inverse "Stock turns"]  
+>>>- Stock coverage time / months of stock / distribution  
+>>>- Stock coverage time / category  
+>>>- Stock coverage time / category / distribution  
+>>**Stock accuracy indicators**
+>>>- Stock discrepancy by item / absolute values  
+>>>- Stock discrepancy / count  
+>>>- Stock discrepancy / percentage  
+>>**Report indicators**
+>>>- Report completeness  
+>>>- Reporting rate  
+>>>- Reporting rate on time  
 
 These indicators can be evaluated in different ways:
-    • Measuring absolute (daily/monthly) values
-    • Measuring changes over time (improvements and deterioration)
-    • Measuring averages
-    • Comparing measurements against clearly defined targets (thresholds)
-
-Question: Confirm whether all DHIS2 metrics are "Manifestation" indicators?
-and whether all root cause indicators are only available in national eLMISs?
+    • Measuring absolute (daily/monthly) values  
+    • Measuring changes over time (improvements and deterioration)  
+    • Measuring averages  
+    • Comparing measurements against clearly defined targets (thresholds)  
 
 ### DHIS2 logistics data statistics
 
@@ -757,6 +754,9 @@ While in most cases users and managers start out designing dashboards and visual
  - collect the data (reliably, accurately and timely, ideally in real-time)
  - what representation of the data and metrics is most suitable for analytics and visualizations
  - only after all of the above, visualizations and dashboards are developed
+ xxx
+ Question: Confirm whether all DHIS2 metrics are "Manifestation" indicators?
+and whether all root cause indicators are only available in national eLMISs?
 
 ###	General principles
 As for the entire concept, the ultimate objective of performance management is improving health services for end-users, patients and health professionals rather than (only) complying with national and donor reporting requirements.  
