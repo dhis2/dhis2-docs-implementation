@@ -481,12 +481,12 @@ The term "stock correction" is distinct and different from "stock discards" (los
 **Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
 **Calculation**: stock discrepancies are calculated as follows:  
 Stock correction =  
-/+ Stock on hand from the previous month (end of the previous month = beginning of the current month)  
-/+ Stock receipt  
-/- Stock distribution  
-/- Stock redistribution  
-/- Stock discard  
-/- Stock on hand   
+\+ Stock on hand from the previous month (end of the previous month = beginning of the current month)  
+\+ Stock receipt  
+\- Stock distribution  
+\- Stock redistribution  
+\- Stock discard  
+\- Stock on hand   
 **Short Interpretation**: any value other than zero for the stock correction indicates a mistake or theft and is a sign of poor stock management. A positive stock correction means that there is more stock on hand than their should be for example because more physical stock was entered into stock than recorded or because less physical stock than recorded was distributed or both. A negative stock correction means that more stock was physically distributed than recorded or less stock was physically received than recorded, stock was mislaid or stolen.  
 **Corrective action**: the need for recording any stock discrepancy should prompt an inquiry on the possible reasons, particularly if the occur for several items and/or repeatedly for the same items.   
 **Aggregation options**: aggregating stock discrepancies quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. Note that if stock discrepancies "cancel each other out" over several reporting periods and result in zero, this is better than not. However, two mistakes which "cancel each other out" still means that two mistakes were made which should be followed up.  
