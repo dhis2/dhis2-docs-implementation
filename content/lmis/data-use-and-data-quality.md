@@ -358,29 +358,29 @@ DHIS2 recommends and provides the following, intentionally limited, list of logi
 >>- Stock correction  
 >
 >**Logistics performance indicators**  
->>**Demand (Distribution quantity) indicators**
+>>**Demand (Distribution quantity) performance indicators**
 >>>- Coefficient of variation / absolute values  
 >>>- Coefficient of variation / distribution  
 >>
->>**Stock quantity indicators**
+>>**Stock quantity performance indicators**
 >>>- Stockout / list of items with stockouts  
->>>- Stock availability  
->>>- Stockout percentage  
+>>>- Stock availability across items  
+>>>- Stockout percentage across items  
 >>>- Number of stockouts (count)  
 >>>- Stockout duration by item / months with stockouts  
 >>>- Stockout duration by item / days with stockouts  
 >>>- Stockout duration / distribution  
->>>- Stock coverage time by item / months of stock [inverse "Stock turns"]  
+>>>- Stock coverage time by item / months of stock  
 >>>- Stock coverage time / months of stock / distribution  
 >>>- Stock coverage time / category  
 >>>- Stock coverage time / category / distribution  
 >>
->>**Stock accuracy indicators**
+>>**Stock accuracy performance indicators**
 >>>- Stock discrepancy by item / absolute values  
 >>>- Stock discrepancy / count  
 >>>- Stock discrepancy / percentage  
 >>
->>**Report indicators**
+>>**Report performance indicators**
 >>>- Report completeness  
 >>>- Reporting rate  
 >>>- Reporting rate on time  
@@ -418,7 +418,7 @@ Ideally, collection of stock receipt data should not be necessary if a national 
 Therefore recording stock receipts at health facilities (again) means that redundant data is collected which poses un unnecessary burden on facility staff. Instead, stock receipt data should be made available to facility staff through dashboards which automatically visualize data from the national eLMIS.  
 
 **Definition**: "stock receipt" is defined as the quantity of each item which is received from the upstream logistics service as replenishment order. Supplies are usually received once a month with additional receipts of backorders and emergency orders. However the frequency of supplies may differ according to national policies.  
-**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. If the supply of healthcare facilities is less frequent than once a month, then the measurement period can be adjusted, for example to a period of three months.  
+**Reporting period**: monthly aggragetions are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. If the supply of healthcare facilities is less frequent than once a month, then the measurement period can be adjusted, for example to a period of three months.  
 **Calculation**: total stock receipts for each item are calculated by adding up the quantities received in each consignment during the respective reporting period.  
 **Limitations** calculating correct totals requires aggregating all consignment (packing list) quantities for each item which were received during the respective reporting month.  
 **Short Interpretation**: generally, the stock receipts, after taking the lead time (delays for delivery) into account, need to correspond with the respective order quantities for the same item which in turn correspond to the distributions of previous monthly periods. Ideally, if deliveries are made reliably, the received quantity of every month should correspond to the quantity ordered during the period corresponding to the promised lead time earlier.  
@@ -493,53 +493,40 @@ Stock correction =
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 ###	DHIS2 logistics performance indicators
-Xx
+While logistics data statistics are "just numbers" without any desired ranges, logistics performance indicators have optimal ranges which should be achieved and any deviation from the optimal ranges (too high or too low) needs to prompt immediate corrective action.
 
-####	Demand (Distribution quantity) indicators
+####	Demand (Distribution quantity) performance indicators
 Xx
 
 #####	Coefficient of variation (CoV) / absolute values
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+**Definition**: the coefficient of variation (CoV) is a measure for the variability of customer demand (distribution quantities).
+**Reporting period**: calculations are usually based on monthly time series.
+**Calculation**: standard deviation of a monthly time series divided by the mean of the same time series.  
+**Short Interpretation**: the lower the coefficient of variation, the lower demand variability (level of fluctuations) and the higher the coefficient of variation the more variable and erratic demand is. If customer demand (distribution quantities) is entirely level (identical every month) then the coefficient of variation would be zero. The highest coefficient of variation in any time series results from a single values having any non-zero value and all other values in the time series having zero values. The maximum possible coefficient of variation depends on the length of the time series. For a time series of six months, the maximum possible coefficient of variation is 2.45 and or a time series of twelve months the maximum possible coefficient of variation is 3.46. By definition, a time series with a coefficient of variation of more than 1.0 is considered as erratic and demand cannot be forecasted with any reasonable accuracy. A coefficient of variation of less than 0.5 can be considered as low (optimal) and time series with a coefficient of variation between 0.5 to 1 as medium variability.
+**Corrective action**: if demand variability is low no corrective action is needed but the low demand variability should be maintained. If demand shows high variability or is erratic, causes such be analysed. "Intrinsic" reasons for demand variability such as changing number of patients and medical conditions cannot be influenced. However, "extrinsic" reasons such as irregular and unsystematic orders of hospital serivces and wards, expiry of stocks after distribution from the central pharmacy as well as inconsistent application of standard treatment protocols can be addressed.
+**Aggregation options**: the aggregation (averaging) of coefficients of variations across different items is not meaningful. Instead histograms (frequency distribution charts) should be used to visualize coefficients of variations across several items.
+**Visualization options**: pivot table. 
 
 #####	Coefficient of variation (CoV) / distribution
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+**Definition**: histogram (frequency distribution charts) of the coefficient of variation of all items in the same healthcare facility and for the same time period.
+**Reporting period**: monthly for the respective time series of the previous months. For example the histogram for July will be based on the time series of the six months from January to June.   
+**Calculation**: after calculating the coefficient of variation for each item for any specific month, the number of items for which the coefficient of variation falls into a bin (starting with 0 and in increments of 0.1) is counted.
+**Short Interpretation**: ideally the histogram would show a single bar at coefficient of variation equal to zero but in practice the distribution should at least be positively skewed which means that it should have its mode in the low variability range. In any case the histogram is expected to show or shape resembling a normal distribution. in the worst case, all coefficients of distribution are negatively skewed and all in the range of erratic demand (coefficient of variation greater than 1).
+**Corrective action**: same as for the coefficient of variation / absolute values  
+**Aggregation options**: values from individual items can be aggregated across several or all items, healthcare facilities (at all levels) and time periods by adding the respective coefficient of variation values to the respective ranges. 
+**Visualization options**: pivot table or histogram.  
 
-#####	Stock coverage time
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
-
-#### Stock quantity indicators
+#### Stock quantity performance indicators
 Xx
 
 ##### Stockout / list of items with stockouts
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+**Definition**: list of items with stock on hand of zero during the monthly physical stock count.   
+**Reporting period**: monthly for monthly stock reporting and monthly as well as daily for the real-time system.
+**Calculation**: none, the items with stockouts are simply listed.  
+**Short Interpretation**: ideally no items should ever be out of stock and the fewer items are out of stock the better. Items which are out of stock can be evaluated for available substitutes and the consequences for patients in case of a stockout.   
+**Corrective action**: short term: expedite open orders and/or place additional orders for immediate shipment and/or redistribute from nearby healthcare facilities. Long-term: analyse reasons for stockouts and take corrective action (see logistics performance management framework).   
+**Aggregation options**: lists can aggregated across items, time periods and healthcare facilities.    
+**Visualization options**: pivot table and stacked column charts.
 
 ##### Stock availability
 Xx
@@ -642,7 +629,7 @@ Xx
 **Aggregation options**:    
 **Visualization options**:  
 
-#### Stock accuracy indicators
+#### Stock accuracy performance indicators
 Xx
 
 ##### Stock discrepancy by item / absolute values
@@ -675,7 +662,7 @@ Xx
 **Aggregation options**:    
 **Visualization options**:  
 
-#### Reporting quality indicators
+#### Reporting quality performance indicators
 Xx
 
 ##### Report completeness
