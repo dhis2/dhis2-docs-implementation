@@ -276,88 +276,33 @@ The performance management builds on first determining what factors influence lo
 ###	Benchmarks
 The table below provides an overview comparison of authoritative standards for logistics metrics from the Target Software Standards (TSS, Gavi), Data for Immunization Supply Chain (DISC, approved by Gavi Alliance Partners), Immunization Agenda 2030 (IA2030, IA2030 Coordination Group)  and The Global Fund.  
 
-| **Metric**  | **TSS** | **DISC** | **IA2030S** | **TGF** | **PEPFAR** |
-| :--- |  :---: |  :---: |  :---: |  :---: |  :---: |
-| On-Shelf Availability (OSA) / Full stock availability | x | x | - | x | x |
-| On-Time In-Full (OTIF) | x | x | - | x | - |
-| Order Cycle-Time (CT) | x | - | - | - | - |
-| Forecast Accuracy (FA) / Forecasted demand ratio | x | x | - | - | - |
-| Product loss | x | - | - | - | - |
-| Quality Test Rate | x | - | - | - | - |
-| Product Quality Adherence | x | - | - | - | - |
-| Stocked According to Plan (SATP) | x | x | - | x | x |
-| Inventory Turns | x | - | - | - | - |
-| Total SC Cost as & of Distributed Product Value | x | - | - | - | - |
-| LMIS Order Reporting Rate | x | - | - | - | - |
-| Closed vial wastage | x | x | x | - | - |
-| Functional status of cold chain equipment | x | x | x | - | - |
-| Temperature alarm rates | x | x | - | - | - |
-| Timeliness of facility reporting | - | - | - | x | - |
-| % districts reporting stock availability (vaccines and supplies) at a service delivery level | - | - | x | - | - |
-| % districts having electronic vaccine and supply stock management system to monitor vaccine stock down to service delivery | - | - | x | - | - |
-| Stock out events of DTP or MCV at national level | - | - | x | - | - |
-| Stock out days at national level | - | - | x | - | - |
-| Stock out events of DTP or MCV at sub-national level | - | - | x | - | - |
-| Effective Vaccine Management Assessment (EVMA) conducted | - | - | x | - | - |
-| Percentage of sites with functional PQS equipment | - | - | x | - | - |
-| EVM score (not just whether it has been conducted) | - | - | x | - | - |
-
-xxx
-Monitoring, Evaluation, and Reporting Indicator Reference Guide. PEPFAR. MER 2.0 (Version 2.7), September 2023.
-![Alt text](image-256.png)
-
-**USAID**
-Stockout rates (at warehouses and SDPs).
-Order Fill Rate
-Inventory Accuracy Rate
-Stocked According to Plan
-Adequate Shelf Life (upon delivery)
-Stock Wastage due to Expiration or Damage
-Very professional and precise but indicators are for warehouses and not explicitly specified for SDP.
-
-**The Global Fund**
-https://www.theglobalfund.org/media/11402/fundingmodel_supply-chain-health-services-spot-checks-information-session_presentation_en.pdf
-
-![Alt text](image-257.png)
-
-These four are found in various documents and audit reports but not in the final document only mentioned as a foot note. But I cannot imagine TGF just abandoned them.
-
-See also:
-https://docs.google.com/spreadsheets/d/1QTLVKoWZ-hJXSa0QNICcETFhoQQOMDMCpXnusjgTyUs/edit#gid=1538656318
-
-xxx
-
-KPI’s
-
-Relevant KPI’s are:
-    • KPI’s which are immediately useful for managing the supply chain
-    • KPI’s demanded by The Global Fund
-    • KPI’s demanded by PEPFAR [His "decision" that PEPFAR is relevant]
-[What about TSS, DISC  and IA2030
-
-
-Data available in DHIS2 for especially HIV and Malaria, but depending upon the country also for Reproductive Health, Essential Medicines and vaccines.:
-    1. Frequency is monthly data collection  [except for RTS]
-    2. Data per Service Delivery Point [and by item]
-    3. Stock on hand beginning of period [redundant data]
-    4. Stock on hand end of period [must be result of a physical stock count]
-    5. Qty issued
-    6. Qty received [redundant data]
-    7. Qty lost [what does "lost" mean?, unaccounted for discrepancy, "stock correction"]
-
-KPI’s useful for managing the supply chain at SDP level & possible to form based on the data available.
-As indicators calculated only monthly, and seen at district level and above. [Difference between KPI and Indicator?]
-
-![Alt text](image-258.png)
-
-![Alt text](image-259.png)
-
-KPI’s demanded by PEPFAR
-
-![Alt text](image-260.png)
-
-The indicators #1 for The Global Fund and # 1-3 for PEPFAR can be calculated based on the DHIS2 data in these countries.
-The indicators # 4-6 for PEPFAR are anyway not calculated based directly on information from SDP level. Meaning that reporting to both TGF and PEPFAR can be managed via these DHIS2 indicators.
+| **Metric**  | **TSS** | **DISC** | **IA2030S** | **TGF** | **PEPFAR** | **USAID** |
+| :--- |  :---: |  :---: |  :---: |  :---: |  :---: |  :---: |
+| On-Shelf Availability (OSA) / Full stock availability | x | x | - | x | x | x |
+| Stocked According to Plan (SATP) | x | x | - | x | x | x |
+| On-Time In-Full (OTIF) | x | x | - | x | - | x |
+| Forecast Accuracy (FA) / Forecasted demand ratio | x | x | - | - | - | - |
+| Order Cycle-Time (CT) | x | - | - | - | - | - |
+| Product loss | x | - | - | - | - | x |
+| Stock record accuracy | - | - | - | - | - | x |
+| Quality Test Rate | x | - | - | - | - | - |
+| Product Quality Adherence | x | - | - | - | - | - |
+| Remaining shelf life at delivery | - | - | - | - | - | x |
+| Inventory Turns | x | - | - | - | - | - |
+| Total SC Cost as & of Distributed Product Value | x | - | - | - | - | - |
+| LMIS Order Reporting Rate | x | - | - | - | - | - |
+| Closed vial wastage | x | x | x | - | - | - |
+| Functional status of cold chain equipment | x | x | x | - | - | - |
+| Temperature alarm rates | x | x | - | - | - | - |
+| Timeliness of facility reporting | - | - | - | x | x | x |
+| % districts reporting stock availability (vaccines and supplies) at a service delivery level | - | - | x | - | - | - |
+| % districts having electronic vaccine and supply stock management system to monitor vaccine stock down to service delivery | - | - | x | - | - | - |
+| Stock out events of DTP or MCV at national level | - | - | x | - | - | - |
+| Stock out days at national level | - | - | x | - | - | - |
+| Stock out events of DTP or MCV at sub-national level | - | - | x | - | - | - |
+| Effective Vaccine Management Assessment (EVMA) conducted | - | - | x | - | - | - |
+| Percentage of sites with functional PQS equipment | - | - | x | - | - | - |
+| EVM score (not just whether it has been conducted) | - | - | x | - | - | - |
 
 ###	Required logistics data
 If logistics data is only collected at the healthcare facility, then some data (such as stock receipts) which is already recorded at the upstream levels has to be duplicated while in an integrated system the data points collected at the healthcare facility level can be minimised. In the best case where a real-time transactional system at the healthcare facility level is integrated with a national eLMIS, only stock transactions have to be recorded at the healthcare facility while all other data points can be either calculated or are already available in the national eLMIS. The table below provides an overview of the data points which need to be collected depending on the level of integration.
@@ -967,3 +912,8 @@ https://www.who.int/publications/i/item/9789240010567
     10. Stepwise Toolkit for Planning & Budgeting Interoperability of Digital Health Solutions
 https://a78da35e-056b-4420-8e4f-41e3283327e3.usrfiles.com/ugd/55ae33_5af35824932c48d89287928244b60a8d.pdf 
 xxx
+xxx Monitoring, Evaluation, and Reporting Indicator Reference Guide. PEPFAR. MER 2.0 (Version 2.7), September 2023. 
+
+**The Global Fund**
+https://www.theglobalfund.org/media/11402/fundingmodel_supply-chain-health-services-spot-checks-information-session_presentation_en.pdf
+
