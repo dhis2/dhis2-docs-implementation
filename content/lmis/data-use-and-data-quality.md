@@ -13,10 +13,10 @@ Trust between all actors and stakeholders are critical and indispensable for any
 
 The large number of different data quality dimensions are structured by UNICEF (Data quality Framework, 2021) into the following four categories:  
 
-Access to data  
+Access to data
 - Data accessibility  
 
-Output quality dimensions  
+Output quality dimensions
 - Relevance  
 - Correctness  
 - Completeness  
@@ -28,13 +28,13 @@ Output quality dimensions
 - Interpretability  
 - Comparability  
 
-Process quality dimensions  
+Process quality dimensions
 - Burden for data collectors  
 - Appropriateness of data sources  
 - Data collection process  
 - Transparency and documentation of data sources  
 
-Institutional quality  
+Institutional quality
 - Transparency and credibility  
 
 While conventional, paper-based LMIS data management systems require balancing various tradeoffs, such as the amount of data fields or data accuracy and timeliness, the use of digital data collection and management systems improve accuracy, timeliness, accessibility, consistency etc. at the same time.
@@ -227,7 +227,7 @@ DHIS2 natively features the following reports for any kind of Data set:
 - Expected reports
 - Reporting rate
 - Reporting rate on time
-For details please refer to the Implementation guidance chapter on "Data Quality Principles"
+For details please refer to the Implementation guidance chapter on "Data Quality Principles"  
 https://docs.dhis2.org/en/implement/data-quality/principles.html
 The
 
@@ -238,7 +238,7 @@ Far too often, any logistics data is lumped together as "indicators" or even "Ke
 
 ###	Data use for inventory control
 Inventory control is a scientific field which studies policies and systems for replenishing medical stocks at healthcare facilities and other medical stocks and is coloquially referred to as "quantification". Inventory control lies at the heart of all supply chains and depends on the accurate and timely data from the healthcare facility as well as upstream levels. Therefore it is accurate and timely data together with rational and professional inventory control policies with make or break supply chains. Although the use of logistics data usually focuses on "reporting", the use for inventory control is by far the most important purpose.  
-Without stock data from healthcare facilities, supply managers have to resort to surrogate data such as shipments to healthcare facilities which inevitably causes demand distortion and reduces stock availability at all levels of the supply network.  
+Without stock data from healthcare facilities, supply managers have to resort to surrogate data such as shipments to healthcare facilities which inevitably causes demand distortion and reduces stock availability at all levels of the supply network.
 Fortunately stock replenishment calculations require very little data but that data must be timely and absolutely correct:
 - Stock on hand (the result of a physical stock count at the end of every month): indispensable for calculating stock replenishment quantities
 - Aggregate, monthly stock distribution ("consumption") are indispensable for demand analysis and forecasting future demand
@@ -247,7 +247,7 @@ Unfortunately, public health systems tend to collect too much logistics data whi
 
 ###	Data use for logistics performance management
 In an ideal world with perfectly functioning supply networks, where neither stockouts nor overstocking occur, monitoring and measuring the quality of logistics services would not be needed. In practice, measuring and monitoring logistics performance is critical and indispensable. Not for generating "reports" and dashboards which may or not be used but rather for informing corrective action which changes and eventually optimises all inventory control parameters in order to increase and maximise stock availability while minimising stock wastage at healthcare facilities.  
-Despite a plethora of statistics, indicators and key performance indicators, a comprehensive and complete performance management system only requires the collection of a handful of data fields at the healthcare facility level:  
+Despite a plethora of statistics, indicators and key performance indicators, a comprehensive and complete performance management system only requires the collection of a handful of data fields at the healthcare facility level:
 - Number of stock items managed (and changes over time)
 - Monthly distribution quantities (monthly aggregates or transaction quantities)
 - Stock on hand quantities (at the end of the month or ideally in real-time)
@@ -397,14 +397,14 @@ Unless mandated by national policies and protocols and inevitable, mSupply data 
 
 ###	Overview of DHIS2 logistics metrics
 Given the extensive analytics functionality in DHIS2, users are tempted to configure a wide range of analytics and visualisations, often duplicating measurements for specific metrics, without a clear objectives and an overall concept.  
-As DHIS2 analytics strive to be specific and of practical day to day use for healthcare facility staff, DHIS2 data collection and analytics have the following objectives:  
+As DHIS2 analytics strive to be specific and of practical day to day use for healthcare facility staff, DHIS2 data collection and analytics have the following objectives:
 - collect as little data as possible (but as much as necessary)
 - only analyse data collected at the healthcare facility level in DHIS2 (and not in other upstream systems)
 - only provide analytics which are meaningful to and "actionable" by healthcare facility staff
 - avoid representing the same logistics metric in different ways  
 DHIS2 recommends and provides the following, intentionally limited, list of logistics data statistics and logistics metrics:  
 
-**Logistics data statistics**  
+**Logistics data statistics**
 - Stock receipt  
 - Stock distribution  
 - Stock redistribution  
@@ -412,7 +412,7 @@ DHIS2 recommends and provides the following, intentionally limited, list of logi
 - Stock on hand  
 - Stock correction  
 
-**Logistics performance indicators**
+**Logistics performance indicators**  
 **Demand (Distribution quantity) indicators**
 - Coefficient of variation / absolute values  
 - Coefficient of variation / distribution  
@@ -475,7 +475,7 @@ Therefore recording stock receipts at health facilities (again) means that redun
 **Definition**: "stock receipt" is defined as the quantity of each item which is received from the upstream logistics service as replenishment order. Supplies are usually received once a month with additional receipts of backorders and emergency orders. However the frequency of supplies may differ according to national policies.  
 **Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. If the supply of healthcare facilities is less frequent than once a month, then the measurement period can be adjusted, for example to a period of three months.  
 **Calculation**: total stock receipts for each item are calculated by adding up the quantities received in each consignment during the respective reporting period.  
-**Limitations** calculating correct totals requires aggregating all consignment (packing list) quantities for each item which were received during the respective reporting month.
+**Limitations** calculating correct totals requires aggregating all consignment (packing list) quantities for each item which were received during the respective reporting month.  
 **Short Interpretation**: generally, the stock receipts, after taking the lead time (delays for delivery) into account, need to correspond with the respective order quantities for the same item which in turn correspond to the distributions of previous monthly periods. Ideally, if deliveries are made reliably, the received quantity of every month should correspond to the quantity ordered during the period corresponding to the promised lead time earlier.  
 **Corrective action**: if the receipt quantities do not correspond (closely) to the quantities ordered the period corresponding to the promised lead time earlier, then the logistics services supplying the healthcare facility needs to improve reliability of delivery. Alternatively, if the promised lead time cannot be adhered to, the lead time parameter in the stock replenishment calculations can be increased in order to match actual lead times.  
 **Aggregation options**: aggregating stock receipt quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.  
@@ -485,24 +485,24 @@ Therefore recording stock receipts at health facilities (again) means that redun
 
 The logistics term "distribution" is often referred to as "consumption" or "issues" but means the same data.
 
-**Definition**: total quantity of each item distributed from the (central) pharmacy at the healthcare facility to the respective wards and services in the healthcare facility. Depending on their procedures, out-patient-departments, community health workers, inpatients wards, laboratories, operating theatres etc. may be supplied daily, weekly, monthly and/or on request. For various reasons, the return of goods back to the (central) pharmacy should be avoided but if necessary this should be recorded as "negative" distributions.
-**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. 
-**Calculation**: total stock distributions for each item are calculated by adding up the quantities distributed to all of the services and wards during the respective reporting period.   
-**Short Interpretation**: stock distributions (which correspond to customer demand) lie at the origin of any supply chain (demand chain) and are not related to any other logistics data. Instead, the interpretation of quantities ordered and used by the respective services and wards depends on the number of patients, their medical condition, duration of treatment etc. and needs to be assessed by health professionals. The only logistical consideration is that items which have no demand at all for several months should be discussed with health staff for confirming the need for continuing to stock them as they are likely to expire before being used.
-**Limitations** if stock is returned to the (central) pharmacy, in principle the stock distribution quantities should be corrected in the period when the distribution was made. If the "negative" distribution is recorded in a later period, the actually (monthly) distribution quantities will be distorted although the overall total across all concerned periods will still be correct.
-**Corrective action**: items without demand for prolonged periods of time should be discussed with health staff for confirming the need for continuing to stock them as they are likely to expire before being used. 
-**Aggregation options**: aggregating stock distribution quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. The average demand across several reporting periods may be used for evening out fluctuations or for comparing distribution quantities between (similar) health facilities.
+**Definition**: total quantity of each item distributed from the (central) pharmacy at the healthcare facility to the respective wards and services in the healthcare facility. Depending on their procedures, out-patient-departments, community health workers, inpatients wards, laboratories, operating theatres etc. may be supplied daily, weekly, monthly and/or on request. For various reasons, the return of goods back to the (central) pharmacy should be avoided but if necessary this should be recorded as "negative" distributions.  
+**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
+**Calculation**: total stock distributions for each item are calculated by adding up the quantities distributed to all of the services and wards during the respective reporting period.    
+**Short Interpretation**: stock distributions (which correspond to customer demand) lie at the origin of any supply chain (demand chain) and are not related to any other logistics data. Instead, the interpretation of quantities ordered and used by the respective services and wards depends on the number of patients, their medical condition, duration of treatment etc. and needs to be assessed by health professionals. The only logistical consideration is that items which have no demand at all for several months should be discussed with health staff for confirming the need for continuing to stock them as they are likely to expire before being used.  
+**Limitations** if stock is returned to the (central) pharmacy, in principle the stock distribution quantities should be corrected in the period when the distribution was made. If the "negative" distribution is recorded in a later period, the actually (monthly) distribution quantities will be distorted although the overall total across all concerned periods will still be correct.  
+**Corrective action**: items without demand for prolonged periods of time should be discussed with health staff for confirming the need for continuing to stock them as they are likely to expire before being used.  
+**Aggregation options**: aggregating stock distribution quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. The average demand across several reporting periods may be used for evening out fluctuations or for comparing distribution quantities between (similar) health facilities.  
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 ####	Stock redistribution
 Redistributions between health facilities is in principle a good way to avoid shortages and stockouts and avoid that patients are not being (sufficiently) treated. However, stock redistributions should be an exception. If stock redistributions are frequent, an assessment of the reasons leading to this "damage control" measure should be made. Ideally, stock redistributions should be managed in the national eLMIS by issuing a virtual return from the respective halth facility and a virtual shipment to another health facility while physically shipping the goods directly between the two healthcare facilities. Otherwise the distribution quantities for both healthcare facilities will be distorted and vicious cycle will perpetuate the shortage and stockouts (the health facility with the shortage or stockout continuous to receive too little stock because demand is false low and the health facility redistributing stock continuous to be overstocked as their demand includes part of the demand of another health facility).
 
-**Definition**: total quantity of each item (re)distributed from the (central) pharmacy to another health facility. When loans are returned from the health facility to which stock was redistributed, those quantity need to be recorded as "negative" redistributions in order to balance stocks. If they are instead recorded as any other receipt, those will not match the stock shipped from the supplying medical warehouse.
-**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. 
-**Calculation**: total stock redistributions for each item are calculated by adding up the quantities redistributed to all other health facility during the respective reporting period.   
-**Short Interpretation**: any stock redistributions should be considered as an anomaly.
-**Corrective action**: any stock redistribution should prompt an assessment of the overall supply and distribution system as well as measures for preventing stock imbalances in future.
-**Aggregation options**: aggregating stock redistribution quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.
+**Definition**: total quantity of each item (re)distributed from the (central) pharmacy to another health facility. When loans are returned from the health facility to which stock was redistributed, those quantity need to be recorded as "negative" redistributions in order to balance stocks. If they are instead recorded as any other receipt, those will not match the stock shipped from the supplying medical warehouse.  
+**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
+**Calculation**: total stock redistributions for each item are calculated by adding up the quantities redistributed to all other health facility during the respective reporting period.  
+**Short Interpretation**: any stock redistributions should be considered as an anomaly.  
+**Corrective action**: any stock redistribution should prompt an assessment of the overall supply and distribution system as well as measures for preventing stock imbalances in future.  
+**Aggregation options**: aggregating stock redistribution quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.  
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 ####	Stock discard
@@ -510,41 +510,41 @@ Redistributions between health facilities is in principle a good way to avoid sh
 Terms such as "wastage", "expired" or "losses" are often used as synonyms. However, in terms of logistics processes and workflows, any healthcare product which has expired, is damaged or unusable for another reason still needs to be removed from stock and be placed in a locked quarantine area until safe disposal. Moreover, expired and damaged stock needs to be identified and recorded as such as stock expired stock may not be noticed.  
 Note that "losses" caused by theft (shrinkage) are never known and can only be detected indirectly when stock discrepancies are noted. However, stock discrepancies can also be caused by miscounting, miscalculations or mislaying stock and therefore stolen quantities can only be suspected but cannot be known.
 
-**Definition**: total quantity of each item which was removed from stock,  placed in quarantine and (eventually) disposed of.
-**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. 
-**Calculation**: total stock discarded for each item are calculated by adding up the quantities discarded during the respective reporting period.   
-**Short Interpretation**: stock discards are, in principle, avoided but should at least be exception.
-**Corrective action**: if stock is damaged, the storage conditions need to be improved accordingly. For example if stock is damaged by freezing vaccines, the cold chain management needs to be improved. If stock expires either stock levels need to be reduced or the remaining shelf life at the time of delivery from the supply medical warehouse needs to be increased.
-**Aggregation options**: aggregating discarded quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.
+**Definition**: total quantity of each item which was removed from stock,  placed in quarantine and (eventually) disposed of.   
+**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
+**Calculation**: total stock discarded for each item are calculated by adding up the quantities discarded during the respective reporting period.  
+**Short Interpretation**: stock discards are, in principle, avoided but should at least be exception.  
+**Corrective action**: if stock is damaged, the storage conditions need to be improved accordingly. For example if stock is damaged by freezing vaccines, the cold chain management needs to be improved. If stock expires either stock levels need to be reduced or the remaining shelf life at the time of delivery from the supply medical warehouse needs to be increased.  
+**Aggregation options**: aggregating discarded quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.  
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 #### Stock on hand
 
-**Definition**: Stock on hand is defined as the quantity of each item which is physically present in the (central) pharmacy. It must be determined by a physical stock count which should be carried out at the end of every reporting period, usually the end of the month. This stock count corresponds to the "closing stock" which means the stock at the end of the reporting period. In order to avoid confusion, stock balances which are the result of calculations such as adding and subtracting stock transactions from the "opening stock" should not be referred to as "Stock on hand". If stocks of the same item are held in different locations, those quantities need to be counted separately but then be added up for calculating the total.
-**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. 
-**Calculation**: the stock on hand is calculated simply by counting the total quantities which are available in the (central) pharmacy at the time of counting/reporting.
-**Short Interpretation**: the stock on hand is the result of transactions and can therefore only be influenced indirectly through stock transactions and the desired stock levels depend on numerous parameters. However, items should never stock out and stockouts should always be considered as an emergency.
-**Corrective action**: any stockout should be considered as an emergency which prompts immediate action. Open (unfilled) order quantities (which have not been delivered yet) should be expedited (delivered as soon as possible) or additional emergency orders should be placed immediately. In addition, a carefuly review of the causes for the stockout should be carried out and remedied to prevent stockouts from recurring.
-**Aggregation options**: aggregating stock on hand across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. The average stock on ahd across several reporting periods may be used for evening out fluctuations or for comparing stock on hand between (similar) health facilities.
-**Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
+**Definition**: Stock on hand is defined as the quantity of each item which is physically present in the (central) pharmacy. It must be determined by a physical stock count which should be carried out at the end of every reporting period, usually the end of the month. This stock count corresponds to the "closing stock" which means the stock at the end of the reporting period. In order to avoid confusion, stock balances which are the result of calculations such as adding and subtracting stock transactions from the "opening stock" should not be referred to as "Stock on hand". If stocks of the same item are held in different locations, those quantities need to be counted separately but then be added up for calculating the total.  
+**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.   
+**Calculation**: the stock on hand is calculated simply by counting the total quantities which are available in the (central) pharmacy at the time of counting/reporting.  
+**Short Interpretation**: the stock on hand is the result of transactions and can therefore only be influenced indirectly through stock transactions and the desired stock levels depend on numerous parameters. However, items should never stock out and stockouts should always be considered as an emergency.  
+**Corrective action**: any stockout should be considered as an emergency which prompts immediate action. Open (unfilled) order quantities (which have not been delivered yet) should be expedited (delivered as soon as possible) or additional emergency orders should be placed immediately. In addition, a carefuly review of the causes for the stockout should be carried out and remedied to prevent stockouts from recurring.  
+**Aggregation options**: aggregating stock on hand across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. The average stock on ahd across several reporting periods may be used for evening out fluctuations or for comparing stock on hand between (similar) health facilities.  
+**Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.
 
 #### Stock correction
 
 The term "stock correction" is distinct and different from "stock discards" (losses, wastage, expiry etc.)
 
-**Definition**: stock correction quantities are deliberately recorded by storekeepers to account for discrepancies between the actual, physical stock (stock on hand) and the stock which should be available according to calculations based on the stock on hand at the beginning of the month and all recorded stock transactions during the month. The stock correction is only recorded after all possible reasons for mistakes in the records are verified. Stock corrections are only recorded for quantities which cannot be accounted for and be explained. These are are caused by mistakes or miscounts (which remain unnoticed), stock which is mislayed or theft. The actual cause of these discrepancies is and remains unknown. However, determining these discrepancies is better than only noting them as a result of a correction but without being aware of them.
-**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. 
-**Calculation**: stock discrepancies are calculated as follows:
+**Definition**: stock correction quantities are deliberately recorded by storekeepers to account for discrepancies between the actual, physical stock (stock on hand) and the stock which should be available according to calculations based on the stock on hand at the beginning of the month and all recorded stock transactions during the month. The stock correction is only recorded after all possible reasons for mistakes in the records are verified. Stock corrections are only recorded for quantities which cannot be accounted for and be explained. These are are caused by mistakes or miscounts (which remain unnoticed), stock which is mislayed or theft. The actual cause of these discrepancies is and remains unknown. However, determining these discrepancies is better than only noting them as a result of a correction but without being aware of them.  
+**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
+**Calculation**: stock discrepancies are calculated as follows:  
 Stock correction =
 + Stock on hand from the previous month (end of the previous month = beginning of the current month)
- + Stock receipt
- - Stock distribution
- - Stock redistribution
- - Stock discard
- - Stock on hand.
-**Short Interpretation**: any value other than zero for the stock correction indicates a mistake or theft and is a sign of poor stock management. A positive stock correction means that there is more stock on hand than their should be for example because more physical stock was entered into stock than recorded or because less physical stock than recorded was distributed or both. A negative stock correction means that more stock was physically distributed than recorded or less stock was physically received than recorded, stock was mislaid or stolen.
-**Corrective action**: the need for recording any stock discrepancy should prompt an inquiry on the possible reasons, particularly if the occur for several items and/or repeatedly for the same items.
-**Aggregation options**: aggregating stock discrepancies quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. Note that if stock discrepancies "cancel each other out" over several reporting periods and result in zero, this is better than not. However, two mistakes which "cancel each other out" still means that two mistakes were made which should be followed up.
++ Stock receipt
+- Stock distribution
+- Stock redistribution
+- Stock discard
+- Stock on hand.  
+**Short Interpretation**: any value other than zero for the stock correction indicates a mistake or theft and is a sign of poor stock management. A positive stock correction means that there is more stock on hand than their should be for example because more physical stock was entered into stock than recorded or because less physical stock than recorded was distributed or both. A negative stock correction means that more stock was physically distributed than recorded or less stock was physically received than recorded, stock was mislaid or stolen.  
+**Corrective action**: the need for recording any stock discrepancy should prompt an inquiry on the possible reasons, particularly if the occur for several items and/or repeatedly for the same items.   
+**Aggregation options**: aggregating stock discrepancies quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. Note that if stock discrepancies "cancel each other out" over several reporting periods and result in zero, this is better than not. However, two mistakes which "cancel each other out" still means that two mistakes were made which should be followed up.  
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 ###	DHIS2 logistics performance indicators
@@ -791,7 +791,6 @@ xxx
 - Regularity of (monthly) orders
 
 ## Logistics performance management framework
-Xx
 Ideally, performance is managed by upstream (national) logistics services with performance indicators being made available to end-users in real time in the end-user eLMIS. Therefore, ideally, upstream logistics services continuously improve logistics services without the need for any further involvement by end-users.  
 However, some activities and processes which are controlled by health professionals and mainly out of control by logistics services, need to be measured and monitored by end-users who also need to initiate and complete some corrective action. Moreover, all performance indicators managed by upstream logistics services but which are relevant to end-users must be shared with and readily accessible to end-users.
 Performance indicators are measured and represented by different means:
@@ -799,7 +798,7 @@ Performance indicators are measured and represented by different means:
 - Data Visualizer
 - Maps
 - Preconfigured dashboards
-- Customised dashboards
+- Customised dashboards  
 Reports may be configured according to national policies, standards and requirements according to the applied stock management system:
 "Basic" mode: (mainly) monthly reports
 "Advanced" mode: real time analysis and reports (at least daily updates)
@@ -815,7 +814,6 @@ While in most cases users and managers start out designing dashboards and visual
  - only after all of the above, visualizations and dashboards are developed
 
 ###	General principles
-Xx
 As for the entire concept, the ultimate objective of performance management is improving health services for end-users, patients and health professionals rather than (only) complying with national and donor reporting requirements.  
 One fundamental principle is that all actors, end-users (health professionals) as well as logistics staff impact logistics services and must closely collaborate for continuously improving these services. However, rather than being responsible “collectively”, distinct accountabilities and responsibilities must be assigned to and assumed by all actors in order to avoid endless finger pointing without any effective, corrective action being taken.  
 Other principles are:
@@ -857,7 +855,6 @@ The stock availability is commonly aggregated across the stock item list at a he
 In fact, the multitude of metrics which are in use are simply variation or combination of the key performance indicators above and therefore redundant. As long as a different measurement does not result in identifying an additional root cause or a different corrective action, it is superfluous.
 
 ###	Root cause indicators ("diagnosis")
-Xx
 But measuring in itself is (nearly) useless and if there is no ability or willingness to improve logistics services then there is no point in measuring them in the first place. Therefore, if a “symptom” is detected, the “root cause” indicators serve to “diagnose” the underlying problem which allows taking appropriate corrective action.
 - Purpose: determining problem causes
 - Manifestation indicators have several root causes, but
@@ -898,14 +895,12 @@ The details of all possible root causes for losses and wastage, the responsible 
 ![Alt text](image-264.png)
 
 ###	Programme specific indicators
-Xx
 While the framework presented above covers all indicators required for measuring and monitoring the quality of logistics services, some health programmes and national health systems may require measuring additional metrics for the sake of complying with donor reporting or national requirements. For example:
 - EPI: open/closed vial wastage
 - AIDS: multi-month dispensing (patients receiving three months’ supply of ARVs)
 - TB: use of GeneXpert tests
 
 ###	Corrective action ("therapy")
-Xx
 Determining, initiating and implementing corrective action is the key step for giving any meaning to performance management. The process is as follows:
 - Measure and monitor “manifestation” indicators (stockouts and losses)
 - Compare measurement with target
