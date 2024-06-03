@@ -4,7 +4,7 @@
 ##	LMIS data quality
 
 Text box:
-The entities of all metrics is the quantity of an item (health care product) which are always measured in units of "Each" (single tablet, ampoule, compress) and never in unit packs.
+The entities of all metrics is the quantity of an item (healthcare product) which are always measured in units of "Each" (single tablet, ampoule, compress) and never in unit packs.
 xxx
 
 ### Introduction
@@ -185,7 +185,7 @@ The objective of the data value completeness analysis is determining how consist
 - All data fields
 - By healthcare facility (Organisation Unit)
 - By reporting period (month/year)
-- By item (health care product)
+- By item (healthcare product)
 - By LMIS data fields (stock on hand, stock distribution etc.)
 - By time series (OU/item/LMIS data field)
 Data completeness is determined by simply counting the number of data fields for which values were reported without verifying the correctness of those values and then presenting those counts as percentages as well as histograms.
@@ -199,7 +199,7 @@ Allows determining healthcare facilities (districts, provinces) etc. which are (
 #### By reporting period (month/year)
 Allows determining when reporting commenced and how consistent reporting is over time.
 
-#### By item (health care product)
+#### By item (healthcare product)
 Allows determining how consistently and completely data is reported by item.
 
 #### By time series (OU/item/LMIS)
@@ -233,7 +233,7 @@ The
 
 ## LMIS data use
 Although logistics and supply chain management is often associated with and perceived as handling (storing and transporting) physical goods and stocks, in reality logistics and main, and difficult, issues in logistics supply chain management is obtaining and processing timely and accurate data. The most difficult tasks in supply chain management of ensuring the availability of stocks in the place they are required and at the time they are required is entirely determined by data. Provided that stocks are available, the material handling (storage and transportation) is by far the easiest task.  
-Therefore data in general, and data from the last mile (first data mile) in particular, is absolutely essential, critical and indispensable. Only supply networks driven by first mile demand data can be effective as well as efficient and ensure that all goods required for providing high quality health care services are available at the service delivery point when they are needed.  
+Therefore data in general, and data from the last mile (first data mile) in particular, is absolutely essential, critical and indispensable. Only supply networks driven by first mile demand data can be effective as well as efficient and ensure that all goods required for providing high quality healthcare services are available at the service delivery point when they are needed.  
 Far too often, any logistics data is lumped together as "indicators" or even "Key Performance Indicators" (KPI) while actually logistics data serves different and distinct purposes.
 
 ###	Data use for inventory control
@@ -246,7 +246,7 @@ If accurate and reliable data on stock receipts at healthcare facilities is avai
 Unfortunately, public health systems tend to collect too much logistics data which is not used for decision making and the key for reducing shortages and stockouts is collecting as little data but as accurately, timely and efficiently as possible.
 
 ###	Data use for logistics performance management
-In an ideal world with perfectly functioning supply networks, where neither stockouts nor overstocking occur, monitoring and measuring the quality of logistics services would not be needed. In practice, measuring and monitoring logistics performance is critical and indispensable. Not for generating "reports" and dashboards which may or not be used but rather for informing corrective action which changes and eventually optimises all inventory control parameters in order to increase and maximise stock availability while minimising stock wastage at health care facilities.  
+In an ideal world with perfectly functioning supply networks, where neither stockouts nor overstocking occur, monitoring and measuring the quality of logistics services would not be needed. In practice, measuring and monitoring logistics performance is critical and indispensable. Not for generating "reports" and dashboards which may or not be used but rather for informing corrective action which changes and eventually optimises all inventory control parameters in order to increase and maximise stock availability while minimising stock wastage at healthcare facilities.  
 Despite a plethora of statistics, indicators and key performance indicators, a comprehensive and complete performance management system only requires the collection of a handful of data fields at the healthcare facility level:  
 - Number of stock items managed (and changes over time)
 - Monthly distribution quantities (monthly aggregates or transaction quantities)
@@ -360,7 +360,7 @@ The indicators #1 for The Global Fund and # 1-3 for PEPFAR can be calculated bas
 The indicators # 4-6 for PEPFAR are anyway not calculated based directly on information from SDP level. Meaning that reporting to both TGF and PEPFAR can be managed via these DHIS2 indicators.
 
 ###	Required logistics data
-If logistics data is only collected at the health care facility, then some data (such as stock receipts) which is already recorded at the upstream levels has to be duplicated while in an integrated system the data points collected at the healthcare facility level can be minimised. In the best case where a real-time transactional system at the healthcare facility level is integrated with a national eLMIS, only stock transactions have to be recorded at the healthcare facility while all other data points can be either calculated or are already available in the national eLMIS. The table below provides an overview of the data points which need to be collected depending on the level of integration.
+If logistics data is only collected at the healthcare facility, then some data (such as stock receipts) which is already recorded at the upstream levels has to be duplicated while in an integrated system the data points collected at the healthcare facility level can be minimised. In the best case where a real-time transactional system at the healthcare facility level is integrated with a national eLMIS, only stock transactions have to be recorded at the healthcare facility while all other data points can be either calculated or are already available in the national eLMIS. The table below provides an overview of the data points which need to be collected depending on the level of integration.
 
 | **Metric**  | **Stock on hand** | **Stock receipt** | **Stock distribution** | **Stock loss** | **Stock correction** |
 | :--- |  :---: |  :---: |  :---: |  :---: |  :---: |
@@ -478,7 +478,7 @@ Therefore recording stock receipts at health facilities (again) means that redun
 **Calculation**: total stock receipts for each item are calculated by adding up the quantities received in each consignment during the respective reporting period.  
 **Limitations** calculating correct totals requires aggregating all consignment (packing list) quantities for each item which were received during the respective reporting month.
 **Short Interpretation**: generally, the stock receipts, after taking the lead time (delays for delivery) into account, need to correspond with the respective order quantities for the same item which in turn correspond to the distributions of previous monthly periods. Ideally, if deliveries are made reliably, the received quantity of every month should correspond to the quantity ordered during the period corresponding to the promised lead time earlier.  
-**Corrective action**: if the receipt quantities do not correspond (closely) to the quantities ordered the period corresponding to the promised lead time earlier, then the logistics services supplying the health care facility needs to improve reliability of delivery. Alternatively, if the promised lead time cannot be adhered to, the lead time parameter in the stock replenishment calculations can be increased in order to match actual lead times.  
+**Corrective action**: if the receipt quantities do not correspond (closely) to the quantities ordered the period corresponding to the promised lead time earlier, then the logistics services supplying the healthcare facility needs to improve reliability of delivery. Alternatively, if the promised lead time cannot be adhered to, the lead time parameter in the stock replenishment calculations can be increased in order to match actual lead times.  
 **Aggregation options**: aggregating stock receipt quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.  
 **Visualization options**:  pivot table, column chart, bar chart, line chart or single value chart.  
 
@@ -486,7 +486,7 @@ Therefore recording stock receipts at health facilities (again) means that redun
 
 The logistics term "distribution" is often referred to as "consumption" or "issues" but means the same data.
 
-**Definition**: total quantity of each item distributed from the (central) pharmacy at the health care facility to the respective wards and services in the health care facility. Depending on their procedures, out-patient-departments, community health workers, inpatients wards, laboratories, operating theatres etc. may be supplied daily, weekly, monthly and/or on request. For various reasons, the return of goods back to the (central) pharmacy should be avoided but if necessary this should be recorded as "negative" distributions.
+**Definition**: total quantity of each item distributed from the (central) pharmacy at the healthcare facility to the respective wards and services in the healthcare facility. Depending on their procedures, out-patient-departments, community health workers, inpatients wards, laboratories, operating theatres etc. may be supplied daily, weekly, monthly and/or on request. For various reasons, the return of goods back to the (central) pharmacy should be avoided but if necessary this should be recorded as "negative" distributions.
 **Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. 
 **Calculation**: total stock distributions for each item are calculated by adding up the quantities distributed to all of the services and wards during the respective reporting period.   
 **Short Interpretation**: stock distributions (which correspond to customer demand) lie at the origin of any supply chain (demand chain) and are not related to any other logistics data. Instead, the interpretation of quantities ordered and used by the respective services and wards depends on the number of patients, their medical condition, duration of treatment etc. and needs to be assessed by health professionals. The only logistical consideration is that items which have no demand at all for several months should be discussed with health staff for confirming the need for continuing to stock them as they are likely to expire before being used.
@@ -496,7 +496,7 @@ The logistics term "distribution" is often referred to as "consumption" or "issu
 **Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 ####	Stock redistribution
-Redistributions between health facilities is in principle a good way to avoid shortages and stockouts and avoid that patients are not being (sufficiently) treated. However, stock redistributions should be an exception. If stock redistributions are frequent, an assessment of the reasons leading to this "damage control" measure should be made. Ideally, stock redistributions should be managed in the national eLMIS by issuing a virtual return from the respective halth facility and a virtual shipment to another health facility while physically shipping the goods directly between the two health care facilities. Otherwise the distribution quantities for both health care facilities will be distorted and vicious cycle will perpetuate the shortage and stockouts (the health facility with the shortage or stockout continuous to receive too little stock because demand is false low and the health facility redistributing stock continuous to be overstocked as their demand includes part of the demand of another health facility).
+Redistributions between health facilities is in principle a good way to avoid shortages and stockouts and avoid that patients are not being (sufficiently) treated. However, stock redistributions should be an exception. If stock redistributions are frequent, an assessment of the reasons leading to this "damage control" measure should be made. Ideally, stock redistributions should be managed in the national eLMIS by issuing a virtual return from the respective halth facility and a virtual shipment to another health facility while physically shipping the goods directly between the two healthcare facilities. Otherwise the distribution quantities for both healthcare facilities will be distorted and vicious cycle will perpetuate the shortage and stockouts (the health facility with the shortage or stockout continuous to receive too little stock because demand is false low and the health facility redistributing stock continuous to be overstocked as their demand includes part of the demand of another health facility).
 
 **Definition**: total quantity of each item (re)distributed from the (central) pharmacy to another health facility. When loans are returned from the health facility to which stock was redistributed, those quantity need to be recorded as "negative" redistributions in order to balance stocks. If they are instead recorded as any other receipt, those will not match the stock shipped from the supplying medical warehouse.
 **Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. 
@@ -772,7 +772,7 @@ Reports may be configured according to national policies, standards and requirem
 "Basic" mode: (mainly) monthly reports
 "Advanced" mode: real time analysis and reports (at least daily updates)
 While in most cases users and managers start out designing dashboards and visualisations, the sole objective of the DHIS2 Logistics performance management concept is to improve the quality of logistics services provided to services delivery points by increasing stock availability and minimising stockouts. Therefore the entire concept is "purpose-driven" and conceived "in reverse" (compared to conventional approaches):
- - the overall objective of health systems is preventing, treating diseases and alleviating suffering (reducing morbidity and mortality) which (among many others) requires availability of high quality health care goods
+ - the overall objective of health systems is preventing, treating diseases and alleviating suffering (reducing morbidity and mortality) which (among many others) requires availability of high quality healthcare goods
  - the overall logistics objective is reducing shortages and stockouts
  - what metrics are suitable for measuring and monitoring shortages and stockouts
  - what corrective action (for reducing shortages and stockouts) is possible and effective, who has the possibility of taking corrective action, how and when
