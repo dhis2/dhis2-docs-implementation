@@ -496,7 +496,6 @@ Stock correction =
 While logistics data statistics are "just numbers" without any desired ranges, logistics performance indicators have optimal ranges which should be achieved and any deviation from the optimal ranges (too high or too low) needs to prompt immediate corrective action.
 
 ####	Demand (Distribution quantity) performance indicators
-Xx
 
 #####	Coefficient of variation (CoV) / absolute values
 **Definition**: the coefficient of variation (CoV) is a measure for the variability of customer demand (distribution quantities).
@@ -517,7 +516,6 @@ Xx
 **Visualization options**: pivot table or histogram.  
 
 #### Stock quantity performance indicators
-Xx
 
 ##### Stockout / list of items with stockouts
 **Definition**: list of items with stock on hand of zero during the monthly physical stock count.   
@@ -528,35 +526,32 @@ Xx
 **Aggregation options**: lists can aggregated across items, time periods and healthcare facilities.    
 **Visualization options**: pivot table and stacked column charts.
 
-##### Stock availability
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+##### Stock availability across items
+**Definition**: percentage of items at a healthcare facility with non-zero stock.  
+**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.    
+**Calculation**:  number of items with non-zero stock divided by the total number of stocked items expressed as a percentage.  
+**Short Interpretation**: ideally the stock availability should be 100% at all times which means that all items have stock on hand and there are no stockouts. In a commercial setting, stock availability of 98% would be considered as a good benchmark and above 95% reasonably acceptable. However, any stockout of essential healthcare products must treated with urgency immediately.   
+**Corrective action**: stock availability is increased by corrective action prompted by any stockout (see above).   
+**Aggregation options**: stock availability can be aggregated and averaged across health care facilities but only by adding up the total humber of items which are in stock across all healthcare facilities and then dividing by the total number of items stocked across all healthcare facilities expressed as percentage. Simply averaging the stock availability at each healthcare facility will result in completely false results as healthcare facilities are likely to stock different numbers of items.    
+**Visualization options**: pivot table, bar chart and single value chart (for the most recent month).  
 
-##### Stockout percentage
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+##### Stockout percentage across items
+**Definition**: percentage of items at a healthcare facility with no stock (stockout).  
+**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.    
+**Calculation**:  number of items with zero stock (stockout) divided by the total number of stocked items expressed as a percentage.  
+**Short Interpretation**: ideally the stockout percentage should be 0% at all times which means that there are no items without stock on hand and there are no stockouts. In a commercial setting, a stockout percentage of up to 2% would be considered as a good benchmark and up to 5% reasonably acceptable. However, any stockout of essential healthcare products must treated with urgency immediately.   
+**Corrective action**: the stockout percentage is decreased by corrective action prompted by any stockout (see above).   
+**Aggregation options**: stock percentages can be aggregated and averaged across health care facilities but only by adding up the total humber of items which are out of stock across all healthcare facilities and then dividing by the total number of items stocked across all healthcare facilities expressed as percentage. Simply averaging the stockout percentages at each healthcare facility will result in completely false results as healthcare facilities are likely to stock different numbers of items.    
+**Visualization options**: pivot table, bar chart and single value chart (for the most recent month).  
 
 ##### Number of stockouts (count)
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+**Definition**: count of items with no stock on hand at the healthcare facility.  
+**Reporting period**: monthly aggragations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
+**Calculation**: for each item determine whether the stock on hand is zero and then counting all items for which this is the case.  
+**Short Interpretation**: ideally all items should be in stock and the number of stockouts should be zero.   
+**Corrective action**: the number of stockoutouts is decreased by corrective action prompted by any stockout (see above).     
+**Aggregation options**: the number of stockouts can be aggregated (summed) across healthcare facilities. The calculation of the average number of stockouts is not meaningful as these always need to be seen in relation to the total number of items which are held in stock.
+**Visualization options**: pivot table and column chart. 
 
 ##### Stockout duration by item / months with stockouts
 Xx
