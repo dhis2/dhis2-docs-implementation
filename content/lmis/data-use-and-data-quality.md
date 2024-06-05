@@ -561,45 +561,57 @@ While logistics data statistics are "just numbers" without any desired ranges, l
 **Visualization options**: pivot table and column chart.  
   
 ##### Stock coverage time by item / months of stock
-Xx
-[Inverse Stock turns]
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+**Definition**: the stock coverage time (in months), sometimes called "months of stock" is the number of months the current stock would last provided that no stock is received and average demand is the same as during the period used for calculuating average demand.
+**Reporting period**: monthly.  
+**Calculation**: the simplest possible calculation is the most recent available stock on hand divided by the stock distribution of the past month. Alternatively the most recent available stock on hand can be divided by the last three (or six) months for example. Longer periods for average distributions are advised if the variability of distributions is high.
+**Short Interpretation**: a stock coverage time of zero corresponds to a stockout. The desired (ideal) stock coverage time depends on the inventory control polidy and the parameters which are in use. In the most commonly used periodic review order-up-to-level system (once a month the difference between stock distributions x (safety stock + review period + lead time) - stock on hand is ordered) the actual, physical stock level should never drop below the safety stock level and the maximum stock level should not exceed the safety stock level plus the working stock (demand during during the review period). This under the assumption that distribution quantities and lead times are steady. For example, if the safety stock is set to 2 months of average stock distributions and the review period is one month (monthly orders) then the stock on hand should not fall below 2 months of average stock distributions and not exceed 3 months. Stock levels will be lowest just before the (monthly) stock replenishment is received and highest just after the stock replenishment has been received and put away.
+**Corrective action**: if the stock coverage time falls below the safety stock level the corrective action prompted by any stockout (see above) should be taken. If the stock coverage time is too high, the stock does not expire (soon) and stock is being distributed regularly, stock levels will eventually decrease. If the item is no longer in use and/or expected to expire before it can be used, (part of) the stock should be redistributed to other healthcare facilities or returned to upstream medical stores for further use.
+**Aggregation options**: stock coverage times cannot be aggregated, neither across time periods, items or geographical levels as overstocks of one item or at one healthcare facility cannot compensate for shortages or stockouts of another item or at another healthcare facility.     
+**Visualization options**: pivot table.  
 
 ##### Stock coverage time / months of stock / distribution
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+The ranges for the stock coverage time / months of stock / distribution are split evenly without qualifying any ranges as desirable or undesirable. The user will have to make this judgement depending on the inventory control policy in use.
+**Definition**: histogram (frequency distribution chart) of stock coverage time ranges in intervals of one month with the respective number of items with stock coverage times falling into the respective range.
+**Reporting period**: monthly.  
+**Calculation**: first, the stock coverage time is calculated for each item. Then the item is assigned to the range (bin) within which the numeric value falls and finally the number of items in each bin is counted.  
+**Short Interpretation**: ideally, all stock coverage times should fall into the bin(s) between the safety stock and the safety stock + working stock levels and show a normal distribution with very few items in the bins below and above this range. A right skewed histogram (peak shifted to the left) indicates a preponderance of shortages while a left skewed histogram (peak shifted to the right) indicates overstocking.
+**Corrective action**: for each item, the same corrective action as for the stock coverage time (see above) apply.  
+**Aggregation options**: stock coverage time distributions can be aggregated (summed) across items, reporting periods and healthcare facilities.    
+**Visualization options**: pivot table and column charts.  
 
 ##### Stock coverage time / category
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+The stock coverage time / category corresponds to the stock coverage time / months of stock / distribution with the difference of qualifying the ranges as desired or undesirable.
+**Definition**: histogram (frequency distribution chart) of coefficient of variation ranges in depending on the inventory control policy as follows:
+\- stockout: stock coverage time of zero (stockout)
+\- understock: stock coverage time greater 0 and less than the desired safety stock levels
+\- appropriate (adequate) stock: stock coverage greater or equal to the safety stock but below the sum of the safety stock and distribution quantities required to cover the rewiev period
+\- overstock: stock coverage greater than sum of the safety stock and distribution quantities required to cover the rewiev period but less than a coverage time of one year (this level is arbitrary and could also be set to, for example, six months as long as it exceeds the sum of the safety stock and distribution quantities required to cover the rewiev period)
+\- excessive stock: stock coverage time of more than twelve months (this level is again arbitrary and another treshold can be chosen)
+**Reporting period**: monthly.  
+**Calculation**: first, the coefficient of variation is calculated for each item. Then the item is assigned to the respective range (stockout, understock, appropriate stock, overstock or excessive stock) within which the numeric value falls and finally the number of items in each of these ranges is counted.   
+**Short Interpretation**: the name of the stock coverage time ranges indicates the evaluation and interpretation:
+\- stockout: stock on hand of zero
+\- understock: stock levels are too low and there is a very high risk of a stockout occurring before the next stock replenishment is received
+\- appropriate (adequate) stock: stock levels are in the desired (ideal) range
+\- overstock: stock levels are too high and there is a risk that (some of the) stock will expire before it can be used
+\- excessive stock: stock levels are much too high and there is a very high risk that (most of the) stock will expire before it can be used
+ **Corrective action**:   
+\- stockout: immediate and decisive action by expediting unfilled (open) orders are placing additional order for immediate shipment is required.
+\- understock: assess whether the stock is expected to last until the next expected delivery and if not, take the same corrective action as for stockouts
+\- appropriate (adequate) stock: in principle no action is needed but if stock distribution quantities increase (significantly) before the next stock replenishment arrives, shortages or even stockouts are still possible and therefore stock distribution quantities need to be monitored.
+\- overstock: compare the stock coverage time with the remaining shelf life of the batch with the nearest expiry data. If stocks are being distributed regularly and no stock is expected to expire, cancel any unfilled (open) orders, stop ordering and wait for stock levels to drop. If the item is no longer used (or in low demand) and/or stock is in danger of expiring before it can be used, the excess stock should be redistributed to other healthcare facilities or returned upstream for further immediate redistribution.
+\- excessive stock: 
+**Aggregation options**: stock coverage times / category cannot be aggregated, neither across time periods, items or geographical levels as overstocks of one item or at one healthcare facility cannot compensate for shortages or stockouts of another item or at another healthcare facility.  
+**Visualization options**: pivot table and column chart. 
 
 ##### Stock coverage time / category / distribution
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+**Definition**: histogram (frequency distribution chart) of stock coverage time with the  number of items with stock coverage times falling into the ranges stockout, understock, appropriate (adequate) stock, overstock and excessive stock. Note that the boundaries for each of these ranges have to be adjusted according to inventory control policy which is in place.
+**Reporting period**: monthly.  
+**Calculation**: first, the stock coverage time is calculated for each item. Then the item is assigned to the range (bin) within which the numeric value falls and finally the number of items in each range is counted.  
+**Short Interpretation**: ideally, all stock coverage times should fall within the "appropriate (adequate)" bin with very few shortages, no stockouts, very few overstocks and no excessive stocks.A right skewed histogram (peak shifted to the left) indicates a preponderance of shortages while a left skewed histogram (peak shifted to the right) indicates overstocking.
+**Corrective action**: for each item, the same corrective action as for the stock coverage time (see above) apply.  
+**Aggregation options**: stock coverage time distributions / category can be aggregated (summed) across items, reporting periods and healthcare facilities.    
+**Visualization options**: pivot table and column charts.  
 
 #### Stock accuracy performance indicators
 Xx
