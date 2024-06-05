@@ -644,37 +644,13 @@ A positive stock discrepancy indicates that the stock on hand (available on the 
 **Visualization options**: pivot table or column chart.  
 
 #### Reporting quality performance indicators
-Xx
-
-##### Report completeness
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
-
-##### Reporting rate
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
-
-##### Reporting rate on time
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+DHIS2 provides native analysis and reports for any DHIS2 Data set which are also useful for LMIS stock data reports:
+- Expected reports
+- Actual reports
+- Reporting completeness
+- Reporting timeliness
+Details are available the general Data quality implementation guide:
+https://docs.dhis2.org/en/implement/data-quality/principles.html
 
 ### National eLMIS metrics
 Xx
