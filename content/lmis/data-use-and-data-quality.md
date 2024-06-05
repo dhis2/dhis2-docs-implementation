@@ -649,35 +649,25 @@ DHIS2 provides native analysis and reports for any DHIS2 Data set which are also
 - Actual reports
 - Reporting completeness
 - Reporting timeliness
-Details are available the general Data quality implementation guide:
+Details are available the general Data quality implementation guide:  
 https://docs.dhis2.org/en/implement/data-quality/principles.html
 
 ### National eLMIS metrics
-Xx
-list metrics which are not available in DHIS2 but should be available from national eLMIS, study TSS indicators! study the GF etc. metrics above which can be calculated by national eLMIS.
- provides a wide range of analytics, reports and dashboards and should be the primary reference for any logistics data for supply managers, in particular for order fulfilment.
-- Items (item catalogue, prices, item categories)
-- Purchasing reports (purchase orders, goods received, open purchase orders, tenders)
-- Stock reports (stock on hand, stock value, stockouts, stockout days, customer demand, remaining shelf life, stock coverage time, stock corrections)
-- Transaction reports (stock receipts, stock issues)
-- Customer orders (requisitions)
-- Customer invoices
-- Customer order shortfall reports (stock on order?)
-- Backorder report
+As DHIS2 is designed only for use at the healthcare facility level (Point of Service, Service Delivery Point) and only manages essential LMIS stock data which is not available in the national eLMIS, most logistics statistics and logistics performance indicators have to be generated and managed in these national eLMIS systems, particularly concerning order fulfillment. The national eLMIS should be the primary reference and repository for logistics data and logistics performance indicators, some of which may be shared with users at the healthcare facility level. Available logistics data (statistics) will include:  
+- Master product catalogue (item descriptions and specifications, prices etc.)  
+- Purchasing reports (purchase orders, goods received, open purchase orders, tenders)  
+- Inventory control parameters and calculations
+- Warehouse and stock reports
+- Customer orders (requisitions) and order fulfilment reports
 - Consignment and shipment reports
+- Transportation reports
 - Custom reports
 
-On-Time In-Full (OTIF)
-Order Cycle Time (CT)
-Forecast Accuracy (FA) / Forecasted demand
-Quality Test Rate
-Product Quality Adherence
-Inventory Turns
-
-xxx
-- On-time delivery
-- Appropriateness of order-up-to-level
-- Regularity of (monthly) orders
+The availability of logistics performance indicators will depend on the respective application but will generally include (among others)
+- On-Time In-Full (OTIF)  
+- Order Cycle Time (CT)  
+- Forecast Accuracy (FA)  
+- Product quality indicators
 
 ## Logistics performance management framework
 Ideally, performance is managed by upstream (national) logistics services with performance indicators being made available to end-users in real time in the end-user eLMIS. Therefore, ideally, upstream logistics services continuously improve logistics services without the need for any further involvement by end-users.  
@@ -810,7 +800,6 @@ Xx
 
 ![Alt text](image-265.png)
 
-xxx
 **Analysis and (corrective) action - Stock distribution**
 
 | **Analysis (Observation)**  | **Potential reason** | **(Corrective) action** |
@@ -829,20 +818,12 @@ xxx
 **Analysis and (corrective) action - Stock on hand**
 The value of analysing stock on hand levels (which make no indication of customer demand) and their fluctuations are of much less importance than the analysis of stock coverage times.
 
-xxx Add explanations for each visualisation: 
-DHIS2-LMIS Data quality and data use Web structure 29-05-2024.odt
-
-
 ## HMIS/LMIS triangulation
-Xx
-xxx
+Keep or leave to HMIS implementation guide?
 Data triangulation, improving health outcomes
-Xxx
 https://drive.google.com/drive/u/0/folders/1PqZzM65TU0Z5zLwe9fyZdvweSEZIf1ZT
-xxx
 
 ## References
-Xx
 HISP Centre University of Oslo: Data Quality and Use, DHIS2 Documentation. Accessed 11.11.2023. https://docs.dhis2.org/en/implement/chis-implementation/data-quality-and-use.html
 The DICE consortium: "Stepwise Toolkit for Planning & Budgeting Interoperability of Digital Health Solutions". Digital Health Center of Excellence, not dated. Accessed 26.10.2023. https://a78da35e-056b-4420-8e4f-41e3283327e3.usrfiles.com/ugd/55ae33_5af35824932c48d89287928244b60a8d.pdf
 The Global Fund: "Adjustments to the KPI Framework". The Global Fund, 44th Board meeting, GF/B44/15B, 11-12 November 2020, Virtual. Accessed 26.10.2023. https://www.theglobalfund.org/media/8d89221958393a7/bm44_15b-adjustmentskpiframework_report_en.pdf
