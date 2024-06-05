@@ -468,14 +468,7 @@ The term "stock correction" is distinct and different from "stock discards" (los
 
 **Definition**: stock correction quantities are deliberately recorded by storekeepers to account for discrepancies between the actual, physical stock (stock on hand) and the stock which should be available according to calculations based on the stock on hand at the beginning of the month and all recorded stock transactions during the month. The stock correction is only recorded after all possible reasons for mistakes in the records are verified. Stock corrections are only recorded for quantities which cannot be accounted for and be explained. These are are caused by mistakes or miscounts (which remain unnoticed), stock which is mislayed or theft. The actual cause of these discrepancies is and remains unknown. However, determining these discrepancies is better than only noting them as a result of a correction but without being aware of them.  
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
-**Calculation**: stock discrepancies are calculated as follows:  
-Stock correction =  
-\+ Stock on hand from the previous month (end of the previous month = beginning of the current month)  
-\+ Stock receipt  
-\- Stock distribution  
-\- Stock redistribution  
-\- Stock discard  
-\- Stock on hand   
+**Calculation**: (no calculation)
 **Short Interpretation**: any value other than zero for the stock correction indicates a mistake or theft and is a sign of poor stock management. A positive stock correction means that there is more stock on hand than their should be for example because more physical stock was entered into stock than recorded or because less physical stock than recorded was distributed or both. A negative stock correction means that more stock was physically distributed than recorded or less stock was physically received than recorded, stock was mislaid or stolen.  
 **Corrective action**: the need for recording any stock discrepancy should prompt an inquiry on the possible reasons, particularly if the occur for several items and/or repeatedly for the same items.   
 **Aggregation options**: aggregating stock discrepancies quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. Note that if stock discrepancies "cancel each other out" over several reporting periods and result in zero, this is better than not. However, two mistakes which "cancel each other out" still means that two mistakes were made which should be followed up.  
@@ -614,37 +607,41 @@ The stock coverage time / category corresponds to the stock coverage time / mont
 **Visualization options**: pivot table and column charts.  
 
 #### Stock accuracy performance indicators
-Xx
 
 ##### Stock discrepancy by item / absolute values
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+**Definition**: difference between the opening stock and the transaction quantities and the actual stock on hand at the end of the month.
+**Reporting period**: monthly  
+**Calculation**: Stock discrepancy =  
+\+ Stock on hand from the previous month (end of the previous month = beginning of the current month)  
+\+ Stock receipt  
+\- Stock distribution  
+\- Stock redistribution  
+\- Stock discard  
+\- Stock correction   
+\- Stock on hand   
+**Short Interpretation**: ideally there should not be any discrepancies for any items at any healthcare facilities and the numeric value for all items should be zero. A negative stock discrepancy indicates that the stock on hand (available on the shelf) is less than it should be according to the calculations. This could be caused by an incorrect stock count at the end of the previous month, having physically received less stock than indicated on the packing list, having (accidentally) physically distributed more stock than indicated in the stock records, having (accidentally) physically redistributed more stock than indicated in the stock records, having discarded more stock than indicated in the stock records, having indicated a too high value for a stock correction or having miscounted the stock on hand at the end of the month.
+A positive stock discrepancy indicates that the stock on hand (available on the shelf) is more than it should be according to the calculations. This could be caused by an incorrect stock count at the end of the previous month, having physically received more stock than indicated on the packing list, having (accidentally) physically distributed less stock than indicated in the stock records, having (accidentally) physically redistributed less stock than indicated in the stock records, having discarded less stock than indicated in the stock records, having indicated a too low value for a stock correction or having miscounted the stock on hand at the end of the month.
+**Corrective action**: for the current month, the records and transactions should be checked for any possible errors and, if possible, reconciled. If the reconciliation is not successful, a stock correction for the discrepancy should be recorded. Any stock discrepancies for the previous month or previously are unlikely to be reconcilable.   
+**Aggregation options**: stock discrepancies cannot be aggregated, neither across items, time periods nor healthcare facilities as two mistakes cannot compensate each other.   
+**Visualization options**: pivot table.
 
 ##### Stock discrepancy / count
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
+**Definition**: number of items for a specific reporting period and Organisation unit for which a positive or negative stock discrepancy was found.  
+**Reporting period**: monthly  
+**Calculation**: first, the stock discrepancy is calculated for each item and the number of items in the same reporting period and in the same healthcare facility are counted.
+**Short Interpretation**: ideally there should not be any discrepancies for any items at any healthcare facilities and the numeric value for all items should be zero. The larger the number of stock discrepancy, the poorer the quality of stock management is.  
+**Corrective action**: review business processes and work flows to avoid future mistakes.  
+**Aggregation options**: stock discrepancy counts can be aggregated across items, reporting periods and healthcare facilities.
 **Visualization options**:  
 
 ##### Stock discrepancy / percentage
-Xx
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
+**Definition**: percentage of items at a specific healthcare facility which show a stock discrepancy for any particular reporting period.  
+**Reporting period**: monthly.  
+**Calculation**: number of items for which a stock discrepancy was detetermined divided by the total number of items at that healthcare facility. 
+**Short Interpretation**: ideally there should not be any discrepancies for any items at any healthcare facilities and the numeric value for all items should be zero which corresponds to a stock discrepancy percentage of zero. In the worst case where a stock discrepancy was found for all items, the stock discrepancy percentage would be 100%.  
+**Corrective action**: review business processes and work flows to avoid future mistakes.    
+**Aggregation options**: stock discrepancy percentages cannot be meaningfully be summed. They can be average across time periods for the same healthcare facilities and across different healthcare facilities. However, the user must be aware that healthcare facilities are likely to stock different numbers of items.
+**Visualization options**: pivot table or column chart.  
 
 #### Reporting quality performance indicators
 Xx
