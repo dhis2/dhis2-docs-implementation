@@ -2467,8 +2467,8 @@ Xx
 >>>- 23 MSR - Stockout count  
 >>>- 24 MSR - Stockout count  
 >>>- 25 MSR - Stockout count  
->>>- 26 MSR - Stockout length  
->>>- 27 MSR - Stockout length  
+>>>- 26 MSR - Stockout duration  
+>>>- 27 MSR - Stockout duration  
 >>>- 28 MSR - Stock coverage time  
 >>>- 29 MSR - Stock coverage time distribution  
 >>>- 30 MSR - Stock coverage time distribution - Last 12 months  
@@ -2510,8 +2510,8 @@ Xx
 >>>- 61 MSR - Stockout count - District  
 >>>- 62 MSR - Stockout count - District  
 >>>- 63 MSR - Stockout count - District  
->>>- 64 MSR - Stockout length - District  
->>>- 65 MSR - Stockout length - District  
+>>>- 64 MSR - Stockout duration - District  
+>>>- 65 MSR - Stockout duration - District  
 >>>- 66 MSR - Stock coverage time - District  
 >>>- 67 MSR - Stock coverage time distribution - District  
 >>>- 68 MSR - Stock coverage time distribution - District - Last 12 months  
@@ -2549,8 +2549,8 @@ Xx
 >>>- 95 MSR - Stockout count - Province  
 >>>- 96 MSR - Stockout count - Province  
 >>>- 97 MSR - Stockout count - Province  
->>>- 98 MSR - Stockout length - Province  
->>>- 99 MSR - Stockout length - Province  
+>>>- 98 MSR - Stockout duration - Province  
+>>>- 99 MSR - Stockout duration - Province  
 >>>- 100 MSR - Stock coverage time - Province  
 >>>- 101 MSR - Stock coverage time distribution- Province  
 >>>- 102 MSR - Stock coverage time categories - Province  
@@ -2584,8 +2584,8 @@ Xx
 >>>- 125 MSR - Stockout count - Country  
 >>>- 126 MSR - Stockout count - Country  
 >>>- 127 MSR - Stockout count - Country  
->>>- 128 MSR - Stockout length - Country  
->>>- 129 MSR - Stockout length - Country  
+>>>- 128 MSR - Stockout duration - Country  
+>>>- 129 MSR - Stockout duration - Country  
 >>>- 130 MSR - Stock coverage time distribution - Country  
 >>>- 131 MSR - Stock coverage time categories - Country  
 >>>- 132 MSR - Stock coverage time categories - Country  
@@ -2603,7 +2603,7 @@ Xx
 | Stock distribution / Coefficient of Variation | Calculation | -  | - | - | Pivot, Bar, Stacked bar |
 | Stock distribution / Coefficient of Variation / distribution | Count | Count | Count | Count | Pivot Column |
 | Stockout count | Count |  Count |Count | Count | Pivot, Column, Single value |
-| Stockout length | Count |  Count |Count | Count | Pivot, Bar |
+| Stockout duration | Count |  Count |Count | Count | Pivot, Bar |
 | Stock coverage time | Calculation |  |  |  |  |  |  |  | Pivot |
 | Stock coverage time / Range | Calculation, Count | Count | Count | Count | Pivot |  |
 | Stock coverage time / distribution | Count | Count | Count | Count | Pivot, Column |  |
@@ -3392,11 +3392,11 @@ This report displays the number of stockouts during the last month as a single v
 
 ![](image-29.png)
 
->**26 MSR - Stockout length - Pivot table**  
+>**26 MSR - Stockout duration - Pivot table**  
 >
 >**Visualization type**: select "Pivot table"    
->**Name \(*)**: "MSR - Stockout length - Pivot table"  
->**Descriptions**: "MSR DV 26 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Pivot table 
+>**Name \(*)**: "MSR - Stockout duration - Pivot table"  
+>**Descriptions**: "MSR DV 26 - Monthly Stock Reporting / Stockout duration / Last 12 months / Health facility / Pivot table 
 This report displays a Pivot table by item with a "1" indicating a stockout (and "0" indicating stock was available) with a total for the past 12 months."  
 >>
 >>**Columns**  
@@ -3433,11 +3433,11 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 
 ![](image-81.png)
 
->**27 MSR - Stockout length - Bar chart**  
+>**27 MSR - Stockout duration - Bar chart**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stockout length - Bar chart"  
->**Description**: "MSR DV 27 - Monthly Stock Reporting / Stockout length / Last 12 months / Health facility / Bar chart
+>**Name \(*)**: "MSR - Stockout duration - Bar chart"  
+>**Description**: "MSR DV 27 - Monthly Stock Reporting / Stockout duration / Last 12 months / Health facility / Bar chart
 This report displays a bar chart with the number of stockouts for each item during the past 12 months."  
 >>**Series** 
 >>>**YOUR DIMENIONS**  
@@ -4635,11 +4635,11 @@ This report displays the total number of stockouts in all health facilities of a
 
 ![](image-171.png)
 
->**64 MSR - Stockout length - District**  
+>**64 MSR - Stockout duration - District**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stockout length - District"  
->**Descriptions**: "MSR DV 64 - Monthly Stock Reporting / Stockout length / Last 12 months / District / Pivot table 
+>**Name \(*)**: "MSR - Stockout duration - District"  
+>**Descriptions**: "MSR DV 64 - Monthly Stock Reporting / Stockout duration / Last 12 months / District / Pivot table 
 This report displays a Pivot table by item with a "1" indicating a stockout (and "0" indicating stock was available) with a total for the past 12 months which represents the number of months during which a stockout occurred for all health facilities in the district."  
 >>**Columns**  
 >>>**YOUR DIMENIONS**  
@@ -4675,11 +4675,11 @@ This report displays a Pivot table by item with a "1" indicating a stockout (and
 
 ![](image-82.png)
 
->**65 MSR - Stockout length - District**  
+>**65 MSR - Stockout duration - District**  
 >
 >**Visualization type**: select "Stacked bar chart"  
->**Name \(*)**: "MSR - Stockout length - District"  
->**Description**: "MSR DV 65 - Monthly Stock Reporting / Stockout length / Last 12 months / District / Stacked bar chart
+>**Name \(*)**: "MSR - Stockout duration - District"  
+>**Description**: "MSR DV 65 - Monthly Stock Reporting / Stockout duration / Last 12 months / District / Stacked bar chart
 This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the district during the past 12 months."  
 >>**Series**  
 >>>**YOUR DIMENIONS**  
@@ -5719,11 +5719,11 @@ This report displays the number of stockouts for all items across districts in a
 
 ![](image-181.png)
 
->**98 MSR - Stockout length - Province**  
+>**98 MSR - Stockout duration - Province**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stockout length - Province"  
->**Descriptions**: "MSR DV 98 - Monthly Stock Reporting / Stockout length / Last 12 months / Province / Pivot table 
+>**Name \(*)**: "MSR - Stockout duration - Province"  
+>**Descriptions**: "MSR DV 98 - Monthly Stock Reporting / Stockout duration / Last 12 months / Province / Pivot table 
 This report displays a Pivot table with a count of the number of months (during the past 12 months) during which and item was out of stock at each of the health facilities in a province."  
 >>**Columns**  
 >>>**YOUR DIMENIONS**  
@@ -5767,11 +5767,11 @@ This report displays a Pivot table with a count of the number of months (during 
 
 ![](image-255.png)
 
->**99 MSR - Stockout length - Province**  
+>**99 MSR - Stockout duration - Province**  
 >
 >**Visualization type**: select "Stacked bar chart table"  
->**Name \(*)**: "MSR - Stockout length - Province"  
->**Description**: "MSR DV 99 - Monthly Stock Reporting / Stockout length / Last 12 months / Province / Stacked bar chart
+>**Name \(*)**: "MSR - Stockout duration - Province"  
+>**Description**: "MSR DV 99 - Monthly Stock Reporting / Stockout duration / Last 12 months / Province / Stacked bar chart
 This report displays a stacked bar chart with the number of stockouts for each item by health facilities in the province during the past 12 months."  
 >>**Series**  
 >>>**Organisation unit**: "User organisation unit"  
@@ -6669,11 +6669,11 @@ This report displays the number of stockouts for all items across provinces in a
 
 ![](image-231.png)
 
->**128 MSR - Stockout length - Country**  
+>**128 MSR - Stockout duration - Country**  
 >
 >**Visualization type**: select "Pivot table"  
->**Name \(*)**: "MSR - Stockout length - Country"  
->**Descriptions**: "MSR DV 128 - Monthly Stock Reporting / Stockout length / Last 12 months / Country / Pivot table 
+>**Name \(*)**: "MSR - Stockout duration - Country"  
+>**Descriptions**: "MSR DV 128 - Monthly Stock Reporting / Stockout duration / Last 12 months / Country / Pivot table 
 This report displays a Pivot table with a count of the number of months (during the past 12 months) during which and item was out of stock at all health facilities in each of the provinces in a country."  
 >>**Columns**  
 >>>**YOUR DIMENIONS**  
@@ -6716,11 +6716,11 @@ This report displays a Pivot table with a count of the number of months (during 
 
 ![](image-232.png)
 
->**129 MSR - Stockout length - Country**  
+>**129 MSR - Stockout duration - Country**  
 >
 >**Visualization type**: select "Stacked bar chart table"  
->**Name \(*)**: "MSR - Stockout length - Country"  
->**Description**: "MSR DV 129 - Monthly Stock Reporting / Stockout length / Last 12 months / Country / Stacked bar chart
+>**Name \(*)**: "MSR - Stockout duration - Country"  
+>**Description**: "MSR DV 129 - Monthly Stock Reporting / Stockout duration / Last 12 months / Country / Stacked bar chart
 This report displays a stacked bar chart with the number of stockouts for each item by provinces in the country during the past 12 months."  
 >>**Series**  
 >>>**YOUR DIMENIONS**  
@@ -7753,8 +7753,8 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>- MSR - Stockout count - Pivot table  
 >>- MSR - Stockout count - Column chart  
 >>- MSR - Stockout count - Single value chart  
->>- MSR - Stockout length - Pivot table  
->>- MSR - Stockout length - Bar chart  
+>>- MSR - Stockout duration - Pivot table  
+>>- MSR - Stockout duration - Bar chart  
 >>- MSR - Stock coverage time - Pivot table  
 >>- MSR - Stock coverage time distribution - Pivot table  
 >>- MSR - Stock coverage time distribution - Column chart - Last 12 months  
@@ -7780,7 +7780,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>- MSR - Stockout count - Single value chart  
 >>- MSR - Health facility  
 >>- MSR - Stockouts - Stacked column chart  
->>- MSR - Stockout length - Bar chart  
+>>- MSR - Stockout duration - Bar chart  
 >>- MSR - Stock coverage time distribution - Last month - Column chart  
 >>- MSR - Coefficient of Variation x 10 - Bar chart  
 >>- MSR - Stock report complete - Last 3 months - Pivot table  
@@ -7817,8 +7817,8 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Stockout count - District - Pivot table  
 >>>- MSR - Stockout count - District - Column chart  
 >>>- MSR - Stockout count - District - Single value chart  
->>>- MSR - Stockout length - District - Pivot table  
->>>- MSR - Stockout length - District - Stacked bar chart  
+>>>- MSR - Stockout duration - District - Pivot table  
+>>>- MSR - Stockout duration - District - Stacked bar chart  
 >>>- MSR - Stock coverage time - District - Pivot table  
 >>>- MSR - Stock coverage time distribution - District - Pivot table  
 >>>- MSR - Stock coverage time distribution - District - Stacked column chart- Last 12 months   
@@ -7851,7 +7851,7 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Stockout count - District  
 >>>- MSR - Stock availability - District - Bar chart  
 >>>- MSR - Stockout count - District - Column chart  
->>>- MSR - Stockout length - District - Stacked bar chart  
+>>>- MSR - Stockout duration - District - Stacked bar chart  
 >>>- MSR - Stock coverage time distribution - Last 12 months - District - Stacked column chart  
 >>>- MSR - Coefficient of Variation x 10 - District - Stacked bar chart  
 >>>- MSR - Coefficient of Variation x 10 distribution - Last month - District - Column chart  
@@ -7887,8 +7887,8 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Stockout count - Province  
 >>>- MSR - Stockout count - Province  
 >>>- MSR - Stockout count - Province  
->>>- MSR - Stockout length - Province  
->>>- MSR - Stockout length - Province  
+>>>- MSR - Stockout duration - Province  
+>>>- MSR - Stockout duration - Province  
 >>>- MSR - Stock coverage time - Province  
 >>>- MSR - Stock coverage time distribution- Province  
 >>>- MSR - Stock coverage time categories - Province  
@@ -7931,8 +7931,8 @@ This report provides the "Reporting rate on time" for the last month across all 
 >>>- MSR - Stockout count - Country  
 >>>- MSR - Stockout count - Country  
 >>>- MSR - Stockout count - Country  
->>>- MSR - Stockout length - Country  
->>>- MSR - Stockout length - Country  
+>>>- MSR - Stockout duration - Country  
+>>>- MSR - Stockout duration - Country  
 >>>- MSR - Stock coverage time distribution - Country  
 >>>- MSR - Stock coverage time distribution- Country  
 >>>- MSR - Stock coverage time categories - Country  
