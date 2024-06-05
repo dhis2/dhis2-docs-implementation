@@ -368,7 +368,6 @@ DHIS2 recommends and provides the following, intentionally limited, list of logi
 >>>- Number of stockouts (count)  
 >>>- Stockout duration by item / months with stockouts  
 >>>- Stockout duration by item / days with stockouts  
->>>- Stockout duration / distribution  
 >>>- Stock coverage time by item / months of stock  
 >>>- Stock coverage time / months of stock / distribution  
 >>>- Stock coverage time / category  
@@ -561,15 +560,6 @@ While logistics data statistics are "just numbers" without any desired ranges, l
 **Aggregation options**: the stockout duration of items can be aggregated (summed) across healthcare facilities.  
 **Visualization options**: pivot table and column chart.  
   
-##### Stockout duration / distribution
-**Definition**:   
-**Reporting period**:   
-**Calculation**:  
-**Short Interpretation**:   
-**Corrective action**:   
-**Aggregation options**:    
-**Visualization options**:  
-
 ##### Stock coverage time by item / months of stock
 Xx
 [Inverse Stock turns]
@@ -889,3 +879,4 @@ xxx Monitoring, Evaluation, and Reporting Indicator Reference Guide. PEPFAR. MER
 **The Global Fund**
 https://www.theglobalfund.org/media/11402/fundingmodel_supply-chain-health-services-spot-checks-information-session_presentation_en.pdf
 
+Last edited on 05.06.2024
