@@ -1,15 +1,16 @@
 # DATA USE AND DATA QUALITY
 
+[Introduction: audience, purpose, use, related only to DHIS2 LMIS or a general guidance?
+Breno: targeted to implementers and system administrators, and specific to DHIS2. Not for high level people, this is to be a comprehensive technical reference for implementers/sys admins... technicians.]
 
 ##	LMIS data quality
 
-Text box:
-The entities of all metrics is the quantity of an item (healthcare product) which are always measured in units of "Each" (single tablet, ampoule, compress) and never in unit packs.
+[To discuss: The entities of all metrics is the quantity of an item (healthcare product) which are always measured in units of "Each" (single tablet, ampoule, compress) and never in unit packs.
 xxx
 
 ### Introduction
 While logistics and supply chain management is usually associated with the production, storage and distribution of (commercial) products, the associated data is far more important but usually as invisible as the roots of a tree. The physical flow (storage and distribution) of goods and consignments is by far the easiest task in logistics and supply chain management while the real, albeit less obvious, challenges are managing the complex flows of associated data: obtaining accurate as well as up-to-date logistics data in a timely way and sharing them throughout the supply network in real-time in order to allow decision-making which ensures that the required quantities of required healthcare products are in the places where they are required for providing healthcare services at the time the are required.  
-Trust between all actors and stakeholders are critical and indispensable for any effective and efficient supply network and the data is only as good as the trust the stakeholders have in it. Healthcare facility staff who do not trust supply managers will "inflate" order quantities hoping that this behaviour will increase supplies to them ("ration gaming"). On the other hand, if supply managers do not trust the facility level data they will resort to their own "estimates" for calculating replenishment orders which are always inferior to the systematic use of accurate and timely end-user data. Apart from continuously improving services, trust in data can be enhanced by freely and openly sharing data across supply networks, ideally in real-time.
+Trust between all actors and stakeholders are critical and indispensable for any effective and efficient supply network and the data is only as good as the trust the stakeholders have in it. Healthcare facility staff who do not trust supply managers may "inflate" order quantities hoping that this behaviour will increase supplies to them ("ration gaming"). On the other hand, if supply managers do not trust the facility level data they may resort to their own "estimates" for calculating replenishment orders which are always inferior to the systematic use of accurate and timely end-user data. Apart from continuously improving services, trust in data can be enhanced by freely and openly sharing data across supply networks, ideally in real-time.
 
 The large number of different data quality dimensions are structured by UNICEF (Data quality Framework, 2021) into the following four categories:  
 
@@ -42,29 +43,30 @@ While conventional, paper-based LMIS data management systems require balancing v
 ###	Data accessibility
 Generally, data is only of any use if the systems and people which require them have timely, easy and complete access for decision-making. While (even paper-based) data is usually readily available at the healthcare facility level, the time sharing and exchange of data across the entire supply network is indispensable and critical.  
 Storekeepers at healthcare facilities require visibility of their stock as well as visibility of order status and supply managers at upstream levels need timely access to updated and accurate stock data for effective and timely stock replenishment. Other stakeholders such as health managers at all levels of the health systems and other actors such as (commercial) suppliers or (international) donors also require access to logistics data for reporting and auditing.  
-Within the constraint of network connectivity, the use of digital LMIS systems allows instant and complete access of all LMIS data from all levels of the supply network without any national or international stakeholder. This data is accessible in tables displaying time series of essential LMIS data as well as customised reports. The same effectiveness and efficiency would be impossible to achieve by distributing paper-based records manually.  
+Within the constraint of network connectivity, the use of eLMIS systems allows instant and complete access of all LMIS data from all levels of the supply network without any national or international stakeholder. This data is accessible in tables displaying time series of essential LMIS data as well as customised reports. The same effectiveness and efficiency would be impossible to achieve by distributing paper-based records manually.  
 As DHIS2 stores and manages all data in a central database, all data is easily accessible by design.  
 Through its native and well documented API-endpoints, DHIS2 allows any professional information system to easily integrate for synchronising ("reading" as well as "writing) data.  
 Regular (daily) backups of the databases ensure that all data remains accessible even if parts of the information system network temporarily fails.  
 
 ### Data output quality
 The data output quality refers to the collected and shared data as such.
+[Breno: I recommend to also add one line introducing MSR and RTS, as each section refers generically to MSR, then provides an additional comment referring to the specifics of RTS]
 
 #### Relevance
 Relevance of LMIS data refers to the ability to serve the purpose and make the decisions for which it was collected and shared. The main purpose of LMIS is ensuring effective and efficient stock replenishment while avoiding (preventable) expiry of stocks.  
 Different stakeholders in the supply network and in the health system may require different data for different purposes at different times. Generally speaking, too much data is being collected without having a clear purpose in mind.  
 In principle, managing supply networks effectively and efficiently requires only a small number of data points. For example, at the healthcare facility level, only stock transaction quantities (distributed/issued, discarded and lost stock) are relevant while all other (secondary) data can be derived. At upstream levels, in addition data on orders, consignments as well as details of stocks (batch numbers and expiry dates) need to be managed.  
-The use of DHIS2 at the healthcare facilities encourages limiting collected data points as it only complements data which is not (and cannot be) available in mSupply and the use of best practices is encourage during the design phase projects and advising project members.  
+The use of DHIS2 at the healthcare facilities encourages limiting collected data points as it only complements data which is not (and cannot be) available in national eLMIS and the use of best practice is encouraged during the design phase projects and advising project members.  
 
 #### Correctness
 Data correctness refers to collecting the data items which correspond to the data fields which are being collected. For example, entering distributed quantities into the correct data field (column) of a paper-based or digital form.  
-The use of DHIS2 contributes to correctness by minimising the number of data fields which need to be collected. For example, when using DHIS2-RTS (Real-Time System) only transaction quantities are recorded and therefore the mistaken entry into a wrong data field (column) is impossible. The use of barcode scanners eliminates the risk of mistakenly recording any data for the wrong healthcare product in the wrong row.
+The use of DHIS2 contributes to correctness by minimising the number of data fields which need to be collected. For example, when using DHIS2-RTS (Real-Time System) only transaction quantities are recorded and therefore the mistaken entry into a wrong data field (column) is impossible. The use of barcode scanners eliminates the risk of mistakenly recording any data for the wrong healthcare product in the wrong row. In addition, validation rules can also be configured to prevent errors at the time of data entry, for example, impeding a negative ‘stock on hand’ value from being entered.
 
 #### Completeness
 Data completeness refers to the number of data points (or data fields, reporting forms, number of healthcare facilities) for which data is recorded during every reporting period. If all collected data is relevant and essential then, by definition, one hundred percent of all data points are required for one hundred percent of the reporting periods for taking decisions.  
 For example, for effective and efficient stock replenishment it is absolutely critical that stock on hand and distribution quantities are collected every month for each and every item (healthcare product).  
 DHIS2 contributes to data completeness by intuitively visualising data gaps in Pivot tables as well as with various verification tools (see below).  
-When using the DHIS2-RTS (Real-time system) the issue of data completeness does not really arise as there is no retroactive recording or reporting of LMIS data during every reporting period. Instead all transactions are recording at the time the physical transaction (distribution or discard of stock) takes place and therefore necessary all data will be complete (unless recording of the stock transaction is omitted altogether).
+When using the DHIS2-RTS (Real-time system) the issue of data completeness does not really arise as there is no retroactive recording or reporting of LMIS data during every reporting period. Instead all transactions are recorded at the time the physical transaction (distribution or discard of stock) takes place and therefore all data will necessarily be complete (unless recording of the stock transaction is omitted altogether). Data completeness tools are available for data sets, which provides a general indication of report completeness, and individual data elements, which allows the analysis to target specific data points which may be more important, such as those described above.
 
 #### Accuracy
 Accuracy refers to the agreement of value of the collected data points with the physical entity which is being measured and reported. For example, whether the reported stock on hand actually corresponds to the quantity which is physically available in the store. Data accuracy requires both, to correctly count the stock and then to enter the correct quantity.  
@@ -104,11 +106,11 @@ Likewise, in DHIS2 performance metrics for measuring the quality of logistics se
 Data output quality is affected by data process quality which refers to the appropriateness of data sources, the means of obtaining, collecting and processing data as well as data verification and documentation.
 
 #### Burden for data collectors
-Generally, the effort, time and other resources required for accurate and timely data collection and sharing must be balanced with the benefits of using this data and ultimate with the direct or indirect impact the (additional) data has on improving stock availability and minimising stockouts at the healthcare facility level.  
+Generally, the effort, time and other resources required for accurate and timely data collection and sharing must be balanced with the benefits of using this data and ultimately with the direct or indirect impact the (additional) data has on improving stock availability and minimising stockouts at the healthcare facility level.  
 Minimising the burden of healthcare facility staff for obtaining, recording, aggregating and sharing data is a particular importance for managing LMIS data at the healthcare facility where health systems are plagued with collection of redundant LMIS data as well as primary and secondary data which is not used for a clearly defined purpose.  
 For example, healthcare facility staff are required to record "opening balances" and "closing balances" which are entirely redundant. Another typical example is the request to calculate metrics such as "stockout days" which are cumbersome to calculate by manual analysis of paper records although better and more easily obtainable metrics for calculating and monitoring stock availability are available.  
-The use of DHIS2 in itself cannot prevent or reduce the number of unnecessary und redundant data points implementing organizations wish to collect, as DHIS2 itself is flexible and allows to easily change the configuration of reporting forms. However, the importance of reducing the workload for healthcare facility staff is a key principle in designing LMIS tools and prominent in the documentation and technical advice provided.  
-The integration of DHIS2 at the healthcare facility level with mSupply allows eliminating the collection of redundant data. For example, the "Stock receipt" which is commonly collected is fully and professionally managed in mSupply and therefore does not need to be collected, a second time, in DHIS2. Nevertheless, mSupply can provide complete, detailed and accurate visibility of stock receipt if and as required.  
+The use of DHIS2 in itself cannot prevent or reduce the number of unnecessary and redundant data points implementing organizations wish to collect, as DHIS2 itself is flexible and allows to easily change the configuration of reporting forms. However, the importance of reducing the workload for healthcare facility staff is a key principle in designing LMIS tools and prominent in the documentation and technical advice provided.  
+The integration of DHIS2 at the healthcare facility level with the national eLMIS allows eliminating the collection of redundant data. For example, the "Stock receipt" which is commonly collected is fully and professionally managed in the national eLMIS and therefore does not need to be collected, a second time, in DHIS2. Nevertheless, the national eLMIS can provide complete, detailed and accurate visibility of stock receipt if and as required.  
 
 #### Appropriateness of data sources
 All periodic reporting systems rely on manual records such as batch cards, stock cards and other records as their primary data source even if the (monthly) reports (secondary data source) are recorded directly on digital devices. Therefore, for the period (monthly) reporting the use of DHIS2 relies entirely on the accuracy and reliability of the manual stock records and does not document or provide information on these data sources. For LMIS data the appropriateness of data sources is not critical in the sense that there are no alternative data sources.  
@@ -129,15 +131,15 @@ LMIS data is only as good as the trust stakeholders in the health system have in
 DHIS2 greatly improves quality in data as records are transparent, easily accessible to and instantly shared with all stakeholders and can easily be analysed and audited.
 
 ### Summary of the DHIS2 contribution to data quality
-The table below summarises how DHIS2 contributes to high data quality standards by design and various automatic algorithms.
+The table below summarises how DHIS2 contributes to high data quality standards, for the LMIS use case, by design and various automatic algorithms.
 
 | **Data quality dimension**  | **DHIS2 contribution** |
 | :--- |  :--- |
 | Access | Global accessibility from a single DHIS2 instance |
 | Relevance | Data collection (forms) according to best practices |
-| Correctness | Minimising the number of data fields, Barcode scanners for identifying healthcare products |
+| Correctness | Minimising the number of data fields, Barcode scanners for identifying healthcare products, validation rules |
 | Completeness | Intuitive visualisation of data gaps, Data completeness reports, Completeness by design when using DHIS2-RTS |
-| Accuracy | Data consistency checks |
+| Accuracy | Data consistency checks, validation rules |
 | Reliability (reproducibility) | - |
 | Consistency | Data consistency checks, Instant stock on hand updates when using DHIS2-RTS |
 | Timeliness and punctuality | Report punctuality analysis, Timeliness by design when using DHIS-RTS |
@@ -154,10 +156,10 @@ The table below summarises how DHIS2 contributes to high data quality standards 
 DHIS2 natively features a range of tools and applications for preventing the entry of erroneous data, real-time validation of already entered data and (retro-active) analysis of entered data for identifying (potentially) false data values as well as data which was not recorded on time.
 
 ### LMIS data validation
-The native DHIS2 data validation features allow validating data values during data entry entry and thereby minimizing data handling errors. Data validation means ensuring that entered data values are within predefined ranges.  
+The native DHIS2 data validation features allow validating data values during data entry entry and thereby minimising data handling errors. Data validation means ensuring that entered data values are within predefined ranges.  
 The DHIS2 "Value type" setting, which is natively available for all "Data elements", allows restricting the entry of data values to certain number sets such as natural numbers ("Positive Integer") or positive integers (which includes zero). This setting also prevents "accidental" data entry such as mistakenly entering text into a numeric data field.  
 During data entry, DHIS2 will indicate any data values which are outside the defined data range by highlighting the data field with a red background and displaying an additional error message on the screen. For example, DHIS2 will prevent users from entering non-integer or any negative values in a stock on hand field and prevent the user from saving any report until the error is corrected.  
-Users can open a on-screen pop-up window which will display the entire history of entered data values in a bar chart and line chart which allows to quickly identify inconsistent values and outliers.  
+Users can open an on-screen pop-up window which will display the entire history of entered data values in a bar chart and line chart which allows to quickly identify inconsistent values and outliers.  
 The DHIS2-RTS (Real-Time System) goes even further by not only displaying an alert in real-time if negative data values are entered but even preventing the user from saving the data entry and continuing entry of any further data. In addition, a specific minimum and maximum data value can be configured for each data field which will display a real-time alert if the user enters a value which is outside of the configured range.  
 The DHIS2-RTS system prevents negative stock on hand values, prevents entry of any non-integer values in any data field and prevents entry of negative or zero values for any transaction quantities.  
 A dedicated DHIS2 "Validation rule" application allows configuring complex validation rules based on data values from different data fields such as entering any data values which would lead to negative stock on hand values. When users execute the validation, DHIS2 will display a list of alerts in a dedicated sidebar.  
@@ -236,7 +238,7 @@ Therefore data in general, and data from the last mile (first data mile) in part
 Far too often, any logistics data is lumped together as "indicators" or even "Key Performance Indicators" (KPI) while actually logistics data serves different and distinct purposes.
 
 ###	Data use for inventory control
-Inventory control is a scientific field which studies policies and systems for replenishing medical stocks at healthcare facilities and other medical stocks and is coloquially referred to as "quantification". Inventory control lies at the heart of all supply chains and depends on the accurate and timely data from the healthcare facility as well as upstream levels. Therefore it is accurate and timely data together with rational and professional inventory control policies with make or break supply chains. Although the use of logistics data usually focuses on "reporting", the use for inventory control is by far the most important purpose.  
+Inventory control is a scientific field which studies policies and systems for replenishing medical stocks at healthcare facilities and other medical stocks and is colloquially referred to as "quantification". Inventory control lies at the heart of all supply chains and depends on the accurate and timely data from the healthcare facility as well as upstream levels. Therefore it is accurate and timely data together with rational and professional inventory control policies with make or break supply chains. Although the use of logistics data usually focuses on "reporting", the use for inventory control is by far the most important purpose.  
 Without stock data from healthcare facilities, supply managers have to resort to surrogate data such as shipments to healthcare facilities which inevitably causes demand distortion and reduces stock availability at all levels of the supply network.
 Fortunately stock replenishment calculations require very little data but that data must be timely and absolutely correct:
 - Stock on hand (the result of a physical stock count at the end of every month): indispensable for calculating stock replenishment quantities
@@ -333,11 +335,11 @@ The table below indicates the data points which are required for calculating the
 | Timeliness of facility reporting | x | x | x | x | x |
 
 ###	Source of data and calculations
-As DHIS2 provides some simple analytics based on healthcare facility level data and mSupply provides comprehensive analytics on all aspects of logistics and supply chain management, duplication of data, calculations, analytics and visualisations needs to be avoided.  
-DHIS2 only calculates essential stock data which cannot be collected in mSupply directly and only provides some basic analytics based on data collected in DHIS2.  
-DHIS2 synchronises this essential healthcare facility level data (stock on hand, stock issues, stock corrections and stock losses) with mSupply but mSupply does not synchronise data with DHIS2 which would be replicated. However, mSupply data such as order status information may be shared with DHIS2 as preconfigured pdf-reports which can be shared through the DHIS2 notification system.  
-By default, the main calculations, analytics and visualisations on all aspects of logistics and supply chain management are provided by and in mSupply as a dedicated national eLMIS system. As all essential DHIS2 data is also available in mSupply, supply managers use mSupply analytics and visualisations as their only resource for managing all aspects of their work. Any other managers (other than supply managers) which require detailed logistics reports from mSupply, are provided (read) access to mSupply for consulting mSupply reports reports.  
-Unless mandated by national policies and protocols and inevitable, mSupply data is not "pushed" to and stored in DHIS2 for visualisations as this would require managing and maintaining redundant data sets.
+As DHIS2 provides some simple analytics based on healthcare facility level data and the national eLMIS provides comprehensive analytics on all aspects of logistics and supply chain management, duplication of data, calculations, analytics and visualisations needs to be avoided.  
+DHIS2 only calculates essential stock data which cannot be collected in the national eLMIS directly and only provides some basic analytics based on data collected in DHIS2.  
+DHIS2 synchronises this essential healthcare facility level data (stock on hand, stock issues, stock corrections and stock losses) with the national eLMIS but the national eLMIS does not synchronise data with DHIS2 which would be replicated. However, the national eLMIS data such as order status information may be shared with DHIS2 as preconfigured pdf-reports which can be shared through the DHIS2 notification system.  
+By default, the main calculations, analytics and visualisations on all aspects of logistics and supply chain management are provided by and in the national eLMIS as a dedicated national eLMIS system. As all essential DHIS2 data is also available in the national eLMIS, supply managers use the national eLMIS analytics and visualisations as their only resource for managing all aspects of their work. Any other managers (other than supply managers) which require detailed logistics reports from the national eLMIS, are provided (read) access to the national eLMIS for consulting the national eLMIS reports reports.  
+Unless mandated by national policies and protocols and inevitable, the national eLMIS data is not "pushed" to and stored in DHIS2 for visualisations as this would require managing and maintaining redundant data sets.
 
 ###	Overview of DHIS2 logistics metrics
 Given the extensive analytics functionality in DHIS2, users are tempted to configure a wide range of analytics and visualisations, often duplicating measurements for specific metrics, without a clear objectives and an overall concept.  
@@ -397,29 +399,29 @@ For each of the logistics data statistics, this section will provide the:
 - Limitations
 - Short interpretation
 - Aggregation options: items / time / geography
-- Visualization options (only those which are meaningful)
+- Visualisation options (only those which are meaningful)
 A detailed interpretation and the recommended action are explained in the section "Logistics performance management framework".
-Except for the rare case of fully digitized stock management systems, manual records such as batch cards, stock cards and various ledgers are used for recording all stock transactions (such as stock receipts and distributions). At the end of every reporting period those records are reviewed, the required data values are tallied up with a calculator which are then reported.
+Except for the rare case of fully digitised stock management systems, manual records such as batch cards, stock cards and various ledgers are used for recording all stock transactions (such as stock receipts and distributions). At the end of every reporting period those records are reviewed, the required data values are tallied up with a calculator which are then reported.
 
 #### General principles
 - all logistics data needs to be collected with the same periodicity (for example, if stock on hand is recorded and reported monthly, distributions also need to be recorded and reported monthly)
 - real-time data collection, such as with the DHIS2-RTS (Real-Time Stock management system) allows generating daily, monthly and annual reports automatically by the system
-- daily reporing periods are not advisable as they are associated with a very high workload on (health) staff for daily reporting
+- daily reporting periods are not advisable as they are associated with a very high workload on (health) staff for daily reporting
 - weekly reporting periods are not advisable because they are never commensurate with monthly and annual periods
 - in terms of logistics, logistics data should be recorded and reported for all healthcare goods which are (regularly) managed by a health facility (and not only for "tracer" products)
 - collected logistics data is only meaningful if it is regularly and systematically collected for all items and all transactions
 
 ####	Stock receipt
-Ideally, collection of stock receipt data should not be necessary if a national eLMIS system is implemented which keeps accurate record of the shipments to each health facility which, with some delay, correspond to the stock receipts. For each consignment, national eLMIS systems should track the shipment date as well as the date on which the health facility confirmed actual receipt, separately.
-Therefore recording stock receipts at health facilities (again) means that redundant data is collected which poses un unnecessary burden on facility staff. Instead, stock receipt data should be made available to facility staff through dashboards which automatically visualize data from the national eLMIS.  
+Ideally, collection of stock receipt data should not be necessary if a national eLMIS system is implemented which keeps accurate records of the shipments to each health facility which, with some delay, correspond to the stock receipts. For each consignment, national eLMIS systems should track the shipment date as well as the date on which the health facility confirmed actual receipt, separately.
+Therefore recording stock receipts at health facilities (again) means that redundant data is collected which poses an unnecessary burden on facility staff. Instead, stock receipt data should be made available to facility staff through dashboards which automatically visualise data from the national eLMIS.  
 **Definition**: "stock receipt" is defined as the quantity of each item which is received from the upstream logistics service as replenishment order. Supplies are usually received once a month with additional receipts of backorders and emergency orders. However the frequency of supplies may differ according to national policies.  
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended. If the supply of healthcare facilities is less frequent than once a month, then the measurement period can be adjusted, for example to a period of three months.  
 **Calculation**: total stock receipts for each item are calculated by adding up the quantities received in each consignment during the respective reporting period.  
 **Limitations** calculating correct totals requires aggregating all consignment (packing list) quantities for each item which were received during the respective reporting month.  
 **Short Interpretation**: generally, the stock receipts, after taking the lead time (delays for delivery) into account, need to correspond with the respective order quantities for the same item which in turn correspond to the distributions of previous monthly periods. Ideally, if deliveries are made reliably, the received quantity of every month should correspond to the quantity ordered during the period corresponding to the promised lead time earlier.  
-**Corrective action**: if the receipt quantities do not correspond (closely) to the quantities ordered the period corresponding to the promised lead time earlier, then the logistics services supplying the healthcare facility needs to improve reliability of delivery. Alternatively, if the promised lead time cannot be adhered to, the lead time parameter in the stock replenishment calculations can be increased in order to match actual lead times.  
+**Corrective action**: if the receipt quantities do not correspond (closely) to the quantities ordered the period corresponding to the promised lead time earlier, then the logistics services supplying the healthcare facility need to improve reliability of delivery. Alternatively, if the promised lead time cannot be adhered to, the lead time parameter in the stock replenishment calculations can be increased in order to match actual lead times.  
 **Aggregation options**: aggregating stock receipt quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.  
-**Visualization options**:  pivot table, column chart, bar chart, line chart or single value chart.  
+**Visualisation options**:  pivot table, column chart, bar chart, line chart or single value chart.  
 
 ####	Stock distribution
 The logistics term "distribution" is often referred to as "consumption" or "issues" but means the same data.
@@ -427,20 +429,20 @@ The logistics term "distribution" is often referred to as "consumption" or "issu
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
 **Calculation**: total stock distributions for each item are calculated by adding up the quantities distributed to all of the services and wards during the respective reporting period.    
 **Short Interpretation**: stock distributions (which correspond to customer demand) lie at the origin of any supply chain (demand chain) and are not related to any other logistics data. Instead, the interpretation of quantities ordered and used by the respective services and wards depends on the number of patients, their medical condition, duration of treatment etc. and needs to be assessed by health professionals. The only logistical consideration is that items which have no demand at all for several months should be discussed with health staff for confirming the need for continuing to stock them as they are likely to expire before being used.  
-**Limitations** if stock is returned to the (central) pharmacy, in principle the stock distribution quantities should be corrected in the period when the distribution was made. If the "negative" distribution is recorded in a later period, the actually (monthly) distribution quantities will be distorted although the overall total across all concerned periods will still be correct.  
+**Limitations** if stock is returned to the (central) pharmacy, in principle the stock distribution quantities should be corrected in the period when the distribution was made. If the "negative" distribution is recorded in a later period, the actual (monthly) distribution quantities will be distorted although the overall total across all concerned periods will still be correct.  
 **Corrective action**: items without demand for prolonged periods of time should be discussed with health staff for confirming the need for continuing to stock them as they are likely to expire before being used.  
 **Aggregation options**: aggregating stock distribution quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. The average demand across several reporting periods may be used for evening out fluctuations or for comparing distribution quantities between (similar) health facilities.  
-**Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
+**Visualisation options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 ####	Stock redistribution
 Redistributions between health facilities is in principle a good way to avoid shortages and stockouts and avoid that patients are not being (sufficiently) treated. However, stock redistributions should be an exception. If stock redistributions are frequent, an assessment of the reasons leading to this "damage control" measure should be made. Ideally, stock redistributions should be managed in the national eLMIS by issuing a virtual return from the respective halth facility and a virtual shipment to another health facility while physically shipping the goods directly between the two healthcare facilities. Otherwise the distribution quantities for both healthcare facilities will be distorted and vicious cycle will perpetuate the shortage and stockouts (the health facility with the shortage or stockout continuous to receive too little stock because demand is false low and the health facility redistributing stock continuous to be overstocked as their demand includes part of the demand of another health facility).  
-**Definition**: total quantity of each item (re)distributed from the (central) pharmacy to another health facility. When loans are returned from the health facility to which stock was redistributed, those quantity need to be recorded as "negative" redistributions in order to balance stocks. If they are instead recorded as any other receipt, those will not match the stock shipped from the supplying medical warehouse.  
+**Definition**: total quantity of each item (re)distributed from the (central) pharmacy to another health facility. When loans are returned from the health facility to which stock was redistributed, those quantities need to be recorded as "negative" redistributions in order to balance stocks. If they are instead recorded as any other receipt, those will not match the stock shipped from the supplying medical warehouse.  
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
-**Calculation**: total stock redistributions for each item are calculated by adding up the quantities redistributed to all other health facility during the respective reporting period.  
+**Calculation**: total stock redistributions for each item are calculated by adding up the quantities redistributed to all other health facilities during the respective reporting period.  
 **Short Interpretation**: any stock redistributions should be considered as an anomaly.  
 **Corrective action**: any stock redistribution should prompt an assessment of the overall supply and distribution system as well as measures for preventing stock imbalances in future.  
 **Aggregation options**: aggregating stock redistribution quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.  
-**Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
+**Visualisation options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 ####	Stock discard
 Terms such as "wastage", "expired" or "losses" are often used as synonyms. However, in terms of logistics processes and workflows, any healthcare product which has expired, is damaged or unusable for another reason still needs to be removed from stock and be placed in a locked quarantine area until safe disposal. Moreover, expired and damaged stock needs to be identified and recorded as such as stock expired stock may not be noticed.  
@@ -448,19 +450,19 @@ Note that "losses" caused by theft (shrinkage) are never known and can only be d
 **Definition**: total quantity of each item which was removed from stock,  placed in quarantine and (eventually) disposed of.   
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
 **Calculation**: total stock discarded for each item are calculated by adding up the quantities discarded during the respective reporting period.  
-**Short Interpretation**: stock discards are, in principle, avoided but should at least be exception.  
+**Short Interpretation**: stock discards are, in principle, avoided but should at least be an exception.  
 **Corrective action**: if stock is damaged, the storage conditions need to be improved accordingly. For example if stock is damaged by freezing vaccines, the cold chain management needs to be improved. If stock expires either stock levels need to be reduced or the remaining shelf life at the time of delivery from the supply medical warehouse needs to be increased.  
 **Aggregation options**: aggregating discarded quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum.  
-**Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
+**Visualisation options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 #### Stock on hand
 **Definition**: Stock on hand is defined as the quantity of each item which is physically present in the (central) pharmacy. It must be determined by a physical stock count which should be carried out at the end of every reporting period, usually the end of the month. This stock count corresponds to the "closing stock" which means the stock at the end of the reporting period. In order to avoid confusion, stock balances which are the result of calculations such as adding and subtracting stock transactions from the "opening stock" should not be referred to as "Stock on hand". If stocks of the same item are held in different locations, those quantities need to be counted separately but then be added up for calculating the total.  
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.   
 **Calculation**: the stock on hand is calculated simply by counting the total quantities which are available in the (central) pharmacy at the time of counting/reporting.  
 **Short Interpretation**: the stock on hand is the result of transactions and can therefore only be influenced indirectly through stock transactions and the desired stock levels depend on numerous parameters. However, items should never stock out and stockouts should always be considered as an emergency.  
-**Corrective action**: any stockout should be considered as an emergency which prompts immediate action. Open (unfilled) order quantities (which have not been delivered yet) should be expedited (delivered as soon as possible) or additional emergency orders should be placed immediately. In addition, a carefuly review of the causes for the stockout should be carried out and remedied to prevent stockouts from recurring.  
+**Corrective action**: any stockout should be considered as an emergency which prompts immediate action. Open (unfilled) order quantities (which have not been delivered yet) should be expedited (delivered as soon as possible) or additional emergency orders should be placed immediately. In addition, a carefully review of the causes for the stockout should be carried out and remedied to prevent stockouts from recurring.  
 **Aggregation options**: aggregating stock on hand across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. The average stock on ahd across several reporting periods may be used for evening out fluctuations or for comparing stock on hand between (similar) health facilities.  
-**Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.
+**Visualisation options**: pivot table, column chart, bar chart, line chart or single value chart.
 
 #### Stock correction
 
@@ -469,10 +471,10 @@ The term "stock correction" is distinct and different from "stock discards" (los
 **Definition**: stock correction quantities are deliberately recorded by storekeepers to account for discrepancies between the actual, physical stock (stock on hand) and the stock which should be available according to calculations based on the stock on hand at the beginning of the month and all recorded stock transactions during the month. The stock correction is only recorded after all possible reasons for mistakes in the records are verified. Stock corrections are only recorded for quantities which cannot be accounted for and be explained. These are are caused by mistakes or miscounts (which remain unnoticed), stock which is mislayed or theft. The actual cause of these discrepancies is and remains unknown. However, determining these discrepancies is better than only noting them as a result of a correction but without being aware of them.  
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
 **Calculation**: (no calculation)  
-**Short Interpretation**: any value other than zero for the stock correction indicates a mistake or theft and is a sign of poor stock management. A positive stock correction means that there is more stock on hand than their should be for example because more physical stock was entered into stock than recorded or because less physical stock than recorded was distributed or both. A negative stock correction means that more stock was physically distributed than recorded or less stock was physically received than recorded, stock was mislaid or stolen.  
-**Corrective action**: the need for recording any stock discrepancy should prompt an inquiry on the possible reasons, particularly if the occur for several items and/or repeatedly for the same items.   
+**Short Interpretation**: any value other than zero for the stock correction indicates a mistake or theft and is a sign of poor stock management. A positive stock correction means that there is more stock on hand than there should be for example because more physical stock was entered into stock than recorded or because less physical stock than recorded was distributed or both. A negative stock correction means that more stock was physically distributed than recorded or less stock was physically received than recorded, stock was mislaid or stolen.  
+**Corrective action**: the need for recording any stock discrepancy should prompt an inquiry on the possible reasons, particularly if they occur for several items and/or repeatedly for the same items.   
 **Aggregation options**: aggregating stock discrepancies quantities across different items is not meaningful but for each item separately, they can be aggregated across several time periods, across several health facilities and both as a sum. Note that if stock discrepancies "cancel each other out" over several reporting periods and result in zero, this is better than not. However, two mistakes which "cancel each other out" still means that two mistakes were made which should be followed up.  
-**Visualization options**: pivot table, column chart, bar chart, line chart or single value chart.  
+**Visualisation options**: pivot table, column chart, bar chart, line chart or single value chart.  
 
 ###	DHIS2 logistics performance indicators
 While logistics data statistics are "just numbers" without any desired ranges, logistics performance indicators have optimal ranges which should be achieved and any deviation from the optimal ranges (too high or too low) needs to prompt immediate corrective action.
@@ -483,10 +485,10 @@ While logistics data statistics are "just numbers" without any desired ranges, l
 **Definition**: the coefficient of variation (CoV) is a measure for the variability of customer demand (distribution quantities).  
 **Reporting period**: calculations are usually based on monthly time series.  
 **Calculation**: standard deviation of a monthly time series divided by the mean of the same time series.  
-**Short Interpretation**: the lower the coefficient of variation, the lower demand variability (level of fluctuations) and the higher the coefficient of variation the more variable and erratic demand is. If customer demand (distribution quantities) is entirely level (identical every month) then the coefficient of variation would be zero. The highest coefficient of variation in any time series results from a single values having any non-zero value and all other values in the time series having zero values. The maximum possible coefficient of variation depends on the length of the time series. For a time series of six months, the maximum possible coefficient of variation is 2.45 and or a time series of twelve months the maximum possible coefficient of variation is 3.46. By definition, a time series with a coefficient of variation of more than 1.0 is considered as erratic and demand cannot be forecasted with any reasonable accuracy. A coefficient of variation of less than 0.5 can be considered as low (optimal) and time series with a coefficient of variation between 0.5 to 1 as medium variability.  
-**Corrective action**: if demand variability is low no corrective action is needed but the low demand variability should be maintained. If demand shows high variability or is erratic, causes such be analysed. "Intrinsic" reasons for demand variability such as changing number of patients and medical conditions cannot be influenced. However, "extrinsic" reasons such as irregular and unsystematic orders of hospital serivces and wards, expiry of stocks after distribution from the central pharmacy as well as inconsistent application of standard treatment protocols can be addressed.  
+**Short Interpretation**: the lower the coefficient of variation, the lower demand variability (level of fluctuations) and the higher the coefficient of variation the more variable and erratic demand is. If customer demand (distribution quantities) is entirely level (identical every month) then the coefficient of variation would be zero. The highest coefficient of variation in any time series results from a single value having any non-zero value and all other values in the time series having zero values. The maximum possible coefficient of variation depends on the length of the time series. For a time series of six months, the maximum possible coefficient of variation is 2.45 and or for a time series of twelve months the maximum possible coefficient of variation is 3.46. By definition, a time series with a coefficient of variation of more than 1.0 is considered as erratic and demand cannot be forecasted with any reasonable accuracy. A coefficient of variation of less than 0.5 can be considered as low (optimal) and time series with a coefficient of variation between 0.5 to 1 as medium variability.  
+**Corrective action**: if demand variability is low no corrective action is needed but the low demand variability should be maintained. If demand shows high variability or is erratic, causes such be analysed. "Intrinsic" reasons for demand variability such as changing number of patients and medical conditions cannot be influenced. However, "extrinsic" reasons such as irregular and unsystematic orders of hospital services and wards, expiry of stocks after distribution from the central pharmacy as well as inconsistent application of standard treatment protocols can be addressed.  
 **Aggregation options**: the aggregation (averaging) of coefficients of variations across different items is not meaningful. Instead histograms (frequency distribution charts) should be used to visualize coefficients of variations across several items.  
-**Visualization options**: pivot table.  
+**Visualisation options**: pivot table.  
 
 #####	Coefficient of variation (CoV) / distribution
 **Definition**: histogram (frequency distribution charts) of the coefficient of variation of all items in the same healthcare facility and for the same time period.  
@@ -495,7 +497,7 @@ While logistics data statistics are "just numbers" without any desired ranges, l
 **Short Interpretation**: ideally the histogram would show a single bar at coefficient of variation equal to zero but in practice the distribution should at least be positively skewed which means that it should have its mode in the low variability range. In any case the histogram is expected to show or shape resembling a normal distribution. in the worst case, all coefficients of distribution are negatively skewed and all in the range of erratic demand (coefficient of variation greater than 1).  
 **Corrective action**: same as for the coefficient of variation / absolute values.  
 **Aggregation options**: values from individual items can be aggregated across several or all items, healthcare facilities (at all levels) and time periods by adding the respective coefficient of variation values to the respective ranges.  
-**Visualization options**: pivot table or histogram.  
+**Visualisation options**: pivot table or histogram.  
 
 #### Stock quantity performance indicators
 
@@ -506,34 +508,34 @@ While logistics data statistics are "just numbers" without any desired ranges, l
 **Short Interpretation**: ideally no items should ever be out of stock and the fewer items are out of stock the better. Items which are out of stock can be evaluated for available substitutes and the consequences for patients in case of a stockout. Note that the determination whether an item is out of stock at the time of the monthly reporting (usually at the end of the month after the physical stock count has been completed) is only a "snapshot" and it is not possible to determine for how many days during that month the item was out of stock.  
 **Corrective action**: short term: expedite open orders and/or place additional orders for immediate shipment and/or redistribute from nearby healthcare facilities. Long-term: analyse reasons for stockouts and take corrective action (see logistics performance management framework).   
 **Aggregation options**: lists can aggregated across items, time periods and healthcare facilities.    
-**Visualization options**: pivot table and stacked column charts.
+**Visualisation options**: pivot table and stacked column charts.
 
 ##### Stock availability across items
 **Definition**: percentage of items at a healthcare facility with non-zero stock.  
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.    
 **Calculation**:  number of items with non-zero stock divided by the total number of stocked items expressed as a percentage.  
-**Short Interpretation**: ideally the stock availability should be 100% at all times which means that all items have stock on hand and there are no stockouts. In a commercial setting, stock availability of 98% would be considered as a good benchmark and above 95% reasonably acceptable. However, any stockout of essential healthcare products must treated with urgency immediately. Note that the determination whether an item is out of stock at the time of the monthly reporting (usually at the end of the month after the physical stock count has been completed) is only a "snapshot" and it is not possible to determine for how many days during that month the item was out of stock.  
+**Short Interpretation**: ideally the stock availability should be 100% at all times which means that all items have stock on hand and there are no stockouts. In a commercial setting, stock availability of 98% would be considered as a good benchmark and above 95% reasonably acceptable. However, any stockout of essential healthcare products must be treated with urgency immediately. Note that the determination whether an item is out of stock at the time of the monthly reporting (usually at the end of the month after the physical stock count has been completed) is only a "snapshot" and it is not possible to determine for how many days during that month the item was out of stock.  
 **Corrective action**: stock availability is increased by corrective action prompted by any stockout (see above).   
-**Aggregation options**: stock availability can be aggregated and averaged across health care facilities but only by adding up the total humber of items which are in stock across all healthcare facilities and then dividing by the total number of items stocked across all healthcare facilities expressed as percentage. Simply averaging the stock availability at each healthcare facility will result in completely false results as healthcare facilities are likely to stock different numbers of items.    
-**Visualization options**: pivot table, bar chart and single value chart (for the most recent month).  
+**Aggregation options**: stock availability can be aggregated and averaged across health care facilities but only by adding up the total number of items which are in stock across all healthcare facilities and then dividing by the total number of items stocked across all healthcare facilities expressed as percentage. Simply averaging the stock availability at each healthcare facility will result in completely false results as healthcare facilities are likely to stock different numbers of items.    
+**Visualisation options**: pivot table, bar chart and single value chart (for the most recent month).  
 
 ##### Stockout percentage across items
 **Definition**: percentage of items at a healthcare facility with no stock (stockout).  
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.    
 **Calculation**:  number of items with zero stock (stockout) divided by the total number of stocked items expressed as a percentage.  
-**Short Interpretation**: ideally the stockout percentage should be 0% at all times which means that there are no items without stock on hand and there are no stockouts. In a commercial setting, a stockout percentage of up to 2% would be considered as a good benchmark and up to 5% reasonably acceptable. However, any stockout of essential healthcare products must treated with urgency immediately. Note that the determination whether an item is out of stock at the time of the monthly reporting (usually at the end of the month after the physical stock count has been completed) is only a "snapshot" and it is not possible to determine for how many days during that month the item was out of stock.  
+**Short Interpretation**: ideally the stockout percentage should be 0% at all times which means that there are no items without stock on hand and there are no stockouts. In a commercial setting, a stockout percentage of up to 2% would be considered as a good benchmark and up to 5% reasonably acceptable. However, any stockout of essential healthcare products must be treated with urgency immediately. Note that the determination whether an item is out of stock at the time of the monthly reporting (usually at the end of the month after the physical stock count has been completed) is only a "snapshot" and it is not possible to determine for how many days during that month the item was out of stock.  
 **Corrective action**: the stockout percentage is decreased by corrective action prompted by any stockout (see above).   
-**Aggregation options**: stock percentages can be aggregated and averaged across health care facilities but only by adding up the total humber of items which are out of stock across all healthcare facilities and then dividing by the total number of items stocked across all healthcare facilities expressed as percentage. Simply averaging the stockout percentages at each healthcare facility will result in completely false results as healthcare facilities are likely to stock different numbers of items.    
-**Visualization options**: pivot table, bar chart and single value chart (for the most recent month).  
+**Aggregation options**: stock percentages can be aggregated and averaged across health care facilities but only by adding up the total number of items which are out of stock across all healthcare facilities and then dividing by the total number of items stocked across all healthcare facilities expressed as percentage. Simply averaging the stockout percentages at each healthcare facility will result in completely false results as healthcare facilities are likely to stock different numbers of items.    
+**Visualisation options**: pivot table, bar chart and single value chart (for the most recent month).  
 
 ##### Number of stockouts (count)
 **Definition**: count of items with no stock on hand at the healthcare facility.  
 **Reporting period**: monthly aggregations are recommended except for real-time systems where daily as well as monthly aggregations automated by the system are recommended.  
 **Calculation**: for each item determine whether the stock on hand is zero and then counting all items for which this is the case.  
 **Short Interpretation**: ideally all items should be in stock and the number of stockouts should be zero. Note that the determination whether an item is out of stock at the time of the monthly reporting (usually at the end of the month after the physical stock count has been completed) is only a "snapshot" and it is not possible to determine for how many days during that month the item was out of stock.  
-**Corrective action**: the number of stockoutouts is decreased by corrective action prompted by any stockout (see above).     
+**Corrective action**: the number of stockouts is decreased by corrective action prompted by any stockout (see above).     
 **Aggregation options**: the number of stockouts can be aggregated (summed) across healthcare facilities. The calculation of the average number of stockouts is not meaningful as these always need to be seen in relation to the total number of items which are held in stock.
-**Visualization options**: pivot table and column chart. 
+**Visualisation options**: pivot table and column chart. 
 
 ##### Stockout duration by item / months with stockouts
 **Definition**: over a period of twelve months, number of months for which the stock on hand at the end of the month was zero (stockout).   
@@ -542,25 +544,25 @@ While logistics data statistics are "just numbers" without any desired ranges, l
 **Short Interpretation**: ideally, no stockouts should occur and therefore the number of stockouts over a period of twelve months should also be zero. In the worst case, the item was out of stock during all twelve reporting periods. Note that the determination whether an item is out of stock at the time of the monthly reporting (usually at the end of the month after the physical stock count has been completed) is only a "snapshot" and it is not possible to determine for how many days during that month the item was out of stock.  
 **Corrective action**: the stockout duration is decreased by corrective action prompted by any stockout (see above).  
 **Aggregation options**: the stockout duration of items can be aggregated (summed) across healthcare facilities.  
-**Visualization options**:  pivot table and column chart.  
+**Visualisation options**:  pivot table and column chart.  
 
 ##### Stockout duration by item / days with stockouts
 **Definition**: over a period of one month, number of days for which the stock on hand at the end of the day was zero (stockout).  
 **Reporting period**: daily.  
 **Calculation**: for each day during the twelve month period determine whether a stockout was recorded at the end of that day and then count the number of days for which a stockout was reported.  
-**Short Interpretation**: ideally, no stockouts should occur and therefore the number of daily stockouts over a period of one month should also be zero. In the worst case, the item was out of stock during all days of the respective month. Note that the maximum number of stockout days depend on the number of days in the respective month. Note that the determination whether an item is out of stock at the time of the daily recording (usually during the night for automated Schedulers) is only a "snapshot" and it is not possible to determine for how many hours during that day the item was out of stock.  
+**Short Interpretation**: ideally, no stockouts should occur and therefore the number of daily stockouts over a period of one month should also be zero. In the worst case, the item was out of stock during all days of the respective month. Note that the maximum number of stockout days depends on the number of days in the respective month. Note that the determination whether an item is out of stock at the time of the daily recording (usually during the night for automated Schedulers) is only a "snapshot" and it is not possible to determine for how many hours during that day the item was out of stock.  
 **Corrective action**: the stockout duration is decreased by corrective action prompted by any stockout (see above).  
 **Aggregation options**: the stockout duration of items can be aggregated (summed) across healthcare facilities.  
-**Visualization options**: pivot table and column chart.  
+**Visualisation options**: pivot table and column chart.  
   
 ##### Stock coverage time by item / months of stock
-**Definition**: the stock coverage time (in months), sometimes called "months of stock" is the number of months the current stock would last provided that no stock is received and average demand is the same as during the period used for calculuating average demand.  
+**Definition**: the stock coverage time (in months), sometimes called "months of stock" is the number of months the current stock would last provided that no stock is received and average demand is the same as during the period used for calculating average demand.  
 **Reporting period**: monthly.  
 **Calculation**: the simplest possible calculation is the most recent available stock on hand divided by the stock distribution of the past month. Alternatively the most recent available stock on hand can be divided by the last three (or six) months for example. Longer periods for average distributions are advised if the variability of distributions is high.  
-**Short Interpretation**: a stock coverage time of zero corresponds to a stockout. The desired (ideal) stock coverage time depends on the inventory control polidy and the parameters which are in use. In the most commonly used periodic review order-up-to-level system (once a month the difference between stock distributions x (safety stock + review period + lead time) - stock on hand is ordered) the actual, physical stock level should never drop below the safety stock level and the maximum stock level should not exceed the safety stock level plus the working stock (demand during during the review period). This under the assumption that distribution quantities and lead times are steady. For example, if the safety stock is set to 2 months of average stock distributions and the review period is one month (monthly orders) then the stock on hand should not fall below 2 months of average stock distributions and not exceed 3 months. Stock levels will be lowest just before the (monthly) stock replenishment is received and highest just after the stock replenishment has been received and put away.  
+**Short Interpretation**: a stock coverage time of zero corresponds to a stockout. The desired (ideal) stock coverage time depends on the inventory control policy and the parameters which are in use. In the most commonly used periodic review order-up-to-level system (once a month the difference between stock distributions x (safety stock + review period + lead time) - stock on hand is ordered) the actual, physical stock level should never drop below the safety stock level and the maximum stock level should not exceed the safety stock level plus the working stock (demand during during the review period). This under the assumption that distribution quantities and lead times are steady. For example, if the safety stock is set to 2 months of average stock distributions and the review period is one month (monthly orders) then the stock on hand should not fall below 2 months of average stock distributions and not exceed 3 months. Stock levels will be lowest just before the (monthly) stock replenishment is received and highest just after the stock replenishment has been received and put away.  
 **Corrective action**: if the stock coverage time falls below the safety stock level the corrective action prompted by any stockout (see above) should be taken. If the stock coverage time is too high, the stock does not expire (soon) and stock is being distributed regularly, stock levels will eventually decrease. If the item is no longer in use and/or expected to expire before it can be used, (part of) the stock should be redistributed to other healthcare facilities or returned to upstream medical stores for further use.  
 **Aggregation options**: stock coverage times cannot be aggregated, neither across time periods, items or geographical levels as overstocks of one item or at one healthcare facility cannot compensate for shortages or stockouts of another item or at another healthcare facility.  
-**Visualization options**: pivot table.  
+**Visualisation options**: pivot table.  
 
 ##### Stock coverage time / months of stock / distribution
 The ranges for the stock coverage time / months of stock / distribution are split evenly without qualifying any ranges as desirable or undesirable. The user will have to make this judgement depending on the inventory control policy in use.  
@@ -570,16 +572,16 @@ The ranges for the stock coverage time / months of stock / distribution are spli
 **Short Interpretation**: ideally, all stock coverage times should fall into the bin(s) between the safety stock and the safety stock + working stock levels and show a normal distribution with very few items in the bins below and above this range. A right skewed histogram (peak shifted to the left) indicates a preponderance of shortages while a left skewed histogram (peak shifted to the right) indicates overstocking.  
 **Corrective action**: for each item, the same corrective action as for the stock coverage time (see above) apply.  
 **Aggregation options**: stock coverage time distributions can be aggregated (summed) across items, reporting periods and healthcare facilities.  
-**Visualization options**: pivot table and column charts.  
+**Visualisation options**: pivot table and column charts.  
 
 ##### Stock coverage time / category
 The stock coverage time / category corresponds to the stock coverage time / months of stock / distribution with the difference of qualifying the ranges as desired or undesirable.  
 **Definition**: histogram (frequency distribution chart) of coefficient of variation ranges in depending on the inventory control policy as follows:  
 \- stockout: stock coverage time of zero (stockout)  
 \- understock: stock coverage time greater 0 and less than the desired safety stock levels  
-\- appropriate (adequate) stock: stock coverage greater or equal to the safety stock but below the sum of the safety stock and distribution quantities required to cover the rewiev period  
-\- overstock: stock coverage greater than sum of the safety stock and distribution quantities required to cover the rewiev period but less than a coverage time of one year (this level is arbitrary and could also be set to, for example, six months as long as it exceeds the sum of the safety stock and distribution quantities required to cover the rewiev period)  
-\- excessive stock: stock coverage time of more than twelve months (this level is again arbitrary and another treshold can be chosen)  
+\- appropriate (adequate) stock: stock coverage greater or equal to the safety stock but below the sum of the safety stock and distribution quantities required to cover the review period  
+\- overstock: stock coverage greater than sum of the safety stock and distribution quantities required to cover the review period but less than a coverage time of one year (this level is arbitrary and could also be set to, for example, six months as long as it exceeds the sum of the safety stock and distribution quantities required to cover the review period)  
+\- excessive stock: stock coverage time of more than twelve months (this level is again arbitrary and another threshold can be chosen)  
 **Reporting period**: monthly.  
 **Calculation**: first, the coefficient of variation is calculated for each item. Then the item is assigned to the respective range (stockout, understock, appropriate stock, overstock or excessive stock) within which the numeric value falls and finally the number of items in each of these ranges is counted.   
 **Short Interpretation**: the name of the stock coverage time ranges indicates the evaluation and interpretation:
@@ -589,13 +591,13 @@ The stock coverage time / category corresponds to the stock coverage time / mont
 \- overstock: stock levels are too high and there is a risk that (some of the) stock will expire before it can be used
 \- excessive stock: stock levels are much too high and there is a very high risk that (most of the) stock will expire before it can be used  
  **Corrective action**:   
-\- stockout: immediate and decisive action by expediting unfilled (open) orders are placing additional order for immediate shipment is required.
+\- stockout: immediate and decisive action by expediting unfilled (open) orders or placing additional orders for immediate shipment is required.
 \- understock: assess whether the stock is expected to last until the next expected delivery and if not, take the same corrective action as for stockouts
 \- appropriate (adequate) stock: in principle no action is needed but if stock distribution quantities increase (significantly) before the next stock replenishment arrives, shortages or even stockouts are still possible and therefore stock distribution quantities need to be monitored.
 \- overstock: compare the stock coverage time with the remaining shelf life of the batch with the nearest expiry data. If stocks are being distributed regularly and no stock is expected to expire, cancel any unfilled (open) orders, stop ordering and wait for stock levels to drop. If the item is no longer used (or in low demand) and/or stock is in danger of expiring before it can be used, the excess stock should be redistributed to other healthcare facilities or returned upstream for further immediate redistribution.
 \- excessive stock: same as for "overstock".  
 **Aggregation options**: stock coverage times / category cannot be aggregated, neither across time periods, items or geographical levels as overstocks of one item or at one healthcare facility cannot compensate for shortages or stockouts of another item or at another healthcare facility.  
-**Visualization options**: pivot table and column chart.  
+**Visualisation options**: pivot table and column chart.  
 
 ##### Stock coverage time / category / distribution
 **Definition**: histogram (frequency distribution chart) of stock coverage time with the  number of items with stock coverage times falling into the ranges stockout, understock, appropriate (adequate) stock, overstock and excessive stock. Note that the boundaries for each of these ranges have to be adjusted according to inventory control policy which is in place.  
@@ -604,7 +606,7 @@ The stock coverage time / category corresponds to the stock coverage time / mont
 **Short Interpretation**: ideally, all stock coverage times should fall within the "appropriate (adequate)" bin with very few shortages, no stockouts, very few overstocks and no excessive stocks.A right skewed histogram (peak shifted to the left) indicates a preponderance of shortages while a left skewed histogram (peak shifted to the right) indicates overstocking.  
 **Corrective action**: for each item, the same corrective action as for the stock coverage time (see above) apply.    
 **Aggregation options**: stock coverage time distributions / category can be aggregated (summed) across items, reporting periods and healthcare facilities.  
-**Visualization options**: pivot table and column charts.  
+**Visualisation options**: pivot table and column charts.  
 
 #### Stock accuracy performance indicators
 
@@ -623,7 +625,7 @@ The stock coverage time / category corresponds to the stock coverage time / mont
 A positive stock discrepancy indicates that the stock on hand (available on the shelf) is more than it should be according to the calculations. This could be caused by an incorrect stock count at the end of the previous month, having physically received more stock than indicated on the packing list, having (accidentally) physically distributed less stock than indicated in the stock records, having (accidentally) physically redistributed less stock than indicated in the stock records, having discarded less stock than indicated in the stock records, having indicated a too low value for a stock correction or having miscounted the stock on hand at the end of the month.  
 **Corrective action**: for the current month, the records and transactions should be checked for any possible errors and, if possible, reconciled. If the reconciliation is not successful, a stock correction for the discrepancy should be recorded. Any stock discrepancies for the previous month or previously are unlikely to be reconcilable.  
 **Aggregation options**: stock discrepancies cannot be aggregated, neither across items, time periods nor healthcare facilities as two mistakes cannot compensate each other.  
-**Visualization options**: pivot table.  
+**Visualisation options**: pivot table.  
 
 ##### Stock discrepancy / count
 **Definition**: number of items for a specific reporting period and Organisation unit for which a positive or negative stock discrepancy was found.  
@@ -632,7 +634,7 @@ A positive stock discrepancy indicates that the stock on hand (available on the 
 **Short Interpretation**: ideally there should not be any discrepancies for any items at any healthcare facilities and the numeric value for all items should be zero. The larger the number of stock discrepancy, the poorer the quality of stock management is.  
 **Corrective action**: review business processes and work flows to avoid future mistakes.  
 **Aggregation options**: stock discrepancy counts can be aggregated across items, reporting periods and healthcare facilities.  
-**Visualization options**: pivot table and column chart. 
+**Visualisation options**: pivot table and column chart. 
 
 ##### Stock discrepancy / percentage
 **Definition**: percentage of items at a specific healthcare facility which show a stock discrepancy for any particular reporting period.  
@@ -640,8 +642,8 @@ A positive stock discrepancy indicates that the stock on hand (available on the 
 **Calculation**: number of items for which a stock discrepancy was detetermined divided by the total number of items at that healthcare facility.  
 **Short Interpretation**: ideally there should not be any discrepancies for any items at any healthcare facilities and the numeric value for all items should be zero which corresponds to a stock discrepancy percentage of zero. In the worst case where a stock discrepancy was found for all items, the stock discrepancy percentage would be 100%.  
 **Corrective action**: review business processes and work flows to avoid future mistakes.  
-**Aggregation options**: stock discrepancy percentages cannot be meaningfully be summed. They can be average across time periods for the same healthcare facilities and across different healthcare facilities. However, the user must be aware that healthcare facilities are likely to stock different numbers of items.  
-**Visualization options**: pivot table or column chart.  
+**Aggregation options**: stock discrepancy percentages cannot be meaningfully summed. They can be average across time periods for the same healthcare facilities and across different healthcare facilities. However, the user must be aware that healthcare facilities are likely to stock different numbers of items.  
+**Visualisation options**: pivot table or column chart.  
 
 #### Reporting quality performance indicators
 DHIS2 provides native analysis and reports for any DHIS2 Data set which are also useful for LMIS stock data reports:
@@ -689,8 +691,8 @@ While in most cases users and managers start out designing dashboards and visual
  - what metric is suitable to determine what corrective action(s) is/are most appropriate
  - what data is needed for their calculation
  - collect the data (reliably, accurately and timely, ideally in real-time)
- - what representation of the data and metrics is most suitable for analytics and visualizations
- - only after all of the above, visualizations and dashboards are developed
+ - what representation of the data and metrics is most suitable for analytics and visualisations
+ - only after all of the above, visualisations and dashboards are developed
  xxx
  Question: Confirm whether all DHIS2 metrics are "Manifestation" indicators?
 and whether all root cause indicators are only available in national eLMISs?
@@ -723,15 +725,15 @@ Other principles are:
 - Clearly defined corrective action for any deviations
 
 ###	"Manifestation" indicators ("symptoms")
-Manifestation” indicators primarily serve for detecting “symptoms” and establishing the presence, extent and scope of any logistics performance problem.
+"Manifestation” indicators primarily serve for detecting “symptoms” and establishing the presence, extent and scope of any logistics performance problem.
 - Purpose: monitoring
 - Question to be answered: what is the quality of services?
 - Clearly defined target range of the indicator
-- Question: is there a problem and if so what is the extent and scope?
+- Question: is there a problem and if so, what is the extent and scope?
 - If the problem is confirmed: analyse root cause(s)
 Only two “manifestation” indicators are sufficient for covering logistics services at end-user level: 
 - Stock shortages and stockouts measured as stock coverage time
-- Inappropriate utilization / stock losses
+- Inappropriate utilisation / stock losses
 - Health programme specific indicators
 The stock availability is commonly aggregated across the stock item list at a healthcare facility or across several healthcare facilities and measured as stock availability or "On Shelf Availability" (OSA).  
 In fact, the multitude of metrics which are in use are simply variation or combination of the key performance indicators above and therefore redundant. As long as a different measurement does not result in identifying an additional root cause or a different corrective action, it is superfluous.
