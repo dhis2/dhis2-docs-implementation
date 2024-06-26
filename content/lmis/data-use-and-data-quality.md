@@ -5,7 +5,10 @@ Breno: targeted to implementers and system administrators, and specific to DHIS2
 
 ##	LMIS data quality
 
-[To discuss: The entities of all metrics is the quantity of an item (healthcare product) which are always measured in units of "Each" (single tablet, ampoule, compress) and never in unit packs.
+xxx
+- unit of measure must be used consistently across organisation units and over time in order to be comparable in analytics
+- use the unit of measure which is used in the paper-based and electronic stock management systems according to national policies and procedures
+- if there is a choice between different unit of measures, the system using "Each" (the smallest usable unit such as one tablet, one ampoule, one compress or one cannula) is recommended as packaging quantities between manufacturers may differ and may change
 xxx
 
 ### Introduction
@@ -276,6 +279,8 @@ The performance management builds on first determining what factors influence lo
 
 ###	Benchmarks
 The table below provides an overview comparison of authoritative standards for logistics metrics from the Target Software Standards (TSS, Gavi), Data for Immunization Supply Chain (DISC, approved by Gavi Alliance Partners), Immunization Agenda 2030 (IA2030, IA2030 Coordination Group)  and The Global Fund.  
+
+xxx - add the metrics from 20221130 SC Performance Management Working Group - Deliverable DOWNLOADED 06-06-2024.pptx as requested by Breno - which seem to match the TSS 100%, wait for confirmation on quotable reference xxx
 
 | **Metric**  | **TSS** | **DISC** | **IA2030S** | **TGF** | **PEPFAR** | **USAID** |
 | :--- |  :---: |  :---: |  :---: |  :---: |  :---: |  :---: |
