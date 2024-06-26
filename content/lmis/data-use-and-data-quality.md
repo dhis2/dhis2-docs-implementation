@@ -1,4 +1,4 @@
-# DATA USE AND DATA QUALITY
+# DATA QUALITY AND DATA USE
 
 This technical implementation guidance is intended for facilitating the analysis and improvement of the data quality and data use of of logistics stock data collected through DHIS2, either through monthly stock reporting forms or using the DHIS2-RTS (Real-Time Stock management system). It is primarily addressed to DHIS2 implementers and administrators as well as any logistics and supply chain management staff which are engaged in analysing logistics service performance at the healthcare facility level and implementing corrective action for continously improving services.
 
@@ -181,8 +181,8 @@ If the setting "Store zero data values" is set, zero values are recorded in the 
 Maintenance > Data set > "All fields for data elements required"
 
 If the Data set is tagged as "All fields for data elements required" then the user must complete (enter values for) all data fields in the Data entry form. If this setting is selected and has been selected from the onset of data collection, then the system will ensure that all data has been recorded if the respective completeness report indicates 100% completion. In this case, the data completeness analysis can be limited to only two cases:
-- time periods when that setting was not (yet) selected
-- time periods for which the completeness report is not 100%
+- Time periods when that setting was not (yet) selected
+- Time periods for which the completeness report is not 100%
 
 The objective of the data value completeness analysis is determining how consistently data is actually being collected. Data value completeness can be determined across the following dimensions:
 - All data fields
@@ -233,7 +233,7 @@ DHIS2 natively features the following reports for any kind of Data set:
 - Actual reports on time
 - Expected reports
 - Reporting rate
-- Reporting rate on time
+- Reporting rate on time  
 For details please refer to the Implementation guidance chapter on "Data Quality Principles"  
 https://docs.dhis2.org/en/implement/data-quality/principles.html
 
@@ -409,12 +409,12 @@ A detailed interpretation and the recommended action are explained in the sectio
 Except for the rare case of fully digitised stock management systems, manual records such as batch cards, stock cards and various ledgers are used for recording all stock transactions (such as stock receipts and distributions). At the end of every reporting period those records are reviewed, the required data values are tallied up with a calculator which are then reported.
 
 #### General principles
-- all logistics data needs to be collected with the same periodicity (for example, if stock on hand is recorded and reported monthly, distributions also need to be recorded and reported monthly)
-- real-time data collection, such as with the DHIS2-RTS (Real-Time Stock management system) allows generating daily, monthly and annual reports automatically by the system
-- daily reporting periods are not advisable as they are associated with a very high workload on (health) staff for daily reporting
-- weekly reporting periods are not advisable because they are never commensurate with monthly and annual periods
-- in terms of logistics, logistics data should be recorded and reported for all healthcare goods which are (regularly) managed by a health facility (and not only for "tracer" products)
-- collected logistics data is only meaningful if it is regularly and systematically collected for all items and all transactions
+- All logistics data needs to be collected with the same periodicity (for example, if stock on hand is recorded and reported monthly, distributions also need to be recorded and reported monthly)
+- Real-time data collection, such as with the DHIS2-RTS (Real-Time Stock management system) allows generating daily, monthly and annual reports automatically by the system
+- Daily reporting periods are not advisable as they are associated with a very high workload on (health) staff for daily reporting
+- Weekly reporting periods are not advisable because they are never commensurate with monthly and annual periods
+- In terms of logistics, logistics data should be recorded and reported for all healthcare goods which are (regularly) managed by a health facility (and not only for "tracer" products)
+- Collected logistics data is only meaningful if it is regularly and systematically collected for all items and all transactions
 
 ####	Stock receipt
 Ideally, collection of stock receipt data should not be necessary if a national eLMIS system is implemented which keeps accurate records of the shipments to each health facility which, with some delay, correspond to the stock receipts. For each consignment, national eLMIS systems should track the shipment date as well as the date on which the health facility confirmed actual receipt, separately.
@@ -802,7 +802,6 @@ Determining, initiating and implementing corrective action is the key step for g
 The implementation of a real time stock management system in combination with a well-developed national eLMIS system would allow developing an “expert system” which continuously measures and monitors a comprehensive set of performance metrics and displays the root cause analysis as well as the required corrective actions on a dashboard without the need for any further (human) analysis.
 
 ###	Summary with flow chart
-Xx
 
 ![Alt text](image-265.png)
 
@@ -818,8 +817,8 @@ Xx
 | Demand decreasing | Population decrease, shortage of vaccines, decrease of vaccine seeking | Analyse potential reasons for demand decrease and only review and adjust inventory control parameters if the decrease is confirmed to be permanent |
 | Demand intermittent [include erratic here?] | Shortage of vaccines, (intermittent) problems of access to vaccination services
  | Analyse potential reasons for intermittent demand and review and adjust inventory control parameters if caused by shortages and stockouts |
-| Demand erratic | ?? | ??Stabilize demand? |
-| Demand patterns of different items correlated | More likely to be a supply problem? | ?? |
+| Demand erratic | Erroneous data, unsystematic orders from downstream (wards, CHW etc.) | Stabilize demand |
+| Demand patterns of different items correlated | More likely to be a supply problem | Improve supply from upstream medical stores |
 
 **Analysis and (corrective) action - Stock on hand**
 The value of analysing stock on hand levels (which make no indication of customer demand) and their fluctuations are of much less importance than the analysis of stock coverage times.
