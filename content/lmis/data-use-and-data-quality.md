@@ -698,9 +698,6 @@ While in most cases users and managers start out designing dashboards and visual
  - collect the data (reliably, accurately and timely, ideally in real-time)
  - what representation of the data and metrics is most suitable for analytics and visualisations
  - only after all of the above, visualisations and dashboards are developed
- xxx
- Question: Confirm whether all DHIS2 metrics are "Manifestation" indicators?
-and whether all root cause indicators are only available in national eLMISs?
 
 ###	General principles
 As for the entire concept, the ultimate objective of performance management is improving health services for end-users, patients and health professionals rather than (only) complying with national and donor reporting requirements.  
@@ -731,6 +728,7 @@ Other principles are:
 
 ###	"Manifestation" indicators ("symptoms")
 "Manifestation” indicators primarily serve for detecting “symptoms” and establishing the presence, extent and scope of any logistics performance problem.
+Generally speaking, the indicators which can be calculated from stock data collected in DHIS2 are limited to this type of "Manifestation" indicators.
 - Purpose: monitoring
 - Question to be answered: what is the quality of services?
 - Clearly defined target range of the indicator
@@ -745,6 +743,7 @@ In fact, the multitude of metrics which are in use are simply variation or combi
 
 ###	Root cause indicators ("diagnosis")
 But measuring in itself is (nearly) useless and if there is no ability or willingness to improve logistics services then there is no point in measuring them in the first place. Therefore, if a “symptom” is detected, the “root cause” indicators serve to “diagnose” the underlying problem which allows taking appropriate corrective action.
+Generally speaking, only the upstream, national eLMIS will allow generating and analysising "Root cause" indicators.
 - Purpose: determining problem causes
 - Manifestation indicators have several root causes, but
 - One indicator per root cause
