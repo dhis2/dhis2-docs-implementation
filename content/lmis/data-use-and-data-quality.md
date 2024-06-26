@@ -222,6 +222,9 @@ It is possible, but very unlikely, that data values in a time series will be ide
 **Correlation**
 Data values which are highly correlated are also suspicious for being accurate. For example, if, over several time periods, stock receipts and stock distributions are identical this could only be explained by continuous shortages (whatever is received is being distributed immediately) or by "copy/pasting" data without measuring (counting etc.).
 
+**Outlier analysis**
+xxx - To be completed, use native outlier report, check values with highest z-score and then go down step by step. It is not possible to define a cut-off threshold above which values should be considered as outliers. But the higher the z-score, the more likely it is an outlier. The analysis will have to be done for each item individually as there are "natural" causes for outliers such as vaccination campaigns or a large influx of patients in a hospital. - xxx
+
 ###	Data report completeness and timeliness
 DHIS2 natively allows to set a "Days after period end to qualify for timely data submission" which allows to then determine whether reports were submitted on time. At the end of the monthly data recording users confirm completion by selecting the "Complete" button on the data entry screen.  
 This binary native DHIS2 reporting functionality allows users to confirm completeness of an entire Data set. The collected data depends on whether "All fields for data elements required" is configured in the Data set or not. If "All fields for data elements required" is not selected, the user can report the Data set as "Complete" even without entering a single value. If "All fields for data elements required" is collected the user will be prevented from selecting "Complete" unless all data fields are filled. However, if the user is forced to complete all data fields before selecting "Complete" for a Data set, the user may be tempted to record random values which will impair data quality.
