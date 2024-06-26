@@ -214,7 +214,7 @@ The required metadata settings seetings are presented in the order in which it i
 >>7.3 Predictor  
 >>7.4 Predictor group  
 
-### 1 CATEGORY
+### 1 Category
 This metadata is needed (only) for configuring an "aggregate" default Data entry form for "hosting" the daily and monthly aggregated Tracker data and making it available for various analytics visualizations and dashboards. In case the DHIS2-RTS mobile app (temporarily) falls, the aggregate Data Entry form can also be used for collecting monthly stock data.
 
 #### 1.1 Category option
@@ -410,7 +410,7 @@ Note that the Category option names are intentionally kept short to reduce the o
 >**Skip category total in report \(*)**: check (appears as white tick in a blue square)   
 >**Categories**: "RTS - Monthly stock report"
 
-### 2 DATA ELEMENT
+### 2 Data element
 Data elements represent the items (healthcare products) for which logistics data is recorded and managed.
 
 All health care products which are registered in the DHIS2-RTS as "Tracked Entity Instance" (TEIs) need to be "mirrored" as identical Data Elements for configuring the Data Sets which are needed for every Organization Unit as a backup system.
@@ -437,7 +437,7 @@ Below the configuration for a single Data Element is presented which needs to be
 >**Category combination \(*)**: "RTS - Monthly stock report"  
 >**Aggregation levels**: "Facility"  
 
-### 2.2 Data element - "Tracker"
+#### 2.2 Data element - "Tracker"
 These Data elements are required for configuring the Program stages of the DHIS2-RTS Tracker Program. Note that the Data element names must not have any prefixes or suffixes as these are redundant and will appear in the Line Listing.
 >**1 Deliver to**  
 >>**Name \(*)**: "Deliver to"  
@@ -756,7 +756,7 @@ Note that the same "Program Indicator" can be used for the Predictor for the "MT
 
 ### 5 Organisation Unit
 
-### 5.1 Organisation Unit
+#### 5.1 Organisation Unit
 The Organisation Unit, Organisation Unit group and Organisation Unit level are created and added according to national protocols and policies and/or existing DHIS2 configuration and there are no specific requirements for using the DHIS2-RTS.
 
 ### 6 Program
