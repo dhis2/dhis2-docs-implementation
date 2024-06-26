@@ -1,15 +1,13 @@
 # DATA USE AND DATA QUALITY
 
-[Introduction: audience, purpose, use, related only to DHIS2 LMIS or a general guidance?
-Breno: targeted to implementers and system administrators, and specific to DHIS2. Not for high level people, this is to be a comprehensive technical reference for implementers/sys admins... technicians.]
+This technical implementation guidance is intended for facilitating the analysis and improvement of the data quality and data use of of logistics stock data collected through DHIS2, either through monthly stock reporting forms or using the DHIS2-RTS (Real-Time Stock management system). It is primarily addressed to DHIS2 implementers and administrators as well as any logistics and supply chain management staff which are engaged in analysing logistics service performance at the healthcare facility level and implementing corrective action for continously improving services.
 
 ##	LMIS data quality
 
-xxx
-- unit of measure must be used consistently across organisation units and over time in order to be comparable in analytics
-- use the unit of measure which is used in the paper-based and electronic stock management systems according to national policies and procedures
-- if there is a choice between different unit of measures, the system using "Each" (the smallest usable unit such as one tablet, one ampoule, one compress or one cannula) is recommended as packaging quantities between manufacturers may differ and may change
-xxx
+Most collected and analysed logistics data, such as stock on hand or stock distributions, refers to quantities of health care products. In order to ensure consistency and comparability of data across Organization units and reporting periods, the unit of measures used for recording this data must also be used consistently across Organization units and reporting periods. 
+The unit of measure used for the digital reporting of stock data should correspond to national policies and procedures which also apply to paper-based reporting systems.
+If DHIS2 is integrated with an upstream, national eLMIS the unit of measure used in DHIS2 must correspond to (one of) the unit of measure(s) of the this upstream, national eLMIS system which usually feature management at the item ("Each") as well as secondary, tertiary, pallet packaging etc. level.
+However, if there is a choice between different unit of measures, the system using "Each" (the smallest usable unit such as one tablet, one ampoule, one compress or one cannula) is recommended by default as packaging quantities may differ between manufacturers and a given manufacturer may change the packaging quantities for the same product over time.
 
 ### Introduction
 While logistics and supply chain management is usually associated with the production, storage and distribution of (commercial) products, the associated data is far more important but usually as invisible as the roots of a tree. The physical flow (storage and distribution) of goods and consignments is by far the easiest task in logistics and supply chain management while the real, albeit less obvious, challenges are managing the complex flows of associated data: obtaining accurate as well as up-to-date logistics data in a timely way and sharing them throughout the supply network in real-time in order to allow decision-making which ensures that the required quantities of required healthcare products are in the places where they are required for providing healthcare services at the time the are required.  
@@ -223,7 +221,8 @@ It is possible, but very unlikely, that data values in a time series will be ide
 Data values which are highly correlated are also suspicious for being accurate. For example, if, over several time periods, stock receipts and stock distributions are identical this could only be explained by continuous shortages (whatever is received is being distributed immediately) or by "copy/pasting" data without measuring (counting etc.).
 
 **Outlier analysis**
-xxx - To be completed, use native outlier report, check values with highest z-score and then go down step by step. It is not possible to define a cut-off threshold above which values should be considered as outliers. But the higher the z-score, the more likely it is an outlier. The analysis will have to be done for each item individually as there are "natural" causes for outliers such as vaccination campaigns or a large influx of patients in a hospital. - xxx
+DHIS2 Data Quality app natively features the analysis of time series and the detection of outliers either by defining a treshold either as an absolute number or Z-score. The "Outlier Detection" table will then display a detailed report by Data element indicating the values, their mean and standard deviation together with the minimum and maximum values for the respective Data element. Scatter plots are another native DHIS2 feature which allow displaying and detecting outliers in a chart.
+As the determination of whether individual data values should be considered as outliers depends on various factors such as the frequency of use of healthcare products and their variability, it is not possible to define general thresholds for defining outliers and the analysis will have to be carried out item by item. However, a systematic analysis is still possible by analysing data values with the largest deviation from the mean which have the greatest likelihood of being "real" outliers rather than artefacts. For example, any "normal" distribution quantity may (falsely) appear as an outlier after a prolonged period of stockouts during which no distributions were possible.
 
 ###	Data report completeness and timeliness
 DHIS2 natively allows to set a "Days after period end to qualify for timely data submission" which allows to then determine whether reports were submitted on time. At the end of the monthly data recording users confirm completion by selecting the "Complete" button on the data entry screen.  
@@ -282,8 +281,6 @@ The performance management builds on first determining what factors influence lo
 
 ###	Benchmarks
 The table below provides an overview comparison of authoritative standards for logistics metrics from the Target Software Standards (TSS, Gavi), Data for Immunization Supply Chain (DISC, approved by Gavi Alliance Partners), Immunization Agenda 2030 (IA2030, IA2030 Coordination Group)  and The Global Fund.  
-
-xxx - add the metrics from 20221130 SC Performance Management Working Group - Deliverable DOWNLOADED 06-06-2024.pptx as requested by Breno - which seem to match the TSS 100%, wait for confirmation on quotable reference xxx
 
 | **Metric**  | **TSS** | **DISC** | **IA2030S** | **TGF** | **PEPFAR** | **USAID** |
 | :--- |  :---: |  :---: |  :---: |  :---: |  :---: |  :---: |
@@ -849,7 +846,6 @@ https://docs.dhis2.org/en/implement/chis-implementation/data-quality-and-use.htm
 https://www.who.int/publications/i/item/9789240010567 
     10. Stepwise Toolkit for Planning & Budgeting Interoperability of Digital Health Solutions
 https://a78da35e-056b-4420-8e4f-41e3283327e3.usrfiles.com/ugd/55ae33_5af35824932c48d89287928244b60a8d.pdf 
-xxx
 xxx Monitoring, Evaluation, and Reporting Indicator Reference Guide. PEPFAR. MER 2.0 (Version 2.7), September 2023. 
 
 **The Global Fund**
