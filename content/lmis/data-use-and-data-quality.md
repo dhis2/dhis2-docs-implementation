@@ -824,11 +824,6 @@ Xx
 **Analysis and (corrective) action - Stock on hand**
 The value of analysing stock on hand levels (which make no indication of customer demand) and their fluctuations are of much less importance than the analysis of stock coverage times.
 
-## HMIS/LMIS triangulation
-Keep or leave to HMIS implementation guide?
-Data triangulation, improving health outcomes
-https://drive.google.com/drive/u/0/folders/1PqZzM65TU0Z5zLwe9fyZdvweSEZIf1ZT
-
 ## References
 HISP Centre University of Oslo: "Data Quality and Use, DHIS2 Documentation". Accessed 11.11.2023. https://docs.dhis2.org/en/use/user-guides/dhis-core-version-241/collecting-data/data-quality.html  
 
@@ -836,25 +831,10 @@ The DICE consortium: "Stepwise Toolkit for Planning & Budgeting Interoperability
 
 The Global Fund: "Adjustments to the KPI Framework". The Global Fund, 44th Board meeting, GF/B44/15B, 11-12 November 2020, Virtual. Accessed 26.10.2023. https://www.theglobalfund.org/media/8d89221958393a7/bm44_15b-adjustmentskpiframework_report_en.pdf  
 
-The Global Fund: "Key Performance Indicators (KPIs) Handbook for the 2023-2028 Strategy. PowerPoint presentation. The Global Fund, May 2023. Accessed 26.10.2023. https://www.theglobalfund.org/media/12681/strategy_globalfund2023-2028-kpi_handbook_en.pdf  
-
 The Global Fund: "Information Session: Supply Chain and Health Services Spot Checks". The Global Fund, Monitoring & Oversight Workstream, 23 September 2021. Accessed 26.10.2023. https://www.theglobalfund.org/media/11402/  fundingmodel_supply-chain-health-services-spot-checks-information-session_presentation_en.pdf  
+
+The Global Fund: "Key Performance Indicators (KPIs) Handbook for the 2023-2028 Strategy. PowerPoint presentation. The Global Fund, May 2023. Accessed 26.10.2023. https://www.theglobalfund.org/media/12681/strategy_globalfund2023-2028-kpi_handbook_en.pdf  
 
 UNICEF: "Data quality Framework". United Nations Childre's Fund (UNICEF), Division of Data, Analytics, Planning and Monitoring. New York: December 2021. Accessed 26.10.2023. file:///home/user/Downloads/Data-Quality-Framework-1.pdf  
 
-
-xxx
-https://docs.dhis2.org/en/implement/chis-implementation/data-quality-and-use.html?h=data+quality
-(Breno) Overlapping or related work with the following publications? To be confirmed and eventually cited:
-
-    8. Recommendations on digital interventions for health system strengthening 2019 https://www.who.int/publications/i/item/9789241550505 
-    9. Digital Implementation Investment Guide (DIIG): Integrating Digital Interventions into Health Programmes 2020
-https://www.who.int/publications/i/item/9789240010567 
-    10. Stepwise Toolkit for Planning & Budgeting Interoperability of Digital Health Solutions
-https://a78da35e-056b-4420-8e4f-41e3283327e3.usrfiles.com/ugd/55ae33_5af35824932c48d89287928244b60a8d.pdf 
-xxx Monitoring, Evaluation, and Reporting Indicator Reference Guide. PEPFAR. MER 2.0 (Version 2.7), September 2023. 
-
-**The Global Fund**
-https://www.theglobalfund.org/media/11402/fundingmodel_supply-chain-health-services-spot-checks-information-session_presentation_en.pdf
-
-Last edited on 05.06.2024
+Last edited on 26.06.2024
