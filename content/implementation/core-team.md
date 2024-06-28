@@ -31,43 +31,43 @@ We suggest the team is built in the following order
 
 === "Operational Lead"
 
-The DHIS2 operational lead leads the DHIS2 core team, and has a project management role for DHIS2 projects and initiatives (which can also be delegated to core team members). He/she has the overall responsibility for coordinating with internal and external groups and partners on activities related to DHIS2. It is critical that this role/team is responsible for facilitating and maintaining an integrated DHIS2 serving routine information needs of the whole ministry/health government and not just a sub-system, e.g. parallel system for health statistics. 
+>  This role leads the DHIS2 core team, and has a project management role for DHIS2 projects and initiatives (which can also be delegated to core team members). He/she has the overall responsibility for coordinating with internal and external groups and partners on activities related to DHIS2. It is critical that this role/team is responsible for facilitating and maintaining an integrated DHIS2 serving routine information needs of the whole ministry/health government and not just a sub-system, e.g. parallel system for health statistics. 
 
 === "Implementer"
 
-Implementers are responsible for operationalizing and scaling up the DHIS2 configuration. Implementers work with all other members within the DHIS2 technical team and across departments and programmes within the Ministry in order to understand a system’s requirements and develop solutions to meet them. This includes adding additional functionality, integrating new programs, modifying routines to incorporate DHIS2 and supporting users to use the application. 
+> Implementers are responsible for operationalizing and scaling up the DHIS2 configuration. Implementers work with all other members within the DHIS2 technical team and across departments and programmes within the Ministry in order to understand a system’s requirements and develop solutions to meet them. This includes adding additional functionality, integrating new programs, modifying routines to incorporate DHIS2 and supporting users to use the application. 
 
-Implementers will also consider how DHIS2 fits into a health information architecture, focusing on what type of information needs to be exchanged and what type of work processes or agreements may facilitate this exchange. Processes and procedures to maintain the integrity of the DHIS2 system to operate efficiently over an extended time period, including upgrade procedures, managing metadata and users, etc. are often also drafted and enforced by the implementation team.
+> Implementers will also consider how DHIS2 fits into a health information architecture, focusing on what type of information needs to be exchanged and what type of work processes or agreements may facilitate this exchange. Processes and procedures to maintain the integrity of the DHIS2 system to operate efficiently over an extended time period, including upgrade procedures, managing metadata and users, etc. are often also drafted and enforced by the implementation team.
 
 === "Trainer"
 
-A trainer supports the training of staff to use DHIS2 by developing training material, documentation and job aids for use within the implementation, and provide both training of trainers and direct end-user training.  Trainers can operate at various levels, focusing on fundamental concepts including data-entry, to more advanced concepts such as data use or system administration. 
+> A trainer supports the training of staff to use DHIS2 by developing training material, documentation and job aids for use within the implementation, and provide both training of trainers and direct end-user training.  Trainers can operate at various levels, focusing on fundamental concepts including data-entry, to more advanced concepts such as data use or system administration. 
 
-Training and support staff will work to establish mechanisms for providing end-user support on DHIS2, coordinating with local DHIS2 administrators at the sub-national level. These sub-national level administrators will serve as the first point of contact for end users, whilst the training and support staff of the national core team will support issues that can not be resolved locally.
+> Training and support staff will work to establish mechanisms for providing end-user support on DHIS2, coordinating with local DHIS2 administrators at the sub-national level. These sub-national level administrators will serve as the first point of contact for end users, whilst the training and support staff of the national core team will support issues that can not be resolved locally.
 
-Training and user support staff will also need expertise in DHIS2, which necessitates some overlap in the tasks with staff working on DHIS2 design, customisation and system administration. While experts in fields such as adult education or teaching can support creating structures for training, a person experienced in the use of the DHIS2 concept being discussed will need to be involved in the training of said concept.
+> Training and user support staff will also need expertise in DHIS2, which necessitates some overlap in the tasks with staff working on DHIS2 design, customisation and system administration. While experts in fields such as adult education or teaching can support creating structures for training, a person experienced in the use of the DHIS2 concept being discussed will need to be involved in the training of said concept.
 
 === "Server Administrator"
 
-A server administrator is responsible for managing both the server(s) and DHIS2 instances that contribute to an implementation or configuration. For the server, this includes security updates, performance monitoring, documentation and implementation of backup strategies. For the DHIS2 instances this can include DHIS2 version upgrades, managing the instances (creating, moving, removing instances), monitoring their uptime, etc. This role is crucial to ensuring DHIS2 can be accessed and is working well. A server administrator may do all of these tasks directly or work with a service provider to perform these activities jointly.
+> A server administrator is responsible for managing both the server(s) and DHIS2 instances that contribute to an implementation or configuration. For the server, this includes security updates, performance monitoring, documentation and implementation of backup strategies. For the DHIS2 instances this can include DHIS2 version upgrades, managing the instances (creating, moving, removing instances), monitoring their uptime, etc. This role is crucial to ensuring DHIS2 can be accessed and is working well. A server administrator may do all of these tasks directly or work with a service provider to perform these activities jointly.
 
 ### Contributing Positions
 
 === "Subject Matter Expert"
 
-Subject matter experts have experience on how services are delivered within various settings (schools, health facilities, etc.) and understand the types of information that is required to effectively monitor and evaluate a program's delivery. They will be able to assist with the review and analysis of data, support the implementation of indicator frameworks and contribute to identifying and defining the types of analysis the program should routinely have access to.
+> Subject matter experts have experience on how services are delivered within various settings (schools, health facilities, etc.) and understand the types of information that is required to effectively monitor and evaluate a program's delivery. They will be able to assist with the review and analysis of data, support the implementation of indicator frameworks and contribute to identifying and defining the types of analysis the program should routinely have access to.
 
 === "Program Manager"
 
-Program Manager's coordinate various project's within the specific program they are responsible for. They are often responsible for the outcomes of these projects and for reporting progress directly within their organization (such as a government ministry). They have a broad understanding of their programs monitoring and evaluation needs, including the inputs and outputs required to manage the program effectively. Program manager's should work with the operational lead responsible for implementing DHIS2 in order to communicate their specific requirements. This can be one of their staff or a co-ordinating body, such as the Health Information Systems unit.
+> Program Manager's coordinate various project's within the specific program they are responsible for. They are often responsible for the outcomes of these projects and for reporting progress directly within their organization (such as a government ministry). They have a broad understanding of their programs monitoring and evaluation needs, including the inputs and outputs required to manage the program effectively. Program manager's should work with the operational lead responsible for implementing DHIS2 in order to communicate their specific requirements. This can be one of their staff or a co-ordinating body, such as the Health Information Systems unit.
 
 === "App Developer"
 
-App developer's extend the functionality of DHIS2 by creating custom apps that work within the DHIS2 platform to meet specific requirements that are best suited to a custom solution. App developer's will often work with an implementer in order to understand these requirements in greater detail.
+> App developer's extend the functionality of DHIS2 by creating custom apps that work within the DHIS2 platform to meet specific requirements that are best suited to a custom solution. App developer's will often work with an implementer in order to understand these requirements in greater detail.
 
 === "Security Manager"
 
-A security expert will understand both legal frameworks/international best practices for protecting information as well as various procedures and technical methods that can be used to implement these frameworks and practices. Ideally, they should inform practices such as the creation and sharing of users, storage of data, etc. and provide information on country-wide policies related to security. 
+> A security expert will understand both legal frameworks/international best practices for protecting information as well as various procedures and technical methods that can be used to implement these frameworks and practices. Ideally, they should inform practices such as the creation and sharing of users, storage of data, etc. and provide information on country-wide policies related to security. 
 
 ## Required Competencies
 
