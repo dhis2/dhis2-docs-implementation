@@ -28,6 +28,8 @@ It is suggested that core positions are dedicated, full time roles working on th
 
 > Implementers will also consider how DHIS2 fits into a health information architecture, focusing on what type of information needs to be exchanged and what type of work processes or agreements may facilitate this exchange. Processes and procedures to maintain the integrity of the DHIS2 system to operate efficiently over an extended time period, including upgrade procedures, managing metadata and users, etc. are often also drafted and enforced by the implementation team.
 
+> The implementer role is subdivided into Implementer - Program and Implementer - Technical. This reflects the need of this role to have some flexibility. The Implementer - Program role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The Implementer - Technical role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
+
 === "Trainer"
 
 > A trainer supports the training of staff to use DHIS2 by developing training material, documentation and job aids for use within the implementation, and provide both training of trainers and direct end-user training.  Trainers can operate at various levels, focusing on fundamental concepts including data-entry, to more advanced concepts such as data use or system administration. 

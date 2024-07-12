@@ -8,7 +8,7 @@ We can do a quick comparison of describing an SOP vs training material with ***u
 |---	|---	|
 | Describes the step-by-step process of creating a user in DHIS2: <ul> <li>What app to access</li> <li>Where to click within DHIS2 to create a new user</li><li>What each of the fields in the users app means</li><li>How to add user roles to a user</li><li>How to assign organisation units to a user</li><li>How to assign a user to user groups</li><li>What each of the fields in the users app means</li><li>Mandatory fields to fill in</li><li>Etc.</li></ul>  	| Describe the process to manage and administer users as well as deal with requests for new users <ul><li>How are new users requested</li><li>Who is allowed to create a new user</li><li>What are the users roles and groups in the system</li><li>How are these roles and groups used to build a new user based on their function in the system</li><li>How is organisation unit access determined</li><li>How is metadata and data access determined</li><li>How are account details created (naming conventions, passwords, etc.) and shared</li></ul>	||
 
-## Creating and Implementing and SOP
+## Creating and Implementing and SOPs
 
 > **Important**
 >
@@ -23,6 +23,8 @@ We can do a quick comparison of describing an SOP vs training material with ***u
 3. Drafting and testing the SOPs
 4. Training on the SOPs
 5. Monitoring their implementation
+
+![creating_sops](resources/images/sop_steps.png)
 
 ### Review of the topic
 
