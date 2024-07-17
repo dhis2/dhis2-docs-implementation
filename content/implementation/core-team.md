@@ -150,7 +150,7 @@ We can divide capacity building strategies into two components:
 
 For a detailed breakdown on developing learning solutions, please refer to this [link](https://docs.dhis2.org/en/topics/training-docs/general-guidance/capacity-building-considerations.html#developing-new-learning-solutions)
 
-For HR Development, our main focus is on building the core team as we have outlined here. In order to identify members of the core team and create long-term strategies for developing their capacity, we suggest that a couple of complementary activities are performed.
+For HR Development, our main focus is on building the core team as we have outlined here in the [Core Positions](#core-positions) section. In order to identify members of the core team and create long-term strategies for developing their capacity, we suggest that a couple of complementary activities are performed.
 
 1. Identification of roles and responsibilities based on the core team structure adopted in-country. This is to include the names of the individuals that will fulfill these roles.
 2. A capacity building needs assessment. This assessment is meant to set a baseline for the skills currently possessed within the core team, as well as to identify what current gaps are in order to build long-term plans to address them.
@@ -211,6 +211,8 @@ The core team capacity building plan is meant to take the inputs from the capaci
 
 This document describes the capacity building plan for strengthening the/establishing a core DHIS2 team within the Ministry of Health. This includes the different roles defined within the core team, and a budgeted overview of capacity building activities for the specific staff members filling these roles. The activities and budget should be maintained in a separate spreadsheet, and it is recommended it is updated at least annually.
 
+In addition, this document has sample terms of reference (ToRs) for each of the positions identified in the [Core Positions](#core-positions) section of this document.
+
 With the results of the capacity building needs assessment available, you should be able to identify the types of training activities that each member of the core team needs to receive. This can be a mix of remote and in-person training events, on-the-job coaching, academy attendance, etc. The main goal is to address the gaps you have identified in a structured fashion, slowly removing priority gaps that exist within the core teams skill set. 
 
 The core team capacity building plan is also meant to be budgeted. This means that the costs for each activity that has been identified is outlined clearly. Ideally, a funding source will also be identified; however if it is not the case where funding is available for these acticities, the plan can be used to advocate for long-term capacity building with interested stakeholders. 
@@ -220,3 +222,10 @@ The core team capacity building plan is also meant to be budgeted. This means th
 As additional inputs into the Core Team Capacity Building plan, a learning path tool has been developed. This tool uses the roles identified in the DHIS2 core team and provides recommended academy courses that they can take. Note that this does not mean a person may need to take all of the academies identified via the tool, but it is likely they would benefit from learning the skills associated with each of these academies. While they can attend an academy to learn these skills, they can also use online resources or receive training locally. 
 
 [Access the learning paths tool here](https://dhis2.org/academy/learning-paths/)
+
+## Resources Summary
+
+1. [Description of learning solutions](https://docs.dhis2.org/en/topics/training-docs/general-guidance/capacity-building-considerations.html#developing-new-learning-solutions)
+2. [Capacity building needs assessment](https://docs.google.com/spreadsheets/d/1hDfVhTC17STM4x1cbYWJEPLnOuvFmyuJEe_vnxHuf5U/edit?usp=sharing)
+3. [Core team capacity building plan](https://docs.google.com/document/d/1Y97RPHXguY6CWn-FwBxdj_6mG0Xj9DHiniL9aiQGsDA/edit?usp=sharing)
+4. [DHIS2 Learning Paths](https://dhis2.org/academy/learning-paths/)
