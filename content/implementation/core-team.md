@@ -141,8 +141,82 @@ Within these areas additional opportunities, such as traveling for conferences a
 
 ## Capacity Building Strategies
 
-## Core Team Needs Assessment
+![Capacity_Building_Strategies](resources/images/core_team/cb_strategies.png)
 
-## Core Team Plan
+We can divide capacity building strategies into two components:
+
+1. Learning Solutions
+2. HR (Human Resources) Development
+
+For a detailed breakdown on developing learning solutions, please refer to this [link](https://docs.dhis2.org/en/topics/training-docs/general-guidance/capacity-building-considerations.html#developing-new-learning-solutions)
+
+For HR Development, our main focus is on building the core team as we have outlined here. In order to identify members of the core team and create long-term strategies for developing their capacity, we suggest that a couple of complementary activities are performed.
+
+1. Identification of roles and responsibilities based on the core team structure adopted in-country. This is to include the names of the individuals that will fulfill these roles.
+2. A capacity building needs assessment. This assessment is meant to set a baseline for the skills currently possessed within the core team, as well as to identify what current gaps are in order to build long-term plans to address them.
+3. A core team capacity building plan. The core team plan is meant to use the results of the core team needs assessment in order to build long-term development plans for each member of the core team. 
+
+### Capacity Building Needs Assessment
+
+The DHIS2 Capacity Building Needs Assessment is a tool developed to assess the capacity of each individual within a DHIS2 core team. The tool is meant to be modular and will need modification in order to make it work within specific contexts. An understanding of the DHIS2 technical areas and contributing skillsets is needed in order to optimize the use of this assessment tool. 
+
+[Access the assessment](https://docs.google.com/spreadsheets/d/1hDfVhTC17STM4x1cbYWJEPLnOuvFmyuJEe_vnxHuf5U/edit?usp=sharing)
+
+***Assessment Objectives***
+
+1. To provide an overview of the strengths and gaps for each member of the DHIS2 core team
+2. To identify specific DHIS2 skills for each member of the DHIS2 core team that need support for improvement
+3. To provide inputs into an overall DHIS2 core team improvement plan
+
+***Target Audience***
+
+The target audience for the capacity building needs assessment are any countries that either have implemented DHIS2 already and are considering strengthening their DHIS2 core team, or any country that is considering implementing DHIS2 and wants to evaluate their current skills in order to identify which specific areas to focus capacity building initiatives around. 
+ 
+***Assessment Process***
+
+The DHIS2 capacity building needs assessment is meant to be self-administered, with support from relevant partners that can provide guidance on understanding the related technical areas discussed in this template.  The technical areas are seperated into the 5 core roles identified in the DHIS2 core team planning guidance:
+1. Operational Lead
+2. Implementer - Program
+3. Implementer - Technical
+4. Trainer
+5. Server Administrator
+
+For each role, skill categories are listed and can be rated on a score of 1-4 (or not applicable)
+
+The template itself is meant to serve as reference "menu" of skill categories. These skill categories will need to be further divided into granular areas that may need improvement. As an example, within the role "Implementer - Technical," a skill category to be assessed is "Create and manage user-based access controls." This category contains references to user authorities, user roles, user groups and metadata and data sharing. The person assessed may be well versed in creating user roles and users, but may not be able to adequately manage the application of sharing settings; therefore this particular skill would be the area of focus within this category. 
+
+In some cases, a single individual may perform several of the tasks outlined for the roles above, and as such an assessment catered to the combined skillset will need to be made. For example, if an individual is serving the role of both Implementer - Program and Trainer, then these two skill profiles will need to be combined, and the person should be assessed on any of the relevant skill categories that are available within these profiles. 
+
+> **Important**
+>
+> For each individual, a tailored version of the template will need to be provided to them. For example, if a person is not expected to perform any type of operational lead or server administrator tasks, then these sections should NOT be included in the needs assessment template that is provided to them.*
+
+***Results and Long-Term Planning***
+
+> **Note** 
+> 
+> There is no "scoring" system in place for this assessment, as its objectives are not meant to provide a grade but to identify gaps and create an improvement plan. The focus of the results is to incentive individuals to increase their capacity, not to deter individuals from giving honest responses.
+
+Once the individual skills assessments have been performed, a capacity building plan based on these asessments needs to be created. An accompanying template for the capacity building plan is available and can be referred to for further instruction on how to design the plan based on inputs from this assessment.
+
+Ideally, these assessments results shoud be used to provide individual staff members a long-term view on how gaps in their capacity will be addressed over time. 
+
+By completing the assessment and plan in a structured manner, it also offers an opportunity to present to partners for funding and technical assistance, where additional effort on considering the needs within your setting have been taken into account in order to develop a long-term, strategic plan to deal with capacity gaps that may exist in your setting.
+
+### Core Team Capacity Building Plan
+
+The core team capacity building plan is meant to take the inputs from the capacity building needs assessment and formulate a long-term strategy for addressing gaps that have been identified as a result of the assessment. The core team capacity building plan by its nature takes a modular, linear approach to building capacity. What we mean by this is that there are certain activities that may need to be performed in order; however several activities can take place in parrallel as long as they do not conflict with one another. As an example of this, let us say you have both an implementer - technical and a server administrator that needs training. The server admin may need some skills in Ansible, while the implementer - technical may need to learn more about sharing. These activities can occur in parrallel, but there may be pre-requisites activities that need to occur for each one.
+
+[Access the template](https://docs.google.com/document/d/1Y97RPHXguY6CWn-FwBxdj_6mG0Xj9DHiniL9aiQGsDA/edit?usp=sharing)
+
+This document describes the capacity building plan for strengthening the/establishing a core DHIS2 team within the Ministry of Health. This includes the different roles defined within the core team, and a budgeted overview of capacity building activities for the specific staff members filling these roles. The activities and budget should be maintained in a separate spreadsheet, and it is recommended it is updated at least annually.
+
+With the results of the capacity building needs assessment available, you should be able to identify the types of training activities that each member of the core team needs to receive. This can be a mix of remote and in-person training events, on-the-job coaching, academy attendance, etc. The main goal is to address the gaps you have identified in a structured fashion, slowly removing priority gaps that exist within the core teams skill set. 
+
+The core team capacity building plan is also meant to be budgeted. This means that the costs for each activity that has been identified is outlined clearly. Ideally, a funding source will also be identified; however if it is not the case where funding is available for these acticities, the plan can be used to advocate for long-term capacity building with interested stakeholders. 
 
 ### DHIS2 Learning Paths
+
+As additional inputs into the Core Team Capacity Building plan, a learning path tool has been developed. This tool uses the roles identified in the DHIS2 core team and provides recommended academy courses that they can take. Note that this does not mean a person may need to take all of the academies identified via the tool, but it is likely they would benefit from learning the skills associated with each of these academies. While they can attend an academy to learn these skills, they can also use online resources or receive training locally. 
+
+[Access the learning paths tool here](https://dhis2.org/academy/learning-paths/)
