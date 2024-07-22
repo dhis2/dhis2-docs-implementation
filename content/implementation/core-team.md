@@ -195,7 +195,7 @@ In some cases, a single individual may perform several of the tasks outlined for
 
 > **Note** 
 > 
-> There is no "scoring" system in place for this assessment, as its objectives are not meant to provide a grade but to identify gaps and create an improvement plan. The focus of the results is to incentive individuals to increase their capacity, not to deter individuals from giving honest responses.
+> There is no "scoring" system in place for this assessment, as its objectives are not meant to provide a grade but to identify gaps and create an improvement plan. The focus of the results is to incentivize individuals to increase their capacity, not to deter individuals from giving honest responses.
 
 Once the individual skills assessments have been performed, a capacity building plan based on these asessments needs to be created. An accompanying template for the capacity building plan is available and can be referred to for further instruction on how to design the plan based on inputs from this assessment.
 
