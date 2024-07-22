@@ -189,7 +189,7 @@ In some cases, a single individual may perform several of the tasks outlined for
 
 > **Important**
 >
-> For each individual, a tailored version of the template will need to be provided to them. For example, if a person is not expected to perform any type of operational lead or server administrator tasks, then these sections should NOT be included in the needs assessment template that is provided to them.*
+> For each individual, a tailored version of the template will need to be provided to them. For example, if a person is not expected to perform any type of operational lead or server administrator tasks, then these sections should NOT be included in the needs assessment template that is provided to them.
 
 ***Results and Long-Term Planning***
 
