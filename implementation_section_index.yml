@@ -232,6 +232,8 @@ Health:
       - Release Note: '@github(dhis2-metadata/IMM_AGG, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/IMM_AGG, docs/imm_agg-design.md, master)'
       - Installation: '@github(dhis2-metadata/IMM_AGG, docs/imm_agg-installation.md, master)'
+      - New Antigens Inclusion: 
+        - Malaria: '@github(dhis2-metadata/IMM_AGG, docs/imm_agg-malvac-integration.md, master)'
     - Immunization Triangulation Dashboard:
       - OVERVIEW: '@github(dhis2-metadata/IMM_TRI, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/IMM_TRI, docs/release_note.md, master)'
