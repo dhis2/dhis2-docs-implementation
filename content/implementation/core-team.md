@@ -141,7 +141,7 @@ Within these areas additional opportunities, such as traveling for conferences a
 
 ## Capacity Building Strategies
 
-![Capacity_Building_Strategies](resources/images/core_team/cb_strategies.png)
+![Strategies](resources/images/core_team/cb_strategies.png)
 
 We can divide capacity building strategies into two components:
 
