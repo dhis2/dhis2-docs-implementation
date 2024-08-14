@@ -287,6 +287,7 @@ Health:
       - LMIS Design: '@github(dhis2-metadata/GEN_DOCS, docs/lmis_agg-design.md, master)'
       - Malaria Logistics Design: '@github(dhis2-metadata/MAL_AGG, docs/mal_agg_stk-design.md, master)'
       - Installation: '@github(dhis2-metadata/MAL_AGG, docs/mal_agg-installation.md, master)'
+    - Malaria Vaccine: '@github(dhis2-metadata/IMM_AGG, docs/imm_agg-malvac-integration.md, master)'
   - Non-Communicable Diseases:
     - Hypertension Control:
       - OVERVIEW: '@github(dhis2-metadata/NCD_HTN, docs/overview.md, master)'
