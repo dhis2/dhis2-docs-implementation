@@ -264,8 +264,7 @@ DHIS2 natively features the following reports for any kind of Data set:
 - Expected reports
 - Reporting rate
 - Reporting rate on time  
-For details please refer to the Implementation guidance chapter on "Data Quality Principles"  
-https://docs.dhis2.org/en/implement/data-quality/principles.html
+For details please refer to the Implementation guidance chapter on [Data Quality Principles](#data-quality-principles)
 
 ## LMIS data use
 
@@ -718,8 +717,7 @@ DHIS2 provides native analysis and reports for any DHIS2 Data set which are also
 - Actual reports
 - Reporting completeness
 - Reporting timeliness
-Details are available the general Data quality implementation guide:  
-https://docs.dhis2.org/en/implement/data-quality/principles.html
+Details are available the general [Data quality implementation guide](#data-quality-principles)
 
 ### National eLMIS metrics
 
@@ -893,7 +891,7 @@ The value of analysing stock on hand levels (which make no indication of custome
 
 ## References
 
-HISP Centre University of Oslo: "Data Quality and Use, DHIS2 Documentation". Accessed 11.11.2023. https://docs.dhis2.org/en/use/user-guides/dhis-core-version-241/collecting-data/data-quality.html  
+HISP Centre University of Oslo: "Data Quality and Use, DHIS2 Documentation". Accessed 11.11.2023. https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/collecting-data/data-quality.html  
 
 The DICE consortium: "Stepwise Toolkit for Planning & Budgeting Interoperability of Digital Health Solutions". Digital Health Center of Excellence, not dated. Accessed 26.10.2023. https://a78da35e-056b-4420-8e4f-41e3283327e3.usrfiles.com/ugd/55ae33_5af35824932c48d89287928244b60a8d.pdf  
 
