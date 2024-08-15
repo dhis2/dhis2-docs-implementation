@@ -370,6 +370,7 @@ Logistics:
   - Health Care Product Catalogue (HPC): '@github(dhis2/dhis2-docs-implementation, content/lmis/health-care-product-catalogue.md, lmis_init)'  
   - Monthly Stock Reporting (MSR): '@github(dhis2/dhis2-docs-implementation, content/lmis/monthly-stock-reporting.md, lmis_init)'  
   - Temperature Monitoring Tool (TMT): '@github(dhis2/dhis2-docs-implementation, content/lmis/temperature-monitoring-tool.md, lmis_init)'
+  - Data Quality and Data Use: '@github(dhis2/dhis2-docs-implementation, content/lmis/data-use-and-data-quality.md, lmis_init)'
 Support and documentation:
   - DHIS2 Documentation Guide: '@github(dhis2/dhis2-docs-implementation, content/support_documentation/dhis2-documentation-guide.md, master)'
   - Submitting quick document fixes: '@github(dhis2/dhis2-docs, src/common/submitting-a-doc-fix.md, master)'
