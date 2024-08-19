@@ -28,7 +28,7 @@ We can do a quick comparison of describing an SOP vs training material with ***u
 
 ### Review of the topic
 
-In order to make an SOP about a specifi topic area, you need to understand the topic yourself. This includes the general steps involved in conducting the tasks you are outlining, how these tasks work in the field and best practices that may improve your workflow.
+In order to make an SOP about a specific topic area, you need to understand the topic yourself. This includes the general steps involved in conducting the tasks you are outlining, how these tasks work in the field and best practices that may improve your workflow.
 
 Example : if ***you*** don’t know how to review outliers; how will you make a procedure about it!?
 
@@ -36,11 +36,11 @@ Example : if ***you*** don’t know how to review outliers; how will you make a 
 
 Before you can implement an SOP, the individuals responsible for implementing it must be aware of how to perform all the tasks that are identified.
 
-Example : if ***they*** don’t know about outliers and how to interpret them; how will they follow a procedure to review them!?
+Example: if ***they*** don’t know about outliers and how to interpret them; how will they follow a procedure to review them!?
 
 ### Drafting and testing the SOPs
 
-Take input from relevant stakeholders on the current workflow you are outlining, review of best practices available within the broader DHIS2 community and from your local context and the specific skills you are focusing on and draft the SOP. Test the SOPs internally and see if actually makes any sense; chances are you will have to revise them based on your initial observations.
+Take input from relevant stakeholders on the current workflow you are outlining, review of best practices available within the broader DHIS2 community and from your local context and the specific skills you are focusing on and draft the SOP. Test the SOPs internally and see if they actually makes any sense; chances are you will have to revise them based on your initial observations.
 
 ### Training on the SOPs
 
@@ -54,7 +54,7 @@ Make people aware of these challenges by training individuals to follow the SOP 
 
 ### Monitoring their implementation
 
-After you perform the training, not everything will go to plan. You should follow up with these individuals involved in the process to support them and determine if there are other ways to check if SOPs are being implemented smoothly. 
+After you perform the training, not everything will go to plan. You should follow up with the individuals involved in the process to support them and determine if there are other ways to check if SOPs are being implemented smoothly. 
 
 ## Example SOPs
 
