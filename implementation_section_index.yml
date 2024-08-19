@@ -2,6 +2,7 @@ Implement: '@github(dhis2/dhis2-docs-implementation, content/index.md, master)'
 Implementing DHIS2:
   - Overview: '@github(dhis2/dhis2-docs-implementation, content/implementation/a-quick-guide-to-dhis2-implementation.md, master)'
   - Planning and Budgeting: '@github(dhis2/dhis2-docs-implementation, content/implementation/planning-budgeting.md, master)'
+  - Building a Core Team: '@github(dhis2/dhis2-docs-implementation, content/implementation/core-team.md, master)'
   - Conceptual Design Principles: '@github(dhis2/dhis2-docs-implementation, content/implementation/conceptual-design-principles.md, master)'
   - Setting Up a New Database: '@github(dhis2/dhis2-docs-implementation, content/implementation/setting-up-a-new-database.md, master)'
   - Security Considerations: '@github(dhis2/dhis2-docs-implementation, content/implementation/security_considerations.md, master)'
@@ -38,14 +39,15 @@ Database design:
     - Tracker Analytics: '@github(dhis2/dhis2-docs-implementation, content/database_design/tracker-analytics.md, master)'
     - Interaction Design: '@github(dhis2/dhis2-docs-implementation, content/database_design/interaction-design.md, master)'
 Maintenance and use:
+  - Standard Operating Procedures: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/sops.md, master)'
   - Metadata maintenance:
       - Managing metadata: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/metadata_mgmt_procedures.md, master)'
       - Metadata integrity and quality: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/metadata_quality_assessment.md, master)'
   - Users and user roles: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/users-and-user-roles.md, master)'
-  - Guidelines for offline data entry using DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/offline-data-entry.md, master)'
   - Tracker and aggregate data integration:  '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/tracker-aggregate-integration.md, master)'
   - Data Analysis Tools Overview: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/data-analysis-tools-overview.md, master)'
   - Localization of DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/localization-of-dhis2.md, master)'
+  - Guidelines for offline data entry using DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/offline-data-entry.md, master)'
 Configuration:
   - Transition Kits:
       - Event Reports to Line Listing: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_er_to_ll.md, master)'
