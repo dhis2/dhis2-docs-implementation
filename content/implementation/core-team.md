@@ -23,11 +23,16 @@ It is suggested that except server administration, the core positions are dedica
 This role leads the DHIS2 core team, and has a project management role for DHIS2 projects and initiatives (which can also be delegated to core team members). He/she has the overall responsibility for coordinating with internal and external groups and partners on activities related to DHIS2. It is critical that this role/team is responsible for facilitating and maintaining an integrated DHIS2 serving routine information needs of the whole ministry/health government and not just a sub-system, e.g. parallel system for health statistics. 
 
 **Implementer**
+
 Implementers are responsible for operationalizing and scaling up the DHIS2 configuration. Implementers work with all other members within the DHIS2 technical team and across departments and programmes within the Ministry in order to understand a system’s requirements and develop solutions to meet them. This includes adding additional functionality, integrating new programs, modifying routines to incorporate DHIS2 and supporting users to use the application. 
 
 Implementers will also consider how DHIS2 fits into a health information architecture, focusing on what type of information needs to be exchanged and what type of work processes or agreements may facilitate this exchange. Processes and procedures to maintain the integrity of the DHIS2 system to operate efficiently over an extended time period, including upgrade procedures, managing metadata and users, etc. are often also drafted and enforced by the implementation team.
 
-The implementer role is subdivided into Implementer - Program and Implementer - Technical. This reflects the need of this role to have some flexibility. The Implementer - Program role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The Implementer - Technical role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
+The implementer role is subdivided into 2 roles: 
+- Implementer - Program and 
+- Implementer - Technical 
+
+This reflects the need of this role to have some flexibility. The ***Implementer - Program*** role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The ***Implementer - Technical*** role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
 
 **Trainer**
 
