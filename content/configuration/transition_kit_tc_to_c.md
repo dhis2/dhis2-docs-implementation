@@ -39,9 +39,15 @@ In ***capture***, we have a top bar where both the programs and org units can be
 
 ![](images/ER_TC_C/OU_program.png)
 
-
-
 ### Reviewing the interface
+
+In addition to the org unit and program selectors, other items have been moved around
+
+![](images/ER_TC_C/UI_comparison.png)
+
+1. The working lists in capture are still directly above the front page line list. The working list features have been greatly expanded in capture. 
+2. The Search and Registration buttons are located to the right of the registering unit/org unit dropdown. The order of the buttons has also changed. The registration button is now dynamic and will change its text based on the tracked entity type you are registering. 
+3. Items including downloading the data or modifying which attributes appear on the front page line list have been collapsed into menu buttons in capture. 
 
 ### Registration
 
