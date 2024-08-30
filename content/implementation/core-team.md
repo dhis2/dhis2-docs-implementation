@@ -12,7 +12,9 @@ As part of the DHIS2 core team, we recommend 4 core positions and 4 contributing
 
 ![Core_Team_Roles](resources/images/core_team/core_team_roles.png)
 
-It is suggested that except server administration, the core positions are dedicated full time roles working on the DHIS2 implementation; while the contributing roles are meant to contribute to DHIS2 development in addition to their other routine tasks.
+> **Important**
+>
+> It is suggested that except server administration, the core positions are dedicated full time roles working on the DHIS2 implementation; while the contributing roles are meant to contribute to DHIS2 development in addition to their other routine tasks. The server administrator is identified as a core role due to its importance within the implementation, but may not necessarily be a full time role depending on the infrastructure being managed.
 
 ## Role Descriptions
 
@@ -179,6 +181,7 @@ The target audience for the capacity building needs assessment are any countries
 ***Assessment Process***
 
 The DHIS2 capacity building needs assessment is meant to be self-administered, with support from relevant partners that can provide guidance on understanding the related technical areas discussed in this template.  The technical areas are separated into the 5 core roles identified in the DHIS2 core team planning guidance:
+
 1. Operational Lead
 2. Implementer - Program
 3. Implementer - Technical
@@ -209,15 +212,15 @@ By completing the assessment and plan in a structured manner, it also offers an 
 
 ### Core Team Capacity Building Plan
 
-The core team capacity building plan is meant to take the inputs from the capacity building needs assessment and formulate a long-term strategy for addressing gaps that have been identified as a result of the assessment. The core team capacity building plan by its nature takes a modular, linear approach to building capacity. What we mean by this is that there are certain activities that may need to be performed in order; however several activities can take place in parrallel as long as they do not conflict with one another. As an example of this, let us say you have both an implementer - technical and a server administrator that needs training. The server admin may need some skills in Ansible, while the implementer - technical may need to learn more about sharing. These activities can occur in parrallel, but there may be pre-requisites activities that need to occur for each one.
+The core team capacity building plan is meant to take the inputs from the capacity building needs assessment and formulate a long-term strategy for addressing gaps that have been identified as a result of the assessment. The core team capacity building plan by its nature takes a modular, linear approach to building capacity. What we mean by this is that there are certain activities that may need to be performed in order; however several activities can take place in parrallel as long as they do not conflict with one another. As an example of this, let us say you have both an implementer - technical and a server administrator that needs training. The server admin may need some skills in Ansible, while the implementer - technical may need to learn more about sharing. These activities can occur in parrallel, but there may be pre-requisites activities that need to occur for each one in advance before additional capacity building activities are planned and executed.
 
 [Access the template](https://docs.google.com/document/d/1Y97RPHXguY6CWn-FwBxdj_6mG0Xj9DHiniL9aiQGsDA/edit?usp=sharing)
 
-This document describes the capacity building plan for strengthening the/establishing a core DHIS2 team within the Ministry of Health. This includes the different roles defined within the core team, and a budgeted overview of capacity building activities for the specific staff members filling these roles. The activities and budget should be maintained in a separate spreadsheet, and it is recommended it is updated at least annually.
+This document describes the capacity building plan for strengthening the/establishing a local DHIS2 core team. This includes the different roles defined within the core team and a budgeted overview of capacity building activities for the specific staff members filling these roles. The activities and budget should be maintained in a separate spreadsheet, and it is recommended it is updated at least annually.
 
 In addition, this document has sample terms of reference (ToRs) for each of the positions identified in the [Core Positions](#core-positions) section of this document.
 
-With the results of the capacity building needs assessment available, you should be able to identify the types of training activities that each member of the core team needs to receive. This can be a mix of remote and in-person training events, on-the-job coaching, academy attendance, etc. The main goal is to address the gaps you have identified in a structured fashion, slowly removing priority gaps that exist within the core team's skill set. 
+With the results of the capacity building needs assessment available, you should be able to identify the types of training activities that each member of the core team needs to receive. This can be a mix of remote and in-person training events, on-the-job coaching, academy attendance, etc. The main goal is to address the gaps you have identified in a structured fashion, removing priority gaps over an extended period of time as they are filled within the core team's skill set. 
 
 The core team capacity building plan is also meant to be budgeted. This means that the costs for each activity that has been identified is outlined clearly. Ideally, a funding source will also be identified; however if it is not the case where funding is available for these activities, the plan can be used to advocate for long-term capacity building with interested stakeholders. 
 
