@@ -12,7 +12,11 @@ As part of the DHIS2 core team, we recommend 4 core positions and 4 contributing
 
 ![Core_Team_Roles](resources/images/core_team/core_team_roles.png)
 
-It is suggested that except server administration, the core positions are dedicated full time roles working on the DHIS2 implementation; while the contributing roles are meant to contribute to DHIS2 development in addition to their other routine tasks.
+> **Important**
+>
+>We define ***core positions*** as those that are required positions within the core team. Excluding the server administrator, we recommend these core positions are dedicated, full time roles focused on DHIS2. The server administrator is identified as a core role due to its importance within the implementation, but may not necessarily be a full time role depending on the infrastructure being managed.
+>
+>***Contributing roles*** are roles that provide external input to the DHIS2 core team on an as needed basis. These are roles that are required to ensure success within the DHIS2 implementation, but are not dedicated, full time roles focused only on DHIS2. We see these roles as providing input when needed while still performing their other duties. 
 
 ## Role Descriptions
 
@@ -23,11 +27,16 @@ It is suggested that except server administration, the core positions are dedica
 This role leads the DHIS2 core team, and has a project management role for DHIS2 projects and initiatives (which can also be delegated to core team members). He/she has the overall responsibility for coordinating with internal and external groups and partners on activities related to DHIS2. It is critical that this role/team is responsible for facilitating and maintaining an integrated DHIS2 serving routine information needs of the whole ministry/health government and not just a sub-system, e.g. parallel system for health statistics. 
 
 **Implementer**
+
 Implementers are responsible for operationalizing and scaling up the DHIS2 configuration. Implementers work with all other members within the DHIS2 technical team and across departments and programmes within the Ministry in order to understand a system’s requirements and develop solutions to meet them. This includes adding additional functionality, integrating new programs, modifying routines to incorporate DHIS2 and supporting users to use the application. 
 
 Implementers will also consider how DHIS2 fits into a health information architecture, focusing on what type of information needs to be exchanged and what type of work processes or agreements may facilitate this exchange. Processes and procedures to maintain the integrity of the DHIS2 system to operate efficiently over an extended time period, including upgrade procedures, managing metadata and users, etc. are often also drafted and enforced by the implementation team.
 
-The implementer role is subdivided into Implementer - Program and Implementer - Technical. This reflects the need of this role to have some flexibility. The Implementer - Program role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The Implementer - Technical role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
+The implementer role is subdivided into 2 roles: 
+- Implementer - Program and 
+- Implementer - Technical 
+
+This reflects the need of this role to have some flexibility. The ***Implementer - Program*** role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The ***Implementer - Technical*** role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
 
 **Trainer**
 
@@ -174,6 +183,7 @@ The target audience for the capacity building needs assessment are any countries
 ***Assessment Process***
 
 The DHIS2 capacity building needs assessment is meant to be self-administered, with support from relevant partners that can provide guidance on understanding the related technical areas discussed in this template.  The technical areas are separated into the 5 core roles identified in the DHIS2 core team planning guidance:
+
 1. Operational Lead
 2. Implementer - Program
 3. Implementer - Technical
@@ -204,15 +214,15 @@ By completing the assessment and plan in a structured manner, it also offers an 
 
 ### Core Team Capacity Building Plan
 
-The core team capacity building plan is meant to take the inputs from the capacity building needs assessment and formulate a long-term strategy for addressing gaps that have been identified as a result of the assessment. The core team capacity building plan by its nature takes a modular, linear approach to building capacity. What we mean by this is that there are certain activities that may need to be performed in order; however several activities can take place in parrallel as long as they do not conflict with one another. As an example of this, let us say you have both an implementer - technical and a server administrator that needs training. The server admin may need some skills in Ansible, while the implementer - technical may need to learn more about sharing. These activities can occur in parrallel, but there may be pre-requisites activities that need to occur for each one.
+The core team capacity building plan is meant to take the inputs from the capacity building needs assessment and formulate a long-term strategy for addressing gaps that have been identified as a result of the assessment. The core team capacity building plan by its nature takes a modular, linear approach to building capacity. What we mean by this is that there are certain activities that may need to be performed in order; however several activities can take place in parrallel as long as they do not conflict with one another. As an example of this, let us say you have both an implementer - technical and a server administrator that needs training. The server admin may need some skills in Ansible, while the implementer - technical may need to learn more about sharing. These activities can occur in parrallel, but there may be pre-requisites activities that need to occur for each one in advance before additional capacity building activities are planned and executed.
 
 [Access the template](https://docs.google.com/document/d/1Y97RPHXguY6CWn-FwBxdj_6mG0Xj9DHiniL9aiQGsDA/edit?usp=sharing)
 
-This document describes the capacity building plan for strengthening the/establishing a core DHIS2 team within the Ministry of Health. This includes the different roles defined within the core team, and a budgeted overview of capacity building activities for the specific staff members filling these roles. The activities and budget should be maintained in a separate spreadsheet, and it is recommended it is updated at least annually.
+This document describes the capacity building plan for strengthening the/establishing a local DHIS2 core team. This includes the different roles defined within the core team and a budgeted overview of capacity building activities for the specific staff members filling these roles. The activities and budget should be maintained in a separate spreadsheet, and it is recommended it is updated at least annually.
 
 In addition, this document has sample terms of reference (ToRs) for each of the positions identified in the [Core Positions](#core-positions) section of this document.
 
-With the results of the capacity building needs assessment available, you should be able to identify the types of training activities that each member of the core team needs to receive. This can be a mix of remote and in-person training events, on-the-job coaching, academy attendance, etc. The main goal is to address the gaps you have identified in a structured fashion, slowly removing priority gaps that exist within the core team's skill set. 
+With the results of the capacity building needs assessment available, you should be able to identify the types of training activities that each member of the core team needs to receive. This can be a mix of remote and in-person training events, on-the-job coaching, academy attendance, etc. The main goal is to address the gaps you have identified in a structured fashion, removing priority gaps over an extended period of time as they are filled within the core team's skill set. 
 
 The core team capacity building plan is also meant to be budgeted. This means that the costs for each activity that has been identified is outlined clearly. Ideally, a funding source will also be identified; however if it is not the case where funding is available for these activities, the plan can be used to advocate for long-term capacity building with interested stakeholders. 
 
