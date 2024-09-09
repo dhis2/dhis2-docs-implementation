@@ -137,7 +137,7 @@ In **tracker capture** you would
 3. You would then select the program
 4. You then have options to search for an existing TEI or add a new one
 
-In ***capture*** 
+In **capture** 
 
 1. Select "new relationship." This will take you to a new screen rather then a pop up window
 2. You then select the relationship type
@@ -157,9 +157,32 @@ Enrolling a TEI into another program is very similar in both tracker capture and
 
 ![](images/ER_TC_C/multiple_enrollment.png)
 
-### Working with Widgets
-
 ### Referrals and Transfers
+
+You can perform referrals/have a single event in a different location as well as perform a permanent transfer in the capture app. How this is done is a bit different when compared to tracker capture.
+
+Lets start with reviewing a single event in a different location. We can do two operations essentially.
+
+1. We can create an event in a different org unit at the time of data entry
+2. We can schedule an event in a different org unit, similar to the previous referral functionality
+
+#### Create an event in a different org unit at the time of data entry
+
+In order to create a new event in a different org unit at the time of data entry in ***tracker capture*** you need to: 
+1. Select the org unit you want the new event to appear in on the left side menu
+2. Select the program you want the registered event to be in
+3. Search for the TEI in the program and navigate to the dashboard
+4. Create the event
+5. The event will appear in the org unit you have selected
+
+![](images/ER_TC_C/de_referral.png)
+
+In order to create a new event in a different org unit at the time of data entry in ***capture*** you need to: 
+
+1. Search for the TEI in the program. This can be from any org unit, including the registering unit or another organisation unit.
+2. Navigate to TEI dashboard
+3. Change the org unit selected in the registering unit dropdown
+4. Create the event, enter details and save the event
 
 ### Working lists
 
