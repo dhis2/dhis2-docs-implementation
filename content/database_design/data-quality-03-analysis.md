@@ -1038,7 +1038,7 @@ After updating you should see a table like the following:
 
 A review of the items available on this table is located here:
 
-1. Data : This columns shows the data items you have selected. You can select as many data items as needed.
+1. Data : This column shows the data items you have selected. You can select as many data items as needed.
 2. Category option combination : This is the specific disaggregation, if any, that the value is representing. In our example, the ANC 4th or more visits is disaggregated into Fixed and Outreach (see dataset below). In the outlier table, we have identified outliers that are coming from the ANC 4th or more visits ***Fixed*** value.
 
 ![](resources/images/dq_outlier_catcombo.png)
