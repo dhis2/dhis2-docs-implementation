@@ -1006,7 +1006,73 @@ Finally, click Start to run the analysis. Depending on the parameters selected a
 
 ![](resources/images/dq_outlier_image1.png)
 
+#### Outlier Tables
 
+The outlier table is a new feature available from DHIS2 version 41 and is meant, in part, to replicate and expand upon the outlier table functionality that was previously available within the WHO data quality tool. 
+
+Similar to the outlier table in the WHO data quality tool, the outlier table displays data and analyzes them for outliers using either the standard z-score or modified z-score (modified z-score is used by default).
+
+The outlier table is accessible as a visualization type within the data visualizer application. 
+
+Making an outlier table is very easy:
+
+1. Select the outlier table visualization type from the visualization selector in the data visualizer app
+2. The outlier table has 3 fixed dimensions in which you must select inputs for:
+   1. Data
+   2. Period
+   3. Organisation Units
+3. Select the inputs for these items and select "Update" 
+
+Select the outlier table visualization type from the visualization selector in the data visualizer app
+
+![](resources/images/dq_select_outliertable.png)
+
+Select the inputs for the data, period and organisations units and "Update" the table. These 3 inputs are locked, meaning that all 3 are needed and inputs ***must*** be selected for them. Note that you are able to select multiple data items to use on this table.
+
+![](resources/images/dq_outlier_lockedlayout.png)
+
+After updating you should see a table like the following:
+
+![](resources/images/dq_outliertable_output.png)
+
+
+A review of the items available on this table is located here:
+
+1. Data : This columns shows the data items you have selected. You can select as many data items as needed.
+2. Category option combination : This is the specific disaggregation, if any, that the value is representing. In our example, the ANC 4th or more visits is disaggregated into Fixed and Outreach (see dataset below). In the outlier table, we have identified outliers that are coming from the ANC 4th or more visits ***Fixed*** value.
+
+![](resources/images/dq_outlier_catcombo.png)
+
+3. Period : This is the period in which the outlier value has been found. 
+4. Organisation unit : This is the organisation unit where the outlier has been found. Note that it shows the source organisation unit. When you select an org unit in your hierarchy, it will therefore look for outliers in all of the children of the organisation unit.
+5. Value : This is the value that is recorded in DHIS2
+6. Median : The median is the middle value for the period selected within the data element, category option combination, period and organisation unit combination. When a recorded value is significantly higher then the median, the data is not following an expected pattern.
+7. Modified z-score : The modified z score is a standardized score that measures outlier strength or how much a particular score differs from the typical score. Using standard deviation units, it approximates the difference of the score from the median. We can define the cut off used to identify outliers using the modified z-score. The higher this value, the more deviation a recorded value has from the median.
+8. Median absolute deviation : This is the average distance that the data values are from the median. The purpose is to provide a numerical description of how spread out the values of the set are. If we take our example in the first row, the median absolute deviation is only 2.5 with a median of 9. The recorded value is 854, deviating by a value of 845 from the median. 
+9. Min : The minimum value threshold that has been set for the data element, disaggregation and organisation unit combination. This is not limited to a particular period.
+10. Max : The maximum value threshold that has been set for the data element, disaggregation and organisation unit combination. This is not limited to a particular period.
+
+***Modifying the outlier table***
+
+You are able to modify the outlier table by using the table options. There are 3 items you can alter:
+
+1. Data
+2. Style
+3. Outliers
+
+![](resources/images/dq_outlier_options.png)
+
+1. Data : From the data tab you can skip rounding and also select the maximum number of results you want to display. You can display up to 500 outliers in the table.
+
+![](resources/images/dq_outlier_data.png)
+
+2. Style : From the style tab yoiu can modify the display density, font size, digit group seperator and choose to display the organisation unit hierarchy in the organisation unit column
+
+![](resources/images/dq_outlier_style.png)
+
+3. Outliers : In the outliers tab you can select your outlier detection method and set your threshold factor. *By default, the modified z-score and a threshold factor of 3 are set to detect outliers.* The z-score/standard score method uses the mean rather then the median to detect outliers, which may be less sensitive to detection.
+
+![](resources/images/dq_outlier_outliers.png)
 
 ## WHO Data Quality Tool
 
@@ -1025,7 +1091,7 @@ The below table gives an overview of what functionality is available in the WHO 
 | Year-over-year charts                              	| Supported                               	| Supported       	|
 | Outlier analysis (time series)                     	| Supported                               	| Supported       	|
 | Consistency over time using scatterplots           	| Supported                               	| Not supported   	|
-| Automatic generation of annual data quality report 	| Supported                               	| Not supported   	|
+| Automatic generation of annual data quality report 	| Supported                               	| Not supported (NB: this is supported in the [data quality annual report app](https://apps.dhis2.org/app/73f87a14-d71c-40b8-8363-0d956745ba06))  	|
 
 A dedicated [user manual](https://docs.dhis2.org/en/use/optional-apps/who-data-quality-tool/installation-and-configuration.html#how-to-configure-the-dhis2-based-who-data-quality-tool) along with a [training package](https://www.who.int/publications/i/item/9789240036475) is available for the WHO Data Quality Tool, and its functionality is therefore not discussed in this guide.
 
