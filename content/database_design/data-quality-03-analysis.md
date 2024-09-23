@@ -840,15 +840,11 @@ When the outlier threshold is defined and stored as a data element value, we can
 
 We will review how to create four different predictors/data elements using the outlier threshold:
 
-  ---------------------------------------------------------------------------------------
-  Data element excluding outliers   Data element values that are not outliers.
-  --------------------------------- -----------------------------------------------------
-  Data element outliers             Data element values that *are* outliers.
-
-  Data element non-outlier count    Count of data element values that are not outliers.
-
-  Data element outlier count        Count of data element values that are outliers.
-  ---------------------------------------------------------------------------------------
+| Data element excluding outliers | Data element values that are not outliers. |
+| :-- | :-- |
+| Data element outliers | Data element values that *are* outliers.|
+| Data element non-outlier count | Count of data element values that are not outliers.|
+| Data element outlier count | Count of data element values that are outliers. |
 
 The following example (with ANC 1st visit as the data element we are assessing) shows for an time series what output the different predictors are expected to produce
 
