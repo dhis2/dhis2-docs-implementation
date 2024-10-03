@@ -52,7 +52,7 @@ Configuration:
   - Transition Kits:
       - Event Reports to Line Listing: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_er_to_ll.md, master)'
 Data Use:
-  - Data Visualization: '@github(dhis2/dhis2-docs-implementation, content/data-use/data-visualization.md, master)'
+  - Data Visualization: '@github(dhis2/dhis2-docs-implementation, content/data-use/data-visualization.md, data-visualization-pages)'
 Health:
   - DHIS2 Health Data Toolkit:
     - About the DHIS2 Health Data Toolkit: '@github(dhis2/dhis2-docs, src/metadata/about-metadata.md, master)'
