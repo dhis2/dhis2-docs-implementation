@@ -278,6 +278,11 @@ Health:
     - Immunization Analysis App:
        alt__App version 1.0.3:
        - User Manual: '@github(dhis2-metadata/IMM_AEFI, docs/immunisation_analysis_app_user_manual.md, master)'
+    - Mpox Immunization:
+      - OVERVIEW: '@github(dhis2-metadata/MPOX_EPI, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/MPOX_EPI, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/MPOX_EPI, docs/mpox_epi-design.md, master)'
+      - Installation: '@github(dhis2-metadata/MPOX_EPI, docs/mpox_epi-installation.md, master)'
   - Malaria:
     - Malaria HMIS:
       - OVERVIEW: '@github(dhis2-metadata/MAL_AGG, docs/overview.md, master)'
