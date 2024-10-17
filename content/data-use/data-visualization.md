@@ -17,7 +17,7 @@ Understanding these categories is essential to selecting the correct chart type 
 - **Ordinal** - Categories with a meaningful order (e.g., disease status). These categories have a logical sequence.  
   - For example, disease severity might be classified as mild, moderate, and severe, which has an inherent order.  
 
-> **Note**:
+> **Note**
 >
 >**Binary variables are a subtype of dichotomous variables**, assigned either a 0 or a 1 (e.g., Male (0) and Female (1)). They represent two categories, usually for simple yes/no, true/false conditions. Dichotomous variables can be discrete or continuous, similar to regular discrete and continuous variables.
 
