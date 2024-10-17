@@ -22,7 +22,7 @@ Understanding these categories is essential to selecting the correct chart type 
 >**Binary variables are a subtype of dichotomous variables**, assigned either a 0 or a 1 (e.g., Male (0) and Female (1)). They represent two categories, usually for simple yes/no, true/false conditions. Dichotomous variables can be discrete or continuous, similar to regular discrete and continuous variables.
 
 
-![Variable categories](resources/images/dataviz_001.png){.center}  
+![Variable categories](resources/images/dataviz_001.png)   
 
 ### Numerical Variables
 - **Discrete** - Countable number of variables (e.g., number of siblings, dead/alive = discrete dichotomous). Discrete variables take specific values and cannot be meaningfully divided.  
@@ -35,7 +35,7 @@ What’s the best way to choose the right visualization for the data at hand? [F
   
 Another Chart Chooser is mapped in the [Extreme Presentation Method](https://extremepresentation.com/).  
 
-![Chart Chooser by Extreme Presentation Method](resources/images/dataviz_002.png){.center}  
+![Chart Chooser by Extreme Presentation Method](resources/images/dataviz_002.png)    
 
 The summary below is based on the visualizations available in the core DHIS2 Data Visualizer App.  
 
