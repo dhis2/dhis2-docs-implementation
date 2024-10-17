@@ -34,7 +34,8 @@ Understanding these categories is essential to selecting the correct chart type 
 What’s the best way to choose the right visualization for the data at hand? [From data to Viz](https://www.data-to-viz.com/) proposes an exhaustive map of visualizations matched to the category of data. 
   
 Another Chart Chooser is mapped in the [Extreme Presentation Method](https://extremepresentation.com/).  
-![Chart Chooser by Extreme Presentation Method](resources/images/dataviz_002.png)
+
+![Chart Chooser by Extreme Presentation Method](resources/images/dataviz_002.png){.center}  
 
 The summary below is based on the visualizations available in the core DHIS2 Data Visualizer App.  
 
