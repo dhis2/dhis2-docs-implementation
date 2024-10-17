@@ -142,7 +142,8 @@ Use markers for irregular data points.
 - **Area charts**: Good to show changes in totals but tricky for components. Area charts are powerful for illustrating trends and changes over time, providing a strong visual impact by highlighting the magnitude and total values of data sets. They are particularly effective for showing cumulative data and allowing comparisons of multiple data series. However, they can become cluttered and difficult to read when multiple categories are involved, as distinguishing individual components can be challenging. Additionally, changes in lower layers can distort the perception of upper layers, potentially leading to misinterpretation. While effective for highlighting totals, area charts are less suitable for discrete data points or non-cumulative data and can be problematic for colourblind viewers or black-and-white prints. For example, it could be tracking the total number of TB or malaria cases reported across different regions over a year to visualize the overall burden and trends.  
 
 ![Area chart for the volume of malaria cases in three districts](resources/images/dataviz_008.png)
-Magnitude   
+
+#### Magnitude   
 
 >**Note**
 >
