@@ -20,9 +20,9 @@ Understanding these categories is essential to selecting the correct chart type 
 - **Ordinal** - Categories with a meaningful order (e.g., disease status). These categories have a logical sequence.  
   - For example, disease severity might be classified as mild, moderate, and severe, which has an inherent order.  
 
-> **Note**:
+> **Note**
 >
->**Binary variables are a subtype of dichotomous variables**, assigned either a 0 or a 1 (e.g., Male (0) and Female (1)). They represent two categories, usually for simple yes/no, true/false conditions. Dichotomous variables can be discrete or continuous, similar to regular discrete and continuous variables.
+> **Binary variables are a subtype of dichotomous variables**, assigned either a 0 or a 1 (e.g., Male (0) and Female (1)). They represent two categories, usually for simple yes/no, true/false conditions. Dichotomous variables can be discrete or continuous, similar to regular discrete and continuous variables.
 
 ![Variable categories](resources/images/dataviz_001.png)   
 
@@ -86,9 +86,9 @@ The summary below is based on the visualizations available in the core DHIS2 Dat
 
 ### Specific Visualization Styles  
 
->**Note**
+> **Note**
 >
->**Data speaks louder than words!**
+> **Data speaks louder than words!**
 
 In data visualization, choosing the right type of chart or graph is crucial for effectively communicating your data. Each visualization style has its strengths and is best suited for specific types of data and analytical purposes. This chapter explores a variety of visualization styles, detailing their applications and best practices. Whether you're looking to show trends over time, compare quantities, highlight correlations, or illustrate parts of a whole, selecting the appropriate visualization method will enhance clarity and insight. By understanding the nuances of each style, you can ensure that your data tells a compelling and accurate story.
 
@@ -96,9 +96,9 @@ In data visualization, choosing the right type of chart or graph is crucial for 
 
 #### Correlation  
 
->**Note**
+> **Caution**
 >
->Correlation assumes a causal relationship unless specified otherwise. Be cautious in interpreting correlation as causation.  
+> Correlation assumes a causal relationship unless specified otherwise. Be cautious in interpreting correlation as causation.  
 
 - **Scatterplot**: Shows the relationship between two continuous variables, each having its axis. Each point represents an observation's values on the two variables. It's useful for identifying trends, clusters, and outliers. For example, a scatterplot can display the relationship between the number of immunization campaigns conducted in various districts and the resulting immunization coverage rate.
 
@@ -111,9 +111,9 @@ In data visualization, choosing the right type of chart or graph is crucial for 
 
 #### Ranking
 
->**Note**
+> **Note**
 >
->Emphasizes the item's position in an ordered list rather than the absolute value.  
+> Emphasizes the item's position in an ordered list rather than the absolute value.  
 
 - **Ordered bars/columns**: Shows ranks of values more easily when sorted. This visualization helps to quickly see the highest and lowest values. An ordered bar column chart can be used to display the number of TB cases in each district, sorted in descending order to highlight the districts with the highest burden.
 
@@ -125,9 +125,9 @@ In data visualization, choosing the right type of chart or graph is crucial for 
 
 #### Change Over Time  
 
->**Note**
+> **Note**
 >
->Keep gaps between columns small to highlight data shape.
+> Keep gaps between columns small to highlight data shape.
 Use markers for irregular data points.  
 
 - **Column**: Emphasizes changing trends. Columns are used to show discrete data points over time. For example, monthly case figures can be shown as a column chart.
@@ -145,9 +145,9 @@ Use markers for irregular data points.
 
 #### Magnitude   
 
->**Note**
+> **Note**
 >
->Small gaps highlight data shape. Best for a single series of data.  
+> Small gaps highlight data shape. Best for a single series of data.  
 
 - **Column/Paired column/bar**: Compare sizes, usually numbers rather than rates or percentages. For instance, HIV case figures for different regions can be compared using a bar chart. In this case, it is appropriate to keep the distance between the columns as they represent separate entities rather than variables through time.  
 
@@ -161,9 +161,9 @@ Use markers for irregular data points.
 
 #### Part-to-Whole  
 
->**Note**
+> **Tip**
 >
->Remember colorblind-friendly designs. You can change the style of the graph in the data visualizer app by accessing **Options>Style>Color Set**  
+> Remember colorblind-friendly designs. You can change the style of the graph in the data visualizer app by accessing **Options>Style>Color Set**  
 
 ![Imrpove the visualization choosing the most suitable colour set](resources/images/dataviz_022.png)  
 
@@ -199,9 +199,9 @@ Stacked columns or bar charts **should be avoided when** a detailed comparison o
 
 - **Choropleth**: Standard for rates on maps. Uses varying shades of a colour to represent data values for different regions. For example, population density by region can be shown using a choropleth map.  
 
->**Note**
+> **Note**
 >
->**Attention to normalization** - you technically cannot compare raw numbers between regions of distinct size or population. Always use rates.  
+> **Attention to normalization** - you technically cannot compare raw numbers between regions of distinct size or population. Always use rates.  
 
 ![Map showing the percentage of PTB-BC cases in a region](resources/images/dataviz_013.png)  
 
@@ -280,9 +280,9 @@ A visualization should always have:
 
 ![Contextualized graph](resources/images/dataviz_024.png)  
 
->**Note**:
+> **Caution**
 >
->Due to the interactive nature of DHIS2 dashboards, including specific timeframes (e.g., "last 12 months") in the titles can lead to confusion if filters are applied, such as changing the period to the last 6 months. This discrepancy between the title and the visualized data can cause misunderstandings. Therefore, it is recommended to avoid specifying the timeframe in the title to maintain clarity and accuracy.
+> Due to the interactive nature of DHIS2 dashboards, including specific timeframes (e.g., "last 12 months") in the titles can lead to confusion if filters are applied, such as changing the period to the last 6 months. This discrepancy between the title and the visualized data can cause misunderstandings. Therefore, it is recommended to avoid specifying the timeframe in the title to maintain clarity and accuracy.
 
 #### Pie Chart  
 
