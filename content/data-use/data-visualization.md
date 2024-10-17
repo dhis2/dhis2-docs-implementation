@@ -23,6 +23,7 @@ Understanding these categories is essential to selecting the correct chart type 
 
 
 ![Variable categories](resources/images/dataviz_001)  
+
 ### Numerical Variables
 - **Discrete** - Countable number of variables (e.g., number of siblings, dead/alive = discrete dichotomous). Discrete variables take specific values and cannot be meaningfully divided.  
   - For example, you can't have half a sibling or be half alive.  
