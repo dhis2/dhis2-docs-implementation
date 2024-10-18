@@ -39,7 +39,7 @@ What’s the best way to choose the right visualization for the data at hand? [F
   
 Another Chart Chooser is mapped in the [Extreme Presentation Method](https://extremepresentation.com/).  
 
-![Chart Chooser by Extreme Presentation Method](resources/images/dataviz_002.png)    
+![Chart Chooser by Extreme Presentation Method](resources/images/dataviz_002.jpg)    
 
 The summary below is based on the visualizations available in the core DHIS2 Data Visualizer App.  
 
