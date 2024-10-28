@@ -18,7 +18,7 @@ In order to successfully introduce the capture app, we recommend that implementa
 
 ## Features of the Capture App
 
-In order to start a review of the features within the line listing app, first have a look at the [user documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html). This document discusses some of the key features and outlines the interface within the capture app.
+In order to start a review of the features within the capture app, first have a look at the [user documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html). This document discusses some of the key features and outlines the interface within the capture app.
 
 To further supplement the documentation, a series of videos that demonstrates the capture app functionality is available. These videos are located on YouTube. A playlist has been created [here](), while each of these videos can be found below.
 
@@ -169,6 +169,7 @@ Lets start with reviewing a single event in a different location. We can do two 
 #### Create an event in a different org unit at the time of data entry
 
 In order to create a new event in a different org unit at the time of data entry in ***tracker capture*** you need to: 
+
 1. Select the org unit you want the new event to appear in on the left side menu
 2. Select the program you want the registered event to be in
 3. Search for the TEI in the program and navigate to the dashboard
@@ -182,7 +183,48 @@ In order to create a new event in a different org unit at the time of data entry
 1. Search for the TEI in the program. This can be from any org unit, including the registering unit or another organisation unit.
 2. Navigate to TEI dashboard
 3. Change the org unit selected in the registering unit dropdown
-4. Create the event, enter details and save the event
+4. Create the event, enter the details and save the event
+
+![](images/ER_TC_C/capture_de_referrral.png)
+
+#### Schedula an event in a different org unit
+
+In order to schedule a one-time referral to have an event in another org unit in ***tracker capture***, you need to:
+
+1. Search for the TEI in the program and navigate to the dashboard 
+2. Use the "make referral" action button in the data entry widget
+3. Select the event you want to have scheduled in the other org unit
+4. Select the org unit you want the event scheduled in
+5. Select the event date that you want to schedule for the new event
+6. Select the "one-time" referral button
+
+In order to schedule a one-time referral to have an event in another org unit in ***capture***, you need to:
+
+1. Search for the TEI in the program and navigate to the dashboard 
+2. Change the registering unit to the org unit you want to schedule the event in
+3. Use the "schedule an event" action button in the data entry widget
+4. Select the event you want to have scheduled in the other org unit
+5. Select the event date that you want to schedule for the new event
+6. Select the "one-time" referral button
+
+![](images/ER_TC_C/schedule_event.png)
+
+#### Performing a permanent transfer
+
+In order to perform a permanent transfer in ***tracker capture***
+
+1. Search for the TEI in the program and navigate to the dashboard 
+2. Use the "make referral" action button in the data entry widget
+3. Select the org unit you want to transfer the TEI to
+4. Select the "Move permanently" button
+
+In order to perform a permanent transfer in ***capture***
+
+1. Search for the TEI in the program and navigate to the dashboard
+2. From the enrollment widget, select the "enrollment actions" dropdown. Then select the "transfer" option
+3. Select the org unit you want to transfer the TEI to and select "Transfer"
+
+![](images/ER_TC_C/transfer.png)
 
 ### Working lists
 
