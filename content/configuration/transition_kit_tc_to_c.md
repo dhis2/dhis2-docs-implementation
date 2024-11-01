@@ -226,8 +226,6 @@ In order to perform a permanent transfer in ***capture***
 
 ![](images/ER_TC_C/transfer.png)
 
-### Working lists
-
 ## New Features in the Capture app
 
 A review of the new features available in the capture app, is available here. You can also refer to the section [features of the capture app](#features-of-the-capture-app) to review the user documentation as well as a series of videos that have been made describing the capture apps functionality.
@@ -292,4 +290,39 @@ Feedback (this widget is not displayed in this example) - In this widget you can
 
 ## User Permissions
 
+The capture app comes with a revised model for user permissions. One of the most useful additions is the ability to control if someone can delete a tracked entity or enrollment; in ***tracker capture*** if a person had access to the record, they could delete it.
+
+There are no specific metadata authorities associated with using the capture app; however you will have to assign people to the capture app and provide them with related tracker authorities.
+
+![](images/ER_TC_C/tracker_authorities.png)
+
+Let us review these tracker authorities a bit more:
+
+- Delete enrollment and associated events: Allows you to delete an enrollment in a program along with any events in that enrollment
+  - You need to be careful with this authority as all the enrollment data will be lost upon using this action. A warning box will come up up if you select this option to confirm you really want to delete it. 
+- Delete tracked entity instance and associated enrollments and events: Allows you to delete a TEI along with all associated enrollments and events. 
+  - You need to be very mindful of this authority as this will delete the TEI, along with all of its enrollments and related events. A warning box will come up if you select this option to confirm you really want to delete it.
+- Ignore validation of required fields in Tracker and Event Capture: This will allow you to save TEIs and events even when required fields are not filled in
+- Merge tracked entity instances: This allows you to merge tracked entity instances through the API (there is currently no user interface to perform this action). Please see the [docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-241/tracker-deprecated.html#merging-tracked-entity-instances) for more info.
+- Search tracked entity instances in all org units: This allows you to search for tracked entities in all of the org units, even if you are only assigned a subset for data capture and/or data analysis. This can be useful to reduce duplicates and found already registered TEIs across the system.
+- Uncomplete events: Allows you to change the status of a completed event to an incompleted event
+- Update tracked entities: Allows a user to update existing tracked entity instances. Without this you can not edit existing tracked entities.
+- View event analytics: Allows you to view analytics related to event and tracker programs. Without this you can not perform the analysis of any type of individual level data. Needs to be paired with sharing to determine which programs you can review data for.
+
+We can review how some of these user authorities affect what a user can see/do within capture.
+
+***Delete enrollment and associated events***
+
+***Delete tracked entity instance and associated enrollments and events***
+
+![](images/ER_TC_C/delete_TEI.png)
+
+***Uncomplete events***
+
+***Ignore validation of required fields in Tracker and Event Capture***
+
 ## Training Material
+
+A full overview on training someone to use tracker capture is available [here](https://github.com/dhis2/training-docs/blob/main/content/tracker_use/tg_capture_web.md).
+
+A presentation including all of the comparison screenshots between tracker capture and capture as seen in this guide is available [here].
