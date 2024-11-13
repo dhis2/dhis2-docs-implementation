@@ -392,6 +392,9 @@ Support and documentation:
   - Support: '@github(dhis2/dhis2-docs-implementation, content/support_documentation/support.md, master)'
 Software Release Information:
   DHIS2 core releases:
+    alt__DHIS core version 2.41:
+      - Release Notes: '@github(dhis2/dhis2-releases,releases/2.41/ReleaseNote-2.41.md, master)'
+      - Upgrade Notes: '@github(dhis2/dhis2-releases,releases/2.41/README.md, master)'
     alt__DHIS core version 2.40:
       - Release Notes: '@github(dhis2/dhis2-releases,releases/2.40/ReleaseNote-2.40.md, master)'
       - Upgrade Notes: '@github(dhis2/dhis2-releases,releases/2.40/README.md, master)'
@@ -411,6 +414,9 @@ Software Release Information:
       - Release Notes: '@github(dhis2/dhis2-releases,releases/2.35/ReleaseNote-2.35.0.md, master)'
       - Upgrade Notes: '@github(dhis2/dhis2-releases,releases/2.35/README.md, master)'
   Android app releases:
+    alt__DHIS core version 2.41:
+      alt__Android app version 3.0.0:
+        - Release Notes: '@github(dhis2/dhis2-releases,releases/2.41/ReleaseNote-2.41.md, master)'
     alt__DHIS core version 2.40:
       alt__Android app version 2.9.0:
         - Release Notes: '@github(dhis2/dhis2-releases,android-releases/2.9/ReleaseNote-2.9.0.md, 2.9)'
