@@ -90,7 +90,7 @@ The search page in capture is now updated to have tabbed layout; unique tracked 
 
 ### The dashboard
 
-The dashboard in capture has received a significant update, and a full description of this new dashboard is available [here](#describing-the-new-dashboard-in-capture). We can see many of the elements have been moved and given a modified look within capture. Stages and events are now grouped together within the data entry section of the dashboard, rather then presented in a timeline or tabular format as is seen in tracker capture. All of the widgets, like indicators etc. have been moved to the right side of the screen. We also see that the top bar used to initially select the program persists, with information added on the tracked entity you are working with. 
+The dashboard in capture has received a significant update, and a full description of this new dashboard is available [here](#the-enrollment-dashboard). We can see many of the elements have been moved and given a modified look within capture. Stages and events are now grouped together within the data entry section of the dashboard, rather then presented in a timeline or tabular format as is seen in tracker capture. All of the widgets, like indicators etc. have been moved to the right side of the screen. We also see that the top bar used to initially select the program persists, with information added on the tracked entity you are working with. 
 
 ![](images/ER_TC_C/dashboard.png)
 
