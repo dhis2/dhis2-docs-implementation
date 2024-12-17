@@ -42,7 +42,7 @@ In addition to the org unit and program selectors, additional items in capture h
 
 ![](images/ER_TC_C/UI_comparison.png)
 
-1. The working lists in capture are still directly above the front page line list. The working list features have been greatly expanded in capture, and is described in the user documentation, the video demonstrations linked in [features](#features-of-the-capture-app) section of this document and the section in this document on new capture app features. We can see that the full label of the working list is shown in capture, which replaces the icons that are shown in tracker capture. 
+1. The working lists in capture are still directly above the front page line list. The working list features have been greatly expanded in capture, and is described in the [user documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#list-tracked-entity-instances-enrolled-in-program). We can see that the full label of the working list is shown in capture, which replaces the icons that are shown in tracker capture. 
 2. The Search and Registration buttons are located to the right of the registering unit/org unit dropdown in capture. The order of the buttons has also changed, with the registration button being first followed by search. The registration button is now dynamic and will change its text based on the tracked entity type you are registering. 
 3. Items including downloading the data or modifying which attributes appear on the front page line list have been collapsed into menu buttons in capture. 
 
@@ -231,6 +231,8 @@ In order to perform a permanent transfer in ***capture***
 A review of the new features available in the capture app, is available here. You can also refer to the section [features of the capture app](#features-of-the-capture-app) to review the user documentation as well as a series of videos that have been made describing the capture apps functionality.
 
 ### Working Lists
+
+In the capture app, you are able to more easily manage the front page list when selecting a program and organisation unit. This includes modifying and saving the front page list views based on a number of criteria. This information is explained in detail [here](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#list-tracked-entity-instances-enrolled-in-program).
 
 ### The enrollment dashboard
 
