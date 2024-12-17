@@ -228,8 +228,6 @@ In order to perform a permanent transfer in ***capture***
 
 ## New Features in the Capture app
 
-A review of the new features available in the capture app, is available here. You can also refer to the section [features of the capture app](#features-of-the-capture-app) to review the user documentation as well as a series of videos that have been made describing the capture apps functionality.
-
 ### Working Lists
 
 In the capture app, you are able to more easily manage the front page list when selecting a program and organisation unit. This includes modifying and saving the front page list views based on a number of criteria. This information is explained in detail [here](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#list-tracked-entity-instances-enrolled-in-program).
