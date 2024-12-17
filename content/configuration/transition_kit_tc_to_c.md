@@ -20,7 +20,7 @@ In order to successfully introduce the capture app, we recommend that implementa
 
 In order to start a review of the features within the capture app, first have a look at the [user documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html). This document discusses some of the key features and outlines the interface within the capture app.
 
-To further supplement the documentation, a series of videos that demonstrates the capture app functionality is available. These videos are located on YouTube. A playlist has been created [here](), while each of these videos can be found below.
+To further supplement the documentation, a series of videos that demonstrates the capture app functionality will be available shortly.
 
 ## Feature comparison of the tracker capture and capture apps
 
@@ -187,7 +187,7 @@ In order to create a new event in a different org unit at the time of data entry
 
 ![](images/ER_TC_C/capture_de_referrral.png)
 
-#### Schedula an event in a different org unit
+#### Schedule an event in a different org unit
 
 In order to schedule a one-time referral to have an event in another org unit in ***tracker capture***, you need to:
 
@@ -309,20 +309,18 @@ Let us review these tracker authorities a bit more:
 - Update tracked entities: Allows a user to update existing tracked entity instances. Without this you can not edit existing tracked entities.
 - View event analytics: Allows you to view analytics related to event and tracker programs. Without this you can not perform the analysis of any type of individual level data. Needs to be paired with sharing to determine which programs you can review data for.
 
-We can review how some of these user authorities affect what a user can see/do within capture.
+Here are some examples of a user with and without some of these authorities:
 
 ***Delete enrollment and associated events***
+
+![](images/ER_TC_C/delete_enrollment.png)
 
 ***Delete tracked entity instance and associated enrollments and events***
 
 ![](images/ER_TC_C/delete_TEI.png)
 
-***Uncomplete events***
-
-***Ignore validation of required fields in Tracker and Event Capture***
-
 ## Training Material
 
-A full overview on training someone to use tracker capture is available [here](https://github.com/dhis2/training-docs/blob/main/content/tracker_use/tg_capture_web.md).
+A full overview on how to use tracker capture is available [here](https://github.com/dhis2/training-docs/blob/main/content/tracker_use/tg_capture_web.md).
 
-A presentation including all of the comparison screenshots between tracker capture and capture as seen in this guide is available [here].
+A presentation including all of the comparison screenshots between tracker capture and capture as seen in this guide is available [here](https://docs.google.com/presentation/d/1pJixTEOdbIUClFmDDL2gmKicYKoqD941/edit?usp=drive_link&ouid=104677221247573000314&rtpof=true&sd=true).
