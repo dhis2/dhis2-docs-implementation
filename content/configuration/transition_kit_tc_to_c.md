@@ -230,7 +230,28 @@ In order to perform a permanent transfer in ***capture***
 
 ### Working Lists
 
-In the capture app, you are able to more easily manage the front page list when selecting a program and organisation unit. This includes modifying and saving the front page list views based on a number of criteria. This information is explained in detail [here](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#list-tracked-entity-instances-enrolled-in-program).
+In the ***capture*** app, you are able to more easily manage the front page list when selecting a program and organisation unit. This includes modifying and saving the front page list views based on a number of criteria. This information is explained in detail [here](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#list-tracked-entity-instances-enrolled-in-program).
+
+### Saving of data values and events
+
+In ***tracker capture***, whenever you add individual values to an event, thes values are saved automatically. You do not need to select any button to save these values and they are thus sent to the server one by one as they are entered.
+
+![](images/ER_TC_C/tc_saving.png)
+
+In ***capture***, data from within an event is only saved based on when you decide to save or update the event. You have to select a "Save" button within the event to save the data, and if you select "cancel" the data will not be saved.
+
+![](images/ER_TC_C/capture_saving.png)
+
+Editing an event in ***capture*** is also handled differently. In ***tracker capture***, if you navigate through your stages and events with data, they will be open and can be edieted at any time.
+
+In ***capture*** however, if you open an event with data, you will have to select an "edit" button in order to edit data within the event.
+
+![](images/ER_TC_C/capture_edit.png)
+
+There are some advantages to this new implementation; though care needs to be taken to ensure your data is saved as it is no longer an automatic process:
+
+1. Events that are created with blank, missing or mandatory fields not filled in will not be automatically saved anymore. 
+2. Data will be sent to the server in chunks, rather then having numerous requests sent each time a field is filled in.
 
 ### The enrollment dashboard
 
