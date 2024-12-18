@@ -51,6 +51,7 @@ Maintenance and use:
 Configuration:
   - Transition Kits:
       - Event Reports to Line Listing: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_er_to_ll.md, master)'
+      - Tracker Capture to Capture: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_tc_to_c.md, master)'
 Health:
   - DHIS2 Health Data Toolkit:
     - About the DHIS2 Health Data Toolkit: '@github(dhis2/dhis2-docs, src/metadata/about-metadata.md, master)'
