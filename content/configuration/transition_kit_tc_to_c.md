@@ -250,7 +250,7 @@ In ***capture*** however, if you open an event with data, you will have to selec
 
 There are some advantages to this new implementation; though care needs to be taken to ensure your data is saved as it is no longer an automatic process:
 
-1. Events that are created with blank, missing or mandatory fields not filled in will not be automatically saved anymore. 
+1. Events that are created with blank or missing data or mandatory fields not filled in will not be automatically saved anymore. 
 2. Data will be sent to the server in chunks, rather then having numerous requests sent each time a field is filled in.
 
 ### The enrollment dashboard
