@@ -234,7 +234,7 @@ In the ***capture*** app, you are able to more easily manage the front page list
 
 ### Saving of data values and events
 
-In ***tracker capture***, whenever you add individual values to an event, thes values are saved automatically. You do not need to select any button to save these values and they are thus sent to the server one by one as they are entered.
+In ***tracker capture***, whenever you add individual values to an event, these values are saved automatically. You do not need to select any button to save these values and they are thus sent to the server one by one as they are entered.
 
 ![](images/ER_TC_C/tc_saving.png)
 
