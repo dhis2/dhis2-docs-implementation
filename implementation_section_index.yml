@@ -313,6 +313,11 @@ Health:
       - Release Note: '@github(dhis2-metadata/NTD_AGG, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/NTD_AGG, docs/ntd_agg-design.md, master)'
       - Installation: '@github(dhis2-metadata/NTD_AGG, docs/ntd_agg-installation.md, master)'
+    - Human Rabies Surveillance (aggregate):
+      - OVERVIEW: '@github(dhis2-metadata/NTD_HRS_AGG, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/NTD_HRS_AGG, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/NTD_HRS_AGG, docs/ntd_hrs_agg-design.md, master)'
+      - Installation: '@github(dhis2-metadata/NTD_HRS_AGG, docs/ntd_hrs_agg-installation.md, master)'
   - Non-Communicable Diseases:
     - Hypertension Control:
       - OVERVIEW: '@github(dhis2-metadata/NCD_HTN, docs/overview.md, master)'
