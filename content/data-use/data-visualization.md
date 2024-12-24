@@ -63,11 +63,11 @@ The summary below is based on the visualizations available in the core DHIS2 Dat
 #### Two numerical variables  
 
 - **Ordered**  
-  - **Area plot**: Similar to line plots but with the area under the line filled. Useful for showing cumulative values over time.  
-  - **Line plot**: Displays information as a series of data points connected by straight lines. Suitable for trends over time.  
+    - **Area plot**: Similar to line plots but with the area under the line filled. Useful for showing cumulative values over time.  
+    - **Line plot**: Displays information as a series of data points connected by straight lines. Suitable for trends over time.  
 - **Unordered**  
-  - **Histogram**: This can also be used to compare the distributions of two different variables.  
-  - **Scatter plot**: Plots two variables as points on a Cartesian plane. Each point represents an observation's values on the two variables.  
+    - **Histogram**: This can also be used to compare the distributions of two different variables.  
+    - **Scatter plot**: Plots two variables as points on a Cartesian plane. Each point represents an observation's values on the two variables.  
 
 #### Three numerical variables  
 
@@ -77,12 +77,12 @@ The summary below is based on the visualizations available in the core DHIS2 Dat
 #### Four or more numerical variables  
 
 - **Ordered**:  
-  - **Stacked area plot**: Shows multiple series of data as layers stacked on top of each other. Each layer represents a series' value.  
-  - **Line plot**: This can show trends of several variables over time.  
+    - **Stacked area plot**: Shows multiple series of data as layers stacked on top of each other. Each layer represents a series' value.  
+    - **Line plot**: This can show trends of several variables over time.  
 - **Unordered**:
-  - **Heatmap**: Uses color gradients to represent data values in a matrix, making it easy to spot patterns and outliers.  
+    - **Heatmap**: Uses color gradients to represent data values in a matrix, making it easy to spot patterns and outliers.  
 
-### Specific Visualization Styles  
+## Specific Visualization Styles  
 
 > **Note**
 >
@@ -92,14 +92,13 @@ In data visualization, choosing the right type of chart or graph is crucial for 
 
 ![Data visualization styles available in DHIS2](resources/images/dataviz_025.png)
 
-#### Correlation  
+### Correlation  
 
 > **Caution**
 >
-> Correlation assumes a causal relationship unless specified otherwise. Be cautious in interpreting correlation as causation.  
+> Correlation assumes a causal relationship unless specified otherwise. Please be careful when interpreting correlation as causation.  
 
 - **Scatterplot**: Shows the relationship between two continuous variables, each having its axis. Each point represents an observation's values on the two variables. It's useful for identifying trends, clusters, and outliers. For example, a scatterplot can display the relationship between the number of immunization campaigns conducted in various districts and the resulting immunization coverage rate.
-
 
 ![Scatterplot found in the EPI-Program Performance Dashboard plotting coverage vs dropout rates](resources/images/dataviz_003.png)  
 
@@ -107,7 +106,7 @@ In data visualization, choosing the right type of chart or graph is crucial for 
 
 ![Double axis chart with columns and line showing measles cases and coverage](resources/images/dataviz_004.png)  
 
-#### Ranking
+### Ranking
 
 > **Note**
 >
@@ -121,7 +120,7 @@ In data visualization, choosing the right type of chart or graph is crucial for 
 
 ![Slopes on inpatient malaria incidence across different Districts through time](resources/images/dataviz_006.png)  
 
-#### Change Over Time  
+### Change Over Time  
 
 > **Note**
 >
@@ -141,7 +140,7 @@ Use markers for irregular data points.
 
 ![Area chart for the volume of malaria cases in three districts](resources/images/dataviz_008.png)
 
-#### Magnitude   
+### Magnitude   
 
 > **Note**
 >
@@ -151,13 +150,13 @@ Use markers for irregular data points.
 
 ![Paired columns of HIV new cases and HIV new cases who started ART across different districts](resources/images/dataviz_009.png)  
 
-#### Performance Metrics  
+### Performance Metrics  
 
 - **Radar**: Radar charts, also known as spider or web charts, are efficient for displaying multiple variables, making them ideal for visualizing performance metrics such as the strengths and weaknesses of a team across various skills. They allow for a comprehensive view of data at a glance, highlighting comparative performance across different categories. However, radar charts can become cluttered and hard to interpret with more than five groups, leading to overlapping lines and a confusing presentation. This type of chart is not suitable for trendline visualizations as it does not effectively display changes over time. Pros of radar charts include their ability to compare multiple variables simultaneously and their intuitive, visual appeal. Cons include potential clutter with too many variables, difficulty in precise comparison, and the risk of misinterpretation due to the distortion of area size. Common mistakes include overloading the chart with too many variables, not starting scales from zero, and using them to represent data trends rather than comparative metrics.  
 
 ![Radar chart on Rehab condition groups and their use across two districts](resources/images/dataviz_010.png)  
 
-#### Part-to-Whole  
+### Part-to-Whole  
 
 > **Tip**
 >
@@ -174,7 +173,7 @@ Stacked columns or bar charts **should be avoided when** a detailed comparison o
 
 ![Sex for notified TB cases](resources/images/dataviz_012.png)  
 
-#### Single Value Display  
+### Single Value Display  
 
 - **Gauge**: Used to represent a single value within a range, similar to a speedometer. It is ideal for showing progress towards a target or current status against a benchmark. It could be used to display the current immunization coverage rate as a percentage of the target.  
 
@@ -183,7 +182,7 @@ Stacked columns or bar charts **should be avoided when** a detailed comparison o
 
 ![Coverage rate for BCG with a colour-based legend representative of the EPI coverage threshold](resources/images/dataviz_027.png)  
 
-#### Detailed Analyses  
+### Detailed Analyses  
 
 - **Pivot Tables**: Useful for summarizing, analyzing, exploring, and presenting summary data. Pivot tables are interactive and can be used to create custom reports. For example, tables can be used to summarize the number of TB cases by district and month, allowing users to drill down into specific data points for more detailed analysis.  
 
@@ -193,7 +192,7 @@ Stacked columns or bar charts **should be avoided when** a detailed comparison o
 
 ![Scorecard highlighting the MR coverage reported by routine EPI- and SIA-related activities](resources/images/dataviz_031.png)  
 
-#### Spatial  
+### Spatial  
 
 - **Choropleth**: Standard for rates on maps. Uses varying shades of a colour to represent data values for different regions. For example, population density by region can be shown using a choropleth map.  
 
@@ -229,9 +228,9 @@ The detailed steps and best practices for integrating Google Earth Engine with D
 - **Customization**: Tailor the integration to meet the specific needs of your health programs by leveraging the flexibility of DHIS2’s mapping capabilities. This can involve customizing map layers to highlight key indicators relevant to your programs.  
 - **Performance Monitoring**: Regularly monitor and update your Google Earth Engine access and configurations to ensure optimal performance and data accuracy.  
 
-### Common Mistakes  
+## Common Mistakes  
 
-#### Ignoring Data Density  
+### Ignoring Data Density  
 
 Overlooking the issue of data density can lead to charts that are cluttered and difficult to interpret. When data points overlap too much, important patterns and trends can be obscured, making it challenging for viewers to extract meaningful insights.  
 
@@ -259,13 +258,13 @@ Adding too many elements makes the chart hard to read. **Simplify visuals by foc
 
 In addition, this map uses a colour scheme that might not be accessible to colourblind individuals, making it difficult to interpret for a significant portion of the population. **Use colorblind-friendly palettes** that ensure all users can distinguish between different data values. Tools like [ColorBrewer](https://colorbrewer2.org/) provide palettes designed for colourblind accessibility. Refer to the “Part-to-whole” section of the document to see how to change the colour scheme of your visualizations.  
 
-#### Crammed Dashboards  
+### Crammed Dashboards  
 
 Squeezing too many visualizations into a single dashboard can make them unreadable and ineffective. Each visualization should have enough space to be interpreted. Overloading a dashboard with too many elements can overwhelm the viewer and obscure key insights. Aim for a balanced layout where each visualization can be easily read and understood.  
 
-![The items in the dashboards are too small for what they need to convey, the labels are unreadable, the pivot table does not have space to display the variables](resources/images/dataviz_023.png)  
+![The items in the dashboards are too small for what they need to convey, the labels are unreadable, the pivot table does not have space to display the variables](resources/images/dataviz_033.png)  
 
-#### Lack of Context  
+### Lack of Context  
 
 Failing to provide necessary context, such as labels, titles, legends, and explanatory notes, can leave the audience confused about what the chart is representing. **Context is crucial for helping viewers understand the data being presented and drawing accurate conclusions**.  
 
@@ -289,7 +288,7 @@ A bar or a column can be equally used through horizontal bars that focus more on
 
 ![Pie charts with a lare number of categories to be compared](resources/images/dataviz_018.png)  
 
-#### Totals and Parts  
+### Totals and Parts  
 
 **Presenting a total and its parts in the same chart can be misleading, redundant, and visually cluttered, making it difficult for the audience to accurately interpret the data**. To enhance clarity and focus, it is better to use separate charts for the total and its components.  
 
@@ -304,7 +303,7 @@ As an alternative, one could opt for:
 - **Separate Bar Charts**: Use one bar chart to display the total number of doses given in the country and another bar chart to show the doses distributed by each district. This separation maintains clarity and allows for easier comparison and understanding.  
 - **Stacked Bar Chart**: Use a stacked bar chart where each bar represents the total doses for the country, but the bar is divided into segments representing each district. This method keeps the parts and totals together but differentiates the contributions of each part. This is only acceptable if the number of entities is not cluttering the visualization and falling into the same trap as the spaghetti chart.
 
-#### Inappropriate Chart Types
+### Inappropriate Chart Types
 
 Using the wrong type of chart for the data can mislead viewers and obscure the intended message. Each chart type has its strengths and weaknesses, and choosing the correct one is crucial for effective data visualization.  
 
@@ -318,13 +317,13 @@ Using the wrong type of chart for the data can mislead viewers and obscure the i
 
 ![Double axis wrongly unifying stand alone entities](resources/images/dataviz_030.png)  
 
-#### Separate Entities vs Change Over Time  
+### Separate Entities vs Change Over Time  
 
 When visualizing separate entities, such as the doses of a vaccine distributed across different districts, using distinct columns for each district helps clearly distinguish between the different entities. This approach ensures that the data for each district is easy to compare, highlighting the variations in vaccine distribution between districts. Conversely, when visualizing changes over time, such as the number of vaccines distributed in a specific organizational unit, columns should be placed with minimal separation to emphasize the continuity and trends over the period. This close placement helps to illustrate the flow and progression of vaccine distribution, making it easier to identify patterns, peaks, and troughs in the data.  
 
 ![Separate entities on the left vs continuous change over time on the right](resources/images/dataviz_020.png)  
 
-### Conclusion  
+## Conclusion  
 
 **Effective data visualization requires selecting the appropriate chart type based on the variable types and the message you wish to convey**. It’s essential to avoid common mistakes and ensure clarity for the audience. For instance, when illustrating spatial distribution, a map is more relevant as it effectively shows clusters and the distribution of high and low-coverage areas. When checking efforts, absolute numbers are more meaningful if they include target values for comparison. Additionally, for accurate comparisons, it is crucial to normalize data distribution. Good visualization practices enhance understanding and facilitate better decision-making, ensuring that the data tells a compelling and accurate story.  
 
