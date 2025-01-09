@@ -301,16 +301,30 @@ _This is italic text_
 
 === "Examples"
 
+
+    > Basic blockquote
+
     > Blockquotes can also be nested...
     >> ...by using additional greater-than signs right next to each other...
     > > > ...or with spaces between arrows.
+
+    Note that nested blockquotes have a special style applie to help to indicate hierarchical structures.
+    
+    > You can also manually apply the nested style to single blockquotes { .nested }
+
 
 === "Markdown"
 
     ```
+    > Basic blockquote
+
     > Blockquotes can also be nested...
     >> ...by using additional greater-than signs right next to each other...
     > > > ...or with spaces between arrows.
+
+    Note that nested blockquotes have a special style applie to help to indicate hierarchical structures.
+    
+    > You can also manually apply the nested style to single blockquotes { .nested }
     ```
 
 ### Code
