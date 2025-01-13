@@ -1944,7 +1944,7 @@ The mobile device application (front-end, user interface) consists of a login sc
 
 Medical stocks comprise drug products (tablets, injectable drug products, diagnostic tests etc.) as well as single use medical devices such as syringes, bandages, catheters, drains, x-ray films etc.
 
-Medical stores are usually replenished once a month from district, provincial or national stores. Upon delivery, they receive a detailed packing for each consignment which provides details of the item codes and names, quantities, batch numbers and expiry dates. After counting the quantity of each item goods are put away and placed in order of the item group, within alphabetically and within by expiry date in the medical store.
+Medical stores are usually replenished once a month from district, provincial or national stores. Upon delivery, they receive a detailed packing list for each consignment which provides details of the item codes and names, quantities, batch numbers and expiry dates. After counting the quantity of each item goods are put away and placed in order of the item group, within alphabetically and within by expiry date in the medical store.
 
 Depending on the organization of the healthcare facility, every ward or service presents a request form with a list of required items and quantities once a day, several times a week according to an agreed schedule, every week or once a month to the central pharmacy. The storekeeper then picks the required quantities of the required items and prepares them for delivery to the requester.
 
