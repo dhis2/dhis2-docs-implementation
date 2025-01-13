@@ -1942,7 +1942,7 @@ The mobile device application (front-end, user interface) consists of a login sc
 
 ### General use case
 
-Medical stocks comprise drug products (tablets, injectable drug productss, diagnostic test etc.) as well as single use medical devices such as syringes, bandages, catheters, drains, x-ray films etc.
+Medical stocks comprise drug products (tablets, injectable drug products, diagnostic tests etc.) as well as single use medical devices such as syringes, bandages, catheters, drains, x-ray films etc.
 
 Medical stores are usually replenished once a month from district, provincial or national stores. Upon delivery, they receive a detailed packing for each consignment which provides details of the item codes and names, quantities, batch numbers and expiry dates. After counting the quantity of each item goods are put away and placed in order of the item group, within alphabetically and within by expiry date in the medical store.
 
