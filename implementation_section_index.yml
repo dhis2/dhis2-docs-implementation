@@ -231,9 +231,9 @@ Health:
       - Installation: '@github(dhis2-metadata/IMM_TRI, docs/imm_tri-installation.md, master)'
     - EIR Immunization eRegistry:
       - OVERVIEW: '@github(dhis2-metadata/IMM_EIR, docs/overview.md, master)'
-      - Design: '@github(dhis2-metadata/IMM_EIR, docs/imm_eir-design.md, master'
+      - Design: '@github(dhis2-metadata/IMM_EIR, docs/imm_eir-design.md, master)'
       - Installation: '@github(dhis2-metadata/IMM_EIR, docs/imm_eir-installation.md, master)'
-      - Release Note: '@github(dhis2-metadata/IMM_EIR, docs/release_note.md, master'
+      - Release Note: '@github(dhis2-metadata/IMM_EIR, docs/release_note.md, master)'
     - Immunization Campaigns:
       - OVERVIEW: '@github(dhis2-metadata/GEN_DOCS, IMM_VC/overview.md, master)'
       - Use: '@github(dhis2-metadata/GEN_DOCS, IMM_VC/use.md, master)'
@@ -246,6 +246,11 @@ Health:
         - Installation:
           - Real-time Monitoring and Post-campaign Evaluation: '@github(dhis2-metadata/SIA_AGG, docs/sia_agg-installation.md, master)'
           - Rapid Convenience Monitoring: '@github(dhis2-metadata/SIA_RCM, docs/sia_rcm-installation.md, master)'
+     - Immunization (EPI) Big Catch-Up:
+      - OVERVIEW: '@github(dhis2-metadata/IMM_BCU, docs/overview.md, master)'
+      - Design: '@github(dhis2-metadata/IMM_BCU, docs/imm_bcu-design.md, master)'
+      - Installation: '@github(dhis2-metadata/IMM_BCU, docs/imm_bcu-installation.md, master)'
+      - Release Note: '@github(dhis2-metadata/IMM_BCU, docs/release_note.md, master)'
     - EPI Logistics:
       - LMIS Design: '@github(dhis2-metadata/GEN_DOCS, docs/lmis_agg-design.md, master)'
       - EPI Logistics Design: '@github(dhis2-metadata/IMM_AGG, docs/imm_agg_stk-design.md, master)'
