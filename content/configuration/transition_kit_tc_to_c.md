@@ -20,7 +20,21 @@ In order to successfully introduce the capture app, we recommend that implementa
 
 In order to start a review of the features within the capture app, first have a look at the [user documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html). This document discusses some of the key features and outlines the interface within the capture app.
 
-To further supplement the documentation, a series of videos that demonstrates the capture app functionality will be available shortly.
+To further supplement the documentation, a series of videos that demonstrates the capture app functionality is available below:
+
+![A review of the capture interface and registering a new TEI](https://www.youtube.com/embed/Voh0lKz075w)
+
+![Searching and the tracker dashboard](https://www.youtube.com/embed/icfOST-Ey_I)
+
+![Data Entry](https://www.youtube.com/embed/QurEw1p9JWI)
+
+![Relationships](https://www.youtube.com/embed/dkE7FZoHRjI)
+
+![Enrolling into multiple programs](https://www.youtube.com/embed/j9FxsYrWdM0)
+
+![The profile and enrollment widgets (deleting an enrollment and tracked entity instance)](https://www.youtube.com/embed/gRxu88GvE1c)
+
+![Performing referrals and transfers](https://www.youtube.com/embed/dIL8HTrG4Hs)
 
 ## Feature comparison of the tracker capture and capture apps
 
@@ -84,7 +98,7 @@ In the capture app, the search button is now located next to the registration bu
 
 #### The search page
 
-The search page in capture is now updated to have tabbed layout; unique tracked entity attributes along with searchable, non-unique tracked entity attributes are divided into collabsible sections. You are also able to create working lists that can be saved and viewed through accessing the search page in capture.
+The search page in capture is now updated to have tabbed layout; unique tracked entity attributes along with searchable, non-unique tracked entity attributes are divided into collapsible sections. You are also able to create working lists that can be saved and viewed through accessing the search page in capture.
 
 ![](images/ER_TC_C/search_page.png)
 
