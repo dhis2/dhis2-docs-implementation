@@ -98,7 +98,7 @@ In the capture app, the search button is now located next to the registration bu
 
 #### The search page
 
-The search page in capture is now updated to have tabbed layout; unique tracked entity attributes along with searchable, non-unique tracked entity attributes are divided into collabsible sections. You are also able to create working lists that can be saved and viewed through accessing the search page in capture.
+The search page in capture is now updated to have tabbed layout; unique tracked entity attributes along with searchable, non-unique tracked entity attributes are divided into collapsible sections. You are also able to create working lists that can be saved and viewed through accessing the search page in capture.
 
 ![](images/ER_TC_C/search_page.png)
 
