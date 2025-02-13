@@ -83,6 +83,10 @@ To calculate the difference between the two populations, make an indicator with 
 >
 > Numerator: Population 1 - Population 2
 > Denominator: Population 1
+>
+> \[
+> Indicator = {\frac{Population1-Population2}{Population1}} \times 100
+> \]
 
 To highlight differences ≥ 10%, make a legend and apply it to your indicator 
 
