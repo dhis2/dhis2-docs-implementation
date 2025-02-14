@@ -93,8 +93,7 @@ Below are steps that can be taken to improve dashboard performance.
 	c. Rather than several people downloading the same data (e.g. for the national level) from DHIS2, download once and share via for example excel.
 
 * Ensure caching is enabled in the dhis2 configuration, so that repeated requests for the same analytics resources are served from the cache and database queries are skipped. 
-	a. dhis.conf - `analytics.cache.expiration` set to at least 3600 (6 hours). 
-	b. System settings -\> analytics -\> cache strategy. Recommended value: at least CACHE_6AM_TOMORROW. Set cacheability to	"private" to avoid nginx cache.
+  	a. System settings -\> analytics -\> cache strategy. Recommended value: at least CACHE_6AM_TOMORROW. Set cacheability to	"private" to avoid nginx cache.
 
 * Turn-off continuous analytics. If you turn off continuous analytics you will only see your analytics updated after your analytics tables run.
 
