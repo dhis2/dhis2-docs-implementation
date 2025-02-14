@@ -31,6 +31,8 @@ What we have attempted to do is take existing guidelines for assessing denominat
     - Highlight differences that are ≥ 10%
 5.  Compare national targets (ex. births) with the sum of subnational targets
     - Highlight when national births ≠ the sum of subnational births
+6. Review the trends of your data over time
+    - Plot your numerator and denominator data together and look for inconsistencies in reporting
 
 ### Sources of data for comparison
 
@@ -62,7 +64,9 @@ A couple notes on readying your data before making these comparisons:
 
 Here is an example of this comparison in DHIS2 using a pivot table in data visualizer:
 
-Some simple rules for when we make this comparison:
+![](resources/images/dq_pop_data_comparison.png)
+
+Some rules for when we make this comparison:
 
 - Highlight differences ≥ 10%
 - Discuss possible reasons for large inconsistencies (ex. the method used by your statistics office to project population, change in parameters based on new studies, etc.)
@@ -107,3 +111,83 @@ Ensure you apply the legend to your table
 An example layout, along with the output, can be seen below.
 
 ![](resources/images/dq_pop_comparison_layout.png)
+
+## Comparing your implied rates with other sources
+
+Implied rates are a calculated rate that are not directly measured but is derived from available data. Examples of this include crude birth rate and infant mortality rate. 
+
+We can use the [UN World Population Prospects](https://population.un.org/wpp/) as our source for our external data in this example.  
+
+We can import this information into a DHIS2 data element in the event the rates are already calculated for you without providing the numerator and denominator; or create an indicator if we are able to obtain the numerator and denominator for the purposes of import.
+
+An example of this comparison can be seen here:
+
+![](resources/images/dq_implied_rate_comparison.png)
+
+Some rules when making this comparison:
+
+- Highlight differences that are ≥ 20%
+- Compare your implied rate over time with global trends. Are the trends over time similar to global ones or not?
+
+If you are seeing large differences that are ≥ 20%, it is worthwhile checking both the numerator and the denominator for its consistency in these cases.
+
+### Steps for making this visualization
+
+***First, ensure you have both your existing data as well as your external data available in DHIS2.***
+
+To calculate the difference between the two populations, make an indicator with the following formula:
+
+> **Example**
+>
+> Indicator type : percentage (factor of 100)
+>
+> Numerator: Rate 1 - Rate 2
+> Denominator: Rate 1
+>
+> \[
+> Indicator = {\frac{Rate1-Rate2}{Rate1}} \times 100
+> \]
+
+To highlight differences ≥ 20%, make a legend and apply it to your indicator 
+
+Make the legend via maintenance
+
+![](resources/images/dq_rate_legend.png)
+
+Apply it to your indicator in the "legends" section of the indicator
+
+![](resources/images/dq_apply_legend.png)
+
+Make a pivot table in data visualizer. Add your 2 implied rates that you are comparing, along with your comparison indicator. Filter by org unit, or show all of them, depending on your needs. 
+
+## Assessing your annual growth rate
+
+
+
+## Compare routine coverage estimates to survey coverage estimates
+
+To get an idea of the accuracy of your coverage estimates, it can be useful to compare coverages that have been calculated using a different methodology in estimating both the numerator and denominator. Due to the rigourous nature of a survey's design, they are often considered accurate; and if your routine estimates line up with your survey data this can be useful in determining the accuracy of your routine estimates. 
+
+We can perform this type of comparison both directly in data visualizer, as well as by using the [data quality annual report app](https://apps.dhis2.org/app/73f87a14-d71c-40b8-8363-0d956745ba06)
+
+Here is an example of this comparison from the data visualizer app:
+
+![](resources/images/dq_dv_survey_comparison.png)
+
+And an example from the DQ annual report app:
+
+![](resources/images/dq_ar_survey_comparison.png)
+
+Some rules when making this comparison:
+
+- You are able to set a quality threshold in terms of what is an acceptable difference between your routine and survey coverage estimates; we can use ≥ 10% as a general rule however
+
+If you are seeing large differences that are ≥ 10%, it is worthwhile checking both the numerator and the denominator for its consistency. In particular, when you are comparing denominators, it will be useful to understand the method the survey used to estimate its denominators and if this can support you in making your internal targets more accurate. 
+
+### Steps for making this visualization
+
+***First, ensure you have both your existing data as well as your external data available in DHIS2.***
+
+If you are using data visualizer, you can make a bar, column or line chart and visually identify differences that exceed your threshold. You can also create a pivot table in order to calculate (using an indicator and legend you create) and highlight any significant differences if needed. 
+
+If you are using the DQ annual report app, you will need to configure your comparisons under the "external data comparison" tab.
