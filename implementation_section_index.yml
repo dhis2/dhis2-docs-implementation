@@ -9,6 +9,11 @@ Implementing DHIS2:
   - DHIS2 as Data Warehouse: '@github(dhis2/dhis2-docs-implementation, content/implementation/dhis2-as-data-warehouse.md, master)'
   - DHIS2 as a platform: '@github(dhis2/dhis2-docs-implementation, content/implementation/dhis2-as-a-platform.md, master)'
   - Integration concepts: '@github(dhis2/dhis2-docs-implementation, content/implementation/integration-concepts.md, master)'
+  - Upgrading:
+      - Introduction: '@file(content/implementation/upgrades.md)'
+      - Planning: '@file(content/implementation/upgrades-planning.md)'
+      - Testing: '@file(content/implementation/upgrades-testing.md)'
+      - SOP Templates: '@file(content/implementation/upgrades-sop.md)'
 Tracker implementation:
   - Target audience: '@github(dhis2/dhis2-docs-implementation, content/tracker_implementation/target-audience.md, master)'
   - Introduction: '@github(dhis2/dhis2-docs-implementation, content/tracker_implementation/introduction.md, master)'
@@ -19,7 +24,7 @@ Android implementation:
   - '@github(dhis2/dhis2-android-docs, DHIS2_Android_Implementation_INDEX.yml, main)' #Android uses external INDEX files
   - Managing mobile devices:
     - '@github(dhis2/dhis2-android-docs, DHIS2_Android_MDM_INDEX.yml, main)' #Android uses external INDEX files
-Data quality: 
+Data quality:
   - OVERVIEW: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-00-intro.md, master)'
   - Principles: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-01-principles.md, master)'
   - Data entry: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-02-data-entry.md, master)'
@@ -361,12 +366,12 @@ Health:
 #  - Downloads Section:
 #    - WHO Metadata Packages: https://dhis2.org/who-package-downloads/
 Logistics:
-  - Real-Time Stock (RTS): '@github(dhis2/dhis2-docs-implementation, content/lmis/real-time-stock-management.md, lmis_init)'  
-  - Biomedical Equipment Life Cycle (BLC): '@github(dhis2/dhis2-docs-implementation, content/lmis/biomedical-equipment-life-cycle-management.md, lmis_init)'  
-  - Cold Chain Equipment (CCE): '@github(dhis2/dhis2-docs-implementation, content/lmis/cold-chain-equipment-life-cycle-management.md, lmis_init)'  
-  - GS1-DataMatrix Code (GS1): '@github(dhis2/dhis2-docs-implementation, content/lmis/gs1-datamatrix-code-parsing.md, lmis_init)'  
-  - Health Care Product Catalogue (HPC): '@github(dhis2/dhis2-docs-implementation, content/lmis/health-care-product-catalogue.md, lmis_init)'  
-  - Monthly Stock Reporting (MSR): '@github(dhis2/dhis2-docs-implementation, content/lmis/monthly-stock-reporting.md, lmis_init)'  
+  - Real-Time Stock (RTS): '@github(dhis2/dhis2-docs-implementation, content/lmis/real-time-stock-management.md, lmis_init)'
+  - Biomedical Equipment Life Cycle (BLC): '@github(dhis2/dhis2-docs-implementation, content/lmis/biomedical-equipment-life-cycle-management.md, lmis_init)'
+  - Cold Chain Equipment (CCE): '@github(dhis2/dhis2-docs-implementation, content/lmis/cold-chain-equipment-life-cycle-management.md, lmis_init)'
+  - GS1-DataMatrix Code (GS1): '@github(dhis2/dhis2-docs-implementation, content/lmis/gs1-datamatrix-code-parsing.md, lmis_init)'
+  - Health Care Product Catalogue (HPC): '@github(dhis2/dhis2-docs-implementation, content/lmis/health-care-product-catalogue.md, lmis_init)'
+  - Monthly Stock Reporting (MSR): '@github(dhis2/dhis2-docs-implementation, content/lmis/monthly-stock-reporting.md, lmis_init)'
   - Temperature Monitoring Tool (TMT): '@github(dhis2/dhis2-docs-implementation, content/lmis/temperature-monitoring-tool.md, lmis_init)'
 Support and documentation:
   - DHIS2 Documentation Guide: '@github(dhis2/dhis2-docs-implementation, content/support_documentation/dhis2-documentation-guide.md, master)'
