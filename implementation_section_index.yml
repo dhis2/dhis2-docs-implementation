@@ -10,10 +10,10 @@ Implementing DHIS2:
   - DHIS2 as a platform: '@github(dhis2/dhis2-docs-implementation, content/implementation/dhis2-as-a-platform.md, master)'
   - Integration concepts: '@github(dhis2/dhis2-docs-implementation, content/implementation/integration-concepts.md, master)'
   - Upgrading:
-      - Introduction: '@file(content/implementation/upgrades.md)'
-      - Planning: '@file(content/implementation/upgrades-planning.md)'
-      - Testing: '@file(content/implementation/upgrades-testing.md)'
-      - SOP Templates: '@file(content/implementation/upgrades-sop.md)'
+      - Introduction: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades.md, phil-upgrade-imp)'
+      - Planning: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-planning.md, phil-upgrade-imp)'
+      - Testing: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-testing.md, phil-upgrade-imp)'
+      - SOP Templates: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-sop.md, phil-upgrade-imp)'
 Tracker implementation:
   - Target audience: '@github(dhis2/dhis2-docs-implementation, content/tracker_implementation/target-audience.md, master)'
   - Introduction: '@github(dhis2/dhis2-docs-implementation, content/tracker_implementation/introduction.md, master)'
