@@ -1,11 +1,11 @@
 # Testing upgrades
 
-While the DHIS2 software development team execute significant levels of functional, non-functional, and regression testing prior to releases, the scale of the platform and its configurability mean that it is not all scenarios can be explored for every release. It is vital that implementations validate the system against their own critical scenarios, in a test environment with their own data, prior to upgrading thier production instance.
+While the DHIS2 software development team execute significant levels of functional, non-functional, and regression testing prior to releases, the scale of the platform and its configurability mean that it is not all scenarios can be explored for every release. It is vital that implementations validate the system against their own critical scenarios, in a test environment with their own data, prior to upgrading their production instance.
 
 Testing should be as exhaustive as possible within the available time and budget. Typically this means some level of prioritisation. For the sake of efficiency, the main focus areas should be:
 
-* **Implementation-specific customisations**: tools and functionalities that might not be tested by anyone else. This can include custom apps and itegrations, as well as highly-configured programs.
-* **Known challenges**: Core scenarios that vary significantly with different scales of metadata and data in real environments. Straighforward examples are things like analytics generation or searching for enrollments.
+* **Implementation-specific customisations**: tools and functionalities that might not be tested by anyone else. This can include custom apps and integrations, as well as highly-configured programs.
+* **Known challenges**: Core scenarios that vary significantly with different scales of metadata and data in real environments. Straightforward examples are things like analytics generation or searching for enrollments.
 * **Critical workflows**: activities that would have serious operational impact for the target implementation in the event of failure. This includes not just consideration of the scenarios, but also the various user roles who need to perform those scenarios.
 
 

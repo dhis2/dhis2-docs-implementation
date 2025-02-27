@@ -2,29 +2,29 @@
 
 The entity responsible for the DHIS2 system (for example the HMIS unit in the Ministry of Health) should have a clear policy for system upgrades, and well as a written SOP describing *how* upgrades should be performed (see [SOP section](#upgrade_sop_templates)). Part of this should be to define a general upgrade calendar describing when key activities should typically take place (see [upgrade calendar section](#making_an_upgrade_calendar) below).
 
-For each upgrade cycle, a detailed plan and timeline should be developed, tailored to the current context and specificities of the upgrade. One upgrade may require development work related to an integration or custom app which needs to be taked into account in the plan. Another upgrade might involve user-facing changes that require some level of training, which must perhaps be coordinated with other activities (i.e. quarterly review meetings where many users are already in one location).
+For each upgrade cycle, a detailed plan and timeline should be developed, tailored to the current context and specificities of the upgrade. One upgrade may require development work related to an integration or custom app which needs to be taken into account in the plan. Another upgrade might involve user-facing changes that require some level of training, which must perhaps be coordinated with other activities (i.e. quarterly review meetings where many users are already in one location).
 
 At a high level, the upgrade plan should include these activities:
 
-    1. Metadata cleaning
-    2. Evaluation of changes
-    3. Testing
-    4. Make modifications (to configuration, integrations, apps)
-    5. Communication and training
-    6. Apply upgrade to production
+1. [Metadata cleaning](#upgrade-metadata_cleaning)
+2. [Evaluating changes](#upgrade-evaluating_changes)
+3. [Testing](#upgrade-testing)
+4. [Make modifications](#upgrade-making_necessary_modifications)
+5. [Communication and training](#upgrade-communication_and_training)
+6. Apply upgrade to production
 
 
-## 1. Metadata cleaning
+## Metadata cleaning { #upgrade-metadata_cleaning }
 
 Over time, integrity issues might develop in the DHIS2 metadata as configurations are modified and amended. These integrity issues are not always immediately visible, but may cause problems during upgrades. For example, they might cause the automated database migrations to fail, or make fetching and rendering of metadata in apps to fail. It is therefore good practice to review and fix metadata integrity issues as a first step in any major version upgrade. The [metadata integrity]() section describes how this can be performed. In particular, issues highlighted by the metadata integrity check as *critical* or *severe* should be addressed before upgrading; integrity checks labelled *warning* do not typically cause problems for upgrades.
 
-## 2. Evaluating changes
+## Evaluating changes { #upgrade-evaluating_changes }
 
-With a new release, it's important to thoroughly review the documentation associated with that release. The most straighforward place to access these is via dhis2.org/downloads, where each supported version is presented with links to the relevant documents:
+With a new release, it's important to thoroughly review the documentation associated with that release. The most straightforward place to access these is via [dhis2.org/downloads](https://dhis2.org/downloads), where each supported version is presented with links to the relevant documents:
 
 * **release notes** give an overview of all changes in the release, with links to specific jira tickets and documentation sections where relevant. Each major, patch and hotfix release has a separate release note document.
-* **upgrade notes** provide detailed technical information and requirements for the release and upgrade process, for example highlightning changes in support for java or postgresql versions, renaming of database tables or API endpoints that might affect custom script and integrations etc. This is critical for people planning and performing the actual upgrade on the server, but can also relevant for other DHIS2 core team members.
-* **feature overview** is a permanent link to the release notes published with the major version (e.g. v40 or v41), which lists new functionality for that major version (inlucde the release notes, which for patch and hotfix versions only lists minor changes and bugs that have been addressed).
+* **upgrade notes** provide detailed technical information and requirements for the release and upgrade process, for example highlighting changes in support for java or postgresql versions, renaming of database tables or API endpoints that might affect custom script and integrations etc. This is critical for people planning and performing the actual upgrade on the server, but can also relevant for other DHIS2 core team members.
+* **feature overview** is a permanent link to the release notes published with the major version (e.g. v40 or v41), which lists new functionality for that major version (include the release notes, which for patch and hotfix versions only lists minor changes and bugs that have been addressed).
 * (TBC) **deprecated features** lists specific features, functionalities and API endpoints that have been deprecated in the major version.
 
 For each upgrade, and in particular when upgrading to a new major version, these documents need to be reviewed by the core team supporting the upgrade process. If upgrading several versions (e.g. from 2.39 to v41), the documents for *each* release must be reviewed. Not all changes are relevant for every implementation, but those that are likely to be relevant for a particular system should be documented. Based on this, a plan can be made for how the changes will be managed.
@@ -34,9 +34,9 @@ It can be useful to consider changes as falling into three main categories, whic
 1. **Changes directly affecting end users**  
     This category include changes affecting how end users interact with the system. This can range from having to use an entirely new application for a core activity (i.e. from *Pivot Table* to *Data Visualizer* or *Tracker Capture* to *Capture*), to smaller changes to the user interface.
 
-    It's important here to consider the type of user affected. A large majority of users typically use just a few apps apps for data entry and/or analysis, and changes affecting these users in many ways have the biggest impact and consequences. Other apps are used by a relatively small number of users, often limited to core national staff (e.g. in the Ministry of Health), and providing orientation or even additional training to this group is much cheaper and easier.
+    It is important here to consider the type of user affected. A large majority of users typically use just a few apps apps for data entry and/or analysis, and changes affecting these users in many ways have the biggest impact and consequences. Other apps are used by a relatively small number of users, often limited to core national staff (e.g. in the Ministry of Health), and providing orientation or even additional training to this group is much cheaper and easier.
 
-    The core team in charge of the update must consider the relevant changes in this category to conisder the potential consequences and what sort of activities should be planned to ensure end users can continue to use the system with minimal interruption. It is always good practice to send a notification to all users prior to an upgrade informing them of when the upgrade will take place, what changes they will experience after the upgrade, and reminding them of how to get support if they face any problems. For smaller changes, this may be sufficient to address changes visible to end users.
+    The core team in charge of the update must consider the relevant changes in this category to consider the potential consequences and what sort of activities should be planned to ensure end users can continue to use the system with minimal interruption. It is always good practice to send a notification to all users prior to an upgrade informing them of when the upgrade will take place, what changes they will experience after the upgrade, and reminding them of how to get support if they face any problems. For smaller changes, this may be sufficient to address changes visible to end users.
 
     When there are larger changes, more comprehensive communication and training may be necessary. Examples of this include:
 
@@ -54,13 +54,13 @@ It can be useful to consider changes as falling into three main categories, whic
     These changes require planning for validation and potentially revision of the affected apps and/or tools.
 
 3. **Configuration changes**  
-    Configuration changes are changes introduced in an upgrade that requires the core team of administrators to make changes to the DHIS2 metadata configuration to ensure that the system continues to function as expected. These changes are thus not directly visble to end users, unless they are not addressed and the systems stops working. This type of change is not very common as it's most often handled automatically during the upgrade process, but it does happen occasionally.
+    Configuration changes are changes introduced in an upgrade that requires the core team of administrators to make changes to the DHIS2 metadata configuration to ensure that the system continues to function as expected. These changes are thus not directly visible to end users, unless they are not addressed and the systems stops working. This type of change is not very common as it's most often handled automatically during the upgrade process, but it does happen occasionally.
 
-## 3. Testing
+## Testing { #upgrade-testing }
 
 Testing is typically the most time-consuming and important step and is addressed in detail in a separate [Testing section]() that covers both.
 
-## 4. Making necessary modifications
+## Making necessary modifications { #upgrade-making_necessary_modifications }
 
 This involves acting on the required changes that have been identified in the evaluation phase. The modifications typically fall into two main categories:
 
@@ -74,7 +74,7 @@ This involves acting on the required changes that have been identified in the ev
 
 It is particularly important to plan these modification phases well in advance if the effort needs to be procured from third-parties.
 
-## 5. Communication and training
+## Communication and training { #upgrade-communication_and_training }
 
 Effective communication and training are critical to the success of major upgrades; when significant changes are being rolled out. This involves several key aspects:
 
