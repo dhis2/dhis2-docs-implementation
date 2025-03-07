@@ -18,9 +18,23 @@ In order to successfully introduce the capture app, we recommend that implementa
 
 ## Features of the Capture App
 
-In order to start a review of the features within the line listing app, first have a look at the [user documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html). This document discusses some of the key features and outlines the interface within the capture app.
+In order to start a review of the features within the capture app, first have a look at the [user documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html). This document discusses some of the key features and outlines the interface within the capture app.
 
-To further supplement the documentation, a series of videos that demonstrates the capture app functionality is available. These videos are located on YouTube. A playlist has been created [here](), while each of these videos can be found below.
+To further supplement the documentation, a series of videos that demonstrates the capture app functionality is available below:
+
+![A review of the capture interface and registering a new TEI](https://www.youtube.com/embed/Voh0lKz075w)
+
+![Searching and the tracker dashboard](https://www.youtube.com/embed/icfOST-Ey_I)
+
+![Data Entry](https://www.youtube.com/embed/QurEw1p9JWI)
+
+![Relationships](https://www.youtube.com/embed/dkE7FZoHRjI)
+
+![Enrolling into multiple programs](https://www.youtube.com/embed/j9FxsYrWdM0)
+
+![The profile and enrollment widgets (deleting an enrollment and tracked entity instance)](https://www.youtube.com/embed/gRxu88GvE1c)
+
+![Performing referrals and transfers](https://www.youtube.com/embed/dIL8HTrG4Hs)
 
 ## Feature comparison of the tracker capture and capture apps
 
@@ -42,7 +56,7 @@ In addition to the org unit and program selectors, additional items in capture h
 
 ![](images/ER_TC_C/UI_comparison.png)
 
-1. The working lists in capture are still directly above the front page line list. The working list features have been greatly expanded in capture, and is described in the user documentation, the video demonstrations linked in [features](#features-of-the-capture-app) section of this document and the section in this document on new capture app features. We can see that the full label of the working list is shown in capture, which replaces the icons that are shown in tracker capture. 
+1. The working lists in capture are still directly above the front page line list. The working list features have been greatly expanded in capture, and is described in the [user documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#list-tracked-entity-instances-enrolled-in-program). We can see that the full label of the working list is shown in capture, which replaces the icons that are shown in tracker capture. 
 2. The Search and Registration buttons are located to the right of the registering unit/org unit dropdown in capture. The order of the buttons has also changed, with the registration button being first followed by search. The registration button is now dynamic and will change its text based on the tracked entity type you are registering. 
 3. Items including downloading the data or modifying which attributes appear on the front page line list have been collapsed into menu buttons in capture. 
 
@@ -84,13 +98,13 @@ In the capture app, the search button is now located next to the registration bu
 
 #### The search page
 
-The search page in capture is now updated to have tabbed layout; unique tracked entity attributes along with searchable, non-unique tracked entity attributes are divided into collabsible sections. You are also able to create working lists that can be saved and viewed through accessing the search page in capture.
+The search page in capture is now updated to have tabbed layout; unique tracked entity attributes along with searchable, non-unique tracked entity attributes are divided into collapsible sections. You are also able to create working lists that can be saved and viewed through accessing the search page in capture.
 
 ![](images/ER_TC_C/search_page.png)
 
 ### The dashboard
 
-The dashboard in capture has received a significant update, and a full description of this new dashboard is available [here](#describing-the-new-dashboard-in-capture). We can see many of the elements have been moved and given a modified look within capture. Stages and events are now grouped together within the data entry section of the dashboard, rather then presented in a timeline or tabular format as is seen in tracker capture. All of the widgets, like indicators etc. have been moved to the right side of the screen. We also see that the top bar used to initially select the program persists, with information added on the tracked entity you are working with. 
+The dashboard in capture has received a significant update, and a full description of this new dashboard is available [here](#the-enrollment-dashboard). We can see many of the elements have been moved and given a modified look within capture. Stages and events are now grouped together within the data entry section of the dashboard, rather then presented in a timeline or tabular format as is seen in tracker capture. All of the widgets, like indicators etc. have been moved to the right side of the screen. We also see that the top bar used to initially select the program persists, with information added on the tracked entity you are working with. 
 
 ![](images/ER_TC_C/dashboard.png)
 
@@ -169,6 +183,7 @@ Lets start with reviewing a single event in a different location. We can do two 
 #### Create an event in a different org unit at the time of data entry
 
 In order to create a new event in a different org unit at the time of data entry in ***tracker capture*** you need to: 
+
 1. Select the org unit you want the new event to appear in on the left side menu
 2. Select the program you want the registered event to be in
 3. Search for the TEI in the program and navigate to the dashboard
@@ -182,15 +197,75 @@ In order to create a new event in a different org unit at the time of data entry
 1. Search for the TEI in the program. This can be from any org unit, including the registering unit or another organisation unit.
 2. Navigate to TEI dashboard
 3. Change the org unit selected in the registering unit dropdown
-4. Create the event, enter details and save the event
+4. Create the event, enter the details and save the event
 
-### Working lists
+![](images/ER_TC_C/capture_de_referrral.png)
+
+#### Schedule an event in a different org unit
+
+In order to schedule a one-time referral to have an event in another org unit in ***tracker capture***, you need to:
+
+1. Search for the TEI in the program and navigate to the dashboard 
+2. Use the "make referral" action button in the data entry widget
+3. Select the event you want to have scheduled in the other org unit
+4. Select the org unit you want the event scheduled in
+5. Select the event date that you want to schedule for the new event
+6. Select the "one-time" referral button
+
+In order to schedule a one-time referral to have an event in another org unit in ***capture***, you need to:
+
+1. Search for the TEI in the program and navigate to the dashboard 
+2. Change the registering unit to the org unit you want to schedule the event in
+3. Use the "schedule an event" action button in the data entry widget
+4. Select the event you want to have scheduled in the other org unit
+5. Select the event date that you want to schedule for the new event
+6. Select the "one-time" referral button
+
+![](images/ER_TC_C/schedule_event.png)
+
+#### Performing a permanent transfer
+
+In order to perform a permanent transfer in ***tracker capture***
+
+1. Search for the TEI in the program and navigate to the dashboard 
+2. Use the "make referral" action button in the data entry widget
+3. Select the org unit you want to transfer the TEI to
+4. Select the "Move permanently" button
+
+In order to perform a permanent transfer in ***capture***
+
+1. Search for the TEI in the program and navigate to the dashboard
+2. From the enrollment widget, select the "enrollment actions" dropdown. Then select the "transfer" option
+3. Select the org unit you want to transfer the TEI to and select "Transfer"
+
+![](images/ER_TC_C/transfer.png)
 
 ## New Features in the Capture app
 
-A review of the new features available in the capture app, is available here. You can also refer to the section [features of the capture app](#features-of-the-capture-app) to review the user documentation as well as a series of videos that have been made describing the capture apps functionality.
-
 ### Working Lists
+
+In the ***capture*** app, you are able to more easily manage the front page list when selecting a program and organisation unit. This includes modifying and saving the front page list views based on a number of criteria. This information is explained in detail [here](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#list-tracked-entity-instances-enrolled-in-program).
+
+### Saving of data values and events
+
+In ***tracker capture***, whenever you add individual values to an event, these values are saved automatically. You do not need to select any button to save these values and they are thus sent to the server one by one as they are entered.
+
+![](images/ER_TC_C/tc_saving.png)
+
+In ***capture***, data from within an event is only saved based on when you decide to save or update the event. You have to select a "Save" button within the event to save the data, and if you select "cancel" the data will not be saved.
+
+![](images/ER_TC_C/capture_saving.png)
+
+Editing an event in ***capture*** is also handled differently. In ***tracker capture***, if you navigate through your stages and events with data, they will be open and can be edieted at any time.
+
+In ***capture*** however, if you open an event with data, you will have to select an "edit" button in order to edit data within the event.
+
+![](images/ER_TC_C/capture_edit.png)
+
+There are some advantages to this new implementation; though care needs to be taken to ensure your data is saved as it is no longer an automatic process:
+
+1. Events that are created with blank or missing data or mandatory fields not filled in will not be automatically saved anymore. 
+2. Data will be sent to the server in chunks, rather then having numerous requests sent each time a field is filled in.
 
 ### The enrollment dashboard
 
@@ -250,4 +325,37 @@ Feedback (this widget is not displayed in this example) - In this widget you can
 
 ## User Permissions
 
+The capture app comes with a revised model for user permissions. One of the most useful additions is the ability to control if someone can delete a tracked entity or enrollment; in ***tracker capture*** if a person had access to the record, they could delete it.
+
+There are no specific metadata authorities associated with using the capture app; however you will have to assign people to the capture app and provide them with related tracker authorities.
+
+![](images/ER_TC_C/tracker_authorities.png)
+
+Let us review these tracker authorities a bit more:
+
+- Delete enrollment and associated events: Allows you to delete an enrollment in a program along with any events in that enrollment
+  - You need to be careful with this authority as all the enrollment data will be lost upon using this action. A warning box will come up up if you select this option to confirm you really want to delete it. 
+- Delete tracked entity instance and associated enrollments and events: Allows you to delete a TEI along with all associated enrollments and events. 
+  - You need to be very mindful of this authority as this will delete the TEI, along with all of its enrollments and related events. A warning box will come up if you select this option to confirm you really want to delete it.
+- Ignore validation of required fields in Tracker and Event Capture: This will allow you to save TEIs and events even when required fields are not filled in
+- Merge tracked entity instances: This allows you to merge tracked entity instances through the API (there is currently no user interface to perform this action). Please see the [docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-241/tracker-deprecated.html#merging-tracked-entity-instances) for more info.
+- Search tracked entity instances in all org units: This allows you to search for tracked entities in all of the org units, even if you are only assigned a subset for data capture and/or data analysis. This can be useful to reduce duplicates and found already registered TEIs across the system.
+- Uncomplete events: Allows you to change the status of a completed event to an incompleted event
+- Update tracked entities: Allows a user to update existing tracked entity instances. Without this you can not edit existing tracked entities.
+- View event analytics: Allows you to view analytics related to event and tracker programs. Without this you can not perform the analysis of any type of individual level data. Needs to be paired with sharing to determine which programs you can review data for.
+
+Here are some examples of a user with and without some of these authorities:
+
+***Delete enrollment and associated events***
+
+![](images/ER_TC_C/delete_enrollment.png)
+
+***Delete tracked entity instance and associated enrollments and events***
+
+![](images/ER_TC_C/delete_TEI.png)
+
 ## Training Material
+
+A full overview on how to use tracker capture is available [here](https://github.com/dhis2/training-docs/blob/main/content/tracker_use/tg_capture_web.md).
+
+A presentation including all of the comparison screenshots between tracker capture and capture as seen in this guide is available [here](https://docs.google.com/presentation/d/1pJixTEOdbIUClFmDDL2gmKicYKoqD941/edit?usp=drive_link&ouid=104677221247573000314&rtpof=true&sd=true).
