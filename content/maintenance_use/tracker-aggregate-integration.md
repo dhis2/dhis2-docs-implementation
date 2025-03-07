@@ -106,7 +106,7 @@ When a system for routine aggregate reporting through DHIS2 data exists, there i
 There are several ways, technically, to do this. In the how-to section below, the focus is on the steps needed to set up an automated migration of tracker data into aggregate data values. 
 
 ## How-to: saving aggregated tracker data as aggregate data values
-This section describes the recommended approach for saving tracker data as aggregate data element values. While requiring an external tool or script as part of transferring the data, it leverages the existing functionality of DHIS2 as far as possible so that the script can be relatively simple. What is outlined here is also the approach taken in the [WHO configuration packages](dhis2.org/who) for DHIS2, which includes mapping of variables between tracker programmes and aggregate data sets where relevant. This is discussed in more detail [below](#dhis2-digital-data-packages-and-linking-tracker-and-aggregate-data).
+This section describes the recommended approach for saving tracker data as aggregate data element values. While requiring an external tool or script as part of transferring the data, it leverages the existing functionality of DHIS2 as far as possible so that the script can be relatively simple. What is outlined here is also the approach taken in the [Health Data Toolkits](https://dhis2.org/health-data-toolkit/) for DHIS2, which includes mapping of variables between tracker programmes and aggregate data sets where relevant. This is discussed in more detail [below](#dhis2-digital-data-packages-and-linking-tracker-and-aggregate-data).
 
 The approach described here is recommended as a long-term, automated solution for saving tracker data as aggregate data values. Technically, there are several other ways in which this aggregation and migration of data can be done, including using predictors, exporting the data and transforming it using other software (for example excel), or through custom DHIS2 apps (including some that are available in the [DHIS2 App Hub](apps.dhis2.org). While not described in this guide, these tools and methods can still be relevant in many cases, including in combination with the approach outlined here. For example, if there is only a need to do ad-hoc transfers of data from time to time, or in an early phase of tracker implementations when data is transferred primarily for testing and the configuration is still undergoing changes. 
 
@@ -261,7 +261,7 @@ A template script for automating routine migration of data from tracker to aggre
 
 ### DHIS2 Digital Data Packages and linking tracker and aggregate data
 DHIS2 digital data packages have been developed to support both
-aggregate reporting & analysis, as well as tracker data capture and facility-level analysis. Further information is available on [dhis2.org/who](https://dhis2.org/who)
+aggregate reporting & analysis, as well as tracker data capture and facility-level analysis. Further information is available on [Health Metadata Toolkits](https://dhis2.org/health-data-toolkit/).
 
 Aggregate digital data packages (inclusive of standard aggregate dashboards) are available for health programmes such as TB, HIV, malaria, RMNCAH and disease surveillance. Aggregate packages include:
 
