@@ -282,7 +282,7 @@ Here is an example of a visualization in DHIS2 where we are looking at BCG cover
 
 ![](resources/images/dq_trend1.png)
 
-It includes the number of doses given and surviving infants on the left y-axis, and the BCG coverage % on the left y-axis, with the years displayed along the x-axis. 
+It includes the number of doses given and surviving infants on the left y-axis, and the BCG coverage % on the right y-axis, with the years displayed along the x-axis. 
 
 We are looking for inconsistencies in the data that may need some further explanation. In the above image from DHIS2, the data follows a fairly consistent pattern and does not seem to cause any concern.
 
