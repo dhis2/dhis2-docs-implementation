@@ -36,7 +36,7 @@ What we have attempted to do is take existing guidelines for assessing denominat
 
 ### Sources of data for comparison
 
-In order to compare your existing data (this could be national data, census data, etc.) in DHIS2, you will need data from an external source. Some examples of sources where you can obtain comparison data include:
+In order to assess your existing data (this could be national data, census data, etc.) in DHIS2, you will need data from an external source. Some examples of sources where you can obtain comparison data include:
 
 - World Population Prospects
   - https://population.un.org/wpp/ 
@@ -162,7 +162,55 @@ Make a pivot table in data visualizer. Add your 2 implied rates that you are com
 
 ## Assessing your annual growth rate
 
+The growth rate will give you a sense if your denominators are within an accurate range when comparing years. When you are calculating this, ensure the denominators you are comparing between years are from the same source. 
 
+An example of the growth rate can be seen here:
+
+![](resources/images/dq_growth_rate.png)
+
+Some rules when making this comparison:
+
+- Highlight differences that are ≥ 10%
+- Your growth rate should be fairly steady; not erratic and changing significantly from year to year (ie. you should not see any large spikes or dips when comparing from year to year)
+- If you see a negative growth rate, this means the population is contracting
+
+### Steps for making this visualization
+
+***First, ensure your population data available in DHIS2***
+
+To compare data from the current year with data from the previous year, you will need to make a predictor. 
+
+***Making the predictor for Births Live prev year/Population prev year***
+
+1. Create an output data element to store the data
+2. Create a new predictor
+3. Assign the output data element you have made to the predictor
+4. Period type : yearly
+5. Org unit level : the level your population data is stored
+6. Generator formula : sum(#{dataelementUID}) (note: put the UID of your population/live births data element in the actual generator formula)
+7. Sequential sample count: 1
+8. Annual sample count : 0
+
+This will take the population data from the previous year and bring it into the next year. 
+
+***Making an indicator for the growth rate***
+
+After you have make the predictor, to calculate the difference between the two populations, make an indicator with the following formula:
+
+> **Example**
+>
+> Indicator type : percentage (factor of 100)
+>
+> Numerator: Population/Births in Year 2 - Population/Births in Year 1
+> Denominator: Population/Births in Year 1
+>
+> \[
+> Indicator = {\frac{Population/Births in Year 2 - Population/Births in Year 1}{Population/Births in Year 1}} \times 100
+> \]
+>
+> \[
+> Indicator = {\frac{live births in 2024 - live births in 2023}{live births in 2023}} \times 100
+> \]
 
 ## Compare routine coverage estimates to survey coverage estimates
 
