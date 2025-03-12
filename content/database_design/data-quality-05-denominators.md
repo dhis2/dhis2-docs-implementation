@@ -286,6 +286,7 @@ We are looking for inconsistencies in the data that may need some further explan
 Here is another example with the same information
 
 ![](resources/images/dq_trend2.png)
+
 [Image source : Assessing and improving the accuracy of target population estimates for immunization coverage](https://www.who.int/publications/m/item/assessing-and-improving-the-accuracy-of-target-population-estimates-for-immunization-coverage)
 
 Here, we see the number of vaccinations and coverage increasing rapidly, but the coverage ends up > 100% in 2006, with the population decreasing this same year. After 2006, we see a sharp rise in the population, correlating with a sharp decline with the coverage, then increasing sharply again in 2009. 
