@@ -178,7 +178,7 @@ Some rules when making this comparison:
 
 ### Steps for making this visualization
 
-***First, ensure your population data available in DHIS2***
+***First, ensure your population data is available in DHIS2***
 
 To compare data from the current year with data from the previous year, you will need to make a predictor. 
 
