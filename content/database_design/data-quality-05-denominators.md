@@ -173,8 +173,8 @@ An example of the growth rate in DHIS2 can be seen here:
 Some rules when making this comparison:
 
 - Highlight differences that are ≥ 10%
-- Your growth rate should be fairly steady; not erratic and changing significantly from year to year (ie. you should not see any large spikes or dips when comparing from year to year)
-- If you see a negative growth rate, this means the population is contracting
+- Your growth rate should be fairly steady; not erratic and changing significantly from year to year (ie. you should not see any large increases or decreases when comparing from year to year)
+- If you see a negative growth rate, this means the population is contracting/decreasing (at least based on births alone, this may also be affected by other factors such as immigration)
 
 ### Steps for making this visualization
 
