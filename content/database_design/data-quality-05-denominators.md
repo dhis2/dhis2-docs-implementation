@@ -193,7 +193,7 @@ To compare data from the current year with data from the previous year, you will
 7. Sequential sample count: 1
 8. Annual sample count : 0
 
-This will take the population data from the previous year and bring it into the next year. 
+Now run the predictor before proceeding. This will take the population data from the previous year and bring it into the next year. 
 
 ***Making an indicator for the growth rate***
 
