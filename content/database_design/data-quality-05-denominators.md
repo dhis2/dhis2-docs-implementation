@@ -166,7 +166,7 @@ Make a pivot table in data visualizer. Add your 2 implied rates that you are com
 
 The growth rate will allow you to determine if your denominators are within an accurate range when comparing years. When you are calculating this, ensure the denominators you are comparing between years are from the same source (ie. a denominator from 2024 taken from the census and a denominator from 2023 taken from the UN population prospects should ***not*** be used to calculate your growth rate). 
 
-An example of the growth rate can be seen here:
+An example of the growth rate in DHIS2 can be seen here:
 
 ![](resources/images/dq_growth_rate.png)
 
