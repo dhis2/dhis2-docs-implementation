@@ -86,6 +86,7 @@ To calculate the difference between the two populations, make an indicator with 
 > Indicator type : percentage (factor of 100)
 >
 > Numerator: Population 1 - Population 2
+> 
 > Denominator: Population 1
 >
 > \[
@@ -142,6 +143,7 @@ To calculate the difference between the two populations, make an indicator with 
 > Indicator type : percentage (factor of 100)
 >
 > Numerator: Rate 1 - Rate 2
+> 
 > Denominator: Rate 1
 >
 > \[
@@ -202,6 +204,7 @@ After you have make the predictor, to calculate the difference between the two p
 > Indicator type : percentage (factor of 100)
 >
 > Numerator: Population/Births in Year 2 - Population/Births in Year 1
+> 
 > Denominator: Population/Births in Year 1
 >
 > \[
