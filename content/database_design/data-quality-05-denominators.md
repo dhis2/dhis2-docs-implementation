@@ -197,7 +197,7 @@ Now run the predictor before proceeding. This will take the population data from
 
 ***Making an indicator for the growth rate***
 
-After you have make the predictor, to calculate the difference between the two populations, make an indicator with the following formula:
+After you have made the predictor, to calculate the difference between the two populations, make an indicator with the following formula:
 
 > **Example**
 >
