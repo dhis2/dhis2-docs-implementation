@@ -294,7 +294,7 @@ Here is another example with the same information
 
 Here, we see the number of vaccinations and coverage increasing rapidly, but the coverage ends up > 100% in 2006, with the population decreasing this same year. After 2006, we see a sharp rise in the population, correlating with a sharp decline with the coverage, then increasing sharply again in 2009. 
 
-This type of erratic behaviour in our data indicates the population estimates seem to be incorrect. Given what we know about growth rates, it is unlikely to see such a rapid increase in population naturally, and the denominator therefore may need adjustment or modification, as this would lead us to incorrect conclusions regarding the performance of our health system and the coverage of this vaccine. 
+This type of erratic behaviour in our data indicates that the population estimates seem to be incorrect. Given what we know about growth rates, it is unlikely to see such a rapid increase in population naturally, and the denominator therefore may need adjustment or modification, as this would lead us to incorrect conclusions regarding the performance of our health system and the coverage of this vaccine. 
 
 There are unfortunately no set rules for reviewing this data, as you are trying to spot trends that do not make sense given the context of the information presented to you. Generally speaking though you want to know:
 
