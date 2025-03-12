@@ -29,8 +29,8 @@ What we have attempted to do is take existing guidelines for assessing denominat
     - Highlight differences that are ≥ 10%
 4.  Compare routine coverage estimates to survey coverage estimates
     - Highlight differences that are ≥ 10%
-5.  Compare national targets (ex. births) with the sum of subnational targets
-    - Highlight when national births ≠ the sum of subnational births
+5.  Compare national targets (ex. births, total population, etc.) with the sum of subnational targets
+    - Highlight when national targets ≠ the sum of subnational targets
 6. Review the trends of your data over time
     - Plot your numerator and denominator data together and look for inconsistencies in reporting
 
@@ -272,3 +272,61 @@ When we identify this mismatch, we have a couple options to consider
 Once you decide on your method, you may need to subsequently update your indicator formulas to use a new denominator. It is worthwhile to compare calculations using your previous and new denominators (keep the old indicators, make new indicators, and compare them in data visualizer) to determine how much possible error was being contributed to your indicator values as well.
 
 ## Review the trends of your data over time
+
+Reviewing your data over time, including review of your numerators and denominators on different axes, or reviewing multiple indicators together over time, can give you insight into when trends are incorrect based on the normal patterns you identify in the data. 
+
+Here is an example of a visualization in DHIS2 where we are looking at BCG coverage. 
+
+![](resources/images/dq_trend1.png)
+
+It includes the number of doses given and surviving infants on the left y-axis, and the BCG coverage % on the left y-axis, with the years displayed along the x-axis. 
+
+We are looking for inconsistencies in the data that may need some further explanation. In the above image from DHIS2, the data follows a fairly consistent pattern and does not seem to cause any concern.
+
+Here is another example with the same information
+
+![](resources/images/dq_trend2.png)
+[Image source : Assessing and improving the accuracy of target population estimates for immunization coverage](https://www.who.int/publications/m/item/assessing-and-improving-the-accuracy-of-target-population-estimates-for-immunization-coverage)
+
+Here, we see the number of vaccinations and coverage increasing rapidly, but the coverage ends up > 100% in 2006, with the population decreasing this same year. After 2006, we see a sharp rise in the population, correlating with a sharp decline with the coverage, then increasing sharply again in 2009. 
+
+This type of erratic behaviour in our data indicates the population estimates seem to be incorrect. Given what we know about growth rates, it is unlikely to see such a rapid increase in population naturally, and the denominator therefore may need adjustment or modification, as this would lead us to incorrect conclusions regarding the performance of our health system and the coverage of this vaccine. 
+
+There are unfortunately no set rules for reviewing this data, as you are trying to spot trends that do not make sense given the context of the information presented to you. Generally speaking though you want to know:
+
+- Are there coverage rates > 100%
+- Is the population steadily increasing/decreasing or are there sudden increases/decreases. If so, how are these explained
+- Is a rapid increase/decrease in coverage a result of measures introduced by the program (increase) or challenges with the program (decrease), or some type of issue with the population estimate
+
+### Steps for making this visualization
+
+You can make this chart in ***data visualizer.***
+
+- Chart Type : Line
+- Data : Numerator, Denominator and the Indicator you want to use
+- Period: Whichever periods you want to compare
+- Org Unit : Whichever org unit(s) you want to review
+- To create the difference axes, go to options-> series
+
+![](resources/images/dq_multiaxis.png)
+
+- Layout (modify as needed) 
+  - Series : Data
+  - Category : Period
+  - Filter : Org Unit
+
+## Creating a Dashboard
+
+As you have seen, you are able to perform these analyses directly in DHIS2. So you can easily review them, it is recommended that you create a dashboard and add these visualizations to it.
+
+![](resources/images/dq_dashboard.png)
+
+## Revising your Estimates
+
+If after you have made your various comparisons and determined there is a need to improve your denominators, you can consider the following:
+
+1. Revise your national estimates of your population
+2. Revise your subnational estimates of your population
+3. Revise other related estimates, such as surviving infants and estimated number of pregnant women, at the subnational level [add them together to get your national totals]
+
+Please consult the [WHO guidance document on denominators - Assessing and improving the accuracy of target population estimates for immunization coverage](https://www.who.int/publications/m/item/assessing-and-improving-the-accuracy-of-target-population-estimates-for-immunization-coverage) for more information. You may also want to speak with your statistics unit, and, if available, a demographer, who could support you in revising these estimates if needed.
