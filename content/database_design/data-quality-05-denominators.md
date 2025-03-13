@@ -180,24 +180,9 @@ Some rules when making this comparison:
 
 ***First, ensure your population data is available in DHIS2***
 
-To compare data from the current year with data from the previous year, you will need to make a predictor. 
-
-***Making the predictor for Births Live prev year/Population prev year***
-
-1. Create an output data element to store the data
-2. Create a new predictor
-3. Assign the output data element you have made to the predictor
-4. Period type : yearly
-5. Org unit level : the level your population data is stored
-6. Generator formula : sum(#{dataelementUID}) (note: put the UID of your population/live births data element in the actual generator formula)
-7. Sequential sample count: 1
-8. Annual sample count : 0
-
-Now run the predictor before proceeding. This will take the population data from the previous year and bring it into the next year. 
-
 ***Making an indicator for the growth rate***
 
-After you have made the predictor, to calculate the difference between the two populations, make an indicator with the following formula:
+To calculate the difference between the two populations, make an indicator with the following formula:
 
 > **Example**
 >
@@ -214,6 +199,20 @@ After you have made the predictor, to calculate the difference between the two p
 > \[
 > Indicator = {\frac{live births in 2024 - live births in 2023}{live births in 2023}} \times 100
 > \]
+
+In order to make an indicator using data from the previous year in DHIS2 do the following:
+
+- Create your new indicator
+- The indicator type is percentage (x 100)
+- Create the numerator formula as follows:
+  - #{DEUID} - #{DEUID}.periodOffset(-1)
+- The denominator is : #{DEUID}
+
+Here is an example of the numerator configuration:
+
+![](resources/images/dq_growthrate_numerator.png)
+
+The periodOffset(-1) is taking the value from the previous period, in this case likley to be the previous year.
 
 ## Compare routine coverage estimates to survey coverage estimates
 
