@@ -210,9 +210,9 @@ Here is an example of the numerator configuration:
 
 ![](resources/images/dq_growthrate_numerator.png)
 
-The periodOffset(-1) is taking the value from the previous period, in this case likley to be the previous year.
+The .periodOffset(-1) function is taking the value from the previous period, in this case likely to be the previous year.
 
-From here, you can use this indicator in data visualizer.
+From here, you can use this indicator in data visualizer to make necessary visualizations.
 
 ## Compare routine coverage estimates to survey coverage estimates
 
