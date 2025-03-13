@@ -180,8 +180,6 @@ Some rules when making this comparison:
 
 ***First, ensure your population data is available in DHIS2***
 
-***Making an indicator for the growth rate***
-
 To calculate the difference between the two populations, make an indicator with the following formula:
 
 > **Example**
@@ -213,6 +211,8 @@ Here is an example of the numerator configuration:
 ![](resources/images/dq_growthrate_numerator.png)
 
 The periodOffset(-1) is taking the value from the previous period, in this case likley to be the previous year.
+
+From here, you can use this indicator in data visualizer.
 
 ## Compare routine coverage estimates to survey coverage estimates
 
