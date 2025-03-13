@@ -2466,6 +2466,10 @@ Barcode labels can be very simply printed from Excel on any computer provided th
 
 ![](media/image47.png)
 
+DHIS2 natively supports the following barcode types:
+
+![](image-274.png)
+
 #### Stock receipts
 
 The receipt of consignments should must be acknowledged to the medical distribution centre shipping them, ideally using a simple DHIS2 application. After receiving the respective (district) medical store has received this notification, the logistics team will upload the items and quantities indicated in the packing list to the respective Organisation unit (health facility) where those quantities will be automatically added to the "Stock on hand". Ideally, this process will be fully automatized by integrating the upstream national LMIS with the DHIS2 serve.
