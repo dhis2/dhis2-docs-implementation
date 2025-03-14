@@ -46,7 +46,7 @@ Here we can see how org units and programs are selected in each respective app.
 
 ![](images/ER_TC_C/OU_program.png)
 
-In ***tracker capture***, we have the org units on the left hand side bar, with the program being selected on the right. If you open the tracker dashboard, then you are brought to a new screen. and these selectors are not avaialable.
+In ***tracker capture***, we have the org units on the left hand side bar, with the program being selected on the right. If you open the tracker dashboard, then you are brought to a new screen. and these selectors are not available.
 
 In ***capture***, we have a top bar where both the programs and org units can be selected. This top bar persists regardless of where you are in the capture app. The organisation unit is selected from the label "Registering unit." This label is meant to more clearly indicate where a tracked entity was initially registered.
 
@@ -240,6 +240,8 @@ In order to perform a permanent transfer in ***capture***
 
 ![](images/ER_TC_C/transfer.png)
 
+#### Program Access Levels
+
 ## New Features in the Capture app
 
 ### Working Lists
@@ -322,6 +324,12 @@ In the case of a program stage with repeated events, events are sorted by event 
 - Add coordinates to the enrollment (if the enrollment is configured to capture coordinates)
 
 Feedback (this widget is not displayed in this example) - In this widget you can place summary information about the TEI for review. For example if the person has allergies or you want to display information on related to their current diagnosis, you can place this information here based on what has been entered in the program.
+
+### Plugins
+
+
+
+### Multi-select option sets
 
 ## User Permissions
 
