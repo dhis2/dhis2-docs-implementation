@@ -25,6 +25,7 @@ Data quality:
   - Principles: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-01-principles.md, master)'
   - Data entry: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-02-data-entry.md, master)'
   - Analysis: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-03-analysis.md, master)'
+  - Denominators: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-05-denominators.md, master)'
   - Implementation of funtionality and procedures: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-04-implementation.md, master)'
 Database design:
   - Organisation Units: '@github(dhis2/dhis2-docs-implementation, content/database_design/organisation-units.md, master)'
