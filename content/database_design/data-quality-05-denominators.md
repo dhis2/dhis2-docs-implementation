@@ -53,7 +53,7 @@ It is also possible to download the data from DHIS2 as well as another source in
 
 This guide will use examples in which data has been imported into DHIS2 from different sources; however you can see examples of similar analyses being performed via the use of Excel in [this presentation](https://docs.google.com/presentation/d/1SpF0ATmYOB7cyS3vrrbdHNlnzgtXLRmwnwyy5bOJYVU/edit?usp=sharing).
 
- ## Comparing your DHIS2 population data with other sources
+## Comparing your DHIS2 population data with other sources
 
 The first method we will outline is comparing your existing DHIS2 population data with data from an external source. In this example, our external data is taken from the [UN World Population Prospects](https://population.un.org/wpp/) that has been imported into our DHIS2 instance, while our existing data is taken from the Lao Statistics Bureau - an internal source used by the Ministry of Health in Lao PDR that is already in their local DHIS2 instances (also via import). 
 
