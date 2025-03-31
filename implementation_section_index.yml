@@ -396,6 +396,12 @@ Health:
       - Release Note: '@github(dhis2-metadata/TB_IMPAX, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/TB_IMPAX, docs/tb_impax-design.md, master)'
       - Installation: '@github(dhis2-metadata/TB_IMPAX, docs/tb_impax-installation.md, master)'
+  - Emergency Preparedness and Response:
+    - Rapid Response Team rostering tool:
+      - OVERVIEW: '@github(dhis2-metadata/EPR_RRT, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/EPR_RRT, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/EPR_RRT, docs/epr_rrt-design.md, master)'
+      - Installation: '@github(dhis2-metadata/EPR_RRT, docs/epr_rrt-installation.md, master)'
   - Animal Health:
     - Event Based Surveillance:
       - OVERVIEW: '@github(dhis2-metadata/AH_EBS, docs/overview.md, master)'
