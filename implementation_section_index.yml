@@ -198,6 +198,11 @@ Health:
     - Release Note: '@github(dhis2-metadata/HEP_AGG, docs/release_note.md, master)'
     - Design: '@github(dhis2-metadata/HEP_AGG, docs/hep_agg-design.md, master)'
     - Installation: '@github(dhis2-metadata/HEP_AGG, docs/hep_agg-installation.md, master)'
+  - Sexually Transmitted Infections (STI):
+    - OVERVIEW: '@github(dhis2-metadata/STI_AGG, docs/overview.md, master)'
+    - Release Note: '@github(dhis2-metadata/STI_AGG, docs/release_note.md, master)'
+    - Design: '@github(dhis2-metadata/STI_AGG, docs/sti_agg-design.md, master)'
+    - Installation: '@github(dhis2-metadata/STI_AGG, docs/sti_agg-installation.md, master)'
   - HIV:
     - HIV HMIS:
       - OVERVIEW: '@github(dhis2-metadata/HIV_AGG, docs/overview.md, master)'
