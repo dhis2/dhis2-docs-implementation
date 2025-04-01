@@ -111,6 +111,8 @@ Health:
       - Design: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod-design.md, master)'
       - Installation: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod-installation.md, master)'
       - ICD-11 CoD App: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod-icd11-app.md, master)'
+      - ICD-11 CoD App User Guide: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod_icd11-app-userguide.md, master)'
+      - ICD-11 CoD App Installation Guide: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod-icd11-app-installguide.md, master)'
     - Rapid Mortality Surveillance:
       - OVERVIEW: '@github(dhis2-metadata/CRVS_RMSE, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/CRVS_RMSE, docs/release_note.md, master)'
