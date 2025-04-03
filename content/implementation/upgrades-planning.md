@@ -233,6 +233,7 @@ gantt
 ```
 
 > **Note**
+> 
 > * Major Version upgrades involve significant changes and require all phases to be executed thoroughly
 > * Patch upgrades focus mainly on bug fixes and security updates, requiring less extensive preparation and testing. Risk, and duration, are increased if jumping several patch versions, and reduced if keeping to the latest patch version.
 > * Hotfixes
