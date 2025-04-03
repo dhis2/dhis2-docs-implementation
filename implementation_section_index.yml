@@ -9,11 +9,6 @@ Implementing DHIS2:
   - DHIS2 as Data Warehouse: '@github(dhis2/dhis2-docs-implementation, content/implementation/dhis2-as-data-warehouse.md, master)'
   - DHIS2 as a platform: '@github(dhis2/dhis2-docs-implementation, content/implementation/dhis2-as-a-platform.md, master)'
   - Integration concepts: '@github(dhis2/dhis2-docs-implementation, content/implementation/integration-concepts.md, master)'
-  - Upgrading:
-      - Introduction: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades.md, phil-upgrade-imp)'
-      - Planning: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-planning.md, phil-upgrade-imp)'
-      - Testing: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-testing.md, phil-upgrade-imp)'
-      - SOP Templates: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-sop.md, phil-upgrade-imp)'
 Tracker implementation:
   - Target audience: '@github(dhis2/dhis2-docs-implementation, content/tracker_implementation/target-audience.md, master)'
   - Introduction: '@github(dhis2/dhis2-docs-implementation, content/tracker_implementation/introduction.md, master)'
@@ -51,6 +46,11 @@ Maintenance and use:
   - Tracker and aggregate data integration:  '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/tracker-aggregate-integration.md, master)'
   - Data Analysis Tools Overview: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/data-analysis-tools-overview.md, master)'
   - Localization of DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/localization-of-dhis2.md, master)'
+  - Upgrading:
+      - Introduction: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades.md, phil-upgrade-imp)'
+      - Planning: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-planning.md, phil-upgrade-imp)'
+      - Testing: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-testing.md, phil-upgrade-imp)'
+      - SOP Templates: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-sop.md, phil-upgrade-imp)'
 Configuration:
   - Transition Kits:
       - Event Reports to Line Listing: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_er_to_ll.md, master)'
