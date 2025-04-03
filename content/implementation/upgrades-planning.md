@@ -31,7 +31,8 @@ For each upgrade, and in particular when upgrading to a new major version, these
 
 It can be useful to consider changes as falling into three main categories, which need to be addressed in different ways:
 
-1. **Changes directly affecting end users**  
+1. **Changes directly affecting end users**
+   
     This category include changes affecting how end users interact with the system. This can range from having to use an entirely new application for a core activity (i.e. from *Pivot Table* to *Data Visualizer* or *Tracker Capture* to *Capture*), to smaller changes to the user interface.
 
     It is important here to consider the type of user affected. A large majority of users typically use just a few apps apps for data entry and/or analysis, and changes affecting these users in many ways have the biggest impact and consequences. Other apps are used by a relatively small number of users, often limited to core national staff (e.g. in the Ministry of Health), and providing orientation or even additional training to this group is much cheaper and easier.
@@ -47,13 +48,15 @@ It can be useful to consider changes as falling into three main categories, whic
     Which of these are relevant must be determined by the core team based on the changes and local circumstances.
 
 
-2. **API or database schema changes**  
+2. **API or database schema changes**
+
     * Changes to the API or
     * any integrations or custom apps/tools that might be affected
 
     These changes require planning for validation and potentially revision of the affected apps and/or tools.
 
-3. **Configuration changes**  
+3. **Configuration changes**
+
     Configuration changes are changes introduced in an upgrade that requires the core team of administrators to make changes to the DHIS2 metadata configuration to ensure that the system continues to function as expected. These changes are thus not directly visible to end users, unless they are not addressed and the systems stops working. This type of change is not very common as it's most often handled automatically during the upgrade process, but it does happen occasionally.
 
 ## Testing { #upgrade-testing }
@@ -128,6 +131,7 @@ Two important aspects to all of the above are cost and time. Both need to be car
 When planning for an upgrade, several cost components need to be considered and budgeted for:
 
 **Training and documentation costs:**
+
 * Development of training materials and user guides
 * Printing and distribution of documentation
 * Venue and logistics for training sessions
@@ -135,24 +139,28 @@ When planning for an upgrade, several cost components need to be considered and 
 * Staff time for preparing and conducting training
 
 **Technical updates:**
+
 * Developer time for updating custom apps and tools
 * Modifications to existing integrations
 * Updates to scripts and automated processes
 * External consultant fees if required
 
 **Testing resources:**
+
 * Staff time for comprehensive testing
 * Additional server resources during testing phase
 * Tools or software needed for testing
 * Time for beta testing program coordination
 
 **Infrastructure:**
+
 * Test server setup and maintenance
 * Additional storage for testing environments
 * Backup systems and storage
 * Potential hardware upgrades if required by new version
 
 **Support and contingency:**
+
 * Help desk or support staff during transition
 * Buffer for unexpected technical issues
 * Emergency response team availability
@@ -183,6 +191,7 @@ The timeline and intensity of activities varies significantly between major vers
 | Training | • Material preparation<br>• Training sessions<br>• User orientation | 1-2 months<br>*Required* | *Usually not needed* |
 | Implementation | • Final backups<br>• Upgrade execution<br>• Initial monitoring | 1-2 weeks<br>*Required* | 1-2 days<br>*Required* |
 | Post-upgrade | • Enhanced support period<br>• Performance monitoring<br>• Issue resolution | 1 month<br>*Required* | 1 week<br>*Recommended* |
+
 
 ```mermaid
 ---
@@ -220,7 +229,6 @@ gantt
     section Hotfix
     Testing         :hot1, 2024-01-01, 1d
     Implementation  :crit, hot4, after hot1, 1d
-
 
 ```
 
