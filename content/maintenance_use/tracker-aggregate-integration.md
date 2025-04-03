@@ -3,7 +3,7 @@ This guide presents different approaches for combining data collected through tr
 
 * Data collected through tracker programmes and aggregate data sets may be complimentary. For example, if tracker is used as an electronic immunisation registry, calculating immunisation coverages requires the service data collected through tracker to be combined with population estimates typically available as aggregate (yearly) data.
 * In many cases, tracker implementations are done in a phased approach, where it is first implemented in certain types of health facilities or by geographical area. Consequently, the same data may be collected through tracker in some locations and as aggregate data in other locations, and getting a complete overview of the data requires the tracker and aggregate data to be combined. Such differentiated or hybrid approaches may also be permanent.
-* Data collected through tracker may partially overlap with established aggregate reports. For example, a monthly report on malaria-related activities may include information both on malaria cases, as well as preventive activities such as bed-net distribution. If tracker is introduced for malaria case registration, the monthly malaria report can be partially completed based on tracker data, but still also require aggregate reports for preventive activites.
+* Data collected through tracker may partially overlap with established aggregate reports. For example, a monthly report on malaria-related activities may include information both on malaria cases, as well as preventive activities such as bed-net distribution. If tracker is introduced for malaria case registration, the monthly malaria report can be partially completed based on tracker data, but still also require aggregate reports for preventive activities.
 * When tracker is introduced in a programmatic area (immunisation, HIV etc) where aggregate data has previously been collected, ensuring that data is comparable over time necessitates combining aggregate and tracker data to allow longitudinal data analysis.
 * Certain data quality checks in DHIS2 are only available for aggregate data. Applying these checks on tracker data thus requires that it is first aggregated and stored as aggregate data elements.
  
@@ -106,7 +106,7 @@ When a system for routine aggregate reporting through DHIS2 data exists, there i
 There are several ways, technically, to do this. In the how-to section below, the focus is on the steps needed to set up an automated migration of tracker data into aggregate data values. 
 
 ## How-to: saving aggregated tracker data as aggregate data values
-This section describes the recommended approach for saving tracker data as aggregate data element values. While requiring an external tool or script as part of transferring the data, it leverages the existing functionality of DHIS2 as far as possible so that the script can be relatively simple. What is outlined here is also the approach taken in the [WHO configuration packages](dhis2.org/who) for DHIS2, which includes mapping of variables between tracker programmes and aggregate data sets where relevant. This is discussed in more detail [below](#dhis2-digital-data-packages-and-linking-tracker-and-aggregate-data).
+This section describes the recommended approach for saving tracker data as aggregate data element values. While requiring an external tool or script as part of transferring the data, it leverages the existing functionality of DHIS2 as far as possible so that the script can be relatively simple. What is outlined here is also the approach taken in the [Health Data Toolkits](https://dhis2.org/health-data-toolkit/) for DHIS2, which includes mapping of variables between tracker programmes and aggregate data sets where relevant. This is discussed in more detail [below](#dhis2-digital-data-packages-and-linking-tracker-and-aggregate-data).
 
 The approach described here is recommended as a long-term, automated solution for saving tracker data as aggregate data values. Technically, there are several other ways in which this aggregation and migration of data can be done, including using predictors, exporting the data and transforming it using other software (for example excel), or through custom DHIS2 apps (including some that are available in the [DHIS2 App Hub](apps.dhis2.org). While not described in this guide, these tools and methods can still be relevant in many cases, including in combination with the approach outlined here. For example, if there is only a need to do ad-hoc transfers of data from time to time, or in an early phase of tracker implementations when data is transferred primarily for testing and the configuration is still undergoing changes. 
 
@@ -168,7 +168,7 @@ When tracker data and aggregate data are managed in separate DHIS2 instances, wh
 
 Conceptually, the steps involved in migrating aggregates of tracker data to aggregate data values involves:
 
-1. Establish a mapping between program indicators and the corresponding  data elements and category option combinations, using codes.
+1. Establish a mapping between program indicators and the corresponding data elements and category option combinations, using codes.
 2. Export program indicator values as an aggregate *data value set*
 3. Import the *data value set* as aggregate data element values
 
@@ -185,7 +185,7 @@ It is recommended to use *codes* as identifier for this mapping, and this is wha
 > While the approach described here is based on the mapping of data being done in the source system (through program indicators), it could in other scenarios be done in the target system where the data is imported, or in a middleware or interoperability layer in between.
 
 #### Coding data elements
-Because the data element and category option combination codes will be added as attributes to the program indicators, the first step is to create and/or add a code to the data elements and category option combinations. This should be done in the DHIS2 instance in which aggregate data values will be saved. If the data elements and category option combinations already have codes, these can be used. It is also possible to define custom attributes and assigned these to the data elements for the purpose of mapping, but for the purpose of this guide we will use the built-in data element code.
+Because the data element and category option combination codes will be added as attributes to the program indicators, the first step is to create and/or add a code to the data elements and category option combinations (there is no need to add a code `default` category option combination). This should be done in the DHIS2 instance in which aggregate data values will be saved. If the data elements and category option combinations already have codes, these can be used. It is also possible to define custom attributes and assigned these to the data elements for the purpose of mapping, but for the purpose of this guide we will use the built-in data element code.
 
 While not strictly necessary, it may be advisable to add the data elements to a data set if they are not already. This data set (or sets) define the period type of the data to be transferred (e.g. weekly, monthly), and when imported the aggregated tracker data will be validated against this period type. Furthermore, such assigned may be the basis of subsequent calculation of data completeness.
 
@@ -201,7 +201,7 @@ The custom attribute should be of the type `Text`. It should *not* be mandatory,
 
 ![Example showing how a custom attribute for linking program indicators and aggregate data elements can be defined.](resources/images/tracker_agg_custom_attribute_definition.png)
 
-Once the custom attribute is assigned to program indicators, it will appear as a new field/attribute when adding or editing program indicators in the Maintenance app. Every program indicator for which data is to be transferred to aggregate data elements needs to be created and/or modified to include the code of the corresponding data element and category option combination code.
+Once the custom attribute is assigned to program indicators, it will appear as a new field/attribute when adding or editing program indicators in the Maintenance app. Every program indicator for which data is to be transferred to aggregate data elements needs to be created and/or modified to include the code of the corresponding data element and category option combination code (this field can be empty for the `default` category option combination).
 
 Adding the program indicators to be migrated to a program indicator group can be useful to manage large numbers of program indicators. For example, a script for migrating data can target all program indicators in a program indicator group, simplifying the configuration.
 
@@ -261,7 +261,7 @@ A template script for automating routine migration of data from tracker to aggre
 
 ### DHIS2 Digital Data Packages and linking tracker and aggregate data
 DHIS2 digital data packages have been developed to support both
-aggregate reporting & analysis, as well as tracker data capture and facility-level analysis. Further information is available on [dhis2.org/who](https://dhis2.org/who)
+aggregate reporting & analysis, as well as tracker data capture and facility-level analysis. Further information is available on [Health Metadata Toolkits](https://dhis2.org/health-data-toolkit/).
 
 Aggregate digital data packages (inclusive of standard aggregate dashboards) are available for health programmes such as TB, HIV, malaria, RMNCAH and disease surveillance. Aggregate packages include:
 
@@ -286,5 +286,6 @@ Steps to migrate tracker data to aggregate data values:
 7. Import the data value set to the `/api/dataValueSet` Web API endpoint in the DHIS2 instance that will hold the aggregate data.
 
 ### Known issues
-- There is a bug in earlier 2.33-36 releases that prevents custom attributes from being exposed in the UI ([Jira 8755](https://jira.dhis2.org/browse/DHIS2-7230)). This is resolved in the latests DHIS2 patch releases
+
+- There is a bug in earlier 2.33-36 releases that prevents custom attributes from being exposed in the UI ([Jira 8755](https://jira.dhis2.org/browse/DHIS2-7230)). This is resolved in the latest DHIS2 patch releases
 - There is a bug ([Jira 8868](https://jira.dhis2.org/browse/DHIS2-8868)) that causes metadata-dependency-export tool to fail when custom attributes are assigned to program indicators.

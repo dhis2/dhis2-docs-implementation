@@ -2,6 +2,7 @@ Implement: '@github(dhis2/dhis2-docs-implementation, content/index.md, master)'
 Implementing DHIS2:
   - Overview: '@github(dhis2/dhis2-docs-implementation, content/implementation/a-quick-guide-to-dhis2-implementation.md, master)'
   - Planning and Budgeting: '@github(dhis2/dhis2-docs-implementation, content/implementation/planning-budgeting.md, master)'
+  - Building a Core Team: '@github(dhis2/dhis2-docs-implementation, content/implementation/core-team.md, master)'
   - Conceptual Design Principles: '@github(dhis2/dhis2-docs-implementation, content/implementation/conceptual-design-principles.md, master)'
   - Setting Up a New Database: '@github(dhis2/dhis2-docs-implementation, content/implementation/setting-up-a-new-database.md, master)'
   - Security Considerations: '@github(dhis2/dhis2-docs-implementation, content/implementation/security_considerations.md, master)'
@@ -24,6 +25,7 @@ Data quality:
   - Principles: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-01-principles.md, master)'
   - Data entry: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-02-data-entry.md, master)'
   - Analysis: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-03-analysis.md, master)'
+  - Denominators: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-05-denominators.md, master)'
   - Implementation of funtionality and procedures: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-04-implementation.md, master)'
 Database design:
   - Organisation Units: '@github(dhis2/dhis2-docs-implementation, content/database_design/organisation-units.md, master)'
@@ -38,14 +40,15 @@ Database design:
     - Tracker Analytics: '@github(dhis2/dhis2-docs-implementation, content/database_design/tracker-analytics.md, master)'
     - Interaction Design: '@github(dhis2/dhis2-docs-implementation, content/database_design/interaction-design.md, master)'
 Maintenance and use:
+  - Standard Operating Procedures: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/sops.md, master)'
   - Metadata maintenance:
       - Managing metadata: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/metadata_mgmt_procedures.md, master)'
       - Metadata integrity and quality: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/metadata_quality_assessment.md, master)'
   - Users and user roles: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/users-and-user-roles.md, master)'
-  - Guidelines for offline data entry using DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/offline-data-entry.md, master)'
   - Tracker and aggregate data integration:  '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/tracker-aggregate-integration.md, master)'
   - Data Analysis Tools Overview: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/data-analysis-tools-overview.md, master)'
   - Localization of DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/localization-of-dhis2.md, master)'
+  - Guidelines for offline data entry using DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/offline-data-entry.md, master)'
   - Upgrading:
       - Introduction: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades.md, phil-upgrade-imp)'
       - Planning: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-planning.md, phil-upgrade-imp)'
@@ -54,6 +57,9 @@ Maintenance and use:
 Configuration:
   - Transition Kits:
       - Event Reports to Line Listing: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_er_to_ll.md, master)'
+      - Tracker Capture to Capture: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_tc_to_c.md, master)'
+Data Use:
+  - Data Visualization: '@github(dhis2/dhis2-docs-implementation, content/data-use/data-visualization.md, master)'
 Health:
   - DHIS2 Health Data Toolkit:
     - About the DHIS2 Health Data Toolkit: '@github(dhis2/dhis2-docs, src/metadata/about-metadata.md, master)'
@@ -104,44 +110,6 @@ Health:
       - Sustainability and Governance: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/08_governance_sustainability.md, master)'
       - CHIS Assessment Tool: '@github(dhis2/dhis2-docs-implementation, content/chis_implementation/09_appendices.md, master)'
     - Installation: '@github(dhis2-metadata/CHIS_AGG, docs/chis_agg-installation.md, master'
-  - COVID-19 Surveillance:
-    - OVERVIEW: '@github(dhis2-metadata/C19_CS, docs/c19_surveillance-digital_data_package-2022.md, master)'
-    - Release Note: '@github(dhis2-metadata/C19_CS, docs/release_note.md, master)'
-    - COVID-19 Aggregate:
-      - OVERVIEW: '@github(dhis2-metadata/C19_AGG, docs/overview.md, master)'
-      - Release Note: '@github(dhis2-metadata/C19_AGG, docs/release_note.md, master)'
-      - Design: '@github(dhis2-metadata/C19_AGG, docs/c19_agg-design.md, master)'
-      - Installation: '@github(dhis2-metadata/C19_AGG, docs/c19_agg-installation.md, master)'
-    - COVID-19 Case Surveillance:
-      - OVERVIEW: '@github(dhis2-metadata/C19_CS, docs/overview.md, master)'
-      - Release Note: '@github(dhis2-metadata/C19_CS, docs/release_note.md, master)'
-      - Design: '@github(dhis2-metadata/C19_CS, docs/c19_cs-design.md, master)'
-      - Installation: '@github(dhis2-metadata/C19_CS, docs/c19_cs-installation.md, master)'
-    - COVID-19 Points of Entry[Discontinued]:
-      - OVERVIEW: '@github(dhis2-metadata/C19_POE, docs/overview.md, master)'
-      - Design: '@github(dhis2-metadata/C19_POE, docs/c19_poe-design.md, master)'
-    - COVID-19 Surveillance Events [Discontinued]:
-      - OVERVIEW: '@github(dhis2-metadata/C19_EVT, docs/overview.md, master)'
-      - Design: '@github(dhis2-metadata/C19_EVT, docs/c19_evt-design.md, master)'
-  - COVID-19 Vaccine Delivery:
-    - COVAC Aggregate:
-      - OVERVIEW: '@github(dhis2-metadata/CVC_AGG, docs/overview.md, master)'
-      - Release Note: '@github(dhis2-metadata/CVC_AGG, docs/release_note.md, master)'
-      - Design: '@github(dhis2-metadata/CVC_AGG, docs/cvc_agg-design.md, master)'
-      - Installation: '@github(dhis2-metadata/CVC_AGG, docs/cvc_agg-installation.md, master)'
-    - COVID-19 Electronic Immunization Registry:
-      - OVERVIEW: '@github(dhis2-metadata/CVC_EIR, docs/overview.md, master)'
-      - Release Note: '@github(dhis2-metadata/CVC_EIR, docs/release_note.md, master)'
-      - Design: '@github(dhis2-metadata/CVC_EIR, docs/cvc_eir-design.md, master)'
-      - Installation: '@github(dhis2-metadata/CVC_EIR, docs/cvc_eir-installation.md, master)'
-      - Training materials:
-        - Trainer's Guide: '@github(dhis2-metadata/CVC_EIR, training/covac_data_entry_trainers_guide.md, master)'
-        - Data Entry User Guide: '@github(dhis2-metadata/CVC_EIR, training/covac_data_entry_user_guide.md, master)'
-        - Data Entry Exercises: '@github(dhis2-metadata/CVC_EIR, training/covac_data_entry_exercises.md, master)'
-        - Android Trainer's Guide: '@github(dhis2-metadata/CVC_EIR, training/covac_android_trainers_guide.md, master)'
-        - Android User Guide: '@github(dhis2-metadata/CVC_EIR, training/covac_android_user_guide.md, master)'
-        - Android Data Entry Exercises: '@github(dhis2-metadata/CVC_EIR, training/covac_android_data_entry_exercises.md, master)'
-    - COVID-19 Vaccine Budgeting Guide: '@github(dhis2-metadata/CVC_AGG, docs/cvc_agg-budget_guide.md, master)'
   - CRVS & Mortality:
     - Cause of Death:
       - OVERVIEW: '@github(dhis2-metadata/CRVS_COD, docs/overview.md, master)'
@@ -149,6 +117,8 @@ Health:
       - Design: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod-design.md, master)'
       - Installation: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod-installation.md, master)'
       - ICD-11 CoD App: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod-icd11-app.md, master)'
+      - ICD-11 CoD App User Guide: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod_icd11-app-userguide.md, master)'
+      - ICD-11 CoD App Installation Guide: '@github(dhis2-metadata/CRVS_COD, docs/crvs_cod-icd11-app-installguide.md, master)'
     - Rapid Mortality Surveillance:
       - OVERVIEW: '@github(dhis2-metadata/CRVS_RMSE, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/CRVS_RMSE, docs/release_note.md, master)'
@@ -176,6 +146,30 @@ Health:
       - Release Note: '@github(dhis2-metadata/IDS_AFI, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/IDS_AFI, docs/ids_afi-design.md, master)'
       - Installation: '@github(dhis2-metadata/IDS_AFI, docs/ids_afi-installation.md, master)'
+    - Mpox Surveillance:
+      - OVERVIEW: '@github(dhis2-metadata/MPOX_AGG, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/MPOX_AGG, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/MPOX_AGG, docs/mpox-design.md, master)'
+      - Installation: '@github(dhis2-metadata/MPOX_AGG, docs/mpox-installation.md, master)'
+    - COVID-19 Surveillance:
+      - OVERVIEW: '@github(dhis2-metadata/C19_CS, docs/c19_surveillance-digital_data_package-2022.md, master)'
+      - Release Note: '@github(dhis2-metadata/C19_CS, docs/release_note.md, master)'
+      - COVID-19 Aggregate:
+        - OVERVIEW: '@github(dhis2-metadata/C19_AGG, docs/overview.md, master)'
+        - Release Note: '@github(dhis2-metadata/C19_AGG, docs/release_note.md, master)'
+        - Design: '@github(dhis2-metadata/C19_AGG, docs/c19_agg-design.md, master)'
+        - Installation: '@github(dhis2-metadata/C19_AGG, docs/c19_agg-installation.md, master)'
+      - COVID-19 Case Surveillance:
+        - OVERVIEW: '@github(dhis2-metadata/C19_CS, docs/overview.md, master)'
+        - Release Note: '@github(dhis2-metadata/C19_CS, docs/release_note.md, master)'
+        - Design: '@github(dhis2-metadata/C19_CS, docs/c19_cs-design.md, master)'
+        - Installation: '@github(dhis2-metadata/C19_CS, docs/c19_cs-installation.md, master)'
+      - COVID-19 Points of Entry[Discontinued]:
+        - OVERVIEW: '@github(dhis2-metadata/C19_POE, docs/overview.md, master)'
+        - Design: '@github(dhis2-metadata/C19_POE, docs/c19_poe-design.md, master)'
+      - COVID-19 Surveillance Events [Discontinued]:
+        - OVERVIEW: '@github(dhis2-metadata/C19_EVT, docs/overview.md, master)'
+        - Design: '@github(dhis2-metadata/C19_EVT, docs/c19_evt-design.md, master)'      
   - Entomology and Vector Control:
     - General Design: '@github(dhis2-metadata/GEN_DOCS, ENTO_VC/ento_vc-design.md, master)'
     - Breeding Sites Monitoring:
@@ -206,6 +200,16 @@ Health:
         - Release Note: '@github(dhis2-metadata/VC_ITN_MC, docs/release_note.md, master)'
         - Design: '@github(dhis2-metadata/VC_ITN_MC, docs/vc_itn_mc-design.md, master)'
         - Installation: '@github(dhis2-metadata/VC_ITN_MC, docs/vc_itn_mc-installation.md, master)'
+  - Hepatitis:
+    - OVERVIEW: '@github(dhis2-metadata/HEP_AGG, docs/overview.md, master)'
+    - Release Note: '@github(dhis2-metadata/HEP_AGG, docs/release_note.md, master)'
+    - Design: '@github(dhis2-metadata/HEP_AGG, docs/hep_agg-design.md, master)'
+    - Installation: '@github(dhis2-metadata/HEP_AGG, docs/hep_agg-installation.md, master)'
+  - Sexually Transmitted Infections (STI):
+    - OVERVIEW: '@github(dhis2-metadata/STI_AGG, docs/overview.md, master)'
+    - Release Note: '@github(dhis2-metadata/STI_AGG, docs/release_note.md, master)'
+    - Design: '@github(dhis2-metadata/STI_AGG, docs/sti_agg-design.md, master)'
+    - Installation: '@github(dhis2-metadata/STI_AGG, docs/sti_agg-installation.md, master)'
   - HIV:
     - HIV HMIS:
       - OVERVIEW: '@github(dhis2-metadata/HIV_AGG, docs/overview.md, master)'
@@ -237,6 +241,7 @@ Health:
       - Release Note: '@github(dhis2-metadata/IMM_AGG, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/IMM_AGG, docs/imm_agg-design.md, master)'
       - Installation: '@github(dhis2-metadata/IMM_AGG, docs/imm_agg-installation.md, master)'
+      - New Antigens Inclusion: '@github(dhis2-metadata/IMM_AGG, docs/imm_new-antigens-inclusion.md, master)'
     - Immunization Triangulation Dashboard:
       - OVERVIEW: '@github(dhis2-metadata/IMM_TRI, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/IMM_TRI, docs/release_note.md, master)'
@@ -244,9 +249,14 @@ Health:
       - Installation: '@github(dhis2-metadata/IMM_TRI, docs/imm_tri-installation.md, master)'
     - EIR Immunization eRegistry:
       - OVERVIEW: '@github(dhis2-metadata/IMM_EIR, docs/overview.md, master)'
-      - Design: '@github(dhis2-metadata/IMM_EIR, docs/imm_eir-design.md, master'
+      - Design: '@github(dhis2-metadata/IMM_EIR, docs/imm_eir-design.md, master)'
       - Installation: '@github(dhis2-metadata/IMM_EIR, docs/imm_eir-installation.md, master)'
-      - Release Note: '@github(dhis2-metadata/IMM_EIR, docs/release_note.md, master'
+      - Release Note: '@github(dhis2-metadata/IMM_EIR, docs/release_note.md, master)'
+    - Immunization (EPI) Big Catch-Up:
+      - OVERVIEW: '@github(dhis2-metadata/IMM_BCU, docs/overview.md, master)'
+      - Design: '@github(dhis2-metadata/IMM_BCU, docs/imm_bcu-design.md, master)'
+      - Installation: '@github(dhis2-metadata/IMM_BCU, docs/imm_bcu-installation.md, master)'
+      - Release Note: '@github(dhis2-metadata/IMM_BCU, docs/release_note.md, master)'
     - Immunization Campaigns:
       - OVERVIEW: '@github(dhis2-metadata/GEN_DOCS, IMM_VC/overview.md, master)'
       - Use: '@github(dhis2-metadata/GEN_DOCS, IMM_VC/use.md, master)'
@@ -275,6 +285,30 @@ Health:
     - Immunization Analysis App:
        alt__App version 1.0.3:
        - User Manual: '@github(dhis2-metadata/IMM_AEFI, docs/immunisation_analysis_app_user_manual.md, master)'
+    - Mpox Immunization:
+      - OVERVIEW: '@github(dhis2-metadata/MPOX_EPI, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/MPOX_EPI, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/MPOX_EPI, docs/mpox_epi-design.md, master)'
+      - Installation: '@github(dhis2-metadata/MPOX_EPI, docs/mpox_epi-installation.md, master)'
+    - COVID-19 Vaccine Delivery:
+      - COVAC Aggregate:
+        - OVERVIEW: '@github(dhis2-metadata/CVC_AGG, docs/overview.md, master)'
+        - Release Note: '@github(dhis2-metadata/CVC_AGG, docs/release_note.md, master)'
+        - Design: '@github(dhis2-metadata/CVC_AGG, docs/cvc_agg-design.md, master)'
+        - Installation: '@github(dhis2-metadata/CVC_AGG, docs/cvc_agg-installation.md, master)'
+      - COVID-19 Electronic Immunization Registry:
+        - OVERVIEW: '@github(dhis2-metadata/CVC_EIR, docs/overview.md, master)'
+        - Release Note: '@github(dhis2-metadata/CVC_EIR, docs/release_note.md, master)'
+        - Design: '@github(dhis2-metadata/CVC_EIR, docs/cvc_eir-design.md, master)'
+        - Installation: '@github(dhis2-metadata/CVC_EIR, docs/cvc_eir-installation.md, master)'
+        - Training materials:
+          - Trainer's Guide: '@github(dhis2-metadata/CVC_EIR, training/covac_data_entry_trainers_guide.md, master)'
+          - Data Entry User Guide: '@github(dhis2-metadata/CVC_EIR, training/covac_data_entry_user_guide.md, master)'
+          - Data Entry Exercises: '@github(dhis2-metadata/CVC_EIR, training/covac_data_entry_exercises.md, master)'
+          - Android Trainer's Guide: '@github(dhis2-metadata/CVC_EIR, training/covac_android_trainers_guide.md, master)'
+          - Android User Guide: '@github(dhis2-metadata/CVC_EIR, training/covac_android_user_guide.md, master)'
+          - Android Data Entry Exercises: '@github(dhis2-metadata/CVC_EIR, training/covac_android_data_entry_exercises.md, master)'
+      - COVID-19 Vaccine Budgeting Guide: '@github(dhis2-metadata/CVC_AGG, docs/cvc_agg-budget_guide.md, master)'      
   - Malaria:
     - Malaria HMIS:
       - OVERVIEW: '@github(dhis2-metadata/MAL_AGG, docs/overview.md, master)'
@@ -290,6 +324,23 @@ Health:
       - LMIS Design: '@github(dhis2-metadata/GEN_DOCS, docs/lmis_agg-design.md, master)'
       - Malaria Logistics Design: '@github(dhis2-metadata/MAL_AGG, docs/mal_agg_stk-design.md, master)'
       - Installation: '@github(dhis2-metadata/MAL_AGG, docs/mal_agg-installation.md, master)'
+    - Malaria Vaccine: '@github(dhis2-metadata/IMM_AGG, docs/imm_agg-malvac-integration.md, master)'
+    - Seasonal Malaria Chemoprevention:
+      - OVERVIEW: '@github(dhis2-metadata/MAL_SMC, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/MAL_SMC, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/MAL_SMC, docs/mal_smc-design.md, master)'
+      - Installation: '@github(dhis2-metadata/MAL_SMC, docs/mal_smc-installation.md, master)'
+  - Neglected Tropical Diseases:
+    - NTD Overarching Module:
+      - OVERVIEW: '@github(dhis2-metadata/NTD_AGG, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/NTD_AGG, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/NTD_AGG, docs/ntd_agg-design.md, master)'
+      - Installation: '@github(dhis2-metadata/NTD_AGG, docs/ntd_agg-installation.md, master)'
+    - Human Rabies Surveillance (aggregate):
+      - OVERVIEW: '@github(dhis2-metadata/NTD_HRS_AGG, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/NTD_HRS_AGG, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/NTD_HRS_AGG, docs/ntd_hrs_agg-design.md, master)'
+      - Installation: '@github(dhis2-metadata/NTD_HRS_AGG, docs/ntd_hrs_agg-installation.md, master)'
   - Non-Communicable Diseases:
     - Hypertension Control:
       - OVERVIEW: '@github(dhis2-metadata/NCD_HTN, docs/overview.md, master)'
@@ -357,6 +408,12 @@ Health:
       - Release Note: '@github(dhis2-metadata/TB_IMPAX, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/TB_IMPAX, docs/tb_impax-design.md, master)'
       - Installation: '@github(dhis2-metadata/TB_IMPAX, docs/tb_impax-installation.md, master)'
+  - Emergency Preparedness and Response:
+    - Rapid Response Team rostering tool:
+      - OVERVIEW: '@github(dhis2-metadata/EPR_RRT, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/EPR_RRT, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/EPR_RRT, docs/epr_rrt-design.md, master)'
+      - Installation: '@github(dhis2-metadata/EPR_RRT, docs/epr_rrt-installation.md, master)'
   - Animal Health:
     - Event Based Surveillance:
       - OVERVIEW: '@github(dhis2-metadata/AH_EBS, docs/overview.md, master)'
@@ -373,6 +430,7 @@ Logistics:
   - Health Care Product Catalogue (HPC): '@github(dhis2/dhis2-docs-implementation, content/lmis/health-care-product-catalogue.md, lmis_init)'
   - Monthly Stock Reporting (MSR): '@github(dhis2/dhis2-docs-implementation, content/lmis/monthly-stock-reporting.md, lmis_init)'
   - Temperature Monitoring Tool (TMT): '@github(dhis2/dhis2-docs-implementation, content/lmis/temperature-monitoring-tool.md, lmis_init)'
+  - Data Quality and Data Use: '@github(dhis2/dhis2-docs-implementation, content/lmis/data-use-and-data-quality.md, lmis_init)'
 Support and documentation:
   - DHIS2 Documentation Guide: '@github(dhis2/dhis2-docs-implementation, content/support_documentation/dhis2-documentation-guide.md, master)'
   - Submitting quick document fixes: '@github(dhis2/dhis2-docs, src/common/submitting-a-doc-fix.md, master)'
@@ -380,6 +438,9 @@ Support and documentation:
   - Support: '@github(dhis2/dhis2-docs-implementation, content/support_documentation/support.md, master)'
 Software Release Information:
   DHIS2 core releases:
+    alt__DHIS core version 2.41:
+      - Release Notes: '@github(dhis2/dhis2-releases,releases/2.41/ReleaseNote-2.41.md, master)'
+      - Upgrade Notes: '@github(dhis2/dhis2-releases,releases/2.41/README.md, master)'
     alt__DHIS core version 2.40:
       - Release Notes: '@github(dhis2/dhis2-releases,releases/2.40/ReleaseNote-2.40.md, master)'
       - Upgrade Notes: '@github(dhis2/dhis2-releases,releases/2.40/README.md, master)'
@@ -399,6 +460,9 @@ Software Release Information:
       - Release Notes: '@github(dhis2/dhis2-releases,releases/2.35/ReleaseNote-2.35.0.md, master)'
       - Upgrade Notes: '@github(dhis2/dhis2-releases,releases/2.35/README.md, master)'
   Android app releases:
+    alt__DHIS core version 2.41:
+      alt__Android app version 3.0.0:
+        - Release Notes: '@github(dhis2/dhis2-releases,releases/2.41/ReleaseNote-2.41.md, master)'
     alt__DHIS core version 2.40:
       alt__Android app version 2.9.0:
         - Release Notes: '@github(dhis2/dhis2-releases,android-releases/2.9/ReleaseNote-2.9.0.md, 2.9)'
