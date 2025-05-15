@@ -41,40 +41,9 @@ The versions above refer to the core DHIS2 software. DHIS2 comes with a set of *
 
 Continuously released applications can also be updated manually in the App Management application *independently* of the core DHIS2 upgrades. In this case, the manually updated application will take precedence over the bundled application. If an application is manually updated and later the core software is updated, the manually installed application version will be used *even if this is older than the bundled version*. If the manually installed version is removed, the system will always fall back to whatever bundled version was included with the current core version.
 
-```mermaid
----
-config:
-  theme: forest
-  themeVariables: {
-    noteBkgColor: white,
-    }
-  mirrorActors: true
----
-sequenceDiagram
-    Title: Example of app version precedence
-    actor A as Data Visualizer user
-    participant B as DHIS2 Core
-    participant C as App Manager
-
-    Note over B: v41.3.0 installed<br>(bundled Data Viz v1.0)
-    B->>A: Load bundled v1.0
-
-    C->>B: install DV v1.1
-    activate B
-    Note over B: Data Viz v1.1
-    B->>A: Load v1.1
-
-    Note over B: Upgrade to v42.0.0<br>(bundled Data Viz v1.2)
-    B->>A: Load v1.1 (manual install takes precedence)
-
-    C-->>B: uninstall DV v1.1
-    deactivate B
-    B->>A: Load bundled v1.2
-```
-
 Continuously released applications give both the DHIS2 developers and DHIS2 implementers more flexibility, since changes and fixes to apps can quickly be released, and implementers can install these updates to individual apps through the DHIS2 user interface itself. At the same time, from a DHIS2 upgrade and management perspective, the continuous release of apps is also a complicating factor. Updates to apps must be tested and can in some cases introduce changes in functionality or the user interface that should be communicated to users.
 
 > **Note**
 >
 > The continuous release process is similar to what many people are used to from their Android or iPhone devices. The Android OS and iOS typically receive major upgrades on a yearly basis, whilst there may be updates available to apps in the Play Store/App Store at any point in time.
-However, unlike the case for smartphone apps, the DHIS2 apps can be upgraded or *downgraded* to any version that is compatible with the current core version. This means that implementers can have full control over the roll-out of new apps; and are not forced to move to the versions bundled with a core upgrade.
+> However, unlike the case for smartphone apps, the DHIS2 apps can be upgraded or *downgraded* to any version that is compatible with the current core version. This means that implementers can have full control over the roll-out of new apps; and are not forced to move to the versions bundled with a core upgrade.
