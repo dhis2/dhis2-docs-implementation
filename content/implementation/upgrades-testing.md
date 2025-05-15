@@ -42,16 +42,57 @@ A broad categorization for testing using specific, cloned users that you should 
 
 For the user types above, you may also have variations by program. As an example, a single user may be able to view one or many programs; and different users may have varying degrees of access within these programs. Ideally, you would want to check each of these program users to ensure sharing, user roles and any current and updated features as a result of upgrade is working as expected.
 
+#### Establishing a group of tester
+
+While it will generally always be necessary for the DHIS2 core team to perform tests using cloned users, a useful complement can be to recruit a small group of end users who can support the testing. These users should have different roles in the system, and can support the testing process by performing their typical tasks in a test environment.
 
 ## Testing apps under continuous release
 
 Updating individual apps independently might be considered a low-risk subset of upgrades in general. The apps are relatively easy to revert if one runs into issues, but should nevertheless be tested in a separate environment prior to updating; to make sure that any user interface changes are known, and that the key scenarios used by the implementation are still supported.
 
+## Other testing
+In addition to testing the user-facing functionality *within* DHIS2 its important as far as possible to verify that scheduled jobs run, integrations continue working, and that there are no performance degradation.
+
+### Scheduled jobs
+
+Testing scheduled jobs involves verifying that background processes run successfully in the upgraded version. This includes testing things like:
+Testing scheudled
+
+* resource table updates
+* predictors
+* analytics generation
+* data exchange jobs
+
+This is not always straightforward, in particular for anaytics generation (may require more server resources than what is available in a test enviroment) and data exchange (may require another test environment to push data to). Simplifying the testing may be necessary (though not recommended) in certain cases, for example running analytics for a single year only.
+
+### Integrations
+
+Integrations are often developed locally, and are therefore particularly important to test. This requires that a test environment is also available for whatever other systems that DHIS2 is sharing data or metadata with.
+
+### Performance
+
+Testing performance is also an important, in particular validating that there is no degradation in performance of critical operations. Unfortunately, this can be difficult to measure accurately.
+
+For example, the test environment is generally different from the production environment, both in terms of infrastructure and in the lack of active users. If the infrastructure is shared and/or virtualized, the actual resources available might vary over time, so results are hard to compare. It's recommended that any comparisons between versions are done in the same enviroment, not between one version in a production environment and another version running in a test environment. It would then be better to also measure the current version in the test environment, and then upgrade, retest and compare.
+
+While doing thorough performance tests is complex and generally require dedicated skills and tools, there are some basic things that can be checked relatively easily:
+
+* percived performance during testing of apps/functionality
+* compare analytics runtime across versions
+* comparing the response time for commmon API requests:
+    * creating a new event
+    * creating a new enrollment
+    * searching for a tracked entity
+    * importing a file with aggregate data
+    * analytics requests
+
+Basic measurements can be done in the browser console, but it is recommended to also monitor response times using [Glowroot](https://glowroot.org/) or similar tools.
+
 ## Beta testing [draft]
 
 Beta testing refers to testing software prior to it's release. Depending on your upgrade calendar, it may be possible to take advantage of the beta testing phase to "get ahead of the curve" and begin testing earlier in your upgrade cycle. In addition, you may be able to provide valuable feedback to the DHIS2 development team, that will help them to fix issues before they are released.
 
-During the beta testing period, the DHIS2 development team publish release candidates for the upcoming release. These can be installed, like the real release, in a test environment, and subjected to the same critical workflows you would target for any upgrade. Issues that are found can be reported to the DHIS2 development team via XXXX.
+During the beta testing period, the DHIS2 development team publish release candidates for the upcoming release. These can be installed, like the real release, in a test environment, and subjected to the same critical workflows you would target for any upgrade. Issues that are found can be reported to the DHIS2 development team via forms or email shared as part of the test campaign.
 
 Note that issues reported during beta testing should fall into the following categories.
 
