@@ -100,24 +100,32 @@ Effective communication and training are critical to the success of major upgrad
 
 **Training considerations:**  
 
-* Identify which user groups need training based on the changes
-* Determine appropriate training approaches for different user groups:
-  * In-person workshops for major changes
-  * Online webinars for minor updates
-  * Self-paced learning materials
-  * Quick reference guides or job aids
-* Consider budget implications for:
+Based on an evaluation of the changes between the current version and that being introduced in the upgrade process, a decision needs to made as to potential training requirements for different groups of users.
+
+Example of training approaches include:
+
+* In-person workshops/trainings
+* Online webinars for minor updates
+* Self-paced learning materials
+* Quick reference guides or job aids
+
+In-person trainings are in generally considably more costly than any virtual/online trainings, though any of these approaches require at least some investment in staff time. However, there can sometimes be opportunities to leverage existing activities to reduce the costs, and these should be considered. For example, in cases where there are routine data review meetings that bring together relevant users, it might be possible to add a session reviewing changed functionality in a coming upgrade. Similarly, if there are mechanism for regular refresher trainings in place, this is an area where upcoming changes can be presented.
+
+In general, when planning trainings you will need to consider budget implications for:
+
   * Training venue and logistics
   * Travel costs for trainers and participants
   * Development of training materials
   * Staff time for preparation and delivery
 
-**Training resources:**  
+**Documentation and training resources**  
 
-* Create or update user manuals
-* Develop quick reference guides for new features
-* Record video tutorials for common tasks
-* Prepare practical exercises for hands-on learning
+Upgrades that include user-facing changes may require development of dedicated training resources, but also implies updating existing training resources and documentation. This includes: 
+
+* Updating user manuals
+* Developing quick reference guides for new features
+* Recording video tutorials for common tasks
+* Preparing practical exercises for hands-on learning
 * Consider developing a train-the-trainer program for sustainable capacity building
 
 
@@ -134,7 +142,7 @@ When planning for an upgrade, several cost components need to be considered and 
 
 * Development of training materials and user guides
 * Printing and distribution of documentation
-* Venue and logistics for training sessions
+* Venue and logistics for any in-person training sessions
 * Per diem and travel costs for trainers and participants
 * Staff time for preparing and conducting training
 
@@ -143,7 +151,7 @@ When planning for an upgrade, several cost components need to be considered and 
 * Developer time for updating custom apps and tools
 * Modifications to existing integrations
 * Updates to scripts and automated processes
-* External consultant fees if required
+* Fees for technical assistance if required
 
 **Testing resources:**
 
