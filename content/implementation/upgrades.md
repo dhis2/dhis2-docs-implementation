@@ -21,19 +21,19 @@ Having a proper plan and procedure for upgrades in place reduces the associated 
 DHIS2 core versioning follows this structure:
 
 * Major Upgrade: 
-  * Released once a year.
-  * Involve significant changes between versions (e.g., 2.38 to 2.39, or v41 to v42).
-  * Including database schema changes and new features.
+    * Released once a year.
+    * Involve significant changes between versions (e.g., 2.38 to 2.39, or v41 to v42).
+    * Including database schema changes and new features.
 * Minor Upgrade: 
-  * Released periodically for maintained versions. You can see the estimated release date for upcoming patches [here](https://dhis2.org/downloads/#next_patch).
-  * Include bug fixes and incremental improvements with minimal risk. 
+    * Released periodically for maintained versions. You can see the estimated release date for upcoming patches [here](https://dhis2.org/downloads/#next_patch).
+    * Include bug fixes and incremental improvements with minimal risk. 
 * Hot-fix: 
-  * Released only when necessary.
-  * Address critical issues and can be safely applied to systems running the preceding patch update. 
+    * Released only when necessary.
+    * Address critical issues and can be safely applied to systems running the preceding patch update. 
 
 > **Note**
 >
->Starting with v40, the 2. prefix of the major version has been replaced with v (version). The version format follows: `<major>.<patch>.<hotfix>`. This corresponds to traditional semantic versioning `<major>.<minor>.<patch>`.
+> Starting with v40, the 2. prefix of the major version has been replaced with v (version). The version format follows: `<major>.<patch>.<hotfix>`. This corresponds to traditional semantic versioning `<major>.<minor>.<patch>`.
 
 ### Apps on continuous release
 
