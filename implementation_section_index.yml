@@ -50,10 +50,10 @@ Maintenance and use:
   - Localization of DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/localization-of-dhis2.md, master)'
   - Guidelines for offline data entry using DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/offline-data-entry.md, master)'
   - Upgrading:
-      - Introduction: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades.md, phil-upgrade-imp)'
-      - Planning: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-planning.md, phil-upgrade-imp)'
-      - Testing: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-testing.md, phil-upgrade-imp)'
-      - SOP Templates: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-sop.md, phil-upgrade-imp)'
+      - Introduction: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades.md, master)'
+      - Planning: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-planning.md, master)'
+      - Testing: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-testing.md, master)'
+      - SOP Templates: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-sop.md, master)'
 Configuration:
   - Transition Kits:
       - Event Reports to Line Listing: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_er_to_ll.md, master)'
