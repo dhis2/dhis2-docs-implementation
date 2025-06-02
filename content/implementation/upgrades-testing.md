@@ -28,6 +28,7 @@ For instance, if you want to test the Capture app, along with a specific program
 Instructions on how to clone a user within the users app can be found [here](#clone_user)
 
 A broad categorization for testing using specific, cloned users that you should consider includes:
+
 * **Data Entry users** that are using either the Data Entry, Capture app or both. You want to focus on:
     * If they can enter data correctly into these applications without any unnecessary hindrances
     * Checking all of the functions related to data entry that you have outlined in your checklist work as expected
