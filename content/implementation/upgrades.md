@@ -1,5 +1,5 @@
 
-# DHIS2 Upgrade Guide (non-technical)
+# DHIS2 Upgrade Guide for Managers
 
 Using a supported version of DHIS2 is important to ensure the system remains secure.  Major version of DHIS2 are released on an annual basis (typically in April-May). At any point in time, the last 3 major versions are supported, meaning they receive security patches and bug fixes. This means that a major version upgrade should be planned *at least* every 3 years to ensure a supported version is used. We recommend planning for a major upgrade every year or every 2 years, as this ensures quicker access to the improvements included in each release and means that each upgrade process introduce fewer changes. In addition to the major version upgrades, minor updates and fixes should be applied on a regular basis.
 
