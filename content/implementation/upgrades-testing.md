@@ -89,7 +89,7 @@ While doing thorough performance tests is complex and generally require dedicate
 
 Basic measurements can be done in the browser console, but it is recommended to also monitor response times using [Glowroot](https://glowroot.org/) or similar tools.
 
-## Beta testing [draft]
+## Beta testing
 
 Beta testing refers to testing software prior to it's release. Depending on your upgrade calendar, it may be possible to take advantage of the beta testing phase to "get ahead of the curve" and begin testing earlier in your upgrade cycle. In addition, you may be able to provide valuable feedback to the DHIS2 development team, that will help them to fix issues before they are released.
 
