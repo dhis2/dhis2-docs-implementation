@@ -6,17 +6,51 @@ For each upgrade cycle, a detailed plan and timeline should be developed, tailor
 
 At a high level, the upgrade plan should include these activities:
 
-1. [Metadata cleaning](#upgrade-metadata_cleaning)
-2. [Evaluating changes](#upgrade-evaluating_changes)
-3. [Testing](#upgrade-testing)
-4. [Make modifications](#upgrade-making_necessary_modifications)
-5. [Communication and training](#upgrade-communication_and_training)
-6. Apply upgrade to production
+1. [Evaluating changes](#upgrade-evaluating_changes)
+2. [Budgeting & calendar](#upgrade-communication_and_training)
+3. [Metadata cleaning](#upgrade-metadata_cleaning) (important, optional)
+4. [Testing](#upgrade-testing)
+5. [Make modifications](#upgrade-making_necessary_modifications)
+6. [Communication and training](#upgrade-communication_and_training)
+7. Apply upgrade to production
 
+```mermaid
+flowchart TD
+    A[Start Upgrade Cycle] --> B[Evaluate Changes]
+    B --> D[Budgeting & Calendar]
+    D --> C[Metadata Cleaning]:::optional
+    D --> E[Testing]
+    C --> E
+    E --> F[Make Necessary Modifications]
+    F --> G[Communication & Training]
+    G --> H[Implementation: Upgrade Execution]
+    H --> I[Post-upgrade Support & Review]
+    I --> J[End]
 
-## Metadata cleaning { #upgrade-metadata_cleaning }
+    subgraph Testing Details
+      E1[App Testing]
+      E2[User Role Testing]
+      E3[Integrations]
+      E4[Performance]
+      E --> E1
+      E --> E2
+      E --> E3
+      E --> E4
+    end
 
-Over time, integrity issues might develop in the DHIS2 metadata as configurations are modified and amended. These integrity issues are not always immediately visible, but may cause problems during upgrades. For example, they might cause the automated database migrations to fail, or make fetching and rendering of metadata in apps to fail. It is therefore good practice to review and fix metadata integrity issues as a first step in any major version upgrade. The [metadata integrity]() section describes how this can be performed. In particular, issues highlighted by the metadata integrity check as *critical* or *severe* should be addressed before upgrading; integrity checks labelled *warning* do not typically cause problems for upgrades.
+    Beta[Beta Testing]:::optional
+    Beta -.-> E
+
+    subgraph Modifications
+      F1[Metadata Modifications]
+      F2[Apps & Integrations]
+      F --> F1
+      F --> F2
+    end
+
+    classDef optional stroke-dasharray: 5 5;
+```
+
 
 ## Evaluating changes { #upgrade-evaluating_changes }
 
@@ -58,6 +92,12 @@ It can be useful to consider changes as falling into three main categories, whic
 3. **Configuration changes**
 
     Configuration changes are changes introduced in an upgrade that requires the core team of administrators to make changes to the DHIS2 metadata configuration to ensure that the system continues to function as expected. These changes are thus not directly visible to end users, unless they are not addressed and the systems stops working. This type of change is not very common as it's most often handled automatically during the upgrade process, but it does happen occasionally.
+
+
+## Metadata cleaning { #upgrade-metadata_cleaning }
+
+Over time, integrity issues might develop in the DHIS2 metadata as configurations are modified and amended. These integrity issues are not always immediately visible, but may cause problems during upgrades. For example, they might cause the automated database migrations to fail, or make fetching and rendering of metadata in apps to fail. It is therefore good practice to review and fix metadata integrity issues as a first step in any major version upgrade. The [metadata integrity]() section describes how this can be performed. In particular, issues highlighted by the metadata integrity check as *critical* or *severe* should be addressed before upgrading; integrity checks labelled *warning* do not typically cause problems for upgrades.
+
 
 ## Testing { #upgrade-testing }
 
