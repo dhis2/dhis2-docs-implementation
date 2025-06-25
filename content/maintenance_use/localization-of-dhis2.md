@@ -81,7 +81,7 @@ chooses Brazilian Portuguese as their language:
 DHIS2 is now using [transifex](https://www.transifex.com) as our main platform for
 managing translations. You can access the DHIS2 resources at
 [translate.dhis2.org](https://translate.dhis2.org), or directly at
-https://www.transifex.com/hisp-uio/public.
+[https://explore.transifex.com/hisp-uio/].
 
 ### How do I contribute to translations? 
 
