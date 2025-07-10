@@ -1,6 +1,6 @@
 # Tracker performance at scale
 
-This document describes approaches to optimizing DHIS2 tracker implementations for COVID-19 vaccine delivery at scale.
+This document describes approaches to optimizing performance for large-scale DHIS2 tracker implementations.
 
 ## Executive summary
 > **Server**
