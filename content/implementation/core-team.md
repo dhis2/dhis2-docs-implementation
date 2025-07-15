@@ -34,11 +34,13 @@ Implementers are responsible for operationalizing and scaling up the DHIS2 confi
 
 Implementers will also consider how DHIS2 fits into a health information architecture, focusing on what type of information needs to be exchanged and what type of work processes or agreements may facilitate this exchange. Processes and procedures to maintain the integrity of the DHIS2 system to operate efficiently over an extended time period, including upgrade procedures, managing metadata and users, etc. are often also drafted and enforced by the implementation team.
 
-The implementer role is subdivided into 2 roles: 
-- Implementer - Program and 
-- Implementer - Technical 
-
-This reflects the need of this role to have some flexibility. The ***Implementer - Program*** role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The ***Implementer - Technical*** role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
+> **Note**
+>
+>The implementer role is subdivided into 2 roles: 
+>- Implementer - Program and 
+>- Implementer - Technical 
+>
+>This reflects the need of this role to have some flexibility. The ***Implementer - Program*** role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The ***Implementer - Technical*** role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
 
 **Trainer**
 
@@ -48,11 +50,20 @@ Training and support staff will work to establish mechanisms for providing end-u
 
 Training and user support staff will also need expertise in DHIS2, which necessitates some overlap in the tasks with staff working on DHIS2 design, customisation and system administration. While experts in fields such as adult education or teaching can support creating structures for training, a person experienced in the use of the DHIS2 concept being discussed will need to be involved in the training of said concept.
 
+> **Note**
+>
+>The trainer role is subdivided into 3 roles/responsibilities: 
+>- Trainer - Program 
+>- Trainer - Technical and 
+>- Trainer - General
+>
+>The ***Trainer - Program*** role will spend more time on performing training activities related to use of DHIS2 (or its surrounding processes such as documentation, standard operating procedures, etc.). The ***Trainer - Technical*** role will spend more time on training activities related to configuring DHIS2. ***Trainer - General*** is not a role but a responsibility, and relates to the trainer's ability to create learning content and work with complementary learning tools (for example, image and video editing software, learning management systems, etc.).
+
 **Server Administrator**
 
 A server administrator is responsible for managing both the server(s) and DHIS2 instances that contribute to an implementation or configuration. For the server, this includes security updates, performance monitoring, documentation and implementation of backup strategies. For the DHIS2 instances this can include DHIS2 version upgrades, managing the instances (creating, moving, removing instances), monitoring their uptime, etc. This role is crucial to ensuring DHIS2 can be accessed and is working well. A server administrator may do all of these tasks directly or work with a service provider to perform these activities jointly.
 
-### Contributing Positions
+### Contributing Roles
 
 **Subject Matter Expert**
 
@@ -61,6 +72,12 @@ Subject matter experts have experience on how services are delivered within vari
 **Program Manager**
 
 Program Manager's coordinate various project's within the specific program they are responsible for. They are often responsible for the outcomes of these projects and for reporting progress directly within their organization (such as a government ministry). They have a broad understanding of their programs monitoring and evaluation needs, including the inputs and outputs required to manage the program effectively. Program manager's should work with the operational lead responsible for implementing DHIS2 in order to communicate their specific requirements. This can be one of their staff or a co-ordinating body, such as the Health Information Systems unit.
+
+**Security Manager**
+
+**Data Scientist**
+
+### Optional Roles
 
 **App Developer**
 
@@ -192,15 +209,13 @@ The DHIS2 capacity building needs assessment is meant to be self-administered, w
 4. Trainer
 5. Server Administrator
 
-For each role, skill categories are listed and can be rated on a score of 1-4 (or not applicable)
+For each role, skill categories are listed and can be rated on a score of 0-3 (or not applicable)
 
 The template itself is meant to serve as reference "menu" of skill categories. These skill categories will need to be further divided into granular areas that may need improvement. As an example, within the role "Implementer - Technical," a skill category to be assessed is "Create and manage user-based access controls." This category contains references to user authorities, user roles, user groups and metadata and data sharing. The person assessed may be well versed in creating user roles and users, but may not be able to adequately manage the application of sharing settings; therefore this particular skill would be the area of focus within this category. 
 
-In some cases, a single individual may perform several of the tasks outlined for the roles above, and as such an assessment catered to the combined skillset will need to be made. For example, if an individual is serving the role of both Implementer - Program and Trainer, then these two skill profiles will need to be combined, and the person should be assessed on any of the relevant skill categories that are available within these profiles. 
-
 > **Important**
 >
-> For each individual, a tailored version of the template will need to be provided to them. For example, if a person is not expected to perform any type of operational lead or server administrator tasks, then these sections should NOT be included in the needs assessment template that is provided to them.
+> The assessment recognizes that a person may be performing multiple roles. When they fill in the assessment, they should fill in all of the sections that apply to them. If there is a role that they are currently not performing, but there is a vision for them to perform that role in the near future; they should also fill in those sections as well.
 
 ***Results and Long-Term Planning***
 
@@ -216,7 +231,7 @@ By completing the assessment and plan in a structured manner, it also offers an 
 
 ### Core Team Capacity Building Plan
 
-The core team capacity building plan is meant to take the inputs from the capacity building needs assessment and formulate a long-term strategy for addressing gaps that have been identified as a result of the assessment. The core team capacity building plan by its nature takes a modular, linear approach to building capacity. What we mean by this is that there are certain activities that may need to be performed in order; however several activities can take place in parrallel as long as they do not conflict with one another. As an example of this, let us say you have both an implementer - technical and a server administrator that needs training. The server admin may need some skills in Ansible, while the implementer - technical may need to learn more about sharing. These activities can occur in parrallel, but there may be pre-requisites activities that need to occur for each one in advance before additional capacity building activities are planned and executed.
+The core team capacity building plan is meant to take the inputs from the capacity building needs assessment and formulate a long-term strategy for addressing gaps that have been identified as a result of the assessment. The core team capacity building plan by its nature takes a modular approach to building capacity. This allows you to modify the assessment to meet your needs, understanding that the positions identified as a priority will vary depending on local context. 
 
 [Access the template](https://docs.google.com/document/d/1Y97RPHXguY6CWn-FwBxdj_6mG0Xj9DHiniL9aiQGsDA/edit?usp=sharing)
 
