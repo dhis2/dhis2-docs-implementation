@@ -4,7 +4,7 @@ A DHIS2 core team is a local team that manages the planning, implementation and 
 
 These core teams are ideally formed at the beginning of a DHIS2 implementation so they can learn various DHIS2 skills over time; however there will likely be cases that are more fluid, either with the core team being formed months or years after DHIS2 is implemented, or members of the core team changing due to various circumstances surrounding retention of staff.
 
-A DHIS2 core team can vary in size depending on the context (it may be 1-2 members in a very small country with a simple implementation, and can be much larger with a complex implementation and/or large country). There are a couple key roles that we will identify within the core team approach however. 
+A DHIS2 core team can vary in size depending on the context (it may be 1-2 members in a very small country with a simple implementation, and can be much larger within a complex implementation and/or large country). There are a couple key roles that we will identify within the core team approach however. 
 
 ## Core Team Structure
 
