@@ -8,7 +8,7 @@ A DHIS2 core team can vary in size depending on the context (it may be 1-2 membe
 
 ## Core Team Structure
 
-As part of the DHIS2 core team, we recommend 4 core positions and 4 contributing roles. 
+As part of the DHIS2 core team, we recommend 4 core positions and 4 contributing roles. Additional optional roles can also be added based on local context.
 
 ![Core_Team_Roles](resources/images/core_team/core_team_roles.png)
 
@@ -17,6 +17,8 @@ As part of the DHIS2 core team, we recommend 4 core positions and 4 contributing
 >We define ***core positions*** as those that are required positions within the core team. Excluding the server administrator, we recommend these core positions are dedicated, full time roles focused on DHIS2. The server administrator is identified as a core role due to its importance within the implementation, but may not necessarily be a full time role depending on the infrastructure being managed.
 >
 >***Contributing roles*** are roles that provide external input to the DHIS2 core team on an as needed basis. These are roles that are required to ensure success within the DHIS2 implementation, but are not dedicated, full time roles focused only on DHIS2. We see these roles as providing input when needed while still performing their other duties. 
+>
+>It should be noted that the specific language used to define these roles may vary. Match these role names to specific roles identified in country.
 
 ## Role Descriptions
 
