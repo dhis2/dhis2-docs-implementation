@@ -6,6 +6,17 @@ These core teams are ideally formed at the beginning of a DHIS2 implementation s
 
 A DHIS2 core team can vary in size depending on the context (it may be 1-2 members in a very small country with a simple implementation, and can be much larger within a complex implementation and/or large country). There are a couple key roles that we will identify within the core team approach however. 
 
+## The DHIS2 core team framework
+
+The DHIS2 Core team framework defines a set of principles that are meant to define long-term, sustainable capacity building processes
+Emphasis on local ownership. It is a pivot from previous messaging around DHIS2, as we see specialization of roles bearing an increased amount of weight across a number of implementations:
+
+- Understands that DHIS2 skills have become increasingly complex
+- Recognizes that foundational skills are necessary for success
+- Is not a shortcut or quick fix, but a method to build sustainable capacity, expertise and leadership over a prolonged period of time
+- Requires strategic investment in local staff
+- Moves away from the idea that “anyone can do anything” in DHIS2
+
 ## Core Team Structure
 
 As part of the DHIS2 core team, we recommend 4 core positions and 4 contributing roles. Additional optional roles can also be added based on local context.
