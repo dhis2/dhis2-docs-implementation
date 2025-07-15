@@ -206,7 +206,7 @@ For HR Development, our main focus is on building the core team as we have outli
 
 The DHIS2 Capacity Building Needs Assessment is a tool developed to assess the capacity of each individual within a DHIS2 core team. The tool is meant to be modular and will need modification in order to make it work within specific contexts. An understanding of the DHIS2 technical areas and contributing skillsets is needed in order to optimize the use of this assessment tool. 
 
-[Access the assessment](https://docs.google.com/spreadsheets/d/1hDfVhTC17STM4x1cbYWJEPLnOuvFmyuJEe_vnxHuf5U/edit?usp=sharing)
+[Access the assessment](https://docs.google.com/forms/d/1dyh-Q7idHF0bJDrAbijP8PcYzszVl0BTa7bqIjjgra8/edit)
 
 ***Assessment Objectives***
 
@@ -247,15 +247,13 @@ The template itself is meant to serve as reference "menu" of skill categories. T
 
 ***Results and Long-Term Planning***
 
-> **Note** 
-> 
-> There is no "scoring" system in place for this assessment, as its objectives are not meant to provide a grade but to identify gaps and create an improvement plan. The focus of the results is to incentivize individuals to increase their capacity, not to deter individuals from giving honest responses.
-
 Once the individual skills assessments have been performed, a capacity building plan based on these assessments needs to be created. An accompanying template for the capacity building plan is available and can be referred to for further instruction on how to design the plan based on inputs from this assessment.
 
 Ideally, these assessments results should be used to provide individual staff members a long-term view on how gaps in their capacity will be addressed over time. 
 
 By completing the assessment and plan in a structured manner, it also offers an opportunity to present to partners for funding and technical assistance, where additional effort on considering the needs within your setting have been taken into account in order to develop a long-term, strategic plan to deal with capacity gaps that may exist in your setting.
+
+A detailed system of scoring, both by individual topic area as well as per technical area, are produced as a result of the assessment. ***This scoring is not meant to be used to assess performance.*** It is meant to establish a baseline of skills, identify priority areas for intervention and to be used to measure the effectiveness of capacity building interventions in the future (ie. the scores are the baseline; when the assessment is performed again you can compare them with your previous scores).
 
 ### Core Team Capacity Building Plan
 
@@ -280,6 +278,6 @@ As additional inputs into the Core Team Capacity Building plan, a learning path 
 ## Resources Summary
 
 1. [Description of learning solutions](https://docs.dhis2.org/en/topics/training-docs/general-guidance/capacity-building-considerations.html#developing-new-learning-solutions)
-2. [Capacity building needs assessment](https://docs.google.com/spreadsheets/d/1hDfVhTC17STM4x1cbYWJEPLnOuvFmyuJEe_vnxHuf5U/edit?usp=sharing)
+2. [Capacity building needs assessment](https://docs.google.com/forms/d/1dyh-Q7idHF0bJDrAbijP8PcYzszVl0BTa7bqIjjgra8/edit)
 3. [Core team capacity building plan](https://docs.google.com/document/d/1Y97RPHXguY6CWn-FwBxdj_6mG0Xj9DHiniL9aiQGsDA/edit?usp=sharing)
 4. [DHIS2 Learning Paths](https://dhis2.org/academy/learning-paths/)
