@@ -75,7 +75,15 @@ Program Manager's coordinate various project's within the specific program they 
 
 **Security Manager**
 
+The security manager is meant to take care of identifying, addressing and managing security related matters within the organization and its stakeholders, specifically around availability, confidentiality and integrity of data, platform (software and infrastructure) and organization (data and infrastructure). The Security Manager must be able to influence decisions on security-related matters and therefore requires a good degree of autonomy. To effectively understand, analyze and defend an organization, visibility is important and therefore they should be involved in all conversations around confidentiality, integrity and availability as part of their scope of work.
+
+This position is usually held on a senior level, as close as possible with the organization’s leadership team and on the same line of authority, working with and reporting to them.
+
 **Data Scientist**
+
+A data scientist is a professional who utilizes statistical analysis, machine learning, and programming skills to extract insights and knowledge from structured and unstructured data. They play a crucial role in helping organizations make data-driven decisions by analyzing complex data sets, developing predictive models, and visualizing data to communicate findings effectively.
+
+They can support your organization in taking your DHIS2 data analysis to the next level, making concrete correlations and defining relationships between various policy interventions and their outcomes and effectiveness.
 
 ### Optional Roles
 
