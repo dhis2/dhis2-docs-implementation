@@ -59,9 +59,9 @@ Training and user support staff will also need expertise in DHIS2, which necessi
 >
 >The ***Trainer - Program*** role will spend more time on performing training activities related to use of DHIS2 (or its surrounding processes such as documentation, standard operating procedures, etc.). The ***Trainer - Technical*** role will spend more time on training activities related to configuring DHIS2. ***Trainer - General*** is not a role but a responsibility, and relates to the trainer's ability to create learning content and work with complementary learning tools (for example, image and video editing software, learning management systems, etc.).
 
-**Server Administrator**
+**Integration Expert**
 
-A server administrator is responsible for managing both the server(s) and DHIS2 instances that contribute to an implementation or configuration. For the server, this includes security updates, performance monitoring, documentation and implementation of backup strategies. For the DHIS2 instances this can include DHIS2 version upgrades, managing the instances (creating, moving, removing instances), monitoring their uptime, etc. This role is crucial to ensuring DHIS2 can be accessed and is working well. A server administrator may do all of these tasks directly or work with a service provider to perform these activities jointly.
+An integration expert is a developer focused on ensuring data exchange, interoperability and/or integration can occur between different systems. They will understand common frameworks and technologies for facilitating these operations and be able to create various tools to allow these exchanges to happen.  
 
 ### Contributing Roles
 
