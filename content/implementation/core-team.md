@@ -14,7 +14,7 @@ As part of the DHIS2 core team, we recommend 4 core positions and 4 contributing
 
 > **Important**
 >
->We define ***core positions*** as those that are required positions within the core team. Excluding the server administrator, we recommend these core positions are dedicated, full time roles focused on DHIS2. The server administrator is identified as a core role due to its importance within the implementation, but may not necessarily be a full time role depending on the infrastructure being managed.
+>We define ***core positions*** as those that are required positions within the core team. Excluding the server administrator, we recommend these core positions are dedicated, full time roles focused on DHIS2 (however, we recognize this may not always be possible in practice). The server administrator is identified as a core role due to its importance within the implementation, but may not necessarily be a full time role depending on the infrastructure being managed.
 >
 >***Contributing roles*** are roles that provide external input to the DHIS2 core team on an as needed basis. These are roles that are required to ensure success within the DHIS2 implementation, but are not dedicated, full time roles focused only on DHIS2. We see these roles as providing input when needed while still performing their other duties. 
 >
