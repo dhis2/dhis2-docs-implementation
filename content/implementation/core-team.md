@@ -220,7 +220,16 @@ The target audience for the capacity building needs assessment are any countries
  
 ***Assessment Process***
 
-The DHIS2 capacity building needs assessment is meant to be self-administered, with support from relevant partners that can provide guidance on understanding the related technical areas discussed in this template.  The technical areas are separated into the 5 core roles identified in the DHIS2 core team planning guidance:
+The DHIS2 capacity building needs assessment can be administered in 3 ways
+1. Self-administered
+2. Via a supervisor sitting down with each team member
+3. Via an external party that understands DHIS2 well sitting down with each team member
+
+A table, outlining the pros and cons of each method, can be found below:
+
+
+
+The technical areas are separated into the 5 core roles identified in the DHIS2 core team planning guidance:
 
 1. Operational Lead
 2. Implementer - Program
