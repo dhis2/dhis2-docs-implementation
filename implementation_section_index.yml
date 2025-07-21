@@ -68,6 +68,9 @@ Health:
       - Design: '@github(dhis2-metadata/GEN_LIB, docs/gen_lib-design.md, master)'
       - Installation: '@github(dhis2-metadata/GEN_LIB, docs/gen_lib-installation.md, master)'
     - Naming Conventions: '@github(dhis2/dhis2-docs, src/metadata/metadata-naming-conventions.md, master)'
+  - Campaigns:
+    - Introduction: '@github(dhis2-metadata/HEALTH_CAMPAIGNS, docs/introduction.md, master'
+    - Implementation planning: '@github(dhis2-metadata/HEALTH_CAMPAIGNS, docs/implementation.md, master'
   - Health Facility Profile:
     - OVERVIEW: '@github(dhis2-metadata/HFP, docs/overview.md, master'
     - Release Note: '@github(dhis2-metadata/HFP, docs/release_note.md, master'
