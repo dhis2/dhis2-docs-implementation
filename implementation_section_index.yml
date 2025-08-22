@@ -54,6 +54,7 @@ Maintenance and use:
       - Planning: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-planning.md, master)'
       - Testing: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-testing.md, master)'
       - SOP Templates: '@github(dhis2/dhis2-docs-implementation, content/implementation/upgrades-sop.md, master)'
+  - Organisation unit maintenance: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/organisation_unit_maintenance.md, master)'
 Configuration:
   - Transition Kits:
       - Event Reports to Line Listing: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_er_to_ll.md, master)'
