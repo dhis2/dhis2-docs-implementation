@@ -47,9 +47,7 @@ Implementers will also consider how DHIS2 fits into a health information archite
 
 > **Note**
 >
->The implementer role is subdivided into 2 roles: 
->- Implementer - Program and 
->- Implementer - Technical 
+>The implementer role is subdivided into 2 roles: Implementer - Program and Implementer - Technical 
 >
 >This reflects the need of this role to have some flexibility. The ***Implementer - Program*** role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The ***Implementer - Technical*** role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
 
@@ -63,16 +61,13 @@ Training and user support staff will also need expertise in DHIS2, which necessi
 
 > **Note**
 >
->The trainer role is subdivided into 3 roles/responsibilities: 
->- Trainer - Program 
->- Trainer - Technical and 
->- Trainer - General
+>The trainer role is subdivided into 3 roles/responsibilities: Trainer - Program, Trainer - Technical and Trainer - General
 >
 >The ***Trainer - Program*** role will spend more time on performing training activities related to use of DHIS2 (or its surrounding processes such as documentation, standard operating procedures, etc.). The ***Trainer - Technical*** role will spend more time on training activities related to configuring DHIS2. ***Trainer - General*** is not a role but a responsibility, and relates to the trainer's ability to create learning content and work with complementary learning tools (for example, image and video editing software, learning management systems, etc.).
 
-**Integration Expert**
+**Server Administrator**
 
-An integration expert is a developer focused on ensuring data exchange, interoperability and/or integration can occur between different systems. They will understand common frameworks and technologies for facilitating these operations and be able to create various tools to allow these exchanges to happen.  
+A server administrator is responsible for managing both the server(s) and DHIS2 instances that contribute to an implementation or configuration. For the server, this includes security updates, performance monitoring, documentation and implementation of backup strategies. For the DHIS2 instances this can include DHIS2 version upgrades, managing the instances (creating, moving, removing instances), monitoring their uptime, etc. This role is crucial to ensuring DHIS2 can be accessed and is working well. A server administrator may do all of these tasks directly or work with a service provider to perform these activities jointly.
 
 **Server Administrator**
 
@@ -106,9 +101,9 @@ They can support your organization in taking your DHIS2 data analysis to the nex
 
 App developer's extend the functionality of DHIS2 by creating custom apps that work within the DHIS2 platform to meet specific requirements that are best suited to a custom solution. App developer's will often work with an implementer in order to understand these requirements in greater detail.
 
-**Security Manager**
+**Integration Expert**
 
-A security expert will understand both legal frameworks/international best practices for protecting information as well as various procedures and technical methods that can be used to implement these frameworks and practices. Ideally, they should inform practices such as the creation and sharing of users, storage of data, etc. and provide information on country-wide policies related to security. 
+An integration expert is a developer focused on ensuring data exchange, interoperability and/or integration can occur between different systems. They will understand common frameworks and technologies for facilitating these operations and be able to create various tools to allow these exchanges to happen.  
 
 ## Required Competencies
 
