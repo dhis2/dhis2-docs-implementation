@@ -102,10 +102,6 @@ They can support your organization in taking your DHIS2 data analysis to the nex
 
 App developer's extend the functionality of DHIS2 by creating custom apps that work within the DHIS2 platform to meet specific requirements that are best suited to a custom solution. App developer's will often work with an implementer in order to understand these requirements in greater detail.
 
-**Security Manager**
-
-A security expert will understand both legal frameworks/international best practices for protecting information as well as various procedures and technical methods that can be used to implement these frameworks and practices. Ideally, they should inform practices such as the creation and sharing of users, storage of data, etc. and provide information on country-wide policies related to security. 
-
 **Integration Expert**
 
 An integration expert is a developer focused on ensuring data exchange, interoperability and/or integration can occur between different systems. They will understand common frameworks and technologies for facilitating these operations and be able to create various tools to allow these exchanges to happen.  
