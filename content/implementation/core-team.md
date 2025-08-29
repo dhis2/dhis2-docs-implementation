@@ -4,19 +4,32 @@ A DHIS2 core team is a local team that manages the planning, implementation and 
 
 These core teams are ideally formed at the beginning of a DHIS2 implementation so they can learn various DHIS2 skills over time; however there will likely be cases that are more fluid, either with the core team being formed months or years after DHIS2 is implemented, or members of the core team changing due to various circumstances surrounding retention of staff.
 
-A DHIS2 core team can vary in size depending on the context (it may be 1-2 members in a very small country with a simple implementation, and can be much larger with a complex implementation and/or large country). There are a couple key roles that we will identify within the core team approach however. 
+A DHIS2 core team can vary in size depending on the context (it may be 1-2 members in a very small country with a simple implementation, and can be much larger within a complex implementation and/or large country). There are a couple key roles that we will identify within the core team approach however. 
+
+## The DHIS2 core team framework
+
+The DHIS2 Core team framework defines a set of principles that are meant to define long-term, sustainable capacity building processes
+Emphasis on local ownership. It is a pivot from previous messaging around DHIS2, as we see specialization of roles bearing an increased amount of weight across a number of implementations:
+
+- Understands that DHIS2 skills have become increasingly complex
+- Recognizes that foundational skills are necessary for success
+- Is not a shortcut or quick fix, but a method to build sustainable capacity, expertise and leadership over a prolonged period of time
+- Requires strategic investment in local staff
+- Moves away from the idea that “anyone can do anything” in DHIS2
 
 ## Core Team Structure
 
-As part of the DHIS2 core team, we recommend 4 core positions and 4 contributing roles. 
+As part of the DHIS2 core team, we recommend 4 core positions and 4 contributing roles. Additional optional roles can also be added based on local context.
 
 ![Core_Team_Roles](resources/images/core_team/core_team_roles.png)
 
 > **Important**
 >
->We define ***core positions*** as those that are required positions within the core team. Excluding the server administrator, we recommend these core positions are dedicated, full time roles focused on DHIS2. The server administrator is identified as a core role due to its importance within the implementation, but may not necessarily be a full time role depending on the infrastructure being managed.
+>We define ***core positions*** as those that are required positions within the core team. Excluding the server administrator, we recommend these core positions are dedicated, full time roles focused on DHIS2 (however, we recognize this may not always be possible in practice). The server administrator is identified as a core role due to its importance within the implementation, but may not necessarily be a full time role depending on the infrastructure being managed.
 >
 >***Contributing roles*** are roles that provide external input to the DHIS2 core team on an as needed basis. These are roles that are required to ensure success within the DHIS2 implementation, but are not dedicated, full time roles focused only on DHIS2. We see these roles as providing input when needed while still performing their other duties. 
+>
+>It should be noted that the specific language used to define these roles may vary. Match these role names to specific roles identified in country.
 
 ## Role Descriptions
 
@@ -32,11 +45,13 @@ Implementers are responsible for operationalizing and scaling up the DHIS2 confi
 
 Implementers will also consider how DHIS2 fits into a health information architecture, focusing on what type of information needs to be exchanged and what type of work processes or agreements may facilitate this exchange. Processes and procedures to maintain the integrity of the DHIS2 system to operate efficiently over an extended time period, including upgrade procedures, managing metadata and users, etc. are often also drafted and enforced by the implementation team.
 
-The implementer role is subdivided into 2 roles: 
-- Implementer - Program and 
-- Implementer - Technical 
-
-This reflects the need of this role to have some flexibility. The ***Implementer - Program*** role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The ***Implementer - Technical*** role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
+> **Note**
+>
+>The implementer role is subdivided into 2 roles: 
+>- Implementer - Program and 
+>- Implementer - Technical 
+>
+>This reflects the need of this role to have some flexibility. The ***Implementer - Program*** role will spend more time on gathering requirements, creating documentation and focusing on the use the system. The ***Implementer - Technical*** role will spend more time on managing the DHIS2 configuration - creating datasets, tracker programs and managing user access controls as examples.
 
 **Trainer**
 
@@ -46,11 +61,20 @@ Training and support staff will work to establish mechanisms for providing end-u
 
 Training and user support staff will also need expertise in DHIS2, which necessitates some overlap in the tasks with staff working on DHIS2 design, customisation and system administration. While experts in fields such as adult education or teaching can support creating structures for training, a person experienced in the use of the DHIS2 concept being discussed will need to be involved in the training of said concept.
 
-**Server Administrator**
+> **Note**
+>
+>The trainer role is subdivided into 3 roles/responsibilities: 
+>- Trainer - Program 
+>- Trainer - Technical and 
+>- Trainer - General
+>
+>The ***Trainer - Program*** role will spend more time on performing training activities related to use of DHIS2 (or its surrounding processes such as documentation, standard operating procedures, etc.). The ***Trainer - Technical*** role will spend more time on training activities related to configuring DHIS2. ***Trainer - General*** is not a role but a responsibility, and relates to the trainer's ability to create learning content and work with complementary learning tools (for example, image and video editing software, learning management systems, etc.).
 
-A server administrator is responsible for managing both the server(s) and DHIS2 instances that contribute to an implementation or configuration. For the server, this includes security updates, performance monitoring, documentation and implementation of backup strategies. For the DHIS2 instances this can include DHIS2 version upgrades, managing the instances (creating, moving, removing instances), monitoring their uptime, etc. This role is crucial to ensuring DHIS2 can be accessed and is working well. A server administrator may do all of these tasks directly or work with a service provider to perform these activities jointly.
+**Integration Expert**
 
-### Contributing Positions
+An integration expert is a developer focused on ensuring data exchange, interoperability and/or integration can occur between different systems. They will understand common frameworks and technologies for facilitating these operations and be able to create various tools to allow these exchanges to happen.  
+
+### Contributing Roles
 
 **Subject Matter Expert**
 
@@ -59,6 +83,20 @@ Subject matter experts have experience on how services are delivered within vari
 **Program Manager**
 
 Program Manager's coordinate various project's within the specific program they are responsible for. They are often responsible for the outcomes of these projects and for reporting progress directly within their organization (such as a government ministry). They have a broad understanding of their programs monitoring and evaluation needs, including the inputs and outputs required to manage the program effectively. Program manager's should work with the operational lead responsible for implementing DHIS2 in order to communicate their specific requirements. This can be one of their staff or a co-ordinating body, such as the Health Information Systems unit.
+
+**Security Manager**
+
+The security manager is meant to take care of identifying, addressing and managing security related matters within the organization and its stakeholders, specifically around availability, confidentiality and integrity of data, platform (software and infrastructure) and organization (data and infrastructure). The Security Manager must be able to influence decisions on security-related matters and therefore requires a good degree of autonomy. To effectively understand, analyze and defend an organization, visibility is important and therefore they should be involved in all conversations around confidentiality, integrity and availability as part of their scope of work.
+
+This position is usually held on a senior level, as close as possible with the organization’s leadership team and on the same line of authority, working with and reporting to them.
+
+**Data Scientist**
+
+A data scientist is a professional who utilizes statistical analysis, machine learning, and programming skills to extract insights and knowledge from structured and unstructured data. They play a crucial role in helping organizations make data-driven decisions by analyzing complex data sets, developing predictive models, and visualizing data to communicate findings effectively.
+
+They can support your organization in taking your DHIS2 data analysis to the next level, making concrete correlations and defining relationships between various policy interventions and their outcomes and effectiveness.
+
+### Optional Roles
 
 **App Developer**
 
@@ -168,7 +206,7 @@ For HR Development, our main focus is on building the core team as we have outli
 
 The DHIS2 Capacity Building Needs Assessment is a tool developed to assess the capacity of each individual within a DHIS2 core team. The tool is meant to be modular and will need modification in order to make it work within specific contexts. An understanding of the DHIS2 technical areas and contributing skillsets is needed in order to optimize the use of this assessment tool. 
 
-[Access the assessment](https://docs.google.com/spreadsheets/d/1hDfVhTC17STM4x1cbYWJEPLnOuvFmyuJEe_vnxHuf5U/edit?usp=sharing)
+[Access the assessment](https://docs.google.com/forms/d/1dyh-Q7idHF0bJDrAbijP8PcYzszVl0BTa7bqIjjgra8/edit)
 
 ***Assessment Objectives***
 
@@ -182,7 +220,16 @@ The target audience for the capacity building needs assessment are any countries
  
 ***Assessment Process***
 
-The DHIS2 capacity building needs assessment is meant to be self-administered, with support from relevant partners that can provide guidance on understanding the related technical areas discussed in this template.  The technical areas are separated into the 5 core roles identified in the DHIS2 core team planning guidance:
+The DHIS2 capacity building needs assessment can be administered in 3 ways
+1. Self-administered
+2. Via a supervisor sitting down with each team member
+3. Via an external party that understands DHIS2 well sitting down with each team member
+
+A table, outlining the pros and cons of each method, can be found below:
+
+
+
+The technical areas are separated into the 5 core roles identified in the DHIS2 core team planning guidance:
 
 1. Operational Lead
 2. Implementer - Program
@@ -190,21 +237,15 @@ The DHIS2 capacity building needs assessment is meant to be self-administered, w
 4. Trainer
 5. Server Administrator
 
-For each role, skill categories are listed and can be rated on a score of 1-4 (or not applicable)
+For each role, skill categories are listed and can be rated on a score of 0-3 (or not applicable)
 
 The template itself is meant to serve as reference "menu" of skill categories. These skill categories will need to be further divided into granular areas that may need improvement. As an example, within the role "Implementer - Technical," a skill category to be assessed is "Create and manage user-based access controls." This category contains references to user authorities, user roles, user groups and metadata and data sharing. The person assessed may be well versed in creating user roles and users, but may not be able to adequately manage the application of sharing settings; therefore this particular skill would be the area of focus within this category. 
 
-In some cases, a single individual may perform several of the tasks outlined for the roles above, and as such an assessment catered to the combined skillset will need to be made. For example, if an individual is serving the role of both Implementer - Program and Trainer, then these two skill profiles will need to be combined, and the person should be assessed on any of the relevant skill categories that are available within these profiles. 
-
 > **Important**
 >
-> For each individual, a tailored version of the template will need to be provided to them. For example, if a person is not expected to perform any type of operational lead or server administrator tasks, then these sections should NOT be included in the needs assessment template that is provided to them.
+> The assessment recognizes that a person may be performing multiple roles. When they fill in the assessment, they should fill in all of the sections that apply to them. If there is a role that they are currently not performing, but there is a vision for them to perform that role in the near future; they should also fill in those sections as well.
 
 ***Results and Long-Term Planning***
-
-> **Note** 
-> 
-> There is no "scoring" system in place for this assessment, as its objectives are not meant to provide a grade but to identify gaps and create an improvement plan. The focus of the results is to incentivize individuals to increase their capacity, not to deter individuals from giving honest responses.
 
 Once the individual skills assessments have been performed, a capacity building plan based on these assessments needs to be created. An accompanying template for the capacity building plan is available and can be referred to for further instruction on how to design the plan based on inputs from this assessment.
 
@@ -212,9 +253,11 @@ Ideally, these assessments results should be used to provide individual staff me
 
 By completing the assessment and plan in a structured manner, it also offers an opportunity to present to partners for funding and technical assistance, where additional effort on considering the needs within your setting have been taken into account in order to develop a long-term, strategic plan to deal with capacity gaps that may exist in your setting.
 
+A detailed system of scoring, both by individual topic area as well as per technical area, are produced as a result of the assessment. ***This scoring is not meant to be used to assess performance.*** It is meant to establish a baseline of skills, identify priority areas for intervention and to be used to measure the effectiveness of capacity building interventions in the future (ie. the scores are the baseline; when the assessment is performed again you can compare them with your previous scores).
+
 ### Core Team Capacity Building Plan
 
-The core team capacity building plan is meant to take the inputs from the capacity building needs assessment and formulate a long-term strategy for addressing gaps that have been identified as a result of the assessment. The core team capacity building plan by its nature takes a modular, linear approach to building capacity. What we mean by this is that there are certain activities that may need to be performed in order; however several activities can take place in parrallel as long as they do not conflict with one another. As an example of this, let us say you have both an implementer - technical and a server administrator that needs training. The server admin may need some skills in Ansible, while the implementer - technical may need to learn more about sharing. These activities can occur in parrallel, but there may be pre-requisites activities that need to occur for each one in advance before additional capacity building activities are planned and executed.
+The core team capacity building plan is meant to take the inputs from the capacity building needs assessment and formulate a long-term strategy for addressing gaps that have been identified as a result of the assessment. The core team capacity building plan by its nature takes a modular approach to building capacity. This allows you to modify the assessment to meet your needs, understanding that the positions identified as a priority will vary depending on local context. 
 
 [Access the template](https://docs.google.com/document/d/1Y97RPHXguY6CWn-FwBxdj_6mG0Xj9DHiniL9aiQGsDA/edit?usp=sharing)
 
@@ -235,6 +278,6 @@ As additional inputs into the Core Team Capacity Building plan, a learning path 
 ## Resources Summary
 
 1. [Description of learning solutions](https://docs.dhis2.org/en/topics/training-docs/general-guidance/capacity-building-considerations.html#developing-new-learning-solutions)
-2. [Capacity building needs assessment](https://docs.google.com/spreadsheets/d/1hDfVhTC17STM4x1cbYWJEPLnOuvFmyuJEe_vnxHuf5U/edit?usp=sharing)
+2. [Capacity building needs assessment](https://docs.google.com/forms/d/1dyh-Q7idHF0bJDrAbijP8PcYzszVl0BTa7bqIjjgra8/edit)
 3. [Core team capacity building plan](https://docs.google.com/document/d/1Y97RPHXguY6CWn-FwBxdj_6mG0Xj9DHiniL9aiQGsDA/edit?usp=sharing)
 4. [DHIS2 Learning Paths](https://dhis2.org/academy/learning-paths/)
