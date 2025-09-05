@@ -55,7 +55,7 @@ The following sections will illustrate how this new feature can be used.
 
     ![](resources/images/PI_Disaggregation_Gender Mapping.png)
 
-    To add the mapping for the Under 5 years and 5 years and above, since it is a numerical field you can use the operators > >= < <= == != to define the relationship
+    To add the mapping for the Under 5 years and 5 years and above, since it is a numerical field you can use the operators `>` `>=` `<` `<=` `==` `!=` to define the relationship
 
     ![](resources/images/PI_Disaggregation_Age_Mapping.png)
 
