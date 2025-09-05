@@ -64,12 +64,13 @@ The following sections will illustrate how this new feature can be used.
 
 10. Open Data Visualizer, first let’s look at how these data were previously displayed. To do this create a visualisation to show the data of the 5 existing Program indicators with the built in disaggregations shown below.
 
-    [](resources/images/DV_Before.png)
-    [](resources/images/DV_Before2.png)
+    ![](resources/images/DV_Before.png){ .center width=50% }
+    
+    ![](resources/images/DV_Before2.png)
 
 12. Now remove the 4 Program Indicators with disaggregations specified and leave only the BMI Program Indicator.
 
-    [](resources/images/DV_only_PI.png)
+    ![](resources/images/DV_only_PI.png)
 
 14. You can now add **Gender** and **Under 5/5 and above of age** as disaggregation categories from the Your Dimensions column for the Program Indicator, click update and see the results.
 
@@ -81,8 +82,8 @@ The following sections will illustrate how this new feature can be used.
 
 In addition to viewing a disaggregated Program Indicator in the Data Visualiser you can now transfer the Program Data, via the Disaggregated Program indicator, into a Data Element that shares the same Category Combination.
 
-[](resources/images/PI_Disaggregation_Data_Exchange.png)
+![](resources/images/PI_Disaggregation_Data_Exchange.png)
 
 By adding the ID of a Data Element in the **Data element for aggregate data export** field and then setting up the aggregate data exchange app* to transfer data you can save Program data in the aggregate data model
 
-[](resources/images/PI_Disaggregation_DE_for_Data_Exchange.png)
+![](resources/images/PI_Disaggregation_DE_for_Data_Exchange.png)
