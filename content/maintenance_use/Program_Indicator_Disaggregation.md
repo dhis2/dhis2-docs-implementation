@@ -51,7 +51,7 @@ The following sections will illustrate how this new feature can be used.
     ![](resources/images/Disaggregation_Mappings_Expanded.png)
     ![](resources/images/Program_Indicator_Filter_Expression.png)
 
-    This example is linking the value selected in the **Gender** data element in the Program to the category option. Since the Option set in this case is a text field the expression is set to match the text ‘Female’.      The next example for age shows a different way to define the relationship.
+    This example is linking the value selected in the **Gender** data element in the Program to the category option. Since the Option set in this case is a text field the expression is set to match the text ‘Female’. The next example for age shows a different way to define the relationship.
 
     ![](resources/images/PI_Disaggregation_Gender Mapping.png)
 
