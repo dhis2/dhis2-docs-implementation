@@ -46,6 +46,7 @@ Maintenance and use:
       - Metadata integrity and quality: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/metadata_quality_assessment.md, master)'
   - Users and user roles: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/users-and-user-roles.md, master)'
   - Tracker and aggregate data integration:  '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/tracker-aggregate-integration.md, master)'
+  - Programme indicator disaggregation:  '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/program_indicator_disaggregation.md, master)'
   - Data Analysis Tools Overview: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/data-analysis-tools-overview.md, master)'
   - Localization of DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/localization-of-dhis2.md, master)'
   - Guidelines for offline data entry using DHIS2: '@github(dhis2/dhis2-docs-implementation, content/maintenance_use/offline-data-entry.md, master)'
