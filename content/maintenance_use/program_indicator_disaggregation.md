@@ -1,14 +1,14 @@
 
 ## The Concept
 
-In version v42 there is now added the ability to assign Disaggregation Category Combinations to a Program Indicator and create a mapping between the program data and each category option contained in the combination. This creates a relationship between the tracker and aggregate data models which allows for analysing individual data in the same way and alongside aggregated data.
+In DHIS2 v42 there is now added the ability to assign Disaggregation Category Combinations to a Program Indicator and create a mapping between the program data and each category option contained in the combination. This creates a relationship between the tracker and aggregate data models which allows for analysing individual data in the same way and alongside aggregated data.
 
-![Program links to Category](resources/images/Program_to_category.png){ .center width=50% }
-![tracker and Aggregate Models](resources/images/Tracker_to_aggregate_model.png){ .center width=50% }
+![Program links to Category](resources/images/Program_to_category.png){ .center width=30% }
+![tracker and Aggregate Models](resources/images/Tracker_to_aggregate_model.png){ .center width=30% }
 
 The Program Indicator Disaggregation mappings, defined at the Program level, provide a connection between the two data models within DHIS2. This ultimately allows a user to create disaggregated views of program data within the Data Visualizer using a single Program Indicator where previously one for each disaggregation was needed.
 
-![Table Example](resources/images/Table_Example.png){ .center width=50% }
+![Table Example](resources/images/Table_Example.png){ .center width=30% }
 
 The following sections will illustrate how this new feature can be used.
 
@@ -46,10 +46,11 @@ The following sections will illustrate how this new feature can be used.
 
 ## Create the category mappings
 
-8. In the text field under each Category enter an expression using the Program Data Elements and Attributes that defines the category. The expression uses the same syntax as the Filter section of the Program Indicator creation screen.  It is recommended to open a Program Indicator within the Program you are mapping, use the Filter screen to construct the expression and then copy it into this field. This allows you to use the inbuilt Expression validation of the Program Indicator filter builder. 
+8. In the text field under each Category enter an expression using the Program Data Elements and Attributes that defines the category. The expression uses the same syntax as the Filter section of the Program Indicator creation screen.  It is recommended to open a Program Indicator within the Program you are mapping, use the Filter screen to construct the expression and then copy it into this field. This allows you to use the inbuilt expression validation of the Program Indicator filter builder.
+   [Program Indicator functions and Variale operators](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/programs.html#program_indicator_functions_variables_operators)
 
     ![](resources/images/Disaggregation_Mappings_Expanded.png)
-    ![](resources/images/Program_Indicator_Filter_Expression.png)
+    ![](resources/images/Program_Indicator_Filter_Expression.png){ .center width=30% }
 
     This example is linking the value selected in the **Gender** data element in the Program to the category option. Since the Option set in this case is a text field the expression is set to match the text ‘Female’. The next example for age shows a different way to define the relationship.
 
@@ -59,12 +60,12 @@ The following sections will illustrate how this new feature can be used.
 
     ![](resources/images/PI_Disaggregation_Age_Mapping.png)
 
-9. When mappings for all the category options click Save and exit
+10. When mappings for all the category options click Save and exit
 
 
-10. Open Data Visualizer, first let’s look at how these data were previously displayed. To do this create a visualisation to show the data of the 5 existing Program indicators with the built in disaggregations shown below.
+11. Open Data Visualizer, first let’s look at how these data were previously displayed. To do this create a visualisation to show the data of the 5 existing Program indicators with the built in disaggregations shown below.
 
-    ![](resources/images/DV_Before.png){ .center width=50% }
+    ![](resources/images/DV_Before.png){ .center width=30% }
     
     ![](resources/images/DV_Before2.png)
 
