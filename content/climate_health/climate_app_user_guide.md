@@ -280,7 +280,7 @@ The “Explore data” section provides dynamic visualizations for all the above
 
 This image shows the Explore data window in the DHIS2 Demo instance.
 
-![Fig 1: Explore data](resources/images/climate_app_explore_info.png)
+![Fig 1: Explore data](resources/images/climate_app_explore_info.PNG)
 
 The explorable features are identified by the Letter callout boxes, and described below.
 
