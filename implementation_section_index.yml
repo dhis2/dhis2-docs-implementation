@@ -239,7 +239,7 @@ Health:
       - OVERVIEW: '@github(dhis2-metadata/HIV_PREV, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/HIV_PREV, docs/release_note.md, master)'
       - Design:
-         - HIV Prevention Tracker: '@github(dhis2-metadata/HIV_PREV, docs/hiv_prev-design.md, master)'
+         - HIV Prevention Tracker: '@github(dhis2-metadata/HIV_PREV, docs/hiv_prev-design-1.1.0.md, master)'
          - HIV Prevention Dashboards: '@github(dhis2-metadata/HIV_AGG, docs/hiv_prev_dashboards_datasets-design.md, master)'
       - Installation: '@github(dhis2-metadata/HIV_PREV, docs/hiv_prev-installation.md, master)'
   - Immunization:
