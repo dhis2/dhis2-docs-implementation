@@ -328,3 +328,7 @@ When visualizing separate entities, such as the doses of a vaccine distributed a
 **Effective data visualization requires selecting the appropriate chart type based on the variable types and the message you wish to convey**. It’s essential to avoid common mistakes and ensure clarity for the audience. For instance, when illustrating spatial distribution, a map is more relevant as it effectively shows clusters and the distribution of high and low-coverage areas. When checking efforts, absolute numbers are more meaningful if they include target values for comparison. Additionally, for accurate comparisons, it is crucial to normalize data distribution. Good visualization practices enhance understanding and facilitate better decision-making, ensuring that the data tells a compelling and accurate story.  
 
 Would you like to test your knowledge of variables and data visualization best practices? **Take the [quiz](https://docs.google.com/forms/d/e/1FAIpQLSddz_jtVrFSJssNiCYTHQ12tm6x1A6Gs6QB5Lhlmeq0Je3vDw/viewform?usp=sf_link)**!  
+
+## Additional Resources  
+
+**Climate & Health Data Storytelling**: To support members of the DHIS2 community who are working with climate and health data, we are happy to share a free online course developed by the data.org team: [Data Storytelling: Health Focused Climate Communication](https://data.org/resources/data-storytelling-health-focused-climate-communication/)
