@@ -43,7 +43,7 @@ The barcode field can be configured as a simple linear barcode a QR-code or a GS
 #### 2.1 Organisation Unit
 The Organisation Unit, Organisation Unit group and Organisation Unit level are created and added according to national protocols and policies and/or existing DHIS2 configuration and there are no specific requirements for using the Consignment receipt acknowledgement program.
 
-### 3 PROGRAUM
+### 3 PROGRAM
 The DHIS2 Event Program, which lies at the core of the DHIS2-RTS application, is very simple to configure, uses only native DHIS2 functionality and governs the customized user interface on the mobile device.
 
 #### 3.1 Program
@@ -86,14 +86,3 @@ The DHIS2 Event Program, which lies at the core of the DHIS2-RTS application, is
 >**6 Notifications**  
 >(not applicable)
 
-## DV - Data Visualizer Web App - Event Analytics and Visualizations
-x
-
-## LL - Line Listing Web App - Event Analytics and Visualizations
-x
-
-## MP - Maps Web App - Analytics and Visualizations
-*[Under development]*
-
-## DB - Dashboard Web App - Consignment receipt dashboard
-x
