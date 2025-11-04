@@ -70,7 +70,8 @@ The DHIS2 Event Program, which lies at the core of the DHIS2-RTS application, is
 >>>"Consignment number"  
 >>>"Recipient signature"  
 >>>"Receipt geolocation"  
->>>"Receipt image"  
+>>>"Receipt image"
+>>
 >>**Display in reports**: tag all  
 >>**Mobile render type**: "Default"  
 >>>"Consignment number": "Qr code" ("Bar code" or "Gs1 datamatrix" depending on what type of barcode is used).  
