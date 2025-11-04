@@ -16,6 +16,7 @@ This application is configured as an "Event program" which uses only simple, nat
 The barcode field can be configured as a simple linear barcode a QR-code or a GS1 DataMatrix code depending on what type of barcode is being printed on the packing list.
 
 ### Metadata overview
+
 >**1 DATA ELEMENT**  
 >>1.1 Data element - "Tracker"  
 > 
@@ -26,7 +27,9 @@ The barcode field can be configured as a simple linear barcode a QR-code or a GS
 >>3.1 Program  
 
 ### 1 DATA ELEMENT
+
 #### 1.1 Data element - "Tracker"  
+
 >**Name**
 >>"Consignment number" / "Text"  
 >>"Recipient signature" / "Image"  
@@ -35,25 +38,29 @@ The barcode field can be configured as a simple linear barcode a QR-code or a GS
 >
 >**Short name \(*)**: same as "Name (\*)"   
 >**Domain Type \(*)**: "Tracker"  
->**Value type \(*)**: see above (entry next to the respective name)
+>**Value type \(*)**: see above (entry next to the respective name)  
 >**Aggregation type (*)**: "None"
 
 
 ### 2 ORGANISATION UNIT
+
 #### 2.1 Organisation Unit
+
 The Organisation Unit, Organisation Unit group and Organisation Unit level are created and added according to national protocols and policies and/or existing DHIS2 configuration and there are no specific requirements for using the Consignment receipt acknowledgement program.
 
 ### 3 PROGRAM
+
 The DHIS2 Event Program, which lies at the core of the DHIS2-RTS application, is very simple to configure, uses only native DHIS2 functionality and governs the customized user interface on the mobile device.
 
 #### 3.1 Program
+
 >**1 Program details**
 >>**Name \(*)**: "Consignment receipt acknowledgement"  
 >>**Short name (*)**: "Consignment receipt acknowledgement"  
 >>**Color**: "#006064"  
 >>**Icon**: "stock out outline"  
 >>**Description**: "Event for receiving medical consignment at health facility"  
->>**Version**: (automatically numbered by the system)
+>>**Version**: (automatically numbered by the system)  
 >>**Category combination (*)**: select "None"  
 >>**Expiry days**: "0"  
 >>**Pre-generate event UID**: tag  (appears as white tick in a blue square)
@@ -65,11 +72,11 @@ The DHIS2 Event Program, which lies at the core of the DHIS2-RTS application, is
 >>>"Receipt geolocation"  
 >>>"Receipt image"  
 >>**Display in reports**: tag all  
->>**Mobile render type**: "Default"
->>>"Consignment number": "Qr code" ("Bar code" or "Gs1 datamatrix" depending on what type of barcode is used).
->>>"Recipient signature": "Canvas"
->>>"Receipt geolocation": "Default"
->>>"Receipt image": "Default"
+>>**Mobile render type**: "Default"  
+>>>"Consignment number": "Qr code" ("Bar code" or "Gs1 datamatrix" depending on what type of barcode is used).  
+>>>"Recipient signature": "Canvas"  
+>>>"Receipt geolocation": "Default"  
+>>>"Receipt image": "Default"  
 >
 >**3 Create data entry form**
 >>**"BASIC"** (configured by the system by default, no configuration is needed)
