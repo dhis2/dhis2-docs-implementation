@@ -451,7 +451,7 @@ Logistics:
   - Health Care Product Catalogue (HPC): '@github(dhis2/dhis2-docs-implementation, content/lmis/health-care-product-catalogue.md, lmis_init)'
   - Monthly Stock Reporting (MSR): '@github(dhis2/dhis2-docs-implementation, content/lmis/monthly-stock-reporting.md, lmis_init)'
   - Temperature Monitoring Tool (TMT): '@github(dhis2/dhis2-docs-implementation, content/lmis/temperature-monitoring-tool.md, lmis_init)'
-  - Consignment Receipt Acknowledgement: '@github(dhis2/dhis2-docs-implementation, content/lmis/consignment-receipt-acknowledgement.md, lmis_init)'
+  - Consignment Receipt Acknowledgement (CRA): '@github(dhis2/dhis2-docs-implementation, content/lmis/consignment-receipt-acknowledgement.md, lmis_init)'
   - Data Quality and Data Use: '@github(dhis2/dhis2-docs-implementation, content/lmis/data-use-and-data-quality.md, lmis_init)'
 Education: '@github(dhis2/dhis2-emis-docs, ETK/emis_section_index.yml, main)'
 Support and documentation:
