@@ -1,14 +1,14 @@
-# Consignment receipt acknowledgement / Tracker program
+# Consignment receipt acknowledgement / Event program
 
 ## Introduction
 
-This very simple Event program allows users at healthcare facilities to acknowledge receipt of consignments on a mobile device by scanning any type of barcode printed on the packing list. The configuration includes the option of signing on the screen of the mobile device, recording the geolocation of receipt and taking an image but additional features can be added as needed.
+This very simple Event program allows users at healthcare facilities to acknowledge receipt of consignments on a mobile device by scanning any type of barcode printed on the packing list. The configuration includes the option of signing on the screen of the mobile device, recording the geolocation of receipt and taking an image and additional features can be added as needed.
 
 ## Use case
 
-The medical store which supplies the respective healthcare facility processes the order, picks, packs and ships the consignment with a packing list with a barcode indicating the consignment identification printed on it. The storekeeper receives, unloads, checks the consignment and acknowledges receipt by scanning the barcode and completing the Event Program form with additional information such as the geolocation of the mobile device used, signing on the screen and taking an image of the consignment, for example in front of the healthcare facility or in the pharmacy. After synchronising the Capture Android app, all these details are synchronised with the central DHIS2 instance and available to any DHIS2 user in the country.
+The medical store which supplies the respective healthcare facility processes the order, picks, packs and ships the consignment with a packing list with a barcode indicating the consignment identification printed on it. The storekeeper receives, unloads, checks the consignment and acknowledges receipt by scanning the barcode and completing the Event Program form with additional information such as the geolocation of the mobile device used, signing on the screen and taking an image of the consignment, for example in front of the healthcare facility or in the pharmacy. In addition, program rules can check the text string of the packing list identification (number) to prevent inadvertent, incomplete and incorrect entries. After synchronising the Capture Android app, all these details are synchronised with the central DHIS2 instance and available to any DHIS2 user in the country.
 The information can be used simply to allow supply managers to keep track for which consignments delivery was confirmed and for which they are still pending.
-When using the DHIS2-RTS (Real-Time Stock management system), the acknowledgement of receipt 
+When using the DHIS2-RTS (Real-Time Stock management system), the acknowledgement of receipt can be integrated with an upstream, national LMIS which prompts the automatic update of the stock on hand at the healthcare facility with the contents (items and quantities) of the packing list.
 
 ## Maintenance Web App - DHIS2 metadata configuration
 
@@ -50,7 +50,7 @@ The Organisation Unit, Organisation Unit group and Organisation Unit level are c
 
 ### 3 PROGRAM
 
-The DHIS2 Event Program, which lies at the core of the DHIS2-RTS application, is very simple to configure, uses only native DHIS2 functionality and governs the customized user interface on the mobile device.
+This DHIS2 Event Program, which supplements the DHIS2-RTS (Real-Time Stock management) application, is very simple to configure and uses only native DHIS2 functionality.
 
 #### 3.1 Program
 
