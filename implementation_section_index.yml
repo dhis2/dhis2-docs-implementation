@@ -391,6 +391,11 @@ Health:
       - Release Note: '@github(dhis2-metadata/RMNCAH_ANC, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/RMNCAH_ANC, docs/rmncah_anc-design.md, master)'
       - Installation: '@github(dhis2-metadata/RMNCAH_ANC, docs/rmncah_anc-installation.md, master)'
+    - Emergency Obstetric and Newborn Care:
+      - OVERVIEW: '@github(dhis2-metadata/RMNCAH_EMONC, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/RMNCAH_EMONC, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/RMNCAH_EMONC, docs/rmncah_emonc-design.md, master)'
+      - Installation: '@github(dhis2-metadata/RMNCAH_EMONC, docs/rmncah_emonc-installation.md, master)'
     - Maternal and Perinatal Death Surveillance and Response:
       - OVERVIEW: '@github(dhis2-metadata/RMNCAH_MPDSR, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/RMNCAH_MPDSR, docs/release_note.md, master)'
