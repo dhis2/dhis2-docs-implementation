@@ -454,6 +454,7 @@ Climate Health:
   - Using climate data for malaria program planning: '@github(dhis2/dhis2-docs-implementation, content/climate_health/malaria_data_chai.md, master)'
   - Climatic suitability mapping: '@github(dhis2/dhis2-docs-implementation, content/climate_health/malaria_suitability_maps_ug.md, master)'
 Logistics:
+  - OVERVIEW: '@github(dhis2/dhis2-docs-implementation, content/lmis/lmis_index.md, lmis_init)'
   - Real-Time Stock (RTS): '@github(dhis2/dhis2-docs-implementation, content/lmis/real-time-stock-management.md, lmis_init)'
   - Biomedical Equipment Life Cycle (BLC): '@github(dhis2/dhis2-docs-implementation, content/lmis/biomedical-equipment-life-cycle-management.md, lmis_init)'
   - Cold Chain Equipment (CCE): '@github(dhis2/dhis2-docs-implementation, content/lmis/cold-chain-equipment-life-cycle-management.md, lmis_init)'
