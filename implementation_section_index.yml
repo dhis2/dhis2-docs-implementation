@@ -289,7 +289,7 @@ Health:
         - Data Entry User Guide: '@github(dhis2-metadata/IMM_AEFI, training/aefi_complete_data_entry.md, master)'
         - Data Entry Exercises: '@github(dhis2-metadata/IMM_AEFI, training/aefi_data_entry_exercises.md, master)'
         - Navigating Through Dashboards: '@github(dhis2-metadata/IMM_AEFI, training/aefi_dashboard_navigation.md, master)'
-     - Immunisation Demand:
+    - Immunization Demand:
       - OVERVIEW: '@github(dhis2-metadata/IMM_DM, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/IMM_DM, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/IMM_DM, docs/imm_dm-design.md, master)'
