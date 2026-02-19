@@ -1,30 +1,5 @@
 # User Guide to the Supervision App - Web Version
 
-- [User Guide to the Supervision App - Web Version](#user-guide-to-the-supervision-app---web-version)
-  - [Introduction](#introduction)
-  - [Supervision Workflow Overview](#supervision-workflow-overview)
-  - [Step by Step Instructions to Use the Supervision App](#step-by-step-instructions-to-use-the-supervision-app)
-  - [Access to the App](#access-to-the-app)
-  - [Settings](#settings)
-    - [Supervision Settings](#supervision-settings)
-    - [Mapping/Indicator management](#mappingindicator-management)
-      - [Mapping of indicators](#mapping-of-indicators)
-      - [Modifying the program or indicators in an existing program (indicator type):](#modifying-the-program-or-indicators-in-an-existing-program-indicator-type)
-    - [Register management](#register-management)
-    - [Cross-checks management](#cross-checks-management)
-    - [Data elements management](#data-elements-management)
-    - [Document sources management](#document-sources-management)
-    - [Visualizations (Charts) and Maps](#visualizations-charts-and-maps)
-  - [Favorites creation](#favorites-creation)
-  - [Scheduling](#scheduling)
-    - [Supervisions scheduling interface](#supervisions-scheduling-interface)
-      - [Creating a new schedule](#creating-a-new-schedule)
-      - [Direct scheduling](#direct-scheduling)
-      - [Performance-based scheduling](#performance-based-scheduling)
-      - [Random scheduling](#random-scheduling)
-  - [Supervision Schedule](#supervision-schedule)
-  - [Dashboard](#dashboard)
-
 ## Introduction
 
 It's well known that data quality and data use are closely linked. To improve data use, we must also strive to improve data quality, and vice versa. Various tools, including the Routine Data Quality Assessment (RDQA) tool, have been developed and used to assess data accuracy and the functioning of the Health Information System (HIS) across its six components. However, the RDQA tool and its use have shown some limitations, namely:

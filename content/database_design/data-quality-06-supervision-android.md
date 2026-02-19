@@ -1,18 +1,5 @@
 # User guide to the Supervision App - Android version
 
-- [User guide to the Supervision App - Android version](#user-guide-to-the-supervision-app---android-version)
-  - [Background](#background)
-  - [Technical Specification and  Installation](#technical-specification-and--installation)
-    - [Android requirement and App development](#android-requirement-and-app-development)
-    - [Installation instruction](#installation-instruction)
-    - [Login page](#login-page)
-    - [Home interface](#home-interface)
-    - [Open the form](#open-the-form)
-    - [Filling the supervision form](#filling-the-supervision-form)
-    - [Supervision dashboard: results visualization](#supervision-dashboard-results-visualization)
-    - [Data synchronisation](#data-synchronisation)
-
-
 ## Background
 
 The mobile supervision app is designed for users on the ground. It enables them to synchronize supervision schedules, and offers the following main features:
