@@ -35,21 +35,21 @@ Until the app is published on the Playstore, you can install it manually by gett
   1. To install the app, you should first download it using the link [Android Supervision App](https://drive.google.com/file/d/1icloLMhiRr-474HA-sFgrYWIs1aHNoD9/view?usp=sharing)  
   2. Once you've downloaded the app's APK file, go to the download folder on your phone or tablet and double-click on the file.
    
-   ![](dqandroid/image1.png)
+   ![](resources/images/dq_android_supervision/image1.png)
 
 Then, follow the instructions to finalize the installation and open the App.
 
 
-![](dqandroid/image2.png)
-![](dqandroid/image3.png)
-![](dqandroid/image4.png)
+![](resources/images/dq_android_supervision/image2.png)
+![](resources/images/dq_android_supervision/image3.png)
+![](resources/images/dq_android_supervision/image4.png)
 
 ### Login page
 
 Once opened, the first thing to do is to log in to the App using your DHIS2 user account.
-![](dqandroid/image5.png)
-![](dqandroid/image6.png)
-![](dqandroid/image7.png)
+![](resources/images/dq_android_supervision/image5.png)
+![](resources/images/dq_android_supervision/image6.png)
+![](resources/images/dq_android_supervision/image7.png)
 
 ### Home interface
 
@@ -60,13 +60,13 @@ It is important to get started with the three-step configuration synchronization
 2. on Settings; 
 3. on Configuration synchronization.
 
-![](dqandroid/image8.png)
-![](dqandroid/image11.png)
-![](dqandroid/image9.png)
+![](resources/images/dq_android_supervision/image8.png)
+![](resources/images/dq_android_supervision/image11.png)
+![](resources/images/dq_android_supervision/image9.png)
 
 After the configuration synchronization, come back to the homepage and click on the following :
 
-![](dqandroid/image10.png)
+![](resources/images/dq_android_supervision/image10.png)
 
 1. Select the tracker to be used.
 2. Click here to synchronize data: this will update the downloaded data for the dashboard and for filling in fields in the tracker. This is useful when changes have occurred between the time of planning and the time of supervision.
