@@ -59,7 +59,7 @@ The screenshots used in this guide are based on the web version of **DQR-RSC**. 
 
 ## Supervision Workflow Overview
 
-![](dataquality6resources/image20.png)
+![](resources/images/dq_web_supervision//image20.png)
 
 ## Step by Step Instructions to Use the Supervision App
 
@@ -72,7 +72,7 @@ To access the App, proceed as follows:
 3. Enter Sup or Supervisor in the Search box  
 4. Click on the app icon to access the app.
 
-   ![login](dataquality6resources/image28.png)
+   ![login](resources/images/dq_web_supervision//image28.png)
 
 **Note** When you open the application, you will land on the **Main Page**, where all dashboards are displayed.To begin configuring or using the app, click on the **“Settings”** module located on the left-side panel
 
@@ -87,7 +87,7 @@ This tab contains two main configuration areas:
 1. Tracker Program Selection: Allows you to select the Tracker Program used to configure the supervision form.By default, it uses **Generate Supervisions as Events**.  
 2. Tracker Program Configuration List: Displays all Tracker Programs that have already been configured for supervision.
 
-   ![settings](dataquality6resources/image22.png)
+   ![settings](resources/images/dq_web_supervision//image22.png)
 
 
 * Selecting the tracker program under supervision settings
@@ -96,7 +96,7 @@ This tab contains two main configuration areas:
     * Select the type on what basis - **Organisation units** (supervision of activities carried out in facilities) or **Agent** (supervision of workers in the facilities.Its Greyed out as its not active) 
     * Select the Configuration type. Select Configuration type Normal Supervisison Program (if not DQR - RSC)
   
-   ![](dataquality6resources/image21.png)
+   ![](resources/images/dq_web_supervision//image21.png)
 
 * Configuring Supervisor & Supervision Status  
 To start with this we need to specify the following:  
@@ -105,11 +105,11 @@ To start with this we need to specify the following:
    * Supervision status  
   Fill in the program stage, supervisor and supervision status fields:  
   
-   ![](dataquality6resources/image23.png)
+   ![](resources/images/dq_web_supervision//image23.png)
 
 * Other fields:
   
-  ![](dataquality6resources/image27.png)
+  ![](resources/images/dq_web_supervision//image27.png)
 
 This part of the configuration is useful for RDQA-type configurations, where a number of neutral data elements will be replaced by more meaningful names at the time of supervision, or to define how many times an object should be collected. This means telling the app which tracker fields correspond to what:
 
@@ -127,7 +127,7 @@ This part of the configuration is useful for RDQA-type configurations, where a n
 12. **Period - 1 keywords (as for Period - n keywords):** indicates to the app the keywords it will use to write the true period of the historical data to be retrieved from DHIS2. This option is useful when you want to retrieve values already entered in DHIS2 for checking or comparison purposes. For example, in the generic tracker, the name “*Indicator 1 -  DHIS2 monthly value Period-1*” should be replaced by “*ANC1 - **Jan 2024 value***”. The “**Period -1**” keyword is used to replace Period -1 with Jan 2024 if it's February 2024. The indicator 1 part is also replaced by the real name of the indicator chosen at the time of planning the visit, giving “***ANC1 - value of Jan 2024***”. Click directly in the field, then click on the “***Enter***” button on the keyboard (Month 1, Quarter 1,Trimester 1).  **Period -2 keywords:** Same as period -1  **Period -3 keywords:** Same as period -1  
 13. **Please select the modules**: Provide the Schedule section with the list of modules to be administered for each supervised facility.
 
-![](dataquality6resources/image78.png)
+![](resources/images/dq_web_supervision//image78.png)
 
 
 * Configuration of the elements
@@ -137,7 +137,7 @@ This part of the configuration is useful for RDQA-type configurations, where a n
    1. You can configure the indicator, cross-checking, consistency over time, data element, and source document.
    1. Click on the corresponding buttons to add and configure each type of element. The details of each element are presented below.
    
-    ![](dataquality6resources/image66.png)
+    ![](resources/images/dq_web_supervision//image66.png)
 
 1. **Indicator configuration**
 
@@ -146,7 +146,7 @@ This part of the configuration is useful for RDQA-type configurations, where a n
      * **Indicator keywords:** defines the keyword to be used to replace the generic name indicator 1 with the name of the indicator, e.g. “***Indicator 1** - DHIS2 monthly value Period -1*” -> “ **ANC1** - Jan 2024 value”.  
      * Repeat for each indicator.
      * **Margin of error:** selects the data element that will receive the margin of error to be configured for the accuracy of the indicator.
-![](dataquality6resources/image64.png)
+![](resources/images/dq_web_supervision//image64.png)
 
 2. **Cross-checks configuration**
 
@@ -156,18 +156,18 @@ This part of the configuration is useful for RDQA-type configurations, where a n
     * **Cross-check keywords:** fill in this field with cross-check and corresponding cross-check. After each word is written, click on the “Enter” button on the keyboard. They will then be taken into account in the dashboard and on the Android side
     * **Margin of error:** allows you to select the data element that will collect information on the margin of error of cross-checks.  
     * Repeat the above steps for each cross-check.
-  ![](dataquality6resources/image70.png)
+  ![](resources/images/dq_web_supervision//image70.png)
 
 3. **Consistency over time**  
    * **Program area:** specifies the type of indicator linked to a specific program (area) to be supervised.  
    * **Time consistency:** specifies the data element used to indicate the name of the indicator to be used for time consistency.  
    * **Margin of error:** specifies the data element that collects information on the margin of error for consistency over time.
-  ![](dataquality6resources/image72.png)
+  ![](resources/images/dq_web_supervision//image72.png)
 
 4. **Data elements and source documents**  
    * Data element: specifies the data element that allows you to indicate the name of the data element to be used for checking a register's data elements in terms of fill completeness.   
    * Keywords: Specifies the generic keyword that will correspond to the actual name of the data element in the app.
-    ![](dataquality6resources/image71.png)
+    ![](resources/images/dq_web_supervision//image71.png)
 
 5. **Source documents:**   
    * Source document: specifies the data element used to indicate the name of the source document to be assessed.
@@ -175,14 +175,14 @@ This part of the configuration is useful for RDQA-type configurations, where a n
 
 6. **Margin of error:** 
 
-     ![](dataquality6resources/image65.png)
+     ![](resources/images/dq_web_supervision//image65.png)
 
    **About other tracker programs, the module selection list is added as follows :**
      ![](resources/images/image62.png)
      
      Once you have finished, click on the **Update Configuration** button. 
     
-    ![](dataquality6resources/image74.png)
+    ![](resources/images/dq_web_supervision//image74.png)
 
 ### Mapping/Indicator management
 
@@ -194,17 +194,17 @@ To configure or match an indicator proposed in the checklist with a DHIS2 indica
 
 1. Select the indicator mapping sub-menu in the “**Settings**” menu. 
 
-   ![](dataquality6resources/image73.png)
+   ![](resources/images/dq_web_supervision//image73.png)
   
 When you select this menu, the following will appear: click on “Create new indicator” and continue the process by first creating the program group (e.g., HIV, TB, etc.)
 
-![](dataquality6resources/image63.png)
+![](resources/images/dq_web_supervision//image63.png)
 
 * If there is an existing group already configured, proceed as follows:
-  ![](dataquality6resources/image60.png)
+  ![](resources/images/dq_web_supervision//image60.png)
 
 * If the group does not exist and we want to create it, proceed as follows:
-  ![](dataquality6resources/image61.png)
+  ![](resources/images/dq_web_supervision//image61.png)
     
   The image above shows how to add an indicator by creating a new group. Follow the steps below:
   1. Select the “Create a new group” option.Check this option so you can set a custom group name for your indicators
@@ -215,14 +215,14 @@ When you select this menu, the following will appear: click on “Create new ind
     
 Here is an example of the HMIS program group in the image below:
   
-![](dataquality6resources/image67.png)
+![](resources/images/dq_web_supervision//image67.png)
       
 Marker 1 on the following image allows you to select the data element or indicator in dhis2.The selection of the data element or indicator on the left is immediately reflected in the field on the right. To complete the mapping, click on the radio button.
-  ![](dataquality6resources/image68.png)
+  ![](resources/images/dq_web_supervision//image68.png)
 
 Select the corresponding data element or indicator in DHIS2
 
-![](dataquality6resources/image2.png)
+![](resources/images/dq_web_supervision//image2.png)
 
 To do this, 
 
@@ -234,7 +234,7 @@ To do this,
 
 #### Modifying the program or indicators in an existing program (indicator type):
 
-![](dataquality6resources/image17.png)
+![](resources/images/dq_web_supervision//image17.png)
 
 If necessary, modify the indicator as proposed in your Excel copy to match what's in DHIS2. To do this, proceed as follows:
 
@@ -244,7 +244,7 @@ If necessary, modify the indicator as proposed in your Excel copy to match what'
 
 Once you have finished the mapping, click on “Save the mapping” at the top right.
 
-![](dataquality6resources/image90.png)
+![](resources/images/dq_web_supervision//image90.png)
 
 ### Register management
 
@@ -262,25 +262,25 @@ To create or match a register proposed in the checklist, you must:
    3. Add the new register to the group, as shown in the following images.
    4. Save
    
-    ![](dataquality6resources/image89.png)
+    ![](resources/images/dq_web_supervision//image89.png)
 
 
 ### Cross-checks management
 
 In this section, the tools needed to cross-check information or data are configured for the program being supervised, and the process is the same as for register management above.
 
-![](dataquality6resources/image87.png)
+![](resources/images/dq_web_supervision//image87.png)
 
 ### Data elements management
 
 This section allows you to pre-assign data elements to be counted or checked for completeness and accuracy in the tools needed to cross-check information for the program being supervised, and the configuration process is the same as for register management above.
 
-![](dataquality6resources/image88.png)
+![](resources/images/dq_web_supervision//image88.png)
 
 ### Document sources management
 The process applied to the other sections (register management, cross-checks management, data elements management) also applies to this one. This section allows you to assign document sources to verify information for the program being supervised.
 
-![](dataquality6resources/image86.png)
+![](resources/images/dq_web_supervision//image86.png)
 
 
 ### Visualizations (Charts) and Maps
@@ -288,7 +288,7 @@ The process applied to the other sections (register management, cross-checks man
 A link is made between the application and some favorites related to indicators from the monitoring forms configured in DHIS2 using the tracker program.   
 If there is already a configuration for charts and maps in the system, the steps for configuring charts, tables, and maps in the monitoring application are shown in the image below.
 
-![](dataquality6resources/image85.png)
+![](resources/images/dq_web_supervision//image85.png)
 
 Follow the steps below to add a chart, table, or map (favorite) to a supervision type:
 
@@ -302,7 +302,7 @@ Follow the steps below to add a chart, table, or map (favorite) to a supervision
    
 NB: After saving, you can delete a favorite by clicking on the trash can icon as follows:
 
-![](dataquality6resources/image84.png)
+![](resources/images/dq_web_supervision//image84.png)
 
 ## Favorites creation
 
@@ -310,14 +310,14 @@ NB: After saving, you can delete a favorite by clicking on the trash can icon as
    
    By clicking on the **Create favorites** field, you'll see the supervision sheets (checklists or programs) available in DHIS2. Choose the one you're interested in. This will give you access to the interface for configuring the indicators entered in a favorite. 
 
-   ![](dataquality6resources/image91.png)
+   ![](resources/images/dq_web_supervision//image91.png)
 
 
 2. Configuring the favorite indicators
    
    There are two possibilities for this indicator configuration: either you create a new favorite with its entire content, or you improve a favorite already created in the system.
 
-   ![](dataquality6resources/image92.png)
+   ![](resources/images/dq_web_supervision//image92.png)
    
    * Creating a new favorite
    
@@ -338,15 +338,15 @@ NB: After saving, you can delete a favorite by clicking on the trash can icon as
        There are 4 levels to fill in:
        
        1. Indicator configuration: at this level, the choice of ***global program area*** in the drop-down list applies to the other chapters. We can also choose the ***number of indicators*** to be supervised, and this choice will also affect the number of fields in the other three chapters.The **“Indicator name”** field has a drop-down menu allowing you to choose the indicators already configured in the app settings for this particular program.The **“Margin of error”** field will be filled in manually, according to what the staff of the program to be supervised has decided to be the standard
-   ![](dataquality6resources/image93.png)
+   ![](resources/images/dq_web_supervision//image93.png)
        2. Cross-check configuration**  
        The **Primary Source** field allows you to choose from a drop-down list already configured in the app Settings.  The **Secondary Source** field also allows you to choose from a drop-down list already configured in the app Settings.   
        The **Margin of Error** field will be manually filled in according to what the staff of the program to be supervised has decided should be the standard.
-       ![](dataquality6resources/image94.png)
+       ![](resources/images/dq_web_supervision//image94.png)
        3. Consistency over time
        The **Indicator Name** field has a drop-down menu allowing you to select the indicators already configured in the application settings for this particular program.  
        The **Margin of error** field will be manually filled in according to what the staff of the program to be supervised has decided to be the standard.
-       ![](dataquality6resources/image95.png)
+       ![](resources/images/dq_web_supervision//image95.png)
     
        4. **Data elements and source document**  This section allows you to choose the number of data elements to be included in the data completeness check. This choice will have an impact on the number of fields to be filled in the **data element** and **source document** columns.  
        The **How many data elements** field allows you to choose the number of data elements to check for completeness.  
@@ -355,12 +355,12 @@ NB: After saving, you can delete a favorite by clicking on the trash can icon as
        The **Data Element** field allows you to select from a drop-down list the data elements configured in the app settings for a specific program.   
        The **Source Document** field allows you to select the source documents configured in the app settings for a specific program.  
        The **Margin of error** field will be manually filled in according to what the staff of the program to be supervised has decided to be the standard. At this stage, filling in this field is not mandatory.
-       ![](dataquality6resources/image96.png)
+       ![](resources/images/dq_web_supervision//image96.png)
 
     * Save as favorite   
   
   * Modifying an existing favorite
-  ![](dataquality6resources/image97.png)
+  ![](resources/images/dq_web_supervision//image97.png)
     1. Choose your supervision   
     2. Click on the button from “Favorites”  
     3. Choose the favorite you need from the drop - down menu. After selecting the favorite name, its content is displayed in the table on the right. In this table, you can modify the different elements.  
@@ -372,7 +372,7 @@ NB: After saving, you can delete a favorite by clicking on the trash can icon as
 
 When you click on the **Scheduling** section, a three-level interface appears:
 
-![](dataquality6resources/image98.png)
+![](resources/images/dq_web_supervision//image98.png)
 
 * **The Search bar,** with the supervision form to be selected, the target organization unit for supervision, the period for scheduled supervision and the **Search** button for displaying scheduled supervision queries**.**  
 * **The scheduled supervisions display area**  
@@ -382,12 +382,12 @@ When you click on the **Scheduling** section, a three-level interface appears:
 
 1. To create a new schedule, click on the + icon button at the bottom right of the first interface of the Schedule option.  
 2. In the schedule creation interface, there are two steps
-   ![](dataquality6resources/image99.png)
+   ![](resources/images/dq_web_supervision//image99.png)
 
    * **The configuration**
      The configuration of the new schedule consists of:
 
-     ![](dataquality6resources/image100.png)
+     ![](resources/images/dq_web_supervision//image100.png)
      * Selecting the entity (organization unit).
      * Selecting the tracker program (DQR-RSC, ECD, etc.).
      * Selecting a favorite if available. If not, exit to create a new favorite in the “**Create favorites**” section.
@@ -395,7 +395,7 @@ When you click on the **Scheduling** section, a three-level interface appears:
      * Other programs - In this case, there is no need to select a favorite.
 
    * **The finalization** At this stage, you have to choose between types of schedule:
-   * ![](dataquality6resources/image102.png)
+   * ![](resources/images/dq_web_supervision//image102.png)
 
      * **Direct**: for arbitrary site selection  
      * **Performance-based**: allows you to request the app to select a number of sites on the basis of their performance against some selected indicators  
@@ -404,30 +404,30 @@ When you click on the **Scheduling** section, a three-level interface appears:
 #### Direct scheduling
 
 Choosing this option assumes that the supervisor knows in advance the problems in one or more of the structures he or she decides to supervise. To do this, the supervision scheduler clicks on the **Direct** button, then adds the supervision teams, and selects one or more organization units in which supervision will take place. 
-![](dataquality6resources/image101.png)
+![](resources/images/dq_web_supervision//image101.png)
 If all supervisors have a DHIS2 user account, don’t click on the **Add** button in the **Other supervisors** section**.**
 
 1. Specify the team lead
 2. Choose the organization units to be supervised (image below).
 3. Assign dates and supervision teams to each site.
-  ![](dataquality6resources/image103.png)
-  ![](dataquality6resources/image104.png)
-  ![](dataquality6resources/image105.png)
-   ![](dataquality6resources/image106.png)
-   ![](dataquality6resources/image107.png)
+  ![](resources/images/dq_web_supervision//image103.png)
+  ![](resources/images/dq_web_supervision//image104.png)
+  ![](resources/images/dq_web_supervision//image105.png)
+   ![](resources/images/dq_web_supervision//image106.png)
+   ![](resources/images/dq_web_supervision//image107.png)
     
   
 
        Note: It is possible to choose the following module(s) applicable to the facilities scheduled for supervision: This has already been configured in the section settings Configuration other fields- Please select the modules…
 
 1. Click on the **Schedule the supervision(s)** button to complete the process
-   ![](dataquality6resources/image108.png)
+   ![](resources/images/dq_web_supervision//image108.png)
 
 #### Performance-based scheduling
 
 Choosing this option assumes that the supervision scheduling team wants to carry out supervision based on the performance of some indicators at the sites to be supervised.
 
-![](dataquality6resources/image109.png)
+![](resources/images/dq_web_supervision//image109.png)
 
 
 There are two ways of selecting indicators for this type of scheduling: 
@@ -440,13 +440,13 @@ There are two ways of selecting indicators for this type of scheduling:
 Start by choosing the **Performance-based** supervision.
 
 1. Clicking on the **Select the indicators** button allows you to choose directly the indicators in DHIS2
-   ![](dataquality6resources/image110.png)
+   ![](resources/images/dq_web_supervision//image110.png)
 
 2. Choosing the indicators
 3. By clicking on **Save**, we can save this schedule as a **favorite** and also add supervision teams as explained in the **Direct scheduling** section**.
 
-   ![](dataquality6resources/image111.png)
-   ![](dataquality6resources/image112.png)
+   ![](resources/images/dq_web_supervision//image111.png)
+   ![](resources/images/dq_web_supervision//image112.png)
 
  4. After selecting the supervision team, the next step is to select the **organization units** and **period**. At this level, you choose either the national, regional or district level, depending on your needs, and then you must assign an **organization unit group set** to access the period to be explored for performance analysis.
  5. Once you've filled in all the required fields, click on the **Display results** button to view the health facilities matching your selection criteria.
@@ -456,7 +456,7 @@ Start by choosing the **Performance-based** supervision.
 By choosing this option, the supervision schedulers are not supposed to have any specific information prior to choosing the sites to supervise. Instead, they will go to a higher hierarchy level to select a random number of structures to visit.  
 To do this, they must first configure the supervision teams in the same way as for the previous options.
 
-![](dataquality6resources/image113.png) 
+![](resources/images/dq_web_supervision//image113.png) 
 
 ## Supervision Schedule
 
@@ -472,7 +472,7 @@ It has two parts:
      *  All: corresponds to all supervisions scheduled in the system during the period the user wishes to check.
      *  Once you have selected all the queries, click on the **Apply** button to view the search result.
   
-     ![](dataquality6resources/image114.png) 
+     ![](resources/images/dq_web_supervision//image114.png) 
 
 2. A display area for search result - It is represented by four field subgroups. From left to right, we have:
    * **At the top left**, **the calendar** with the date fields in which the health facilities to be supervised are displayed.
@@ -480,7 +480,7 @@ It has two parts:
    * **At the top right**, a field containing the **organization units** to be supervised, with the planned **period**, the **supervision status** and a rectangle icon with an upward arrow, leading to the supervision form field in the corresponding Tracker program if the supervisor wants to use the web at the supervision site.
    * **At the bottom right**, we have a field displaying the schedule results in a pie chart showing the colorations assigned to the supervision status.
 
-   ![](dataquality6resources/image115.png) 
+   ![](resources/images/dq_web_supervision//image115.png) 
 
 ## Dashboard
 
@@ -500,4 +500,4 @@ To display the data, click on the **Apply** button after selecting all the appro
 
 2. A display area for dashboard elements
    
-![](dataquality6resources/image116.png) 
+![](resources/images/dq_web_supervision//image116.png) 
