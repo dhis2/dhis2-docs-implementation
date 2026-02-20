@@ -27,6 +27,8 @@ Data quality:
   - Analysis: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-03-analysis.md, master)'
   - Denominators: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-05-denominators.md, master)'
   - Implementation of funtionality and procedures: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-04-implementation.md, master)'
+  - Supervision - Web: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-07-supervision-web.md, master)'
+  - Supervision - Android: '@github(dhis2/dhis2-docs-implementation, content/database_design/data-quality-06-supervision-android.md, master)' 
 Database design:
   - Organisation Units: '@github(dhis2/dhis2-docs-implementation, content/database_design/organisation-units.md, master)'
   - Aggregate system design:
