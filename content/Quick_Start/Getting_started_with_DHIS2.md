@@ -8,7 +8,7 @@ If you have explored the website read all [about DHIS2](https://dhis2.org/about-
 
 
 
-If you are already a DHIS2 user and you have some specific questions, have a look at our [extensive training material](https://dhis2.org/academy/training-material/), [detailed documentation](https://docs.dhis2.org/en/home.html), or browse the [Community of Practice](https://community.dhis2.org/). If you are a developer then you’ll find this guide a bit basic, instead, have a look at the [developer documentation](https://developers.dhis2.org/) for more technical detail.
+If you are already a DHIS2 user and you have some specific questions, have a look at our [extensive training material](https://dhis2.org/academy/training-material/), [detailed documentation](#home-dhis2-documentation), or browse the [Community of Practice](https://community.dhis2.org/). If you are a developer then you’ll find this guide a bit basic, instead, have a look at the [developer documentation](https://developers.dhis2.org/) for more technical detail.
 
 If you don’t find answers there then you can [contact us](https://dhis2.org/contact/) or [request a demo](https://docs.google.com/forms/d/e/1FAIpQLSccfyJ8KzKp-lNv7_NUiW851Oxvr3UOtrVn6DZpIIJvit_lDg/viewform?usp=sf_link)
 
@@ -124,28 +124,28 @@ Users interact with DHIS2 through a number of Applications mostly referred to as
 
 ![alt text](resources/images/GS_Commad_Palette.png)
 
-There are around 28 **Core Apps** and are managed by the central development team, there are also a range of **Custom Apps** that have been developed by a range of other partners that are available to download through the **App Hub.**  [Read more about installing and managing apps](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-241/maintaining-the-system/installing-applications.html). 
+There are around 28 **Core Apps** and are managed by the central development team, there are also a range of **Custom Apps** that have been developed by a range of other partners that are available to download through the **App Hub.**  [Read more about installing and managing apps](#apps_installing_apps). 
 
 In this simple example we are going to use the following four apps
 
-* The **[Maintenance app](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/metadata.html)** which is where you create and manage Metadata that defines all the data you want to collect and analyse in your system.
+* The **[Maintenance app](#about_maintenance_app)** which is where you create and manage Metadata that defines all the data you want to collect and analyse in your system.
 
 ![alt text](resources/images/GS_Maintenance_App_Icon.png){.center width=30%}
 
-* The [**Data Entry App**](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/collecting-data/data-entry.html) which is where you collect aggregate data in DHIS2, a different app, (the **Capture App**) is used to collect individual and event data. 
+* The [**Data Entry App**](#data-entry-app) which is where you collect aggregate data in DHIS2, a different app, (the **Capture App**) is used to collect individual and event data. 
 
 ![alt text](resources/images/GS_Data_Entry_App_icon.png){.center width=30%}
 
-* The [**Data Visualiser App**](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/analysing-data/data-visualizer.html) which is the primary tool for creating and editing visualizations like charts, pivot tables, and graphs. There are visualisation apps for more specialised uses, the **Maps**, **Dashboard**, **Event Visualiser**, **Event Report**, **Reports** and **Line Listing** apps    
+* The [**Data Visualiser App**](#data_visualizer) which is the primary tool for creating and editing visualizations like charts, pivot tables, and graphs. There are visualisation apps for more specialised uses, the **Maps**, **Dashboard**, **Event Visualiser**, **Event Report**, **Reports** and **Line Listing** apps    
 
  ![alt text](resources/images/GS_Data_Visualiser_Icon.png){.center width=30%}
     
-* The [**Data Administration app**](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/maintaining-the-system/data-administration.html) is used to generate the analytics tables used to create the visualisations.  
+* The [**Data Administration app**](#data_admin) is used to generate the analytics tables used to create the visualisations.  
 
 ![alt text](resources/images/GS_Data_Administration_icon.png){.center width=30%}
 
 
-Other important apps for basic configuration of DHIS2 are the [**System Settings app**](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/system-settings.html) where you set a range of configuration options, the [**Users app**](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/users-roles-and-groups.html) for setting up new users, user roles and User groups, the [**User Profile app**](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/working-with-your-account/set-user-account-preferences.html) to set your individual details and preferences such as setting up multi-factor authentication.
+Other important apps for basic configuration of DHIS2 are the [**System Settings app**](#settings) where you set a range of configuration options, the [**Users app**](#manage_user_role_group) for setting up new users, user roles and User groups, the [**User Profile app**](#user_account_preferences) to set your individual details and preferences such as setting up multi-factor authentication.
 
 1. #### Organisation units 
 
@@ -155,21 +155,21 @@ Other important apps for basic configuration of DHIS2 are the [**System Settings
 
 1. Open the Maintenance app and create a basic Org Unit structure
 
-      [How to add org units (in the UI)](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/metadata.html#create_organisation_unit)
+      [How to add org units (in the UI)](#create_organisation_unit)
 
 2. #### Create Data Elements
 
    These are the “what” of the the data that you want to collect e.g., "Number of Outpatient Visits", "Number of Malaria Cases" 
 
-   1. Open the Maintenance app and create a couple of example [Data Elements](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/metadata.html#create_data_element).  
+   1. Open the Maintenance app and create a couple of example [Data Elements](#create_data_element).  
       
 
 3. #### Create Category Options, Categories and Category Combination 
 
    Categories are used to disaggregate data elements, for example Gender as a category with Male and Female as the category Options
 
-   1. Open the **Maintenance app** and create a single disaggregation [Category](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/metadata.html#create_category) with a couple of [Category Options](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/metadata.html#create_category_option).  
-   2. Create a [Category Combination](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/metadata.html#create_category_combination) and add that category to it  
+   1. Open the **Maintenance app** and create a single disaggregation [Category](#create_category) with a couple of [Category Options](#create_category_option).  
+   2. Create a [Category Combination](#create_category_combination) and add that category to it  
    3. Open the Data Elements you created in the previous step and assign the Category Combination  
       
 
@@ -177,7 +177,7 @@ Other important apps for basic configuration of DHIS2 are the [**System Settings
 
    A Data set is a collection of data elements that you want collected at the same time, this level is best thought of as the form or survey that makes up the data collection activity. It is here that you define the look and feel of the form that is displayed to the user in the data entry app.
 
-   1. Open the **Maintenance app** and create a [Data Set](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/configuring-the-system/metadata.html#create_data_set)  
+   1. Open the **Maintenance app** and create a [Data Set](#create_data_set)  
    2. Assign the data elements created in the previous step  
    3. Make sure to assign the Data Set to the Org units that you want to capture data for.  
       
@@ -186,14 +186,14 @@ Other important apps for basic configuration of DHIS2 are the [**System Settings
 
    Now that you have a data set, you can open the **Data Entry App** and add some data 
 
-1. Open the [Data Entry App](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/collecting-data/data-entry.html#aggregate_data_entry_app.get_to_know) and select the Data Set you have created and the appropriate Org Unit.  
+1. Open the [Data Entry App](#aggregate_data_entry_app.get_to_know) and select the Data Set you have created and the appropriate Org Unit.  
 2. Enter some data in the form
 
 ####      6\. Generate the Analytics tables
 
 Before generating analytic visualisations you need to generate the Analytic tables, this is usually set up as an automatic job that runs every few hours or every day.
 
-1. Open the **Data Administration App** and run the [Analytics tables](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/maintaining-the-system/data-administration.html#data_admin_analytics_tables)
+1. Open the **Data Administration App** and run the [Analytics tables](#data_admin_analytics_tables)
 
    
 
@@ -201,7 +201,7 @@ Before generating analytic visualisations you need to generate the Analytic tabl
 
 1. Open the **Data Visualiser app** and create some tables and charts of your data\!
 
-   [Create a data visualisation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-242/analysing-data/data-visualizer.html)
+   [Create a data visualisation](#data_visualizer)
 
 	  
 So that is the very basic end to end how to gather and visualise some aggregate data, this is just scratching the surface, you can then create Dashboards, Maps or reports to visualise your data 
