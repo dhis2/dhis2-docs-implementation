@@ -1,4 +1,4 @@
-# Getting Started with DHIS2
+# Getting Started with DHIS2 {#getting_started_quick_guide}
 
 If you have explored the website read all [about DHIS2](https://dhis2.org/about-2/) and all the ways it can be utilised in the fields of [Health](https://dhis2.org/health/), [Climate and Health](https://dhis2.org/climate/), [Education](https://dhis2.org/education/) and [Logistics](https://dhis2.org/logistics/) and you have had a play in the demo environments on the [DHIS2 Playground](https://im.dhis2.org/public/instances). Now you would like to get started with your very own DHIS2 but not sure how to get a Tomcat to fit into a Docker, here is a basic overview of how to get started from scratch. 
 
@@ -36,7 +36,7 @@ These next steps will take you through how to set up a DHIS2 instance from scrat
 
 The following steps will guide you through how to use Docker to get DHIS2 up and running quickly.
 
-#### What is Docker?
+#### What is Docker? {#getting_started_whats_docker}
 
 Docker is a tool that packages an application and everything it needs (code, runtime, libraries, configuration) into a portable unit called a container. For DHIS2, Docker means you can start a ready-to-run DHIS2 server (and the database it needs) without manually installing Java, PostgreSQL, or other dependencies on your machine
 
@@ -81,7 +81,7 @@ If you haven’t loaded a demo database then it will look a bit blank in there, 
 
 >Reminder that this Docker \+ d2 cluster is for development/learning, not recommended for production without additional configuration.
 
-# Section 2:  Collecting data
+# Section 2:  Collecting data {#getting_started_collect}
 
 There are three types of data that you can collect in DHIS2, these are often referred to internally as data domains, each domain requires a different approach to metadata configuration and apps used for data collection and analysis. 
 
@@ -118,7 +118,7 @@ We will use a very simple aggregate data example that consists of the following 
 5. Explore the data via the data visualiser  
    
 
-## Configuring DHIS2
+## Configuring DHIS2 {#getting_started_configure}
 
 Users interact with DHIS2 through a number of Applications mostly referred to as Apps. These Apps each handle a different range of functions across configuration, system administration, collecting data and analysing data. The different apps are accessed through the app menu by clicking the 9 blocks in the top right hand corner and selecting an app directly from the 8 first apps, or browsing or searching for the desired app.
 
