@@ -26,7 +26,7 @@ A lot of products you interact with are what is known as Software as a Service (
 ![alt text](resources/images/GS_DHIS2_Components.png){.center width=60%}
 
 
-It can be a lot of work to set up and host a DHIS2 server that will be used at a large scale, there are many things to consider and it will require specialised technology skills, [find out more about Server hosting](https://docs.dhis2.org/en/implement/implementing-dhis2/server-hosting.html).
+It can be a lot of work to set up and host a DHIS2 server that will be used at a large scale, there are many things to consider and it will require specialised technology skills, [find out more about Server hosting](#implementation_server_hosting).
 
 There are organisations that can help with the hosting and even offer DHIS2 as a SaaS product, you can find their details and more information about [hosted DHIS2 services](https://dhis2.org/hosting/).
 
