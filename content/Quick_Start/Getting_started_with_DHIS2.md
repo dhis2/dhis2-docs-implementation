@@ -32,7 +32,7 @@ There are organisations that can help with the hosting and even offer DHIS2 as a
 
 These next steps will take you through how to set up a DHIS2 instance from scratch, useful for understanding how it works, as a test environment or for small scale or personal use. If you plan to run DHIS2 at scale in production, see the production hosting guidance.
 
-## Installing DHIS2
+### Installing DHIS2
 
 The following steps will guide you through how to use Docker to get DHIS2 up and running quickly.
 
@@ -81,7 +81,7 @@ If you haven’t loaded a demo database then it will look a bit blank in there, 
 
 >Reminder that this Docker \+ d2 cluster is for development/learning, not recommended for production without additional configuration.
 
-# Section 2:  Collecting data {#getting_started_collect}
+## Section 2:  Collecting data {#getting_started_collect}
 
 There are three types of data that you can collect in DHIS2, these are often referred to internally as data domains, each domain requires a different approach to metadata configuration and apps used for data collection and analysis. 
 
@@ -118,7 +118,7 @@ We will use a very simple aggregate data example that consists of the following 
 5. Explore the data via the data visualiser  
    
 
-## Configuring DHIS2 {#getting_started_configure}
+### Configuring DHIS2 {#getting_started_configure}
 
 Users interact with DHIS2 through a number of Applications mostly referred to as Apps. These Apps each handle a different range of functions across configuration, system administration, collecting data and analysing data. The different apps are accessed through the app menu by clicking the 9 blocks in the top right hand corner and selecting an app directly from the 8 first apps, or browsing or searching for the desired app.
 
@@ -147,49 +147,49 @@ In this simple example we are going to use the following four apps
 
 Other important apps for basic configuration of DHIS2 are the [**System Settings app**](#settings) where you set a range of configuration options, the [**Users app**](#manage_user_role_group) for setting up new users, user roles and User groups, the [**User Profile app**](#user_account_preferences) to set your individual details and preferences such as setting up multi-factor authentication.
 
-1. #### Organisation units 
+#### 1. Organisation units 
 
-   The organisation unit hierarchy defines the organisation structure of DHIS2, for example how health facilities, administrative areas and other geographical areas are arranged with respect to each other. It is the where dimension of DHIS2, similar to how periods represent the when dimension.
+The organisation unit hierarchy defines the organisation structure of DHIS2, for example how health facilities, administrative areas and other geographical areas are arranged with respect to each other. It is the where dimension of DHIS2, similar to how periods represent the when dimension.
 
-   What they are: Often these are geographic or administrative units (country, region, district, facility) . You can choose the level that is most relevant to your data, the top level can be the whole world, a single country or a single district. Can also be used to model organisational structure, divisions, departments etc
+What they are: Often these are geographic or administrative units (country, region, district, facility) . You can choose the level that is most relevant to your data, the top level can be the whole world, a single country or a single district. Can also be used to model organisational structure, divisions, departments etc
 
 1. Open the Maintenance app and create a basic Org Unit structure
 
-      [How to add org units (in the UI)](#create_organisation_unit)
+[How to add org units (in the UI)](#create_organisation_unit)
 
-2. #### Create Data Elements
+#### 2. Create Data Elements
 
-   These are the “what” of the the data that you want to collect e.g., "Number of Outpatient Visits", "Number of Malaria Cases" 
+These are the “what” of the the data that you want to collect e.g., "Number of Outpatient Visits", "Number of Malaria Cases" 
 
-   1. Open the Maintenance app and create a couple of example [Data Elements](#create_data_element).  
+1. Open the Maintenance app and create a couple of example [Data Elements](#create_data_element).  
       
 
-3. #### Create Category Options, Categories and Category Combination 
+#### 3. Create Category Options, Categories and Category Combination 
 
-   Categories are used to disaggregate data elements, for example Gender as a category with Male and Female as the category Options
+Categories are used to disaggregate data elements, for example Gender as a category with Male and Female as the category Options
 
-   1. Open the **Maintenance app** and create a single disaggregation [Category](#create_category) with a couple of [Category Options](#create_category_option).  
-   2. Create a [Category Combination](#create_category_combination) and add that category to it  
-   3. Open the Data Elements you created in the previous step and assign the Category Combination  
+1. Open the **Maintenance app** and create a single disaggregation [Category](#create_category) with a couple of [Category Options](#create_category_option).  
+2. Create a [Category Combination](#create_category_combination) and add that category to it  
+3. Open the Data Elements you created in the previous step and assign the Category Combination  
       
 
-4. #### Create Data Set
+#### 4. Create Data Set
 
-   A Data set is a collection of data elements that you want collected at the same time, this level is best thought of as the form or survey that makes up the data collection activity. It is here that you define the look and feel of the form that is displayed to the user in the data entry app.
+A Data set is a collection of data elements that you want collected at the same time, this level is best thought of as the form or survey that makes up the data collection activity. It is here that you define the look and feel of the form that is displayed to the user in the data entry app.
 
-   1. Open the **Maintenance app** and create a [Data Set](#create_data_set)  
-   2. Assign the data elements created in the previous step  
-   3. Make sure to assign the Data Set to the Org units that you want to capture data for.  
+1. Open the **Maintenance app** and create a [Data Set](#create_data_set)  
+2. Assign the data elements created in the previous step  
+3. Make sure to assign the Data Set to the Org units that you want to capture data for.  
       
 
-5. #### Collect Data
+#### 5. Collect Data
 
-   Now that you have a data set, you can open the **Data Entry App** and add some data 
+Now that you have a data set, you can open the **Data Entry App** and add some data 
 
 1. Open the [Data Entry App](#aggregate_data_entry_app.get_to_know) and select the Data Set you have created and the appropriate Org Unit.  
 2. Enter some data in the form
 
-####      6\. Generate the Analytics tables
+#### 6. Generate the Analytics tables
 
 Before generating analytic visualisations you need to generate the Analytic tables, this is usually set up as an automatic job that runs every few hours or every day.
 
@@ -197,11 +197,11 @@ Before generating analytic visualisations you need to generate the Analytic tabl
 
    
 
-####      7\. Create a basic visualisation
+#### 7. Create a basic visualisation
 
 1. Open the **Data Visualiser app** and create some tables and charts of your data\!
 
-   [Create a data visualisation](#data_visualizer)
+[Create a data visualisation](#data_visualizer)
 
 	  
 So that is the very basic end to end how to gather and visualise some aggregate data, this is just scratching the surface, you can then create Dashboards, Maps or reports to visualise your data 
