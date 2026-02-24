@@ -70,16 +70,20 @@ There is a full DHIS2 Docker Guide available [https://developers.dhis2.org/docs/
 ![alt text](resources/images/GS_Login.png){.center width=60%}
 
 
-  >The default login information is   
-   Username: admin  
-   Password: district  
+> **Note**
+>
+> The default login information is   
+> Username: admin  
+> Password: district  
 
 
 
 Now you can log in and access your very own DHIS2 instance\!\!  
 If you haven’t loaded a demo database then it will look a bit blank in there, in Section 2 we will go through how to configure the system to start collecting and analysing data. 
 
->Reminder that this Docker \+ d2 cluster is for development/learning, not recommended for production without additional configuration.
+> **Warning**
+>
+> We want to be clear that this Docker \+ d2 cluster is for development/learning, not recommended for production without additional configuration.
 
 ## Section 2:  Collecting data {#getting_started_collect}
 
