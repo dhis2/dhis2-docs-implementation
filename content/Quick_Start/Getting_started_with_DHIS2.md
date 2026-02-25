@@ -4,7 +4,7 @@ If you have explored the website read all [about DHIS2](https://dhis2.org/about-
 
 
 
-![alt text](resources/images/GS_oneDHIS2Please.png){.center width=30%}
+![](resources/images/GS_oneDHIS2Please.png){.center width=30%}
 
 
 
@@ -18,12 +18,12 @@ If you don’t find answers there then you can [contact us](https://dhis2.org/co
 
 ## Section 1: Setting up DHIS2 \- a quick local install for learning and testing
 
-![alt text](resources/images/GS_Quickstart.png){.center width=60%}
+![](resources/images/GS_Quickstart.png){.center width=60%}
 
 
 A lot of products you interact with are what is known as Software as a Service (SaaS), such as Facebook, Gmail, Salesforce or Office 365\. In these cases you usually create an account and then access the software through your browser, apps or on your phone. However DHIS2 uses a Server architecture which requires a central computer or cluster of computers to run DHIS2 along with other supporting applications. Users of DHIS2 can then access the server from their computers or other devices like phones or tablets, called clients, through a local network or the internet
 
-![alt text](resources/images/GS_DHIS2_Components.png){.center width=60%}
+![](resources/images/GS_DHIS2_Components.png){.center width=60%}
 
 
 It can be a lot of work to set up and host a DHIS2 server that will be used at a large scale, there are many things to consider and it will require specialised technology skills, [find out more about Server hosting](#implementation_server_hosting).
@@ -67,7 +67,7 @@ There is a full DHIS2 Docker Guide available [https://developers.dhis2.org/docs/
 3. Once the command is complete you should have the right containers running in docker and it should look something like this in docker.![](resources/images/GS_Docker1.png)
 
 4. You can then use a browser to navigate to [http://localhost:8080/](http://localhost:8080/)   
-![alt text](resources/images/GS_Login.png){.center width=60%}
+![](resources/images/GS_Login.png){.center width=60%}
 
 
 > **Note**
@@ -102,7 +102,7 @@ Tracker Data
 * Tracker data is used for longitudinal tracking of individual objects, i.e. a person (Tracked Entity Instances, or TEIs) across multiple events or program stages. This domain is essential for programs that require following up with individuals over time, such as antenatal care or HIV treatment.
 
 
-![alt text](resources/images/GS_From_Zero_diagram.png){.center width=60%}
+![](resources/images/GS_From_Zero_diagram.png){.center width=60%}
 
 
 We will use a very simple aggregate data example that consists of the following steps. 
@@ -126,7 +126,7 @@ We will use a very simple aggregate data example that consists of the following 
 
 Users interact with DHIS2 through a number of Applications mostly referred to as Apps. These Apps each handle a different range of functions across configuration, system administration, collecting data and analysing data. The different apps are accessed through the app menu by clicking the 9 blocks in the top right hand corner and selecting an app directly from the 8 first apps, or browsing or searching for the desired app.
 
-![alt text](resources/images/GS_Commad_Palette.png)
+![Command Palette](resources/images/GS_Commad_Palette.png)
 
 There are around 28 **Core Apps** and are managed by the central development team, there are also a range of **Custom Apps** that have been developed by a range of other partners that are available to download through the **App Hub.**  [Read more about installing and managing apps](#apps_installing_apps). 
 
@@ -134,19 +134,19 @@ In this simple example we are going to use the following four apps
 
 * The **[Maintenance app](#about_maintenance_app)** which is where you create and manage Metadata that defines all the data you want to collect and analyse in your system.
 
-![alt text](resources/images/GS_Maintenance_App_Icon.png){.center width=30%}
+![](resources/images/GS_Maintenance_App_Icon.png){.center width=30%}
 
 * The [**Data Entry App**](#data-entry-app) which is where you collect aggregate data in DHIS2, a different app, (the **Capture App**) is used to collect individual and event data. 
 
-![alt text](resources/images/GS_Data_Entry_App_icon.png){.center width=30%}
+![](resources/images/GS_Data_Entry_App_icon.png){.center width=30%}
 
 * The [**Data Visualiser App**](#data_visualizer) which is the primary tool for creating and editing visualizations like charts, pivot tables, and graphs. There are visualisation apps for more specialised uses, the **Maps**, **Dashboard**, **Event Visualiser**, **Event Report**, **Reports** and **Line Listing** apps    
 
- ![alt text](resources/images/GS_Data_Visualiser_Icon.png){.center width=30%}
+ ![](resources/images/GS_Data_Visualiser_Icon.png){.center width=30%}
     
 * The [**Data Administration app**](#data_admin) is used to generate the analytics tables used to create the visualisations.  
 
-![alt text](resources/images/GS_Data_Administration_icon.png){.center width=30%}
+![](resources/images/GS_Data_Administration_icon.png){.center width=30%}
 
 
 Other important apps for basic configuration of DHIS2 are the [**System Settings app**](#settings) where you set a range of configuration options, the [**Users app**](#manage_user_role_group) for setting up new users, user roles and User groups, the [**User Profile app**](#user_account_preferences) to set your individual details and preferences such as setting up multi-factor authentication.
@@ -210,4 +210,4 @@ Before generating analytic visualisations you need to generate the Analytic tabl
 	  
 So that is the very basic end to end how to gather and visualise some aggregate data, this is just scratching the surface, you can then create Dashboards, Maps or reports to visualise your data 
 
-![alt text](resources/images/GS_Next_Journey.jpg)
+![](resources/images/GS_Next_Journey.jpg)
