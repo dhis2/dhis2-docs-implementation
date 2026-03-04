@@ -266,6 +266,7 @@ Health:
       - Design: '@github(dhis2-metadata/IMM_BCU, docs/imm_bcu-design.md, master)'
       - Installation: '@github(dhis2-metadata/IMM_BCU, docs/imm_bcu-installation.md, master)'
       - Release Note: '@github(dhis2-metadata/IMM_BCU, docs/release_note.md, master)'
+      - BCU Data Backlogs and Real-Time Monitoring Data: '@github(dhis2-metadata/IMM_BCU, docs/imm_bcu-backlog-rtm.md, master)'
     - Immunization Campaigns:
       - OVERVIEW: '@github(dhis2-metadata/GEN_DOCS, IMM_VC/overview.md, master)'
       - Use: '@github(dhis2-metadata/GEN_DOCS, IMM_VC/use.md, master)'
