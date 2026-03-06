@@ -68,10 +68,12 @@ First time set-up:
 ![](resources/images/dq_android_supervision/image4.png)
 
 3. View planned supervisions(events).The most recent appear at the top.
+
 ![](resources/images/dq_android_supervision/image22.png)
 
-4. Clicking on each event displays the charts of the indicators whose quality you wish to check. The single values displayed at the top correspond to the values of the period indicated at the top.
-5. To display the values of another period, simply click on the period and select the new period in the calendar.
+1. Clicking on each event displays the charts of the indicators whose quality you wish to check. The single values displayed at the top correspond to the values of the period indicated at the top.
+2. To display the values of another period, simply click on the period and select the new period in the calendar.
+
 ![](resources/images/dq_android_supervision/image19.png)
 ![](resources/images/dq_android_supervision/image8.png)
 
@@ -83,7 +85,6 @@ First time set-up:
 4. Tap Save (bottom right) when finished.
 
 ![](resources/images/dq_android_supervision/image8.png)
-
 ![](resources/images/dq_android_supervision/image20.png)
 
 ## Supervision Dashboard: Results Visualization
@@ -106,6 +107,7 @@ It is possible to view supervision results directly from the Android, even if th
 ## Data synchronisation
 
 After saving supervision data:
+
 - When back online, go to the supervision selection page and tap Synchronize.
 - Alternatively, go to Settings > Synchronize Data to upload locally saved supervision data to the DHIS2 server.
 
