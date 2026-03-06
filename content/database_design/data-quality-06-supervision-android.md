@@ -101,13 +101,12 @@ It is possible to view supervision results directly from the Android, even if th
 4. To do this, you'll need to make sure that Bluetooth mode is enabled on both devices, and that they are paired. You can also download the file to your device by clicking on: Share > Printer > pdf
 
 ![](resources/images/dq_android_supervision/imageanalytics.png)
+![](resources/images/dq_android_supervision/Image13.png)
 
-![](resources/images/dq_android_supervision/image13.png)
-
-## Data synchronisation
+## Data Synchronisation
 
 After saving supervision data:
 
-- When back online, go to the supervision selection page and tap Synchronize.
-- Alternatively, go to Settings > Synchronize Data to upload locally saved supervision data to the DHIS2 server.
+1. When back online, go to the supervision selection page and tap Synchronize.
+2. Alternatively, go to Settings > Synchronize Data to upload locally saved supervision data to the DHIS2 server.
 
