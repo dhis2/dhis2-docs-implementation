@@ -77,6 +77,7 @@ First time set-up:
 2. To display the values of another period, simply click on the period and select the new period in the calendar.
 
 ![](resources/images/dq_android_supervision/image19.png)
+
 ![](resources/images/dq_android_supervision/image8.png)
 
 ## Open the form
@@ -87,6 +88,7 @@ First time set-up:
 4. Tap Save (bottom right) when finished.
 
 ![](resources/images/dq_android_supervision/image8.png)
+
 ![](resources/images/dq_android_supervision/image20.png)
 
 ## Supervision Dashboard: Results Visualization
@@ -103,6 +105,7 @@ It is possible to view supervision results directly from the Android, even if th
 4. To do this, you'll need to make sure that Bluetooth mode is enabled on both devices, and that they are paired. You can also download the file to your device by clicking on: Share > Printer > pdf
 
 ![](resources/images/dq_android_supervision/imageanalytics.png)
+
 ![](resources/images/dq_android_supervision/Image13.png)
 
 ## Data Synchronisation
