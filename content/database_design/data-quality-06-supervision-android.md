@@ -68,7 +68,6 @@ First time set-up:
 ![](resources/images/dq_android_supervision/image4.png)
 
 3. View planned supervisions(events).The most recent appear at the top.
-
 ![](resources/images/dq_android_supervision/image22.png)
 
 4. Clicking on each event displays the charts of the indicators whose quality you wish to check. The single values displayed at the top correspond to the values of the period indicated at the top.
