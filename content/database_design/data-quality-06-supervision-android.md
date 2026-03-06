@@ -28,7 +28,9 @@ Until the app is published on the Playstore, you can install it manually.
 3. Tap the file and follow on‑screen instructions to install or update the app
 
 ![](resources/images/dq_android_supervision/image14.png)
+
 ![](resources/images/dq_android_supervision/image15.png)
+
 ![](resources/images/dq_android_supervision/image16.png)
 
 ## Login page
