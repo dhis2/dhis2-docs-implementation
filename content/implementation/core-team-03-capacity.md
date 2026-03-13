@@ -11,7 +11,7 @@ We can divide capacity building strategies into two components:
 
 For a detailed breakdown on developing learning solutions, please refer to this [link](https://docs.dhis2.org/en/topics/training-docs/general-guidance/capacity-building-considerations.html#developing-new-learning-solutions)
 
-For HR Development, our main focus is on building the core team as we have outlined here in the [Core Positions](#core-positions) section. In order to identify members of the core team and create long-term strategies for developing their capacity, we suggest that a couple of complementary activities are performed.
+For HR Development, our main focus is on building the core team as we have outlined here in the Core Positions section. In order to identify members of the core team and create long-term strategies for developing their capacity, we suggest that a couple of complementary activities are performed.
 
 1. Identification of roles and responsibilities based on the core team structure adopted in-country. This is to include the names of the individuals that will fulfill these roles.
 2. A capacity building needs assessment. This assessment is meant to set a baseline for the skills currently possessed within the core team, as well as to identify what current gaps are in order to build long-term plans to address them.
