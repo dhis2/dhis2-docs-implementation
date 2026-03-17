@@ -2,7 +2,11 @@ Implement: '@github(dhis2/dhis2-docs-implementation, content/index.md, master)'
 Implementing DHIS2:
   - Overview: '@github(dhis2/dhis2-docs-implementation, content/implementation/a-quick-guide-to-dhis2-implementation.md, master)'
   - Planning and Budgeting: '@github(dhis2/dhis2-docs-implementation, content/implementation/planning-budgeting.md, master)'
-  - Building a Core Team: '@github(dhis2/dhis2-docs-implementation, content/implementation/core-team.md, master)'
+  - Building a Core Team: 
+      - Core team structure and  roles: '@github(dhis2/dhis2-docs-implementation, content/implementation/core-team-01-intro.md, master)'
+      - Forming and sustaining a core team: '@github(dhis2/dhis2-docs-implementation, content/implementation/core-team-02-formation.md, master)'
+      - Core team capacity building planning: '@github(dhis2/dhis2-docs-implementation, content/implementation/core-team-03-capacity.md, master)'
+      - Core team routines and phases: '@github(dhis2/dhis2-docs-implementation, content/implementation/core-team-04-routines.md, master)'
   - Conceptual Design Principles: '@github(dhis2/dhis2-docs-implementation, content/implementation/conceptual-design-principles.md, master)'
   - Setting Up a New Database: '@github(dhis2/dhis2-docs-implementation, content/implementation/setting-up-a-new-database.md, master)'
   - Security Considerations: '@github(dhis2/dhis2-docs-implementation, content/implementation/security_considerations.md, master)'
