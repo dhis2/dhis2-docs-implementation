@@ -47,8 +47,6 @@ These phases are summarized in the diagram below, referencing the core team role
 
 *Figure 1: Core team roles with phases*
 
-### Monitoring team development 
-
 ## Governance
 
 A full detailed breakdown of governance as it relates to DHIS2 can be found [here](https://docs.google.com/presentation/d/1hY7KG0axxENjBfXVf3hRTHKMyIrDgWAQVUNJ2CkPzS0/edit?slide=id.g123699e563d_0_163#slide=id.g123699e563d_0_163); however it is important to note the core teams role within this structure. 
@@ -87,7 +85,7 @@ It then becomes important for the core team to put thought and effort into caref
 
 ### Organizational
 
-Each time the core team works on a project, they will have distinct responsibilities. This is not to say a core team  members responsibilities do not overlap (for example, the implementers and trainer's may be the same people); however it is necessary to define clear roles for each member of the team. Using an example, we can outline how the team can work together. Note that, in this example, *core, contributing and optional roles* are all part of implementing this solution. Depending on the phase in which this the team currently is in, external support may be needed to support or fill in these various roles. 
+Each time the core team works on a project, they will have distinct responsibilities. This is not to say a core team  members responsibilities will not overlap (for example, the implementers and trainer's may be the same people); however it is necessary to define clear roles for each member of the team. Using an example, we can outline how the team can work together. Note that, in this example, *core, contributing and optional roles* are all part of implementing this solution. Depending on the phase in which this the team currently is in, external support may be needed to support or fill in these various roles. 
 
 > **Example**
 >
