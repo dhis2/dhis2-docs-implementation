@@ -63,7 +63,7 @@ The main idea here is that, while the DHIS2 core team will have its own set of e
 
 In particular, the ***operational lead*** will serve as a bridge, defining day-to-day operations and liasing regularly with, ideally, a cross-ministry committee bringing key health information stakeholders together to make joint decisions.
 
-While the core team is part of a broader governance structure that looks after the entirety of the DHIS2 implementation, the team itself should have some built in structures that allow it to function as an independent unit on tasks that are agreed and assigned to it. The operational lead will often serve in a capacity to lead this team; however as the team matures and skill develops, others in the team should have clear mechanisms to provide insight and their own expertise in guiding the teams direction. 
+While the core team is part of a broader governance structure that looks after the entirety of the DHIS2 implementation, the team itself should have some built in routines that allow it to function as an independent unit on tasks that are agreed and assigned to it. The operational lead will often serve in a capacity to lead this team; however as the team matures and skill develops, others in the team should have clear mechanisms to provide insight and their own expertise in guiding the teams direction. 
 
 We can divide this direction into different sub-groups in which the team should develop a shared understanding of.
 
@@ -73,7 +73,7 @@ We can divide this direction into different sub-groups in which the team should 
 
 ### Technical
 
-On the technical side, as the team matures, they may identify multiple ways to implement a solution in DHIS2. Furthermore,  new functionality will be introduced over time allowing solutions to be implemented in previously challenging ways. For this reason, it is important not to define strict criteria in how solutions can be implemented. Instead, a focus on following specific procedures across the team, in which everyone working on the system can follow, should be created. These can include the use of technical standards such as HL7 FHIR and ICD11; but should also include practicalites like naming metadata, assigning user permissions, using development instances, etc. For more details, please review the [Standard Operating Procedure (SOP)](https://docs.dhis2.org/en/implement/maintenance-and-use/standard-operating-procedures.html) section of our documentation. 
+On the technical side, as the team matures, they may identify multiple ways to implement a solution in DHIS2. Additionally,  new functionality will be introduced over time allowing solutions to be implemented in previously challenging ways. For this reason, it is important not to define strict criteria in how solutions can be implemented. Instead, a focus on following specific procedures across the team, in which everyone working on the system can follow, should be created. These can include the use of technical standards such as HL7 FHIR and ICD11; but should also include practicalites like naming metadata, assigning user permissions, using development instances, etc. For more details, please review the [Standard Operating Procedure (SOP)](https://docs.dhis2.org/en/implement/maintenance-and-use/standard-operating-procedures.html) section of our documentation. This ideally form the foundation of a strong set of best practices that the the entire team can follow.
 
 > **Important**
 >
@@ -81,7 +81,19 @@ On the technical side, as the team matures, they may identify multiple ways to i
 
 ### Strategic
 
+As it is recommended that a core team be part of a broader governance structure, decisions made by the core team regarding what to implement, which resources are available and managing projects against realistic timelines ideally becomes a shared responsibility. In reality, this can be difficult to achieve. In the early stages of the core teams formation in particular, the team will likely be pushed to implement complex solutions, often in parrallel, with a small amount of resources. 
 
-
+It then becomes important for the core team to put thought and effort into carefully selecting which projects to implement so resources and timelines can be managed effectively. In particular, it should be noted that your particular DHIS2 implementation may not be able to absorb a particularly complex use case, or that DHIS2 may not even be the appropriate system to use to implement a given solution. Please review the sections on [planning and  budgeting](https://docs.dhis2.org/en/implement/implementing-dhis2/planning-and-budgeting.html) along with the [tracker implementation guidance](https://docs.dhis2.org/en/implement/tracker-implementation/is-my-project-ready-for-tracker.html) in particular for more information on evaluating your system and planning strategic areas for implementing within the core team.
 
 ### Organizational
+
+Each time the core team works on a project, they will have distinct responsibilities. This is not to say a core team  members responsibilities do not overlap (for example, the implementers and trainer's may be the same people); however it is necessary to define clear roles for each member of the team. Using an example, we can outline how the team can work together. Note that, in this example, *core, contributing and optional roles* are all part of implementing this solution. Depending on the phase in which this the team currently is in, external support may be needed to support or fill in these various roles. 
+
+> **Example**
+>
+> In this example, the core team is tasked with implementing a new tracker program for surveillance. It is meant to encompass all notifiable diseases within the country. The tracker program in DHIS2 will require integration with the with lab system in the country, retrieving various information including the type of test performed along with its test result depending on the disease in question. HL7 FHIR must be used to exchange this data. 
+
+![Core_Team_Role_Organized](resources/images/core_team/core_team_roles_together.jpg)
+***Figure 3: Core team roles with assigned responsibilities***
+
+Reviewing ***Figure 3*** above, we can see there are many moving pieces when implementing a solution in DHIS2. Ensuring these roles are well defined beforehand so that core team members can stay on task is necessary in order to achieve a desired outcome. Complexity will ultimately increase if there are many interested stakeholders as well as external TA being provided, and it will be up to the ***operational lead*** along with the governance committee to manage these additional inputs in such cases. 
