@@ -376,6 +376,11 @@ Health:
       - Release Note: '@github(dhis2-metadata/NCD_HTN, docs/release_note.md, master)'
       - Design: '@github(dhis2-metadata/NCD_HTN, docs/ncd_htn-design.md, master)'
       - Installation: '@github(dhis2-metadata/NCD_HTN, docs/ncd_htn-installation.md, master)'
+   - Cancer Registry:
+      - OVERVIEW: '@github(dhis2-metadata/NCD_CR, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/NCD_CR, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/NCD_CR, docs/ncd_cr-design.md, master)'
+      - Installation: '@github(dhis2-metadata/NCD_CR, docs/ncd_cr-installation.md, master)'     
     - Sensory Function - Eye and Ear Care:
       - OVERVIEW: '@github(dhis2-metadata/NCD_SF, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/NCD_SF, docs/release_note.md, master)'
