@@ -85,7 +85,7 @@ It then becomes important for the core team to put thought and effort into caref
 
 > **Note**
 >
-> In addition to the  guidance above, the [DHIS2 maturity profile](https://dhis2.org/maturity-profile/) can be a particularly useful tool to help guide the selection of projects, priortize them and highlight various dependencies that are required to scale up effectively. The maturity profile will assist in highlighting key foundational areas that require strengthening, which can also assist in alleviating high-pressure situations when the core team is first starting. The tool assesses the status of implementation of each specific program using DHIS2 to create an overall country profile, promoting an integrated approach to health information systems (HIS). 
+> In addition to the  guidance above, the [DHIS2 maturity profile](https://dhis2.org/maturity-profile/) can be a particularly useful tool to help guide the selection of projects, priortize them and highlight various dependencies that are required to scale up effectively. The maturity profile will assist in highlighting key foundational areas that require strengthening, which can also assist in alleviating high-pressure situations when the core team is first starting. The tool assesses the status of implementation of each specific program using DHIS2 to create an overall country profile, promoting an integrated approach systems strengthening efforts. 
 
 ### Organizational
 
