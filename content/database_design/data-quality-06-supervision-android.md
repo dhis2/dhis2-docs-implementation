@@ -27,11 +27,11 @@ Until the app is published on the Playstore, you can install it manually.
 2. Locate the file in your Downloads folder.
 3. Tap the file and follow on‑screen instructions to install or update the app
 
-![](resources/images/dq_android_supervision/image14_framed.png)
+![](resources/images/dq_android_supervision/Image14_framed.png)
 
-![](resources/images/dq_android_supervision/image15_framed.png)
+![](resources/images/dq_android_supervision/Image15_framed.png)
 
-![](resources/images/dq_android_supervision/image16_framed.png)
+![](resources/images/dq_android_supervision/Image16_framed.png)
 
 ## Login page
 
@@ -39,7 +39,7 @@ Until the app is published on the Playstore, you can install it manually.
 2. Enter your URL,Username and Password
 3. Tap Login to access the home interface.
 
-![](resources/images/dq_android_supervision/image17_framed.png)
+![](resources/images/dq_android_supervision/Image17_framed.png)
 
 ![](resources/images/dq_android_supervision/Imageconfig_framed.png)
 
@@ -53,32 +53,32 @@ First time set-up:
 2. Go to Settings.
 3. Select Configuration Synchronization
 
-![](resources/images/dq_android_supervision/image3_framed.png)
+![](resources/images/dq_android_supervision/Image3_framed.png)
 
-![](resources/images/dq_android_supervision/image1_framed.png)
+![](resources/images/dq_android_supervision/Image1_framed.png)
 
-![](resources/images/dq_android_supervision/image2.png)
+![](resources/images/dq_android_supervision/Image2.png)
 
 ## Selecting a Supervision Event
 
 1. Choose the **tracker program** (e.g DQR-RSC)
 
-![](resources/images/dq_android_supervision/image3_framed.png)
+![](resources/images/dq_android_supervision/Image3_framed.png)
 
 2. Select the **organization unit** to be supervised
 
-![](resources/images/dq_android_supervision/image4_framed.png)
+![](resources/images/dq_android_supervision/Image4_framed.png)
 
 3. View planned supervisions(events).The most recent appear at the top.
 
-![](resources/images/dq_android_supervision/image22_framed.png)
+![](resources/images/dq_android_supervision/Image22_framed.png)
 
 1. Clicking on each event displays the charts of the indicators whose quality you wish to check. The single values displayed at the top correspond to the values of the period indicated at the top.
 2. To display the values of another period, simply click on the period and select the new period in the calendar.
 
-![](resources/images/dq_android_supervision/image10_framed.png)
+![](resources/images/dq_android_supervision/Image10_framed.png)
 
-![](resources/images/dq_android_supervision/image8_framed.png)
+![](resources/images/dq_android_supervision/Image8_framed.png)
 
 ## Open the form
 
@@ -87,9 +87,9 @@ First time set-up:
 3. Fill in the required fields section by section.
 4. Tap Save (bottom right) when finished.
 
-![](resources/images/dq_android_supervision/image8_framed.png)
+![](resources/images/dq_android_supervision/Image8_framed.png)
 
-![](resources/images/dq_android_supervision/image20_framed.png)
+![](resources/images/dq_android_supervision/Image20_framed.png)
 
 ## Supervision Dashboard: Results Visualization
 
@@ -104,9 +104,9 @@ It is possible to view supervision results directly from the Android, even if th
 3. It is possible to share the dashboard in pdf format on or offline. When online, the dashboard pdf file can be shared using all the communication apps available on the Android device: Whatsapp, Snapchat, Gmail, Slack, etc. However, when an Internet connection is not available, the file can be shared via Bluetooth. 
 4. To do this, you'll need to make sure that Bluetooth mode is enabled on both devices, and that they are paired. You can also download the file to your device by clicking on: Share > Printer > pdf
 
-![](resources/images/dq_android_supervision/imageanalytics_framed.png)
+![](resources/images/dq_android_supervision/Imageanalytics_framed.png)
 
-![](resources/images/dq_android_supervision/image13_framed.png)
+![](resources/images/dq_android_supervision/Image13_framed.png)
 
 ## Data Synchronisation
 
