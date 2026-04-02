@@ -114,4 +114,3 @@ After saving supervision data:
 
 1. When back online, go to the supervision selection page and tap Synchronize.
 2. Alternatively, go to Settings > Synchronize Data to upload locally saved supervision data to the DHIS2 server.
-
