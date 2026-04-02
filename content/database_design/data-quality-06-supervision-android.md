@@ -41,7 +41,7 @@ Until the app is published on the Playstore, you can install it manually.
 
 ![](resources/images/dq_android_supervision/image17_framed.png)
 
-![](resources/images/dq_android_supervision/image18.png)
+![](resources/images/dq_android_supervision/Imageconfig_framed.png)
 
 ## Home interface
 
