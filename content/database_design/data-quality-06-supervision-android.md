@@ -71,7 +71,7 @@ First time set-up:
 
 3. View planned supervisions(events).The most recent appear at the top.
 
-![](resources/images/dq_android_supervision/image22.png)
+![](resources/images/dq_android_supervision/image22_framed.png)
 
 1. Clicking on each event displays the charts of the indicators whose quality you wish to check. The single values displayed at the top correspond to the values of the period indicated at the top.
 2. To display the values of another period, simply click on the period and select the new period in the calendar.
@@ -89,7 +89,7 @@ First time set-up:
 
 ![](resources/images/dq_android_supervision/image8_framed.png)
 
-![](resources/images/dq_android_supervision/image20.png)
+![](resources/images/dq_android_supervision/image20_framed.png)
 
 ## Supervision Dashboard: Results Visualization
 
