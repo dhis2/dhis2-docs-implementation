@@ -1,18 +1,18 @@
 # Transition Kit from Old Data Entry App (Legacy App) to New Data Entry App (Aggregate data)
 
-
-
 - [Transition Kit from Old Data Entry App (Legacy App) to New Data Entry App (Aggregate data)](#transition-kit-from-old-data-entry-app-legacy-app-to-new-data-entry-app-aggregate-data)
   - [Introduction](#introduction)
   - [Benefits in brief](#benefits-in-brief)
   - [Feature comparison of Old (Legacy App) vs. New App.](#feature-comparison-of-old-legacy-app-vs-new-app)
-  - [Feature comparison of Old (Legacy App) vs. New App Details with Screenshots](#feature-comparison-of-old-legacy-app-vs-new-app-details-with-screenshots)
+  - [Feature comparison of Legacy App vs. New App Details with Screenshots](#feature-comparison-of-legacy-app-vs-new-app-details-with-screenshots)
     - [Initial Interface Review](#initial-interface-review)
     - [Option Menu Use/Function](#option-menu-usefunction)
     - [Sections and Filters](#sections-and-filters)
+      - [Sections](#sections)
+      - [Filters](#filters)
     - [Run Validation](#run-validation)
     - [Data Element Details](#data-element-details)
-  - [New Features for V42](#new-features-for-v42)
+  - [New Features for Version - 42](#new-features-for-version---42)
     - [Pivot options in aggregate datasets sections](#pivot-options-in-aggregate-datasets-sections)
       - [Default](#default)
       - [Pivot](#pivot)
@@ -56,73 +56,91 @@ The goal is to help users adapt quickly and efficiently to the new interface and
 | **Run validation**      | Button at top right menu; opens popup | Bottom of form; interactive side panel with categorized alerts |
 | **Data element details**| Popup window for comments/follow-up   | Inline side panel; comments, audit history, legends available |
 
-## Feature comparison of Old (Legacy App) vs. New App Details with Screenshots
+## Feature comparison of Legacy App vs. New App Details with Screenshots
 
 ###  Initial Interface Review
 
 **New App**: Organisation unit, dataset, and period selected from a persistent top bar. Modern, user-friendly design with improved usability.
 
-**Legacy App**: OU on left panel, dataset selected separately. Outdated interface and workflows.
+    Note: In the new app, the Dataset must be chosen before the Organisation Unit.This order is intentional, it helps filter available organisation units to only those assigned to the selected dataset, reducing user errors during data entry.
 
-![](images/ER_DE/image15.png)
+
+**Legacy App**: Organisation Unit on left panel, dataset selected separately. Outdated interface and workflows.
+
+![](images/ER_DE2/image30.png)
 
 ### Option Menu Use/Function
 
-![](images/ER_DE/image35.png)
+![](images/ER_DE2/image33.png)
 
 **New App**
-1. **Print form with values**: Prints the current data entry form including all entered data values. Useful for reviews, audits, or physical record-keeping.
-2. **Print empty form**: Prints a blank version of the dataset form. Useful for offline data collection or field distribution.
-3. **Help:** Opens documentation or guidance related to the Data Entry App. Supports users in understanding the interface and resolving issues.
+* **Print form with values**: Prints the current data entry form including all entered data values. Useful for reviews, audits, or physical record-keeping.
+* **Print empty form**: Prints a blank version of the dataset form. Useful for offline data collection or field distribution.
+* **Help:** Opens documentation or guidance related to the Data Entry App. Supports users in understanding the interface and resolving issues.
 
-When you click on Help the window will open that is very useful for understanding data entry status at a glance.Built in shortcuts make data entry faster and more efficient.
+      Note : The new Help button opens a legend explaining the meaning of cell colors and icons; for example, red indicates an unsaved value.It also lists available keyboard shortcuts, helping users navigate and enter data more quickly.
 
-![](images/ER_DE/image4.png)
+![](images/ER_DE2/image32.png)
 
-**Old App (Legacy App)** The Print form and Print blank form button is available at the extreme right top corner.
+**Legacy App** The Print form and Print blank form button is available at the extreme right top corner.
 
-![](images/ER_DE/image10.png)
+![](images/ER_DE2/image7.png)
 
 ### Sections and Filters
 
-Both are supported with section forms where you can select the section of the form
+#### Sections
 
-**New App:** Sections displayed on the top bar; global filter across all sections with the option to narrow down by section.
+Both are supported with section forms where you can select the section of the form.
 
-**Old App (Legacy App):** Section forms only available after selecting the period; filters worked within one section at a time.
+**New App:** Sections displayed on the top bar after data set, org unit and period have been selected; 
+
+**Legacy App:**  Section forms only available after selecting the period
 
 **Benefit**: Greater efficiency when working with large/complex forms.
 
-![](images/ER_DE/image29.png)
+![](images/ER_DE2/image14.png)
 
 >Note
-> In the **Old App (Legacy App),** the data element filter was limited to one section at a time. This meant that if you wanted to find a data element, you had to first navigate to the specific section where it was located (filtering worked only within that active section).
+> In the **Legacy App,** the data element filter was limited to one section at a time. This meant that if you wanted to find a data element, you had to first navigate to the specific section where it was located (filtering worked only within that active section).
 > 
 > In the **New App**, the filter is global across all sections and can be applied to one section at a time. This means you can search for any data element from the top filter bar, and it will display results across the entire form, regardless of which section the element belongs to.
 > 
 > Additionally, when a specific section is open, the filter can be used to narrow down elements within that section alone. This dual functionality offers flexibility and significantly improves efficiency, especially when working with large or complex forms.
 
-![](images/ER_DE/image6.png)
-![](images/ER_DE/image5.png)
-![](images/ER_DE/image7.png)
+
+#### Filters
+
+**New App:** The filter is global across all sections and can be applied to one section at a time. This means you can search for any data element from the top filter bar, and it will display results across the entire form, regardless of which section the element belongs to.
+
+Additionally, when a specific section is open, the filter can be used to narrow down elements within that section alone. This dual functionality offers flexibility and significantly improves efficiency, especially when working with large or complex forms.
+
+![](images/ER_DE2/image8.png)
+![](images/ER_DE2/image16.png)
+
+**Legacy App:** The data element filter was limited to one section at a time. This meant that if you wanted to find a data element, you had to first navigate to the specific section where it was located (filtering worked only within that active section).
+
+![](images/ER_DE2/image11.png)
 
 ### Run Validation
 
 **New App:** Validation results shown in a **side panel**, grouped into categories: High, Medium, Low. Alerts are summarized for easier review.
 
-![](images/ER_DE/image14.png)
+![](images/ER_DE2/image23.png)
 
-**Old App**: The **“Run Validation”** button is present  (usually in the top right menu bar). And it only pops up the window with all violations messages if any.
+**Legacy App**:The ‘Run Validation’ button is located in the bottom-left corner. When clicked validation results appear in a side panel, grouped into High, Medium, and Low categories, with alerts summarized for easier review. 
 
-![](images/ER_DE/image31.png)
+    Note: The side panel groups validation alerts by severity. Review High alerts first and use the panel to quickly move between issues without losing their place in the form.
+
+![](images/ER_DE2/image21.png)
 
 ### Data Element Details
 
-**New App** Users can add comments and mark data items for follow-up directly from the data entry screen which gives a more clear view and understanding.Comments, audit history, and legends are handled via side panels
+**New App:** Clicking a data cell shows its details in the lower-left section, with a View Details button. This opens a side panel where users can add comments, mark items for follow-up, and view audit history and legends. Keeping all related information in one place gives a clearer, more organized view of each data item. Hide Details closes the panel.
 
-![](images/ER_DE/image30.png)
+![](images/ER_DE2/image12.png)
+![](images/ER_DE2/image13.png)
 
-**Old App (Legacy App)** When a user **double-clicked on a data cell** in the Data Entry app (Aggregate), a **popup window** opened.
+**Legacy App:** When a user **double-clicked on a data cell** in the Data Entry app (Aggregate), a **popup window** opened.
 
 This popup allowed users to:
 
@@ -131,9 +149,9 @@ This popup allowed users to:
 * View or update the last updated date
 * See who last edited the value
 
-![](images/ER_DE/image32.png)
+![](images/ER_DE2/image20.png)
 
-## New Features for V42
+## New Features for Version - 42
 
 ### Pivot options in aggregate datasets sections
 
@@ -150,9 +168,9 @@ These pivot tables control how data elements and category option combos are disp
 #### Default
 By default, data elements are arranged in rows, while categories (disaggregation dimensions) are displayed in columns.
 
-![](images/ER_DE/image8.png)      
+![](images/ER_DE2/image3.png)      
 
-![](images/ER_DE/image22.png)
+![](images/ER_DE2/image18.png)
 
 #### Pivot
 
@@ -160,7 +178,7 @@ Categories as rows, data elements as columns
    * Useful when there are **many data elements** and few categories
    * Makes the form **more compact horizontally**
   
-  ![](images/ER_DE/image34.png)
+  ![](images/ER_DE2/image24.png)
 
 #### Move a category to rows
 
@@ -168,14 +186,16 @@ Categories as rows, data elements as columns
 * One category dimension is moved to rows
 * It helps to give more control when the dataset is large.
 
-  ![](images/ER_DE/image19.png)
+  ![](images/ER_DE2/image35.png)
+  ![](images/ER_DE2/image27.png)
 
 #### Content displayed before/after section
 
 You can add HTML-based instructions, notes, or links that appear above or below the section form — useful for guidance or data entry rules.
 
-![](images/ER_DE/image21.png)
-![](images/ER_DE/image25.png)
+
+![](images/ER_DE2/image25.png)
+![](images/ER_DE2/image17.png)
 
 ## Moving a Dataset from the Legacy (Old App) to the New App
 
@@ -221,16 +241,16 @@ Below are the practical examples showing how forms behave in the **Legacy Data E
    **New App** 
    - Organisation unit, dataset, and period all selected from the **persistent top bar**. 
    - Modern, cleaner layout for faster switching.
-![](images/ER_DE/image33.png)
-![](images/ER_DE/image36.png)
+![](images/ER_DE2/image9.png)
+![](images/ER_DE2/image28.png)
 
 1. Organization unit
 
     **Legacy App**: All OUs displayed, even if the dataset is not assigned (inactive ones appear greyed).
 
     **New App**: Only OUs assigned to the form are enabled
-![](images/ER_DE/image37.png)
-![](images/ER_DE/image38.png)
+![](images/ER_DE2/image34.png)
+![](images/ER_DE2/image15.png)
 
 1. Error Display:
 
@@ -238,8 +258,8 @@ Below are the practical examples showing how forms behave in the **Legacy Data E
 
    **New App**: Errors displayed inline within the form, with clearer indicators
 
-   ![](images/ER_DE/image18.png)
-   ![](images/ER_DE/image16.png)
+   ![](images/ER_DE2/image1.png)
+   ![](images/ER_DE2/image31.png)
 
 2. Run validation interface
 
@@ -247,9 +267,8 @@ Below are the practical examples showing how forms behave in the **Legacy Data E
 
    **New App**:Validation button at the bottom of the form; results appear in a <strong>side panel</strong>, grouped into <em>High / Medium / Low</em>.
 
-      ![](images/ER_DE/image39.png)
-      ![](images/ER_DE/image40.png)
-
+      ![](images/ER_DE2/image21.png)
+      ![](images/ER_DE2/image23.png)
 
 ### Section form
 
@@ -259,21 +278,20 @@ Below are the practical examples showing how forms behave in the **Legacy Data E
 
    **New App**:Section tabs are visible at the top bar immediately
 
-      ![](images/ER_DE/image41.png)
-      ![](images/ER_DE/image42.png)
+      ![](images/ER_DE2/image19.png)
+      ![](images/ER_DE2/image10.png)
 
 2. Filter section
 
    **Legacy App**: Filter applies to one section at a time
 
    **New App**:Global filter across all sections, plus ability to narrow to a single section.
-   ![](images/ER_DE/image43.png)
-   ![](images/ER_DE/image44.png)
-
+   ![](images/ER_DE2/image19.png)
+   ![](images/ER_DE2/image9.png)
 
 3. New features
    * Row/Column Switching for categories (e.g., “Communicable immunizable” dataset section).
    * Not available in Legacy App.
    * Makes large forms easier to read horizontally or vertically.
-  ![](images/ER_DE/image45.png)
+  ![](images/ER_DE2/image45.png)
 
