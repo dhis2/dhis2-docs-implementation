@@ -10,6 +10,5 @@ The Program Indicator Disaggregation mappings, defined at the Program level, pro
 
 ![Table Example](resources/images/Table_Example.png){ .center width=30% }
 
-How to configure program indicator disaggregation can be viewed in the [user guide]
-(#program_disaggregation_mapping)
+How to configure program indicator disaggregation can be viewed in the [user guide](#program_disaggregation_mapping)
 
