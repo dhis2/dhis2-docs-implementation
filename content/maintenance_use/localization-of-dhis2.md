@@ -157,6 +157,89 @@ The pull requests are reviewed and merged into the code base as part of the norm
 >
 > The translations you add in transifex should be visible in all development demo versions on our play server (https://play.dhis2.org) within a few days, in most cases.
 
+### Custom translations using the datastore
+
+Starting in core version 43.0, there is an option to add custom translations or text overrides for core apps using the datastore. This enables the possibility of adding translations to strings that havent been translated yet by other means (Transifex), or for overriding the text in apps in other ways.
+
+>  **Important**
+>
+>  This is an experimental feature and may be subject to change.
+
+Configuring custom translations requires either knowledge of Transifex or some simple API usage in the browser.
+
+Using the feature takes three steps: 
+1. Enable custom translations from the System Settings app, under the Appearance section
+2. Configure the controller in the datastore
+3. Configure the app and locale text overrides
+
+#### Step 1. Enable custom translations in the System Settings app
+
+1. Open the Settings app
+2. Navigate to the Appearance section
+3. Check the checkbox labeled “Enable custom translations” at the bottom of the page
+
+![Enable custom translations in System Settings](./resources/images/ct-settings.png)
+
+#### Step 2. Configure the controller in the Datastore
+
+1. Open the Datastore Management app
+2. Click New namespace to create a new namespace and key (if not already created) with these exact names: Namespace = `custom-translations`. Key = `controller`
+
+![Create the custom-translations namespace](./resources/images/ct-controller-create.png)
+
+3. Viewing the `custom-translations` namespace, click the Sharing button (three connected dots) on the `controller` key and edit the sharing settings so the public can only view the key, and only you and other trusted app administrators can edit the key. Click Save.
+
+> **Important**
+>
+> Configuring these sharing settings is important because the datastore is publicly editable by default, and these translations should only be editable by privileged users.
+
+![Change the controller sharing settings](./resources/images/ct-controller-sharing.png)
+
+4. In the code editor window to the right, edit the content to be a dictionary of app identifiers as keys and arrays of locale identifiers as values, i.e. `{ “<app-identifier>”: [“<locale1>”, “<locale2>”] }`. See the screenshot below for an example.
+    1. You can find an app’s identifier by navigating to that app in the browser and inspecting the URL bar. Some examples are `capture`, `aggregate-data-entry`, and `data-visualizer`. For advanced users, the app identifier used for custom translations is an app’s `key` value from the `/api/apps` response.
+    2. You can find a locale’s identifier in a few ways:
+        1. In Transifex, the code in parentheses when choosing a language to translate. For example, “Portuguese (Brazil) (pt_BR)” shows the locale identifier is `pt_BR`.
+        2. Using the API, you can visit the URL `<dhis2BaseUrl>/api/locales/ui` in the browser, find the locale you want to translate for, then use the `locale` property as the locale identifier.
+5. Click Save.
+
+![Configure the controller](./resources/images/ct-controller-config.png)
+
+#### Step 3. Add text overrides for the app and locale
+
+1. In the Datastore Management app, viewing the `custom-translations` namespace, click the New key button at the top.
+2. Name the key according to the convention `<app-identifier>__<locale-identifier>`, for example `capture__pt_BR`. **NB:** There are two underscores between the app and locale identifiers.
+3. Edit the sharing settings for the new key in the same way as for the `controller` key.
+4. In the code editor window to the right, add translations in the format `{ “<text identifier>”: “Override text” }`. See below for more information on how to find the right text identifiers to use.
+5. Click Save.
+
+![Configure the translation strings](./resources/images/ct-datastore-tl-strings.png)
+
+#### How to find text identifiers for overrides
+
+There are a few options for finding the identifiers for strings of text in the app:
+
+* In Transifex, text identifiers can be found there in each app, for example “Choose a program and organisation unit to see existing data and create new records.”
+* In GitHub, identifiers can be found as the `msgid` property in the `/i18n/en.pot` file for each app. Here is the file for the Capture app, for example.
+* For app developers, these JSON-formatted key-value pairs can be found in the `/src/locales` directory when building an app using the App Platform.
+* Sometimes, identifiers can be guessed from the text in the app.
+
+Here are some more details to keep in mind:
+* Make sure “interpolation values” like `{{ count }}` or `{{ category }}` are copied exactly in the override string
+* Observe how plurals are accomplished in the screenshot above, for example for `{{ count }} event` and `{{ count }} event_plural`
+
+#### Inspect the app
+
+Now that 1) custom translations has been enabled in the Settings app, 2) the `custom-translations` namespace and `controller` key in the datastore have been set up, 3) and text overrides for the app and locale have been added, the affected apps should now show the new string overrides in the selected locales when the apps are loaded.
+
+![Custom text in the Capture app](./resources/images/ct-capture-inspected.png)
+
+#### App requirements for custom translations from the datastore
+
+Apps using App Platform [v12.11.0](https://github.com/dhis2/app-platform/releases/tag/v12.11.0) can use custom translations via the datastore.
+
+Strings from libraries that an app uses, like the UI library, must also meet the same App Platform requirement to be translatable.
+
+
 ### How do I add a new language?
 
 Please contact us via email translate@dhis2.org, or on the [Community of Practice](https://community.dhis2.org/c/translation) and we'll add that language to the projects on transifex.
