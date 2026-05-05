@@ -157,7 +157,7 @@ The pull requests are reviewed and merged into the code base as part of the norm
 >
 > The translations you add in transifex should be visible in all development demo versions on our play server (https://play.dhis2.org) within a few days, in most cases.
 
-### Custom translations using the datastore
+### Custom translations using the datastore  { #custom_translations_using_the_datastore }
 
 Starting in core version 43.0, there is an option to add custom translations or text overrides for core apps using the datastore. This can be used to translate strings that haven't been translated yet by other means (Transifex), or to override the text in apps in other ways, for example to use domain-specific language.
 
