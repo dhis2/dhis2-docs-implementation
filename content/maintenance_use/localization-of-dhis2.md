@@ -157,6 +157,17 @@ The pull requests are reviewed and merged into the code base as part of the norm
 >
 > The translations you add in transifex should be visible in all development demo versions on our play server (https://play.dhis2.org) within a few days, in most cases.
 
+### How do I add a new language?
+
+Please contact us via email translate@dhis2.org, or on the [Community of Practice](https://community.dhis2.org/c/translation) and we'll add that language to the projects on transifex.
+
+Once resources for that language are more than 20% translated, they will start to be pulled into the system. They will then
+become visible in the development demo versions, and be available in future releases.
+
+> **Note**
+>
+> DHIS 2 manages metadata (database) locales independently from the UI. _See the [Metadata/Database section](#metadata-database-translations) below._ 
+
 ### Custom translations using the datastore  { #custom_translations_using_the_datastore }
 
 Starting in core version 43.0, there is an option to add custom translations or text overrides for core apps using the datastore. This can be used to translate strings that haven't been translated yet by other means (Transifex), or to override the text in apps in other ways, for example to use domain-specific language.
@@ -257,18 +268,6 @@ To remove all custom translations for all apps and locales, remove all the conte
 Apps using App Platform [v12.11.0](https://github.com/dhis2/app-platform/releases/tag/v12.11.0) can use custom translations via the datastore.
 
 Strings from libraries that an app uses, like the UI library, must also meet the same App Platform requirement to be translatable.
-
-
-### How do I add a new language?
-
-Please contact us via email translate@dhis2.org, or on the [Community of Practice](https://community.dhis2.org/c/translation) and we'll add that language to the projects on transifex.
-
-Once resources for that language are more than 20% translated, they will start to be pulled into the system. They will then
-become visible in the development demo versions, and be available in future releases.
-
-> **Note**
->
-> DHIS 2 manages metadata (database) locales independently from the UI. _See the following section._ 
 
 
 ## Metadata/Database translations { #metadata-database-translations } 
