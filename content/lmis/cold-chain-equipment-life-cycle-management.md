@@ -1769,64 +1769,20 @@ LL 11 - **Name**: "CCE Cold chain appliance corrective maintenance"
 
 ## Workflow for registering new appliances
 
-While details on all DHIS2 workflows are available in the general DHIS2 documentation and although the "cloning" of appliances uses only native DHIS2 functionality, it is an "edge case", a very specific use of the "Relationship" function and therefore the steps are explained below:
+The WHO PQS-catalogue lists 76 different attributes for section "E003: Refrigerators and freezers" although not all attributes apply to every appliance. For example, some attributes apply only to refrigerators and others only to freezer and AC (Alternating Current) and DC (Direct Current) devices have different attributes. Moreover, any specific use case is likely not to need all attributes available from the WHO PQS-catalogue.
 
-The workflow below explains the workflow for the following example:
+When a new appliance (refrigerator or freezer) is registered, the respective TEAs (Tracked Entity Attributes) would all have to be entered manually. In order to facilitate this process and reduce the likelihood of errors, the DHIS2 PQS plugin can be used to automatically populate all generic attributes which are defined by the manufacturer and apply to all devices with the same PQS reference number.
 
-A new icelined refrigerator (E003/007) has been delivered to the health facility (OU) "0001 CH Mahosot". The user "registers" and "enrols" this new appliance using the default specifications from the catalogue of PQS pre-qualified appliances in the "World Health Organization PQS catalogue". These "generic" appliance specifications are then "copied" for creating a new appliance at the "0001 CH Mahosot" before adding the appliance specific attributes such as the serial number or the manufacturing date. User:
+Before using this tool for the first time, the DHIS2 "pqs-plugin" needs to be installed from the "Custom apps" section of the native "App Management" portal in the DHIS2 web application.
 
-- Opens the DHIS2 Capture Android app on a mobile device and authenticates: the DHIS2 home screen opens showing all Programs and Data sets
-
-- Select "Cold chain equipment lifecycle management": a list of all registered and enrolled appliances is displayed
-
-- Selects "World Health Organization PQS catalogue" from the "ORG. UNIT" filter: a catalogue with all of the PQS pre-qualified appliances appears
-
-- Searches for and selects the cold chain appliance which is being installed: a single appliance is listed
-
-- Taps on the cold chain appliance: the TEI dashboard of the Tracker Program for this particular appliance is displayed
-
-- Taps on the "Relationship" icon at the bottom in the middle: a separate dialogue window opens
-
-- Taps on the "+" icon: a list of available "Relationships" appears
-
-- Selects "World Health Organization PQS catalogue" from the list of "Relationships": a separate dialogue window opens
-
-- Taps in the header "All Cold chain appliance": a drop-down dialogue window opens
-
-- Selects "Cold chain appliance lifecycle management": a list of appliances appears
-
->*Note: this screen may look like "back to square one" (as it looks like the home screen) but is a necessary step in the whole process*
-
-- Selects the "+ Create new" icon at the right bottom of the screen: the OU dialogue window opens
-
-- Selects the "Organisation unit" where the appliance is being installed by checking the box (in our example "0001 CH Mahosot")
-
-- Selects the "Done" icon: the calendar dialogue window opens: by default the current date is pre-selected
-
-- Selects the installation data of the appliance from the calendar
-
-- Selects the "ACCEPT" icon: the dialogue window of the "cloned" (newly "registered" and "enrolled" device) with the selected "Enrolloing OU" and "Enrollment date" is displayed
-
-- Expands the lower section "2 Cold chain appliance lifecycle management" by tapping on the caret down (inverted caret) symbol (v): the list of specifications (Tracked Entity Attributes) is displayed
-
-- Scans the GS1 DataMatrix code on the appliance which "populates" the GTIN, serialized number and production date fields automatically (if no GS1 DataMatrix code is available, those details are entered manually)
-
-- Completes the "Place of installation"
-
-- Selects the pin icon to record the geolocation (longitude/latitude) of the place of installation
-
-- Selects the blue "Save" icon at the bottom right: the dialogue window displaying all available "Relationships" is displayed
-
-- Selects the red trash icon displayed next to the "Relationship" entry: "There are no relationships, click + to add a new one" appears
-
->*Note that once the new appliance has been "cloned" in the health facility where the appliance is installed, there is no need to maintain any "Relationship" with "World Health Organization PQS catalogue" catalogue item.*
-
-- Selects the back arrow: the "cloned" appliance appears on the Tracker Program home screen
-
-- Taps on the grey synchronization icon appearing next to the "cloned" appliance: the "Sync needed" dialogue window opens
-
-- Taps on the "Send" icon: the new appliance is synchronized with the central server (provided a network connection is available)
-
-- Continues work or closes the Capture Android app.
-
->*Note that this workflow is currently only available in Capture Android app as the DHIS2 web app does not (yet) allow changing the Organisation Unit (OU) when creating a new Tracked Entity Instance (TEI) but this enhancement is planned for future DHIS2 versions.*
+After installation of the DHIS2 "pqs-plugin", any new devices can be quickly registered with the following workflow:
+- Login into the DHIS2 instance
+- Open the "Capture" app
+- Select the Tracker Program where the new appliance should be registered (for example "Cold chain appliance lifecycle management - CCE)
+- Select the "Organisation unit" where the appliance should be registered
+- Select "Create new cold chain appliance - cce" (or other Tracker Program name in use)
+- In the "Details" section select the require appliance from the drop-down menu of the "Appliance identifier" field
+- All attributes from WHO PQS catalogue (json-file) are instantly fetched from the WHO website and posted into the respective attribute fields
+- In the last section ("Applaince specifications") enter the appliance specific attributes such as the "Production date" or the "Serial number" which are specific to individual appliances and not available from the WHO PQS catalogue
+- Select "Save cold chain appliance - cce"
+Note that only appliances from the pre-configure option set can be selected and this option set has to be updated whenever new appliances are prequalified by the WHO.
