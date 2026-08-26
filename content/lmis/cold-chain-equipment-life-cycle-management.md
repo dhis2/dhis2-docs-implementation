@@ -1769,7 +1769,7 @@ LL 11 - **Name**: "CCE Cold chain appliance corrective maintenance"
 
 ## Workflow for registering new appliances
 
-The WHO PQS-catalogue lists 76 different attributes for section "E003: Refrigerators and freezers" although not all attributes apply to every appliance. For example, some attributes apply only to refrigerators and others only to freezer and AC (Alternating Current) and DC (Direct Current) devices have different attributes. Moreover, any specific use case is likely not to need all attributes available from the WHO PQS-catalogue.
+ The WHO PQS-catalogue lists 76 different attributes for section "E003: Refrigerators and freezers" although not all attributes apply to every appliance. For example, some attributes apply only to refrigerators and others only to freezer and AC (Alternating Current) and DC (Direct Current) devices have different attributes. Moreover, any specific use case is likely not to need all attributes available from the WHO PQS-catalogue.
 
 When a new appliance (refrigerator or freezer) is registered, the respective TEAs (Tracked Entity Attributes) would all have to be entered manually. In order to facilitate this process and reduce the likelihood of errors, the DHIS2 PQS plugin can be used to automatically populate all generic attributes which are defined by the manufacturer and apply to all devices with the same PQS reference number.
 
