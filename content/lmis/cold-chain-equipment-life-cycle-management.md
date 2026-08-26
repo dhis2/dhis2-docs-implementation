@@ -1777,22 +1777,22 @@ Before using this tool for the first time, the DHIS2 "pqs-plugin" needs to be in
 
 After installation of the DHIS2 "pqs-plugin", any new devices can be quickly registered with the following workflow:
 
-- Login into the DHIS2 instance 
+- Login into the DHIS2 instance
 
-- Open the "Capture" app 
+- Open the "Capture" app
 
-- Select the Tracker Program where the new appliance should be registered (for example "Cold chain appliance lifecycle management - CCE) 
+- Select the Tracker Program where the new appliance should be registered (for example "Cold chain appliance lifecycle management - CCE)
 
-- Select the "Organisation unit" where the appliance should be registered 
+- Select the "Organisation unit" where the appliance should be registered
 
-- Select "Create new cold chain appliance - cce" (or other Tracker Program name in use) 
+- Select "Create new cold chain appliance - cce" (or other Tracker Program name in use)
 
-- In the "Details" section select the require appliance from the drop-down menu of the "Appliance identifier" field 
+- In the "Details" section select the require appliance from the drop-down menu of the "Appliance identifier" field
 
-- All attributes from WHO PQS catalogue (json-file) are instantly fetched from the WHO website and posted into the respective attribute fields 
+- All attributes from WHO PQS catalogue (json-file) are instantly fetched from the WHO website and posted into the respective attribute fields
 
-- In the last section ("Applaince specifications") enter the appliance specific attributes such as the "Production date" or the "Serial number" which are specific to individual appliances and not available from the WHO PQS catalogue 
+- In the last section ("Applaince specifications") enter the appliance specific attributes such as the "Production date" or the "Serial number" which are specific to individual appliances and not available from the WHO PQS catalogue
 
-- Select "Save cold chain appliance - cce" 
+- Select "Save cold chain appliance - cce"
 
 Note that only appliances from the pre-configure option set can be selected and this option set has to be updated whenever new appliances are prequalified by the WHO.
