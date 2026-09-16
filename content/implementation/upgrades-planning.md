@@ -6,13 +6,15 @@ For each upgrade cycle, a detailed plan and timeline should be developed, tailor
 
 At a high level, the upgrade plan should include these activities:
 
-1. [Evaluating changes](#upgrade-evaluating_changes)
-2. [Budgeting & calendar](#upgrade-communication_and_training)
-3. [Metadata cleaning](#upgrade-metadata_cleaning) (important, optional)
-4. [Testing](#upgrade-testing)
-5. [Make modifications](#upgrade-making_necessary_modifications)
-6. [Communication and training](#upgrade-communication_and_training)
-7. Apply upgrade to production
+- [Planning upgrades](#planning-upgrades)
+  - [Evaluating changes { #upgrade-evaluating\_changes }](#evaluating-changes--upgrade-evaluating_changes-)
+  - [Metadata cleaning { #upgrade-metadata\_cleaning }](#metadata-cleaning--upgrade-metadata_cleaning-)
+  - [Testing { #upgrade-testing }](#testing--upgrade-testing-)
+  - [Making necessary modifications { #upgrade-making\_necessary\_modifications }](#making-necessary-modifications--upgrade-making_necessary_modifications-)
+  - [Communication and training { #upgrade-communication\_and\_training }](#communication-and-training--upgrade-communication_and_training-)
+  - [Key considerations](#key-considerations)
+    - [Budgeting](#budgeting)
+    - [Making an upgrade calendar { #making\_an\_upgrade\_calendar }](#making-an-upgrade-calendar--making_an_upgrade_calendar-)
 
 ```mermaid
 flowchart TD
@@ -56,10 +58,14 @@ flowchart TD
 
 With a new release, it's important to thoroughly review the documentation associated with that release. The most straightforward place to access these is via [dhis2.org/downloads](https://dhis2.org/downloads), where each supported version is presented with links to the relevant documents:
 
-* **release notes** give an overview of all changes in the release, with links to specific jira tickets and documentation sections where relevant. Each major, patch and hotfix release has a separate release note document.
-* **upgrade notes** provide detailed technical information and requirements for the release and upgrade process, for example highlighting changes in support for java or postgresql versions, renaming of database tables or API endpoints that might affect custom script and integrations etc. This is critical for people planning and performing the actual upgrade on the server, but can also relevant for other DHIS2 core team members.
+* **release notes** give an overview of all changes in the release, with links to specific jira tickets and documentation sections where relevant. Each major, patch and hotfix release has a separate release note document. 
+* **upgrade notes** provide detailed technical information and requirements for the release and upgrade process, for example highlighting changes in support for java or postgresql versions, renaming of database tables or API endpoints that might affect custom script and integrations etc. This is critical for people planning and performing the actual upgrade on the server, but can also relevant for other DHIS2 core team members. ***This is available for both the web and Android versions of DHIS2.***
 * **feature overview** is a permanent link to the release notes published with the major version (e.g. v40 or v41), which lists new functionality for that major version (include the release notes, which for patch and hotfix versions only lists minor changes and bugs that have been addressed).
 * (TBC) **deprecated features** lists specific features, functionalities and API endpoints that have been deprecated in the major version.
+
+> **Note**
+>
+>Particular attention should be made to reviewing the android upgrade notes as well as the web versions of the documents listed here when updating the android client. 
 
 For each upgrade, and in particular when upgrading to a new major version, these documents need to be reviewed by the core team supporting the upgrade process. If upgrading several versions (e.g. from 2.39 to v41), the documents for *each* release must be reviewed. Not all changes are relevant for every implementation, but those that are likely to be relevant for a particular system should be documented. Based on this, a plan can be made for how the changes will be managed.
 
