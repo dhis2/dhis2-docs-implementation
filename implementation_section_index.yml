@@ -482,6 +482,9 @@ Logistics:
   - Consignment Receipt Acknowledgement (CRA): '@github(dhis2/dhis2-docs-implementation, content/lmis/consignment-receipt-acknowledgement.md, lmis_init)'
   - Data Quality and Data Use: '@github(dhis2/dhis2-docs-implementation, content/lmis/data-use-and-data-quality.md, lmis_init)'
 Education: '@github(dhis2/dhis2-emis-docs, emis_section_index.yml, main)'
+Integration Reference Implementations:
+  - Overview: '@github(dhis2/dhis2-docs-implementation, content/integration_reference_implementations/overview.md, master)'
+  - Laboratory Interoperability: '@github(dhis2/dhis2-docs-implementation, content/integration_reference_implementations/laboratory-interoperability.md, master)'
 Support and documentation:
   - DHIS2 Documentation Guide: '@github(dhis2/dhis2-docs-implementation, content/support_documentation/dhis2-documentation-guide.md, master)'
   - Submitting quick document fixes: '@github(dhis2/dhis2-docs, src/common/submitting-a-doc-fix.md, master)'
