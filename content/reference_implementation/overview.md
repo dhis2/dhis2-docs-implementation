@@ -2,7 +2,7 @@
 
 ## Introduction { #iri_introduction }
 
-An integration reference implementation is a a well-documented, working example that shows one way to solve a common integration problem. You can run it, explore how it's put together, and use it as a starting point for building your own solution. It is meant to be studied and adapted to your own context rather than deployed as-is.
+An integration reference implementation is a well-documented, working example that shows one way to solve a common integration problem. You can run it, explore how it's put together, and use it as a starting point for building your own solution. It is meant to be studied and adapted to your own context rather than deployed as-is.
 
 > **Note**
 >
@@ -30,7 +30,7 @@ Turning a reference implementation into something you can actually deploy is a p
 
 ## Who should be involved { #iri_who_should_be_involved }
 
-This adaptation work is rarely something one person does alone, and it rarely happens in a single pass. It usually involves whoever owns the systems on the other side of the integration, the team responsible for data protection and information security, and the people who will end up supporting the result day to day.
+This adaptation work is rarely something one role does alone, and it rarely happens in a single pass. It usually involves whoever owns the systems on the other side of the integration, the team responsible for data protection and information security, and the people who will end up supporting the result day to day.
 
 Bringing them in early, while the example is still being explored rather than already locked into a deployment plan, tends to save time later: it's much easier to change direction on a working example than on something that has already gone live. Treating the reference implementation as a shared starting point for that conversation, rather than a finished answer to hand over, is usually what makes the eventual adaptation hold up.
 
