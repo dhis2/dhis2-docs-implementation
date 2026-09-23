@@ -125,52 +125,81 @@ in its own right — see [How a case is uniquely identified](#lab_interop_decisi
 
 ### The DHIS2 program shape { #lab_interop_prereq_program_shape }
 
-The DHIS2 instance this reference implementation ships with is preconfigured for that role, with programs covering case
-surveillance and contact tracing. It also assumes a particular shape on the DHIS2 side: three logical stages of the same
+The DHIS2 instance this reference implementation ships with carries programs covering case surveillance and contact
+tracing. It also assumes a particular shape on the DHIS2 side: three logical stages of the same
 case record. This is a common shape in case-based surveillance programs, but a modelling choice nonetheless.
 
 * an **enrollment stage**, where the case is registered against a suspected diagnosis;
 * a **lab request stage**, where the specimen ID is captured, establishing the link;
-* a **lab result stage**, which starts out empty and is what this integration populates.
+* a **lab report stage**, which starts out empty and is what this integration populates.
 
-![The case surveillance program the reference implementation ships with, from enrollment through to case classification and outcome. Only the lab request and lab result stages take part in the integration; the others carry the rest of the surveillance workflow.](resources/images/case-surveillance-program.png)
+![The case surveillance program the reference implementation ships with, from enrollment through to case classification and outcome. Only the lab request and lab report stages take part in the integration; the others carry the rest of the surveillance workflow.](resources/images/case-surveillance-program.png)
 
-Both the request and result stages are repeatable, so one case can carry several specimens, each with its own thread of
+Both the request and report stages are repeatable, so one case can carry several specimens, each with its own thread of
 results. Each result event carries the specimen ID data element — that, and nothing else in the payload, is what puts
 the result on the right record, which is also why the specimen ID is mandatory on the request stage. Once a matching
-report exists, the lab result form is populated for the surveillance officer to review; no human intervention is needed.
+report exists, the lab report form is populated for the surveillance officer to review; no human intervention is needed.
 
 ### Completion as the trigger { #lab_interop_prereq_completion }
 
 **Completing the request is what makes it visible to the integration.** A lab request event must be marked complete
 before it is acted on; one left in progress is never picked up, however well filled in it is. That is deliberate — it
 lets data entry finish before half-entered specimen IDs are searched on — but it puts a step in the hands of facility
-staff that the integration depends on. Say so explicitly in the data entry standard operating procedure, and watch for
-stalled requests after go-live. Completing the request does not place a laboratory order.
+staff that the integration depends on. Say so explicitly in the data entry standard operating procedure. Completing
+the request does not place a laboratory order.
 
 ## Design decisions { #lab_interop_design_decisions }
 
 The sections below set out the decisions an implementer needs to make when building a laboratory results integration.
 This reference implementation answers each one a particular way; a different country context may reasonably answer them
-differently. Each is presented the same way: what you're deciding, the options, how to choose between them, and what
-this reference implementation does.
+differently. Each is presented the same way: what you're deciding, the most common options, how to choose between
+them, and what this reference implementation does.
 
 **Whatever you decide, write the answers down along with your reasons.** That record is worth as much to whoever
 maintains the integration next as the code is.
 
-| Decision                                                                              | What is at stake                                   | What this reference implementation chose                          |
-|---------------------------------------------------------------------------------------|----------------------------------------------------|-------------------------------------------------------------------|
-| [1. How a case is uniquely identified](#lab_interop_decision_identifier)              | Whether a result can reach the right case at all   | The specimen ID, captured on the lab request                      |
-| [2. Communication pattern](#lab_interop_decision_communication)                       | How the two sides coordinate on one piece of work  | No shared workflow state; REST on both sides                      |
-| [3. How results reach DHIS2: push, poll or both](#lab_interop_decision_push_or_poll)  | Who has to be able to reach whom                   | Polling, with a dedicated layer calling both sides                |
-| [4. Which standard and implementation guide](#lab_interop_decision_standard)          | How much translation work you take on              | HL7 FHIR R4 with the Universal Laboratory Report IG               |
-| [5. Point-to-point or an interoperability layer](#lab_interop_decision_layer)         | Who has to make a change when the mapping changes  | A dedicated layer, with the mapping held in DHIS2                 |
-| [6. Where the result lands in the DHIS2 data model](#lab_interop_decision_data_model) | Whether the history of a result survives           | Repeatable result stage, one event per result, updated in place   |
-| [7. Terminology and code mapping](#lab_interop_decision_terminology)                  | What happens to a result whose code has no mapping | Laboratory codes bound to DHIS2 metadata through attributes       |
-| [8. Individual-level or aggregate](#lab_interop_decision_granularity)                 | Whether matching is needed at all                  | Individual-level, into Tracker                                    |
-| [9. Handling unmatched and failed results](#lab_interop_decision_failures)            | Whether people end up trusting the integration     | Logged, with an implicit retry next cycle; no queue or alerting   |
+| Decision                                                                                         | What is at stake                                     | What this reference implementation chose                        |
+|--------------------------------------------------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------------------|
+| [1. Case-based or aggregate surveillance](#lab_interop_decision_granularity)                     | Whether matching is needed at all                    | Case-based surveillance, into Tracker                           |
+| [2. How a case is uniquely identified](#lab_interop_decision_identifier)                         | Whether a result can reach the right case at all     | The specimen ID, captured on the lab request                    |
+| [3. Communication pattern between DHIS2 and the laboratory](#lab_interop_decision_communication) | How the two sides coordinate, and who governs it     | No shared workflow state; REST on both sides                    |
+| [4. How results reach DHIS2: push, poll or both](#lab_interop_decision_push_or_poll)             | Who has to be able to reach whom                     | Polling, with a dedicated layer calling both sides              |
+| [5. Point-to-point or an interoperability layer](#lab_interop_decision_layer)                    | Who has to make a change when the mapping changes    | A dedicated layer, with the mapping held in DHIS2               |
+| [6. Handling unmatched and failed results](#lab_interop_decision_failures)                       | Whether people end up trusting the integration       | Logged, with an implicit retry next cycle; no queue or alerting |
+| [7. Which standard and implementation guide](#lab_interop_decision_standard)                     | How much translation work you take on                | HL7 FHIR R4 with the Universal Laboratory Report IG             |
+| [8. Which terminology to adopt](#lab_interop_decision_terminology_choice)                        | Whether a result means the same thing to anyone else | An international terminology: LOINC                             |
+| [9. Terminology and code mapping](#lab_interop_decision_terminology)                             | What happens to a result whose code has no mapping   | Laboratory codes bound to DHIS2 metadata through attributes     |
+| [10. Where the result lands in the tracker data model](#lab_interop_decision_data_model)         | Whether the history of a result survives             | Repeatable report stage, one event per result, updated in place |
 
-### 1. How a case is uniquely identified { #lab_interop_decision_identifier }
+### 1. Case-based or aggregate surveillance { #lab_interop_decision_granularity }
+
+**What you're deciding.** Which surveillance data model the results are heading into: a case-based one, where each
+result belongs to a named case, or an aggregate one, where results are counted. This is the first decision because it
+settles whether matching is needed at all, and matching is where most of the cost of laboratory interoperability sits.
+
+**Option A: case-based surveillance, into Tracker.** Each result belongs to an individual case record. Necessary when a
+named case needs its result — case management, contact tracing, clinical follow-up, line-listed reporting. Every
+decision that follows about identifiers and matching applies, and this is where the effort goes.
+
+**Option B: aggregate surveillance, into a data set.** Results arrive as counts by facility and period rather than as
+individual records. Matching disappears entirely, and usually so do patient identifiers crossing the boundary. The
+pipeline is still fetch, transform and write, but the hard parts move rather than vanish: aligning periods, mapping the
+laboratory's organisation units onto the DHIS2 hierarchy, and making re-runs safe so figures are not double counted.
+
+**Option C: case-based in, aggregate out.** Import individual results into Tracker for case management and derive
+aggregate reporting from them inside DHIS2. Often the right end state, but only once the case-based path is justified on
+its own terms.
+
+**How to choose.** This is the cost/benefit question from the introduction, one level down. Start from what the
+surveillance program actually does with a result: if someone has to act on a named case, it is case-based. If the
+requirement is genuinely counts, a periodic extract from the LIS — or a routine report entered by laboratory staff —
+may satisfy it at a fraction of the cost and with none of the matching risk.
+
+**What this reference implementation does.** **Case-based surveillance.** It is built around a case surveillance
+program in Tracker, where a result has to reach the record of one identified case — which is why every decision below
+is framed in those terms. One result event per specimen, matched to a specific enrollment.
+
+### 2. How a case is uniquely identified { #lab_interop_decision_identifier }
 
 **What you're deciding.** An incoming result has to reach exactly one record in DHIS2. The identifier carrying that
 match has to exist on both sides, be unique enough that a result never lands on the wrong case, and be practical for
@@ -208,9 +237,9 @@ The **National ID** tracked entity attribute is the natural candidate. That path
 
 Even then the match may be genuinely ambiguous, since the same person may have several enrollments, so a manual
 confirmation step is part of the design rather than an edge case. What that costs to build and to run is set out
-under [Customising this reference implementation for your context](#lab_interop_adapting).
+under [Adapting this reference implementation to your context](#lab_interop_adapting).
 
-### 2. Communication pattern between DHIS2 and the laboratory { #lab_interop_decision_communication }
+### 3. Communication pattern between DHIS2 and the laboratory { #lab_interop_decision_communication }
 
 **What you're deciding.** How the laboratory request and its eventual result move between the two systems, and how much
 of the workflow each side needs to know about. Often no explicit workflow-management layer is needed at all — the two
@@ -232,9 +261,24 @@ this reference implementation answers each one.
 | Will the workflow always be directed at a specific laboratory, or is there a pool of laboratories that could choose to perform the requested test?                                                | Always directed at a specific laboratory                                                          |
 
 A context with several candidate laboratories, or a laboratory able to push results as soon as they're ready, may
-reasonably answer these differently.
+reasonably answer these differently. Several of these are worth confirming rather than assuming — in particular that
+credentials will be issued and maintained on each side, and that one real result can travel end to end, by hand if
+necessary, before anything is automated.
 
-### 3. How results reach DHIS2: push, poll or both { #lab_interop_decision_push_or_poll }
+**Governance on both sides — and above them.** The questions above settle how the two systems behave; something else has
+to settle who decides. Each side needs its own data and metadata governance: someone who owns the DHIS2 metadata and
+approves changes to it, someone who owns the laboratory's test catalogue and codes. Without that, an ordinary change on
+either side breaks the exchange silently.
+
+Governing each side separately is not enough, though. The exchange between them is a third thing, and it needs an
+agreement of its own — normally at national or program level rather than between the two teams that happen to have
+built it. That agreement is where to settle what is exchanged and for what purpose, who may see the data once it has
+crossed the boundary, how a change on one side is notified to the other and with how much notice, who arbitrates when
+the two disagree, and who is accountable when results stop flowing. Countries with a health information exchange
+strategy usually have somewhere for this to live; where there is none, write it down anyway — the alternative is a
+national dependency held together by the memory of whoever set it up.
+
+### 4. How results reach DHIS2: push, poll or both { #lab_interop_decision_push_or_poll }
 
 **What you're deciding.** How DHIS2 learns that a result is ready. This is usually settled by network reality rather
 than preference, so establish it early: it determines who has to be able to reach whom, and who operates what.
@@ -259,57 +303,9 @@ is worth modelling before national rollout.
 
 **What this reference implementation does.** It polls both sides; neither system ever initiates contact. On a schedule,
 the interoperability layer fetches active enrollments in the surveillance program, finds the completed lab requests
-within them, and
-searches the laboratory for a report matching each specimen ID. It keeps no separate record of what it has already
-imported — it works that out from the result events already in DHIS2 — so there is nothing to reconcile if it restarts.
-Only final, amended, appended or corrected reports are picked up.
-
-### 4. Which standard and implementation guide { #lab_interop_decision_standard }
-
-**What you're deciding.** The shared structure that lets DHIS2 consume results without a bespoke integration per
-laboratory. Few implementers start from a free choice here: the LIS emits what it emits, and the country may already
-have a standard. The realistic question is *how much translation work you take on, and where you put it.*
-
-**Option A: HL7 FHIR with the Universal Laboratory Report IG.** The choice made here. Maintained, internationally
-reviewed profiles for exactly this exchange, plus a body of tooling. Both sides must speak FHIR, and the IG is still a
-moving target.
-
-**Option B: a national FHIR IG.** Where the country has one it usually takes precedence, and may be mandated as part of
-a national health information exchange architecture. Check before adopting an international IG — retrofitting later is
-expensive.
-
-**Option C: plain FHIR with no IG.** Faster to start with and reasonable for a single known laboratory, but you give up
-the guarantees about which elements are present and how they are coded, and end up maintaining those constraints
-yourself, informally.
-
-**Option D: HL7 v2 messages.** A large share of laboratory systems in production emit v2, not FHIR. You then need
-something that receives and maps the messages before the rest of the pipeline looks like this one. A v2-only LIS is not
-a reason to abandon the integration: it moves the translation upstream and leaves the DHIS2-facing half largely
-unchanged.
-
-**Option E: a proprietary API or flat-file export.** Often the pragmatic reality with a single laboratory, and sometimes
-the only thing on offer. It works, but you own the contract — define it, version it, renegotiate it whenever the vendor
-changes anything, and start again for the second laboratory.
-
-**How to choose.** Work through, in this order: what the LIS can actually produce today; whether a national IG or HIE
-standard applies; how many laboratories you expect to onboard; and where the translation should sit — in the LIS, in an
-interface engine, or in your own interoperability layer.
-
-**What this reference implementation does.** HL7 FHIR R4 with
-the [Universal Laboratory Report IG](https://build.fhir.org/ig/HL7/uv-lab-rep-ig/), chosen for its broad scope: it grew
-out of the earlier European Laboratory Report IG into a global, HL7-maintained standard. A HAPI FHIR server stands in
-for an LIS, so the demo stays focused on the DHIS2-facing side. Four of the IG's resources are used:
-
-| Resource           | Role in this integration                                                              |
-|--------------------|---------------------------------------------------------------------------------------|
-| `Specimen`         | Carries the specimen ID — the link back to the DHIS2 lab request                      |
-| `Observation`      | Carries the LOINC code identifying the test performed, and its result                 |
-| `Patient`          | The test subject, which can be anonymous so that no patient data crosses the boundary |
-| `DiagnosticReport` | Bundles specimen, observation and patient together, and carries the report status     |
-
-Since there is no real LIS here, those resources are created by test scripts in the repository, standing in for the
-laboratory analyser. In production the LIS produces them itself. They are a test kit, not part of the integration — an
-adaptation drops them.
+within them, and searches the laboratory for a report matching each specimen ID. It keeps no separate record of what
+it has already imported — it works that out from the result events already in DHIS2 — so there is nothing to reconcile
+if it restarts. Only final, amended, appended or corrected reports are picked up.
 
 ### 5. Point-to-point or an interoperability layer { #lab_interop_decision_layer }
 
@@ -336,8 +332,8 @@ liability, and a point-to-point integration that works is better than an elegant
 Whichever you choose, keep the mapping out of compiled code, so that changing how results land is a configuration change
 rather than a release.
 
-**What this reference implementation does.** A dedicated layer — the IOL, built
-on [Apache Camel](https://camel.apache.org/) — configured rather than coded. The part worth borrowing is less the
+**What this reference implementation does.** A dedicated layer of its own, built
+on [Apache Camel](https://camel.apache.org/) and configured rather than coded. The part worth borrowing is less the
 technology than where the mapping is kept: **both the structural transformation and the terminology mapping live in
 DHIS2, not in the layer.** The transformation that turns a laboratory report into a DHIS2 event is a script held in the
 DHIS2 datastore, so changing how a result maps onto your stage is a datastore edit rather than a redeployment; the
@@ -346,94 +342,12 @@ see [Terminology and code mapping](#lab_interop_decision_terminology). That lets
 land without involving the team that maintains the layer — which is most of the reason to prefer a layer over a
 point-to-point integration in the first place.
 
-### 6. Where the result lands in the DHIS2 data model { #lab_interop_decision_data_model }
-
-**What you're deciding.** How the result is represented in the case record — which decides whether the history of a
-result survives, what a reviewer sees, and how the data behaves in analytics. A program design decision, so it is made
-once and is awkward to change after data has accumulated.
-
-A laboratory result is not necessarily final: a laboratory can issue a **correction**, an **amendment**, or an
-**appended addition** to a report it has already sent. A design that keeps only the latest value silently discards the
-fact that something changed.
-
-**Option A: a repeatable result stage, one event per incoming result, updated in place.** One form to read. A correction
-overwrites the earlier value, so the record shows the current answer and no history.
-
-**Option B: a repeatable result stage, multiple events per incoming result.** Every correction and amendment is its own event,
-so a reviewer sees what changed and when. The cost is that "the result" becomes a derived question: reports and program
-indicators have to pick the right event, usually the latest for a specimen, and that logic has to be written
-deliberately.
-
-**How to choose.** Ask how often your laboratory issues corrections, whether a reviewer needs to see that a value
-changed, and what you intend to report on. If turnaround time is a goal, both the request and the result need reliable
-dates. Decide up front which result counts for analytics — the first final one or the latest amendment — because your
-indicators depend on it.
-
-**What this reference implementation does.** Option A: a repeatable lab result stage holding **one event per incoming
-result, updated in place**. A report re-issued as a correction or amendment updates that same event rather than adding
-another, so the record shows the current answer; the status change is recorded in the event notes. The program shape
-this sits in — and the request stage that links to it — is described
-under [The DHIS2 program shape](#lab_interop_prereq_program_shape).
-
-### 7. Terminology and code mapping { #lab_interop_decision_terminology }
-
-**What you're deciding.** Every incoming laboratory code has to resolve to the right DHIS2 data element or option. Not
-every one will — either the terminology doesn't cover it, or no mapping has been defined for it yet. What happens then
-is worth deciding deliberately rather than discovering later.
-
-**Option A: fall back to free text.** The value is at least captured, but free text is considerably harder to analyse.
-Treat it as a fallback for the codes you can't yet resolve rather than a default, and close that gap with a proper
-mapping over time.
-
-**Option B: extend the implementation guide.** Propose new codes, or maintain a local extension of the value set, so the
-result stays structured and codeable. This avoids the analytical downside of free text, but means engaging with the IG's
-governance process or versioning a local extension — slower than switching a data element to free text.
-
-**How to choose.** Weigh how often the missing code is likely to recur against how much analytical value is lost by
-leaving it as free text in the meantime. Either way, give the mapping an owner: codes are added to terminologies,
-laboratories change the panels they run, and DHIS2 metadata evolves — an unmaintained mapping quietly degrades into a
-growing share of unmapped results.
-
-**What this reference implementation does.** Laboratory codes are bound to DHIS2 metadata through **attributes**: each
-data element or option that corresponds to a laboratory concept carries the relevant code in a dedicated attribute, and
-the integration builds its lookup from those values. Because the mapping lives in DHIS2 metadata rather than in the
-layer, an implementer can revise it without involving the team that maintains the integration. Any coding system the
-chosen implementation guide supports will do; the [Universal Laboratory Report IG](https://build.fhir.org/ig/HL7/uv-lab-rep-ig/)
-allows [LOINC](http://loinc.org) and [NPU](http://terminology.hl7.org/6.2.0/CodeSystem-NPU.html) codes.
-
-### 8. Individual-level or aggregate { #lab_interop_decision_granularity }
-
-**What you're deciding.** Whether the surveillance need really requires individual results in a Tracker program, or
-whether counts would satisfy it. Getting this wrong in the ambitious direction is expensive: individual-level
-interoperability is the hard version of this problem, because it is the version that requires matching.
-
-**Option A: individual-level, into Tracker.** Necessary when a named case needs its result — case management, contact
-tracing, clinical follow-up, line-listed reporting. This is where the identifier and matching decisions apply, and where
-most of the cost sits.
-
-**Option B: aggregate, into a data set.** Enough when the requirement is counts by facility and period. Matching
-disappears entirely: no specimen ID, no case linkage, and usually no patient identifiers crossing the boundary at all.
-The pipeline is still fetch, transform, write, but the write targets aggregate data values and the mapping becomes test
-and result category to data element and category option combination. The hard parts move rather than vanish: aligning
-periods, mapping the laboratory's own organisation units onto the DHIS2 hierarchy, and making re-runs safe so figures
-are not double counted.
-
-**Option C: individual-level in, aggregate out.** Import individual results into Tracker for case management and derive
-aggregate reporting inside DHIS2. Often the right end state, but only once the individual-level path is justified on its
-own terms.
-
-**How to choose.** This is the cost/benefit question from the introduction, one level down. If the reporting requirement
-is genuinely aggregate, a periodic extract from the LIS — or a routine report entered by laboratory staff — may satisfy
-it at a fraction of the cost and with none of the matching risk.
-
-**What this reference implementation does.** Individual-level Tracker data: one result event per specimen, matched to a
-specific enrollment. Aggregate laboratory reporting is not addressed.
-
-### 9. Handling unmatched and failed results { #lab_interop_decision_failures }
+### 6. Handling unmatched and failed results { #lab_interop_decision_failures }
 
 **What you're deciding.** What happens to the results that don't sail through. This decides whether people trust the
 integration: one that loses results occasionally and silently is worse than manual entry, because staff stop checking
-and stop believing what they see.
+and stop believing what they see. It is placed here because it is the decision most often left until last; some of what
+it lists is settled by the decisions that follow.
 
 Plan for at least these: no matching lab request; more than one candidate match; several reports for the same specimen
 ID; a code with no DHIS2 mapping; a missing or malformed specimen ID; a request never marked complete; the same result
@@ -455,21 +369,191 @@ empty specimen ID is skipped; an incomplete lab request is passed over; a specim
 the next cycle; a correction updates the result event in place. Imports are checked and logged, and a failed import
 retries on the next cycle. Visibility is the logs.
 
-## Customising this reference implementation for your context { #lab_interop_adapting }
+### 7. Which standard and implementation guide { #lab_interop_decision_standard }
+
+**What you're deciding.** The shared structure that lets DHIS2 consume results without a bespoke integration per
+laboratory. Few implementers start from a free choice here: the LIS emits what it emits, and the country may already
+have a standard. The realistic question is *how much translation work you take on, and where you put it.*
+
+**Option A: HL7 FHIR with an international implementation guide.** A maintained, internationally reviewed set of
+profiles for exactly this exchange, plus a body of tooling behind it.
+
+**Option B: a national FHIR IG.** Where the country has one it usually takes precedence, and may be mandated as part of
+a national health information exchange architecture. Check before adopting an international IG — retrofitting later is
+expensive.
+
+**Option C: plain FHIR with no IG.** Faster to start with and reasonable for a single known laboratory, but you give up
+the guarantees about which elements are present and how they are coded, and end up maintaining those constraints
+yourself, informally.
+
+**Option D: HL7 v2 messages.** A large share of laboratory systems in production emit v2, not FHIR. You then need
+something that receives and maps the messages before the rest of the pipeline looks like this one. A v2-only LIS is not
+a reason to abandon the integration: it moves the translation upstream and leaves the DHIS2-facing half largely
+unchanged.
+
+**Option E: a proprietary API or flat-file export.** Often the pragmatic reality with a single laboratory, and sometimes
+the only thing on offer. It works, but you own the contract — define it, version it, renegotiate it whenever the vendor
+changes anything, and start again for the second laboratory.
+
+**How to choose.** Work through, in this order: what the LIS can actually produce today; whether a national IG or HIE
+standard applies; how many laboratories you expect to onboard; and where the translation should sit — in the LIS, in an
+interface engine, or in your own interoperability layer. Note that the guide you adopt usually narrows, and sometimes
+mandates, the coding systems available to you — see [Which terminology to
+adopt](#lab_interop_decision_terminology_choice).
+
+**What this reference implementation does.** HL7 FHIR R4 with
+the [Universal Laboratory Report IG](https://build.fhir.org/ig/HL7/uv-lab-rep-ig/), chosen for its broad scope: it grew
+out of the earlier European Laboratory Report IG into a global, HL7-maintained standard. A HAPI FHIR server stands in
+for an LIS, so the demo stays focused on the DHIS2-facing side.
+
+### 8. Which terminology to adopt { #lab_interop_decision_terminology_choice }
+
+**What you're deciding.** Which coding system names the tests and the results that cross the boundary. This is not the
+same question as the exchange format: the format carries the codes, the terminology supplies them.
+
+**Option A: an international terminology.** A maintained, widely adopted coding system — [LOINC](http://loinc.org) for
+what was measured, SNOMED CT for findings, organisms and specimens, NPU in some European contexts. Results stay
+comparable beyond your own systems.
+
+**Option B: a national or local code list.** Often the only thing your laboratories already share, and the fastest to
+adopt: no licence question and no migration for the people entering data. It stops at your border, though — no
+comparability with other countries, and every new partner needs its own mapping.
+
+**Option C: both, with the local list mapped to an international one.** Laboratories keep reporting what they already
+report and the integration translates on the way in, so national reporting works today and comparability arrives without
+a migration. The cost is a mapping table someone has to own and keep current.
+
+**How to choose.** In this order: what your laboratories already report, because a terminology nobody uses is a
+migration project before it is an integration; what the implementation guide you have chosen expects or mandates;
+licensing, which is a legal and procurement question and can eliminate an option outright; and what your results have to
+line up with — national analytics only, or regional and global reporting too. Whatever you adopt, budget for
+maintenance: terminologies release updates on their own schedule, and an unversioned mapping drifts out of date quietly.
+
+**What this reference implementation does.** An international terminology — **LOINC** codes identify the test performed.
+That follows from the implementation guide it adopted, which allows LOINC
+and [NPU](http://terminology.hl7.org/6.2.0/CodeSystem-NPU.html) — see
+[Which standard and implementation guide](#lab_interop_decision_standard).
+
+### 9. Terminology and code mapping { #lab_interop_decision_terminology }
+
+**What you're deciding.** Every incoming laboratory code has to resolve to the right DHIS2 data element or option. Not
+every one will — either the terminology doesn't cover it, or no mapping has been defined for it yet. What happens then
+is worth deciding deliberately rather than discovering later.
+
+**Option A: fall back to free text.** The value is at least captured, but free text is considerably harder to analyse.
+Treat it as a fallback for the codes you can't yet resolve rather than a default, and close that gap with a proper
+mapping over time.
+
+**Option B: extend the implementation guide.** Propose new codes, or maintain a local extension of the value set, so the
+result stays structured and codeable. This avoids the analytical downside of free text, but means engaging with the IG's
+governance process or versioning a local extension — slower than switching a data element to free text.
+
+**How to choose.** Weigh how often the missing code is likely to recur against how much analytical value is lost by
+leaving it as free text in the meantime. Either way, give the mapping an owner: codes are added to terminologies,
+laboratories change the panels they run, and DHIS2 metadata evolves — an unmaintained mapping quietly degrades into a
+growing share of unmapped results.
+
+**What this reference implementation does.** Laboratory codes are bound to DHIS2 metadata through **attributes**: each
+data element or option that corresponds to a laboratory concept carries the relevant code in a dedicated attribute, and
+the integration builds its lookup from those values. Because the mapping lives in DHIS2 metadata rather than in the
+layer, an implementer can revise it without involving the team that maintains the integration. Which coding system those
+values come from is settled separately — see [Which terminology to adopt](#lab_interop_decision_terminology_choice).
+
+### 10. Where the result lands in the tracker data model { #lab_interop_decision_data_model }
+
+**What you're deciding.** How the result is represented in the case record — which decides whether the history of a
+result survives, what a reviewer sees, and how the data behaves in analytics. A program design decision, so it is made
+once and is awkward to change after data has accumulated.
+
+A laboratory result is not necessarily final: a laboratory can issue a **correction**, an **amendment**, or an
+**appended addition** to a report it has already sent. A design that keeps only the latest value silently discards the
+fact that something changed.
+
+**Option A: a repeatable lab report stage, one event per incoming result, updated in place.** One form to read. A
+correction overwrites the earlier value, so the record shows the current answer and no history.
+
+**Option B: a repeatable lab report stage, multiple events per incoming result.** Every correction and amendment is
+its own event, so a reviewer sees what changed and when. The cost is that "the result" becomes a derived question:
+reports and program indicators have to pick the right event, usually the latest for a specimen, and that logic has to
+be written deliberately.
+
+**How to choose.** Ask how often your laboratory issues corrections, whether a reviewer needs to see that a value
+changed, and what you intend to report on. If turnaround time is a goal, both the request and the result need reliable
+dates. Decide up front which result counts for analytics — the first final one or the latest amendment — because your
+indicators depend on it.
+
+**What this reference implementation does.** A repeatable lab report stage holding **one event per incoming
+result, updated in place**. A report re-issued as a correction or amendment updates that same event rather than adding
+another, so the record shows the current answer; the status change is recorded in the event notes. The program shape
+this sits in — and the request stage that links to it — is described
+under [The DHIS2 program shape](#lab_interop_prereq_program_shape).
+
+## Adapting this reference implementation to your context { #lab_interop_adapting }
 
 As with other DHIS2 reference implementations, this one is a starting point rather than a drop-in solution. Every design
-decision above is an answer this implementation gave; where your answer differs, something has to change with it. The
-steps below follow those decisions. Configuration key names, and the full list of them, are in
+decision above is an answer this implementation gave; where your answer differs, a piece of it has to change with it.
+The pieces below are the ones that move most often, and what changing each of them actually costs. Configuration key
+names, and the full list of them, are in
 the [repository](https://github.com/dhis2/reference-dhis2-tracker-lab-result-integration).
 
-**Revisit your program design.** Start here, because everything else points at it: your own enrollment, request and
-result stages, whether the result stage is repeatable, and which result counts for analytics —
-see [Where the result lands in the DHIS2 data model](#lab_interop_decision_data_model). If you match on something other
-than a specimen ID, the request stage changes shape too — see the next step.
+One answer puts you outside this starting point altogether: if your surveillance is aggregate rather than case-based,
+the write targets data values rather than tracker events, and almost nothing below applies —
+see [Case-based or aggregate surveillance](#lab_interop_decision_granularity).
 
-**If you match on a person-level identifier.** The alternative described
-under [How a case is uniquely identified](#lab_interop_decision_identifier) is not a configuration change. Three parts of
-the integration have to be reworked:
+**Your program design.** Start here, because everything else points at it: your own enrollment, request and report
+stages, whether the report stage is repeatable, and which result counts for analytics —
+see [Where the result lands in the tracker data model](#lab_interop_decision_data_model). If you match on something
+other than a specimen ID, the request stage changes shape too.
+**What changing it means:** revisiting the transformation that writes into those stages, and the identifiers the
+integration is configured with — both below.
+
+**The metadata the integration points at.** It is configured with the identifiers of your program, your lab request and
+lab report stages, your specimen ID data element and the attribute carrying laboratory codes. These are the concrete
+expression of the program shape described under [The DHIS2 program shape](#lab_interop_prereq_program_shape).
+**What changing it means:** editing configuration values — no code, and nothing the team maintaining the integration
+has to do.
+
+**The terminology binding.** The codes your laboratories actually report, carried on your own data elements and option
+set values through that attribute, are what the lookup is built from. Adopting a different terminology touches the
+attribute itself, which is named for LOINC in the shipped configuration. Decide in advance what happens to a result
+whose code has no mapping, and give the mapping an owner —
+see [Which terminology to adopt](#lab_interop_decision_terminology_choice)
+and [Terminology and code mapping](#lab_interop_decision_terminology).
+**What changing it means:** editing DHIS2 metadata — an implementer can do it without involving the team maintaining
+the integration.
+
+**The transformation.** The script held in the DHIS2 datastore is written against this implementation's report stage
+and the resources the mock laboratory system produces. Yours has to match your own stage's data elements and what your
+laboratory system actually emits — see [Point-to-point or an interoperability layer](#lab_interop_decision_layer).
+**What changing it means:** editing a script in the datastore rather than rebuilding and redeploying the integration,
+which is the main reason the mapping is kept there.
+
+**What your laboratory system emits.** A HAPI FHIR server stands in for the laboratory here, producing exactly the
+resources the chosen implementation guide describes. A real system rarely does. If yours speaks FHIR with the same
+guide, only the address changes; if it emits HL7 v2, a proprietary API or a file export, a translation step has to sit
+between it and the integration —
+see [Which standard and implementation guide](#lab_interop_decision_standard).
+**What changing it means:** a configuration change at best, a translation component to build and run at worst — and
+that component, not the DHIS2-facing half, is where the work lands.
+
+**How results are triggered.** The integration polls on a schedule, which suits contexts where neither side can accept
+inbound connections. Where the laboratory can notify you instead, the scheduled poll is replaced by an endpoint you
+operate and a subscription on the laboratory side —
+see [How results reach DHIS2: push, poll or both](#lab_interop_decision_push_or_poll).
+**What changing it means:** setting an interval if you stay with polling; standing up, securing and operating a
+receiving endpoint if you move to push.
+
+**Failure handling for production.** What ships here is deliberately minimal: failures are logged, and a failed import
+is retried on the next cycle. There is no queue, no alerting and no explicit retry policy, and no adopter should run it
+that way — see [Handling unmatched and failed results](#lab_interop_decision_failures) for the gaps to close and who
+has to own them.
+**What changing it means:** building and operating what the reference implementation leaves out. This is not a
+country-specific variation; every adaptation does it.
+
+### If you match on a person-level identifier { #lab_interop_adapting_person_id }
+
+The alternative described under [How a case is uniquely identified](#lab_interop_decision_identifier) is not a
+configuration change. Three parts of the integration have to be reworked:
 
 * **How the laboratory is searched.** Today it searches on one specimen ID and expects one report. It would instead
   search on the person identifier, bounded by a date window, and sift the candidates itself.
@@ -482,41 +566,19 @@ the integration have to be reworked:
   which enrollment a result belongs to, for example — along with the review workload to staff and the results that will
   never resolve.
 
-**Point it at your own metadata.** The integration is configured with the identifiers of your program, your lab request
-and lab result stages, your specimen ID data element and the attribute carrying laboratory codes. All ship as demo
-values and must be replaced. These are the concrete expression of the program shape described
-under [The DHIS2 program shape](#lab_interop_prereq_program_shape); if that shape differs, expect to revisit them.
-
-**Bind your metadata to laboratory terminology.** Add the codes your laboratory actually reports to your own data
-elements and option set values, through that attribute, so the lookup can be built. Decide in advance what happens to a
-result whose code has no mapping, and give the mapping an owner —
-see [Terminology and code mapping](#lab_interop_decision_terminology).
-
-**Replace the transformation script.** The script held in the DHIS2 datastore is written against this implementation's
-result stage and the resources the mock laboratory system produces. Yours has to match your own stage's data elements
-and what your laboratory system actually emits. That it lives in the datastore rather than in code is the point — it is
-what lets you change this without involving the team that maintains the layer;
-see [Point-to-point or an interoperability layer](#lab_interop_decision_layer).
-
-**Swap in the real source system.** Point the integration at the real laboratory system. If it does not speak FHIR with
-the implementation guide you have chosen — an HL7 v2 or proprietary feed, for instance — the translation moves upstream
-and the DHIS2-facing half stays largely as it is;
-see [Which standard and implementation guide](#lab_interop_decision_standard).
-
-**Choose a polling interval.** Set it from your laboratory's actual turnaround times rather than from how responsive the
-demo feels. If your context can support push instead, the trigger changes and
-this setting stops mattering — see [How results reach DHIS2: push, poll or both](#lab_interop_decision_push_or_poll).
-
-**Set connection details and credentials.** The DHIS2 API base URL with a personal access token or a
-username and password, and the laboratory system's API URL. The shipped compose file uses well-known demo credentials;
-change them before this runs anywhere real.
+**What changing it means:** reworking three parts of the integration and building a review step that does not exist
+here — by some distance the most expensive change on this page.
 
 ## Resources { #lab_interop_resources }
 
 * [Laboratory interoperability reference implementation](https://github.com/dhis2/reference-dhis2-tracker-lab-result-integration) —
-  code, quick start, architecture diagram and configuration reference.
-* [Universal Laboratory Report Implementation Guide](https://build.fhir.org/ig/HL7/uv-lab-rep-ig/).
-* [DHIS2 Web API documentation](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html).
+  the code, quick start and configuration reference.
+* [Universal Laboratory Report Implementation Guide](https://build.fhir.org/ig/HL7/uv-lab-rep-ig/) — the FHIR profiles
+  used here.
+* [LOINC](https://loinc.org/) — codes naming the test performed.
+* [SNOMED International](https://www.snomed.org/licensing) — SNOMED CT licensing by country.
+* [DHIS2 Web API documentation](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html) —
+  the API the results are written through.
 * [DHIS2 documentation: tracked entity attributes as personal identifiers](https://docs.dhis2.org/en/implement/database-design/tracker-system-design/defining-the-tracked-entity.html#tracked-entity-attributes-as-personal-identifiers).
 
 **Questions and contributions.** Questions or feedback can be posted on
