@@ -491,83 +491,63 @@ under [The DHIS2 program shape](#lab_interop_prereq_program_shape).
 ## Adapting this reference implementation to your context { #lab_interop_adapting }
 
 As with other DHIS2 reference implementations, this one is a starting point rather than a drop-in solution. Every design
-decision above is an answer this implementation gave; where your answer differs, a piece of it has to change with it.
-The pieces below are the ones that move most often, and what changing each of them actually costs. Configuration key
-names, and the full list of them, are in
+decision above is an answer this implementation gave; where a different answer applies, a piece of it has to change with
+it. The table below is the whole section at a glance, in the order to work through it — each piece links to the part of
+the guide behind it, and is described underneath.
+
+| Piece                                                                       | Effort   | What it touches                                        | What changing it means                                                                         |
+|-----------------------------------------------------------------------------|----------|--------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| [The program design](#lab_interop_decision_data_model)                      | Medium   | Metadata, configuration, the transformation            | The stages change and everything pointing at them follows                                      |
+| [The matching key, if not a specimen ID](#lab_interop_decision_identifier)  | High     | Search, sync state, failure handling, a new review app | Three parts reworked and a confirmation step that does not exist here                          |
+| [The metadata the integration points at](#lab_interop_prereq_program_shape) | Low      | Configuration                                          | Replacing the metadata identifiers with local ones                                             |
+| [The terminology adopted](#lab_interop_decision_terminology_choice)         | Medium   | The codes themselves, and the binding below            | Agreeing a coding system and, where it is not free, licensing it                               |
+| [The terminology binding](#lab_interop_decision_terminology)                | Low      | DHIS2 metadata                                         | Editing attributes on data elements and options; no code                                       |
+| [What the laboratory system emits](#lab_interop_decision_standard)          | Low–High | The source side only                                   | An address change if it speaks the same guide; a translation component to build and run if not |
+| [The transformation](#lab_interop_decision_layer)                           | Medium   | The DHIS2 datastore                                    | Editing a script, not rebuilding and redeploying                                               |
+| [How results are triggered](#lab_interop_decision_push_or_poll)             | Medium   | Infrastructure to operate                              | An interval if polling stays; an endpoint to stand up and secure if push replaces it           |
+| [Failure handling](#lab_interop_decision_failures)                          | High     | New components and named owners                        | Building a failure handling and alert mechanism                                                |
+
+**The program design.** Start here, because everything else points at it: which stages the case record has, whether a
+case can carry more than one specimen and more than one result, and which result the indicators count. Matching on
+something other than a specimen ID changes the shape of the request stage too.
+
+**The matching key, if not a specimen ID.** Matching on something that identifies the person rather than the sample is
+not a setting to change. Three parts of the integration have to be rebuilt:
+
+* **How the laboratory is searched.** Today it asks for one specimen ID and expects one report back. It would instead
+  ask for everything belonging to a person within a date range, and work out which of those results is the one.
+* **How it remembers what it has already taken.** Today it does not need to: the specimen ID tells it. Without one, it
+  has to keep a record of the sync status itself.
+* **What happens when the match is unclear.** Today a result that belongs to nobody cannot arrive. Here it can, and so
+  can a result that fits two cases — so somebody has to be shown the candidates and asked to choose, for example in a
+  custom app or plugin that does not exist yet, with the workload that comes with it.
+
+**The metadata the integration points at.** It has to be told which program to work in, which stages hold the request
+and the report, which data element holds the identifier, and which attribute carries the laboratory codes. The
+configuration key names are in
 the [repository](https://github.com/dhis2/reference-dhis2-tracker-lab-result-integration).
 
-One answer puts you outside this starting point altogether: if your surveillance is aggregate rather than case-based,
-the write targets data values rather than tracker events, and almost nothing below applies —
-see [Case-based or aggregate surveillance](#lab_interop_decision_granularity).
+**The terminology adopted.** Which coding system names the tests and the results — an international one, a national or
+local list, or both with the local list mapped across. Licensing can settle this, and it is a legal and procurement
+question rather than a technical one, so establish where the country stands before any mapping work starts.
 
-**Your program design.** Start here, because everything else points at it: your own enrollment, request and report
-stages, whether the report stage is repeatable, and which result counts for analytics —
-see [Where the result lands in the tracker data model](#lab_interop_decision_data_model). If you match on something
-other than a specimen ID, the request stage changes shape too.
-**What changing it means:** revisiting the transformation that writes into those stages, and the identifiers the
-integration is configured with — both below.
+**The terminology binding.** The data elements and options have to carry the codes the laboratories actually report, so
+an arriving code can be looked up. Decide in advance what happens to a result whose code has no match, and give someone
+the job of keeping the mapping current as codes and test panels change.
 
-**The metadata the integration points at.** It is configured with the identifiers of your program, your lab request and
-lab report stages, your specimen ID data element and the attribute carrying laboratory codes. These are the concrete
-expression of the program shape described under [The DHIS2 program shape](#lab_interop_prereq_program_shape).
-**What changing it means:** editing configuration values — no code, and nothing the team maintaining the integration
-has to do.
+**What the laboratory system emits.** A stand-in server plays the laboratory here, producing exactly what the chosen
+implementation guide describes. A real system that produces the same thing needs only an address change; one that
+produces something else needs a translation step in between.
 
-**The terminology binding.** The codes your laboratories actually report, carried on your own data elements and option
-set values through that attribute, are what the lookup is built from. Adopting a different terminology touches the
-attribute itself, which is named for LOINC in the shipped configuration. Decide in advance what happens to a result
-whose code has no mapping, and give the mapping an owner —
-see [Which terminology to adopt](#lab_interop_decision_terminology_choice)
-and [Terminology and code mapping](#lab_interop_decision_terminology).
-**What changing it means:** editing DHIS2 metadata — an implementer can do it without involving the team maintaining
-the integration.
+**The transformation.** The rules that turn an arriving report into a DHIS2 event live in DHIS2 itself, not inside the
+integration's code. They have to match the local stages on one side and whatever the laboratory sends on the other.
 
-**The transformation.** The script held in the DHIS2 datastore is written against this implementation's report stage
-and the resources the mock laboratory system produces. Yours has to match your own stage's data elements and what your
-laboratory system actually emits — see [Point-to-point or an interoperability layer](#lab_interop_decision_layer).
-**What changing it means:** editing a script in the datastore rather than rebuilding and redeploying the integration,
-which is the main reason the mapping is kept there.
+**How results are triggered.** The integration asks the laboratory for new results on a schedule, which suits places
+where neither system can accept incoming connections. Where the laboratory can notify instead, the endpoint that
+receives those notifications has to be operated and secured.
 
-**What your laboratory system emits.** A HAPI FHIR server stands in for the laboratory here, producing exactly the
-resources the chosen implementation guide describes. A real system rarely does. If yours speaks FHIR with the same
-guide, only the address changes; if it emits HL7 v2, a proprietary API or a file export, a translation step has to sit
-between it and the integration —
-see [Which standard and implementation guide](#lab_interop_decision_standard).
-**What changing it means:** a configuration change at best, a translation component to build and run at worst — and
-that component, not the DHIS2-facing half, is where the work lands.
-
-**How results are triggered.** The integration polls on a schedule, which suits contexts where neither side can accept
-inbound connections. Where the laboratory can notify you instead, the scheduled poll is replaced by an endpoint you
-operate and a subscription on the laboratory side —
-see [How results reach DHIS2: push, poll or both](#lab_interop_decision_push_or_poll).
-**What changing it means:** setting an interval if you stay with polling; standing up, securing and operating a
-receiving endpoint if you move to push.
-
-**Failure handling for production.** What ships here is deliberately minimal: failures are logged, and a failed import
-is retried on the next cycle. There is no queue, no alerting and no explicit retry policy, and no adopter should run it
-that way — see [Handling unmatched and failed results](#lab_interop_decision_failures) for the gaps to close and who
-has to own them.
-**What changing it means:** building and operating what the reference implementation leaves out. This is not a
-country-specific variation; every adaptation does it.
-
-### If you match on a person-level identifier { #lab_interop_adapting_person_id }
-
-The alternative described under [How a case is uniquely identified](#lab_interop_decision_identifier) is not a
-configuration change. Three parts of the integration have to be reworked:
-
-* **How the laboratory is searched.** Today it searches on one specimen ID and expects one report. It would instead
-  search on the person identifier, bounded by a date window, and sift the candidates itself.
-* **Where sync state lives.** Today none is kept — what has already been imported is worked out from the result events
-  in DHIS2, see [How results reach DHIS2: push, poll or both](#lab_interop_decision_push_or_poll). With no specimen ID
-  to key on, the integration needs a store of its own.
-* **Failure handling and manual review.** Today an unmatched result cannot arise —
-  see [Handling unmatched and failed results](#lab_interop_decision_failures). Here ambiguous and unmatched results are
-  routine. Nothing resolves them automatically, so the build grows a confirmation step — a Capture app plugin that asks
-  which enrollment a result belongs to, for example — along with the review workload to staff and the results that will
-  never resolve.
-
-**What changing it means:** reworking three parts of the integration and building a review step that does not exist
-here — by some distance the most expensive change on this page.
+**Failure handling.** In this implementation, failures are written to a log and a failed import is tried again next
+time round. No queue or alerting mechanism in place.
 
 ## Resources { #lab_interop_resources }
 
