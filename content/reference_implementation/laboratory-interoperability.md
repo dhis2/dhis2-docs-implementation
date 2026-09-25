@@ -40,8 +40,9 @@ holds the case record that the laboratory result has to reach.
 
 This reference implementation covers **the flow of test results into DHIS2 — it does not cover placing test orders.**
 The scenario is that a specimen has already been collected and identified, the laboratory has processed it, and the
-result now needs to reach the correct record in DHIS2. Generating the specimen ID and placing the underlying laboratory
-order are assumed to have happened earlier in the surveillance workflow.
+result now needs to reach the correct record in DHIS2. Generating the identifier that links the two sides — here, a
+specimen ID — and placing the underlying laboratory order are assumed to have happened earlier in the
+surveillance workflow.
 
 ### This guide vs. the repository { #lab_interop_guide_vs_repository }
 
@@ -55,19 +56,12 @@ The two are meant to be read together, and they do different jobs:
 | What it assumes of your DHIS2 configuration before you start               | The preconfigured demo database and metadata                                              |
 | What to settle before go-live — ownership, error handling, data entry SOPs | Configuration, mapping files, and test scripts                                            |
 
-Detail this guide leaves out — configuration, mapping files, deployment — lives in the repository.
-
 ## How laboratory interoperability works { #lab_interop_how_it_works }
 
-Any laboratory results integration is built from the same four parts and moves data in the same shape, whatever
-technology sits behind it. This section describes that shape. What this reference implementation puts in each slot —
-which standard, which identifier, where the mapping lives, how the two sides talk to each other — is a series of
-choices, and each one is set out under [Design decisions](#lab_interop_design_decisions) alongside the alternatives it
-passed over.
-
-### The four moving parts { #lab_interop_components }
-
-Any laboratory result integration needs four things in place, whatever technology sits behind them:
+The same four parts turn up in every laboratory results integration, whatever technology sits behind it — and on their
+own they are not enough to make one work. What this reference implementation puts in each slot — which standard, which
+identifier, where the mapping lives, how the two sides talk to each other — is a series of choices, and each one is set
+out under [Design decisions](#lab_interop_design_decisions) alongside the alternatives it passed over.
 
 * **A destination** — the system holding the case record the result has to reach, and the reason the integration
   exists at all. In this guide, DHIS2.
@@ -75,43 +69,34 @@ Any laboratory result integration needs four things in place, whatever technolog
   specimen, in a form other systems can consume. In production, the LIS.
 * **A shared way of structuring the result** — an agreed structure, ideally backed by an existing standard, that both
   sides understand, so that any system producing results in that shape can be consumed without a bespoke integration
-  per laboratory. See [Which standard and implementation guide](#lab_interop_decision_standard).
+  per laboratory.
 * **Something that moves the result between them** — the component that fetches the result, transforms it, and writes
   it into the destination. This is the part implementers have to build or configure, and where most of the decisions
-  below land. Whether it exists as a component of its own is covered
-  in [Point-to-point or an interoperability layer](#lab_interop_decision_layer).
+  below land.
 
 None of these roles is tied to a particular product. Swapping in a different laboratory system, a different results
 standard, or a different destination changes how each part is implemented, not the shape of the integration.
 
-### The shape of the flow { #lab_interop_flow }
+![A case is registered in DHIS2 and given an identifier the laboratory will also see. The laboratory processes the specimen and produces a result in the agreed format, carrying that same identifier. The result is matched back by that identifier and written to the case record.](resources/images/lab-interop-flow.png)
 
-Whatever standard, laboratory system or middleware a country ends up with, the data moves in the same shape. A case is
-registered in DHIS2 and associated with an identifier that the laboratory will also see. The laboratory processes the
-specimen and produces a result, structured according to the agreed format and carrying that same identifier. The result
-is then matched back to the right record using that identifier and written into the relevant program.
-
-Moving the result is a three-step pipeline:
-
-1. **Fetch** the result from the laboratory system once it's ready.
-2. **Transform** it into the shape DHIS2 expects.
-3. **Write** it into the correct record via the DHIS2 API.
-
-Two things have to be settled before any of it can run, and the pipeline itself supplies neither: what that shared
-identifier is — see [How a case is uniquely identified](#lab_interop_decision_identifier) — and who holds the queue of
-outstanding work, the laboratory system, the middleware, or DHIS2 —
-see [How results reach DHIS2: push, poll or both](#lab_interop_decision_push_or_poll).
+Moving the result is a three-step pipeline: **fetch** it from the laboratory system once it's ready, **transform** it
+into the shape DHIS2 expects, and **write** it into the correct record. Two things have to be settled before any of it
+can run, and the pipeline itself supplies neither: what that shared identifier is —
+see [How a case is uniquely identified](#lab_interop_decision_identifier) — and who holds the queue of outstanding
+work, the laboratory system, the middleware, or DHIS2.
 
 ## Prerequisites and assumptions { #lab_interop_prerequisites }
 
 This reference implementation takes a few things as given. Where they don't hold in your context, that work comes before
 the integration is useful to you.
 
-### A specimen ID mechanism { #lab_interop_prereq_specimen_id }
+### A shared identifier { #lab_interop_prereq_specimen_id }
 
-It assumes your implementation already has a way of assigning a **specimen ID**. How that ID is generated or assigned is
-outside the scope of this guide; the results workflow is built on top of it. That reliance brings three conditions with
-it:
+The two sides have to agree on an identifier that travels with the result and links it back to a case. Which identifier
+that is, is a design decision in its own right —
+see [How a case is uniquely identified](#lab_interop_decision_identifier). This reference implementation uses a
+**specimen ID**, and assumes the implementation already has a way of assigning one. How that ID is generated is outside
+the scope of this guide; the results workflow is built on top of it. That reliance brings three conditions with it:
 
 * The specimen ID must exist in DHIS2 before the result arrives — captured in the surveillance program prior to
   synchronisation.
@@ -120,8 +105,7 @@ it:
   on the same specimen ID.
 
 This implementation takes the specimen ID as unique and correct — it does not detect or resolve duplicate or malformed
-IDs. The specimen ID is not the only possible way to link a result back to a case, and the choice is a design decision
-in its own right — see [How a case is uniquely identified](#lab_interop_decision_identifier).
+IDs.
 
 ### The DHIS2 program shape { #lab_interop_prereq_program_shape }
 
