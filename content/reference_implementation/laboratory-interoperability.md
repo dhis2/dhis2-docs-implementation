@@ -35,7 +35,7 @@ around laboratory workflow, tracking a specimen from intake through testing to r
 available to the staff and clinicians who rely on it.
 
 On the DHIS2 side, the scenario is
-an [integrated surveillance and outbreak response system](https://dhis2.org/events/africa-cdc-toolkit-ebola/): DHIS2
+an integrated surveillance and outbreak response system inspired by the [Africa CDC Toolkit for Surveillance and Outbreak Response](https://dhis2.org/events/africa-cdc-toolkit-ebola/): DHIS2
 holds the case record that the laboratory result has to reach.
 
 This reference implementation covers **the flow of test results into DHIS2 — it does not cover placing test orders.**
@@ -119,10 +119,12 @@ case record. This is a common shape in case-based surveillance programs, but a m
 
 ![The case surveillance program the reference implementation ships with, from enrollment through to case classification and outcome. Only the lab request and lab report stages take part in the integration; the others carry the rest of the surveillance workflow.](resources/images/case-surveillance-program.png)
 
-Both the request and report stages are repeatable, so one case can carry several specimens, each with its own thread of
-results. Each result event carries the specimen ID data element — that, and nothing else in the payload, is what puts
-the result on the right record, which is also why the specimen ID is mandatory on the request stage. Once a matching
-report exists, the lab report form is populated for the surveillance officer to review; no human intervention is needed.
+Both the lab request and report stages are repeatable, so one case can carry several specimens, each with its own laboratory result.
+The result itself is written against the enrollment and event it belongs to. The specimen ID does two other jobs: it is what the
+laboratory is searched on, and it is how a returning correction is recognised as belonging to a report already imported
+rather than as a new one — which is why it is mandatory on the request stage, and why every result event carries it
+as a data value. Once a matching report exists, the lab report form is populated for the surveillance officer to
+review; no human intervention is needed.
 
 ### Completion as the trigger { #lab_interop_prereq_completion }
 
@@ -161,14 +163,12 @@ maintains the integration next as the code is.
 result belongs to a named case, or an aggregate one, where results are counted. This is the first decision because it
 settles whether matching is needed at all, and matching is where most of the cost of laboratory interoperability sits.
 
-**Option A: case-based surveillance, into Tracker.** Each result belongs to an individual case record. Necessary when a
+**Option A: case-based surveillance, into tracker.** Each result belongs to an individual case record. Necessary when a
 named case needs its result — case management, contact tracing, clinical follow-up, line-listed reporting. Every
 decision that follows about identifiers and matching applies, and this is where the effort goes.
 
 **Option B: aggregate surveillance, into a data set.** Results arrive as counts by facility and period rather than as
-individual records. Matching disappears entirely, and usually so do patient identifiers crossing the boundary. The
-pipeline is still fetch, transform and write, but the hard parts move rather than vanish: aligning periods, mapping the
-laboratory's organisation units onto the DHIS2 hierarchy, and making re-runs safe so figures are not double counted.
+individual records. Matching disappears entirely, and usually so do patient identifiers crossing the boundary.
 
 **Option C: case-based in, aggregate out.** Import individual results into Tracker for case management and derive
 aggregate reporting from them inside DHIS2. Often the right end state, but only once the case-based path is justified on
@@ -179,9 +179,9 @@ surveillance program actually does with a result: if someone has to act on a nam
 requirement is genuinely counts, a periodic extract from the LIS — or a routine report entered by laboratory staff —
 may satisfy it at a fraction of the cost and with none of the matching risk.
 
-**What this reference implementation does.** **Case-based surveillance.** It is built around a case surveillance
-program in Tracker, where a result has to reach the record of one identified case — which is why every decision below
-is framed in those terms. One result event per specimen, matched to a specific enrollment.
+**What this reference implementation does.** **Case-based surveillance.** It is built around a case-based surveillance
+program into tracker data model, where a laboratory result has to reach the record of one identified case — which is why every decision below
+is framed in those terms.
 
 ### 2. How a case is uniquely identified { #lab_interop_decision_identifier }
 
@@ -348,10 +348,11 @@ check for lab requests left open past a plausible turnaround time, handling for 
 about, and a named owner for the error log.
 
 **What this reference implementation does.** It is driven from DHIS2's lab requests and only asks the laboratory about
-specimen IDs it already knows, so every report it fetches already has a lab request to land on. Within that boundary: an
-empty specimen ID is skipped; an incomplete lab request is passed over; a specimen with no report yet is reconsidered on
-the next cycle; a correction updates the result event in place. Imports are checked and logged, and a failed import
-retries on the next cycle. Visibility is the logs.
+specimen IDs it already knows, so every report it fetches already has a lab request to land on. That boundary rests on
+the specimen ID being unique: it expects at most one report per specimen ID, and its behaviour is undefined if the
+laboratory returns more than one. Within that boundary: an empty specimen ID is skipped; an incomplete lab request is
+passed over; a specimen with no report yet is reconsidered on the next cycle; a correction updates the result event in
+place. Imports are checked and logged, and a failed import retries on the next cycle. Visibility is the logs.
 
 ### 7. Which standard and implementation guide { #lab_interop_decision_standard }
 
