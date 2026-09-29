@@ -469,7 +469,7 @@ indicators depend on it.
 
 **What this reference implementation does.** A repeatable lab report stage holding **one event per incoming
 result, updated in place**. A report re-issued as a correction or amendment updates that same event rather than adding
-another, so the record shows the current answer; the status change is recorded in the event notes. The program shape
+another, so the record shows the current answer; the status change is recorded in the event notes and in the tracker change log. The program shape
 this sits in — and the request stage that links to it — is described
 under [The DHIS2 program shape](#lab_interop_prereq_program_shape).
 
@@ -480,23 +480,23 @@ decision above is an answer this implementation gave; where a different answer a
 it. The table below is the whole section at a glance, in the order to work through it — each piece links to the part of
 the guide behind it, and is described underneath.
 
-| Piece                                                                       | Effort   | What it touches                                        | What changing it means                                                                         |
-|-----------------------------------------------------------------------------|----------|--------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| [The program design](#lab_interop_decision_data_model)                      | Medium   | Metadata, configuration, the transformation            | The stages change and everything pointing at them follows                                      |
-| [The matching key, if not a specimen ID](#lab_interop_decision_identifier)  | High     | Search, sync state, failure handling, a new review app | Three parts reworked and a confirmation step that does not exist here                          |
-| [The metadata the integration points at](#lab_interop_prereq_program_shape) | Low      | Configuration                                          | Replacing the metadata identifiers with local ones                                             |
-| [The terminology adopted](#lab_interop_decision_terminology_choice)         | Medium   | The codes themselves, and the binding below            | Agreeing a coding system and, where it is not free, licensing it                               |
-| [The terminology binding](#lab_interop_decision_terminology)                | Low      | DHIS2 metadata                                         | Editing attributes on data elements and options; no code                                       |
-| [What the laboratory system emits](#lab_interop_decision_standard)          | Low–High | The source side only                                   | An address change if it speaks the same guide; a translation component to build and run if not |
-| [The transformation](#lab_interop_decision_layer)                           | Medium   | The DHIS2 datastore                                    | Editing a script, not rebuilding and redeploying                                               |
-| [How results are triggered](#lab_interop_decision_push_or_poll)             | Medium   | Infrastructure to operate                              | An interval if polling stays; an endpoint to stand up and secure if push replaces it           |
-| [Failure handling](#lab_interop_decision_failures)                          | High     | New components and named owners                        | Building a failure handling and alert mechanism                                                |
+| Piece                                                                        | Effort   | What it touches                                        | What changing it means                                                                         |
+|------------------------------------------------------------------------------|----------|--------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| [Program design](#lab_interop_decision_data_model)                           | Medium   | Metadata, configuration, the transformation            | The stages change and everything pointing at them follows                                      |
+| [Matching attribute, if not a specimen ID](#lab_interop_decision_identifier) | High     | Search, sync state, failure handling, a new review app | Three parts reworked and a confirmation step that does not exist here                          |
+| [Metadata the integration points at](#lab_interop_prereq_program_shape)      | Low      | Configuration                                          | Replacing the metadata identifiers with local ones                                             |
+| [Terminology adopted](#lab_interop_decision_terminology_choice)              | Medium   | The codes themselves, and the binding below            | Agreeing a coding system and, where it is not free, licensing it                               |
+| [Terminology binding](#lab_interop_decision_terminology)                     | Low      | DHIS2 metadata                                         | Editing attributes on data elements and options; no code                                       |
+| [What the laboratory system emits](#lab_interop_decision_standard)           | Low–High | The source side only                                   | An address change if it speaks the same guide; a translation component to build and run if not |
+| [Data transformation](#lab_interop_decision_layer)                           | Medium   | The DHIS2 datastore                                    | Editing a script, not rebuilding and redeploying                                               |
+| [How results are triggered](#lab_interop_decision_push_or_poll)              | Medium   | Infrastructure to operate                              | An interval if polling stays; an endpoint to stand up and secure if push replaces it           |
+| [Failure handling](#lab_interop_decision_failures)                           | High     | New components and named owners                        | Building a failure handling and alert mechanism                                                |
 
-**The program design.** Start here, because everything else points at it: which stages the case record has, whether a
+**Program design.** Start here, because everything else points at it: which stages the case record has, whether a
 case can carry more than one specimen and more than one result, and which result the indicators count. Matching on
 something other than a specimen ID changes the shape of the request stage too.
 
-**The matching key, if not a specimen ID.** Matching on something that identifies the person rather than the sample is
+**Matching attribute, if not a specimen ID.** Matching on something that identifies the person rather than the sample is
 not a setting to change. Three parts of the integration have to be rebuilt:
 
 * **How the laboratory is searched.** Today it asks for one specimen ID and expects one report back. It would instead
@@ -507,16 +507,16 @@ not a setting to change. Three parts of the integration have to be rebuilt:
   can a result that fits two cases — so somebody has to be shown the candidates and asked to choose, for example in a
   custom app or plugin that does not exist yet, with the workload that comes with it.
 
-**The metadata the integration points at.** It has to be told which program to work in, which stages hold the request
+**Metadata the integration points at.** It has to be told which program to work in, which stages hold the request
 and the report, which data element holds the identifier, and which attribute carries the laboratory codes. The
 configuration key names are in
 the [repository](https://github.com/dhis2/reference-dhis2-tracker-lab-result-integration).
 
-**The terminology adopted.** Which coding system names the tests and the results — an international one, a national or
+**Terminology adopted.** Which coding system names the tests and the results — an international one, a national or
 local list, or both with the local list mapped across. Licensing can settle this, and it is a legal and procurement
 question rather than a technical one, so establish where the country stands before any mapping work starts.
 
-**The terminology binding.** The data elements and options have to carry the codes the laboratories actually report, so
+**Terminology binding.** The data elements and options have to carry the codes the laboratories actually report, so
 an arriving code can be looked up. Decide in advance what happens to a result whose code has no match, and give someone
 the job of keeping the mapping current as codes and test panels change.
 
@@ -524,7 +524,7 @@ the job of keeping the mapping current as codes and test panels change.
 implementation guide describes. A real system that produces the same thing needs only an address change; one that
 produces something else needs a translation step in between.
 
-**The transformation.** The rules that turn an arriving report into a DHIS2 event live in DHIS2 itself, not inside the
+**Data transformation.** The rules that turn an arriving report into a DHIS2 event live in DHIS2 itself, not inside the
 integration's code. They have to match the local stages on one side and whatever the laboratory sends on the other.
 
 **How results are triggered.** The integration asks the laboratory for new results on a schedule, which suits places
