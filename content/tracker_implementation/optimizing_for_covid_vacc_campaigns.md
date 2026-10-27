@@ -5,10 +5,11 @@ This document describes approaches to optimizing performance for large-scale DHI
 ## Executive summary
 > **Server**
 >
-> * Appropriate software versions are used:
-> 	* JDK11
->	* PostgreSQL 12 or 13
->	* DHIS2 version 2.35 or later, latest available patch
+> * Appropriate software versions are used, as listed in the
+> [software requirements](https://docs.dhis2.org/en/manage/manage.html#install_software_requirements):
+> 	* JDK 17
+>	* PostgreSQL 16
+>	* A supported DHIS2 version, latest available patch
 > * Server monitoring is set up. Recommended: munin, glowroot
 > * Server is appropriately sized. For covax, at least:
 > 	* 32 CPU cores
@@ -28,10 +29,11 @@ This document describes approaches to optimizing performance for large-scale DHI
 > 	* Alternative: Set up a text only/information landing dashboard that excludes tracker analytics to minimize impact. Limit dashboards based on program indicators only to those users/users groups who need them for analytical purposes (e.g. not for general data entry users)
 > * Enable analytics cache
 > * Do not use continuous analytics
-> * Tracker: Disable the "Display front page list" check in the
-> program details.
-> * Apply custom database indexes for frequently searched TEI
-> attributes.
+> * Tracker: Set "Start page in web Capture app" to "Search form"
+> ("Display front page list" in the Maintenance app) in the program details.
+> * Enable trigram indexing for frequently searched TEI attributes.
+> * Ensure custom apps and integrations follow the
+> [tracker API performance guidance](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_performance).
 > * Ensure that system generated attributes don't use RANDOM pattern
 >
 >
@@ -45,7 +47,7 @@ This document describes approaches to optimizing performance for large-scale DHI
 > **Implementation Strategies**
 >
 > * Ensure there is an aggregate configuration available for reporting (e.g. daily reporting based on tally sheets) that can be used routinely, or as a back-up in the case of lag time in Tracker data entry during high-volume periods (e.g. COVAC Aggregate Package)
-> 16. Use the latest COVID-19 Immunization/EIR tracker package and related aggregate datasets (for serving the dashboard) as a reference; though we do not recommend 'updating' a package that has already been substantially customized for the country. 
+> * Use the latest COVID-19 Immunization/EIR tracker package and related aggregate datasets (for serving the dashboard) as a reference; though we do not recommend 'updating' a package that has already been substantially customized for the country. 
 
 
 ## Background
@@ -65,10 +67,10 @@ The primary audience for section are system administrators supporting MOH with t
 
 ### General Guidance
 
-* Substantial performance improvements were introduced from V 2.35. We strongly recommend upgrading tracker instances to the latest patch version of 2.35 or 2.36, where performance improvements have also been added in the point releases. 
+* Tracker performance improves with every release, including in patch releases. We strongly recommend running tracker instances on the latest patch version of a supported DHIS2 release. See the [release notes](https://github.com/dhis2/dhis2-releases) for the tracker performance improvements in each release.
 * We strongly recommend to set up a server monitoring tool to identify when and why your server is struggling 	
 	* Some recommendations include [https://glowroot.org](https://glowroot.org/) and 	[https://munin-monitoring.org](https://munin-monitoring.org/) 
-	* Here is a [tutorial for installing glowroot on DHIS2](https://github.com/dhis2/dhis2-docs/blob/glowroot-tutorial/src/tutorials/glowroot.md)
+	* Here is a [tutorial for installing glowroot on DHIS2](https://docs.dhis2.org/en/topics/tutorials/performance-monitoring-with-glowroot.html)
 
 ### Analytics Performance
 
@@ -136,36 +138,26 @@ e. In tests of program indicators from the COVAC package, program indicators of 
 	* It uses the reserved values table in the database to keep track of which values have been distributed already. This table has been known to be a pain point during tracker import.
 	* Note for implementations that use Android: reserving values to the devices for offline use may affect the user's perception of SEQUENTIAL generation as documented here: [https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id)
 
-* In early versions of the COVID-19 vaccine registry, some working lists caused performance issues. These were removed from the packages in the COVID IER package V 1.1.2. If you experience that tracker is showing slow load times, this may be related to the working lists and a large number of TEIs in one org unit. A solution is to disable the "Display front page list" check in the program details (this has the downside of also disabling working lists)
+* In early versions of the COVID-19 vaccine registry, some working lists caused performance issues. These were removed from the packages in the COVID IER package V 1.1.2. If you experience that tracker is showing slow load times, this may be related to the working lists and a large number of TEIs in one org unit. A solution is to set **Start page in web Capture app** to **Search form** in the program details (called **Display front page list** in the Maintenance app; this has the downside of also disabling working lists)
 
-* Searches on TEIs on attributes (especially non-unique ones like firstName, surname, phoneNumber) can significantly improve by adding partial trigram indexes for that particular tracked entity attribute. This has been done in Nigeria and Rwanda and the performance improvement was huge. This is yet to be added into the core, so implementations will have to create them manually for now. For adding trigram indexes and compounding it with primitive column types, two extensions have to be created. The extensions are already part of the default posgresql installation. Extensions:
+* Searches on TEIs on attributes (especially non-unique ones like firstName, surname, phoneNumber) can significantly improve with partial trigram indexes for that particular tracked entity attribute. This has been done in Nigeria and Rwanda and the performance improvement was huge. DHIS2 creates and maintains these indexes with the [tracker trigram index maintenance job](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html#scheduling_tracker_index_maintenance). In DHIS2 2.43 and later, select **Mark for trigram indexing** on the attributes that are used heavily during searches instead of creating these indexes manually. A trigram index is only used if the search string has at least 3 characters, so set **Minimum characters required to search** to 3 on these attributes.
 
-```
-create extension pg_trgm;
-create extension btree_gin;
-```
-
-Index example for trackedentityattributeid 1234 (eg: PhoneNumber). Has to be repeated for every attribute that is used heavily during searches (firstname, surname, etc)
-```
-create index concurrently in_gin_teavalue_1234 ON trackedentityattributevalue 
-using gin (trackedentityinstanceid,lower(value) gin_trgm_ops) 
-where trackedentityattributeid = 1234;
-```
-
-* Similarly, trigram indexes will also help if the system searches based on event data values. Nigeria had their QR code for completed vaccinations as an event data value which they searched on heavily (eg: passengers qr code checked before boarding). Depending on search patterns for the specific implementation's configuration, this trigram index can also be applied. Not all implementations will need this. Assuming the extensions mentioned above are already created, an example index creation for a data element (uid=​​LavUrktwH5D, qrCode), attached to a programstage. The dataelementid=233047 and programstageid=64527 in this example.
+* Similarly, trigram indexes will also help if the system searches based on event data values. Nigeria had their QR code for completed vaccinations as an event data value which they searched on heavily (eg: passengers qr code checked before boarding). DHIS2 does not create these indexes, so depending on search patterns for the specific implementation's configuration, implementations have to create them manually. Not all implementations will need this. Index example for a data element with uid `LavUrktwH5D` (qrCode):
 
 ```
-create index concurrently in_gin_psi_edv_64527_233047 on > programstageinstance 
+create extension if not exists pg_trgm;
+
+create index concurrently in_gin_trackerevent_edv_lavurktwh5d on trackerevent
 using gin (lower(eventdatavalues #>> '{LavUrktwH5D, value}') gin_trgm_ops);
 ```
 
-* Usage of custom apps can have a positive or negative impact on performance. The apps can be a way of making more targeted functioanlity that prevents extra clicks and calls to the API. They are also a source of caution, and we have seen some custom apps use API functionalities that cause unnecessary stress on the system. Parameters to skip paging, counting the number of results in the paging, using LIKE operator to compare when EQ(equals) is more suitable are some of the notable culprits that cause some stress. If LIKE operator is used with unique attributes, trigram index as mentioned above should be created for it. SkipPaging should always be avoided. When using paging, the totalPages should always be avoided, as it makes the DB query get the full count of records to count them, instead of only fetching the given page. If feasible, a searchString minimum limit of 3 characters should be enforced on searchable attributes. Nigeria had a custom app that enforced the 3 character minimum search limit on the app side and that helped alleviate several heavy queries. Trigram indexes will only be used by the query optimizer if the search string has at least 3 characters.
+The `trackerevent` table exists since DHIS2 2.43. In 2.41 and 2.42 the table is called `event`, in earlier versions `programstageinstance`.
+
+* Usage of custom apps can have a positive or negative impact on performance. The apps can be a way of making more targeted functionality that prevents extra clicks and calls to the API. They are also a source of caution, and we have seen some custom apps use API functionalities that cause unnecessary stress on the system, such as disabling paging, requesting total page counts, or using the `like` operator where `eq` would do. Custom apps, integration middleware and external scripts using the tracker API should follow the [tracker API performance guidance](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_performance). If feasible, enforce a minimum search string length of 3 characters on searchable attributes. Nigeria had a custom app that enforced this on the app side and that helped alleviate several heavy queries.
 
 > **Note**
 >
-> The calls made by custom apps need extra attention, as the calls might be constructed in a way that has not been well tested and proven to be performant. The list of common performance culprits provided here is not exhaustive. It is important to have monitoring in place and keep an extra eye on the calls made from custom apps, integration middleware and external scripts.
-
-* Tracker Capture App updates event data values individually. In highly concurrent environment, this can cause database row level locking and waiting. Sri Lanka created a Custom Tracker Capture App using the core Tracker Capture App as a baseline. In the Custom App, they changed the flow so that all event data values are updated together in a single API on user clicking "Save and Complete". The button was "Complete" in the original core app. If the supporting HISP groups/administrators/implementers have the necessary skillset, they can maybe look into doing the same.
+> The calls made by custom apps need extra attention, as the calls might be constructed in a way that has not been well tested and proven to be performant. It is important to have monitoring in place and keep an extra eye on the calls made from custom apps, integration middleware and external scripts.
 
 ### User Management
 
@@ -305,7 +297,7 @@ There are two fundamental requirements related to server hosting:
 
 ### Server specifications
 
-As indicated in the documentation on server [specifications](https://docs.dhis2.org/en/manage/performing-system-administration/dhis-core-version-237/installation.html#install_server_specifications), "DHIS2 scales linearly on the amount of RAM and number of CPU cores so the more you can afford, the better the application will perform". Covax implementations, generally targeting the total adult population of a country, will be large-scale even in smaller countries. Exact requirements will vary depending on the expected number of users and TEIs, but 32GB RAM and 32 CPUs could be considered a starting point for all but the smallest implementations. All implementations should be prepared to upgrade the hardware to support changing scale and growing data.
+As indicated in the documentation on server [specifications](https://docs.dhis2.org/en/manage/manage.html#install_server_specifications), "DHIS2 scales linearly on the amount of RAM and number of CPU cores so the more you can afford, the better the application will perform". Covax implementations, generally targeting the total adult population of a country, will be large-scale even in smaller countries. Exact requirements will vary depending on the expected number of users and TEIs, but 32GB RAM and 32 CPUs could be considered a starting point for all but the smallest implementations. All implementations should be prepared to upgrade the hardware to support changing scale and growing data.
 
 SSD/disk performance is also critical for the overall performance, heavily influencing key activities such as searching for TEIs and analytics. The documentation suggests that "Minimum read speed is 150 Mb/s, 200 Mb/s is good, 350 Mb/s or better is ideal." Real disk performance can also be assessed by looking at disk latency. You can see these figures on munin, a simple one off assessment can be done with dd:
 
@@ -325,21 +317,21 @@ Special consideration must be taken when the server is hosted in a shared, virtu
 
 ### Installation and configuration
 
-It is important to ensure that the right software versions are used to optimise performance:
+It is important to ensure that the right software versions are used to optimise performance, as listed in the [software requirements](https://docs.dhis2.org/en/manage/manage.html#install_software_requirements):
 
-- JDK11
-- PostgreSQL version 12 or 13
-- DHIS2 version 2.35 or later, **the latest available patch version**
+- JDK 17
+- PostgreSQL 16
+- A supported DHIS2 version, **the latest available patch version**
 
 Tomcat needs to be configured with enough memory. This will depend on the total available memory of the server, and whether this is shared with postgresql or if the database is running on a separate server. With a DHIS2 superuser account, you can verify the tomcat memory configuration by opening "About DHIS2" and looking at the "Memory info" field:
 
 ![](resources/images/covax_perf_image7.png)
 
-It is also critically important to configure postgresql correctly for good performance. Instructions for this are available in the [server documentation](https://docs.dhis2.org/en/manage/performing-system-administration/dhis-core-version-237/installation.html#install_postgresql_performance_tuning).
+It is also critically important to configure postgresql correctly for good performance. Instructions for this are available in the [server documentation](https://docs.dhis2.org/en/manage/reference/postgresql.html#install_postgresql_performance_tuning).
 
 ### Server monitoring
 
-We strongly recommend setting up a server monitoring tool to identify when and why your server is struggling. Key performance metrics should be monitored eg. RAM, CPU, disk performance on all nodes and application specific measures on proxy, database and tomcat. Some recommendations include [https://glowroot.org](https://glowroot.org/) and [https://munin-monitoring.org](https://munin-monitoring.org/). A [tutorial for installing glowroot on DHIS2](#glowroot_tutorial) has been written to support this.
+We strongly recommend setting up a server monitoring tool to identify when and why your server is struggling. Key performance metrics should be monitored eg. RAM, CPU, disk performance on all nodes and application specific measures on proxy, database and tomcat. Some recommendations include [https://glowroot.org](https://glowroot.org/) and [https://munin-monitoring.org](https://munin-monitoring.org/). A [tutorial for installing glowroot on DHIS2](https://docs.dhis2.org/en/topics/tutorials/performance-monitoring-with-glowroot.html) has been written to support this.
 
 Other options which might require more configuration but allow significant customisation include prometheus/grafana and the ELK stack.
 
