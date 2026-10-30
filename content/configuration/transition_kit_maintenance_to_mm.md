@@ -1,32 +1,19 @@
 # Transition Kit - Maintenance app to the Metadata Management app { #mmchg_whats_changed }
 
-<!--
-DRAFT. Built from the "dhis-core-version-master" user guide pages for both apps and checked on
-play.im.dhis2.org/stable-2-43-2 on 14 Oct 2026.
-Screenshots: Chrome, 1440x900 viewport, stored in images/MAINT_MM/.
-Section ids use the prefix mmchg_ to avoid clashes with the mm_ ids in the Metadata Management app chapter.
-
-Still to verify before publishing:
-- PDF data entry form download: confirm it is not available anywhere in the app.
-- Bulk Delete: confirm the confirmation step.
-- App version used for the check (fill in below).
-Still to capture:
-- Merge screen (needs a user with merge authorities).
--->
-
-## Who is this transition document for? { #mmchg_audience }
+## Who is this transition kit for? { #mmchg_audience }
 
 If you configure metadata in DHIS2 and you are used to the Maintenance app, then note that the Metadata Management app replaces it. This page lists what is new, what works differently, and what you still need the Maintenance app for.
 
 - The Metadata Management app is installed from the DHIS2 App Hub.
 - It works with DHIS2 version 41 and above.
 - It is released continuously. New sections and features arrive often, so update the app from the App Hub before you report something as missing or non-functional.
+- The maintenance app is no longer being supported, so plan accordingly
 
 > **Note**
 >
 > This page covers the differences between the maintenance app and the metadata management app. For full instructions, see [Configure metadata (Metadata Management app)](#metadata_management_app).
 
-## The Metadata Management app { #mmchg_overview }
+## The Metadata Management app { #mmchg_overview }  
 
 The left sidebar lists every metadata object you can manage in this app. The overview page shows a card for each object type, with **Add new** and **Manage** buttons.
 
@@ -51,7 +38,7 @@ The left sidebar lists every metadata object you can manage in this app. The ove
 | Push reports (push analysis) | Available | Not available | Use the Maintenance app |
 | External map layers | Available | Not available, planned to move to the Maps app | Use the Maintenance app |
 
-## What is new { #mmchg_new }
+## What's new { #mmchg_new }
 
 ### All metadata view { #mmchg_all_metadata }
 
@@ -74,9 +61,9 @@ Select several objects in a list with the checkboxes. A bar appears above the li
 
 ![Update sharing dialog for four selected items](images/MAINT_MM/mm-bulk-sharing-dialog.png)
 
-> **Work In Progress**
+> **Note**
 >
-> Editing or removing existing sharing settings in bulk is not yet available.
+> Editing or removing existing sharing settings in bulk is not yet available; however further improvements are planned.
 
 > **Warning**
 >
@@ -92,10 +79,14 @@ You choose which filters to show with **Manage View** > **Filters**. See [Lists:
 
 ### Merge duplicate metadata { #mmchg_merge }
 
-Merge combines duplicate objects into one. All references to the source objects move to the target object. The source objects are then deleted.
+Merge combines duplicate objects into one. All references to the source objects move to the target object. The source objects and data can be kept or deleted depending on user selection.
 
-- The Metadata Management app chapter lists merge for: categories, category combinations, category option combinations, category options, data elements, indicators, indicator types and organisation units.
-- Each object type needs its own merge authority. For example, category options need `F_CATEGORY_OPTION_MERGE`. Without it, the merge page shows an error.
+- You can merge the following metadata objects: categories, category combinations, category option combinations, category options, data elements, indicators, indicator types and organisation units.
+- Each object type has its own merge authority. For example, category options and categories each have their own seperate merge authority. Without it, the merge page shows an error. In order for a user to perform that merge, assign the user authority to a user role assigned to them. 
+
+>**Caution**
+>
+>It is recommended that a seperate merge role is created to allow for explicit control over who has these authorites.
 
 ![Error shown when the user does not have the F_CATEGORY_OPTION_MERGE authority](images/MAINT_MM/mm-merge-authority.png)
 
@@ -158,7 +149,7 @@ For details, see [Using a transfer list component](#mm_transfer_list_component).
 
 ### Group membership { #mmchg_group_membership }
 
-The Maintenance app had a separate screen for editing groups in bulk. The Metadata Management app does not have this screen and it is not planned. Instead:
+The Maintenance app had a separate screen for editing groups in bulk. The Metadata Management app does not have this screen. Instead:
 
 - One object into many groups: open the object (for example a data element) and assign it to groups.
 - Many objects into one group: open the group (for example a data element group) and assign the members.
@@ -209,18 +200,11 @@ Programs and data approval are in the app's sidebar. They are documented separat
 |---|---|---|
 | Push reports | Not available in the Metadata Management app | Keep using the Maintenance app. See [Manage push reports](#manage_push_report). |
 | External map layers | Planned to move to the Maps app | Keep using the Maintenance app until then. See [Manage external map layers](#manage_external_maplayer). |
-| PDF data entry forms | Not in the data set options menu | Check if another app covers this on your instance. |
+| PDF data entry forms | Not in the data set options menu | Keep using the maintenance app. |
 
 > **Important**
 >
 > Do not uninstall or hide the Maintenance app if your instance uses any of these.
-
-## Checklist for system administrators { #mmchg_admin_checklist }
-
-- Install or update the Metadata Management app from the App Hub.
-- Give merge authorities only to users who clean up metadata.
-- Check if your instance uses push reports or external map layers. If yes, keep the Maintenance app available.
-- Tell users where the **Manage View** and **Download** buttons are. This is where most people look first.
 
 ## Related pages { #mmchg_related }
 
