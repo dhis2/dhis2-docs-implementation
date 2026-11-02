@@ -11,7 +11,7 @@ If you configure metadata in DHIS2 and you are used to the Maintenance app, then
 
 > **Note**
 >
-> This page covers the differences between the maintenance app and the metadata management app. For full instructions, see [Configure metadata (Metadata Management app)](#metadata_management_app).
+> This page covers the differences between the maintenance app and the metadata management app. For full instructions, see [Configure metadata (Metadata Management app)](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata-metadata-management-app.html).
 
 ## The Metadata Management app { #mmchg_overview }  
 
@@ -75,7 +75,7 @@ Each list has a search bar (name, code or ID) and filters for that object type. 
 
 ![Data elements list with search, filters and the New, Download and Manage View buttons](images/MAINT_MM/mm-list-toolbar.png)
 
-You choose which filters to show with **Manage View** > **Filters**. See [Lists: columns, filters and download](#mmchg_lists).
+You choose which filters to show with **Manage View** > **Filters**. 
 
 ### Merge duplicate metadata { #mmchg_merge }
 
@@ -94,7 +94,7 @@ Merge combines duplicate objects into one. All references to the source objects 
 >
 > Merging cannot be undone. Back up your database before you merge.
 
-For the full procedure, see [Merge](#mm_common_actions_merge).
+For the full procedure, see [Merge](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata-metadata-management-app.html#mm_common_actions_merge).
 
 ## What works differently { #mmchg_changed }
 
@@ -145,16 +145,12 @@ Many forms use a two-panel list to assign items, for example data elements to a 
 
 ![Transfer list in the data element group form](images/MAINT_MM/mm-transfer-list.png)
 
-For details, see [Using a transfer list component](#mm_transfer_list_component).
-
 ### Group membership { #mmchg_group_membership }
 
 The Maintenance app had a separate screen for editing groups in bulk. The Metadata Management app does not have this screen. Instead:
 
 - One object into many groups: open the object (for example a data element) and assign it to groups.
 - Many objects into one group: open the group (for example a data element group) and assign the members.
-
-For details, see [Manage group membership](#mm_edit_multiple_object_groups).
 
 ### Data set form { #mmchg_data_set_form }
 
@@ -198,9 +194,9 @@ Programs and data approval are in the app's sidebar. They are documented separat
 
 | Task | Why | What to do |
 |---|---|---|
-| Push reports | Not available in the Metadata Management app | Keep using the Maintenance app. See [Manage push reports](#manage_push_report). |
-| External map layers | Planned to move to the Maps app | Keep using the Maintenance app until then. See [Manage external map layers](#manage_external_maplayer). |
-| PDF data entry forms | Not in the data set options menu | Keep using the maintenance app. |
+| Push reports | Not available in the Metadata Management app | Keep using the Maintenance app. See [Manage push reports](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata-maintenance-app.html#manage_push_report). |
+| External map layers | Planned to move to the Maps app | Keep using the Maintenance app until then. See [Manage external map layers](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata-maintenance-app.html#manage_external_maplayer). |
+| PDF data entry forms | Not in the data set options menu | Keep using the maintenance app. See [Download forms as PDF.](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata-maintenance-app.html#download_defaultform_pdf) |
 
 > **Important**
 >
@@ -208,5 +204,5 @@ Programs and data approval are in the app's sidebar. They are documented separat
 
 ## Related pages { #mmchg_related }
 
-- [Configure metadata (Metadata Management app)](#metadata_management_app)
-- [Configure metadata (Maintenance app)](#maintenance_app)
+- [Configure metadata (Metadata Management app)](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata-metadata-management-app.html)
+- [Configure metadata (Maintenance app)](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata-maintenance-app.html)
