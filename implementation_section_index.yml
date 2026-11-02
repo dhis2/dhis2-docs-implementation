@@ -66,6 +66,8 @@ Configuration:
   - Transition Kits:
       - Event Reports to Line Listing: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_er_to_ll.md, master)'
       - Tracker Capture to Capture: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_tc_to_c.md, master)'
+      - Data Entry - Legacy to New: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_de.md, master)'
+      - Maintenance to Metadata Management: '@github(dhis2/dhis2-docs-implementation, content/configuration/transition_kit_maintenance_to_mm.md, master)'
 Data Use:
   - Data Visualization: '@github(dhis2/dhis2-docs-implementation, content/data-use/data-visualization.md, master)'
 Health:
