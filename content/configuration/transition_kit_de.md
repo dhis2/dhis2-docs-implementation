@@ -1,14 +1,5 @@
 # Transition Kit - Legacy Data Entry app to the new Data Entry app (aggregate data) { #detk_transition_kit }
 
-<!--
-Converted from "Transition Kit for Legacy Data Entry App to New - revised.docx".
-Images: images/DETK/. Section ids use the prefix detk_.
-Open items carried over from the Word comments:
-- Test which layout options (pivot, tabs, collapsible sections, before/after text) work in the Android app and list them.
-- Check the "Use a vertical layout for multi-organisation unit forms" option against the Limitations table, which says multi-organisation unit entry was not rebuilt.
-- Optional: add screenshots of the bottom bar and the details panel limits.
--->
-
 ## Introduction { #detk_introduction }
 
 This transition kit is designed to support DHIS2 users and implementers in moving from the legacy aggregate data entry app to the new data entry app. It provides practical guidance, highlights key differences, and outlines updated workflows to ensure a smooth transition.
