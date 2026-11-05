@@ -19,7 +19,7 @@ For more background on denominators and how they can be assessed, please refer t
 
 ## Assessing population data in DHIS2
 
-What we have attempted to do is take existing guidelines for assessing denominators and demonstrate ways in which these can be performed directly in DHIS2. The methods we will highlight are the following:
+We have taken existing guidelines for assessing denominators, and in this section demonstrate ways in which these assessments can be performed directly in DHIS2. The methods we will highlight are the following:
 
 1. Compare your DHIS2 population with other sources (totals, births, by age/sex etc.)
     - Highlight differences that are ≥ 10%
@@ -38,12 +38,9 @@ What we have attempted to do is take existing guidelines for assessing denominat
 
 In order to assess your existing data (this could be national data, census data, etc.) in DHIS2, you will need data from an external source. Some examples of sources where you can obtain comparison data include:
 
-- World Population Prospects
-  - https://population.un.org/wpp/ 
-- World Bank (uses a variety of sources, does not calculate on their own)
-  - https://data.worldbank.org/indicator/ 
-- IGME (UN Inter-agency Group for Child Mortality Estimation)
-  - https://childmortality.org/
+- World Population Prospects: https://population.un.org/wpp
+- World Bank (uses a variety of sources, does not calculate on their own): https://data.worldbank.org/indicator/ 
+- IGME (UN Inter-agency Group for Child Mortality Estimation): https://childmortality.org/
 
 ### Importing data for comparison
 
@@ -210,7 +207,7 @@ Here is an example of the numerator configuration:
 
 ![](resources/images/dq_growthrate_numerator.png)
 
-The .periodOffset(-1) function is taking the value from the previous period, in this case likely to be the previous year.
+The .periodOffset(-1) function is taking the value from the previous period, which means the previous years if the population estimates are annual.
 
 From here, you can use this indicator in data visualizer to make necessary visualizations.
 
