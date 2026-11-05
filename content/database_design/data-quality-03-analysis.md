@@ -37,19 +37,19 @@ The metrics follow one common rule for missing data:
 
 ### Data Quality Configuration Helper Tool
 
-The following sections document the expressions for each metric in full, and you can configure them by hand in the Maintenance app. However, the recommended way to set up these metrics is the [Data Quality Configuration Helper Tool](https://github.com/dhis2-utils/tool-dq-helper). From a single form, the tool generates, previews, and imports the complete set of metadata for a chosen data element (or one of its disaggregations), with consistent naming, descriptions, and metadata groups. It checks for naming conflicts before it creates anything. It also tracks what it has created, so that you can later review, edit (outlier threshold), or remove configurations cleanly.
+The following sections document the expressions for each metric in full, and you can configure them by hand in the Metadata Management app. However, the recommended way to set up these metrics is the [Data Quality Configuration Helper Tool](https://github.com/dhis2-utils/tool-dq-helper). From a single form, the tool generates, previews, and imports the complete set of metadata for a chosen data element (or one of its disaggregations), with consistent naming, descriptions, and metadata groups. It checks for naming conflicts before it creates anything. It also tracks what it has created, so that you can later review, edit (outlier threshold), or remove configurations cleanly.
 
-![The Add new configuration form of the Data Quality Configuration Helper Tool](resources/images/dq_tool_addnew.png)
+![Add new configuration](resources/images/dq_tool_addnew.png)
 
-![Preview of the metadata that will be generated for a data element](resources/images/dq_tool_preview.png)
+![Preview of the generated metadata](resources/images/dq_tool_preview.png)
 
-![The Configuration tab, where existing configurations can be reviewed, edited and removed](resources/images/dq_tool_configuration.png)
+![Existing configurations](resources/images/dq_tool_configuration.png)
 
 Refer to the tool's user manual for step-by-step instructions. This guide focuses on the *principles and expressions* behind the metrics, which apply whether the tool generates the metadata or you configure it manually.
 
 ### Practical considerations
 
-* Scheduling: only the outlier threshold predictor needs a scheduled job. A single *predictor* job covers the threshold predictor(s), typically nightly before the analytics job. There are no ordering dependencies between predictors. The completeness and consistency indicators require only the normal analytics job. See the [scheduling section](data-quality-04-implementation.md) for details.
+* Scheduling: only the outlier threshold predictor needs a scheduled job. A single *predictor* job covers the threshold predictor(s). Run it nightly in a job queue before the analytics job. There are no ordering dependencies between predictors. The completeness and consistency indicators require only the normal analytics job. See the [scheduling section](data-quality-04-implementation.md) for details.
 * Monthly data: the expressions documented here are designed for *monthly* data elements. The 12-month windows inside the indicators follow the period type of the analytics *query*: used in a quarterly or yearly layout, "last 12 months" silently becomes "last 12 quarters/years". Use these indicators in monthly layouts only.
 * Zero values: the indicators read the *analytics tables*, which by default do not include stored zero values for data elements with aggregation type Sum. As a result, `isNotNull(...)` counts facilities reporting a *non-zero* value. For most variables this makes no difference, because facilities either report a positive number or report nothing. But for variables where reporting zero is normal and meaningful (stock-outs, notifiable diseases, HIV cascade variables), all the configured metrics silently shrink to the non-zero-reporting population. See the zero value discussion under [data element completeness](#calculating-data-element-completeness) for the two ways to handle such variables.
 * Choose variables deliberately: even though the configuration burden is now modest, each assessed variable still adds metadata to the system. Configure the metrics for core indicators, as discussed in the [implementation section](data-quality-04-implementation.md).
@@ -62,7 +62,7 @@ Refer to the tool's user manual for step-by-step instructions. This guide focuse
 
 ## Completeness and timeliness
 
-*Completeness* of reporting gives an indication of how much of the expected data has actually been reported. In DHIS2, most of the completeness checks are based on assessing the _data set_ completeness, that is, how many data sets (forms) have been submitted by organisation unit and period. The timeliness calculation is based on a per-data-set setting, **Days after period to qualify for timely submission** (see [configuring data set timeliness](#configuring-data-set-timeliness)).
+*Completeness* of reporting gives an indication of how much of the expected data has actually been reported. In DHIS2, most of the completeness checks are based on assessing the _data set_ completeness, that is, how many data sets (forms) have been submitted by organisation unit and period. The timeliness calculation is based on a per-data-set setting, **Number of days after period to qualify for on time submission** (see [configuring data set timeliness](#configuring-data-set-timeliness)).
 
 The built-in functionality for completeness and timeliness in DHIS2, for example in the Data Visualizer, Reports, and Maps apps, refers to *data set reporting rates*. However, you can also configure DHIS2 to assess the proportion of facilities that are _consistently reporting_, as well as the *completeness of individual data elements*.
 
@@ -79,38 +79,36 @@ In Data Visualizer you can review the same data set completeness and timeliness 
 
 In Data Visualizer, open the **Data** dimension and choose **Data sets** as the **Data Type**. You can then choose the data set and metric (reporting rate, reporting rate on time, actual reports, actual reports on time, expected reports) to use in the visualization.
 
-![The Data dimension in Data Visualizer with the data type set to Data sets, listing the reporting rate metrics of each data set.](resources/images/dq_image94.png)
+![Data sets data type in Data Visualizer](resources/images/dq_image94.png){ .center width=70% }
 
-Here is an example of a chart comparing BCG doses given with the reporting rate of the immunization data set:
+To compare service data with completeness, create a combination chart with the service data as columns and the reporting rate as a line on a second axis (set under **Options** > **Series**). The following chart compares BCG doses given with the reporting rate of the immunization data set:
 
-![A column chart of BCG doses given by district in 2022, with the Immunisation reporting rate as a line on a second axis.](resources/images/dq_image52.png)
+![BCG doses given with immunisation reporting rate](resources/images/dq_image52.png)
 
-Several districts have reporting rates below 80%, so the service data shown might not represent the actual situation. It might be important to verify this through a more detailed analysis of the facilities affecting this value and/or using data element completeness.
+Several districts have reporting rates below 80%, so the service data shown might not represent the actual situation. Verify this with a more detailed analysis of the facilities that affect the value, or with data element completeness.
 
-As another example, you can also create a pivot table that compares completeness and timeliness over several data sets, periods, and organisation units as follows:
+You can also create a pivot table that compares completeness and timeliness over several data sets, periods, and organisation units as follows:
 
 * Choose **Pivot table** as the visualization type.
 * In the **Data** dimension, set the data type to **Data sets** and choose the metrics you want to compare.
 
-![Choosing the Data sets data type and four reporting rate metrics in the Data dimension of Data Visualizer.](resources/images/dq_image14.png)
+![Reporting rate metrics in Data Visualizer](resources/images/dq_image14.png)
 
 * Choose your periods and organisation units.
 * Modify the layout, for example with data and periods as columns and organisation units as rows, and click **Update**.
 
-![The Data Visualizer layout with organisation units as columns, and periods and data as rows.](resources/images/dq_image107.png)
+![Pivot table layout](resources/images/dq_image107.png){ .center width=70% }
 
-![A pivot table of reporting rates and reporting rates on time for two data sets by district, for September and October 2022.](resources/images/dq_image57.png)
+![Reporting rates by district](resources/images/dq_image57.png)
 
-You can use the same selections with other visualization types. For example, use a line chart of reporting rates over the last 12 months to monitor trends, or a combination chart with service data as columns and the reporting rate on a second axis (set under **Options** > **Series**):
-
-![A combination chart with BCG doses given as columns and the Immunisation reporting rate as a line on a second axis, by district.](resources/images/dq_image36.png)
+You can use the same selections with other visualization types. For example, use a line chart of reporting rates over the last 12 months to monitor trends.
 
 
 #### Using the Reports app
 
 To review completeness and timeliness in the **Reports** app, open the app and click **Get Report** under **Reporting Rate Summary**.
 
-![The Reports app start page, with the Reporting Rate Summary card highlighted.](resources/images/dq_image42.png)
+![Reporting Rate Summary in the Reports app](resources/images/dq_image42.png)
 
 Choose your inputs:
 
@@ -118,11 +116,11 @@ Choose your inputs:
 2. The data set you want to review.
 3. The reporting period type, followed by the period itself.
 
-![The Reporting Rate Summary form, with Bird District as the organisation unit, Immunisation as the data set, and 2023 as the yearly report period.](resources/images/dq_image96.png)
+![Reporting Rate Summary options](resources/images/dq_image96.png)
 
 Under **Show more options**, you can filter the report using an organisation unit group set. Click **Get report** to produce the report.
 
-![A Reporting Rate Summary for the Immunisation data set in Bird District for 2023, with numbered columns from the name to the reporting rate on time.](resources/images/dq_image13.png)
+![Reporting Rate Summary output](resources/images/dq_image13.png){ .center width=70% }
 
 The report has the following columns:
 
@@ -136,9 +134,9 @@ The report has the following columns:
 
 #### Configuring data set completeness
 
-Data set completeness is based on the organisation unit assignment of your data set, which determines the value for expected reports based on the periodicity of the data set. You configure this in the **Maintenance** app: go to **Data set**, choose or create the data set, and scroll to the organisation unit assignment at the bottom.
+Data set completeness is based on the organisation unit assignment of your data set, which determines the value for expected reports based on the periodicity of the data set. You configure this in the **Metadata Management** app. In the menu, go to **Data sets** > **Data set**, and choose the data set. Then go to the **Organisation units** section of the form.
 
-![The organisation unit assignment of a data set in the Maintenance app, with 185 organisation units chosen.](resources/images/dq_image99.png)
+![Data set organisation units in Metadata Management](resources/images/dq_mm_dataset_orgunits.png){ .center width=95% }
 
 You can assign your data set to organisation units by choosing them one by one, or by using levels or groups.
 
@@ -146,9 +144,9 @@ Make sure that the data set is *not* assigned to any organisation units that are
 
 #### Configuring data set timeliness
 
-You also configure timeliness in the Maintenance app when you create or edit a data set, using the **Days after period to qualify for timely submission** field.
+You also configure timeliness in the data set form in the Metadata Management app. The **Number of days after period to qualify for on time submission** field is in the **Validation and limitations** section.
 
-![The data set form in the Maintenance app, with Days after period to qualify for timely submission set to 15.](resources/images/dq_image43.png)
+![Data set timeliness setting](resources/images/dq_mm_dataset_timely_days.png){ .center width=60% }
 
 In this example, the data set is collected monthly and the timeliness is set to 15. This means that the data set must be completed within 15 days after the end of the month to qualify as a timely submission.
 
@@ -295,7 +293,7 @@ There are several ways to define the "expected values" denominator:
 3. Count of reported values of another data element
 4. Count of organisation units that have previously reported on the data element itself
 
-![The numerator (data values reported) and the four alternative denominators for data element completeness.](resources/images/dq_image38.png)
+![Numerator and denominators for data element completeness](resources/images/dq_image38.png){ .center width=65% }
 
 Which option is appropriate depends on contextual factors. These include how correct and up to date the data set assignment is, and whether the purpose is to look at the overall completeness of the data element (how much of the true figure is captured) or the completeness within a data set (how completely are staff filling in the reporting form).
 
@@ -364,24 +362,24 @@ To get an overview of data element completeness for a large number of data eleme
    2. All or some data elements within the same data set, using the **Details only** option for disaggregation
 3. Modify the layout, placing periods as columns (for example, last 12 months) and data as rows.
 
-![The Data Visualizer layout with periods as columns and 45 data items as rows.](resources/images/dq_image56.png)
+![Pivot table layout](resources/images/dq_image56.png){ .center width=30% }
 
 4. Open **Options** and:
    1. Enable **Row totals**.
    2. In the **Advanced** section, change **Aggregation type** to **Count**.
 5. Update the visualization, and optionally sort the total column from high to low (the total for expected reports shows NaN, but stays at the top).
 
-![A pivot table with expected reports and the count of reported values for each immunization data element per month, sorted by the total column.](resources/images/dq_image113.png)
+![Reported values by data element](resources/images/dq_image113.png)
 
 The top row now shows the completeness "denominator" (expected or actual reports), and the other rows show the count of reported values for each data element (with disaggregation). This lets you quickly review the completeness of many data elements at once. With the same approach, a bar chart of a single period sorted from high to low gives a quick visual overview.
 
-![A column chart of expected reports and the count of reported values for each immunization data element in October 2023, sorted from high to low.](resources/images/dq_image50.png)
+![Reported values by data element, sorted](resources/images/dq_image50.png){ .center width=65% }
 
 ## Consistency of related data
 
 ### Scatter plots in Data Visualizer
 
-![A scatter plot of ANC 1 against ANC 4 visits by facility, with outliers shown in red outside the model boundary lines.](resources/images/dq_image25.png)
+![Scatter plot of ANC 1 and ANC 4 visits](resources/images/dq_image25.png){ .center width=90% }
 
 This scatter plot compares two related variables (ANC 1 and ANC 4) across facilities for a period. Because the variables are related, most facilities cluster along a common pattern (green). Facilities that deviate substantially from the expected relationship are highlighted as outliers (red). The further a point is from the outlier lines, the more likely there is an underlying issue with one of the two values.
 
@@ -399,19 +397,19 @@ To create a scatter plot in Data Visualizer:
 2. Choose two *related* data items for the two axes, in this example ANC 1 (Y) and ANC 4 (X). Unrelated data items do not produce a useful output.
 3. Choose the organisation units (for example, all facilities) and period, and click **Update**.
 
-![The visualization type menu in Data Visualizer, with the Scatter type highlighted.](resources/images/dq_image26.png)
+![Scatter visualization type](resources/images/dq_image26.png){ .center width=80% }
 
 To add outlier detection, open **Options** and go to the **Outliers** tab. Enable **Outlier analysis** and choose the detection method (IQR in this example). Optionally, enable **Extreme lines**, which highlight the most extreme percentiles of the values.
 
-![The Outliers tab of the chart options, with outlier analysis enabled, the Interquartile Range (IQR) method chosen, and extreme lines enabled.](resources/images/dq_image41.png)
+![Outlier options for the scatter plot](resources/images/dq_image41.png){ .center width=75% }
 
 After you update the chart, the outliers are highlighted in red. You can zoom into the cluster by dragging the mouse over the area of interest (**Reset zoom** restores the full view).
 
-![Dragging over the cluster of points in the scatter plot to zoom in.](resources/images/dq_image33.png)
+![Zooming in on the scatter plot](resources/images/dq_image33.png){ .center width=65% }
 
 When you interpret the chart, review the relationship between the two variables and compare flagged points to the cluster that falls within the model boundaries:
 
-![A highlighted outlier in the scatter plot, with a tooltip showing Facility 572 with 608 ANC 1 visits and 44 ANC 4 visits.](resources/images/dq_image112.png)
+![Outlier in the scatter plot](resources/images/dq_image112.png)
 
 In this example, neither of the two values in the highlighted pairing is extreme on its own (there are higher ANC 1 and higher ANC 4 values elsewhere). However, the *combination* deviates strongly from the pattern of the other facilities: a typical facility with this ANC 4 value has a much lower ANC 1 value. Either value could be incorrect (or the values might be genuinely anomalous), but the deviation is large enough to warrant investigation with the facility.
 
@@ -429,15 +427,15 @@ To run validation rule analysis, open the **Data Quality** app and click **Run v
 * **Send Notifications**: whether to send out any configured validation notifications for the violations found
 * **Persist new results**
 
-![The Run validation form in the Data Quality app, with the organisation unit, start and end dates, validation rule group, and notification and persist options.](resources/images/dq_image88.png)
+![Validation rule analysis in the Data Quality app](resources/images/dq_image88.png){ .center width=85% }
 
 Click **Validate** to run the analysis. Reviewing large amounts of data (many organisation units, periods, and rules) takes longer to run. If there are no violations, DHIS2 shows the message "Validation passed successfully". Otherwise, DHIS2 shows the violations in a list:
 
-![The Validation Rule Analysis result list, with the organisation unit, period, importance, rule, and values of each violation.](resources/images/dq_image66.png)
+![Validation rule analysis results](resources/images/dq_image66.png)
 
 Click the info icon in the **Details** column to see the name and description of the violated rule, together with all the data elements in the rule and their values. This usually lets you identify exactly which value is incorrect and requires follow-up.
 
-![The Validation Details dialog, showing the violated rule and the data elements and values on its left and right sides.](resources/images/dq_image85.png)
+![Validation violation details](resources/images/dq_image85.png){ .center width=55% }
 
 You can also download the violations (file icons in the top right corner) as a reference list for following up on values over time.
 
@@ -447,7 +445,7 @@ Validation rule analysis provides a *snapshot* of the current issues. To monitor
 
 ### Year-over-year charts
 
-![A year-over-year line chart of national ANC 1 visits for 2021, 2022, and 2023, with spikes in January 2023, May 2022, and September 2023.](resources/images/dq_image12.png)
+![Year-over-year chart of ANC 1 visits](resources/images/dq_image12.png){ .center width=90% }
 
 A year-over-year (line) chart is used to evaluate consistency over time of a single data item, plotting each year as a separate line over the months of the year. This helps you spot values that break the historical pattern: in this example, January 2023, May 2022, and September 2023 stand out against the trends of their own and previous years. The next step is to drill down in the hierarchy for these periods to find the source of the discrepancies. Year-over-year charts for key variables are well suited for dashboards reviewed routinely.
 
@@ -459,7 +457,7 @@ To create the chart in Data Visualizer:
 4. The **Series** determines which years are shown, either as relative periods (this year, last year) or specific years (for example, 2021, 2022, and 2023).
 5. Choose the data item and organisation unit in the filter, and click **Update**.
 
-![The Year over year (line) layout in Data Visualizer, with This year and Last year as series and Months per year as category.](resources/images/dq_image64.png)
+![Year-over-year layout](resources/images/dq_image64.png)
 
 ### Statistical outliers in time series
 
@@ -567,7 +565,7 @@ To run outlier analysis, open the **Data Quality** app and click **Analyze** und
 * **Organisation units**: all organisation units below the chosen units are included
 * **Start date** and **End date**: the periods to analyze for outliers. Data from *all* periods for an organisation unit and data element is included when the average/median and standard deviation are calculated, unless limited under the advanced options.
 
-![The Outlier Detection form in the Data Quality app, with a data set, organisation units, and start and end dates chosen.](resources/images/dq_outlier_image5.png)
+![Outlier detection in the Data Quality app](resources/images/dq_outlier_image5.png){ .center width=90% }
 
 Next, set the statistical method and parameters:
 
@@ -578,7 +576,7 @@ Next, set the statistical method and parameters:
 * **Threshold**: the number of (modified) standard deviations from the mean/median a value must be before it is considered an outlier. The default of 3 is a common definition of an "extreme" outlier.
 * **Max results**: the maximum number of outliers included in the results table.
 
-![The Algorithm, Threshold, and Max results fields of the outlier detection form.](resources/images/dq_outlier_image2.png)
+![Outlier detection algorithm and threshold](resources/images/dq_outlier_image2.png){ .center width=35% }
 
 Optionally, change the advanced options:
 
@@ -589,7 +587,7 @@ Optionally, change the advanced options:
 
 Click **Start** to run the analysis. The resulting table lists the detected outliers with the data element, period, organisation unit, value, z-score, deviation, standard deviation, median/mean, and min/max. Use the **Follow-up** checkbox to mark values for follow-up. You can then list them later with the **Follow-up analysis** function of the Data Quality app.
 
-![Outlier detection results in the Data Quality app, listing outlier values for ANC 1st visit with their statistics and a Follow-up checkbox.](resources/images/dq_outlier_image1.png)
+![Outlier detection results](resources/images/dq_outlier_image1.png)
 
 #### Outlier tables
 
@@ -603,7 +601,7 @@ To create an outlier table in Data Visualizer:
 2. Choose inputs for the three fixed (and required) dimensions: Data, Period, and Organisation units. You can choose multiple data items.
 3. Click **Update**.
 
-![An outlier table in Data Visualizer, with numbered columns from Data to Max.](resources/images/dq_outliertable_output.png)
+![Outlier table in Data Visualizer](resources/images/dq_outliertable_output.png){ .center width=90% }
 
 The columns of the table:
 
@@ -619,7 +617,7 @@ The columns of the table:
 
 Under the table options, you can adjust the maximum number of results (up to 500) and the display style. In the **Outliers** tab, you can adjust the detection method and threshold factor. By default, the table uses the *modified z-score* with a threshold factor of 3. The z-score (standard score) method uses the mean rather than the median and is less robust.
 
-![The Outliers tab of the outlier table options, with Modified Z-score chosen and a threshold factor of 3.](resources/images/dq_outlier_outliers.png)
+![Outlier table options](resources/images/dq_outlier_outliers.png){ .center width=80% }
 
 ## WHO Data Quality Tool
 

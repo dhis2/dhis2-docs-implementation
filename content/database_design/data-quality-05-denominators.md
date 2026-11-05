@@ -9,7 +9,7 @@ The quality of denominators is a critical part of data quality to assess. While 
 
 An an example, see the effect that 10% error in target population estimates has on estimated coverage
 
-![](resources/images/dq_denominator_estimates.png)
+![Effect of a 10% error in the target population on coverage](resources/images/dq_denominator_estimates.png){ .center width=65% }
 
 For more background on denominators and how they can be assessed, please refer to the following resources:
 
@@ -61,7 +61,7 @@ A couple notes on readying your data before making these comparisons:
 
 Here is an example of this comparison in DHIS2 using a pivot table in data visualizer:
 
-![](resources/images/dq_pop_data_comparison.png)
+![DHIS2 population data compared with another source](resources/images/dq_pop_data_comparison.png)
 
 Some rules for when we make this comparison:
 
@@ -94,21 +94,21 @@ To highlight differences ≥ 10%, make a legend and apply it to your indicator
 
 Make the legend via maintenance
 
-![](resources/images/dq_comparison_legend.png)
+![Legend for differences of 10% or more](resources/images/dq_comparison_legend.png){ .center width=65% }
 
 Apply it to your indicator in the "legends" section of the indicator
 
-![](resources/images/dq_apply_legend.png)
+![Applying the legend to the indicator](resources/images/dq_apply_legend.png){ .center width=70% }
 
 Make a pivot table in data visualizer. Add your 2 population data elements you are comparing, along with your comparison indicator. If you are using disaggregations, add these to the table as well. Filter by org unit, or show all of them, depending on your needs. 
 
 Ensure you apply the legend to your table
 
-![](resources/images/dq_pop_comparison_legend.png)
+![Applying the legend to the table](resources/images/dq_pop_comparison_legend.png){ .center width=45% }
 
 An example layout, along with the output, can be seen below.
 
-![](resources/images/dq_pop_comparison_layout.png)
+![Layout and output of the population comparison](resources/images/dq_pop_comparison_layout.png)
 
 ## Comparing your implied rates with other sources
 
@@ -120,7 +120,7 @@ We can import this information into a DHIS2 data element in the event the rates 
 
 An example of this comparison can be seen here:
 
-![](resources/images/dq_implied_rate_comparison.png)
+![Implied rates compared with another source](resources/images/dq_implied_rate_comparison.png){ .center width=30% }
 
 Some rules when making this comparison:
 
@@ -151,11 +151,11 @@ To highlight differences ≥ 20%, make a legend and apply it to your indicator
 
 Make the legend via maintenance
 
-![](resources/images/dq_rate_legend.png)
+![Legend for differences of 20% or more](resources/images/dq_rate_legend.png){ .center width=65% }
 
 Apply it to your indicator in the "legends" section of the indicator
 
-![](resources/images/dq_apply_legend.png)
+![Applying the legend to the indicator](resources/images/dq_apply_legend.png){ .center width=70% }
 
 Make a pivot table in data visualizer. Add your 2 implied rates that you are comparing, along with your comparison indicator. Filter by org unit, or show all of them, depending on your needs. 
 
@@ -165,7 +165,7 @@ The growth rate will allow you to determine if your denominators are within an a
 
 An example of the growth rate in DHIS2 can be seen here:
 
-![](resources/images/dq_growth_rate.png)
+![Annual growth rate](resources/images/dq_growth_rate.png){ .center width=30% }
 
 Some rules when making this comparison:
 
@@ -205,7 +205,7 @@ In order to make an indicator using data from the previous year in DHIS2 do the 
 
 Here is an example of the numerator configuration:
 
-![](resources/images/dq_growthrate_numerator.png)
+![Growth rate numerator](resources/images/dq_growthrate_numerator.png){ .center width=40% }
 
 The .periodOffset(-1) function is taking the value from the previous period, which means the previous years if the population estimates are annual.
 
@@ -219,11 +219,11 @@ We can perform this type of comparison both directly in data visualizer, as well
 
 Here is an example of this comparison from the data visualizer app:
 
-![](resources/images/dq_dv_survey_comparison.png)
+![Routine and survey coverage in Data Visualizer](resources/images/dq_dv_survey_comparison.png)
 
 And an example from the DQ annual report app:
 
-![](resources/images/dq_ar_survey_comparison.png)
+![Routine and survey coverage in the DQ annual report app](resources/images/dq_ar_survey_comparison.png)
 
 Some rules when making this comparison:
 
@@ -276,7 +276,7 @@ Reviewing your data over time, including review of your numerators and denominat
 
 Here is an example of a visualization in DHIS2 where we are looking at BCG coverage. 
 
-![](resources/images/dq_trend1.png)
+![BCG coverage over time](resources/images/dq_trend1.png){ .center width=85% }
 
 It includes the number of doses given and surviving infants on the left y-axis, and the BCG coverage % on the right y-axis, with the years displayed along the x-axis. 
 
@@ -284,7 +284,7 @@ We are looking for inconsistencies in the data that may need some further explan
 
 Here is another example with the same information
 
-![](resources/images/dq_trend2.png)
+![Vaccinations, target population and coverage over time](resources/images/dq_trend2.png){ .center width=45% }
 
 [Image source : Assessing and improving the accuracy of target population estimates for immunization coverage](https://www.who.int/publications/m/item/assessing-and-improving-the-accuracy-of-target-population-estimates-for-immunization-coverage)
 
@@ -308,7 +308,7 @@ You can make this chart in ***data visualizer.***
 - Org Unit : Whichever org unit(s) you want to review
 - To create the difference axes, go to options-> series
 
-![](resources/images/dq_multiaxis.png)
+![Series options for a chart with two axes](resources/images/dq_multiaxis.png){ .center width=70% }
 
 - Layout (modify as needed) 
   - Series : Data
@@ -319,7 +319,7 @@ You can make this chart in ***data visualizer.***
 
 As you have seen, you are able to perform these analyses directly in DHIS2. So you can easily review them, it is recommended that you create a dashboard and add these visualizations to it.
 
-![](resources/images/dq_dashboard.png)
+![Denominator review dashboard](resources/images/dq_dashboard.png){ .center width=75% }
 
 ## Revising your Estimates
 

@@ -72,13 +72,13 @@ The dashboard is best reviewed by logging in to DHIS2. This section gives a summ
 
 *Tables* with key completeness/timeliness metrics for the last month, comparing organisation units (at the user's level and below). One table is included for each core indicator. The tables use a customized legend set to color cells according to completeness.
 
-![Table of malaria completeness metrics by province for one month, with cells colored by a completeness legend.](resources/images/dqimp_image7.png)
+![Malaria completeness by province](resources/images/dqimp_image7.png){ .center width=75% }
 
 **Consistency of related data**
 
 *Scatterplots* showing the core variables against a related variable, across multiple organisation units (one level below the user). Outlier detection is enabled and highlights organisation units flagged by the modified z-score method with a threshold of 3.
 
-![Scatterplot of confirmed malaria cases against cases treated, with one outlier province highlighted in red.](resources/images/dqimp_image13.png)
+![Malaria cases confirmed and treated](resources/images/dqimp_image13.png){ .center width=65% }
 
 *Dropout rates* (for variables where applicable) over the last 12 months, presented with a column chart sorted from low to high with negative values highlighted and a corresponding table listing the organisation units with negative values.
 
@@ -86,7 +86,7 @@ The dashboard is best reviewed by logging in to DHIS2. This section gives a summ
 
 *Year-over-year charts* for each variable, showing the monthly values for the current year and the preceding 5 years.
 
-![Year-over-year line chart of monthly ANC 1st visit values for the current year and the five preceding years.](resources/images/dqimp_image11.png)
+![Year-over-year chart of ANC 1st visits](resources/images/dqimp_image11.png){ .center width=65% }
 
 *Value excluding outliers* for each of the four variables:
 
@@ -94,11 +94,11 @@ The dashboard is best reviewed by logging in to DHIS2. This section gives a summ
 
 -   Table with values for the last 12 months, with legend set applied
 
-![Table of core indicator values excluding outliers for the last 12 months, colored by a legend set.](resources/images/dqimp_image8.png)
+![Core indicators excluding outliers](resources/images/dqimp_image8.png)
 
 *Outlier tables* listing the largest outlier values for each of the variables in the last 3 months, for organisation units below the user's level.
 
-![Outlier table listing the largest outlier values for core variables by facility over the last three months.](resources/images/dqimp_image4.png)
+![Largest outliers by facility](resources/images/dqimp_image4.png)
 
 ##### Facility level
 
@@ -120,27 +120,27 @@ The dashboard is best reviewed by logging in to DHIS2. This section gives a summ
 
 The tables use a customized legend set to highlight values of 0, but in a neutral color, because some facilities are not expected to report on all key variables.
 
-![Facility table of expected reports, actual reports, reports on time, and data values for the last 12 months.](resources/images/dqimp_image5.png)
+![Facility reporting completeness](resources/images/dqimp_image5.png)
 
 **Consistency of related data**
 
 *Dropout rates* (for variables where applicable) over the last 12 months, presented as a single column chart with negative values highlighted and a corresponding table listing the organisation units with negative values.
 
-![Column chart of the DPT 1 to DPT 3 dropout rate for one facility, showing a negative value.](resources/images/dqimp_image12.png)
+![DPT 1 to DPT 3 dropout rate](resources/images/dqimp_image12.png){ .center width=55% }
 
 **Consistency over time**
 
 *Year-over-year charts* for each variable, showing the monthly values for the current year and the preceding 5 years.
 
-![Year-over-year line chart of monthly DPT 3 values for one facility over six years.](resources/images/dqimp_image9.png)
+![Year-over-year chart of DPT 3](resources/images/dqimp_image9.png){ .center width=55% }
 
 *Outlier tables* listing the largest outlier values for each of the variables in the last 12 months, for the user's organisation unit.
 
-![Facility outlier table for core variables over the last 12 months.](resources/images/dqimp_image10.png)
+![Facility outliers for core variables](resources/images/dqimp_image10.png)
 
 *Charts comparing reported values with the calculated outlier threshold* for each of the variables in the last 12 months for the user's organisation unit.
 
-![Column chart comparing monthly ANC 1st visit values with the outlier threshold for one facility.](resources/images/dqimp_image14.png)
+![ANC 1st visits and outlier threshold](resources/images/dqimp_image14.png){ .center width=80% }
 
 #### Dashboards from WHO toolkits
 
@@ -246,15 +246,21 @@ Of the [configured data quality metrics](data-quality-03-analysis.md), only the 
 1. A *predictor* job covering the outlier threshold predictors (or the predictor group they belong to; the DQ Metrics Configuration Tool maintains such a group). The threshold predictors are independent of each other, so there are no ordering constraints between them.
 2. The *analytics tables update* job, which must run *after* the predictor job for newly predicted thresholds to become visible in analytics (and for the indicator values that depend on them to update).
 
-Predictors are scheduled using the [Scheduler app](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html?h=scheduler+master+use#scheduling). Scheduled jobs cannot be chained together so that one job starts when the previous one is completed; instead, measure the time the predictor job takes and schedule the analytics job with a sufficient margin after it. A typical setup is the predictor job at night (for example at 23:00) followed by the analytics table update (for example at 02:00), so that thresholds for the new month are in place. If validation rule notifications are used, the *monitoring* job that evaluates validation rules should likewise be scheduled after the analytics update. Test carefully in a development system to track the amount of time each job takes, and schedule the jobs accordingly.
+You schedule predictors in the [Scheduler app](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html#scheduling). To make sure that the analytics job starts only after the predictor job is finished, put both jobs in a *job queue*. A job queue runs its jobs in a fixed order: it starts the first job at the scheduled time, and starts each of the next jobs when the previous one is finished. A typical queue runs at night and contains the predictor job first and the analytics table job after it, so that the thresholds for the new month are in place in analytics the next morning. To create a queue, click **New queue** in the Scheduler app, and add the jobs to **Jobs in this queue** in the order they must run.
 
-![Scheduler configuration with the outlier threshold predictor job running before the analytics table update](resources/images/dq_scheduler_jobs.png)
+![Job queue in the Scheduler app](resources/images/dq_scheduler_queue_form.png){ .center width=65% }
+
+If you use validation rule notifications, add the *monitoring* job that evaluates validation rules to the end of the queue.
+
+The analytics table job also has an outlier step. By default, after it updates the aggregate analytics tables, the job also generates the outlier data that the [outlier tables](data-quality-03-analysis.md#outlier-tables) in Data Visualizer use. (Outlier detection in the Data Quality app reads the raw data values and does not depend on this step.) On large databases, this step can take roughly as long as the update of the aggregate analytics tables. Include it in the nightly job only when the aggregate analytics update is fast enough that the job still finishes before users start work. Otherwise, skip outliers in the nightly job (with the **Skip outliers** parameter of the analytics table job) and run a separate analytics job with outliers less often, for example once a week.
+
+Test the jobs on a development server with a copy of the production database, to learn how long each job takes, and schedule them accordingly.
 
 If the [Data Quality Workbench](https://github.com/dhis2/tool-dq-workbench) is used for monitoring, it is scheduled *outside* DHIS2 (typically as a nightly cron job on the server where it is installed, running its `dq-monitor` command). Like the predictor job, its output consists of data values that only become visible in analytics after the next analytics table update, so its runs should also be timed to finish before the analytics job.
 
 > **Note**
 >
-> Legacy predictor-based configurations (see the [analysis section](data-quality-03-analysis.md)) additionally require the comparison predictors to run *after* the threshold predictors, that is, an ordered chain of predictor jobs. If such configurations are still in use, the previous guidance applies: schedule the threshold predictor job first, the remaining predictor jobs after it, and the analytics job last.
+> Legacy predictor-based configurations (see the [analysis section](data-quality-03-analysis.md)) additionally require the comparison predictors to run *after* the threshold predictors, that is, an ordered chain of predictor jobs. If such configurations are still in use, put all the jobs in one job queue: the threshold predictor job first, the remaining predictor jobs after it, and the analytics job last.
 
 ### Email and SMS notifications settings
 
@@ -274,6 +280,6 @@ For DHIS2 to send (and receive) SMS messages, you must configure an [SMS gateway
 
 Each user chooses whether to forward DHIS2 messages to SMS or email (if these have been configured as described in the previous sections). To do this, open **User settings** from the DHIS2 menu bar, and turn each option for SMS and email on or off. Set an option to **Yes** to enable it.
 
-![The profile menu in the DHIS2 header bar, with Settings marked.](resources/images/dqimp_image6.png)
+![Profile menu](resources/images/dqimp_image6.png){ .center width=55% }
 
-![User settings with the options to enable email and SMS notifications marked.](resources/images/dqimp_image3.png)
+![Notification settings](resources/images/dqimp_image3.png){ .center width=50% }

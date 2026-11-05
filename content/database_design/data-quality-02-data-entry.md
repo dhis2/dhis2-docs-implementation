@@ -36,7 +36,7 @@ Configure data elements with the appropriate value types, so that only the right
 
 In DHIS2, validation rules consist of two values (a left side and a right side) that are compared using a mathematical operator (less than, greater than, and so on) to produce a logical true or false result. Validation rules compare values that are in DHIS2, at the level of capture and periodicity that the validation rule defines. Using the malaria example in the previous paragraph, a validation rule in DHIS2 can look like this:
 
-![A validation rule with positive malaria cases as the left side, less than or equal to as the operator, and malaria tests performed as the right side.](resources/images/dq_image3.png)
+![Validation rule in the Metadata Management app](resources/images/dq_mm_validation_rule_expressions.png){ .center width=60% }
 
 If this data is collected monthly at the facility level, then it can be compared at least every month at the facility level, and additionally can be run at higher levels and lower frequencies if needed (for example, at district level for a year). 
 
@@ -45,59 +45,84 @@ Validation rules do not run when you work offline in the web-based Data entry ap
 
 ### Configuring validation rules
 
-This section shows how to create the validation rule from the previous example in DHIS2. Malaria testing can use different methods, so this example rule is only for rapid diagnostic tests (RDT).
+This section shows how to create the validation rule from the previous example in the Metadata Management app. Malaria testing can use different methods, so this example rule is only for rapid diagnostic tests (RDT). The demo database has data elements for positive and negative RDT results, so the number of tests is the sum of the two.
 
-![A validation rule with positive malaria cases as the left side, less than or equal to as the operator, and malaria tests performed as the right side.](resources/images/dq_image3.png)
+In the **Metadata Management** app, go to **Validations** > **Validation rules** and click **New**. The form has three sections: **Basic information**, **Expressions and output**, and **Options**.
 
-You create validation rules in the **Maintenance** app, in the **Validation** section:
+![Validation rules list in Metadata Management](resources/images/dq_mm_validation_rules_list.png){ .center width=65% }
 
-1. Add a **Name** (required, unique). Make it descriptive, for example “MAL - Positive (RDT) &lt;= Tested (RDT)”.
+#### Enter the basic information
 
-2. Add an **Instruction**. This field is not required, but users see it both in validation analysis and when they review validation rules during data entry, so you should always add one. You can also add a short name, code, and description.
+In **Basic information**, enter a **Name** (required, unique). Make it descriptive, for example "MAL - Positive (RDT) &lt;= Tested (RDT)". You can also enter a short name, a code, and a description.
 
-![The validation rule form with the name, code, and instruction fields filled in for the RDT example.](resources/images/dq_image63.png)
+![Basic information of a validation rule](resources/images/dq_mm_validation_rule_basic.png)
 
-3. Choose an **Importance** (**High**, **Medium**, or **Low**). The importance is a description that DHIS2 shows to users. It does not affect priority or whether the rule runs.
+#### Create the expressions
 
-4. Choose a **Period type**. You cannot choose a period type more frequent than the frequency of data entry: if data is collected monthly, the period cannot be weekly.
+To create the left side of the rule:
 
-5. Create the left side of the expression:
-    1. If you want to compare data relative to the period, choose **Sliding window**. For more information, see [About validation rules](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata-maintenance-app.html#about_validation_rule).
-    2. Choose a **Missing value strategy**. It sets how DHIS2 evaluates the rule if data is missing:
+1. Under **Left side expression**, click **Set up numerator expression**. The **Edit numerator expression** window opens. (The app uses "numerator" for the left side and "denominator" for the right side.)
+2. In the sidebar, open **Data elements**. Enter part of the name in the filter box, and click a data element to add it to the expression. Use **Operators** to add mathematical operators such as `+`.
+3. Click **Validate**. The expression in plain words shows under **Valid expression**.
+4. Click **Apply**.
 
-| Option                         	| Description                                                                                                                                                                                                                                         	|
-|--------------------------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Never skip                     	| The validation rule will never be skipped in case of missing data, and all missing operands will be treated effectively as a zero. This is the default option. Always select this option if you use the Exclusive pair or Compulsory pair operator. 	|
-| Skip if all values are missing 	| The validation rule will be skipped only if all of the operands which compose it are missing                                                                                                                                                        	|
-| Skip if any value is missing   	| The validation rule will be skipped if any of the values which compose the expression are missing.                                                                                                                                                  	|
+![Expression editor for the left side](resources/images/dq_mm_validation_rule_left_side_editor.png){ .center width=95% }
 
-   3. Enter a **Description**. Build the expression by double-clicking data items in the right pane and combining them with the mathematical operators below the left pane. Then click **Save**.
+5. Enter a **Description** for the left side. Users see the description in validation results, so make it short and clear.
+6. Choose a **Missing value strategy**. It sets how DHIS2 evaluates the rule if data is missing:
 
-![The left side expression editor with the description Positive (RDT) and the disaggregated RDT positive malaria cases data elements added to the expression.](resources/images/dq_image69.png)
+| Option | Description |
+|---|---|
+| Never skip | DHIS2 always evaluates the rule and treats missing values as zero. This is the default option. Always choose this option if you use the **Compulsory pair** or **Exclusive pair** operator. |
+| Skip if any value is missing | DHIS2 skips the rule if any of the values in the expression is missing. |
+| Skip if all values are missing | DHIS2 skips the rule only if all of the values in the expression are missing. |
+
+7. If you want to compare data relative to the period, choose **Sliding window: validation checks against relative period**. For more information, see [About validation rules](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata-maintenance-app.html#about_validation_rule).
+
+![Left side of a validation rule](resources/images/dq_mm_validation_rule_left_side.png){ .center width=70% }
 
 > **Note**
 >
-> Use the disaggregated data elements instead of the total data element, as shown in the previous figure (that is, all the positive malaria cases by age and sex). If you choose the total data element, the details are empty when you look at them in validation rule analysis, and you cannot drill down to find where the problem comes from.
+> If a data element is disaggregated, you can add each disaggregation to the expression (for example, positive cases by age group) instead of the total. Validation rule analysis then shows the value of each disaggregation, which helps you find where the problem comes from.
 
-6. Choose an **Operator**: **Compulsory pair**, **Equal to**, **Exclusive pair**, **Greater than**, **Greater than or equal to**, **Less than**, **Less than or equal to**, or **Not equal to** (**Less than or equal to** in this example).
+Then choose the operator and create the right side:
 
-    1. The *Compulsory pair* operator requires that data values are entered for both the left and right sides, or for neither side. That is, if one field is filled, the other fields must also be filled.
-    2. The *Exclusive pair* operator requires that if any value exists on the left side, there should be no values on the right side (or the reverse), for a given period, organisation unit, and attribute option combo.
+1. Choose a **Comparison operator**: **Not equal to**, **Equal to**, **Greater than**, **Greater than or equal to**, **Less than**, **Less than or equal to**, **Compulsory pair**, or **Exclusive pair**. This example uses **Less than or equal to**.
+    * *Compulsory pair* requires that data values are entered for both the left and right sides, or for neither side.
+    * *Exclusive pair* requires that if any value exists on the left side, there are no values on the right side (or the reverse), for a given period, organisation unit, and attribute option combination.
+2. Under **Right side expression**, click **Set up denominator expression** and create the right side in the same way as the left side.
 
-7. Create the right side in the same way as the left side. The completed rule shows the descriptions of both sides and the operator:
+The completed expressions show the left side, the operator, and the right side:
 
-![The completed rule with Positive (RDT) as the left side, Less than or equal to as the operator, and Tested (RDT) as the right side.](resources/images/dq_image90.png)
+![Left side, operator and right side](resources/images/dq_mm_validation_rule_expressions.png){ .center width=60% }
 
-8. Optionally, choose which **Organisation unit levels** DHIS2 evaluates the rule for (empty means all levels, which is the most common option). Also choose whether to **Skip this rule during form validation** (normally not, so that users can review the rule during data entry). Click **Save**.
+#### Set the output and options
+
+1. Enter an **Instruction to show**. This field is not required, but users see it both in validation analysis and when they review validation rules during data entry, so always add one.
+2. Choose a **Period type**. You cannot choose a period type more frequent than the frequency of data entry: if data is collected monthly, the period cannot be weekly.
+3. Choose an **Importance** (**High**, **Medium**, or **Low**). DHIS2 shows the importance to users. It does not affect priority or whether the rule runs.
+
+![Instruction, period type and importance](resources/images/dq_mm_validation_rule_output.png){ .center width=65% }
+
+4. In **Options**, choose the **Organisation unit levels to run validation for**. If you leave the field empty, DHIS2 evaluates the rule for all levels, which is the most common option.
+5. Leave **Skip this rule during form validation in Data Entry App** cleared, so that users can review the rule during data entry.
+6. Click **Save and close**.
+
+![Validation rule options](resources/images/dq_mm_validation_rule_options.png){ .center width=65% }
 
 
 #### Creating validation rule groups
 
 After you create validation rules, group them. Groups of similar validation rules help in particular when you review the rules together in bulk analysis.
 
-In the **Maintenance** app, go to **Validation** > **Validation rule group**. Add a new group with a name, code, and description. Move the related validation rules from the left pane to the right pane, then click **Save**.
+To create a validation rule group:
 
-![The validation rule group form with malaria validation rules moved to the selected list on the right.](resources/images/dq_image48.png)
+1. In the **Metadata Management** app, go to **Validations** > **Validation rule groups** and click **New**.
+2. Enter a **Name**, and optionally a **Code** and a **Description**.
+3. Under **Validation Rules**, move the related rules from **Available Validation rules** to **Selected Validation rules**.
+4. Click **Save and close**.
+
+![Validation rule group](resources/images/dq_mm_validation_rule_group.png){ .center width=75% }
 
 The best way to define groups depends on how data elements and data sets are structured in a particular implementation. Examples are:
 
@@ -107,52 +132,47 @@ The best way to define groups depends on how data elements and data sets are str
 
 #### Review validation rule violations in the data entry app
 
-You can also run validation rules in the Data entry app. Click **Run validation** at any time, or click **Mark complete** if you want to complete the data set.
+After you create the validation rules you need, use them to check your data routinely. You can review validation rules both in data entry and through [validation rule analysis](data-quality-03-analysis.md) in the Data Quality app. When you review validation rules, DHIS2 shows only the rules that are violated, not the rules that pass.
 
-![The bottom bar of the Data entry app with the Run validation and Mark complete buttons highlighted.](resources/images/dq_image29.png)
+In the Data Entry app, click **Run validation** in the bottom bar at any time. Validation also runs when you click **Mark complete** to complete the data set.
 
+![Data Entry app bottom bar](resources/images/dq_de_bottom_bar.png){ .center width=95% }
 
-The results show in the **Validation** panel on the right side of the app. The panel shows the number of High, Medium, and Low priority violations, and lists the violations in a color that matches their priority. The new app shows the violations slightly differently from the previous Data entry app. It shows the instruction, then the left side and its value, the operator, and the right side and its value.
+The following example uses the rule "ANC 2 cannot be higher than ANC 1". The user typed 400 instead of 4 for ANC 2nd visit (outreach):
 
-![The Validation panel in the Data entry app with an alert summary and one medium priority violation.](resources/images/dq_image68.png)
+![Wrong value for ANC 2nd visit](resources/images/dq_de_wrong_value.png){ .center width=55% }
 
-Review the values for each of these rules, and decide if you can correct them before you continue with other work in DHIS2.
+The results show in the **Validation** panel on the right side of the app. The **Alert summary** shows the number of **High**, **Medium**, and **Low** priority violations. Each violation shows the instruction, then the left side and its value, the operator, and the right side and its value. The rule compares the totals of fixed and outreach visits, so the values in the panel (415 and 22) are larger than the values in the outreach cells.
+
+![Validation panel with one alert](resources/images/dq_de_validation_violation.png){ .center width=30% }
+
+Review the values for each of these rules, and correct them where you can before you continue with other work in DHIS2. In the example, the error is obvious, so correct the value to 4. When you have corrected all the errors that validation found for this data set, period, and organisation unit, click **Run validation again**. The panel shows that there are no validation alerts.
+
+![Validation panel after the correction](resources/images/dq_de_validation_passed.png){ .center width=30% }
 
 Ideally, create validation rules before you train staff on data entry for a program. You can then include validation violations and how to correct them in the training. During training, make sure that all data sets pass validation, where possible, before submission.
 
 
 #### Review validation rule violations in data entry (DHIS2 v41 and earlier)
 
-After you create the validation rules you need, use them to check your data routinely. You can review validation rules both in data entry and through [validation rule analysis](data-quality-03-analysis.md) in the Data Quality app. When you review validation rules, DHIS2 shows only the rules that are violated, not the rules that pass.
+To check the data in the previous Data entry app, scroll to the top or bottom of the data set and click **Run validation**. (Validation rules also run when you click **Complete** at the bottom of the data entry screen.)
 
-To check the data in the Data entry app, scroll to the top or bottom of the data set and click **Run validation**. (Validation rules also run when you click **Complete** at the bottom of the data entry screen.)
-
-![The Data entry app with the Run validation button highlighted.](resources/images/dq_image15.png)
+![Run validation in the previous Data entry app](resources/images/dq_image15.png){ .center width=85% }
 
 This runs all validation rules that use data elements in the data set you chose.
 
 A pop-up window shows the validation rules that are violated.
 
-![The Validation Result window listing violated rules with their left side, operator, and right side values.](resources/images/dq_image75.png)
+![Validation result in the previous Data entry app](resources/images/dq_image75.png)
 
-The window shows several violations, including the rule created in the previous section. Review each of these rules to make sure that the data values in this data set are entered correctly before you finish data entry. If possible, correct wrong values to reduce errors at the source of collection.
-
-In the example, there is an obvious error that you should change to the correct value:
-
-![The Positive (RDT) value 2 highlighted in the data entry form, where Tested (RDT) is 4.](resources/images/dq_image18.png)
-
-![The Positive (RDT) value 200 highlighted in the data entry form, where Tested (RDT) is 4.](resources/images/dq_image7.png)
-
-If you correct all the errors that validation found for this data set, period, and organisation unit, and then run validation again, DHIS2 shows a message that validation passed.
-
-![The Validation Result window with the message that the data entry screen passed validation.](resources/images/dq_image59.png)
+Review each of these rules to make sure that the data values in this data set are entered correctly before you finish data entry. If possible, correct wrong values to reduce errors at the source of collection.
 
 
 ### Validation rule notifications
 
 Validation rule notifications let you create messages that DHIS2 sends when a validation rule is violated. A notification consists of the validation rules that trigger it, the recipients, and the message about the violation. DHIS2 can send notifications to recipients in three ways: email, SMS, and the DHIS2 internal messaging service. For more information, see the documentation on configuring [email](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/system-settings.html?h=system+settings+master+use#system_email_settings) and [SMS](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/configure-sms.html). The following image shows an example of a validation rule notification sent by email.
 
-![An email from DHIS2 that reports one medium priority validation violation for Positive (RDT) and Tested (RDT).](resources/images/dq_image4.png)
+![Validation notification email](resources/images/dq_image4.png){ .center width=65% }
 
 When you create and use validation rule notifications, take care that recipients do not ignore the messages. Keep the number of notifications low, so that users do not receive too many messages. Experience shows that when users receive too many messages, they tend to ignore them, and real problems are not fixed. In general, create notifications only for priority areas of correction, and send them only to the users who need to see them. You can find other violations through routine data quality review procedures.
 
@@ -160,42 +180,55 @@ Validation rule notifications use user groups to define the recipients. To learn
 
 #### Configuring validation notifications
 
-In the **Maintenance** app, go to **Validation** > **Validation Notification** and add a new notification. Fill in the key fields:
+In the **Metadata Management** app, go to **Validations** > **Validation notifications** and click **New**. Fill in the key fields:
 
-1. **Name** (and optionally a code).
+1. Enter a **Name**, and optionally a code.
+2. Choose the **Validation rules** that trigger this notification. To make messages easier to understand, use only one validation rule per notification where you can. If the recipients have access to several organisation units, there can be several violations in a given period, and the message identifies each violation.
 
-2. **Validation rules**: the rules that trigger this notification. To make messages easier to understand, it is generally best to use only one validation rule per notification. If the recipients have access to several organisation units, there can be several violations in a given period, and the message identifies each violation.
+![Validation notification: rules that trigger it](resources/images/dq_mm_validation_notification_rules.png){ .center width=95% }
 
-3. **User groups**: the groups that receive the notification. The user groups must exist (see the [documentation on user groups](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/users-roles-and-groups.html#mgt_usergroup)). Users must have the relevant contact information filled in, for example an email address for email notifications. Target only the users who need to receive and act on the information.
+3. Under **Notification details**, enter a **Message subject** and a **Message body**. The message consists of plain text and template variables that DHIS2 replaces with values. To add a variable, click it in the **Insert a variable:** list.
+4. Under **Recipients**, choose the **User group recipients**. The user groups must exist (see the [documentation on user groups](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/users-roles-and-groups.html#mgt_usergroup)). Users must have the relevant contact information filled in, for example an email address for email notifications. Choose only the users who need to receive and act on the information.
+5. Under **Send notification as**, choose how DHIS2 sends notifications when it detects several violations (over several organisation units, periods, or both):
+    * **Collective summary**: DHIS2 summarizes all detected violations in one email, SMS, or DHIS2 message.
+    * **Single notification**: one message per violation. Use this option sparingly, for high priority violations.
+6. Click **Save and close**.
 
-4. **Notification strategy**: how DHIS2 sends notifications when it detects several violations (over several organisation units, periods, or both):
-    1. **Collective summary**: DHIS2 summarizes all detected violations in one email, SMS, or DHIS2 message.
-    2. **Single notification**: one message per violation. Use this option sparingly, for high priority violations.
+![Validation notification: message and recipients](resources/images/dq_mm_validation_notification.png){ .center width=80% }
 
-5. **Message template**: what the message looks like. It consists of plain text and template variables that DHIS2 replaces with values.
+The following example of a message shows how the template variables appear in a notification when DHIS2 sends it:
 
-![An example notification email with numbered markers on the subject and on each value that replaces a template variable.](resources/images/dq_image11.png)
+![Notification email with template variables replaced](resources/images/dq_image11.png){ .center width=80% }
 
-The following example of an output message shows how template variables and plain text appear in a notification when DHIS2 sends it.
-
-![The Message template section with the subject template, the message template, and the list of template variables.](resources/images/dq_image6.png)
-
-1. This is the subject template in the message. Each violation shows the subject before the contents of the message template.
-2. The template itself has a mix of free text and variables. The first variable is the left side description. In the message, DHIS2 replaces it with Positive (RDT).
-3. This is the left side value. In the actual message, DHIS2 replaces it with the value stored in DHIS2.
-4. This is the operator for the validation rule.
-5. This is the right side description, replaced with Tested (RDT) in the message.
-6. This is the right side value, taken from DHIS2.
-7. This is the organisation unit.
-8. This is the period.
-
-You can use several different variables to create the message and give the correct details to the person who reviews the notification.
-
-To create the template, enter free text and choose the variables you need from the **Template variables** list on the right side of the screen.
+1. The subject. Each violation shows the subject before the contents of the message body.
+2. The left side description, here Positive (RDT).
+3. The left side value, taken from DHIS2.
+4. The operator of the validation rule.
+5. The right side description, here Tested (RDT).
+6. The right side value, taken from DHIS2.
+7. The organisation unit.
+8. The period.
 
 
-When you have filled in these fields, click **Save**.
+### Using validation rules to set an upper limit
 
+Validation rules usually compare two related values. You can also use a validation rule to set a fixed upper limit for a set of data elements, to catch typing mistakes such as repeated digits. The `greatest()` function lets one rule check many data elements: it returns the largest of the values in the list.
+
+The following example is from a school census in an education management information system (EMIS). The census form has 41 enrolment tables. The rule checks that the total of each table (all classes, sexes, and ages) is 3000 or less. In the census data from 2023 to 2025, 99.9% of these totals are below 1000, so a total above 3000 is almost certainly a mistake.
+
+| Field | Value |
+|---|---|
+| Name | Enrolment plausibility: enrolment total over 3000 |
+| Instruction | One of the enrolment tables in this form adds up to more than 3000 learners, which is more than any school is likely to have. Look through the enrolment tables for a value that is much larger than the others (often a typing mistake, such as repeated digits or a year) and correct it. |
+| Importance | Medium |
+| Period type | Yearly |
+| Left side | `greatest(#{KrjARNwUOFF},#{w34HAnkMJDW},#{PPWh2jFXBWV}, ... ,#{pENhdbNXn7c})` (41 data elements), with the missing value strategy **Skip if all values are missing** |
+| Operator | Less than or equal to |
+| Right side | `3000`, with the missing value strategy **Never skip** |
+
+Each data element in the list is referenced without a category option combination, so DHIS2 uses the total of all its disaggregations.
+
+Compared with [min-max values](#min-max-values), this approach has some advantages. One rule covers a whole form, it does not need historical data for each organisation unit, and it works for yearly data with few data points. The limit is the same for all organisation units, so set it well above what the largest organisation unit reports. The rule also does not tell the user which table has the wrong value, because the left side shows only the largest total. Use the instruction to tell the user how to find it.
 
 ### Recommendation on validation rules configuration
 
@@ -226,24 +259,21 @@ For data sets disaggregated with an attribute category combination, the min-max 
 You can set min-max values manually in the data entry app, or use methods that calculate minimum and maximum values from historical data with statistical methods. This guide does not recommend using the built-in DHIS2 tool to generate min-max values. For the reasons, see [Limitations with min/max values](#limitations-with-minmax-values).
 
 
-You can currently view and _edit_ the min-max values in the data entry apps. You can list values that *violate* the min-max thresholds in bulk with the Data Quality app, as described in [Review min-max values in the Data Quality app](#review-min-max-values-in-the-data-quality-app).
+You can view and _edit_ the min-max values in the Data Entry app. You can list values that *violate* the min-max thresholds in bulk with the Data Quality app, as described in [Review min-max values in the Data Quality app](#review-min-max-values-in-the-data-quality-app).
 
 #### Viewing and configuring min/max values in the data entry app
 
-In the Data entry app, to see min-max values, choose an input field (that is, a cell for data entry) and click **View details** in the toolbar at the bottom of the app.
+In the Data Entry app, to see min-max values, choose an input field (that is, a cell for data entry) and click **View details** in the bottom bar. The **Details** panel opens on the right side of the screen. It has a section for **Min and max limits**.
 
-![The toolbar at the bottom of the Data entry app with the View details button highlighted.](resources/images/dq_image104.png)
+![Min and max limits in the Details panel](resources/images/dq_de_minmax_limits.png){ .center width=30% }
 
-A details panel opens on the right side of the screen, with a separate section for min-max limits. All users can see the min-max values that are set, and users with the appropriate permissions can also edit or delete them.
-
-![The Min and max limits section of the details panel, with the Edit limits and Delete limits buttons.](resources/images/dq_image20.png)
-
+All users can see the min-max values that are set. Users with the appropriate permissions can also edit or delete them. If no limits are set, the section shows **Add limits**.
 
 #### Viewing and configuring min/max values in the data entry app (DHIS2 v41 and earlier)
 
 In the Data entry app, double-click an input field (that is, a cell for data entry) to open a pop-up window with information about that data element and category option combination.
 
-![The data value pop-up window in the Data entry app, with the min-max limits section and a data element history chart that shows the max value.](resources/images/dq_image86.png)
+![Min-max limits in the previous Data entry app](resources/images/dq_image86.png){ .center width=70% }
 
 The **Min-max limits** section in the top right corner of the window shows the min-max limits that are set. Users with the appropriate permissions can remove limits or save new ones. These values then apply to that combination of data element, category option combination, and organisation unit. If a maximum value is set, the **Data element history** graph also shows it.
 
@@ -261,11 +291,11 @@ DHIS2 can generate and remove min-max values in bulk for one or more data sets a
 
 DHIS2 generates min-max values only for combinations of data element, category option combination, and organisation unit that already have data. This does not depend on how the data set is assigned.
 
-![The Min-Max Value Generation section of the Data Administration app, with numbered markers on the section, the data sets, the organisation unit tree, and the generate and remove buttons.](resources/images/dq_image34.png)
+![Min-max value generation in the Data Administration app](resources/images/dq_image34.png){ .center width=75% }
 
 DHIS2 generates min-max values by calculating the mean of all existing data values for a given combination of data element, category option combination, and organisation unit. It then calculates lower and upper bounds a certain number of standard deviations from this mean. The number of standard deviations comes from a system setting called **Data analysis std dev factor**. The default value is 2 standard deviations. You can change it in the System Settings app, in the **General** section.
 
-![The General section of the System Settings app with the Data analysis std dev factor setting set to 2.](resources/images/dq_image97.png)
+![Data analysis std dev factor in System Settings](resources/images/dq_image97.png){ .center width=60% }
 
 
 ##### Limitations with min/max values
@@ -287,7 +317,7 @@ In _some_ cases this function can work well enough to use. This requires enough 
 
 #### Custom generation of min-max values
 
-The [DHIS2 API](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#webapi_min_max_data_elements) lets you save and remove min-max values. You can therefore generate the min-max values outside DHIS2 with other tools, and then import them through the API. A limitation of this approach is that the API lets you POST or DELETE only _individual_ values (for one combination of data element, category option combination, and organisation unit). However, min-max values do not need to be updated often (unlike analytics, for example), so you can work around this limitation.
+The [DHIS2 API](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#webapi_min_max_data_elements) lets you save and remove min-max values. You can therefore generate the min-max values outside DHIS2 with other tools, and then import them through the API. The API has bulk endpoints (`/api/minMaxDataElements/upsert` and `/api/minMaxDataElements/delete`) that take many values in one request, as JSON or CSV. These endpoints are available in DHIS2 2.41 and later. On older versions, the API lets you save or delete only one value at a time (for one combination of data element, category option combination, and organisation unit).
 
 
 #### Generating min-max values with the DQ Workbench
@@ -304,21 +334,23 @@ The [GitHub repository](https://github.com/dhis2/tool-dq-workbench) has detailed
 
 #### Review min/max values in data entry
 
-Users do not need to do anything to review min-max values in the Data entry app. When someone enters a number outside the min-max limits, a pop-up window with a warning message appears right away, and DHIS2 highlights the cell in dark orange.
+Users do not need to do anything to review min-max values in the Data Entry app. When someone enters a number outside the min-max limits, DHIS2 highlights the cell in yellow right away. In the following example, the max limit is 20:
 
-![A warning pop-up in the Data entry app saying that the value of BCG doses given is greater than the maximum value of 50.](resources/images/dq_image91.png)
-![The BCG doses given cell with the value 60 highlighted in dark orange.](resources/images/dq_image101.png)
+![Value above the max limit](resources/images/dq_de_minmax_violation.png){ .center width=55% }
 
+The Data Entry app does not show a warning message, and **Run validation** does not list min-max violations. Explain the yellow highlight to data entry staff during training.
 
-When you mark the data set as complete or click **Run validation**, DHIS2 also lists the min-max violations, in a similar way to validation rule violations.
+In the previous Data entry app (DHIS2 2.41 and earlier), a pop-up window with a warning message appears, and DHIS2 highlights the cell in dark orange. When you mark the data set as complete or click **Run validation**, that app also lists the min-max violations, in a similar way to validation rule violations.
 
-![The Validation Result window listing BCG doses given as an outlier with the value 60, a min of 5, and a max of 50.](resources/images/dq_image51.png)
+![Min-max warning in the previous Data entry app](resources/images/dq_image91.png){ .center width=60% }
+
+![Min-max violation in the previous Data entry app](resources/images/dq_image51.png){ .center width=90% }
 
 #### Review min-max values in the Data Quality app
 
 You can review min-max values in bulk with **Outlier detection** in the Data Quality app. **Min-max values** is one of the options in the **Algorithm** menu.
 
-![The Outlier Detection page of the Data Quality app with Min-max values chosen as the algorithm.](resources/images/dq_image110.png)
+![Min-max outlier detection in the Data Quality app](resources/images/dq_image110.png)
 
 
 To analyze values outside the min-max thresholds:
@@ -331,6 +363,6 @@ To analyze values outside the min-max thresholds:
 
 The result is a list that shows the data element, period, and organisation unit where a value outside the min and max thresholds was reported.
 
-![The Outlier Detection results table with data element, period, organisation unit, value, deviation, min, max, and follow-up columns.](resources/images/dq_image87.png)
+![Outlier detection results](resources/images/dq_image87.png)
 
 The **Value** column is the reported data value. **Deviation** is how far the number is above the max threshold or below the min threshold, and the **Min** and **Max** columns show the min-max thresholds for the data element and organisation unit. The table is sorted by deviation, because the violations with the highest deviation have the biggest impact on the overall data. **Follow-up** lets you mark data values for follow-up, so that you can review them later with the [Follow-up analysis](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/collecting-data/data-quality.html?h=follow-up+anal+master+use#about-follow-up-analysis) function.
