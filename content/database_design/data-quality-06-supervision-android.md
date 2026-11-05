@@ -1,10 +1,10 @@
-# User Guide to the Supervision App - Android version
+# User guide to the Supervision App for Android
 
 ## Background
 
-The Supervision App is designed for field users to manage and monitor supervision activities. It allows synchronization with DHIS2 and supports offline use.
+The Supervision App is designed for field users to manage and monitor supervision activities. It lets you synchronize with DHIS2, and it supports offline use.
 
-Main features:
+The main features are:
 
 * A dashboard showing the current status of indicators.
 * An overview of previous supervision action plans.
@@ -12,105 +12,107 @@ Main features:
 * Synchronization for sending collected data to DHIS2. 
 * Offline functioning.
 
-## Technical Specification and Installation
+## Technical specification and installation
 
-### Android Requirements
+### Android requirements
 
-* Works on Android 13 and above
-* Compatible with phone and tablets
+* Works on Android 13 and later
+* Compatible with phones and tablets
 
-### Installation Instructions
+### Installation instructions
 
-Until the app is published on the Playstore, you can install it manually.
+Until the app is published on the Play Store, you can install it manually.
 
-1. Download the APK from your DHIS2 administrator or by getting the link from your DHIS2 administrator. [Android Supervision App](https://github.com/HISPWCA/Supervision-Apks/releases/tag/v.1.2.5)
+1. Download the APK from your DHIS2 administrator, or get the download link from your DHIS2 administrator: [Android Supervision App](https://github.com/HISPWCA/Supervision-Apks/releases/tag/v.1.2.5).
 2. Locate the file in your Downloads folder.
-3. Tap the file and follow on‑screen instructions to install or update the app
+3. Tap the file and follow the on‑screen instructions to install or update the app.
 
-![](resources/images/dq_android_supervision/Image14_framed.png)
+![The GitHub release page for Supervision version 1.2.5, with the APK file under Assets.](resources/images/dq_android_supervision/Image14_framed.png)
 
-![](resources/images/dq_android_supervision/Image15_framed.png)
+![The Android dialog that asks you to confirm the download of the APK file.](resources/images/dq_android_supervision/Image15_framed.png)
 
-![](resources/images/dq_android_supervision/Image16_framed.png)
+![The Android dialog that asks you to confirm the update of the Supervision app.](resources/images/dq_android_supervision/Image16_framed.png)
 
 ## Login page
 
-1. Open the App
-2. Enter your URL,Username and Password
-3. Tap Login to access the home interface.
+1. Open the app.
+2. Enter the **Server url**, **Username**, and **Password**.
+3. Tap **Log in** to open the home interface.
 
-![](resources/images/dq_android_supervision/Image17_framed.png)
+![The login screen with the server URL, username, and password fields.](resources/images/dq_android_supervision/Image17_framed.png)
 
-![](resources/images/dq_android_supervision/Imageconfig_framed.png)
+![The app synchronizes the configuration after login.](resources/images/dq_android_supervision/Imageconfig_framed.png)
 
 ## Home interface
 
-After login, you will see available supervision forms Examples: DQR-RSC,
+After you log in, the app shows the available supervision forms, for example DQR-RSC.
 
-First time set-up:
+First-time setup:
 
-1. Tap to three horizontal lines (menu).
-2. Go to Settings.
-3. Select Configuration Synchronization
+1. Tap the menu icon (three horizontal lines).
+2. Tap **Settings**.
+3. Tap **Sync configuration**.
 
-![](resources/images/dq_android_supervision/Image3_framed.png)
+![The home screen with the list of available supervision programs.](resources/images/dq_android_supervision/Image3_framed.png)
 
-![](resources/images/dq_android_supervision/Image1_framed.png)
+![The side menu with the Settings item.](resources/images/dq_android_supervision/Image1_framed.png)
 
-![](resources/images/dq_android_supervision/Image2.png)
+![The Settings screen with the Sync configuration option.](resources/images/dq_android_supervision/Image2_framed.png)
 
-## Selecting a Supervision Event
+## Selecting a supervision event
 
-1. Choose the **tracker program** (e.g DQR-RSC)
+1. Choose the tracker program, for example DQR-RSC.
 
-![](resources/images/dq_android_supervision/Image3_framed.png)
+![The list of supervision programs, where you choose the tracker program.](resources/images/dq_android_supervision/Image3_framed.png)
 
-2. Select the **organization unit** to be supervised
+2. Choose the organisation unit to supervise.
 
-![](resources/images/dq_android_supervision/Image4_framed.png)
+![The list of organisation units for the chosen program, with the Synchronize button at the top.](resources/images/dq_android_supervision/Image4_framed.png)
 
-3. View planned supervisions(events).The most recent appear at the top.
+3. View the planned supervisions (events). The most recent appear at the top.
 
-![](resources/images/dq_android_supervision/Image22_framed.png)
+![An organisation unit with its planned supervision events, most recent first.](resources/images/dq_android_supervision/Image22_framed.png)
 
-1. Clicking on each event displays the charts of the indicators whose quality you wish to check. The single values displayed at the top correspond to the values of the period indicated at the top.
-2. To display the values of another period, simply click on the period and select the new period in the calendar.
+1. Tap an event to show the charts of the indicators whose quality you want to check. The single values at the top are the values for the period shown at the top.
+2. To show the values for another period, tap the period and choose the new period in the calendar.
 
-![](resources/images/dq_android_supervision/Image10_framed.png)
+![The event dashboard with the period selector, single values, and a 12-month chart.](resources/images/dq_android_supervision/Image10_framed.png)
 
-![](resources/images/dq_android_supervision/Image8_framed.png)
+![The event dashboard with the legend, a 12-month indicator chart, and the Open form button.](resources/images/dq_android_supervision/Image8_framed.png)
 
 ## Open the form
 
-1. Tap Open form (top right).
+1. Tap **Open form** (top right).
 2. Sections are collapsed by default. Tap **Show Fields** to expand.
 3. Fill in the required fields section by section.
-4. Tap Save (bottom right) when finished.
+4. When you have finished, tap **Save** (disk icon, bottom right).
 
-![](resources/images/dq_android_supervision/Image8_framed.png)
+![The event dashboard with the Open form button at the top right.](resources/images/dq_android_supervision/Image8_framed.png)
 
-![](resources/images/dq_android_supervision/Image20_framed.png)
+![The supervision form with the event details and facility information sections.](resources/images/dq_android_supervision/Image20_framed.png)
 
-## Supervision Dashboard: Results Visualization
+## Supervision dashboard: results visualization
 
-It is possible to view supervision results directly from the Android, even if the data is not synchronized. 
+You can view supervision results directly on the Android device, even if the data is not synchronized.
 
-1. To do so, click on the chart button at the bottom center.  
-2. You can display other indicators by clicking on the other tabs of the dashboard.
+1. Tap the chart icon at the bottom center.
+2. To show other indicators, tap the other tabs of the dashboard.
 
 
-    Note: The dashboard is automatically generated from the data entered, even if there is no Internet connection.
+   > **Note**
+   >
+   > The app generates the dashboard automatically from the data entered, even if there is no Internet connection.
 
-3. It is possible to share the dashboard in pdf format on or offline. When online, the dashboard pdf file can be shared using all the communication apps available on the Android device: Whatsapp, Snapchat, Gmail, Slack, etc. However, when an Internet connection is not available, the file can be shared via Bluetooth. 
-4. To do this, you'll need to make sure that Bluetooth mode is enabled on both devices, and that they are paired. You can also download the file to your device by clicking on: Share > Printer > pdf
+3. You can share the dashboard as a PDF file, online or offline. When online, you can share the PDF file with any communication app on the Android device, for example WhatsApp, Snapchat, Gmail, or Slack. When no Internet connection is available, you can share the file using Bluetooth.
+4. To share using Bluetooth, make sure that Bluetooth is enabled on both devices and that they are paired. You can also download the file to your device: tap **Share** > **Printer** > **pdf**.
 
-![](resources/images/dq_android_supervision/Imageanalytics_framed.png)
+![The supervision dashboard with indicator tabs and charts.](resources/images/dq_android_supervision/Imageanalytics_framed.png)
 
-![](resources/images/dq_android_supervision/Image13_framed.png)
+![The Android share panel for the dashboard PDF file.](resources/images/dq_android_supervision/Image13_framed.png)
 
-## Data Synchronisation
+## Data synchronization
 
-After saving supervision data:
+After you save supervision data:
 
-1. When back online, go to the supervision selection page and tap Synchronize.
-2. Alternatively, go to Settings > Synchronize Data to upload locally saved supervision data to the DHIS2 server.
+1. When back online, go to the supervision selection page and tap **Synchronize**.
+2. Alternatively, go to **Settings** > **Synchronize Data** to upload locally saved supervision data to the DHIS2 server.
