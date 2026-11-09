@@ -12,7 +12,8 @@ jobs:
       # Set up docs preview only for PRs from the upstream repository, not from forks.
       DOCS_PR_PREVIEW: ${{ github.event_name == 'pull_request' && !github.event.pull_request.head.repo.fork }}
 
-    runs-on: ubuntu-latest
+    # Pinned as Python 3.9 is not available on Ubuntu 26.04 (ubuntu-latest).
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout DHIS2 Docs Builder Repository
