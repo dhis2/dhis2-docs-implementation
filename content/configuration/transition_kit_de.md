@@ -1,297 +1,275 @@
-# Transition Kit from Old Data Entry App (Legacy App) to New Data Entry App (Aggregate data)
+# Transition Kit - Legacy Data Entry app to the new Data Entry app (aggregate data) { #detk_transition_kit }
 
-- [Transition Kit from Old Data Entry App (Legacy App) to New Data Entry App (Aggregate data)](#transition-kit-from-old-data-entry-app-legacy-app-to-new-data-entry-app-aggregate-data)
-  - [Introduction](#introduction)
-  - [Benefits in brief](#benefits-in-brief)
-  - [Feature comparison of Old (Legacy App) vs. New App.](#feature-comparison-of-old-legacy-app-vs-new-app)
-  - [Feature comparison of Legacy App vs. New App Details with Screenshots](#feature-comparison-of-legacy-app-vs-new-app-details-with-screenshots)
-    - [Initial Interface Review](#initial-interface-review)
-    - [Option Menu Use/Function](#option-menu-usefunction)
-    - [Sections and Filters](#sections-and-filters)
-      - [Sections](#sections)
-      - [Filters](#filters)
-    - [Run Validation](#run-validation)
-    - [Data Element Details](#data-element-details)
-  - [New Features for Version - 42](#new-features-for-version---42)
-    - [Pivot options in aggregate datasets sections](#pivot-options-in-aggregate-datasets-sections)
-      - [Default](#default)
-      - [Pivot](#pivot)
-      - [Move a category to rows](#move-a-category-to-rows)
-      - [Content displayed before/after section](#content-displayed-beforeafter-section)
-  - [Moving a Dataset from the Legacy (Old App) to the New App](#moving-a-dataset-from-the-legacy-old-app-to-the-new-app)
-    - [Review Current Configuration](#review-current-configuration)
-    - [Understand Changes](#understand-changes)
-    - [Prepare for Migration](#prepare-for-migration)
-  - [Limitations of New App](#limitations-of-new-app)
-  - [Use cases](#use-cases)
-    - [Default form:](#default-form)
-    - [Section form](#section-form)
+## Introduction { #detk_introduction }
 
+This transition kit is designed to support DHIS2 users and implementers in moving from the legacy aggregate data entry app to the new data entry app. It provides practical guidance, highlights key differences, and outlines updated workflows to ensure a smooth transition.
 
-## Introduction
+The goal is to help users adapt quickly and efficiently to the new interface and functionalities introduced in the latest DHIS2 versions, while maintaining reporting continuity.
 
-This transition kit is designed to support DHIS2 users and implementers in moving from the legacy aggregate Data Entry app to the New Data Entry App. It provides practical guidance, highlights key differences, and outlines updated workflows to ensure a smooth transition.
+## Benefits in brief { #detk_benefits }
 
-The goal is to help users adapt quickly and efficiently to the new interface and functionalities introduced in the latest DHIS2 versions, while maintaining **data quality and reporting continuity**.
+1. **One selection bar:** Data set, organisation unit, period and section are chosen from one bar at the top of the screen.
+2. **Detailed data element information:** View code, data element ID, category option combo ID, and last updated details.
+3. **Configurable forms:** Supports default, section and HTML-based forms.
+4. **Offline functionality:** Values are saved on your computer and sync automatically when you reconnect. Validation, history and the audit log need a connection.
+5. **Save status for each cell:** Each cell shows if its value is saved, waiting to sync, invalid (not saved), has a comment or is locked. Open **Options** > **Help** to see what each colour means.
+6. **Validation side panel:** Interactive side panels with categorized alerts (High / Medium / Low).
+7. **Active development:** The new app is still being developed and maintained. The legacy app is not.
+8. **Keyboard navigation:** Move between cells with Tab and the arrow keys and open the details panel with ctrl+enter (cmd+enter on Mac).
 
-## Benefits in brief
-
-1. **Modern and user-friendly interface:** More intuitive layout, improved navigation, and responsive design.
-2. **Detailed data element information:** Includes code, data element ID, category option combo ID, and last updated details.
-3. **Support for configurable forms**(default, section, and HTML-based).
-4. **Offline functionality** (especially via DHIS2 Android).
-5. **Enhanced validation and feedback**: Interactive side panels with categorized alerts.
-6. **Active development and support:** Unlike the deprecated legacy app, the new app is continuously improved and maintained.
-7. **Accessibility enhancements**: Better keyboard navigation and usability for a wider range of users.
-
-## Feature comparison of Old (Legacy App) vs. New App.
-
-
-| **Features**           | **Old App (Legacy App)**             | **New App**                                                  |
-|-------------------------|---------------------------------------|--------------------------------------------------------------|
-| **Interface**           | Dataset & Period on right; OU on left | OU, Dataset, Period all selected from persistent top bar     |
-| **Menus**               | Top-right corner                     | Options button (includes Help)                               |
-| **Sections/Filters**    | Visible after period selection        | Available directly at top bar                                |
-| **Data element filter** | Limited to one section at a time      | Global filter across sections; can narrow to one section      |
-| **Run validation**      | Button at top right menu; opens popup | Bottom of form; interactive side panel with categorized alerts |
-| **Data element details**| Popup window for comments/follow-up   | Inline side panel; comments, audit history, legends available |
-
-## Feature comparison of Legacy App vs. New App Details with Screenshots
-
-###  Initial Interface Review
-
-**New App**: Organisation unit, dataset, and period selected from a persistent top bar. Modern, user-friendly design with improved usability.
-
-    Note: In the new app, the Dataset must be chosen before the Organisation Unit.This order is intentional, it helps filter available organisation units to only those assigned to the selected dataset, reducing user errors during data entry.
-
-
-**Legacy App**: Organisation Unit on left panel, dataset selected separately. Outdated interface and workflows.
-
-![](images/ER_DE2/image30.png)
-
-### Option Menu Use/Function
-
-![](images/ER_DE2/image33.png)
-
-**New App**
-* **Print form with values**: Prints the current data entry form including all entered data values. Useful for reviews, audits, or physical record-keeping.
-* **Print empty form**: Prints a blank version of the dataset form. Useful for offline data collection or field distribution.
-* **Help:** Opens documentation or guidance related to the Data Entry App. Supports users in understanding the interface and resolving issues.
-
-      Note : The new Help button opens a legend explaining the meaning of cell colors and icons; for example, red indicates an unsaved value.It also lists available keyboard shortcuts, helping users navigate and enter data more quickly.
-
-![](images/ER_DE2/image32.png)
-
-**Legacy App** The Print form and Print blank form button is available at the extreme right top corner.
-
-![](images/ER_DE2/image7.png)
-
-### Sections and Filters
-
-#### Sections
-
-Both are supported with section forms where you can select the section of the form.
-
-**New App:** Sections displayed on the top bar after data set, org unit and period have been selected; 
-
-**Legacy App:**  Section forms only available after selecting the period
-
-**Benefit**: Greater efficiency when working with large/complex forms.
-
-![](images/ER_DE2/image14.png)
-
->Note
-> In the **Legacy App,** the data element filter was limited to one section at a time. This meant that if you wanted to find a data element, you had to first navigate to the specific section where it was located (filtering worked only within that active section).
+> **Important**
+>
+> **Why this matters for implementers:** The new app keeps all selections in one bar, shows validation results next to the form, and is the version that is still being developed. Training and support effort should go to the new app. 
 > 
-> In the **New App**, the filter is global across all sections and can be applied to one section at a time. This means you can search for any data element from the top filter bar, and it will display results across the entire form, regardless of which section the element belongs to.
-> 
-> Additionally, when a specific section is open, the filter can be used to narrow down elements within that section alone. This dual functionality offers flexibility and significantly improves efficiency, especially when working with large or complex forms.
+> *As of DHIS2 version 42, the legacy app is no longer supported and can not be accessed in DHIS2.* 
 
+## Feature comparison of the legacy app and the new app { #detk_feature_comparison }
 
-#### Filters
+| Feature | Legacy app | New app |
+|:--|:----|:----|
+| Interface | Data set and period selectors are in a green box on the middle-left side of the screen. Organisation unit (OU) is on the left panel. | OU, data set and period are all selected from a persistent top bar. The top bar stays in place when you scroll down the page. |
+| Menus | Individual buttons in the top-right corner (Run validation, Print form, Print blank form) and at the bottom of the data entry page (Complete, Incomplete, Run validation). | Top-right **Options** button with a dropdown menu: Print form with values, Print empty form, and Help. The bottom of the page has buttons to mark the form complete or incomplete and to run validation. |
+| Sections/Filters | Displayed in a green box on the mid-left panel after period selection. | Available directly on the top bar after period selection. |
+| Data element filter | Each section has its own data element search bar that works only within that section. | In addition to the section filter, a global search bar filters by data element across all sections. |
+| Run validation | Buttons at the top-right and lower mid-left side. Opens a popup listing validation errors. | Button at the bottom of the form. Opens an interactive side panel with alerts grouped as high, medium and low. |
+| Data element details | Double-click a data cell to open a popup window for comments, follow-up and last updated information. | Select **View details** from the lower-left panel (above Run validation and Mark incomplete) to open a side panel with follow-up, comments, minimum and maximum limits, history and audit log. |
+| Organisation unit list | All organisation units are shown, including ones the data set is not assigned to. | Only organisation units assigned to the selected data set are shown. |
+| Invalid values | A popup message says the value is invalid. | The cell turns red and the value is not saved. The bottom bar shows how many invalid values were not saved. |
+| Additional selections | Shown as extra dropdowns in the selection box. | Shown as extra dropdowns at the end of the top bar, after Period. |
 
-**New App:** The filter is global across all sections and can be applied to one section at a time. This means you can search for any data element from the top filter bar, and it will display results across the entire form, regardless of which section the element belongs to.
+## Feature comparison in detail, with screenshots { #detk_feature_details }
 
-Additionally, when a specific section is open, the filter can be used to narrow down elements within that section alone. This dual functionality offers flexibility and significantly improves efficiency, especially when working with large or complex forms.
+### User interface { #detk_user_interface }
 
-![](images/ER_DE2/image8.png)
-![](images/ER_DE2/image16.png)
+**New app:**
 
-**Legacy App:** The data element filter was limited to one section at a time. This meant that if you wanted to find a data element, you had to first navigate to the specific section where it was located (filtering worked only within that active section).
+The data set, organisation unit, reporting period, and section are selected from a single top bar. This compact layout brings the selection controls together, making it easier to see and change the current data entry context.
 
-![](images/ER_DE2/image11.png)
+![New app: top bar with data set, organisation unit, period and section](images/DETK/detk-top-bar.png)
 
-### Run Validation
+**Legacy app:**
 
-**New App:** Validation results shown in a **side panel**, grouped into categories: High, Medium, Low. Alerts are summarized for easier review.
+Users select the organisation unit from the hierarchy on the left, then choose the data set and reporting period in the selection panel above the form. The **Filter on section** option allows users to display a specific section.
 
-![](images/ER_DE2/image23.png)
+![Legacy app: organisation unit tree and selection panel](images/DETK/detk-legacy-selection-panel.png)
 
-**Legacy App**:The ‘Run Validation’ button is located in the bottom-left corner. When clicked validation results appear in a side panel, grouped into High, Medium, and Low categories, with alerts summarized for easier review. 
+> **Tip**
+>
+> In the new app, the data set must be chosen before the organisation unit. This order is intentional. It filters the available organisation units to only those assigned to the selected data set.
 
-    Note: The side panel groups validation alerts by severity. Review High alerts first and use the panel to quickly move between issues without losing their place in the form.
+### Options menu { #detk_options_menu }
 
-![](images/ER_DE2/image21.png)
+**New app:**
 
-### Data Element Details
+- **Print form with values:** Prints the current data entry form including all entered data values. Useful for reviews, audits, or physical record-keeping.
+- **Print empty form:** Prints a blank version of the data set form. Useful for offline data collection or field distribution.
+- **Help:** Opens a side panel with guidance on the data entry app, including what the colour coding of the cells means and the keyboard shortcuts you can use. See the figure below.
 
-**New App:** Clicking a data cell shows its details in the lower-left section, with a View Details button. This opens a side panel where users can add comments, mark items for follow-up, and view audit history and legends. Keeping all related information in one place gives a clearer, more organized view of each data item. Hide Details closes the panel.
+![New app: Options menu](images/DETK/detk-options-menu.png)
 
-![](images/ER_DE2/image12.png)
-![](images/ER_DE2/image13.png)
+![New app: Help panel with cell colours and keyboard shortcuts](images/DETK/detk-help-panel.png){ width=40% }
 
-**Legacy App:** When a user **double-clicked on a data cell** in the Data Entry app (Aggregate), a **popup window** opened.
+**Legacy app:** The **Print form** and **Print blank form** buttons are in the top-right corner.
 
-This popup allowed users to:
+![Legacy app: Run validation, Print form and Print blank form buttons](images/DETK/detk-legacy-print-buttons.png)
 
-* Enter or edit a value
-* Add a comment related to the specific data value
-* View or update the last updated date
-* See who last edited the value
+### Sections and filters { #detk_sections_filters }
 
-![](images/ER_DE2/image20.png)
+#### Sections { #detk_sections }
 
-## New Features for Version - 42
+Both apps support section forms, where you can select the section of the form.
 
-### Pivot options in aggregate datasets sections
+**New app:** Sections are displayed on the top bar after the data set, organisation unit and period have been selected.
 
-These pivot tables control how data elements and category option combos are displayed within a section of a dataset.
+![New app: section selector in the top bar](images/DETK/detk-sections-new-app.png)
 
-**Configuring Pivot Options for a Data Set**
+**Legacy app:** The section selector is fixed to the top area after the data set, organisation unit and period have been selected.
 
-1. Open the data set - Navigate to the data set you have created and to which you’ve already assigned data elements.
-2. Go to 'Manage Sections' - In the data set settings, click on Manage Sections to organize how your form is structured.
-3. Select 'Pivot Options' - Inside the section management view, choose Pivot Options to define how your data will be displayed in analytics.
-4. Choose the layout based on your design
-5. Configure the pivot options (e.g. whether data elements appear as rows or columns) according to the reporting design and data structure you need.
+![Legacy app: Filter on section dropdown](images/DETK/detk-sections-legacy-app.png)
 
-#### Default
-By default, data elements are arranged in rows, while categories (disaggregation dimensions) are displayed in columns.
+#### Filters { #detk_filters }
 
-![](images/ER_DE2/image3.png)      
+**New app:** The filter is global across all sections and can also be applied to one section at a time. You can search for any data element from the top filter bar, and it will display results across the entire form, regardless of which section the element belongs to.
 
-![](images/ER_DE2/image18.png)
+When working within a specific section, the section filter narrows down elements within that section. This helps when navigating large or complex forms.
 
-#### Pivot
+> **Tip**
+>
+> Show users how the global filter quickly narrows data elements across the whole form or within a single section. Encourage them to use the filter instead of scrolling to speed up data entry.
 
-Categories as rows, data elements as columns
-   * Useful when there are **many data elements** and few categories
-   * Makes the form **more compact horizontally**
-  
-  ![](images/ER_DE2/image24.png)
+![New app: applying the global filter](images/DETK/detk-global-filter.png)
 
-#### Move a category to rows
+![New app: filtering a data element (BCG) within a section](images/DETK/detk-section-filter.png)
 
-* It is a hybrid layout
-* One category dimension is moved to rows
-* It helps to give more control when the dataset is large.
+**Legacy app:** The data element filter was limited to one section at a time. To find a data element, you had to first navigate to the section where it was located. 
 
-  ![](images/ER_DE2/image35.png)
-  ![](images/ER_DE2/image27.png)
+![Legacy app: filter within a section](images/DETK/detk-legacy-section-filter.png)
 
-#### Content displayed before/after section
+### Run validation { #detk_run_validation }
 
-You can add HTML-based instructions, notes, or links that appear above or below the section form — useful for guidance or data entry rules.
+**New app:** The **Run validation** button is in the bottom-left corner. When selected, validation results appear in a side panel, grouped into High, Medium, and Low, with alerts summarized for easier review. The group comes from the Importance set on each validation rule (High, Medium or Low).
 
+> **Tip**
+>
+> Show users how the side panel groups validation alerts by severity. Encourage them to review High alerts first and use the panel to move between issues without losing their place in the form.
 
-![](images/ER_DE2/image25.png)
-![](images/ER_DE2/image17.png)
+![New app: validation results in the side panel](images/DETK/detk-validation-panel.png)
 
-## Moving a Dataset from the Legacy (Old App) to the New App
+**Legacy app:** The **Run validation** button is in both the top-right menu bar and the bottom of the form. When selected, it opens a window that either shows validation errors or a "Validation Result" message saying the form passed validation.
 
-### Review Current Configuration
+![Legacy app: validation result popup](images/DETK/detk-legacy-validation-popup.png)
 
-* Data elements and category combinations
-* Custom or section forms (Check if using Java script)
-* Validation rules
-* Indicators
+### Data element details { #detk_data_element_details }
 
-### Understand Changes
+**New app:** Selecting a data cell shows the **View details** button in the lower-left section. This opens a side panel where users can mark the value for follow-up, add comments, set minimum and maximum limits (depending on their authority), and see the data element ID, category option combination ID, history and audit log. **Hide details** closes the panel.
 
-* Interface - The user interface is different 
-* Custom forms  - using Java script are no longer supported but HTML is supported
-* Section forms -  are supported but can have different style with use of pivot - style options
-* Filtering - Improved filter and search feature
+> **Tip**
+>
+> Demonstrate how the View details panel keeps all information for a data item in one place. Show how users can manage data for specific cells from the panel.
 
-### Prepare for Migration
+![New app: selected cell and the View details button](images/DETK/detk-view-details-button.png)
 
-* Redesign custom forms without using Java script
-* Re - adjust the section forms
-* Test all the forms in New App
+![New app: details panel](images/DETK/detk-details-panel.png)
 
-## Limitations of New App
+**Legacy app:** When a user double-clicks a data cell, a popup window opens. The popup allowed users to add a comment, mark the value for follow-up, set minimum and maximum limits (depending on their authority), and see the data element history, the audit trail and who last updated the value.
 
-| **Limitations**                  | **Alternative/Workaround**                               |
-|----------------------------------|-----------------------------------------------------------|
-| No JavaScript support in custom forms | Use indicators for calculations and validations for logic checks |
-| No enhanced styling               | Use HTML (only simple table layouts)                     |
+![Legacy app: data element popup](images/DETK/detk-legacy-details-popup.png){ width=50% }
 
-## Use cases
+### Other changes users should know { #detk_other_changes }
 
-Below are the practical examples showing how forms behave in the **Legacy Data Entry App** compared to the **New Data Entry App**.
+- **Keyboard shortcuts:** 
+  - tab or arrow-down moves to the next cell
+  - shift+tab or arrow-up moves to the previous cell.
+  - ctrl+enter (cmd+enter on Mac) opens the details panel.
+- **Completing a form:** Use **Mark complete** in the bottom bar when all intended data is entered. Use **Mark incomplete** to reopen it.
+- **Minimum and maximum limits:** Set from the details panel. This needs the right user authority, and the limits apply to everyone who uses the data set. *It is recommended you set this system wide in bulk rather then one by one via data entry.*
+- **History and audit log:** History shows the last 12 values. The audit log shows who changed a value and when. Both are closed by default and open when you click them.
+- **Follow-up:** Values marked for follow-up appear in the Data Quality app.
+- **Working offline:** Open the app while online so forms download. Data entered offline syncs when you reconnect. Validation, history and the audit log need a connection.
 
-### Default form:
+## New features { #detk_new_features }
 
-1. Interface
-  
-   **Legacy App** 
-    - Organisation unit selected from left-hand panel; dataset separately
-    - Outdated layout, harder to navigate between forms
+The new app introduces new features that make data entry forms easier to use and configure. These updates improve layout flexibility and reduce the need for custom HTML forms.
 
-   **New App** 
-   - Organisation unit, dataset, and period all selected from the **persistent top bar**. 
-   - Modern, cleaner layout for faster switching.
-![](images/ER_DE2/image9.png)
-![](images/ER_DE2/image28.png)
+Implementers can now use built-in options such as configurable section layouts, pivot display settings, vertical tabs, collapsible sections, and custom form titles to create clearer forms.
 
-1. Organization unit
+This matters because custom forms do not work in the DHIS2 Android app. Section forms with these options are the alternative. Test each option in the Android app before relying on it.
 
-    **Legacy App**: All OUs displayed, even if the dataset is not assigned (inactive ones appear greyed).
+> **Tip**
+>
+> Many layouts that once required custom HTML forms can now be created using built-in options. If users enter data on Android, test each option in the Android app first.
 
-    **New App**: Only OUs assigned to the form are enabled
-![](images/ER_DE2/image34.png)
-![](images/ER_DE2/image15.png)
+### Collapsible sections { #detk_collapsible_sections }
 
-1. Error Display:
+**New app:** Collapsible sections are built into the data entry layout. They work automatically and do not require any configuration. They help organise long forms and reduce scrolling.
 
-   **Legacy App**: AError shown in popup messages
+![New app: collapsible sections](images/DETK/detk-collapsible-sections.png)
 
-   **New App**: Errors displayed inline within the form, with clearer indicators
+### Vertical tabs { #detk_vertical_tabs }
 
-   ![](images/ER_DE2/image1.png)
-   ![](images/ER_DE2/image31.png)
+**New app:** Sections can be shown as tabs, either horizontal or vertical, instead of on one page.
 
-2. Run validation interface
+To show sections as tabs:
 
-   **Legacy App**: “Run Validation” button in top-right menu; results in a popup.
+1. In the Metadata Management app, open the data set.
+2. Go to the **Form** section.
+3. Under **Display options** > **Section layout**, select **Tabs: Show one tab for each section**.
+4. Select **Horizontal tabs** or **Vertical tabs**.
+5. Click **Save**.
 
-   **New App**:Validation button at the bottom of the form; results appear in a <strong>side panel</strong>, grouped into <em>High / Medium / Low</em>.
+![Metadata Management app: section layout set to vertical tabs](images/DETK/detk-tabs-settings.png)
 
-      ![](images/ER_DE2/image21.png)
-      ![](images/ER_DE2/image23.png)
+![New app: vertical tabs](images/DETK/detk-vertical-tabs.png)
 
-### Section form
+### Pivot display settings for sections { #detk_pivot_display }
 
-1. Interface
-  
-   **Legacy App**: Sections appear only after period selection
+This setting lets you choose how data elements and categories are arranged in each section: what appears in rows and what appears in columns.
 
-   **New App**:Section tabs are visible at the top bar immediately
+To configure the pivot options for a section:
 
-      ![](images/ER_DE2/image19.png)
-      ![](images/ER_DE2/image10.png)
+1. In the Metadata Management app, open the data set you want to change. It must already have data elements assigned.
+2. Go to the **Form** section.
+3. Click the options menu (**...**) next to the section you want to change, then click **Edit**.
+4. Under **Display options** > **Display mode**, select how you want the section to show.
+5. Click **Save section**.
 
-2. Filter section
+![Metadata Management app: section editor with the display mode set to Pivot](images/DETK/detk-pivot-settings.png)
 
-   **Legacy App**: Filter applies to one section at a time
+The display modes are:
 
-   **New App**:Global filter across all sections, plus ability to narrow to a single section.
-   ![](images/ER_DE2/image19.png)
-   ![](images/ER_DE2/image9.png)
+- **Default:** Data elements as rows and categories (disaggregation dimensions) as columns. This is the default layout.
 
-3. New features
-   * Row/Column Switching for categories (e.g., “Communicable immunizable” dataset section).
-   * Not available in Legacy App.
-   * Makes large forms easier to read horizontally or vertically.
-  ![](images/ER_DE2/image45.png)
+    ![Default layout: data elements as rows, categories as columns](images/DETK/detk-pivot-default.png)
 
+- **Pivot:** Categories as rows, data elements as columns.
+    - Useful when there are many data elements and few categories.
+    - Makes the form more compact horizontally.
+
+    ![Pivot layout: categories as rows, data elements as columns](images/DETK/detk-pivot-categories-as-rows.png)
+
+- **Move a category to rows:** A hybrid layout.
+    - One category dimension is moved to rows.
+    - Gives more control when the data set is large.
+
+    ![Hybrid layout: one category moved to rows](images/DETK/detk-pivot-move-category.png)
+
+### Content displayed before or after a section { #detk_before_after_section }
+
+You can add instructions, notes, or links that appear above or below a section. Markdown formatted text is supported. Use this to highlight key information and direct users to additional resources.
+
+To add the text, open the section editor as described in [Pivot display settings for sections](#detk_pivot_display). Under **Display options**, fill in **Content to display before a section** or **Content to display after a section**, then click **Save section**. The section editor screenshot above shows these fields.
+
+![New app: text shown above a section](images/DETK/detk-before-after-section-text.png)
+
+## Switching a data set to the new app { #detk_switching }
+
+Switching a data set from the legacy app to the new app is usually straightforward. Both apps use the same data set and the same data values. Review existing data set configurations, custom forms, validation rules, and workflows before switching.
+
+Some existing configurations may behave differently in the new app, so test each data set before switching.
+
+### Review the current configuration { #detk_review_configuration }
+
+Before switching a data set, review:
+
+- Data elements and category combinations
+- Custom or section forms
+- JavaScript used in custom forms
+- Validation rules
+- Indicators
+- Existing data entry workflows and reporting requirements
+
+### Understand the changes { #detk_understand_changes }
+
+- **Interface:** Organisation unit, data set and period are selected from the persistent top bar.
+- **Custom forms:** HTML-based custom forms are supported. For existing JavaScript-based custom forms, check compatibility with the Custom Forms plugin before switching.
+- **Section forms:** Section forms are supported, with additional layout options such as pivot configurations, vertical tabs, and collapsible sections.
+- **Filtering:** A global filter is added on top of the section filter.
+- **Validation:** Validation results are shown in a side panel next to the form.
+
+### Prepare for migration { #detk_prepare_migration }
+
+- Review the existing data set configuration and identify any custom JavaScript dependencies.
+- Decide if existing custom forms can be used with the Custom Forms plugin or should be changed to section forms.
+- Review and adjust section layouts where required.
+- If possible, use section forms for new or redesigned forms. They are easier to maintain than custom forms.
+- Test validation rules, indicators, calculations, and data entry workflows.
+- Test the complete data set in the new app before switching users to the new workflow.
+- Where applicable, test the data set on both web and Android.
+
+> **Tip**
+>
+> Encourage implementers to walk through each data set in the new app before switching over. Pay attention to custom forms, JavaScript dependencies, section layouts, validation, and calculations. Testing with real users helps find workflow or usability issues before rollout.
+
+## Limitations of the new app { #detk_limitations }
+
+| Limitation | Consideration |
+|:--|:----|
+| JavaScript custom forms | The Custom Forms plugin provides JavaScript support in the new app. Existing JavaScript forms should still be reviewed and tested for compatibility. |
+| Custom styling | Review existing custom HTML/CSS and confirm that it displays as expected in the new app. |
+| Multiple organisation unit entry | This functionality was not rebuilt in the new app. Consider this when assessing data sets that depend on this workflow. |
+
+> **Note**
+>
+> **Custom forms and JavaScript:** JavaScript support for legacy custom forms is provided through the Custom Forms plugin included with Data Entry app version 102.0.0 and later. To enable support, upgrade the Data Entry app to version 102.0.0 or later in the App Management app. Then test existing custom forms for compatibility.
+>
+> For more information, see [Support for JavaScript in custom forms](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/support-for-javascript-in-custom-forms.html).
