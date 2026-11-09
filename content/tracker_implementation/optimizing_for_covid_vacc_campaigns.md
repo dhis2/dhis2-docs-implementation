@@ -5,17 +5,12 @@ This document describes approaches to optimizing performance for large-scale DHI
 ## Executive summary
 > **Server**
 >
-> * Appropriate software versions are used, as listed in the
-> [software requirements](https://docs.dhis2.org/en/manage/manage.html#install_software_requirements):
-> 	* JDK 17
->	* PostgreSQL 16
->	* A supported DHIS2 version, latest available patch
-> * Server monitoring is set up. Recommended: munin, glowroot
-> * Server is appropriately sized. For covax, at least:
-> 	* 32 CPU cores
->	* 32GB RAM
->	* SSD/fast disk
->	* Fast and stable internet and internal network connectivity
+> * Software versions listed in the [software requirements](https://docs.dhis2.org/en/manage/manage.html#install_software_requirements) are used,
+> with the latest patch version of a supported DHIS2 version
+> * Server monitoring is set up, see [server monitoring](#server-monitoring)
+> * Server is sized as a large instance as described in the
+> [server specifications](https://docs.dhis2.org/en/manage/manage.html#install_server_specifications), with SSD disks
+> * Fast and stable internet and internal network connectivity
 > * In shared hosting environment, verify that the server has the
 > specified resources in practice
 > * Use dedicated server for database/postgresql if possible
@@ -31,7 +26,7 @@ This document describes approaches to optimizing performance for large-scale DHI
 > * Do not use continuous analytics
 > * Tracker: Set "Start page in web Capture app" to "Search form"
 > ("Display front page list" in the Maintenance app) in the program details.
-> * Enable trigram indexing for frequently searched TEI attributes.
+> * Enable trigram indexing for frequently searched TE attributes.
 > * Ensure custom apps and integrations follow the
 > [tracker API performance guidance](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_performance).
 > * Ensure that system generated attributes don't use RANDOM pattern
@@ -68,9 +63,7 @@ The primary audience for section are system administrators supporting MOH with t
 ### General Guidance
 
 * Tracker performance improves with every release, including in patch releases. We strongly recommend running tracker instances on the latest patch version of a supported DHIS2 release. See the [release notes](https://github.com/dhis2/dhis2-releases) for the tracker performance improvements in each release.
-* We strongly recommend to set up a server monitoring tool to identify when and why your server is struggling 	
-	* Some recommendations include [https://glowroot.org](https://glowroot.org/) and 	[https://munin-monitoring.org](https://munin-monitoring.org/) 
-	* Here is a [tutorial for installing glowroot on DHIS2](https://docs.dhis2.org/en/topics/tutorials/performance-monitoring-with-glowroot.html)
+* We strongly recommend to set up a server monitoring tool to identify when and why your server is struggling, see [server monitoring](#server-monitoring).
 
 ### Analytics Performance
 
@@ -95,7 +88,7 @@ Below are steps that can be taken to improve dashboard performance.
 	c. Rather than several people downloading the same data (e.g. for the national level) from DHIS2, download once and share via for example excel.
 
 * Ensure caching is enabled in the dhis2 configuration, so that repeated requests for the same analytics resources are served from the cache and database queries are skipped. 
-  	a. System settings -\> analytics -\> cache strategy. Recommended value: at least CACHE_6AM_TOMORROW. Set cacheability to	"private" to avoid nginx cache.
+  	a. In the [analytics system settings](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/system-settings.html#system_analytics_settings), set **Cache strategy** to at least **Cache until 6 AM tomorrow**. Set **Cacheability** to **Private** to avoid nginx cache.
 
 * Turn-off continuous analytics. If you turn off continuous analytics you will only see your analytics updated after your analytics tables run.
 
@@ -128,7 +121,7 @@ c. Visualizations requesting lengthy periods of longitudinal data, e.g. last 12 
 
 d. Any visualization with enrollment-type program indicators, such as dropout rates
 
-e. In tests of program indicators from the COVAC package, program indicators of "enrollment type" took the longest response time. Further, they have poorer scalability, as they take longer to serve data when requesting additional periods, org units, or TEI.
+e. In tests of program indicators from the COVAC package, program indicators of "enrollment type" took the longest response time. Further, they have poorer scalability, as they take longer to serve data when requesting additional periods, org units, or TEs.
 
 ### Tracker Performance
 
@@ -138,22 +131,13 @@ e. In tests of program indicators from the COVAC package, program indicators of 
 	* It uses the reserved values table in the database to keep track of which values have been distributed already. This table has been known to be a pain point during tracker import.
 	* Note for implementations that use Android: reserving values to the devices for offline use may affect the user's perception of SEQUENTIAL generation as documented here: [https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id)
 
-* In early versions of the COVID-19 vaccine registry, some working lists caused performance issues. These were removed from the packages in the COVID IER package V 1.1.2. If you experience that tracker is showing slow load times, this may be related to the working lists and a large number of TEIs in one org unit. A solution is to set **Start page in web Capture app** to **Search form** in the program details (called **Display front page list** in the Maintenance app; this has the downside of also disabling working lists)
+* In early versions of the COVID-19 vaccine registry, some working lists caused performance issues. These were removed from the packages in the COVID IER package V 1.1.2. If you experience that tracker is showing slow load times, this may be related to the working lists and a large number of TEs in one org unit. A solution is to set **Start page in web Capture app** to **Search form** in the program details (called **Display front page list** in the Maintenance app; this has the downside of also disabling working lists)
 
-* Searches on TEIs on attributes (especially non-unique ones like firstName, surname, phoneNumber) can significantly improve with partial trigram indexes for that particular tracked entity attribute. This has been done in Nigeria and Rwanda and the performance improvement was huge. DHIS2 creates and maintains these indexes with the [tracker trigram index maintenance job](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html#scheduling_tracker_index_maintenance). In DHIS2 2.43 and later, select **Mark for trigram indexing** on the attributes that are used heavily during searches instead of creating these indexes manually. A trigram index is only used if the search string has at least 3 characters, so set **Minimum characters required to search** to 3 on these attributes.
+* Searches on TEs on attributes (especially non-unique ones like firstName, surname, phoneNumber) can significantly improve with partial trigram indexes for that particular tracked entity attribute. This has been done in Nigeria and Rwanda and the performance improvement was huge. DHIS2 creates and maintains these indexes for the attributes you configure, as described in [tracker trigram index maintenance](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html#scheduling_tracker_index_maintenance).
 
-* Similarly, trigram indexes will also help if the system searches based on event data values. Nigeria had their QR code for completed vaccinations as an event data value which they searched on heavily (eg: passengers qr code checked before boarding). DHIS2 does not create these indexes, so depending on search patterns for the specific implementation's configuration, implementations have to create them manually. Not all implementations will need this. Index example for a data element with uid `LavUrktwH5D` (qrCode):
+* Similarly, trigram indexes will also help if the system searches based on event data values. Nigeria had their QR code for completed vaccinations as an event data value which they searched on heavily (eg: passengers qr code checked before boarding). DHIS2 does not create these indexes, so depending on search patterns for the specific implementation's configuration, a database administrator has to create a trigram index on the values of the searched data element. Not all implementations will need this.
 
-```
-create extension if not exists pg_trgm;
-
-create index concurrently in_gin_trackerevent_edv_lavurktwh5d on trackerevent
-using gin (lower(eventdatavalues #>> '{LavUrktwH5D, value}') gin_trgm_ops);
-```
-
-The `trackerevent` table exists since DHIS2 2.43. In 2.41 and 2.42 the table is called `event`, in earlier versions `programstageinstance`.
-
-* Usage of custom apps can have a positive or negative impact on performance. The apps can be a way of making more targeted functionality that prevents extra clicks and calls to the API. They are also a source of caution, and we have seen some custom apps use API functionalities that cause unnecessary stress on the system, such as disabling paging, requesting total page counts, or using the `like` operator where `eq` would do. Custom apps, integration middleware and external scripts using the tracker API should follow the [tracker API performance guidance](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_performance). If feasible, enforce a minimum search string length of 3 characters on searchable attributes. Nigeria had a custom app that enforced this on the app side and that helped alleviate several heavy queries.
+* Usage of custom apps can have a positive or negative impact on performance. The apps can be a way of making more targeted functionality that prevents extra clicks and calls to the API. They are also a source of caution, and we have seen some custom apps use API functionalities that cause unnecessary stress on the system. Custom apps, integration middleware and external scripts using the tracker API should follow the [tracker API performance guidance](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_performance). Nigeria had a custom app that enforced a minimum search string length of 3 characters on the app side and that helped alleviate several heavy queries.
 
 > **Note**
 >
@@ -178,13 +162,13 @@ Due to the nature of Android being able to work offline, the application will tr
 
 - Set the Organisation Units, Programs and DataSets that users will have access to; this will greatly reduce the amount of data being transferred and the load of the server
 
-- Please see the recommendations on how to [create a user](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_creating_user)
+- Please see the recommendations on how to [create a user](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_creating_user_user)
 
 #### Auto-generated Values
 
 Because of the offline nature Android will also download reserved values. The application will try to evaluate the amount of remaining values and retrieve more from the server whenever a synchronization happens.
 
-In implementations where users will be offline for long periods of time this value might need to be increased (explained in the section below). If the auto-generated values defined include the usage of dates in any of its forms (days, months, years) the system administrator should pay special attention while defining them and using the Android App. Also note, reserving values to devices for offline use with the SEQUENTIAL() pattern (e.g. for a TEI attribute 'System Generated ID') will take each of these values sequentially as they are *reserved in the devices*, which can be confusing for some users. This behavior is expected as documented [here](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id).
+In implementations where users will be offline for long periods of time this value might need to be increased (explained in the section below). If the auto-generated values defined include the usage of dates in any of its forms (days, months, years) the system administrator should pay special attention while defining them and using the Android App. Also note, reserving values to devices for offline use with the SEQUENTIAL() pattern (e.g. for a TE attribute 'System Generated ID') will take each of these values sequentially as they are *reserved in the devices*, which can be confusing for some users. This behavior is expected as documented [here](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id).
 
 Please see more information about this topic in the [official documentation](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id) and in [this post in the CoP.](https://community.dhis2.org/t/question-regarding-expiry-of-reserved-ids-of-an-auto-generated-unique-values-configured-with-a-text-pattern-containing-current-date-mm-yyyy/40761/2)
 
@@ -198,7 +182,7 @@ In the section above the usage of auto-generated values was briefly explained. W
 
 ![](resources/images/covax_perf_image4.png)
 
-As an example, imagine we have an implementation with mobile devices which will be going offline for a full week and then come back to a central location for the synchronization of data. Each user might see up to 50 patients per day and therefore during a week up to 350 patients. Setting the *Reserved values downloaded per TEI attribute* to at least 350 would ensure the users can work properly offline without risking exhausting the values.
+As an example, imagine we have an implementation with mobile devices which will be going offline for a full week and then come back to a central location for the synchronization of data. Each user might see up to 50 patients per day and therefore during a week up to 350 patients. Setting *Reserved values* to at least 350 would ensure the users can work properly offline without risking exhausting the values.
 
 #### Metadata Sync
 
@@ -226,15 +210,15 @@ You can also disable automatic data synchronization and rely on manual synchroni
 
 #### Download Settings
 
-These settings allow the users to define the amount of TEIs that will be downloaded when performing the data sync. It should probably be combined with the *Data Sync* setting explained above. It is important to understand how these settings work to define a targeted and valid approach. The official documentation, [synchronization settings](https://docs.dhis2.org/en/full/use/dhis2-android-app.html#capture_app_andoid_settings_webapp_synchronization), explains in detail what to expect when setting this up. The connectivity capabilities of the implementations should also play a big role while defining these, as in implementations with very good connectivity reducing this value to the maximum would decrease the load of the server during the *data sync* without having a big impact in the users (they will always be able to find the patients online). However, this could lead to a server overload while performing very broad searches. The way mobile users will connect to the server (i.e. using mobile data packages instead of wifi) also plays a role as downloading many patients that might not be used will incur in expending mobile data for no reason.
+These settings allow the users to define the amount of TEs that will be downloaded when performing the data sync. It should probably be combined with the *Data Sync* setting explained above. It is important to understand how these settings work to define a targeted and valid approach. The official documentation, [synchronization settings](https://docs.dhis2.org/en/full/use/dhis2-android-app.html#capture_app_android_settings_webapp_synchronization), explains in detail what to expect when setting this up. The connectivity capabilities of the implementations should also play a big role while defining these, as in implementations with very good connectivity reducing this value to the maximum would decrease the load of the server during the *data sync* without having a big impact in the users (they will always be able to find the patients online). However, this could lead to a server overload while performing very broad searches. The way mobile users will connect to the server (i.e. using mobile data packages instead of wifi) also plays a role as downloading many patients that might not be used will incur in expending mobile data for no reason.
 
 See the following examples:
 
-*  In an implementation where the users will be mainly adding patients to the system (i.e. registering patients with COVID) there is no need to have many patients on the device. Therefore, setting a low value of download TEI would decrease the load of the server during the data sync and will reduce the amount of data transferred (to be taken into account when connecting with mobile data)
+*  In an implementation where the users will be mainly adding patients to the system (i.e. registering patients with COVID) there is no need to have many patients on the device. Therefore, setting a low value of download TE would decrease the load of the server during the data sync and will reduce the amount of data transferred (to be taken into account when connecting with mobile data)
 
-*  In an implementation where users will be visiting patients offline without the possibility for an online search the system administrator might want to let the users download as many TEI as possible so they take with them all the patients' data that will need.
+*  In an implementation where users will be visiting patients offline without the possibility for an online search the system administrator might want to let the users download as many TEs as possible so they take with them all the patients' data that will need.
 
-*  In an implementation with very good connectivity the user administration could decide to decrease the download settings so the devices have as few TEI as possible relying completely on the online search. As the users will be searching by a unique id (i.e. National ID number) which is a low demanding task for the server the setup seems to be adequate. However, if users will not be able to search for patients by a unique id and will use a family name the server could suffer for an overload on the searches and therefore might be more interesting to allow the users downloading more patients and relying on the offline mode.
+*  In an implementation with very good connectivity the user administration could decide to decrease the download settings so the devices have as few TEs as possible relying completely on the online search. As the users will be searching by a unique id (i.e. National ID number) which is a low demanding task for the server the setup seems to be adequate. However, if users will not be able to search for patients by a unique id and will use a family name the server could suffer for an overload on the searches and therefore might be more interesting to allow the users downloading more patients and relying on the offline mode.
 
 ### Application Updates
 
@@ -260,7 +244,7 @@ In this section we cover briefly some recommendations related to the devices the
 
 It is very hard to give general recommendations on which device to use. Implementations should test their final configuration on a set of devices to understand the user experience.
 
-For example if an implementation will have users going to the field and working offline with a large number of TEIs they should aim for higher end devices as the Android App will be more resource consuming. However, if implementations are very budget constraint and they will be having thousands of users but working with much smaller amounts of TEIs and data they might prefer using some middle end devices.
+For example if an implementation will have users going to the field and working offline with a large number of TEs they should aim for higher end devices as the Android App will be more resource consuming. However, if implementations are very budget constraint and they will be having thousands of users but working with much smaller amounts of TEs and data they might prefer using some middle end devices.
 
 More information on this process can be found in the [official guide](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_mobile_specs).
 
@@ -297,15 +281,9 @@ There are two fundamental requirements related to server hosting:
 
 ### Server specifications
 
-As indicated in the documentation on server [specifications](https://docs.dhis2.org/en/manage/manage.html#install_server_specifications), "DHIS2 scales linearly on the amount of RAM and number of CPU cores so the more you can afford, the better the application will perform". Covax implementations, generally targeting the total adult population of a country, will be large-scale even in smaller countries. Exact requirements will vary depending on the expected number of users and TEIs, but 32GB RAM and 32 CPUs could be considered a starting point for all but the smallest implementations. All implementations should be prepared to upgrade the hardware to support changing scale and growing data.
+DHIS2 scales with the amount of RAM and number of CPU cores, so the more you can afford, the better the application will perform. Covax implementations, generally targeting the total adult population of a country, will be large-scale even in smaller countries. Size the server as a large instance as described in the [server specifications](https://docs.dhis2.org/en/manage/manage.html#install_server_specifications). Exact requirements will vary depending on the expected number of users and TEs. All implementations should be prepared to upgrade the hardware to support changing scale and growing data.
 
-SSD/disk performance is also critical for the overall performance, heavily influencing key activities such as searching for TEIs and analytics. The documentation suggests that "Minimum read speed is 150 Mb/s, 200 Mb/s is good, 350 Mb/s or better is ideal." Real disk performance can also be assessed by looking at disk latency. You can see these figures on munin, a simple one off assessment can be done with dd:
-
-```
-dd if=/dev/zero of=/root/testfile bs=512 count=1000 oflag=dsync
-```
-
-For a good disk this command should finish in a fraction of a second (\<0.5s). Anything over 5 seconds is probably going to be too slow to reach acceptable levels of performance.
+SSD/disk performance is also critical for the overall performance, heavily influencing key activities such as searching for TEs and analytics. Test the disk read speed and latency as described in the [server specifications](https://docs.dhis2.org/en/manage/manage.html#install_server_specifications), and monitor disk latency over time with your [server monitoring](#server-monitoring) tool.
 
 ### Server architecture and infrastructure
 
@@ -317,11 +295,7 @@ Special consideration must be taken when the server is hosted in a shared, virtu
 
 ### Installation and configuration
 
-It is important to ensure that the right software versions are used to optimise performance, as listed in the [software requirements](https://docs.dhis2.org/en/manage/manage.html#install_software_requirements):
-
-- JDK 17
-- PostgreSQL 16
-- A supported DHIS2 version, **the latest available patch version**
+It is important to use the software versions listed in the [software requirements](https://docs.dhis2.org/en/manage/manage.html#install_software_requirements) and **the latest available patch version** of a supported DHIS2 version to optimise performance.
 
 Tomcat needs to be configured with enough memory. This will depend on the total available memory of the server, and whether this is shared with postgresql or if the database is running on a separate server. With a DHIS2 superuser account, you can verify the tomcat memory configuration by opening "About DHIS2" and looking at the "Memory info" field:
 
@@ -333,11 +307,11 @@ It is also critically important to configure postgresql correctly for good perfo
 
 We strongly recommend setting up a server monitoring tool to identify when and why your server is struggling. Key performance metrics should be monitored eg. RAM, CPU, disk performance on all nodes and application specific measures on proxy, database and tomcat. Some recommendations include [https://glowroot.org](https://glowroot.org/) and [https://munin-monitoring.org](https://munin-monitoring.org/). A [tutorial for installing glowroot on DHIS2](https://docs.dhis2.org/en/topics/tutorials/performance-monitoring-with-glowroot.html) has been written to support this.
 
-Other options which might require more configuration but allow significant customisation include prometheus/grafana and the ELK stack.
+DHIS2 also exposes metrics for [Prometheus and Grafana](https://docs.dhis2.org/en/manage/reference/monitoring.html).
 
 ## Implementation Strategies
 
-Based on experiences from Sri Lanka, Indonesia, Nigeria, Rwanda and others, visualizations based on tracker analytics in large-scale COVID-19 vaccine deployments can result in very heavy TEI count queries, nearly rendering the system unusable. Blunt mitigation strategies taken in Rwanda (disabling of all Analytics apps), while Sri Lanka reverted to SQL queries.
+Based on experiences from Sri Lanka, Indonesia, Nigeria, Rwanda and others, visualizations based on tracker analytics in large-scale COVID-19 vaccine deployments can result in very heavy TE count queries, nearly rendering the system unusable. Blunt mitigation strategies taken in Rwanda (disabling of all Analytics apps), while Sri Lanka reverted to SQL queries.
 
 These challenges can be partially addressed with the guidance on performance optimization provided above. We also recognize that:
 
@@ -386,7 +360,7 @@ In order to serve COVID-19 analytics from tracker source data (e.g. COVID vaccin
 
 4. A script to push the tracker data (e.g. values of program indicators) target aggregate DEs. An example script is under development and will be shared soon.
 
-Generic [guidance for tracker-to-aggregate data is available](https://docs.dhis2.org/en/implement/maintenance-and-use/tracker-and-aggregate-data-integration.html#how-to-saving-aggregated-tracker-data-as-aggregate-data-values) and will continue to be updated.
+Generic [guidance for tracker-to-aggregate data is available](https://docs.dhis2.org/en/implement/maintenance-and-use/tracker-and-aggregate-data-integration.html#save-aggregated-tracker-data-as-aggregate-data-values) and will continue to be updated.
 
 ## List of Known Software Issues
 
