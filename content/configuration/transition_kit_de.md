@@ -21,7 +21,7 @@ The goal is to help users adapt quickly and efficiently to the new interface and
 >
 > **Why this matters for implementers:** The new app keeps all selections in one bar, shows validation results next to the form, and is the version that is still being developed. Training and support effort should go to the new app. 
 > 
-> *As of DHIS2 version 43, the legacy app is no longer supported and can not be accessed in DHIS2.* 
+> *As of DHIS2 version 42, the legacy app is no longer supported and can not be accessed in DHIS2.* 
 
 ## Feature comparison of the legacy app and the new app { #detk_feature_comparison }
 
