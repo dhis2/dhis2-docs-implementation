@@ -26,7 +26,7 @@ This document describes approaches to optimizing performance for large-scale DHI
 > * Do not use continuous analytics
 > * Tracker: Set "Start page in web Capture app" to "Search form"
 > ("Display front page list" in the Maintenance app) in the program details.
-> * Enable trigram indexing for frequently searched TE attributes.
+> * Enable trigram indexing for frequently searched tracked entity (TE) attributes.
 > * Ensure custom apps and integrations follow the
 > [tracker API performance guidance](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_performance).
 > * Ensure that system generated attributes don't use RANDOM pattern
@@ -121,7 +121,7 @@ c. Visualizations requesting lengthy periods of longitudinal data, e.g. last 12 
 
 d. Any visualization with enrollment-type program indicators, such as dropout rates
 
-e. In tests of program indicators from the COVAC package, program indicators of "enrollment type" took the longest response time. Further, they have poorer scalability, as they take longer to serve data when requesting additional periods, org units, or TEs.
+e. In tests of program indicators from the COVAC package, program indicators of "enrollment type" took the longest response time. Further, they have poorer scalability, as they take longer to serve data when requesting additional periods, org units, or tracked entities.
 
 ### Tracker Performance
 
@@ -131,11 +131,27 @@ e. In tests of program indicators from the COVAC package, program indicators of 
 	* It uses the reserved values table in the database to keep track of which values have been distributed already. This table has been known to be a pain point during tracker import.
 	* Note for implementations that use Android: reserving values to the devices for offline use may affect the user's perception of SEQUENTIAL generation as documented here: [https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_dhis2_config_reserved_id)
 
-* In early versions of the COVID-19 vaccine registry, some working lists caused performance issues. These were removed from the packages in the COVID IER package V 1.1.2. If you experience that tracker is showing slow load times, this may be related to the working lists and a large number of TEs in one org unit. A solution is to set **Start page in web Capture app** to **Search form** in the program details (called **Display front page list** in the Maintenance app; this has the downside of also disabling working lists)
+* In early versions of the COVID-19 vaccine registry, some working lists caused performance issues. These were removed from the packages in the COVID IER package V 1.1.2. If you experience that tracker is showing slow load times, this may be related to the working lists and a large number of tracked entities (TEs) in one org unit. A solution is to set **Start page in web Capture app** to **Search form** in the program details (called **Display front page list** in the Maintenance app; this has the downside of also disabling working lists)
 
-* Searches on TEs on attributes (especially non-unique ones like firstName, surname, phoneNumber) can significantly improve with partial trigram indexes for that particular tracked entity attribute. This has been done in Nigeria and Rwanda and the performance improvement was huge. DHIS2 creates and maintains these indexes for the attributes you configure, as described in [tracker trigram index maintenance](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html#scheduling_tracker_index_maintenance).
+* Searches for tracked entities on attributes (especially non-unique ones like firstName, surname, phoneNumber) can significantly improve with partial trigram indexes for that particular tracked entity attribute. This has been done in Nigeria and Rwanda and the performance improvement was huge. DHIS2 creates and maintains these indexes for the attributes you configure, as described in [tracker trigram index maintenance](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html#scheduling_tracker_index_maintenance).
 
-* Similarly, trigram indexes will also help if the system searches based on event data values. Nigeria had their QR code for completed vaccinations as an event data value which they searched on heavily (eg: passengers qr code checked before boarding). DHIS2 does not create these indexes, so depending on search patterns for the specific implementation's configuration, a database administrator has to create a trigram index on the values of the searched data element. Not all implementations will need this.
+* Similarly, trigram indexes will also help if the system searches based on event data values. Nigeria had their QR code for completed vaccinations as an event data value which they searched on heavily (eg: passengers qr code checked before boarding). DHIS2 does not create these indexes, so depending on search patterns for the specific implementation's configuration, a database administrator has to create a trigram index on the values of the searched data element. Not all implementations will need this. The following example creates an index for the data element with UID `LavUrktwH5D` (eg: qrCode). It has to be repeated for every data element that is used heavily during searches. The index expression must match the expression DHIS2 uses in its queries, so keep the `lower(eventdatavalues #>> '{<UID>, value}')` form.
+
+In DHIS2 2.43 and later, events of tracker programs are stored in the `trackerevent` table and events of event programs in the `singleevent` table. Create the index on the table holding the events you search:
+
+```sql
+create index concurrently in_gin_trackerevent_edv_lavurktwh5d on trackerevent
+using gin (lower(eventdatavalues #>> '{LavUrktwH5D, value}') gin_trgm_ops);
+```
+
+In DHIS2 2.41 and 2.42, all events are stored in the `event` table:
+
+```sql
+create index concurrently in_gin_event_edv_lavurktwh5d on event
+using gin (lower(eventdatavalues #>> '{LavUrktwH5D, value}') gin_trgm_ops);
+```
+
+The `pg_trgm` extension these indexes need is already installed, as DHIS2 requires it to start.
 
 * Usage of custom apps can have a positive or negative impact on performance. The apps can be a way of making more targeted functionality that prevents extra clicks and calls to the API. They are also a source of caution, and we have seen some custom apps use API functionalities that cause unnecessary stress on the system. Custom apps, integration middleware and external scripts using the tracker API should follow the [tracker API performance guidance](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_performance). Nigeria had a custom app that enforced a minimum search string length of 3 characters on the app side and that helped alleviate several heavy queries.
 
@@ -210,7 +226,7 @@ You can also disable automatic data synchronization and rely on manual synchroni
 
 #### Download Settings
 
-These settings allow the users to define the amount of TEs that will be downloaded when performing the data sync. It should probably be combined with the *Data Sync* setting explained above. It is important to understand how these settings work to define a targeted and valid approach. The official documentation, [synchronization settings](https://docs.dhis2.org/en/full/use/dhis2-android-app.html#capture_app_android_settings_webapp_synchronization), explains in detail what to expect when setting this up. The connectivity capabilities of the implementations should also play a big role while defining these, as in implementations with very good connectivity reducing this value to the maximum would decrease the load of the server during the *data sync* without having a big impact in the users (they will always be able to find the patients online). However, this could lead to a server overload while performing very broad searches. The way mobile users will connect to the server (i.e. using mobile data packages instead of wifi) also plays a role as downloading many patients that might not be used will incur in expending mobile data for no reason.
+These settings allow the users to define the amount of tracked entities (TEs) that will be downloaded when performing the data sync. It should probably be combined with the *Data Sync* setting explained above. It is important to understand how these settings work to define a targeted and valid approach. The official documentation, [synchronization settings](https://docs.dhis2.org/en/full/use/dhis2-android-app.html#capture_app_android_settings_webapp_synchronization), explains in detail what to expect when setting this up. The connectivity capabilities of the implementations should also play a big role while defining these, as in implementations with very good connectivity reducing this value to the maximum would decrease the load of the server during the *data sync* without having a big impact in the users (they will always be able to find the patients online). However, this could lead to a server overload while performing very broad searches. The way mobile users will connect to the server (i.e. using mobile data packages instead of wifi) also plays a role as downloading many patients that might not be used will incur in expending mobile data for no reason.
 
 See the following examples:
 
@@ -244,7 +260,7 @@ In this section we cover briefly some recommendations related to the devices the
 
 It is very hard to give general recommendations on which device to use. Implementations should test their final configuration on a set of devices to understand the user experience.
 
-For example if an implementation will have users going to the field and working offline with a large number of TEs they should aim for higher end devices as the Android App will be more resource consuming. However, if implementations are very budget constraint and they will be having thousands of users but working with much smaller amounts of TEs and data they might prefer using some middle end devices.
+For example if an implementation will have users going to the field and working offline with a large number of tracked entities they should aim for higher end devices as the Android App will be more resource consuming. However, if implementations are very budget constraint and they will be having thousands of users but working with much smaller amounts of TEs and data they might prefer using some middle end devices.
 
 More information on this process can be found in the [official guide](https://docs.dhis2.org/en/full/implement/android-implementation.html#implementation_guide_mobile_specs).
 
