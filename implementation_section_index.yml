@@ -378,11 +378,12 @@ Health:
       - Design: '@github(dhis2-metadata/NTD_SCH_DS, docs/ntd_sch_ds-design.md, master)'
       - Installation: '@github(dhis2-metadata/NTD_SCH_DS, docs/ntd_sch_ds-installation.md, master)'
   - Non-Communicable Diseases:
-    - Hypertension Control:
-      - OVERVIEW: '@github(dhis2-metadata/NCD_HTN, docs/overview.md, master)'
-      - Release Note: '@github(dhis2-metadata/NCD_HTN, docs/release_note.md, master)'
-      - Design: '@github(dhis2-metadata/NCD_HTN, docs/ncd_htn-design.md, master)'
-      - Installation: '@github(dhis2-metadata/NCD_HTN, docs/ncd_htn-installation.md, master)'
+    - Hypertension and Diabetes:
+      - OVERVIEW: '@github(dhis2-metadata/NCD_HDM, docs/overview.md, master)'
+      - Release Note: '@github(dhis2-metadata/NCD_HDM, docs/release_note.md, master)'
+      - Design: '@github(dhis2-metadata/NCD_HDM, docs/ncd_hdm-design.md, master)'
+      - Installation: '@github(dhis2-metadata/NCD_HDM, docs/ncd_hdm-installation.md, master)'
+      - Design for NCD data use: '@github(dhis2-metadata/NCD_HDM, docs/Design-for-Routine-Use-of-Integrated-NCD-Data.md, master)'
     - Cancer Registry:
       - OVERVIEW: '@github(dhis2-metadata/NCD_CR, docs/overview.md, master)'
       - Release Note: '@github(dhis2-metadata/NCD_CR, docs/release_note.md, master)'
