@@ -19,7 +19,7 @@ Other supported data sources include:
 
 ## Key features of the app { #climateapp_features }
 
-**Explore data:** Use this feature to view weather and climate data for your organization units without importing it into the system. No metadata configuration is required, but your organization units must have coordinates and a valid Google Earth Engine (GEE) key. See the section on Installation *Prerequisites* for more details.
+**Explore data:** Use this feature to view weather and climate data for your organization units without importing it into the system. No metadata configuration is required, but your organization units must have coordinates, and a Google Earth Engine (GEE) service account key must be installed on the DHIS2 server. See the section on Installation *Prerequisites* for more details.
 
 **Setup guide:** Before importing climate data, you must configure your DHIS2 instance. See the section on *Metadata Configuration for Climate Data Import* for setup instructions.
 
@@ -41,7 +41,7 @@ See *Table 1* for detailed descriptions of the available parameters.
 ## **Installation prerequisites**
 
 1. Ensure your DHIS2 instance is running on version 2.37 or higher, as the app is only compatible with these versions.
-2. Verify that your DHIS2 instance is connected to Google Earth Engine (GEE), which is free to use for governments and non-profit organizations. If you do not already have access, please request it by sending an email to [maps@dhis2.org,](mailto:maps@dhis2.org),  specifying the name of your organisation. Alternatively, you may set up a Google Cloud project [independently](#install_google_service_account_configuration).
+2. Verify that your DHIS2 instance is connected to Google Earth Engine (GEE). To set up access, follow [Google Earth Engine sign-up](https://docs.dhis2.org/en/topics/tutorials/google-earth-engine-sign-up.html). Who can use Earth Engine, and at what cost, depends on Google's terms: see [Earth Engine noncommercial use](https://earthengine.google.com/noncommercial).
 3. Confirm that your DHIS2 organisation units are configured with **geographic coordinates** at all administrative levels where you intend to access climate data.
 
 
