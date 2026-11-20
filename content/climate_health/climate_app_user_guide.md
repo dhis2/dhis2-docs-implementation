@@ -41,7 +41,7 @@ See *Table 1* for detailed descriptions of the available parameters.
 ## **Installation prerequisites**
 
 1. Ensure your DHIS2 instance is running on version 2.37 or higher, as the app is only compatible with these versions.
-2. Verify that your DHIS2 instance is connected to Google Earth Engine (GEE), which is free to use for governments and non-profit organizations. If you do not already have access, please request it by sending an email to [maps@dhis2.org,](mailto:maps@dhis2.org),  specifying the name of your organisation. Alternatively, you may set up a Google Cloud project [independently](#install_google_service_account_configuration).
+2. Verify that your DHIS2 instance is connected to Google Earth Engine (GEE). To set up access, follow [Accessing map layers from Google Earth Engine](https://docs.dhis2.org/en/topics/tutorials/google-earth-engine-sign-up.html). Who can use Earth Engine, and at what cost, depends on Google's terms: see [Eligibility and cost](https://docs.dhis2.org/en/topics/tutorials/google-earth-engine-sign-up.html#eligibility-and-cost).
 3. Confirm that your DHIS2 organisation units are configured with **geographic coordinates** at all administrative levels where you intend to access climate data.
 
 
