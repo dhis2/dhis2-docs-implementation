@@ -19,7 +19,7 @@ Other supported data sources include:
 
 ## Key features of the app { #climateapp_features }
 
-**Explore data:** Use this feature to view weather and climate data for your organization units without importing it into the system. No metadata configuration is required, but your organization units must have coordinates and a valid Google Earth Engine (GEE) key. See the section on Installation *Prerequisites* for more details.
+**Explore data:** Use this feature to view weather and climate data for your organization units without importing it into the system. No metadata configuration is required, but your organization units must have coordinates, and a Google Earth Engine (GEE) service account key must be installed on the DHIS2 server. See the section on Installation *Prerequisites* for more details.
 
 **Setup guide:** Before importing climate data, you must configure your DHIS2 instance. See the section on *Metadata Configuration for Climate Data Import* for setup instructions.
 
