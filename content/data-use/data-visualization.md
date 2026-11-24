@@ -220,7 +220,7 @@ Stacked columns or bar charts **should be avoided when** a detailed comparison o
 
 DHIS2 offers powerful integration with Google Earth Engine, allowing users to access a range of detailed datasets, such as population (WorldPop), building footprints, elevation, land use, and climate data.  
 
-To set up Google Earth Engine for your DHIS2 instance, follow [Google Earth Engine sign-up](https://docs.dhis2.org/en/topics/tutorials/google-earth-engine-sign-up.html) in the DHIS2 documentation. For the available layers and how to use population, elevation, landcover, and climate layers within the DHIS2 Maps application, see the Community of Practice post [Using population, elevation, landcover and climate layers in DHIS2 Maps](https://community.dhis2.org/t/using-population-elevation-landcover-and-climate-layers-in-dhis2-maps/51586) and the [DHIS2 Version 2.39 Overview](https://dhis2.org/overview/version-239/).  
+To set up Google Earth Engine for your DHIS2 instance, follow [Google Earth Engine sign-up](#google_earth_engine_sign_up) in the DHIS2 documentation. For the available layers and how to use population, elevation, landcover, and climate layers within the DHIS2 Maps application, see the Community of Practice post [Using population, elevation, landcover and climate layers in DHIS2 Maps](https://community.dhis2.org/t/using-population-elevation-landcover-and-climate-layers-in-dhis2-maps/51586) and the [DHIS2 Version 2.39 Overview](https://dhis2.org/overview/version-239/).  
 
 ##### Best Practices for Integration  
 
