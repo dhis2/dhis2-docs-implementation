@@ -1,6 +1,7 @@
 # TEMPERATURE MONITORING TOOL / "Aggregate" Data Entry Form
 
 This simple Default Data Entry allows digitizing the  twice daily manual temperature recordings on paper forms, sharing and analysing them digitally on the DHIS2 database.
+Note that the Cold Chain Equipment (CCE) Tracker program allows automatically uploading temperature as well as performance data from Fridge-tags or EMS (Equipment Monitoring System) compliant cold chain appliances. Please refer to details in the Cold Chain Equipment (CCE) section.
 
 ## Use case
 
